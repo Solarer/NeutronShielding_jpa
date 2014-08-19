@@ -1,0 +1,105 @@
+Student: Jaclyn Schmitt
+Advisor: Kate Scholberg
+Program: TUNL REU 2014
+-------------------------------------------------------------------
+
+     =========================================================
+     Geant4 - an Object-Oriented Toolkit for Simulation in HEP
+     =========================================================
+
+                     Neutron Shielding Project
+                     -------------------------
+
+The goal of this project is to design shielding for a coherent elastic neutrino-nucleus scattering (CENNS) experiment to take place at the Spallation Neutron Source at Oak Ridge National Lab. The primary challenge this detector faces is rogue neutrons. Although the SNS does produce many neutrons, the more problematic neutrons are the neutrino-induced neutrons that orginate in the lead shielding itself. The object of this project is to minimize the number of neutrons entering the detector. This document explains how to use the program.
+
+0. General notes
+
+You are now in the folder "NeutronShieldingSD" which contains all code and data for this project. The main function is in the file "NeutronsShielding.cc." The source code is in the folder "src," and the include files used in the source files are in the folder "include."  To run the program, be sure you are in the folder "NeutronShieldingSD" and enter
+
+$ bin/Linux-g++/NeutronShielding
+
+	or
+
+$ bin/Linux-g++/NeutronShielding nameOfMacro.mac
+
+The command that starts a run is "/run/beamOn numberOfEvents," so this must be at the end of a macro after all other commands to start the program.
+
+1. Detector description
+
+The detector is defined in NSDetectorConstruction.cc. The detector consists of an inner volume, the detector itself, and outer volumes, the layers of shielding. The detector is constructed as a series of concentric boxes, going outside in:
+   world
+   shield1
+   shield2
+   detector
+
+A sensitive detector is assigned to the Detector volume using the "ConstructSDandField" function. This facilitates counting particles and energy depositions.
+
+All relevant geometry and material parameters of the detector can be changed interactively with user-defined commands. These are defined in the Detector Messenger class. Here is a list:
+
+/NS/det/setShield1Size 1.0 m        # size of shield1 is 1.0 m
+/NS/det/setShield2Ratio 0.7         # size of shield2 is 0.7 * shield1_size
+/NS/det/setDetRatio 0.5             # size of detector is 0.5 * shield1_size
+/NS/det/setWorldMaterial G4_AIR     # material of world
+/NS/det/setShield1Material G4_Pb    # material of outermost shield
+/NS/det/setShield2Material BdP5_0   # material of next shield layer
+/NS/det/setDetMaterial lXe          # material inside detector
+/NS/det/update                      # MUST update geometry before run
+
+It is imperative to use the update command before running the program, otherwise the geometry will not change properly.
+
+2. Physics processes
+
+The physics processes are defined in the QGSP_BIC_HP list.
+
+3. Primary Generator Action
+
+G4ParticleGun is instanciated in the constructor of NSPrimaryGeneratorAction class. Every event, the public method GeneratePrimaries(G4Event*) is invoked. In this method, G4ParticleGun is accessed to generate a primary particle (neutron).
+
+Please note that the position and direction of the primary particle are set just before shooting, i.e. GeneratePrimaryVertex() method invokation. Randomizing code has been written to generate particles randomly in the shielding volume.
+
+The shield in which the particles are generated can be chosen using this user-defined command:
+
+/NS/gen/genInShield 1               # particles are generated in shield1
+
+4. main()
+
+NeutronShielding.cc has the main() method. In the main() method, three
+mandatory user classes (detector construction, physics list, user action initialization) are constructed and set to the G4RunManager object. Then, the "Initialize()" method of G4RunManager is invoked.
+
+Some UI commands for setting verbosity are applied via hard-coded "ApplyCommand()" method of G4UImanager class. The default commands are called from vis.mac
+
+
+5. Output
+
+Every run outputs a file "singleRun.root" with an ntuple of event information. For each event, the primary position and direction, the energy deposited in the detector, and whether or not the particle entered the detector (0=no/1=yes) is stored. If multiple runs are carried out, this file is overwritten each time unless the command "/analysis/setFileName" is implemented in a loop with a varible name. See energy deposition macros for an example. Otherwise, rename the file if you want to save it.
+
+Every set of runs outputs a text file "NS.out" with run data from each run. This includes:
+	runID
+	initial particle energy (MeV)
+	shield1_sizeXY (m)
+	shield2 ratio
+	detector ratio
+	wt. % boron in polyethylene
+	world material
+	shield 1 material
+	shield 2 material
+	detector material
+	mean energy deposited in detector (MeV)
+	percent of neutrons that entered the detector
+
+The file "TreeMac.C" can be used to create a tree from this data, and the tree is saved in "NS.root." Rename these files if you want to save them.
+
+Optionally, step data can be written to the file "step.out." Currently this option is commented out in the file "NSSteppingAction.cc" because this can be a very large file. Using this option is discouraged unless looking for specific secondary particles or processes because the file causes the program to run slower. A sample for 100 events is saved as "sample_step.out."
+
+6. Existing Data
+
+"default.mac" is a macro that gives the default parameters used in a run if others are not specified.
+
+Data for studies done with one layer of shielding and two layers of shielding have been carried out and are stored in the folders "oneLayer" and "twoLayers." Energy deposition studies are stored in the folder "Edep."
+
+The "AdditionalRuns" folder contains last minute tests requested by Dr. Scholberg.
+
+The "477Peak" folder contains files from trying to figure out where the 0.477 MeV peak was coming from.
+
+The folder "extraPics" holds pictures used in the final paper for this project and can be disregarded.
+

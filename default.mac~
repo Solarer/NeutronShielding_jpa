@@ -1,0 +1,21 @@
+#
+# This macro does one run of 10 events
+# with the default values of all modifiable parameters.
+#
+
+/analysis/setFileName default       # set name of primaries file
+
+/gun/energy 1.0 MeV                 # energy of primary particle (neutron)
+
+/NS/gen/genInShield 1               # volume particles are generated in
+
+/NS/det/setShield1Size 1.0 m        # size of shield1 is 1.0 m
+/NS/det/setShield2Ratio 0.7         # size of shield2 is 0.7 * shield1_size
+/NS/det/setDetRatio 0.5             # size of detector is 0.5 * shield1_size
+
+/NS/det/setWorldMaterial G4_AIR     # material of world
+/NS/det/setShield1Material G4_Pb    # material of outermost shield
+/NS/det/setShield2Material BdP5_0   # material of next shield layer
+/NS/det/setDetMaterial lXe          # material inside detector
+
+/run/beamOn 10                      # 10 neutrons are generated

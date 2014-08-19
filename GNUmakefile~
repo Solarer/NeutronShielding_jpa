@@ -1,0 +1,27 @@
+# GNU makefile for NeutronShielding detector.
+
+name := NeutronShielding
+G4TARGET := $(name)
+G4EXLIB := true
+
+ifndef G4INSTALL
+  G4INSTALL = ../../..
+  G4INSTALL = /home/jpa20/software/geant4.10.0-install
+endif
+
+.PHONY: all
+all: lib bin
+
+include /opt/local/share/Geant4-9.5.1/geant4make/binmake.gmk
+#include $(G4INSTALL)/share/Geant4-10.0.2/geant4make/config/binmake.gmk
+
+visclean:
+	rm -f g4*.prim g4*.eps g4*.wrl
+	rm -f .DAWN_*
+
+# Root
+
+CPPFLAGS  += $(shell root-config --cflags) 
+EXTRALIBS += $(shell root-config --libs)
+LDFLAGS += -L$(shell root-config --libdir) $(EXTRALIBS)
+
