@@ -75,66 +75,20 @@ void NSPrimaryGeneratorAction::GeneratePrimaries(G4Event* anEvent)
   // from G4LogicalVolumeStore.
 
   // Get detector configuration sizes
-  G4double detRatio       = Detector->GetDetRatio();
-  G4double det_sizeXY     = detRatio*shield1_sizeXY;
-  G4double det_sizeZ      = detRatio*shield1_sizeZ;
-  
-  // Only generate particles in appropriate volume
-  G4int inDet = 0;
-  G4int inShield2 = 0;
+  G4int boxNumber = Detector->GetShieldBoxNumber();
+  G4double boxX, boxY, boxZ;
+		boxX = Detector->GetShieldBoxSizeX();
+		boxY = Detector->GetShieldBoxSizeY();
+		boxZ = Detector->GetShieldBoxSizeZ();
+	const G4ThreeVector* shieldBoxPosition = Detector->GetShieldBoxPosition();
+	G4int box;
   G4double x0, y0, z0;
-  x0 = y0 = z0 = 0;
-	// Check if it is possible to generate particles in current shield
-	if(shield1_sizeXY == shield2_sizeXY && shield1_sizeZ == shield2_sizeZ)
-		{
-			SetGenInShield(2); //no shield1
-			G4cerr << "Warning: shield2 overlaps completely with shield1! Now generating particles in shield2!" << G4endl;
-		}
-	else if(shield2_sizeXY == det_sizeXY && shield2_sizeZ == det_sizeZ)
-		{
-			SetGenInShield(1); //no shield2
-			G4cerr << "Warning: Detector overlaps completely with shield2! Now generating particles in shield1!" << G4endl;
-		}
 
 	// Now generate
-  if (genInShield == 2)        // generate particles in shield2
-  {
-    while (inDet == 0)
-    {
-      x0 = shield2_sizeXY * (G4UniformRand()-0.5);
-      y0 = shield2_sizeXY * (G4UniformRand()-0.5);
-      z0 = shield2_sizeZ  * (G4UniformRand()-0.5);
-
-      if (fabs(x0)>det_sizeXY/2. ||
-          fabs(y0)>det_sizeXY/2. ||
-          fabs(z0)>det_sizeZ/2.)
-      {
-        inDet = 1;
-      }
-    }
-  }
-
-  else  if (genInShield == 1)  // generate particles in shield1
-  {
-    while (inShield2 == 0)
-    {
-      x0 = shield1_sizeXY * (G4UniformRand()-0.5);
-      y0 = shield1_sizeXY * (G4UniformRand()-0.5);
-      z0 = shield1_sizeZ * (G4UniformRand()-0.5);
-
-      if (fabs(x0)>shield2_sizeXY/2. ||
-          fabs(y0)>shield2_sizeXY/2. ||
-          fabs(z0)>shield2_sizeZ /2.)
-      {
-        inShield2 = 1;
-      }
-    }
-  }
-
-  else
-  {
-    G4cout << "Invalid shield number" << G4endl;
-  }
+  box =  int(boxNumber * G4UniformRand()); //random box
+  x0 = (boxX * (G4UniformRand()-0.5)) + shieldBoxPosition[box].getX();
+  y0 = (boxY * (G4UniformRand()-0.5)) + shieldBoxPosition[box].getY();
+  z0 = (boxZ * (G4UniformRand()-0.5)) + shieldBoxPosition[box].getZ();
 
   // Set primary particle position
   fParticleGun->SetParticlePosition(G4ThreeVector(x0,y0,z0));
@@ -158,11 +112,5 @@ void NSPrimaryGeneratorAction::GeneratePrimaries(G4Event* anEvent)
   if(event_cnt%100==0)
 	G4cout << "Reached " << event_cnt << " event mark. Ongoing..." << G4endl;
   event_cnt++;
-}
-
-void NSPrimaryGeneratorAction::SetGenInShield (G4int value)
-{
-  // Set which shield the particles are generated in
-  genInShield = value;
 }
 

@@ -145,12 +145,12 @@ void NSRunAction::EndOfRunAction(const G4Run* run)
     = static_cast<const NSDetectorConstruction*>
     (G4RunManager::GetRunManager()->GetUserDetectorConstruction());
 
-  G4double shield1_sizeXY = detectorConstruction->GetShield1SizeXY();
-  G4double shield2Ratio = detectorConstruction->GetShield2Ratio();
+  G4double shield1_sizeXY = 0;//detectorConstruction->GetShield1SizeXY();
+  G4double shield2Ratio = 0;//detectorConstruction->GetShield2Ratio();
   G4double detRatio = detectorConstruction->GetDetRatio();
   G4String world_mat = detectorConstruction->GetWorldMaterial()->GetName();
-  G4String shield1_mat = detectorConstruction->GetShield1Material()->GetName();
-  G4String shield2_mat = detectorConstruction->GetShield2Material()->GetName();
+  G4String shield1_mat = detectorConstruction->GetShieldMaterial()->GetName();
+  G4String shield2_mat = "nan";//detectorConstruction->GetShield2Material()->GetName();
   G4String det_mat = detectorConstruction->GetDetMaterial()->GetName();
 
   // Find which shield layer uses BdP (if any) and get dopant percent
@@ -205,5 +205,4 @@ void NSRunAction::EndOfRunAction(const G4Run* run)
 
     outfile.close();
   }
-}
 

@@ -66,10 +66,12 @@ class NSDetectorConstruction : public G4VUserDetectorConstruction
     void UpdateGeometry();
 
     // Get methods
-
     G4double    GetDetRatio()        const {return detRatio;};
-    // G4double    GetWaterBoxSizeX()   const {return waterBox_sizeX;};
-    // G4double    GetShieldLayer()   const {return det_layer;};
+    G4double    GetShieldBoxNumber()   const {return shieldBox_number;};
+    G4double    GetShieldBoxSizeX()   const {return shieldBox_size[0];};
+    G4double    GetShieldBoxSizeY()   const {return shieldBox_size[1];};
+    G4double    GetShieldBoxSizeZ()   const {return shieldBox_size[2];};
+		G4ThreeVector* GetShieldBoxPosition() const {return shieldBox_position;};
     G4Material* GetWorldMaterial()   const {return world_mat;};
     G4Material* GetShieldMaterial() const {return shield_mat;};
     G4Material* GetDetMaterial()     const {return det_mat;};
@@ -95,9 +97,9 @@ class NSDetectorConstruction : public G4VUserDetectorConstruction
     G4LogicalVolume*   logicWorld;
     G4VPhysicalVolume* physWorld;
 
-    G4Box*             solidShield1;
-    G4LogicalVolume*   logicShield1;
-    G4VPhysicalVolume* physShield1; 
+    G4Box*             solidShield;
+    G4LogicalVolume*   logicShield;
+    G4VPhysicalVolume* physShield; 
 
     G4Box*             solidDet;
     G4LogicalVolume*   logicDet;

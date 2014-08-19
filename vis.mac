@@ -9,13 +9,11 @@
 /run/particle/verbose 0
 /process/verbose 0
 #
-/NS/det/setShield2Ratio 0.5
-/NS/det/setShield1Material G4_Galactic
-/NS/det/setShield2Material G4_Pb
+# Update detector after setting some things
 /NS/det/update
 #
 # Use this open statement to create an OpenGL view:
-#/vis/open OGL 600x600-0+0
+/vis/open OGL 600x600-0+0
 #
 # Use this open statement to create a .prim file suitable for
 # viewing in DAWN:

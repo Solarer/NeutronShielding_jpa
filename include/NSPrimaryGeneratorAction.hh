@@ -55,7 +55,6 @@ class NSPrimaryGeneratorAction : public G4VUserPrimaryGeneratorAction
     NSPrimaryGeneratorMessenger* fMessenger; // Pointer to messenger
 
   public:
-    void SetGenInShield (G4int);             // Choose where to generate particles
 };
 
 #endif

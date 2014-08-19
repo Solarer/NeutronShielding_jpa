@@ -197,7 +197,7 @@ G4VPhysicalVolume* NSDetectorConstruction::ConstructDetector()
                         "Shield1");             // name
 
 	// all shieldBoxes except for 4 top and bottom
-	for (int shield_cnt=0 ; shield_cnt<shieldBox_number ; shield_cnt++)
+	for (int shield_cnt=0 ; shield_cnt<shieldBox_number-4 ; shield_cnt++)
 		{
 				physShield1 =
     			new G4PVPlacement(0,                    // no rotation

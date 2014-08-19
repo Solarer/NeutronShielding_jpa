@@ -1,6 +1,6 @@
 # GNU makefile for NeutronShielding detector.
 
-name := NeutronShielding
+name := NeutronShielding_jpa
 G4TARGET := $(name)
 G4EXLIB := true
 

@@ -59,7 +59,6 @@ NSPrimaryGeneratorMessenger::~NSPrimaryGeneratorMessenger()
 void NSPrimaryGeneratorMessenger::SetNewValue(
                                         G4UIcommand* command, G4String newValue)
 { 
-  if( command == fGenInShieldCmd )
-  { Action->SetGenInShield(fGenInShieldCmd->GetNewIntValue(newValue)); }
+
 }
 
