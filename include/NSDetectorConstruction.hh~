@@ -1,0 +1,134 @@
+//
+// ********************************************************************
+// * License and Disclaimer                                           *
+// *                                                                  *
+// * The  Geant4 software  is  copyright of the Copyright Holders  of *
+// * the Geant4 Collaboration.  It is provided  under  the terms  and *
+// * conditions of the Geant4 Software License,  included in the file *
+// * LICENSE and available at  http://cern.ch/geant4/license .  These *
+// * include a list of copyright holders.                             *
+// *                                                                  *
+// * Neither the authors of this software system, nor their employing *
+// * institutes,nor the agencies providing financial support for this *
+// * work  make  any representation or  warranty, express or implied, *
+// * regarding  this  software system or assume any liability for its *
+// * use.  Please see the license in the file  LICENSE  and URL above *
+// * for the full disclaimer and the limitation of liability.         *
+// *                                                                  *
+// * This  code  implementation is the result of  the  scientific and *
+// * technical work of the GEANT4 collaboration.                      *
+// * By using,  copying,  modifying or  distributing the software (or *
+// * any work based  on the software)  you  agree  to acknowledge its *
+// * use  in  resulting  scientific  publications,  and indicate your *
+// * acceptance of all terms of the Geant4 Software license.          *
+// ********************************************************************
+//
+
+
+#ifndef NSDetectorConstruction_H
+#define NSDetectorConstruction_H 1
+
+#include "G4VUserDetectorConstruction.hh"
+#include "globals.hh"
+
+class G4Material;
+class G4Element;
+class G4Box;
+class G4LogicalVolume;
+class G4VPhysicalVolume;
+class NSDetectorMessenger;
+class NSSD;
+
+class NSDetectorConstruction : public G4VUserDetectorConstruction
+{
+  public:
+
+    NSDetectorConstruction();
+   ~NSDetectorConstruction();
+
+  public:
+
+    // Set methods
+
+    void SetShield1Size  (G4double);
+    void SetShield2Ratio (G4double);
+    void SetDetRatio     (G4double);
+    void SetWorldMat     (G4String);
+    void SetShield1Mat   (G4String);
+    void SetShield2Mat   (G4String);
+    void SetDetMat       (G4String);
+
+    // Construct Functions
+    G4VPhysicalVolume* Construct();
+    virtual void ConstructSDandField();
+
+    // Update geometry
+    void UpdateGeometry();
+
+    // Get methods
+
+    G4double    GetShield1SizeXY()   const {return shield1_sizeXY;};
+    G4double    GetShield1SizeZ()    const {return shield1_sizeZ;};
+    G4double    GetShield2Ratio()    const {return shield2Ratio;};
+    G4double    GetDetRatio()        const {return detRatio;};
+    G4Material* GetWorldMaterial()   const {return world_mat;};
+    G4Material* GetShield1Material() const {return shield1_mat;};
+    G4Material* GetShield2Material() const {return shield2_mat;};
+    G4Material* GetDetMaterial()     const {return det_mat;};
+
+  private:
+
+    // Data members
+
+    G4Material* world_mat;
+    G4Material* shield1_mat;
+    G4Material* shield2_mat;
+    G4Material* det_mat;
+
+    G4double world_sizeXY, world_sizeZ;
+    G4double shield1_sizeXY, shield1_sizeZ;
+    G4double shield2Ratio;
+    G4double shield2_sizeXY, shield2_sizeZ;
+    G4double detRatio;
+    G4double det_sizeXY, det_sizeZ;
+
+    G4Box*             solidWorld;
+    G4LogicalVolume*   logicWorld;
+    G4VPhysicalVolume* physWorld;
+
+    G4Box*             solidShield1;
+    G4LogicalVolume*   logicShield1;
+    G4VPhysicalVolume* physShield1;
+
+    G4Box*             solidShield2;
+    G4LogicalVolume*   logicShield2;
+    G4VPhysicalVolume* physShield2;
+
+    G4Box*             solidDet;
+    G4LogicalVolume*   logicDet;
+    G4VPhysicalVolume* physDet;
+
+    NSDetectorMessenger* fMessenger;
+    NSSD* cennsSD;
+
+    // Methods
+
+    void DefineMaterials();
+    void ComputeParameters();
+    G4VPhysicalVolume* ConstructDetector();
+};
+
+inline void NSDetectorConstruction::ComputeParameters()
+{
+  // These parameters are dependent upon other parameters and
+  // must therefore be recalculated when the geometry is changed.
+  world_sizeXY   = 1.2*shield1_sizeXY;
+  world_sizeZ    = 1.2*shield1_sizeZ;
+  shield2_sizeXY = shield2Ratio*shield1_sizeXY;
+  shield2_sizeZ  = shield2Ratio*shield1_sizeZ;
+  det_sizeXY     = detRatio*shield1_sizeXY;
+  det_sizeZ      = detRatio*shield1_sizeZ;
+}
+
+#endif
+
