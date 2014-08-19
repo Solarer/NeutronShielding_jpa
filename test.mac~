@@ -1,5 +1,0 @@
-/NS/det/setShield2Material G4_Galactic
-/NS/det/setDetMaterial lXe
-/NS/det/update
-
-/run/beamOn 1000000
