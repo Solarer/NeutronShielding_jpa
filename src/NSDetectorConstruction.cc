@@ -319,29 +319,29 @@ void NSDetectorConstruction::ComputeParameters()
   shieldBox_position = new G4ThreeVector[shieldBox_number];
 	
 	// Positions of the shield boxes (first layer) 
-	shieldBox_position[0].setX(0.5*vSpace+0.5*shieldBox_size[0]);
-	shieldBox_position[0].setY(0.5*shieldBox_size[0]+vSpace+0.5*shieldBox_size[1]);
+	shieldBox_position[0].setX(0.5*hSpace+0.5*shieldBox_size[0]);
+	shieldBox_position[0].setY(0.5*shieldBox_size[0]+hSpace+0.5*shieldBox_size[1]);
 	shieldBox_position[0].setZ(0.5*shieldBox_size[2]);
 	
-	shieldBox_position[1].setX(0.5*vSpace+shieldBox_size[0]-0.5*shieldBox_size[1]);
+	shieldBox_position[1].setX(0.5*hSpace+shieldBox_size[0]-0.5*shieldBox_size[1]);
 	shieldBox_position[1].setY(0.0);
-	shieldBox_position[0].setZ(0.5*shieldBox_size[2]);
+	shieldBox_position[1].setZ(0.5*shieldBox_size[2]);
 
 	shieldBox_position[2].setX(shieldBox_position[0].getX());
 	shieldBox_position[2].setY(-shieldBox_position[0].getY());
-	shieldBox_position[0].setZ(0.5*shieldBox_size[2]);
+	shieldBox_position[2].setZ(0.5*shieldBox_size[2]);
 
 	shieldBox_position[3].setX(-shieldBox_position[0].getX());
 	shieldBox_position[3].setY(-shieldBox_position[0].getY());
-	shieldBox_position[0].setZ(0.5*shieldBox_size[2]);
+	shieldBox_position[3].setZ(0.5*shieldBox_size[2]);
 
-	shieldBox_position[4].setX(-shieldBox_position[0].getX());
+	shieldBox_position[4].setX(-shieldBox_position[1].getX());
 	shieldBox_position[4].setY(0.0);
-	shieldBox_position[0].setZ(0.5*shieldBox_size[2]);
+	shieldBox_position[4].setZ(0.5*shieldBox_size[2]);
 
 	shieldBox_position[5].setX(-shieldBox_position[0].getX());
 	shieldBox_position[5].setY(shieldBox_position[0].getY());
-	shieldBox_position[0].setZ(0.5*shieldBox_size[2]);
+	shieldBox_position[5].setZ(0.5*shieldBox_size[2]);
 
 
 	// calculate missing layers
@@ -349,8 +349,23 @@ void NSDetectorConstruction::ComputeParameters()
 		for (int currentBox=0 ; currentBox<6 ; currentBox++)
 			{
 					shieldBox_position[currentBox+currentLayer*6]=shieldBox_position[currentBox];
-					shieldBox_position[currentBox+currentLayer*6].setZ(0.5*shieldBox_size[2]+currentLayer*(shieldBox_size[2]+hSpace));
+					shieldBox_position[currentBox+currentLayer*6].setZ(0.5*shieldBox_size[2]+currentLayer*(shieldBox_size[2]+vSpace));
 			}
 
+	// top and bottom
+	// first box bottom
+	shieldBox_position[shieldBox_number-4].setX(0.25*hSpace+0.5*shieldBox_size[1]);
+	shieldBox_position[shieldBox_number-4].setY(0.0);
+	shieldBox_position[shieldBox_number-4].setZ(0.5*shieldBox_size[2]);
+	// second box bottom
+	shieldBox_position[shieldBox_number-3].setX(-0.25*hSpace-0.5*shieldBox_size[1]);
+	shieldBox_position[shieldBox_number-3].setY(0.0);
+	shieldBox_position[shieldBox_number-3].setZ(0.5*shieldBox_size[2]);
+	// first box top
+	shieldBox_position[shieldBox_number-2]=shieldBox_position[shieldBox_number-4];
+	shieldBox_position[shieldBox_number-2].setZ(0.5*shieldBox_size[2] + (shield_layer-1)*(vSpace + shieldBox_size[2]));
+	// second box top
+	shieldBox_position[shieldBox_number-1]=shieldBox_position[shieldBox_number-3];
+	shieldBox_position[shieldBox_number-1].setZ(0.5*shieldBox_size[2] + (shield_layer-1)*(vSpace + shieldBox_size[2]));
 }
 

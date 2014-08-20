@@ -75,7 +75,7 @@ void NSPrimaryGeneratorAction::GeneratePrimaries(G4Event* anEvent)
   // from G4LogicalVolumeStore.
 
   // Get detector configuration sizes
-  G4int boxNumber = Detector->GetShieldBoxNumber();
+  G4int maxBoxNumber = Detector->GetShieldBoxNumber();
   G4double boxX, boxY, boxZ;
 		boxX = Detector->GetShieldBoxSizeX();
 		boxY = Detector->GetShieldBoxSizeY();
@@ -85,10 +85,20 @@ void NSPrimaryGeneratorAction::GeneratePrimaries(G4Event* anEvent)
   G4double x0, y0, z0;
 
 	// Now generate
-  box =  int(boxNumber * G4UniformRand()); //random box
-  x0 = (boxX * (G4UniformRand()-0.5)) + shieldBoxPosition[box].getX();
-  y0 = (boxY * (G4UniformRand()-0.5)) + shieldBoxPosition[box].getY();
+  box =  int(maxBoxNumber * G4UniformRand()); //random box
   z0 = (boxZ * (G4UniformRand()-0.5)) + shieldBoxPosition[box].getZ();
+	
+	// some boxes are turned by 90°
+	if(box >= maxBoxNumber-4 || box%6 == 1 || box%6 == 4) // box has to be turned by 90°
+	{
+  	x0 = (boxY * (G4UniformRand()-0.5)) + shieldBoxPosition[box].getX();
+  	y0 = (boxX * (G4UniformRand()-0.5)) + shieldBoxPosition[box].getY();
+	}
+	else	// box is not turned
+	{
+  	x0 = (boxX * (G4UniformRand()-0.5)) + shieldBoxPosition[box].getX();
+  	y0 = (boxY * (G4UniformRand()-0.5)) + shieldBoxPosition[box].getY();
+	}
 
   // Set primary particle position
   fParticleGun->SetParticlePosition(G4ThreeVector(x0,y0,z0));
@@ -109,7 +119,7 @@ void NSPrimaryGeneratorAction::GeneratePrimaries(G4Event* anEvent)
   fParticleGun->GeneratePrimaryVertex(anEvent);
 
   //event count output
-  if(event_cnt%100==0)
+  if(event_cnt%1000==0)
 	G4cout << "Reached " << event_cnt << " event mark. Ongoing..." << G4endl;
   event_cnt++;
 }
