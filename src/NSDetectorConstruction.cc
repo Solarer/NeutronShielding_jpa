@@ -55,7 +55,7 @@ NSDetectorConstruction::NSDetectorConstruction()
 : G4VUserDetectorConstruction(),
   world_mat   (0), shield_mat (0),  det_mat(0),
   solidWorld  (0), logicWorld  (0), physWorld  (0),
-  solidShield1(0), logicShield1(0),
+  solidShield(0), logicShield(0),
   solidDet    (0), logicDet    (0), physDet    (0)
 {
   // Default parameters
@@ -185,25 +185,25 @@ G4VPhysicalVolume* NSDetectorConstruction::ConstructDetector()
                       checkOverlaps);           // overlaps checking
 
   // Shield1
-  solidShield1 =
+  solidShield =
     new G4Box("ShieldBox",                      // name
               0.5*shieldBox_size[0],            // size x
               0.5*shieldBox_size[1],            // size y 
               0.5*shieldBox_size[2]);            // size z
 
-  logicShield1 =
-    new G4LogicalVolume(solidShield1,           // solid
+  logicShield =
+    new G4LogicalVolume(solidShield,           // solid
                         shield_mat,            // material
-                        "Shield1");             // name
+                        "Shield");             // name
 
 	// all shieldBoxes except for 4 top and bottom
 	for (int shield_cnt=0 ; shield_cnt<shieldBox_number-4 ; shield_cnt++)
 		{
-				physShield1 =
+				physShield =
     			new G4PVPlacement(0,                    // no rotation
                     G4ThreeVector(0,0,0),            // at (0, 0, 0)
-                    logicShield1,               // logical volume
-                    "Shield1",                  // name
+                    logicShield,               // logical volume
+                    "Shield",                  // name
                     logicWorld,                 // mother volume
                     false,                      // no boolean operation
                     0,                          // copy number
@@ -229,13 +229,13 @@ G4VPhysicalVolume* NSDetectorConstruction::ConstructDetector()
                       G4ThreeVector(),          // at (0, 0, 0)
                       logicDet,                 // logical volume
                       "Det",                    // name
-                      logicShield1,             // mother volume
+                      logicShield,             // mother volume
                       false,                    // no boolean operation
                       0,                        // copy number
                       checkOverlaps);           // overlaps checking
 
   // Print volumes
-  G4cout << "volumes: " << logicDet << " " << logicShield1 << " " << logicWorld << G4endl;
+  G4cout << "volumes: " << logicDet << " " << logicShield << " " << logicWorld << G4endl;
 
   // Make world box invisible
   logicWorld->SetVisAttributes (G4VisAttributes::Invisible);
