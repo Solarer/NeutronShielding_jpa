@@ -60,7 +60,7 @@ NSDetectorConstruction::NSDetectorConstruction()
 {
   // Default parameters
   detRatio       = 0.5;
-	shield_layer	 = 6;
+	shield_layer	 = 2;
   shieldBox_size[0] = 0.50*m;
   shieldBox_size[1] = 0.25*m;
   shieldBox_size[2] = 0.25*m;
@@ -197,7 +197,7 @@ G4VPhysicalVolume* NSDetectorConstruction::ConstructDetector()
                         "Shield");             // name
 
  
-	for (int shield_cnt=0 ; shield_cnt<shieldBox_number-4 ; shield_cnt++)
+	for (int shield_cnt=0 ; shield_cnt<shieldBox_number ; shield_cnt++)
 		{
     		new G4PVPlacement(
 										0,                    		// no rotation
@@ -215,9 +215,9 @@ G4VPhysicalVolume* NSDetectorConstruction::ConstructDetector()
   solidDet=0; logicDet=0; physDet=0;
   solidDet =
     new G4Box("Det",                            // name
-              0.5*det_sizeXY,      // size x
-              0.5*det_sizeXY,      // size y
-              0.5*det_sizeZ);      // size z
+              0.01*det_sizeXY,      // size x
+              0.01*det_sizeXY,      // size y
+              0.01*det_sizeZ);      // size z
 
   logicDet =
     new G4LogicalVolume(solidDet,               // solid
@@ -229,10 +229,11 @@ G4VPhysicalVolume* NSDetectorConstruction::ConstructDetector()
                       G4ThreeVector(),          // at (0, 0, 0)
                       logicDet,                 // logical volume
                       "Det",                    // name
-                      logicShield,             // mother volume
+                      logicWorld,             // mother volume
                       false,                    // no boolean operation
                       0,                        // copy number
                       checkOverlaps);           // overlaps checking
+
 
   // Print volumes
   G4cout << "volumes: " << logicDet << " " << logicShield << " " << logicWorld << G4endl;
@@ -310,11 +311,14 @@ void NSDetectorConstruction::ComputeParameters()
 {
   // These parameters are dependent upon other parameters and
   // must therefore be recalculated when the geometry is changed.
-  world_sizeXY   = 2.0*m;
-  world_sizeZ    = 2.0*m;
+  world_sizeXY   = 20.0*m;
+  world_sizeZ    = 20.0*m;
   det_sizeXY     = 1.0*m;
   det_sizeZ      = 1.0*m;
 	shieldBox_number = shield_layer*6+4;
+	shieldSize[0]	 = 2*shieldBox_size[0]+hSpace;
+	shieldSize[1]	 = shieldBox_size[0]+2*shieldBox_size[1]+2*hSpace;
+	shieldSize[2]	 = shield_layer == 0 ? 0 : shield_layer*shieldBox_size[2]+(shield_layer-1)*hSpace;
 
   shieldBox_position = new G4ThreeVector[shieldBox_number];
 	shieldBox_rotation = new G4RotationMatrix[shieldBox_number];
@@ -322,32 +326,32 @@ void NSDetectorConstruction::ComputeParameters()
 	// Positions and rotation of the shield boxes (first layer) 
 	shieldBox_position[0].setX(0.5*hSpace+0.5*shieldBox_size[0]);
 	shieldBox_position[0].setY(0.5*shieldBox_size[0]+hSpace+0.5*shieldBox_size[1]);
-	shieldBox_position[0].setZ(0.5*shieldBox_size[2]);
+	shieldBox_position[0].setZ(0.5*shieldBox_size[2]-0.5*shieldSize[2]);
 	shieldBox_rotation[0].rotateZ(90*deg);
 	
 	shieldBox_position[1].setX(0.5*hSpace+shieldBox_size[0]-0.5*shieldBox_size[1]);
 	shieldBox_position[1].setY(0.0);
-	shieldBox_position[1].setZ(0.5*shieldBox_size[2]);
+	shieldBox_position[1].setZ(0.5*shieldBox_size[2]-0.5*shieldSize[2]);
 	shieldBox_rotation[0].rotateZ(90*deg);
 
 	shieldBox_position[2].setX(shieldBox_position[0].getX());
 	shieldBox_position[2].setY(-shieldBox_position[0].getY());
-	shieldBox_position[2].setZ(0.5*shieldBox_size[2]);
+	shieldBox_position[2].setZ(0.5*shieldBox_size[2]-0.5*shieldSize[2]);
 	shieldBox_rotation[0].rotateZ(90*deg);
 
 	shieldBox_position[3].setX(-shieldBox_position[0].getX());
 	shieldBox_position[3].setY(-shieldBox_position[0].getY());
-	shieldBox_position[3].setZ(0.5*shieldBox_size[2]);
+	shieldBox_position[3].setZ(0.5*shieldBox_size[2]-0.5*shieldSize[2]);
 	shieldBox_rotation[0].rotateZ(90*deg);
 
 	shieldBox_position[4].setX(-shieldBox_position[1].getX());
 	shieldBox_position[4].setY(0.0);
-	shieldBox_position[4].setZ(0.5*shieldBox_size[2]);
+	shieldBox_position[4].setZ(0.5*shieldBox_size[2]-0.5*shieldSize[2]);
 	shieldBox_rotation[0].rotateZ(90*deg);
 
 	shieldBox_position[5].setX(-shieldBox_position[0].getX());
 	shieldBox_position[5].setY(shieldBox_position[0].getY());
-	shieldBox_position[5].setZ(0.5*shieldBox_size[2]);
+	shieldBox_position[5].setZ(0.5*shieldBox_size[2]-0.5*shieldSize[2]);
 	shieldBox_rotation[0].rotateZ(90*deg);
 
 
@@ -356,7 +360,7 @@ void NSDetectorConstruction::ComputeParameters()
 		for (int currentBox=0 ; currentBox<6 ; currentBox++)
 			{
 					shieldBox_position[currentBox+currentLayer*6]=shieldBox_position[currentBox];
-					shieldBox_position[currentBox+currentLayer*6].setZ(0.5*shieldBox_size[2]+currentLayer*(shieldBox_size[2]+vSpace));
+					shieldBox_position[currentBox+currentLayer*6].setZ(shieldBox_position[0].getZ()+currentLayer*(shieldBox_size[2]+vSpace));
 					shieldBox_rotation[currentBox+currentLayer*6]=shieldBox_rotation[currentBox];
 			}
 
@@ -364,17 +368,17 @@ void NSDetectorConstruction::ComputeParameters()
 	// first box bottom
 	shieldBox_position[shieldBox_number-4].setX(0.25*hSpace+0.5*shieldBox_size[1]);
 	shieldBox_position[shieldBox_number-4].setY(0.0);
-	shieldBox_position[shieldBox_number-4].setZ(0.5*shieldBox_size[2]);
+	shieldBox_position[shieldBox_number-4].setZ(-0.5*shieldSize[2]+0.5*shieldBox_size[2]);
 	// second box bottom
 	shieldBox_position[shieldBox_number-3].setX(-0.25*hSpace-0.5*shieldBox_size[1]);
 	shieldBox_position[shieldBox_number-3].setY(0.0);
-	shieldBox_position[shieldBox_number-3].setZ(0.5*shieldBox_size[2]);
+	shieldBox_position[shieldBox_number-3].setZ(-0.5*shieldSize[2]+0.5*shieldBox_size[2]);
 	// first box top
 	shieldBox_position[shieldBox_number-2]=shieldBox_position[shieldBox_number-4];
-	shieldBox_position[shieldBox_number-2].setZ(0.5*shieldBox_size[2] + (shield_layer-1)*(vSpace + shieldBox_size[2]));
+	shieldBox_position[shieldBox_number-2].setZ(0.5*shieldSize[2]-0.5*shieldBox_size[2]);
 	// second box top
 	shieldBox_position[shieldBox_number-1]=shieldBox_position[shieldBox_number-3];
-	shieldBox_position[shieldBox_number-1].setZ(0.5*shieldBox_size[2] + (shield_layer-1)*(vSpace + shieldBox_size[2]));
+	shieldBox_position[shieldBox_number-1].setZ(0.5*shieldSize[2]-0.5*shieldBox_size[2]);
 
 	// and rotation
 	shieldBox_rotation[shieldBox_number-4].rotateZ(90*deg);

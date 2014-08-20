@@ -54,6 +54,7 @@ class NSDetectorConstruction : public G4VUserDetectorConstruction
     G4double detRatio, det_sizeXY, det_sizeZ;
 
 		int shield_layer;												// number of layer
+		G4double shieldSize[3];
 		int shieldBox_number;										// total number of boxes
     G4double shieldBox_size[3];							// size of box (length,width,height)
 		G4double hSpace, vSpace;								// some space between the boxes
