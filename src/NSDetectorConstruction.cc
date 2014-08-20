@@ -60,11 +60,12 @@ NSDetectorConstruction::NSDetectorConstruction()
 {
   // Default parameters
   detRatio       = 0.5;
-	shield_layer	 = 2;
-  shieldBox_size[0] = 0.50*m;
-  shieldBox_size[1] = 0.25*m;
-  shieldBox_size[2] = 0.25*m;
-	hSpace = vSpace = 0.05*m; 
+	shield_layer	 = 6;
+  shieldBox_size[0] = 0.55*m;
+  shieldBox_size[1] = 0.27*m;
+  shieldBox_size[2] = 0.20*m;
+	hSpace = 0.02*m; 
+	vSpace = 0.02*m; 
   ComputeParameters();
 
   // Default materials
@@ -197,10 +198,16 @@ G4VPhysicalVolume* NSDetectorConstruction::ConstructDetector()
                         "Shield");             // name
 
  
+	G4RotationMatrix* rotMat = new G4RotationMatrix; 
+	rotMat->rotateZ(90*deg);
+	G4RotationMatrix* notRotMat = new G4RotationMatrix; 
+	notRotMat->rotateZ(0*deg);
+
 	for (int shield_cnt=0 ; shield_cnt<shieldBox_number ; shield_cnt++)
 		{
-    		new G4PVPlacement(
-										0,                    		// no rotation
+				if(shield_cnt%6 == 1 || shield_cnt%6 == 4 || shield_cnt>=shieldBox_number-4)
+					new G4PVPlacement(
+										rotMat,                    		// rotation
                     shieldBox_position[shield_cnt],  	// at (0, 0, 0)
                     logicShield,               // logical volume
                     "Shield",                  // name
@@ -208,6 +215,17 @@ G4VPhysicalVolume* NSDetectorConstruction::ConstructDetector()
                     false,                      // no boolean operation
                     0,                          // copy number
                     checkOverlaps);             // overlaps checking    
+				else
+					new G4PVPlacement(
+										notRotMat,                    		// rotation
+                    shieldBox_position[shield_cnt],  	// at (0, 0, 0)
+                    logicShield,               // logical volume
+                    "Shield",                  // name
+                    logicWorld,                 // mother volume
+                    false,                      // no boolean operation
+                    0,                          // copy number
+                    checkOverlaps);             // overlaps checking    
+    		
 		}
 
 
