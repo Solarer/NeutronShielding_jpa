@@ -31,6 +31,7 @@
 #include "G4VUserDetectorConstruction.hh"
 #include "G4ThreeVector.hh"
 #include "globals.hh"
+#include "G4RotationMatrix.hh"
 
 class G4Material;
 class G4Element;
@@ -42,21 +43,47 @@ class NSSD;
 
 class NSDetectorConstruction : public G4VUserDetectorConstruction
 {
+  private:
+
+    // Data members
+    G4Material* world_mat;
+    G4Material* shield_mat;
+    G4Material* det_mat;
+
+    G4double world_sizeXY, world_sizeZ;
+    G4double detRatio, det_sizeXY, det_sizeZ;
+
+		int shield_layer;												// number of layer
+		int shieldBox_number;										// total number of boxes
+    G4double shieldBox_size[3];							// size of box (length,width,height)
+		G4double hSpace, vSpace;								// some space between the boxes
+		G4ThreeVector* shieldBox_position;			// box positions
+		G4RotationMatrix*	shieldBox_rotation;			// is box rotated by 90°
+
+    G4Box*             solidWorld;
+    G4LogicalVolume*   logicWorld;
+    G4VPhysicalVolume* physWorld;
+
+    G4Box*             solidShield;
+    G4LogicalVolume*   logicShield;
+    G4VPhysicalVolume*  physShield; 
+
+    G4Box*             solidDet;
+    G4LogicalVolume*   logicDet;
+    G4VPhysicalVolume* physDet;
+
+    NSDetectorMessenger* fMessenger;  // Pointer to messenger
+    NSSD* cennsSD;                    // Pointer to sensitive detector
+
+    // Methods
+    void DefineMaterials();
+    void ComputeParameters();
+    G4VPhysicalVolume* ConstructDetector();
+
   public:
 
     NSDetectorConstruction();
    ~NSDetectorConstruction();
-
-  public:
-
-    // Set methods
-
-    void SetDetRatio     (G4double);
-    void SetShieldBoxSize  (G4double,G4double,G4double);
-    void SetShieldBoxMat (G4double,G4double,G4double);
-    void SetWorldMat     (G4String);
-    void SetShieldMat     (G4String);
-    void SetDetMat       (G4String);
 
     // Construct Functions
     G4VPhysicalVolume* Construct();
@@ -64,6 +91,14 @@ class NSDetectorConstruction : public G4VUserDetectorConstruction
 
     // Update geometry
     void UpdateGeometry();
+
+    // Set methods
+    void SetDetRatio     (G4double);
+    void SetShieldBoxSize  (G4double,G4double,G4double);
+    void SetShieldBoxMat (G4double,G4double,G4double);
+    void SetWorldMat     (G4String);
+    void SetShieldMat     (G4String);
+    void SetDetMat       (G4String);
 
     // Get methods
     G4double    GetDetRatio()        const {return detRatio;};
@@ -76,43 +111,6 @@ class NSDetectorConstruction : public G4VUserDetectorConstruction
     G4Material* GetShieldMaterial() const {return shield_mat;};
     G4Material* GetDetMaterial()     const {return det_mat;};
 
-  private:
-
-    // Data members
-
-    G4Material* world_mat;
-    G4Material* shield_mat;
-    G4Material* det_mat;
-
-    G4double world_sizeXY, world_sizeZ;
-    G4double detRatio, det_sizeXY, det_sizeZ;
-
-		int shield_layer;																			// number of layer
-		int shieldBox_number;														// total number of boxes
-    G4double shieldBox_size[3];														// size of box (length,width,height)
-		G4double hSpace, vSpace;															// some space between the boxes
-		G4ThreeVector* shieldBox_position;										// box positions
-
-    G4Box*             solidWorld;
-    G4LogicalVolume*   logicWorld;
-    G4VPhysicalVolume* physWorld;
-
-    G4Box*             solidShield;
-    G4LogicalVolume*   logicShield;
-    G4VPhysicalVolume* physShield; 
-
-    G4Box*             solidDet;
-    G4LogicalVolume*   logicDet;
-    G4VPhysicalVolume* physDet;
-
-    NSDetectorMessenger* fMessenger;  // Pointer to messenger
-    NSSD* cennsSD;                    // Pointer to sensitive detector
-
-    // Methods
-
-    void DefineMaterials();
-    void ComputeParameters();
-    G4VPhysicalVolume* ConstructDetector();
 };
 
 #endif
