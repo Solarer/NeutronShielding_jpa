@@ -66,6 +66,8 @@ NSDetectorConstruction::NSDetectorConstruction()
   shieldBox_size[2] = 0.20*m;
 	hSpace = 0.02*m; 
 	vSpace = 0.02*m; 
+	scin_height=0.70*m;
+	scin_radius=0.10*m;
   ComputeParameters();
 
   // Default materials
@@ -73,6 +75,7 @@ NSDetectorConstruction::NSDetectorConstruction()
   SetWorldMat("G4_AIR");
   SetShieldMat("G4_WATER");
   SetDetMat("lXe");
+  SetScinMat("lXe");
 
   // Commands for interactive definition of detector
   fMessenger = new NSDetectorMessenger(this);
@@ -197,15 +200,25 @@ G4VPhysicalVolume* NSDetectorConstruction::ConstructDetector()
                         shield_mat,            // material
                         "Shield");             // name
 
- 
-	G4RotationMatrix* rotMat = new G4RotationMatrix; 
-	rotMat->rotateZ(90*deg);
-	G4RotationMatrix* notRotMat = new G4RotationMatrix; 
-	notRotMat->rotateZ(0*deg);
 
+
+	// Prepare for turning boxes
+	G4RotationMatrix* doRot = new G4RotationMatrix; 
+	doRot->rotateZ(90*deg);
+	G4RotationMatrix* doNotRot = new G4RotationMatrix; 
+	doNotRot->rotateZ(0*deg);
+	G4RotationMatrix* rotMat;
+
+
+	// Place and turn them
 	for (int shield_cnt=0 ; shield_cnt<shieldBox_number ; shield_cnt++)
 		{
 				if(shield_cnt%6 == 1 || shield_cnt%6 == 4 || shield_cnt>=shieldBox_number-4)
+					rotMat=doRot;
+				else
+					rotMat=doNotRot;
+		G4cout << "test";	
+				physShield[shield_cnt] = 
 					new G4PVPlacement(
 										rotMat,                    		// rotation
                     shieldBox_position[shield_cnt],  	// at (0, 0, 0)
@@ -215,27 +228,15 @@ G4VPhysicalVolume* NSDetectorConstruction::ConstructDetector()
                     false,                      // no boolean operation
                     0,                          // copy number
                     checkOverlaps);             // overlaps checking    
-				else
-					new G4PVPlacement(
-										notRotMat,                    		// rotation
-                    shieldBox_position[shield_cnt],  	// at (0, 0, 0)
-                    logicShield,               // logical volume
-                    "Shield",                  // name
-                    logicWorld,                 // mother volume
-                    false,                      // no boolean operation
-                    0,                          // copy number
-                    checkOverlaps);             // overlaps checking    
-    		
 		}
 
 
   // Detector
-  solidDet=0; logicDet=0; physDet=0;
   solidDet =
-    new G4Box("Det",                            // name
-              0.01*det_sizeXY,      // size x
-              0.01*det_sizeXY,      // size y
-              0.01*det_sizeZ);      // size z
+    new G4Box("Det",                    // name
+              detRatio*det_sizeXY,      // size x
+              detRatio*det_sizeXY,      // size y
+              detRatio*det_sizeZ);      // size z
 
   logicDet =
     new G4LogicalVolume(solidDet,               // solid
@@ -247,11 +248,46 @@ G4VPhysicalVolume* NSDetectorConstruction::ConstructDetector()
                       G4ThreeVector(),          // at (0, 0, 0)
                       logicDet,                 // logical volume
                       "Det",                    // name
-                      logicWorld,             // mother volume
+                      logicWorld,            		// mother volume
                       false,                    // no boolean operation
                       0,                        // copy number
                       checkOverlaps);           // overlaps checking
 
+
+  // Szintillator 
+  solidScin =
+    new G4Tubs(	"Scin",                    	// name
+								0,													// inner radius
+								scin_radius,								// outer radius
+								0.5*scin_height,								// heigth
+								0,													// start angle
+								360*deg);										// end angle
+  logicScin =
+    new G4LogicalVolume(solidScin,               // solid
+                        scin_mat,                // material
+                        "Scin");                 // name
+
+  physScin=
+    new G4PVPlacement(0,                        // no rotation
+                      G4ThreeVector(),          // at (0, 0, 0)
+                      logicScin,                // logical volume
+                      "Scin",                   // name
+                      logicDet,            			// mother volume
+                      false,                    // no boolean operation
+                      0,                        // copy number
+                      checkOverlaps);           // overlaps checking
+
+
+	// prepare and set visuable attributes
+	G4VisAttributes visShield, visDet, visScin;
+	visShield.SetColour(0,0,1);
+	visDet.SetColour(1,1,0);
+	visScin.SetColour(1,1,0);
+	visScin.SetForceSolid(true);
+ 
+	logicShield->SetVisAttributes(visShield);
+	logicDet->SetVisAttributes(visDet);
+	logicScin->SetVisAttributes(visScin);
 
   // Print volumes
   G4cout << "volumes: " << logicDet << " " << logicShield << " " << logicWorld << G4endl;
@@ -316,6 +352,13 @@ void NSDetectorConstruction::SetDetMat(G4String materialChoice)
   if (pttoMaterial) det_mat = pttoMaterial;
 }
 
+void NSDetectorConstruction::SetScinMat(G4String materialChoice)
+{
+  // search the material by its name   
+  G4Material* pttoMaterial = G4Material::GetMaterial(materialChoice);     
+  if (pttoMaterial) scin_mat = pttoMaterial;
+}
+
 void NSDetectorConstruction::UpdateGeometry()
 {
   // Completely reconstruct detector
@@ -338,39 +381,33 @@ void NSDetectorConstruction::ComputeParameters()
 	shieldSize[1]	 = shieldBox_size[0]+2*shieldBox_size[1]+2*hSpace;
 	shieldSize[2]	 = shield_layer == 0 ? 0 : shield_layer*shieldBox_size[2]+(shield_layer-1)*hSpace;
 
+	physShield = new G4VPhysicalVolume*[shieldBox_number];
   shieldBox_position = new G4ThreeVector[shieldBox_number];
-	shieldBox_rotation = new G4RotationMatrix[shieldBox_number];
 	
 	// Positions and rotation of the shield boxes (first layer) 
 	shieldBox_position[0].setX(0.5*hSpace+0.5*shieldBox_size[0]);
 	shieldBox_position[0].setY(0.5*shieldBox_size[0]+hSpace+0.5*shieldBox_size[1]);
 	shieldBox_position[0].setZ(0.5*shieldBox_size[2]-0.5*shieldSize[2]);
-	shieldBox_rotation[0].rotateZ(90*deg);
 	
 	shieldBox_position[1].setX(0.5*hSpace+shieldBox_size[0]-0.5*shieldBox_size[1]);
 	shieldBox_position[1].setY(0.0);
 	shieldBox_position[1].setZ(0.5*shieldBox_size[2]-0.5*shieldSize[2]);
-	shieldBox_rotation[0].rotateZ(90*deg);
 
 	shieldBox_position[2].setX(shieldBox_position[0].getX());
 	shieldBox_position[2].setY(-shieldBox_position[0].getY());
 	shieldBox_position[2].setZ(0.5*shieldBox_size[2]-0.5*shieldSize[2]);
-	shieldBox_rotation[0].rotateZ(90*deg);
 
 	shieldBox_position[3].setX(-shieldBox_position[0].getX());
 	shieldBox_position[3].setY(-shieldBox_position[0].getY());
 	shieldBox_position[3].setZ(0.5*shieldBox_size[2]-0.5*shieldSize[2]);
-	shieldBox_rotation[0].rotateZ(90*deg);
 
 	shieldBox_position[4].setX(-shieldBox_position[1].getX());
 	shieldBox_position[4].setY(0.0);
 	shieldBox_position[4].setZ(0.5*shieldBox_size[2]-0.5*shieldSize[2]);
-	shieldBox_rotation[0].rotateZ(90*deg);
 
 	shieldBox_position[5].setX(-shieldBox_position[0].getX());
 	shieldBox_position[5].setY(shieldBox_position[0].getY());
 	shieldBox_position[5].setZ(0.5*shieldBox_size[2]-0.5*shieldSize[2]);
-	shieldBox_rotation[0].rotateZ(90*deg);
 
 
 	// calculate missing layers
@@ -379,7 +416,6 @@ void NSDetectorConstruction::ComputeParameters()
 			{
 					shieldBox_position[currentBox+currentLayer*6]=shieldBox_position[currentBox];
 					shieldBox_position[currentBox+currentLayer*6].setZ(shieldBox_position[0].getZ()+currentLayer*(shieldBox_size[2]+vSpace));
-					shieldBox_rotation[currentBox+currentLayer*6]=shieldBox_rotation[currentBox];
 			}
 
 	// top and bottom position
@@ -399,9 +435,5 @@ void NSDetectorConstruction::ComputeParameters()
 	shieldBox_position[shieldBox_number-1].setZ(0.5*shieldSize[2]-0.5*shieldBox_size[2]);
 
 	// and rotation
-	shieldBox_rotation[shieldBox_number-4].rotateZ(90*deg);
-	shieldBox_rotation[shieldBox_number-3].rotateZ(90*deg);
-	shieldBox_rotation[shieldBox_number-2].rotateZ(90*deg);
-	shieldBox_rotation[shieldBox_number-1].rotateZ(90*deg);
 }
 
