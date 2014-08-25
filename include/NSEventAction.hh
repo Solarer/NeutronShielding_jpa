@@ -35,6 +35,15 @@
 
 class NSEventAction : public G4UserEventAction
 {
+  private:
+  // methods
+  NSHitsCollection* GetHitsCollection(G4int hcID, const G4Event* event) const;
+  void PrintEventStatistics(G4double Edep) const;
+  
+  // data members 
+  G4int fcennsHCID;  // hits collection ID for cennsSD sensitive detector
+  G4int eventID;     // event ID
+
   public:
     NSEventAction();
     virtual ~NSEventAction();
@@ -42,18 +51,8 @@ class NSEventAction : public G4UserEventAction
     virtual void BeginOfEventAction(const G4Event* event);
     virtual void EndOfEventAction(const G4Event* event);
 
-    G4int GetEventId() { return eventId; };
+    G4int GetEventId() { return eventID; };
 
-  private:
-
-  // methods
-  NSHitsCollection* GetHitsCollection(G4int hcID,
-                                      const G4Event* event) const;
-  void PrintEventStatistics(G4double Edep) const;
-  
-  // data members 
-  G4int fcennsHCID;  // hits collection ID for cennsSD sensitive detector
-  G4int eventId;     // event ID
 };
 
 #endif

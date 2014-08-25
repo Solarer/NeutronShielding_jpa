@@ -52,7 +52,8 @@ NSSteppingAction::~NSSteppingAction()
 { }
 
 void NSSteppingAction::UserSteppingAction(const G4Step* step)
-{/*
+{
+/*
   // Get step info
   G4int eventId = fEventAction->GetEventId();
   G4Track* track = step->GetTrack();

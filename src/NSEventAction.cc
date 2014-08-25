@@ -77,7 +77,7 @@ void NSEventAction::PrintEventStatistics(G4double Edep) const
 void NSEventAction::BeginOfEventAction(const G4Event* event)
 {
   // Get event ID
-  eventId = event->GetEventID();
+  eventID = event->GetEventID();
 }
 
 void NSEventAction::EndOfEventAction(const G4Event* event)
@@ -100,7 +100,6 @@ void NSEventAction::EndOfEventAction(const G4Event* event)
   G4int verboseLevel = G4RunManager::GetRunManager()->GetVerboseLevel();
   if (verboseLevel > 0)
   {
-    G4int eventID = event->GetEventID();
     G4int printModulo = 1000;
     if ( ( printModulo > 0 ) && ( eventID % printModulo == 0 ) )
     {
@@ -119,6 +118,7 @@ void NSEventAction::EndOfEventAction(const G4Event* event)
   // Get the primary position/direction information
   G4PrimaryParticle* primary = event->GetPrimaryVertex(0)->GetPrimary(0);
 
+	G4double ID = eventID;
   G4double x0 = (event->GetPrimaryVertex()->GetX0());
   G4double y0 = (event->GetPrimaryVertex()->GetY0());
   G4double z0 = (event->GetPrimaryVertex()->GetZ0());
@@ -133,14 +133,15 @@ void NSEventAction::EndOfEventAction(const G4Event* event)
   G4double dz = pz / ptot;
 
   // Fill ntuple
-  analysisManager->FillNtupleIColumn(0, cennsHit->GetEntSD());
-  analysisManager->FillNtupleDColumn(1, cennsHit->GetEdep());
-  analysisManager->FillNtupleDColumn(2, x0);
-  analysisManager->FillNtupleDColumn(3, y0);
-  analysisManager->FillNtupleDColumn(4, z0);
-  analysisManager->FillNtupleDColumn(5, dx);
-  analysisManager->FillNtupleDColumn(6, dy);
-  analysisManager->FillNtupleDColumn(7, dz);
+  analysisManager->FillNtupleIColumn(0, ID);
+  analysisManager->FillNtupleIColumn(1, cennsHit->GetEntSD());
+  analysisManager->FillNtupleDColumn(2, cennsHit->GetEdep());
+  analysisManager->FillNtupleDColumn(3, x0);
+  analysisManager->FillNtupleDColumn(4, y0);
+  analysisManager->FillNtupleDColumn(5, z0);
+  analysisManager->FillNtupleDColumn(6, dx);
+  analysisManager->FillNtupleDColumn(7, dy);
+  analysisManager->FillNtupleDColumn(8, dz);
   analysisManager->AddNtupleRow();
 }
 

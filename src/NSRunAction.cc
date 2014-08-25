@@ -65,6 +65,7 @@ NSRunAction::NSRunAction()
 
   // Creating ntuple
   analysisManager->CreateNtuple("singleRun", "Event info from one run");
+  analysisManager->CreateNtupleIColumn("EventID");
   analysisManager->CreateNtupleIColumn("EntInner");
   analysisManager->CreateNtupleDColumn("Edep");
   analysisManager->CreateNtupleDColumn("primx");
