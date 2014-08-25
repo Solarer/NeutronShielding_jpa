@@ -80,10 +80,11 @@ G4bool NSSD::ProcessHits(G4Step* step, G4TouchableHistory*)
 
   // Total energy deposited in step
   G4double edep = step->GetTotalEnergyDeposit();
+  G4double photon = step->GetTotalEnergyDeposit();
   if ( edep==0.) return false;
 
-  hit->Add(edep);
-
+  hit->AddEdep(edep);
+	hit->AddPhoton(photon);
   return true;
 }
 

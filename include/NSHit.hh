@@ -35,6 +35,11 @@
 
 class NSHit : public G4VHit
 {
+  private:
+    G4double fEdep;
+    G4double fPhoton;
+    G4int    fEntSD;
+
   public:
     NSHit();
     NSHit(const NSHit&);
@@ -53,15 +58,13 @@ class NSHit : public G4VHit
 
     // methods to handle data
     void SetEntSD(G4int entSD) { fEntSD = entSD; };
-    void Add(G4double de);
+    void AddEdep(G4double dE);
+    void AddPhoton(G4double dPh);
 
     // get methods
     G4double GetEdep()  const { return fEdep; };
-    G4int    GetEntSD() const { return fEntSD; };
-      
-  private:
-    G4double fEdep;
-    G4int    fEntSD;
+    G4double GetPhoton()  const { return fPhoton; };
+    G4int    GetEntSD() const { return fEntSD; };      
 };
 
 typedef G4THitsCollection<NSHit> NSHitsCollection;
@@ -84,10 +87,14 @@ inline void NSHit::operator delete(void *hit)
   NSHitAllocator->FreeSingle((NSHit*) hit);
 }
 
-
-inline void NSHit::Add(G4double de)
+inline void NSHit::AddEdep(G4double dE)
 {
-  fEdep += de;
+  fEdep += dE;
+}
+
+inline void NSHit::AddPhoton(G4double dPh)
+{
+  fPhoton += dPh;
 }
 
 

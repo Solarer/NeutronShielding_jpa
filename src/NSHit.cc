@@ -38,6 +38,7 @@ G4ThreadLocal G4Allocator<NSHit>* NSHitAllocator=0;
 NSHit::NSHit()
  : G4VHit(),
    fEdep(0.),
+	 fPhoton(0.),
    fEntSD(0)
 { }
 
@@ -48,12 +49,14 @@ NSHit::NSHit(const NSHit& right)
   : G4VHit()
 {
   fEdep  = right.fEdep;
+  fPhoton= right.fPhoton;
   fEntSD = right.fEntSD;
 }
 
 const NSHit& NSHit::operator=(const NSHit& right)
 {
   fEdep  = right.fEdep;
+  fPhoton= right.fPhoton;
   fEntSD = right.fEntSD;
   return *this;
 }
