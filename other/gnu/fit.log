@@ -1,0 +1,2024 @@
+
+
+*******************************************************************************
+Tue Aug 26 12:49:59 2014
+
+
+FIT:    data read from "electrons.csv" index 0 using ($1):($2)
+        format = x:z
+        #datapoints = 32
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 7.23622e+11       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 9.27263
+
+initial set of free parameter values
+
+a               = 1
+b               = 1
+
+After 3 iterations the fit converged.
+final sum of squares of residuals : 2.45035e+08
+rel. change during last iteration : -8.95459e-07
+
+degrees of freedom    (FIT_NDF)                        : 30
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 2857.94
+variance of residuals (reduced chisquare) = WSSR/ndf   : 8.16782e+06
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = 11473.5          +/- 47.01        (0.4097%)
+b               = 605.867          +/- 614.6        (101.4%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      
+a               1.000 
+b              -0.570  1.000 
+
+
+*******************************************************************************
+Tue Aug 26 12:50:36 2014
+
+
+FIT:    data read from "electrons.csv" index 0 using ($1):($2)
+        format = x:z
+        #datapoints = 32
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 7.23622e+11       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 9.27263
+
+initial set of free parameter values
+
+a               = 1
+b               = 1
+
+After 3 iterations the fit converged.
+final sum of squares of residuals : 2.45035e+08
+rel. change during last iteration : -8.95459e-07
+
+degrees of freedom    (FIT_NDF)                        : 30
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 2857.94
+variance of residuals (reduced chisquare) = WSSR/ndf   : 8.16782e+06
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = 11473.5          +/- 47.01        (0.4097%)
+b               = 605.867          +/- 614.6        (101.4%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      
+a               1.000 
+b              -0.570  1.000 
+
+
+*******************************************************************************
+Tue Aug 26 12:50:44 2014
+
+
+FIT:    data read from "electrons.csv" index 0 using ($1):($2)
+        format = x:z
+        #datapoints = 32
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 7.23622e+11       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 9.27263
+
+initial set of free parameter values
+
+a               = 1
+b               = 1
+
+After 3 iterations the fit converged.
+final sum of squares of residuals : 2.45035e+08
+rel. change during last iteration : -8.95459e-07
+
+degrees of freedom    (FIT_NDF)                        : 30
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 2857.94
+variance of residuals (reduced chisquare) = WSSR/ndf   : 8.16782e+06
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = 11473.5          +/- 47.01        (0.4097%)
+b               = 605.867          +/- 614.6        (101.4%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      
+a               1.000 
+b              -0.570  1.000 
+
+
+*******************************************************************************
+Tue Aug 26 12:51:10 2014
+
+
+FIT:    data read from "electrons.csv" index 0 using ($1):($2)
+        format = x:z
+        #datapoints = 32
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 7.23622e+11       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 9.27263
+
+initial set of free parameter values
+
+a               = 1
+b               = 1
+
+After 3 iterations the fit converged.
+final sum of squares of residuals : 2.45035e+08
+rel. change during last iteration : -8.95459e-07
+
+degrees of freedom    (FIT_NDF)                        : 30
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 2857.94
+variance of residuals (reduced chisquare) = WSSR/ndf   : 8.16782e+06
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = 11473.5          +/- 47.01        (0.4097%)
+b               = 605.867          +/- 614.6        (101.4%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      
+a               1.000 
+b              -0.570  1.000 
+
+
+*******************************************************************************
+Tue Aug 26 12:51:20 2014
+
+
+FIT:    data read from "electrons.csv" index 0 using ($1):($2)
+        format = x:z
+        #datapoints = 32
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 7.23622e+11       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 9.27263
+
+initial set of free parameter values
+
+a               = 1
+b               = 1
+
+After 3 iterations the fit converged.
+final sum of squares of residuals : 2.45035e+08
+rel. change during last iteration : -8.95459e-07
+
+degrees of freedom    (FIT_NDF)                        : 30
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 2857.94
+variance of residuals (reduced chisquare) = WSSR/ndf   : 8.16782e+06
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = 11473.5          +/- 47.01        (0.4097%)
+b               = 605.867          +/- 614.6        (101.4%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      
+a               1.000 
+b              -0.570  1.000 
+
+
+*******************************************************************************
+Tue Aug 26 12:51:28 2014
+
+
+FIT:    data read from "electrons.csv" index 0 using ($1):($2)
+        format = x:z
+        #datapoints = 32
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 7.23622e+11       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 9.27263
+
+initial set of free parameter values
+
+a               = 1
+b               = 1
+
+After 3 iterations the fit converged.
+final sum of squares of residuals : 2.45035e+08
+rel. change during last iteration : -8.95459e-07
+
+degrees of freedom    (FIT_NDF)                        : 30
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 2857.94
+variance of residuals (reduced chisquare) = WSSR/ndf   : 8.16782e+06
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = 11473.5          +/- 47.01        (0.4097%)
+b               = 605.867          +/- 614.6        (101.4%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      
+a               1.000 
+b              -0.570  1.000 
+
+
+*******************************************************************************
+Tue Aug 26 12:52:04 2014
+
+
+FIT:    data read from "electrons.csv" index 0 using ($1):($2)
+        format = x:z
+        #datapoints = 32
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 7.23622e+11       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 9.27263
+
+initial set of free parameter values
+
+a               = 1
+b               = 1
+
+After 3 iterations the fit converged.
+final sum of squares of residuals : 2.45035e+08
+rel. change during last iteration : -8.95459e-07
+
+degrees of freedom    (FIT_NDF)                        : 30
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 2857.94
+variance of residuals (reduced chisquare) = WSSR/ndf   : 8.16782e+06
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = 11473.5          +/- 47.01        (0.4097%)
+b               = 605.867          +/- 614.6        (101.4%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      
+a               1.000 
+b              -0.570  1.000 
+
+
+*******************************************************************************
+Tue Aug 26 12:52:06 2014
+
+
+FIT:    data read from "electrons.csv" index 0 using ($1):($2)
+        format = x:z
+        #datapoints = 32
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 7.23622e+11       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 9.27263
+
+initial set of free parameter values
+
+a               = 1
+b               = 1
+
+After 3 iterations the fit converged.
+final sum of squares of residuals : 2.45035e+08
+rel. change during last iteration : -8.95459e-07
+
+degrees of freedom    (FIT_NDF)                        : 30
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 2857.94
+variance of residuals (reduced chisquare) = WSSR/ndf   : 8.16782e+06
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = 11473.5          +/- 47.01        (0.4097%)
+b               = 605.867          +/- 614.6        (101.4%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      
+a               1.000 
+b              -0.570  1.000 
+
+
+*******************************************************************************
+Tue Aug 26 12:52:57 2014
+
+
+FIT:    data read from "electrons.csv" index 0 using ($1):($2)
+        format = x:z
+        #datapoints = 32
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 7.23622e+11       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 9.27263
+
+initial set of free parameter values
+
+a               = 1
+b               = 1
+
+After 3 iterations the fit converged.
+final sum of squares of residuals : 2.45035e+08
+rel. change during last iteration : -8.95459e-07
+
+degrees of freedom    (FIT_NDF)                        : 30
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 2857.94
+variance of residuals (reduced chisquare) = WSSR/ndf   : 8.16782e+06
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = 11473.5          +/- 47.01        (0.4097%)
+b               = 605.867          +/- 614.6        (101.4%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      
+a               1.000 
+b              -0.570  1.000 
+
+
+*******************************************************************************
+Tue Aug 26 12:53:07 2014
+
+
+FIT:    data read from "electrons.csv" index 0 using ($1):($2)
+        format = x:z
+        #datapoints = 32
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 7.23622e+11       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 9.27263
+
+initial set of free parameter values
+
+a               = 1
+b               = 1
+
+After 3 iterations the fit converged.
+final sum of squares of residuals : 2.45035e+08
+rel. change during last iteration : -8.95459e-07
+
+degrees of freedom    (FIT_NDF)                        : 30
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 2857.94
+variance of residuals (reduced chisquare) = WSSR/ndf   : 8.16782e+06
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = 11473.5          +/- 47.01        (0.4097%)
+b               = 605.867          +/- 614.6        (101.4%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      
+a               1.000 
+b              -0.570  1.000 
+
+
+*******************************************************************************
+Tue Aug 26 12:53:10 2014
+
+
+FIT:    data read from "electrons.csv" index 0 using ($1):($2)
+        format = x:z
+        #datapoints = 32
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 7.23622e+11       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 9.27263
+
+initial set of free parameter values
+
+a               = 1
+b               = 1
+
+After 3 iterations the fit converged.
+final sum of squares of residuals : 2.45035e+08
+rel. change during last iteration : -8.95459e-07
+
+degrees of freedom    (FIT_NDF)                        : 30
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 2857.94
+variance of residuals (reduced chisquare) = WSSR/ndf   : 8.16782e+06
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = 11473.5          +/- 47.01        (0.4097%)
+b               = 605.867          +/- 614.6        (101.4%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      
+a               1.000 
+b              -0.570  1.000 
+
+
+*******************************************************************************
+Tue Aug 26 12:53:13 2014
+
+
+FIT:    data read from "electrons.csv" index 0 using ($1):($2)
+        format = x:z
+        #datapoints = 32
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 7.23622e+11       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 9.27263
+
+initial set of free parameter values
+
+a               = 1
+b               = 1
+
+After 3 iterations the fit converged.
+final sum of squares of residuals : 2.45035e+08
+rel. change during last iteration : -8.95459e-07
+
+degrees of freedom    (FIT_NDF)                        : 30
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 2857.94
+variance of residuals (reduced chisquare) = WSSR/ndf   : 8.16782e+06
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = 11473.5          +/- 47.01        (0.4097%)
+b               = 605.867          +/- 614.6        (101.4%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      
+a               1.000 
+b              -0.570  1.000 
+
+
+*******************************************************************************
+Tue Aug 26 12:55:04 2014
+
+
+FIT:    data read from "electrons.csv" index 0 using ($1):($2)
+        format = x:z
+        #datapoints = 32
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 7.23622e+11       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 9.27263
+
+initial set of free parameter values
+
+a               = 1
+b               = 1
+
+After 3 iterations the fit converged.
+final sum of squares of residuals : 2.45035e+08
+rel. change during last iteration : -8.95459e-07
+
+degrees of freedom    (FIT_NDF)                        : 30
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 2857.94
+variance of residuals (reduced chisquare) = WSSR/ndf   : 8.16782e+06
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = 11473.5          +/- 47.01        (0.4097%)
+b               = 605.867          +/- 614.6        (101.4%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      
+a               1.000 
+b              -0.570  1.000 
+
+
+*******************************************************************************
+Tue Aug 26 12:55:33 2014
+
+
+FIT:    data read from "electrons.csv" index 0 using ($1):($2)
+        format = x:z
+        #datapoints = 32
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 7.23622e+11       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 9.27263
+
+initial set of free parameter values
+
+a               = 1
+b               = 1
+
+After 3 iterations the fit converged.
+final sum of squares of residuals : 2.45035e+08
+rel. change during last iteration : -8.95459e-07
+
+degrees of freedom    (FIT_NDF)                        : 30
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 2857.94
+variance of residuals (reduced chisquare) = WSSR/ndf   : 8.16782e+06
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = 11473.5          +/- 47.01        (0.4097%)
+b               = 605.867          +/- 614.6        (101.4%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      
+a               1.000 
+b              -0.570  1.000 
+
+
+*******************************************************************************
+Tue Aug 26 12:56:07 2014
+
+
+FIT:    data read from "electrons.csv" index 0 using ($1):($2)
+        format = x:z
+        #datapoints = 32
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 7.23622e+11       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 9.27263
+
+initial set of free parameter values
+
+a               = 1
+b               = 1
+
+After 3 iterations the fit converged.
+final sum of squares of residuals : 2.45035e+08
+rel. change during last iteration : -8.95459e-07
+
+degrees of freedom    (FIT_NDF)                        : 30
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 2857.94
+variance of residuals (reduced chisquare) = WSSR/ndf   : 8.16782e+06
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = 11473.5          +/- 47.01        (0.4097%)
+b               = 605.867          +/- 614.6        (101.4%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      
+a               1.000 
+b              -0.570  1.000 
+
+
+*******************************************************************************
+Tue Aug 26 12:56:09 2014
+
+
+FIT:    data read from "electrons.csv" index 0 using ($1):($2)
+        format = x:z
+        #datapoints = 32
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 7.23622e+11       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 9.27263
+
+initial set of free parameter values
+
+a               = 1
+b               = 1
+
+After 3 iterations the fit converged.
+final sum of squares of residuals : 2.45035e+08
+rel. change during last iteration : -8.95459e-07
+
+degrees of freedom    (FIT_NDF)                        : 30
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 2857.94
+variance of residuals (reduced chisquare) = WSSR/ndf   : 8.16782e+06
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = 11473.5          +/- 47.01        (0.4097%)
+b               = 605.867          +/- 614.6        (101.4%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      
+a               1.000 
+b              -0.570  1.000 
+
+
+*******************************************************************************
+Tue Aug 26 12:58:30 2014
+
+
+FIT:    data read from "electrons.csv" index 0 using ($1):($2)
+        format = x:z
+        #datapoints = 32
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 7.23622e+11       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 9.27263
+
+initial set of free parameter values
+
+a               = 1
+b               = 1
+
+After 3 iterations the fit converged.
+final sum of squares of residuals : 2.45035e+08
+rel. change during last iteration : -8.95459e-07
+
+degrees of freedom    (FIT_NDF)                        : 30
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 2857.94
+variance of residuals (reduced chisquare) = WSSR/ndf   : 8.16782e+06
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = 11473.5          +/- 47.01        (0.4097%)
+b               = 605.867          +/- 614.6        (101.4%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      
+a               1.000 
+b              -0.570  1.000 
+
+
+*******************************************************************************
+Tue Aug 26 12:58:48 2014
+
+
+FIT:    data read from "electrons.csv" index 0 using ($1):($2)
+        format = x:z
+        #datapoints = 32
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 7.23622e+11       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 9.27263
+
+initial set of free parameter values
+
+a               = 1
+b               = 1
+
+After 3 iterations the fit converged.
+final sum of squares of residuals : 2.45035e+08
+rel. change during last iteration : -8.95459e-07
+
+degrees of freedom    (FIT_NDF)                        : 30
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 2857.94
+variance of residuals (reduced chisquare) = WSSR/ndf   : 8.16782e+06
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = 11473.5          +/- 47.01        (0.4097%)
+b               = 605.867          +/- 614.6        (101.4%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      
+a               1.000 
+b              -0.570  1.000 
+
+
+*******************************************************************************
+Tue Aug 26 13:02:37 2014
+
+
+FIT:    data read from "electrons.csv" index 0 using ($1):($2)
+        format = x:z
+        #datapoints = 32
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 7.23622e+11       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 9.27263
+
+initial set of free parameter values
+
+a               = 1
+b               = 1
+
+After 3 iterations the fit converged.
+final sum of squares of residuals : 2.45035e+08
+rel. change during last iteration : -8.95459e-07
+
+degrees of freedom    (FIT_NDF)                        : 30
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 2857.94
+variance of residuals (reduced chisquare) = WSSR/ndf   : 8.16782e+06
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = 11473.5          +/- 47.01        (0.4097%)
+b               = 605.867          +/- 614.6        (101.4%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      
+a               1.000 
+b              -0.570  1.000 
+
+
+*******************************************************************************
+Tue Aug 26 13:02:38 2014
+
+
+FIT:    data read from "electrons.csv" index 0 using ($1):($2)
+        format = x:z
+        #datapoints = 32
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 7.23622e+11       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 9.27263
+
+initial set of free parameter values
+
+a               = 1
+b               = 1
+
+After 3 iterations the fit converged.
+final sum of squares of residuals : 2.45035e+08
+rel. change during last iteration : -8.95459e-07
+
+degrees of freedom    (FIT_NDF)                        : 30
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 2857.94
+variance of residuals (reduced chisquare) = WSSR/ndf   : 8.16782e+06
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = 11473.5          +/- 47.01        (0.4097%)
+b               = 605.867          +/- 614.6        (101.4%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      
+a               1.000 
+b              -0.570  1.000 
+
+
+*******************************************************************************
+Tue Aug 26 13:04:18 2014
+
+
+FIT:    data read from "electrons.csv" index 0 using ($1):($2)
+        format = x:z
+        #datapoints = 32
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 7.23622e+11       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 9.27263
+
+initial set of free parameter values
+
+a               = 1
+b               = 1
+
+After 3 iterations the fit converged.
+final sum of squares of residuals : 2.45035e+08
+rel. change during last iteration : -8.95459e-07
+
+degrees of freedom    (FIT_NDF)                        : 30
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 2857.94
+variance of residuals (reduced chisquare) = WSSR/ndf   : 8.16782e+06
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = 11473.5          +/- 47.01        (0.4097%)
+b               = 605.867          +/- 614.6        (101.4%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      
+a               1.000 
+b              -0.570  1.000 
+
+
+*******************************************************************************
+Tue Aug 26 13:05:26 2014
+
+
+FIT:    data read from "electrons.csv" index 0 using ($1):($2)
+        format = x:z
+        #datapoints = 32
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 7.23622e+11       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 9.27263
+
+initial set of free parameter values
+
+a               = 1
+b               = 1
+
+After 3 iterations the fit converged.
+final sum of squares of residuals : 2.45035e+08
+rel. change during last iteration : -8.95459e-07
+
+degrees of freedom    (FIT_NDF)                        : 30
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 2857.94
+variance of residuals (reduced chisquare) = WSSR/ndf   : 8.16782e+06
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = 11473.5          +/- 47.01        (0.4097%)
+b               = 605.867          +/- 614.6        (101.4%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      
+a               1.000 
+b              -0.570  1.000 
+
+
+*******************************************************************************
+Tue Aug 26 13:05:28 2014
+
+
+FIT:    data read from "electrons.csv" index 0 using ($1):($2)
+        format = x:z
+        #datapoints = 32
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 7.23622e+11       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 9.27263
+
+initial set of free parameter values
+
+a               = 1
+b               = 1
+
+After 3 iterations the fit converged.
+final sum of squares of residuals : 2.45035e+08
+rel. change during last iteration : -8.95459e-07
+
+degrees of freedom    (FIT_NDF)                        : 30
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 2857.94
+variance of residuals (reduced chisquare) = WSSR/ndf   : 8.16782e+06
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = 11473.5          +/- 47.01        (0.4097%)
+b               = 605.867          +/- 614.6        (101.4%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      
+a               1.000 
+b              -0.570  1.000 
+
+
+*******************************************************************************
+Tue Aug 26 13:05:59 2014
+
+
+FIT:    data read from "electrons.csv" index 0 using ($1):($2)
+        format = x:z
+        #datapoints = 32
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 7.23622e+11       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 9.27263
+
+initial set of free parameter values
+
+a               = 1
+b               = 1
+
+After 3 iterations the fit converged.
+final sum of squares of residuals : 2.45035e+08
+rel. change during last iteration : -8.95459e-07
+
+degrees of freedom    (FIT_NDF)                        : 30
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 2857.94
+variance of residuals (reduced chisquare) = WSSR/ndf   : 8.16782e+06
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = 11473.5          +/- 47.01        (0.4097%)
+b               = 605.867          +/- 614.6        (101.4%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      
+a               1.000 
+b              -0.570  1.000 
+
+
+*******************************************************************************
+Tue Aug 26 13:06:01 2014
+
+
+FIT:    data read from "electrons.csv" index 0 using ($1):($2)
+        format = x:z
+        #datapoints = 32
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 7.23622e+11       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 9.27263
+
+initial set of free parameter values
+
+a               = 1
+b               = 1
+
+After 3 iterations the fit converged.
+final sum of squares of residuals : 2.45035e+08
+rel. change during last iteration : -8.95459e-07
+
+degrees of freedom    (FIT_NDF)                        : 30
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 2857.94
+variance of residuals (reduced chisquare) = WSSR/ndf   : 8.16782e+06
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = 11473.5          +/- 47.01        (0.4097%)
+b               = 605.867          +/- 614.6        (101.4%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      
+a               1.000 
+b              -0.570  1.000 
+
+
+*******************************************************************************
+Tue Aug 26 13:06:41 2014
+
+
+FIT:    data read from "electrons.csv" index 0 using ($1):($2)
+        format = x:z
+        #datapoints = 32
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 7.23622e+11       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 9.27263
+
+initial set of free parameter values
+
+a               = 1
+b               = 1
+
+After 3 iterations the fit converged.
+final sum of squares of residuals : 2.45035e+08
+rel. change during last iteration : -8.95459e-07
+
+degrees of freedom    (FIT_NDF)                        : 30
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 2857.94
+variance of residuals (reduced chisquare) = WSSR/ndf   : 8.16782e+06
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = 11473.5          +/- 47.01        (0.4097%)
+b               = 605.867          +/- 614.6        (101.4%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      
+a               1.000 
+b              -0.570  1.000 
+
+
+*******************************************************************************
+Tue Aug 26 13:07:00 2014
+
+
+FIT:    data read from "electrons.csv" index 0 using ($1):($2)
+        format = x:z
+        #datapoints = 32
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 7.23622e+11       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 9.27263
+
+initial set of free parameter values
+
+a               = 1
+b               = 1
+
+After 3 iterations the fit converged.
+final sum of squares of residuals : 2.45035e+08
+rel. change during last iteration : -8.95459e-07
+
+degrees of freedom    (FIT_NDF)                        : 30
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 2857.94
+variance of residuals (reduced chisquare) = WSSR/ndf   : 8.16782e+06
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = 11473.5          +/- 47.01        (0.4097%)
+b               = 605.867          +/- 614.6        (101.4%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      
+a               1.000 
+b              -0.570  1.000 
+
+
+*******************************************************************************
+Tue Aug 26 13:07:18 2014
+
+
+FIT:    data read from "electrons.csv" index 0 using ($1):($2)
+        format = x:z
+        #datapoints = 32
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 7.23622e+11       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 9.27263
+
+initial set of free parameter values
+
+a               = 1
+b               = 1
+
+After 3 iterations the fit converged.
+final sum of squares of residuals : 2.45035e+08
+rel. change during last iteration : -8.95459e-07
+
+degrees of freedom    (FIT_NDF)                        : 30
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 2857.94
+variance of residuals (reduced chisquare) = WSSR/ndf   : 8.16782e+06
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = 11473.5          +/- 47.01        (0.4097%)
+b               = 605.867          +/- 614.6        (101.4%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      
+a               1.000 
+b              -0.570  1.000 
+
+
+*******************************************************************************
+Tue Aug 26 13:07:22 2014
+
+
+FIT:    data read from "electrons.csv" index 0 using ($1):($2)
+        format = x:z
+        #datapoints = 32
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 7.23622e+11       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 9.27263
+
+initial set of free parameter values
+
+a               = 1
+b               = 1
+
+After 3 iterations the fit converged.
+final sum of squares of residuals : 2.45035e+08
+rel. change during last iteration : -8.95459e-07
+
+degrees of freedom    (FIT_NDF)                        : 30
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 2857.94
+variance of residuals (reduced chisquare) = WSSR/ndf   : 8.16782e+06
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = 11473.5          +/- 47.01        (0.4097%)
+b               = 605.867          +/- 614.6        (101.4%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      
+a               1.000 
+b              -0.570  1.000 
+
+
+*******************************************************************************
+Tue Aug 26 13:07:32 2014
+
+
+FIT:    data read from "electrons.csv" index 0 using ($1):($2)
+        format = x:z
+        #datapoints = 32
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 7.23622e+11       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 9.27263
+
+initial set of free parameter values
+
+a               = 1
+b               = 1
+
+After 3 iterations the fit converged.
+final sum of squares of residuals : 2.45035e+08
+rel. change during last iteration : -8.95459e-07
+
+degrees of freedom    (FIT_NDF)                        : 30
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 2857.94
+variance of residuals (reduced chisquare) = WSSR/ndf   : 8.16782e+06
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = 11473.5          +/- 47.01        (0.4097%)
+b               = 605.867          +/- 614.6        (101.4%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      
+a               1.000 
+b              -0.570  1.000 
+
+
+*******************************************************************************
+Tue Aug 26 13:07:41 2014
+
+
+FIT:    data read from "electrons.csv" index 0 using ($1):($2)
+        format = x:z
+        #datapoints = 32
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 7.23622e+11       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 9.27263
+
+initial set of free parameter values
+
+a               = 1
+b               = 1
+
+After 3 iterations the fit converged.
+final sum of squares of residuals : 2.45035e+08
+rel. change during last iteration : -8.95459e-07
+
+degrees of freedom    (FIT_NDF)                        : 30
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 2857.94
+variance of residuals (reduced chisquare) = WSSR/ndf   : 8.16782e+06
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = 11473.5          +/- 47.01        (0.4097%)
+b               = 605.867          +/- 614.6        (101.4%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      
+a               1.000 
+b              -0.570  1.000 
+
+
+*******************************************************************************
+Tue Aug 26 13:07:42 2014
+
+
+FIT:    data read from "electrons.csv" index 0 using ($1):($2)
+        format = x:z
+        #datapoints = 32
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 7.23622e+11       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 9.27263
+
+initial set of free parameter values
+
+a               = 1
+b               = 1
+
+After 3 iterations the fit converged.
+final sum of squares of residuals : 2.45035e+08
+rel. change during last iteration : -8.95459e-07
+
+degrees of freedom    (FIT_NDF)                        : 30
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 2857.94
+variance of residuals (reduced chisquare) = WSSR/ndf   : 8.16782e+06
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = 11473.5          +/- 47.01        (0.4097%)
+b               = 605.867          +/- 614.6        (101.4%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      
+a               1.000 
+b              -0.570  1.000 
+
+
+*******************************************************************************
+Tue Aug 26 13:07:44 2014
+
+
+FIT:    data read from "electrons.csv" index 0 using ($1):($2)
+        format = x:z
+        #datapoints = 32
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 7.23622e+11       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 9.27263
+
+initial set of free parameter values
+
+a               = 1
+b               = 1
+
+After 3 iterations the fit converged.
+final sum of squares of residuals : 2.45035e+08
+rel. change during last iteration : -8.95459e-07
+
+degrees of freedom    (FIT_NDF)                        : 30
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 2857.94
+variance of residuals (reduced chisquare) = WSSR/ndf   : 8.16782e+06
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = 11473.5          +/- 47.01        (0.4097%)
+b               = 605.867          +/- 614.6        (101.4%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      
+a               1.000 
+b              -0.570  1.000 
+
+
+*******************************************************************************
+Tue Aug 26 13:08:14 2014
+
+
+FIT:    data read from "electrons.csv" index 0 using ($1):($2)
+        format = x:z
+        #datapoints = 32
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 7.23622e+11       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 9.27263
+
+initial set of free parameter values
+
+a               = 1
+b               = 1
+
+After 3 iterations the fit converged.
+final sum of squares of residuals : 2.45035e+08
+rel. change during last iteration : -8.95459e-07
+
+degrees of freedom    (FIT_NDF)                        : 30
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 2857.94
+variance of residuals (reduced chisquare) = WSSR/ndf   : 8.16782e+06
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = 11473.5          +/- 47.01        (0.4097%)
+b               = 605.867          +/- 614.6        (101.4%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      
+a               1.000 
+b              -0.570  1.000 
+
+
+*******************************************************************************
+Tue Aug 26 13:08:15 2014
+
+
+FIT:    data read from "electrons.csv" index 0 using ($1):($2)
+        format = x:z
+        #datapoints = 32
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 7.23622e+11       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 9.27263
+
+initial set of free parameter values
+
+a               = 1
+b               = 1
+
+After 3 iterations the fit converged.
+final sum of squares of residuals : 2.45035e+08
+rel. change during last iteration : -8.95459e-07
+
+degrees of freedom    (FIT_NDF)                        : 30
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 2857.94
+variance of residuals (reduced chisquare) = WSSR/ndf   : 8.16782e+06
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = 11473.5          +/- 47.01        (0.4097%)
+b               = 605.867          +/- 614.6        (101.4%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      
+a               1.000 
+b              -0.570  1.000 
+
+
+*******************************************************************************
+Tue Aug 26 13:08:16 2014
+
+
+FIT:    data read from "electrons.csv" index 0 using ($1):($2)
+        format = x:z
+        #datapoints = 32
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 7.23622e+11       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 9.27263
+
+initial set of free parameter values
+
+a               = 1
+b               = 1
+
+After 3 iterations the fit converged.
+final sum of squares of residuals : 2.45035e+08
+rel. change during last iteration : -8.95459e-07
+
+degrees of freedom    (FIT_NDF)                        : 30
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 2857.94
+variance of residuals (reduced chisquare) = WSSR/ndf   : 8.16782e+06
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = 11473.5          +/- 47.01        (0.4097%)
+b               = 605.867          +/- 614.6        (101.4%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      
+a               1.000 
+b              -0.570  1.000 
+
+
+*******************************************************************************
+Tue Aug 26 13:08:17 2014
+
+
+FIT:    data read from "electrons.csv" index 0 using ($1):($2)
+        format = x:z
+        #datapoints = 32
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 7.23622e+11       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 9.27263
+
+initial set of free parameter values
+
+a               = 1
+b               = 1
+
+After 3 iterations the fit converged.
+final sum of squares of residuals : 2.45035e+08
+rel. change during last iteration : -8.95459e-07
+
+degrees of freedom    (FIT_NDF)                        : 30
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 2857.94
+variance of residuals (reduced chisquare) = WSSR/ndf   : 8.16782e+06
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = 11473.5          +/- 47.01        (0.4097%)
+b               = 605.867          +/- 614.6        (101.4%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      
+a               1.000 
+b              -0.570  1.000 
+
+
+*******************************************************************************
+Tue Aug 26 13:08:18 2014
+
+
+FIT:    data read from "electrons.csv" index 0 using ($1):($2)
+        format = x:z
+        #datapoints = 32
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 7.23622e+11       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 9.27263
+
+initial set of free parameter values
+
+a               = 1
+b               = 1
+
+After 3 iterations the fit converged.
+final sum of squares of residuals : 2.45035e+08
+rel. change during last iteration : -8.95459e-07
+
+degrees of freedom    (FIT_NDF)                        : 30
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 2857.94
+variance of residuals (reduced chisquare) = WSSR/ndf   : 8.16782e+06
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = 11473.5          +/- 47.01        (0.4097%)
+b               = 605.867          +/- 614.6        (101.4%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      
+a               1.000 
+b              -0.570  1.000 
+
+
+*******************************************************************************
+Tue Aug 26 13:08:56 2014
+
+
+FIT:    data read from "electrons.csv" index 0 using ($1):($2)
+        format = x:z
+        #datapoints = 32
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 7.23622e+11       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 9.27263
+
+initial set of free parameter values
+
+a               = 1
+b               = 1
+
+After 3 iterations the fit converged.
+final sum of squares of residuals : 2.45035e+08
+rel. change during last iteration : -8.95459e-07
+
+degrees of freedom    (FIT_NDF)                        : 30
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 2857.94
+variance of residuals (reduced chisquare) = WSSR/ndf   : 8.16782e+06
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = 11473.5          +/- 47.01        (0.4097%)
+b               = 605.867          +/- 614.6        (101.4%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      
+a               1.000 
+b              -0.570  1.000 
+
+
+*******************************************************************************
+Tue Aug 26 13:08:58 2014
+
+
+FIT:    data read from "electrons.csv" index 0 using ($1):($2)
+        format = x:z
+        #datapoints = 32
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 7.23622e+11       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 9.27263
+
+initial set of free parameter values
+
+a               = 1
+b               = 1
+
+After 3 iterations the fit converged.
+final sum of squares of residuals : 2.45035e+08
+rel. change during last iteration : -8.95459e-07
+
+degrees of freedom    (FIT_NDF)                        : 30
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 2857.94
+variance of residuals (reduced chisquare) = WSSR/ndf   : 8.16782e+06
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = 11473.5          +/- 47.01        (0.4097%)
+b               = 605.867          +/- 614.6        (101.4%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      
+a               1.000 
+b              -0.570  1.000 
+
+
+*******************************************************************************
+Tue Aug 26 13:12:23 2014
+
+
+FIT:    data read from "electrons.csv" index 0 using ($1):($2)
+        format = x:z
+        #datapoints = 32
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 7.23622e+11       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 9.27263
+
+initial set of free parameter values
+
+a               = 1
+b               = 1
+
+After 3 iterations the fit converged.
+final sum of squares of residuals : 2.45035e+08
+rel. change during last iteration : -8.95459e-07
+
+degrees of freedom    (FIT_NDF)                        : 30
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 2857.94
+variance of residuals (reduced chisquare) = WSSR/ndf   : 8.16782e+06
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = 11473.5          +/- 47.01        (0.4097%)
+b               = 605.867          +/- 614.6        (101.4%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      
+a               1.000 
+b              -0.570  1.000 
+
+
+*******************************************************************************
+Tue Aug 26 13:12:46 2014
+
+
+FIT:    data read from "electrons.csv" index 0 using ($1):($2)
+        format = x:z
+        #datapoints = 32
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 7.23622e+11       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 9.27263
+
+initial set of free parameter values
+
+a               = 1
+b               = 1
+
+After 3 iterations the fit converged.
+final sum of squares of residuals : 2.45035e+08
+rel. change during last iteration : -8.95459e-07
+
+degrees of freedom    (FIT_NDF)                        : 30
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 2857.94
+variance of residuals (reduced chisquare) = WSSR/ndf   : 8.16782e+06
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = 11473.5          +/- 47.01        (0.4097%)
+b               = 605.867          +/- 614.6        (101.4%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      
+a               1.000 
+b              -0.570  1.000 
+
+
+*******************************************************************************
+Tue Aug 26 13:16:58 2014
+
+
+FIT:    data read from "electrons.csv" index 0 using ($1):($2)
+        format = x:z
+        #datapoints = 32
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 7.23622e+11       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 9.27263
+
+initial set of free parameter values
+
+a               = 1
+b               = 1
+
+After 3 iterations the fit converged.
+final sum of squares of residuals : 2.45035e+08
+rel. change during last iteration : -8.95459e-07
+
+degrees of freedom    (FIT_NDF)                        : 30
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 2857.94
+variance of residuals (reduced chisquare) = WSSR/ndf   : 8.16782e+06
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = 11473.5          +/- 47.01        (0.4097%)
+b               = 605.867          +/- 614.6        (101.4%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      
+a               1.000 
+b              -0.570  1.000 
+
+
+*******************************************************************************
+Tue Aug 26 13:17:08 2014
+
+
+FIT:    data read from "electrons.csv" index 0 using ($1):($2)
+        format = x:z
+        #datapoints = 32
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 7.23622e+11       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 9.27263
+
+initial set of free parameter values
+
+a               = 1
+b               = 1
+
+After 3 iterations the fit converged.
+final sum of squares of residuals : 2.45035e+08
+rel. change during last iteration : -8.95459e-07
+
+degrees of freedom    (FIT_NDF)                        : 30
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 2857.94
+variance of residuals (reduced chisquare) = WSSR/ndf   : 8.16782e+06
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = 11473.5          +/- 47.01        (0.4097%)
+b               = 605.867          +/- 614.6        (101.4%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      
+a               1.000 
+b              -0.570  1.000 

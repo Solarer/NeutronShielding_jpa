@@ -1,0 +1,59 @@
+#-----Beschriftungen-----#
+set terminal wxt
+set terminal postscript eps enhanced 
+set title ""
+set xlabel "Particle Energy [MeV]"
+set ylabel "Number of scintilation photons produced"
+#set format y "%1.1t*10^%T"
+
+set key bottom right
+set output 'electron_fit.eps'
+
+
+#-----Formatierung-----#
+set grid
+#set xrange [40:180]
+#set yrange [0:0.6]
+#set logscale x
+#set logscale y
+
+
+
+#-----Konstanten definieren-----#
+pi=3.1415926
+c0=299792458
+U0=1.57
+r1=1.4
+r2=1.4
+r3=1.4
+r4=1.0
+D=0.072450974
+
+
+#-----Rechenfunktionen-----#
+
+
+#-----Fitfunktion-----#
+f(x)=a*(x)+b
+#g(x)=c*(x)+d
+a=1; b=1
+c=1; d=1
+
+
+#-----Fitting-----#
+fit f(x) "electrons.csv" index 0 using ($1):($2) via a,b 
+
+#-----Plot-----#
+plot f(x) title "linear fit" linecolor rgb "blue", "electrons.csv" index 0 using 1:2 title "data" lc rgb "red"
+
+#-----Sonderkram-----#
+#set arrow from 0,-26 to 1.6,-26 lc 2 lw 3 front nohead
+
+
+
+#-----Zurücksetzen-----#
+
+unset logscale x
+unset logscale y
+
+pause -1
