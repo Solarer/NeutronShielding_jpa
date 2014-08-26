@@ -59,7 +59,7 @@ void NSSD::Initialize(G4HCofThisEvent* hce)
     = G4SDManager::GetSDMpointer()->GetCollectionID(collectionName[0]);
   hce->AddHitsCollection( hcID, fHitsCollection );
 
-  // Create hit
+  // Create hit object
   fHitsCollection->insert(new NSHit());
 }
 
@@ -78,11 +78,20 @@ G4bool NSSD::ProcessHits(G4Step* step, G4TouchableHistory*)
   // Count particle
   hit->SetEntSD(1);
 
+	// Get particle name
+	G4String particle = step->GetTrack()->GetDefinition()->GetParticleName();
+
   // Total energy deposited in step
   G4double edep = step->GetTotalEnergyDeposit();
-  G4double photon = step->GetTotalEnergyDeposit();
   if ( edep==0.) return false;
 
+	// Calculate number of photons
+	if(particle == "e-")
+		G4double photonFactor = 11473.5; 
+  
+	G4double photon = edep*photonFactor;
+
+	// Add everything to hit object
   hit->AddEdep(edep);
 	hit->AddPhoton(photon);
   return true;

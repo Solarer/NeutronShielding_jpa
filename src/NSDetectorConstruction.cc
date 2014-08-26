@@ -305,7 +305,7 @@ void NSDetectorConstruction::ConstructSDandField()
   cennsSD = new NSSD("cennsSD", "CennsHitsCollection");
 
   // Assign sensitive detector to Det volume
-  SetSensitiveDetector("Det", cennsSD);
+  SetSensitiveDetector("Scin", cennsSD);
 }
 
 void NSDetectorConstruction::SetDetRatio(G4double ratio)
