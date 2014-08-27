@@ -86,6 +86,7 @@ G4bool NSSD::ProcessHits(G4Step* step, G4TouchableHistory*)
   if ( edep==0.) return false;
 
 	// Calculate number of photons
+	G4double photonFactor;
 	if(particle == "e-")
 		G4double photonFactor = 11473.5; 
   
