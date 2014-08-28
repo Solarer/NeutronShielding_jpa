@@ -152,6 +152,9 @@ void NSDetectorConstruction::DefineMaterials()
   new G4Material("lAr", 18, 39.948*g/mole, 1.40*g/cm3);
 
 	// Scintilator Materials
+	G4Material* scintillator = nistManager->FindOrBuildMaterial("G4_Ge");
+	
+	// create properties
 	G4MaterialPropertiesTable *MPT = new G4MaterialPropertiesTable();
 
 	G4int respElec = 11473.5;
@@ -211,7 +214,8 @@ void NSDetectorConstruction::DefineMaterials()
 																	1780.2837871681,2440.4816029045,2922.4926302337,3661.0088841166};
 	MPT->AddProperty("responseCarbon",respCarbonPos,respCarbonValue,arrayLen);
 
-
+	// Add properties to material
+	scintillator->SetMaterialPropertiesTable(MPT);
 }
 
 G4VPhysicalVolume* NSDetectorConstruction::ConstructDetector()
