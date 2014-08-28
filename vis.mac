@@ -13,7 +13,7 @@
 /NS/det/update
 #
 # Use this open statement to create an OpenGL view:
-#/vis/open OGL 1200x800-0+0
+/vis/open OGL 1200x800-0+0
 #
 # Use this open statement to create a .prim file suitable for
 # viewing in DAWN:
@@ -38,7 +38,7 @@
 # Specify view: 
 /vis/viewer/set/upVector 1
 /vis/viewer/set/viewpointThetaPhi 250. 45.
-/vis/viewer/set/hiddenEdge 1 
+/vis/viewer/set/hiddenEdge 0 
 #
 # Specify zoom value:
 /vis/viewer/zoom 1.1
@@ -83,4 +83,4 @@
 # For file-based drivers, use this to create an empty detector view:
 #/vis/viewer/flush
 #
-/run/beamOn 1
+/run/beamOn 2000

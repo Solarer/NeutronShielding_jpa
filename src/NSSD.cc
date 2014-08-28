@@ -32,6 +32,7 @@
 #include "G4ios.hh"
 
 #include "G4Track.hh"
+#include "G4SystemOfUnits.hh"
 #include "G4UnitsTable.hh"
 #include "G4ParticleTable.hh"
 #include "G4ParticleTypes.hh"
@@ -79,22 +80,46 @@ G4bool NSSD::ProcessHits(G4Step* step, G4TouchableHistory*)
   hit->SetEntSD(1);
 
 	// Get particle name
-	G4String particle = step->GetTrack()->GetDefinition()->GetParticleName();
+	G4String particleName = step->GetTrack()->GetDefinition()->GetParticleName();
+
+	// Get current particle energy
+	G4double particleEnergy = step->GetTrack()->GetKineticEnergy();
+
+	// Get material
+	G4Material* stepMaterial = step->GetPreStepPoint()->GetMaterial();
+
+
+	// Get photon response of material
+	G4double photonFactor;
+	G4cout <<G4endl<< particleName << G4endl << stepMaterial->GetName()<<G4endl;
+	if(particleName == "e-" || particleName == "gamma")
+		photonFactor = stepMaterial->GetMaterialPropertiesTable()->GetConstProperty("responseElectron");
+	else if(particleName == "proton")
+		photonFactor = stepMaterial->GetMaterialPropertiesTable()->GetProperty("responseProton")->GetEnergy(particleEnergy);
+	else if(particleName == "alpha")
+		photonFactor = stepMaterial->GetMaterialPropertiesTable()->GetProperty("responseAlpha")->GetEnergy(particleEnergy);
+	else if(particleName == "carbon" || particleName == "C12")
+		photonFactor = stepMaterial->GetMaterialPropertiesTable()->GetProperty("responseCarbon")->GetEnergy(particleEnergy);
+	else if (particleName == "C13")
+		G4cout << "C13"<< G4endl;
+	else{
+		photonFactor = 0;
+		//G4cout << "ERROR: unknown particle '"<< particleName << "'" << G4endl;	
+		}
+	
+G4cout << "particle Energy: " << particleEnergy/MeV << G4endl;
+G4cout << "value: " << photonFactor << G4endl;
 
   // Total energy deposited in step
   G4double edep = step->GetTotalEnergyDeposit();
   if ( edep==0.) return false;
 
-	// Calculate number of photons
-	G4double photonFactor;
-	if(particle == "e-")
-		photonFactor = 11473.5; 
-  
 	G4double photon = edep*photonFactor;
 
 	// Add everything to hit object
   hit->AddEdep(edep);
 	hit->AddPhoton(photon);
+G4cout << photon << " photons" << G4endl;
   return true;
 }
 

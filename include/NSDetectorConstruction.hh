@@ -62,8 +62,8 @@ class NSDetectorConstruction : public G4VUserDetectorConstruction
 		G4double hSpace, vSpace;								// some space between the boxes
 		G4ThreeVector* shieldBox_position;			// box positions
 
-		G4double scin_radius;
-		G4double scin_height;
+		G4double scin_radius, scin_radiusRatio;
+		G4double scin_height, scin_heightRatio;
 
     G4Box*             solidWorld;
     G4LogicalVolume*   logicWorld;
@@ -87,6 +87,7 @@ class NSDetectorConstruction : public G4VUserDetectorConstruction
     // Methods
     void DefineMaterials();
     void ComputeParameters();
+		void CalcSlopes(G4double*, G4double*, G4int);
     G4VPhysicalVolume* ConstructDetector();
 
   public:
