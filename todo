@@ -10,3 +10,10 @@ shielding
 
 hits
 	only count SD hits??
+
+DetectorConstruction
+	get right sizes
+
+output
+	create nice pie chart
+	fix verbosity

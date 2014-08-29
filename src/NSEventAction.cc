@@ -51,17 +51,16 @@ NSHitsCollection* NSEventAction::GetHitsCollection(G4int hcID,
 {
   // Get hits collection
   NSHitsCollection* hitsCollection 
-    = static_cast<NSHitsCollection*>(
-        event->GetHCofThisEvent()->GetHC(hcID));
+    = static_cast<NSHitsCollection*>( event->GetHCofThisEvent()->GetHC(hcID) );
 
   // Error message
-  if ( ! hitsCollection ) {
+  if ( ! hitsCollection ) 
+	{
     G4ExceptionDescription msg;
     msg << "Cannot access hitsCollection ID " << hcID; 
     G4Exception("NSEventAction::GetHitsCollection()",
       "MyCode0003", FatalException, msg);
   }         
-
   return hitsCollection;
 }    
 
@@ -112,9 +111,9 @@ void NSEventAction::EndOfEventAction(const G4Event* event)
   G4AnalysisManager* analysisManager = G4AnalysisManager::Instance();
 
   // Fill histograms
-  analysisManager->FillH1(1, cennsHit->GetEntSD());  // number entering detector
-  analysisManager->FillH1(2, cennsHit->GetEdep());   // energy deposition
-  analysisManager->FillH1(3, cennsHit->GetPhoton());   // photons created
+  analysisManager->FillH1(1, cennsHit->GetEntSD());  	// number entering detector
+  analysisManager->FillH1(2, cennsHit->GetEdep());   	// energy deposition
+  analysisManager->FillH1(3, cennsHit->GetPhoton());  // photons created
 
   // Get the primary position/direction information
   G4PrimaryParticle* primary = event->GetPrimaryVertex(0)->GetPrimary(0);
