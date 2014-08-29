@@ -62,6 +62,7 @@ NSRunAction::NSRunAction()
   // Creating histograms
   analysisManager->CreateH1("h1","Entered inner", 2, -0.5, 1.5);
   analysisManager->CreateH1("h2","Energy Deposited", 1000, 0, 30*MeV);
+  analysisManager->CreateH1("h3","Photons Emmited", 100, 0, 2000);
 
   // Creating ntuple
   analysisManager->CreateNtuple("singleRun", "Event info from one run");

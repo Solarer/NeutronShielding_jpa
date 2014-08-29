@@ -51,10 +51,9 @@ class NSPrimaryGeneratorAction : public G4VUserPrimaryGeneratorAction
   private:
     G4ParticleGun*  fParticleGun;            // Pointer to particle gun
     NSDetectorConstruction* Detector;        // Pointer to detector construction
-    G4int genInShield;                       // Where to generate particles
+    G4bool genInLead;                       // Where to generate particles
     NSPrimaryGeneratorMessenger* fMessenger; // Pointer to messenger
 
-  public:
 };
 
 #endif

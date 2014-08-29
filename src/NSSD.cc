@@ -90,8 +90,7 @@ G4bool NSSD::ProcessHits(G4Step* step, G4TouchableHistory*)
 
 
 	// Get photon response of material
-	G4double photonFactor;
-	G4cout <<G4endl<< particleName << G4endl << stepMaterial->GetName()<<G4endl;
+	G4double photonFactor = 0;
 	if(particleName == "e-" || particleName == "gamma")
 		photonFactor = stepMaterial->GetMaterialPropertiesTable()->GetConstProperty("responseElectron");
 	else if(particleName == "proton")
@@ -107,8 +106,9 @@ G4bool NSSD::ProcessHits(G4Step* step, G4TouchableHistory*)
 		//G4cout << "ERROR: unknown particle '"<< particleName << "'" << G4endl;	
 		}
 	
-G4cout << "particle Energy: " << particleEnergy/MeV << G4endl;
-G4cout << "value: " << photonFactor << G4endl;
+	//G4cout <<G4endl<< particleName << G4endl << stepMaterial->GetName()<<G4endl;
+	//G4cout << "particle Energy: " << particleEnergy/MeV << G4endl;
+	//G4cout << "value: " << photonFactor << G4endl;
 
   // Total energy deposited in step
   G4double edep = step->GetTotalEnergyDeposit();
@@ -119,7 +119,7 @@ G4cout << "value: " << photonFactor << G4endl;
 	// Add everything to hit object
   hit->AddEdep(edep);
 	hit->AddPhoton(photon);
-G4cout << photon << " photons" << G4endl;
+	G4cout << "eDep: " << edep/MeV<< " MeV " << photon << " photons" << G4endl;
   return true;
 }
 

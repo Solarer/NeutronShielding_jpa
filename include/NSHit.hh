@@ -38,7 +38,7 @@ class NSHit : public G4VHit
   private:
     G4double fEdep;
     G4double fPhoton;
-    G4int    fEntSD;
+    G4bool 	 fEntSD;
 
   public:
     NSHit();
@@ -57,14 +57,14 @@ class NSHit : public G4VHit
     virtual void Print();
 
     // methods to handle data
-    void SetEntSD(G4int entSD) { fEntSD = entSD; };
+    void SetEntSD(G4bool entSD) { fEntSD = entSD; };
     void AddEdep(G4double dE);
     void AddPhoton(G4double dPh);
 
     // get methods
     G4double GetEdep()  const { return fEdep; };
     G4double GetPhoton()  const { return fPhoton; };
-    G4int    GetEntSD() const { return fEntSD; };      
+    G4bool   GetEntSD() const { return fEntSD; };      
 };
 
 typedef G4THitsCollection<NSHit> NSHitsCollection;

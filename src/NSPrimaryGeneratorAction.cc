@@ -47,7 +47,7 @@ NSPrimaryGeneratorAction::NSPrimaryGeneratorAction(NSDetectorConstruction* DC)
   fParticleGun  = new G4ParticleGun(n_particle);
 
   // Choose default volume to generate paticles in (Shield1)
-  genInShield = 1;
+  genInLead = true;
 
   // Default particle kinematic
   G4ParticleTable* particleTable = G4ParticleTable::GetParticleTable();
@@ -68,36 +68,61 @@ void NSPrimaryGeneratorAction::GeneratePrimaries(G4Event* anEvent)
 {
   //event counter for output
   static unsigned long event_cnt=1;
+
+	// particle position
+  G4double x0, y0, z0;
+
   //this function is called at the begining of each event
   //
   // In order to avoid dependence of PrimaryGeneratorAction
   // on DetectorConstruction class we get Envelope volume
   // from G4LogicalVolumeStore.
 
-  // Get detector configuration sizes
-  G4int maxBoxNumber = Detector->GetShieldBoxNumber();
-  G4double boxX, boxY, boxZ;
-		boxX = Detector->GetShieldBoxSizeX();
-		boxY = Detector->GetShieldBoxSizeY();
-		boxZ = Detector->GetShieldBoxSizeZ();
-	const G4ThreeVector* shieldBoxPosition = Detector->GetShieldBoxPosition();
-	G4int box;
-  G4double x0, y0, z0;
-
-	// Now generate
-  box =  int(maxBoxNumber * G4UniformRand()); //random box
-  z0 = (boxZ * (G4UniformRand()-0.5)) + shieldBoxPosition[box].getZ();
-	
-	// some boxes are turned by 90°
-	if(box >= maxBoxNumber-4 || box%6 == 1 || box%6 == 4) // box has to be turned by 90°
+	if(genInLead) // generate in leadshield
 	{
-  	x0 = (boxY * (G4UniformRand()-0.5)) + shieldBoxPosition[box].getX();
-  	y0 = (boxX * (G4UniformRand()-0.5)) + shieldBoxPosition[box].getY();
+		G4double shieldX,shieldY,shieldZ;
+		G4double scinRad, scinHeight;
+		shieldX = shieldY = Detector->GetDetSizeXY();
+		shieldZ = Detector->GetDetSizeZ();
+		scinRad = Detector->GetScinRad();
+		scinHeight = Detector->GetScinHeight();
+		
+		while(1) // generate, until particle not in scintillator
+		{
+  		x0 = shieldX * (G4UniformRand()-0.5);
+  		y0 = shieldY * (G4UniformRand()-0.5);
+  		z0 = shieldZ * (G4UniformRand()-0.5);
+			
+			if(sqrt(x0*x0+y0*y0)>scinRad || abs(z0)>shieldZ) // particle not in scintillator
+				break;
+		}
 	}
-	else	// box is not turned
+	else // generate in watershield
 	{
-  	x0 = (boxX * (G4UniformRand()-0.5)) + shieldBoxPosition[box].getX();
-  	y0 = (boxY * (G4UniformRand()-0.5)) + shieldBoxPosition[box].getY();
+  	// Get detector configuration sizes
+  	G4int maxBoxNumber = Detector->GetShieldBoxNumber();
+  	G4double boxX, boxY, boxZ;
+			boxX = Detector->GetShieldBoxSizeX();
+			boxY = Detector->GetShieldBoxSizeY();
+			boxZ = Detector->GetShieldBoxSizeZ();
+		const G4ThreeVector* shieldBoxPosition = Detector->GetShieldBoxPosition();
+		G4int box;
+
+		// Now generate in random box
+  	box =  int(maxBoxNumber * G4UniformRand());
+  	z0 = (boxZ * (G4UniformRand()-0.5)) + shieldBoxPosition[box].getZ();
+	
+		// some boxes are turned by 90°
+		if(box >= maxBoxNumber-4 || box%6 == 1 || box%6 == 4) // box has to be turned by 90°
+		{
+  		x0 = (boxY * (G4UniformRand()-0.5)) + shieldBoxPosition[box].getX();
+  		y0 = (boxX * (G4UniformRand()-0.5)) + shieldBoxPosition[box].getY();
+		}
+		else	// box is not turned
+		{
+  		x0 = (boxX * (G4UniformRand()-0.5)) + shieldBoxPosition[box].getX();
+  		y0 = (boxY * (G4UniformRand()-0.5)) + shieldBoxPosition[box].getY();
+		}
 	}
 
   // Set primary particle position

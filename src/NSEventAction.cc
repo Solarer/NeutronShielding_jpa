@@ -114,6 +114,7 @@ void NSEventAction::EndOfEventAction(const G4Event* event)
   // Fill histograms
   analysisManager->FillH1(1, cennsHit->GetEntSD());  // number entering detector
   analysisManager->FillH1(2, cennsHit->GetEdep());   // energy deposition
+  analysisManager->FillH1(3, cennsHit->GetPhoton());   // photons created
 
   // Get the primary position/direction information
   G4PrimaryParticle* primary = event->GetPrimaryVertex(0)->GetPrimary(0);

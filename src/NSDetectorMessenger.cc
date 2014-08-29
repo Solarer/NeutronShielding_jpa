@@ -61,14 +61,14 @@ NSDetectorMessenger::NSDetectorMessenger(NSDetectorConstruction* Det)
 
 NSDetectorMessenger::~NSDetectorMessenger()
 {
-  delete fShieldSizeCmd;
-  delete fShield2RatioCmd;
-  delete fDetRatioCmd;
+  //delete fShieldSizeCmd;
+  //delete fShield2RatioCmd;
+  //delete fDetRatioCmd;
 
-  delete fWorldMatCmd;
-  delete fShieldMatCmd;
-  delete fShield2MatCmd;
-  delete fDetMatCmd;
+  //delete fWorldMatCmd;
+  //delete fShieldMatCmd;
+  //delete fShield2MatCmd;
+  //delete fDetMatCmd;
 
   delete fUpdateCmd;
 
