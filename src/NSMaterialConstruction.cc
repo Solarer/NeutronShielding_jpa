@@ -94,8 +94,7 @@ void NSDetectorConstruction::DefineMaterials()
 																20288.068591494,27192.0700304733,34063.5281434815,41720.7637851818,
 																52263.6345732944,73277.50027919,100451.620481625,123032.420843188,
 																154122.813204584,201968.554556124,236470.466441508,283174.925236377};
-	CalcSlopes(respProtPos, respProtValue, arrayLen);
-	MPT->AddProperty("responseProton",respProtValue,respProtPos,arrayLen-1);
+	MPT->AddProperty("responseProton",respProtValue,respProtPos,arrayLen);
 
 	arrayLen = 32;
 	G4double	respAlphaPos[] = {	0.0990868304*MeV,0.1281060738*MeV,0.1686908915*MeV,0.1989778715*MeV,
@@ -114,8 +113,7 @@ void NSDetectorConstruction::DefineMaterials()
 																2989.084279467,4906.8451001206,7196.8567300115,10320.4499049279,
 																15481.8863395872,27192.0700304732,46695.5967151881,62586.0431350512,
 																87750.2843180668,120291.470422557,144049.820073016,176431.181504442};
-	CalcSlopes(respAlphaPos, respAlphaValue, arrayLen);
-	MPT->AddProperty("responseAlpha",respAlphaValue,respAlphaPos,arrayLen-1);
+	MPT->AddProperty("responseAlpha",respAlphaValue,respAlphaPos,arrayLen);
 
 	G4double	respCarbonPos[] = {	0.0990868304*MeV,0.1281060738*MeV,0.1686908915*MeV,0.1989778715*MeV,
 															0.2390485181*MeV,0.3006683051*MeV,0.3387509159*MeV,0.3995706917*MeV,
@@ -133,8 +131,7 @@ void NSDetectorConstruction::DefineMaterials()
 																	321.2545704722,376.1338902137,460.686078057,527.3676710427,
 																	631.5262242549,827.5766320703,1160.3239495818,1389.4954943731,
 																	1780.2837871681,2440.4816029045,2922.4926302337,3661.0088841166};
-	CalcSlopes(respCarbonPos, respCarbonValue, arrayLen);
-	MPT->AddProperty("responseCarbon",respCarbonValue,respCarbonPos,arrayLen-1);
+	MPT->AddProperty("responseCarbon",respCarbonValue,respCarbonPos,arrayLen);
 
 	// Add properties to material
 	G4Material::GetMaterial("EJ301")->SetMaterialPropertiesTable(MPT);

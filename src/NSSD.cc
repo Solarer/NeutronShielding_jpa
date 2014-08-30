@@ -76,8 +76,12 @@ G4bool NSSD::ProcessHits(G4Step* step, G4TouchableHistory*)
       "MyCode0004", FatalException, msg);
   }
 
-  // Count particle
+  // Particle entered sensitive detector
   hit->SetEntSD(1);
+
+  // Total energy deposited in step
+  G4double edep = step->GetTotalEnergyDeposit();
+  if ( edep==0.) return false;
 
 	// Get particle name
 	G4String particleName = step->GetTrack()->GetDefinition()->GetParticleName();
@@ -89,30 +93,39 @@ G4bool NSSD::ProcessHits(G4Step* step, G4TouchableHistory*)
 	G4Material* stepMaterial = step->GetPreStepPoint()->GetMaterial();
 
 
-	// Get photon response of material
+	// Get photon response of material (determine particle first)
 	G4double photonFactor = 0;
+	G4PhysicsOrderedFreeVector* property = NULL;
 	if(particleName == "e-" || particleName == "gamma")
 		photonFactor = stepMaterial->GetMaterialPropertiesTable()->GetConstProperty("responseElectron");
 	else if(particleName == "proton")
-		photonFactor = stepMaterial->GetMaterialPropertiesTable()->GetProperty("responseProton")->GetEnergy(particleEnergy);
+		property = stepMaterial->GetMaterialPropertiesTable()->GetProperty("responseProton");
+	else if(particleName == "deuteron")
+	#####
 	else if(particleName == "alpha")
-		photonFactor = stepMaterial->GetMaterialPropertiesTable()->GetProperty("responseAlpha")->GetEnergy(particleEnergy);
-	else if(particleName == "carbon" || particleName == "C12")
-		photonFactor = stepMaterial->GetMaterialPropertiesTable()->GetProperty("responseCarbon")->GetEnergy(particleEnergy);
-	else if (particleName == "C13")
-		G4cout << "C13"<< G4endl;
+		property = stepMaterial->GetMaterialPropertiesTable()->GetProperty("responseAlpha");
+	else if(particleName == "C12" || particleName == "C13")
+		property = stepMaterial->GetMaterialPropertiesTable()->GetProperty("responseCarbon");
 	else{
 		photonFactor = 0;
-		//G4cout << "ERROR: unknown particle '"<< particleName << "'" << G4endl;	
+		G4cout << "ERROR: unknown particle '"<< particleName << "'" << G4endl;	
 		}
-	
-	//G4cout <<G4endl<< particleName << G4endl << stepMaterial->GetName()<<G4endl;
-	//G4cout << "particle Energy: " << particleEnergy/MeV << G4endl;
+	// now set photon response with linear fit (delta E = 1keV)
+	if(property != NULL)		// photonFactor not set
+	{
+		if(particleEnergy < property->GetMinValue())
+			photonFactor = (property->GetEnergy(property->GetMinValue()+1*keV)-property->GetEnergy(property->GetMinValue()))/1*keV;
+		else if(particleEnergy+1*keV >= property->GetMaxValue())
+			photonFactor = (property->GetEnergy(property->GetMaxValue())-property->GetEnergy(property->GetMaxValue()-1*keV))/1*keV;
+		else 
+			photonFactor = (property->GetEnergy(particleEnergy+1*keV)-property->GetEnergy(particleEnergy))/1*keV;
+	}
+	G4cout <<G4endl<< particleName << G4endl << "Material: " << stepMaterial->GetName()<<G4endl;
+	G4cout << "particle Energy: " << particleEnergy/MeV << "MeV" << G4endl;
+	G4cout << "Energyloss: " << edep/MeV <<"MeV"<< G4endl;
+	G4cout << "Val1: " << property->GetEnergy(particleEnergy) << " Val2: " << property->GetEnergy(particleEnergy+1*keV) <<G4endl<<G4endl;
 	//G4cout << "value: " << photonFactor << G4endl;
 
-  // Total energy deposited in step
-  G4double edep = step->GetTotalEnergyDeposit();
-  if ( edep==0.) return false;
 
 	G4double photon = edep*photonFactor;
 
