@@ -91,20 +91,25 @@ G4bool NSSD::ProcessHits(G4Step* step, G4TouchableHistory*)
 
 	// Get photon response of material
 	G4double photonFactor = 0;
+    G4PhysicsOrderedFreeVector property;
 	if(particleName == "e-" || particleName == "gamma")
 		photonFactor = stepMaterial->GetMaterialPropertiesTable()->GetConstProperty("responseElectron");
 	else if(particleName == "proton")
-		photonFactor = stepMaterial->GetMaterialPropertiesTable()->GetProperty("responseProton")->GetEnergy(particleEnergy);
+		property = stepMaterial->GetMaterialPropertiesTable()->GetProperty("responseProton");
 	else if(particleName == "alpha")
-		photonFactor = stepMaterial->GetMaterialPropertiesTable()->GetProperty("responseAlpha")->GetEnergy(particleEnergy);
+		property = stepMaterial->GetMaterialPropertiesTable()->GetProperty("responseAlpha");
 	else if(particleName == "carbon" || particleName == "C12")
-		photonFactor = stepMaterial->GetMaterialPropertiesTable()->GetProperty("responseCarbon")->GetEnergy(particleEnergy);
+		property = stepMaterial->GetMaterialPropertiesTable()->GetProperty("responseCarbon");
 	else if (particleName == "C13")
 		G4cout << "C13"<< G4endl;
 	else{
 		photonFactor = 0;
 		//G4cout << "ERROR: unknown particle '"<< particleName << "'" << G4endl;	
 		}
+    G4double E1 = property->GetEnergy(particleEnergy);
+    G4double E2 = property->GetEnergy(particleEnergy+1*keV);
+    G4cout<<"bla: " << property->GetMinLowEdgeEnergy()<<G4endl;
+
 	
 	//G4cout <<G4endl<< particleName << G4endl << stepMaterial->GetName()<<G4endl;
 	//G4cout << "particle Energy: " << particleEnergy/MeV << G4endl;
