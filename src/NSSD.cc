@@ -87,75 +87,64 @@ G4bool NSSD::ProcessHits(G4Step* step, G4TouchableHistory*)
 	G4String particleName = step->GetTrack()->GetDefinition()->GetParticleName();
 
 	// Get current particle energy
-	G4double particleEnergy = step->GetTrack()->GetKineticEnergy();
+	G4double particleEnergy = step->GetPreStepPoint()->GetKineticEnergy();
 
 	// Get material
 	G4Material* stepMaterial = step->GetPreStepPoint()->GetMaterial();
 
 
 	// Get photon response of material (determine particle first)
-	G4double photonFactor = 0;
-<<<<<<< HEAD
+	G4double photonFactor = 0/MeV;
 	G4PhysicsOrderedFreeVector* property = NULL;
-=======
-    G4PhysicsOrderedFreeVector property;
->>>>>>> 62a47fd9e8a14fb6f0120b4800e06cbc7e7dbfca
-	if(particleName == "e-" || particleName == "gamma")
+
+	if(particleName == "e-" || particleName == "e+" || particleName == "gamma")
 		photonFactor = stepMaterial->GetMaterialPropertiesTable()->GetConstProperty("responseElectron");
 	else if(particleName == "proton")
 		property = stepMaterial->GetMaterialPropertiesTable()->GetProperty("responseProton");
-<<<<<<< HEAD
 	else if(particleName == "deuteron")
-	#####
+		photonFactor = stepMaterial->GetMaterialPropertiesTable()->GetConstProperty("responseDeuteron");
 	else if(particleName == "alpha")
 		property = stepMaterial->GetMaterialPropertiesTable()->GetProperty("responseAlpha");
 	else if(particleName == "C12" || particleName == "C13")
 		property = stepMaterial->GetMaterialPropertiesTable()->GetProperty("responseCarbon");
-=======
-	else if(particleName == "alpha")
-		property = stepMaterial->GetMaterialPropertiesTable()->GetProperty("responseAlpha");
-	else if(particleName == "carbon" || particleName == "C12")
-		property = stepMaterial->GetMaterialPropertiesTable()->GetProperty("responseCarbon");
-	else if (particleName == "C13")
-		G4cout << "C13"<< G4endl;
->>>>>>> 62a47fd9e8a14fb6f0120b4800e06cbc7e7dbfca
 	else{
 		photonFactor = 0;
-		G4cout << "ERROR: unknown particle '"<< particleName << "'" << G4endl;	
+		G4cerr<< "ERROR: unknown particle '"<< particleName << "'" << G4endl;	
 		}
-<<<<<<< HEAD
-	// now set photon response with linear fit (delta E = 1keV)
+	// now set photon response with linear fit (delta E = 1keV) in #photons/MeV
 	if(property != NULL)		// photonFactor not set
 	{
 		if(particleEnergy < property->GetMinValue())
-			photonFactor = (property->GetEnergy(property->GetMinValue()+1*keV)-property->GetEnergy(property->GetMinValue()))/1*keV;
+			photonFactor = (property->GetEnergy(property->GetMinValue()))/(0.1*MeV);
 		else if(particleEnergy+1*keV >= property->GetMaxValue())
-			photonFactor = (property->GetEnergy(property->GetMaxValue())-property->GetEnergy(property->GetMaxValue()-1*keV))/1*keV;
+			photonFactor = (property->GetEnergy(property->GetMaxValue())-property->GetEnergy(property->GetMaxValue()-1*keV))/(1*keV);
 		else 
-			photonFactor = (property->GetEnergy(particleEnergy+1*keV)-property->GetEnergy(particleEnergy))/1*keV;
+			photonFactor = (property->GetEnergy(particleEnergy+1*keV)-property->GetEnergy(particleEnergy))/(1*keV);
 	}
+
+static int k=1;
+	if(edep!=particleEnergy){
+		G4cout << "not total "<< -(edep-particleEnergy)/MeV << "MeV " <<k << G4endl;
+k++;
+}
 	G4cout <<G4endl<< particleName << G4endl << "Material: " << stepMaterial->GetName()<<G4endl;
 	G4cout << "particle Energy: " << particleEnergy/MeV << "MeV" << G4endl;
 	G4cout << "Energyloss: " << edep/MeV <<"MeV"<< G4endl;
-	G4cout << "Val1: " << property->GetEnergy(particleEnergy) << " Val2: " << property->GetEnergy(particleEnergy+1*keV) <<G4endl<<G4endl;
-=======
-    G4double E1 = property->GetEnergy(particleEnergy);
-    G4double E2 = property->GetEnergy(particleEnergy+1*keV);
-    G4cout<<"bla: " << property->GetMinLowEdgeEnergy()<<G4endl;
+	if(property!=NULL)
+	{
+		G4cout << "Val1: " << property->GetEnergy(particleEnergy) << " Val2: " << property->GetEnergy(particleEnergy+1*keV) <<G4endl<<G4endl;
+    G4cout << "MinVal: " << property->GetMinLowEdgeEnergy()<<G4endl;
+		G4cout << "PhotonFactor: " << photonFactor << G4endl;
+	}
+	G4cout << "eDep: " << edep/MeV<< " MeV " << edep*photonFactor << " photons" << G4endl;
 
 	
-	//G4cout <<G4endl<< particleName << G4endl << stepMaterial->GetName()<<G4endl;
-	//G4cout << "particle Energy: " << particleEnergy/MeV << G4endl;
->>>>>>> 62a47fd9e8a14fb6f0120b4800e06cbc7e7dbfca
-	//G4cout << "value: " << photonFactor << G4endl;
-
 
 	G4double photon = edep*photonFactor;
 
 	// Add everything to hit object
   hit->AddEdep(edep);
 	hit->AddPhoton(photon);
-	G4cout << "eDep: " << edep/MeV<< " MeV " << photon << " photons" << G4endl;
   return true;
 }
 

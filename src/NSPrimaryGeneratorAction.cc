@@ -46,7 +46,7 @@ NSPrimaryGeneratorAction::NSPrimaryGeneratorAction(NSDetectorConstruction* DC)
   G4int n_particle = 1;
   fParticleGun  = new G4ParticleGun(n_particle);
 
-  // Choose default volume to generate paticles in (Shield1)
+  // Choose default volume to generate paticles in 
   genInLead = true;
 
   // Default particle kinematic
@@ -55,7 +55,7 @@ NSPrimaryGeneratorAction::NSPrimaryGeneratorAction(NSDetectorConstruction* DC)
   G4ParticleDefinition* particle
     = particleTable->FindParticle(particleName="neutron");
   fParticleGun->SetParticleDefinition(particle);
-  fParticleGun->SetParticleEnergy(1.*MeV);
+  fParticleGun->SetParticleEnergy(10.*MeV);
 }
 
 NSPrimaryGeneratorAction::~NSPrimaryGeneratorAction()
@@ -80,7 +80,7 @@ void NSPrimaryGeneratorAction::GeneratePrimaries(G4Event* anEvent)
 
 	if(genInLead) // generate in leadshield
 	{
-		G4double shieldX,shieldY,shieldZ;
+		G4double shieldX, shieldY, shieldZ;
 		G4double scinRad, scinHeight;
 		shieldX = shieldY = Detector->GetDetSizeXY();
 		shieldZ = Detector->GetDetSizeZ();

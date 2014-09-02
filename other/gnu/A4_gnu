@@ -1,13 +1,13 @@
 #-----Beschriftungen-----#
-set terminal wxt
-#set terminal postscript eps enhanced 
+#set terminal wxt
+set terminal postscript eps enhanced 
 set title ""
 set xlabel "Particle Energy [MeV]"
 set ylabel "Number of scintilation photons produced"
 #set format y "%1.1t*10^%T"
 
 set key bottom right
-#set output 'electron_fit.eps'
+set output 'electron_fit.eps'
 
 
 #-----Formatierung-----#
@@ -34,17 +34,17 @@ D=0.072450974
 
 
 #-----Fitfunktion-----#
-f(x)=c*x**2+a*(x)+b
+f(x)=+a*(x)
 #g(x)=c*(x)+d
 a=1; b=1
 c=1; d=1
 
 
 #-----Fitting-----#
-fit f(x) "carbons.csv" index 0 using ($1):($2) via a,b
+fit f(x) "electrons.csv" index 0 using ($1):($2) via a
 
 #-----Plot-----#
-plot f(x) title "linear fit" linecolor rgb "blue", "carbons.csv" index 0 using 1:2 title "data" lc rgb "red"
+plot f(x) title "linear fit" linecolor rgb "blue", "electrons.csv" index 0 using 1:2 title "data" lc rgb "red"
 
 #-----Sonderkram-----#
 #set arrow from 0,-26 to 1.6,-26 lc 2 lw 3 front nohead
