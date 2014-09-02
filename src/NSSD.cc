@@ -114,14 +114,20 @@ G4bool NSSD::ProcessHits(G4Step* step, G4TouchableHistory*)
 	// now set photon response with linear fit (delta E = 1keV) in #photons/MeV
 	if(property != NULL)		// photonFactor not set
 	{
+/*
 		if(particleEnergy < property->GetMinValue())
 			photonFactor = (property->GetEnergy(property->GetMinValue()))/(0.1*MeV);
 		else if(particleEnergy+1*keV >= property->GetMaxValue())
 			photonFactor = (property->GetEnergy(property->GetMaxValue())-property->GetEnergy(property->GetMaxValue()-1*keV))/(1*keV);
 		else 
 			photonFactor = (property->GetEnergy(particleEnergy+1*keV)-property->GetEnergy(particleEnergy))/(1*keV);
+*/
+		if(particleEnergy < property->GetMinValue())
+			photonFactor = property->GetEnergy(property->GetMinValue())/property->GetMinValue();
+		else
+			photonFactor = property->GetEnergy(particleEnergy)/particleEnergy;
 	}
-
+/*
 static int k=1;
 	if(edep!=particleEnergy){
 		G4cout << "not total "<< -(edep-particleEnergy)/MeV << "MeV " <<k << G4endl;
@@ -134,11 +140,11 @@ k++;
 	{
 		G4cout << "Val1: " << property->GetEnergy(particleEnergy) << " Val2: " << property->GetEnergy(particleEnergy+1*keV) <<G4endl<<G4endl;
     G4cout << "MinVal: " << property->GetMinLowEdgeEnergy()<<G4endl;
-		G4cout << "PhotonFactor: " << photonFactor << G4endl;
 	}
+	G4cout << "PhotonFactor: " << photonFactor << G4endl;
 	G4cout << "eDep: " << edep/MeV<< " MeV " << edep*photonFactor << " photons" << G4endl;
 
-	
+	*/
 
 	G4double photon = edep*photonFactor;
 
