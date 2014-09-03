@@ -40,7 +40,7 @@ NSHit::NSHit()
    fEdep(0.), fPhoton(0.), fEntSD(0),
 		fGamma(0), fElec(0), fProt(0),
  		fDeut(0), fAlpha(0), fCarbon(0), 
-		fOther(0)
+		fOther(0),fTotal(0)
 { }
 
 NSHit::~NSHit()
@@ -57,6 +57,7 @@ NSHit::NSHit(const NSHit& right)
 	fAlpha = right.fAlpha;
 	fCarbon = right.fCarbon;
 	fOther = right.fOther;
+	fTotal = right.fTotal;
 }
 
 const NSHit& NSHit::operator=(const NSHit& right)
@@ -69,6 +70,7 @@ const NSHit& NSHit::operator=(const NSHit& right)
 	fAlpha = right.fAlpha;
 	fCarbon = right.fCarbon;
 	fOther = right.fOther;
+	fTotal = right.fTotal;
   return *this;
 }
 

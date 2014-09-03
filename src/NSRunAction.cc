@@ -88,6 +88,7 @@ NSRunAction::NSRunAction()
   analysisManager->CreateNtupleIColumn("Alpha");
   analysisManager->CreateNtupleIColumn("Carbon");
   analysisManager->CreateNtupleIColumn("Others");
+  analysisManager->CreateNtupleIColumn("Total");
   analysisManager->FinishNtuple();
 }
 

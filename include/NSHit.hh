@@ -39,7 +39,7 @@ class NSHit : public G4VHit
     G4double fEdep;
     G4double fPhoton;
     G4bool 	 fEntSD;
-		G4int		 fGamma, fElec, fProt, fDeut, fAlpha, fCarbon, fOther;
+		G4int		 fGamma, fElec, fProt, fDeut, fAlpha, fCarbon, fOther, fTotal;
 
 
   public:
@@ -60,15 +60,15 @@ class NSHit : public G4VHit
 
     // methods to handle data
     void SetEntSD(G4bool entSD) { fEntSD = entSD; };
-    inline void AddEdep(G4double dE) {fEdep += dE;};
-    inline void AddPhoton(G4double dPh) {fPhoton += dPh;};
-		inline void AddGamma(G4int gamma) {fGamma += gamma;};
-		inline void AddElectron(G4int elec) {fElec += elec;};
-		inline void AddProton(G4int prot) {fProt += prot;};
-		inline void AddDeuteron(G4int deut) {fDeut += deut;};
-		inline void AddAlpha(G4int alpha) {fAlpha += alpha;};
-		inline void AddCarbon(G4int carbon) {fCarbon += carbon;};
-		inline void AddOther(G4int other) {fOther += other;};
+    inline void AddEdep(G4double dE) {fEdep += dE; };
+    inline void AddPhoton(G4double dPh) {fPhoton += dPh; };
+		inline void AddGamma(G4int gamma) {fGamma += gamma; fTotal+=gamma; };
+		inline void AddElectron(G4int elec) {fElec += elec; fTotal+=elec; };
+		inline void AddProton(G4int prot) {fProt += prot; fTotal+=prot; };
+		inline void AddDeuteron(G4int deut) {fDeut += deut; fTotal+=deut; };
+		inline void AddAlpha(G4int alpha) {fAlpha += alpha; fTotal+=alpha; };
+		inline void AddCarbon(G4int carbon) {fCarbon += carbon; fTotal+=carbon; };
+		inline void AddOther(G4int other) {fOther += other; fTotal+=other; };
 
     // get methods
     G4double GetEdep()  const { return fEdep; };
@@ -81,6 +81,7 @@ class NSHit : public G4VHit
 		G4int GetAlpha() const { return fAlpha; };
 		G4int GetCarbon() const { return fCarbon; };
 		G4int GetOther() const { return fOther; };
+		G4int GetTotal() const { return fTotal; };
 };
 
 typedef G4THitsCollection<NSHit> NSHitsCollection;

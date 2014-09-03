@@ -121,38 +121,31 @@ G4bool NSSD::ProcessHits(G4Step* step, G4TouchableHistory*)
 
 
 	// Get photon response of material (determine particle first)
-	G4double photonFactor = 0/MeV;
+	G4double photon = 0;
 	G4PhysicsOrderedFreeVector* property = NULL;
 
 	if(particleName == "e-" || particleName == "e+" || particleName == "gamma")
-		photonFactor = stepMaterial->GetMaterialPropertiesTable()->GetConstProperty("responseElectron");
+		photon = stepMaterial->GetMaterialPropertiesTable()->GetConstProperty("responseElectron")*edep;
 	else if(particleName == "proton")
 		property = stepMaterial->GetMaterialPropertiesTable()->GetProperty("responseProton");
 	else if(particleName == "deuteron")
-		photonFactor = stepMaterial->GetMaterialPropertiesTable()->GetConstProperty("responseDeuteron");
+		photon= stepMaterial->GetMaterialPropertiesTable()->GetConstProperty("responseDeuteron")*edep;
 	else if(particleName == "alpha")
 		property = stepMaterial->GetMaterialPropertiesTable()->GetProperty("responseAlpha");
 	else if(particleName == "C12" || particleName == "C13")
 		property = stepMaterial->GetMaterialPropertiesTable()->GetProperty("responseCarbon");
 	else{
-		photonFactor = 0;
+		photon = 0;
 		G4cerr<< "ERROR: unknown particle '"<< particleName << "'" << G4endl;	
 		}
-	// now set photon response with linear fit (delta E = 1keV) in #photons/MeV
-	if(property != NULL)		// photonFactor not set
+
+	// now set photon response if not already set
+	if(property != NULL)
 	{
-/*
 		if(particleEnergy < property->GetMinValue())
-			photonFactor = (property->GetEnergy(property->GetMinValue()))/(0.1*MeV);
-		else if(particleEnergy+1*keV >= property->GetMaxValue())
-			photonFactor = (property->GetEnergy(property->GetMaxValue())-property->GetEnergy(property->GetMaxValue()-1*keV))/(1*keV);
-		else 
-			photonFactor = (property->GetEnergy(particleEnergy+1*keV)-property->GetEnergy(particleEnergy))/(1*keV);
-*/
-		if(particleEnergy < property->GetMinValue())
-			photonFactor = property->GetEnergy(property->GetMinValue())/property->GetMinValue();
+			photon = property->GetEnergy(property->GetMinValue())/property->GetMinValue()*edep;
 		else
-			photonFactor = property->GetEnergy(particleEnergy)/particleEnergy;
+			photon = property->GetEnergy(particleEnergy)-property->GetEnergy(particleEnergy-edep);
 	}
 /*
 	G4cout <<G4endl<< particleName << G4endl << "Material: " << stepMaterial->GetName()<<G4endl;
@@ -173,9 +166,6 @@ G4bool NSSD::ProcessHits(G4Step* step, G4TouchableHistory*)
 	G4cout << "eDep: " << edep/MeV<< " MeV " << edep*photonFactor << " photons" << G4endl;
 */
 	
-
-	G4double photon = edep*photonFactor;
-
 	// Add everything to hit object
   hit->AddEdep(edep);
 	hit->AddPhoton(photon);

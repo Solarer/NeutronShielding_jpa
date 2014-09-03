@@ -132,22 +132,23 @@ void NSEventAction::EndOfEventAction(const G4Event* event)
   G4double dy = py / ptot;
   G4double dz = pz / ptot;
 
-  // Fill ntuple id=1
-  analysisManager->FillNtupleIColumn(1,0, ID);
-  analysisManager->FillNtupleIColumn(1,1, cennsHit->GetEntSD());
-  analysisManager->FillNtupleDColumn(1,2, cennsHit->GetEdep());
-  analysisManager->FillNtupleDColumn(1,3, cennsHit->GetPhoton());
-  analysisManager->FillNtupleDColumn(1,4, x0);
-  analysisManager->FillNtupleDColumn(1,5, y0);
-  analysisManager->FillNtupleDColumn(1,6, z0);
-  analysisManager->FillNtupleDColumn(1,7, dx);
-  analysisManager->FillNtupleDColumn(1,8, dy);
-  analysisManager->FillNtupleDColumn(1,9, dz);
-  analysisManager->AddNtupleRow(1);
 
-  // Fill ntuple id=2
   if(cennsHit->GetEntSD() == 1) // only if a particle entered the SD
 	{
+  	// Fill ntuple id=1
+  	analysisManager->FillNtupleIColumn(1,0, ID);
+  	analysisManager->FillNtupleIColumn(1,1, cennsHit->GetEntSD());
+  	analysisManager->FillNtupleDColumn(1,2, cennsHit->GetEdep());
+  	analysisManager->FillNtupleDColumn(1,3, cennsHit->GetPhoton());
+  	analysisManager->FillNtupleDColumn(1,4, x0);
+  	analysisManager->FillNtupleDColumn(1,5, y0);
+  	analysisManager->FillNtupleDColumn(1,6, z0);
+  	analysisManager->FillNtupleDColumn(1,7, dx);
+  	analysisManager->FillNtupleDColumn(1,8, dy);
+  	analysisManager->FillNtupleDColumn(1,9, dz);
+  	analysisManager->AddNtupleRow(1);
+
+  	// Fill ntuple id=2
   	analysisManager->FillNtupleIColumn(2,0, cennsHit->GetGamma());
   	analysisManager->FillNtupleIColumn(2,1, cennsHit->GetElectron());
   	analysisManager->FillNtupleIColumn(2,2, cennsHit->GetProton());
@@ -155,6 +156,7 @@ void NSEventAction::EndOfEventAction(const G4Event* event)
   	analysisManager->FillNtupleIColumn(2,4, cennsHit->GetAlpha());
   	analysisManager->FillNtupleIColumn(2,5, cennsHit->GetCarbon());
   	analysisManager->FillNtupleIColumn(2,6, cennsHit->GetOther());
+  	analysisManager->FillNtupleIColumn(2,7, cennsHit->GetTotal());
   	analysisManager->AddNtupleRow(2);
 	}
 }
