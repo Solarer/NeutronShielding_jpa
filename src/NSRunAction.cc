@@ -55,6 +55,7 @@ NSRunAction::NSRunAction()
   // Default Settings
   analysisManager->SetVerboseLevel(1);
   analysisManager->SetFirstHistoId(1);
+	analysisManager->SetFirstNtupleId(1);
   analysisManager->SetFileName("singleRun");
 
   // Book histograms, ntuple
@@ -64,7 +65,7 @@ NSRunAction::NSRunAction()
   analysisManager->CreateH1("h2","Energy Deposited", 1000, 0, 30*MeV);
   analysisManager->CreateH1("h3","Photons Emmited", 100, 0, 2000);
 
-  // Creating ntuple
+  // Creating ntuple id=1
   analysisManager->CreateNtuple("singleRun", "Event info from one run");
   analysisManager->CreateNtupleIColumn("EventID");
   analysisManager->CreateNtupleIColumn("EntInner");
@@ -77,6 +78,16 @@ NSRunAction::NSRunAction()
   analysisManager->CreateNtupleDColumn("primdz");
   analysisManager->FinishNtuple();
 
+	// Creating ntuple id=2
+  analysisManager->CreateNtuple("particles", "Particles Created in that run");
+  analysisManager->CreateNtupleIColumn("Gamma");
+  analysisManager->CreateNtupleIColumn("Electron");
+  analysisManager->CreateNtupleIColumn("Proton");
+  analysisManager->CreateNtupleIColumn("Deuteron");
+  analysisManager->CreateNtupleIColumn("Alpha");
+  analysisManager->CreateNtupleIColumn("Carbon");
+  analysisManager->CreateNtupleIColumn("Others");
+  analysisManager->FinishNtuple();
 }
 
 NSRunAction::~NSRunAction()

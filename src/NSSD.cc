@@ -87,30 +87,33 @@ G4bool NSSD::ProcessHits(G4Step* step, G4TouchableHistory*)
 	G4String particleName = step->GetTrack()->GetDefinition()->GetParticleName();
 
 	// count particles of track
-	if(std::find(trackIDs.begin(), trackIDs.end(), step->GetTrack()->GetTrackID())==trackIDs.end())
+	if(std::find(trackIDs.begin(), trackIDs.end(), step->GetTrack()->GetTrackID()) == trackIDs.end())
 	{
     // new Track found, adding particle
     trackIDs.push_back(step->GetTrack()->GetTrackID());
 			if(particleName == "gamma")	
-				hit->AddParticle(1,0,0,0,0,0,0);
+				hit->AddGamma(+1);
 
 			else if(particleName == "e-" || particleName == "e+")
-				hit->AddParticle(0,1,0,0,0,0,0);
+				hit->AddElectron(+1);
 
 			else if(particleName == "proton")
-				hit->AddParticle(0,0,1,0,0,0,0);
+				hit->AddProton(+1);
 
 			else if(particleName == "deuteron")
-				hit->AddParticle(0,0,0,1,0,0,0);
+				hit->AddDeuteron(+1);
 
 			else if(particleName == "alpha")
-				hit->AddParticle(0,0,0,0,1,0,0);
+				hit->AddAlpha(+1);
 
 			else if(particleName == "C12" || particleName == "C13")
-				hit->AddParticle(0,0,0,0,0,1,0);
+				hit->AddCarbon(+1);
 
 			else
-				hit->AddParticle(0,0,0,0,0,0,1);
+			{
+				hit->AddOther(+1);
+				G4cout << "adding other particle" << G4endl;
+			}
 	}
 
 	// Get current particle energy
@@ -155,23 +158,24 @@ G4bool NSSD::ProcessHits(G4Step* step, G4TouchableHistory*)
 			photonFactor = property->GetEnergy(particleEnergy)/particleEnergy;
 	}
 /*
-static int k=1;
-	if(edep!=particleEnergy){
-		G4cout << "not total "<< -(edep-particleEnergy)/MeV << "MeV " <<k << G4endl;
-k++;
-}
 	G4cout <<G4endl<< particleName << G4endl << "Material: " << stepMaterial->GetName()<<G4endl;
-	G4cout << "particle Energy: " << particleEnergy/MeV << "MeV" << G4endl;
+	G4cout << "TrackID: " << step->GetTrack()->GetTrackID() << "\t StepID: " << step->GetTrack()->GetCurrentStepNumber() << G4endl;
+	G4cout << "Vector: ";
+	for(int j=0; j<trackIDs.size();j++)
+	{
+		G4cout << trackIDs.at(j)<< " " ;
+	}
+	G4cout << G4endl<< "particle Energy: " << particleEnergy/MeV << "MeV" << G4endl;
 	G4cout << "Energyloss: " << edep/MeV <<"MeV"<< G4endl;
 	if(property!=NULL)
 	{
-		G4cout << "Val1: " << property->GetEnergy(particleEnergy) << " Val2: " << property->GetEnergy(particleEnergy+1*keV) <<G4endl<<G4endl;
+		G4cout << "Val1: " << property->GetEnergy(particleEnergy) << " Val2: " << property->GetEnergy(particleEnergy+1*keV) <<G4endl;
     G4cout << "MinVal: " << property->GetMinLowEdgeEnergy()<<G4endl;
 	}
 	G4cout << "PhotonFactor: " << photonFactor << G4endl;
 	G4cout << "eDep: " << edep/MeV<< " MeV " << edep*photonFactor << " photons" << G4endl;
-
-	*/
+*/
+	
 
 	G4double photon = edep*photonFactor;
 
@@ -183,7 +187,8 @@ k++;
 
 void NSSD::EndOfEvent(G4HCofThisEvent*)
 {
-	// count particles
+	// reset Vector
+	trackIDs.clear();
 	
   // Print hits collection
   if (verboseLevel > 1)

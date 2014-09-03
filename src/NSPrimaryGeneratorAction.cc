@@ -144,7 +144,7 @@ void NSPrimaryGeneratorAction::GeneratePrimaries(G4Event* anEvent)
   fParticleGun->GeneratePrimaryVertex(anEvent);
 
   //event count output
-  if(event_cnt%1000==0)
+  if((event_cnt<1000 && event_cnt%100==0) || event_cnt%1000==0)
 	G4cout << "Reached " << event_cnt << " event mark. Ongoing..." << G4endl;
   event_cnt++;
 }

@@ -132,16 +132,28 @@ void NSEventAction::EndOfEventAction(const G4Event* event)
   G4double dy = py / ptot;
   G4double dz = pz / ptot;
 
-  // Fill ntuple
-  analysisManager->FillNtupleIColumn(0, ID);
-  analysisManager->FillNtupleIColumn(1, cennsHit->GetEntSD());
-  analysisManager->FillNtupleDColumn(2, cennsHit->GetEdep());
-  analysisManager->FillNtupleDColumn(3, x0);
-  analysisManager->FillNtupleDColumn(4, y0);
-  analysisManager->FillNtupleDColumn(5, z0);
-  analysisManager->FillNtupleDColumn(6, dx);
-  analysisManager->FillNtupleDColumn(7, dy);
-  analysisManager->FillNtupleDColumn(8, dz);
-  analysisManager->AddNtupleRow();
-}
+  // Fill ntuple id=1
+  analysisManager->FillNtupleIColumn(1,0, ID);
+  analysisManager->FillNtupleIColumn(1,1, cennsHit->GetEntSD());
+  analysisManager->FillNtupleDColumn(1,2, cennsHit->GetEdep());
+  analysisManager->FillNtupleDColumn(1,3, x0);
+  analysisManager->FillNtupleDColumn(1,4, y0);
+  analysisManager->FillNtupleDColumn(1,5, z0);
+  analysisManager->FillNtupleDColumn(1,6, dx);
+  analysisManager->FillNtupleDColumn(1,7, dy);
+  analysisManager->FillNtupleDColumn(1,8, dz);
+  analysisManager->AddNtupleRow(1);
 
+  // Fill ntuple id=2
+  if(cennsHit->GetEntSD() == 1) // only if a particle entered the SD
+	{
+  	analysisManager->FillNtupleIColumn(2,0, cennsHit->GetGamma());
+  	analysisManager->FillNtupleIColumn(2,1, cennsHit->GetElectron());
+  	analysisManager->FillNtupleIColumn(2,2, cennsHit->GetProton());
+  	analysisManager->FillNtupleIColumn(2,3, cennsHit->GetDeuteron());
+  	analysisManager->FillNtupleIColumn(2,4, cennsHit->GetAlpha());
+  	analysisManager->FillNtupleIColumn(2,5, cennsHit->GetCarbon());
+  	analysisManager->FillNtupleIColumn(2,6, cennsHit->GetOther());
+  	analysisManager->AddNtupleRow(2);
+	}
+}

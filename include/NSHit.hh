@@ -60,14 +60,27 @@ class NSHit : public G4VHit
 
     // methods to handle data
     void SetEntSD(G4bool entSD) { fEntSD = entSD; };
-    void AddEdep(G4double dE);
-    void AddPhoton(G4double dPh);
-		void AddParticle(G4int gamma,G4int elec,G4int prot,G4int deut,G4int alpha,G4int carbon, G4int other);
+    inline void AddEdep(G4double dE) {fEdep += dE;};
+    inline void AddPhoton(G4double dPh) {fPhoton += dPh;};
+		inline void AddGamma(G4int gamma) {fGamma += gamma;};
+		inline void AddElectron(G4int elec) {fElec += elec;};
+		inline void AddProton(G4int prot) {fProt += prot;};
+		inline void AddDeuteron(G4int deut) {fDeut += deut;};
+		inline void AddAlpha(G4int alpha) {fAlpha += alpha;};
+		inline void AddCarbon(G4int carbon) {fCarbon += carbon;};
+		inline void AddOther(G4int other) {fOther += other;};
 
     // get methods
     G4double GetEdep()  const { return fEdep; };
     G4double GetPhoton()  const { return fPhoton; };
     G4bool   GetEntSD() const { return fEntSD; };      
+		G4int GetGamma() const { return fGamma; };
+		G4int GetElectron() const { return fElec; };
+		G4int GetProton() const { return fProt; };
+		G4int GetDeuteron() const { return fDeut; };
+		G4int GetAlpha() const { return fAlpha; };
+		G4int GetCarbon() const { return fCarbon; };
+		G4int GetOther() const { return fOther; };
 };
 
 typedef G4THitsCollection<NSHit> NSHitsCollection;
@@ -88,27 +101,6 @@ inline void NSHit::operator delete(void *hit)
   if(!NSHitAllocator)
       NSHitAllocator = new G4Allocator<NSHit>;
   NSHitAllocator->FreeSingle((NSHit*) hit);
-}
-
-inline void NSHit::AddEdep(G4double dE)
-{
-  fEdep += dE;
-}
-
-inline void NSHit::AddPhoton(G4double dPh)
-{
-  fPhoton += dPh;
-}
-
-inline void NSHit::AddParticle(G4int gamma,G4int elec,G4int prot,G4int deut,G4int alpha,G4int carbon, G4int other)
-{
-	fGamma+=gamma;
-	fElec+=elec;
-	fProt+=prot;
-	fDeut+=deut;
-	fAlpha+=alpha;
-	fCarbon+=carbon;
-	fOther+=other;
 }
 
 #endif
