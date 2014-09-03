@@ -86,6 +86,33 @@ G4bool NSSD::ProcessHits(G4Step* step, G4TouchableHistory*)
 	// Get particle name
 	G4String particleName = step->GetTrack()->GetDefinition()->GetParticleName();
 
+	// count particles of track
+	if(std::find(trackIDs.begin(), trackIDs.end(), step->GetTrack()->GetTrackID())==trackIDs.end())
+	{
+    // new Track found, adding particle
+    trackIDs.push_back(step->GetTrack()->GetTrackID());
+			if(particleName == "gamma")	
+				hit->AddParticle(1,0,0,0,0,0,0);
+
+			else if(particleName == "e-" || particleName == "e+")
+				hit->AddParticle(0,1,0,0,0,0,0);
+
+			else if(particleName == "proton")
+				hit->AddParticle(0,0,1,0,0,0,0);
+
+			else if(particleName == "deuteron")
+				hit->AddParticle(0,0,0,1,0,0,0);
+
+			else if(particleName == "alpha")
+				hit->AddParticle(0,0,0,0,1,0,0);
+
+			else if(particleName == "C12" || particleName == "C13")
+				hit->AddParticle(0,0,0,0,0,1,0);
+
+			else
+				hit->AddParticle(0,0,0,0,0,0,1);
+	}
+
 	// Get current particle energy
 	G4double particleEnergy = step->GetPreStepPoint()->GetKineticEnergy();
 
@@ -156,6 +183,8 @@ k++;
 
 void NSSD::EndOfEvent(G4HCofThisEvent*)
 {
+	// count particles
+	
   // Print hits collection
   if (verboseLevel > 1)
   { 

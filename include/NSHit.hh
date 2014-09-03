@@ -39,6 +39,8 @@ class NSHit : public G4VHit
     G4double fEdep;
     G4double fPhoton;
     G4bool 	 fEntSD;
+		G4int		 fGamma, fElec, fProt, fDeut, fAlpha, fCarbon, fOther;
+
 
   public:
     NSHit();
@@ -60,6 +62,7 @@ class NSHit : public G4VHit
     void SetEntSD(G4bool entSD) { fEntSD = entSD; };
     void AddEdep(G4double dE);
     void AddPhoton(G4double dPh);
+		void AddParticle(G4int gamma,G4int elec,G4int prot,G4int deut,G4int alpha,G4int carbon, G4int other);
 
     // get methods
     G4double GetEdep()  const { return fEdep; };
@@ -97,6 +100,16 @@ inline void NSHit::AddPhoton(G4double dPh)
   fPhoton += dPh;
 }
 
+inline void NSHit::AddParticle(G4int gamma,G4int elec,G4int prot,G4int deut,G4int alpha,G4int carbon, G4int other)
+{
+	fGamma+=gamma;
+	fElec+=elec;
+	fProt+=prot;
+	fDeut+=deut;
+	fAlpha+=alpha;
+	fCarbon+=carbon;
+	fOther+=other;
+}
 
 #endif
 

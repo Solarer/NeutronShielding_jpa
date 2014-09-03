@@ -49,6 +49,7 @@ class NSSD : public G4VSensitiveDetector
 
   private:
     NSHitsCollection* fHitsCollection;
+		std::vector<int> trackIDs;
 };
 
 #endif
