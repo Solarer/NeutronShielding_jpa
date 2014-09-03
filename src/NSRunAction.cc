@@ -70,6 +70,7 @@ NSRunAction::NSRunAction()
   analysisManager->CreateNtupleIColumn("EventID");
   analysisManager->CreateNtupleIColumn("EntInner");
   analysisManager->CreateNtupleDColumn("Edep");
+  analysisManager->CreateNtupleDColumn("Photons");
   analysisManager->CreateNtupleDColumn("primx");
   analysisManager->CreateNtupleDColumn("primy");
   analysisManager->CreateNtupleDColumn("primz");

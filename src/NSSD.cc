@@ -110,10 +110,7 @@ G4bool NSSD::ProcessHits(G4Step* step, G4TouchableHistory*)
 				hit->AddCarbon(+1);
 
 			else
-			{
 				hit->AddOther(+1);
-				G4cout << "adding other particle" << G4endl;
-			}
 	}
 
 	// Get current particle energy

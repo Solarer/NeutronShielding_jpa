@@ -136,12 +136,13 @@ void NSEventAction::EndOfEventAction(const G4Event* event)
   analysisManager->FillNtupleIColumn(1,0, ID);
   analysisManager->FillNtupleIColumn(1,1, cennsHit->GetEntSD());
   analysisManager->FillNtupleDColumn(1,2, cennsHit->GetEdep());
-  analysisManager->FillNtupleDColumn(1,3, x0);
-  analysisManager->FillNtupleDColumn(1,4, y0);
-  analysisManager->FillNtupleDColumn(1,5, z0);
-  analysisManager->FillNtupleDColumn(1,6, dx);
-  analysisManager->FillNtupleDColumn(1,7, dy);
-  analysisManager->FillNtupleDColumn(1,8, dz);
+  analysisManager->FillNtupleDColumn(1,3, cennsHit->GetPhoton());
+  analysisManager->FillNtupleDColumn(1,4, x0);
+  analysisManager->FillNtupleDColumn(1,5, y0);
+  analysisManager->FillNtupleDColumn(1,6, z0);
+  analysisManager->FillNtupleDColumn(1,7, dx);
+  analysisManager->FillNtupleDColumn(1,8, dy);
+  analysisManager->FillNtupleDColumn(1,9, dz);
   analysisManager->AddNtupleRow(1);
 
   // Fill ntuple id=2
