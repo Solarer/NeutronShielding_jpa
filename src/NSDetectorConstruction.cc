@@ -327,7 +327,7 @@ void NSDetectorConstruction::ComputeParameters()
   shieldBox_position = new G4ThreeVector[shieldBox_number];
 	
 	// Positions and rotation of the shield boxes (first layer) 
-	if(shieldBox_number!=0)
+	if(shieldBox_number!=0)		// don't do this if there is no water shielding at all
 	{
 		shieldBox_position[0].setX(0.5*hSpace+0.5*shieldBox_size[0]);
 		shieldBox_position[0].setY(0.5*shieldBox_size[0]+hSpace+0.5*shieldBox_size[1]);
