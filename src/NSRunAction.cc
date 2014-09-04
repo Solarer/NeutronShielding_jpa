@@ -38,6 +38,7 @@
 
 #include "G4Material.hh"
 #include "G4String.hh"
+#include <time.h>
 
 NSRunAction::NSRunAction()
 : G4UserRunAction()
@@ -53,10 +54,12 @@ NSRunAction::NSRunAction()
   //analysisManager->SetNtupleDirectoryName("ntuple");
 
   // Default Settings
+  char fileName[100];
+	sprintf(fileName,"singleRun_%i",int(time(NULL)));
   analysisManager->SetVerboseLevel(1);
   analysisManager->SetFirstHistoId(1);
 	analysisManager->SetFirstNtupleId(1);
-  analysisManager->SetFileName("singleRun");
+  analysisManager->SetFileName(fileName);
 
   // Book histograms, ntuple
   
