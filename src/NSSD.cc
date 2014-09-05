@@ -76,9 +76,6 @@ G4bool NSSD::ProcessHits(G4Step* step, G4TouchableHistory*)
       "MyCode0004", FatalException, msg);
   }
 
-  // Particle entered sensitive detector
-  hit->SetEntSD(1);
-
   // Total energy deposited in step
   G4double edep = step->GetTotalEnergyDeposit();
   if ( edep==0.) return false;
@@ -112,6 +109,9 @@ G4bool NSSD::ProcessHits(G4Step* step, G4TouchableHistory*)
 			else
 				hit->AddOther(+1);
 	}
+
+  // Particle entered sensitive detector
+  hit->SetEntSD(1);
 
 	// Get current particle energy
 	G4double particleEnergy = step->GetPreStepPoint()->GetKineticEnergy();

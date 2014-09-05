@@ -1,16 +1,9 @@
 
 MaterialPropertiesTable
-	values are not close enough yet. Improve!!
-	deuteron something between
+	deuteron something between, improve value
 
 Messenger
-	add option to change properties
-
-shielding
-	allow to remove waterboxes
-
-hits
-	only count SD hits??
+	add option to change properties!!!
 
 DetectorConstruction
 	get right sizes
@@ -18,4 +11,8 @@ DetectorConstruction
 output
 	create nice pie chart
 	fix verbosity
+
+plots
+	make plots automaticly
+	fix error in Edep-Photons plot
 
