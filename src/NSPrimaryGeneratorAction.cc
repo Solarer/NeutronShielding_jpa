@@ -55,7 +55,7 @@ NSPrimaryGeneratorAction::NSPrimaryGeneratorAction(NSDetectorConstruction* DC)
   G4ParticleDefinition* particle
     = particleTable->FindParticle(particleName="neutron");
   fParticleGun->SetParticleDefinition(particle);
-  fParticleGun->SetParticleEnergy(10.*MeV);
+  fParticleGun->SetParticleEnergy(1.*MeV);
 }
 
 NSPrimaryGeneratorAction::~NSPrimaryGeneratorAction()

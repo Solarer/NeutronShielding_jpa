@@ -60,7 +60,7 @@ NSDetectorConstruction::NSDetectorConstruction()
 {
   // Default parameters
   detRatio       = 0.5;
-	shield_layer	 = 0;
+	shield_layer	 = 6;
   shieldBox_size[0] = 0.55*m;
   shieldBox_size[1] = 0.27*m;
   shieldBox_size[2] = 0.20*m;
