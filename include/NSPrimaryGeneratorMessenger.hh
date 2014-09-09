@@ -51,6 +51,7 @@ private:
 
   // Messenger
   G4UIcmdWithAnInteger*     fGenInShieldCmd;
+  G4UIcmdWithAnInteger*     fGenEvaporationCmd;
 };
 
 #endif

@@ -47,12 +47,21 @@ class NSPrimaryGeneratorAction : public G4VUserPrimaryGeneratorAction
   
     // method to access particle gun
     const G4ParticleGun* GetParticleGun() const { return fParticleGun; };
+ 		
+		// choose Evaporation spectrum
+		void SetGenEvaporation (G4int);          
+
+		// Get a random Energy from the spectrum
+    G4double GetEvaporationEnergy(void);
+
+
   
   private:
-    G4ParticleGun*  fParticleGun;            // Pointer to particle gun
-    NSDetectorConstruction* Detector;        // Pointer to detector construction
-    G4bool genInLead;                       // Where to generate particles
-    NSPrimaryGeneratorMessenger* fMessenger; // Pointer to messenger
+    G4ParticleGun*  fParticleGun;           	// Pointer to particle gun
+    NSDetectorConstruction* Detector;       	// Pointer to detector construction
+    G4bool genInLead;                       	// Where to generate particles
+    NSPrimaryGeneratorMessenger* fMessenger; 	// Pointer to messenger
+		G4bool genEvaporation;										// custom energy distribution
 
 };
 

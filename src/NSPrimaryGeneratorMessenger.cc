@@ -47,6 +47,12 @@ NSPrimaryGeneratorMessenger::NSPrimaryGeneratorMessenger(
   fGenInShieldCmd->SetGuidance("Generate particles in which shield layer?");
   fGenInShieldCmd->SetParameterName("genInShield",false);
   fGenInShieldCmd->AvailableForStates(G4State_Idle);
+
+  // Command to choose evaporation spectrum
+  fGenEvaporationCmd = new G4UIcmdWithAnInteger("/NS/gen/genEvaporation", this);
+  fGenEvaporationCmd->SetGuidance("Generate particles with evaporation spectrum?");
+  fGenEvaporationCmd->SetParameterName("genEvaporation",false);
+  fGenEvaporationCmd->AvailableForStates(G4State_Idle);
 }
 
 NSPrimaryGeneratorMessenger::~NSPrimaryGeneratorMessenger()
@@ -54,11 +60,14 @@ NSPrimaryGeneratorMessenger::~NSPrimaryGeneratorMessenger()
   delete fGenInShieldCmd;
   delete fNSDirectory;
   delete fGenDirectory;
+	delete fGenEvaporationCmd;
 }
 
-void NSPrimaryGeneratorMessenger::SetNewValue(
-                                        G4UIcommand* command, G4String newValue)
+void NSPrimaryGeneratorMessenger::SetNewValue(G4UIcommand* command, G4String newValue)
 { 
-
+	if( command == fGenEvaporationCmd )
+  { 
+		Action->SetGenEvaporation(fGenEvaporationCmd->GetNewIntValue(newValue)); 
+	}
 }
 

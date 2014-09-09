@@ -37,7 +37,7 @@
 #include "Randomize.hh"
 
 NSPrimaryGeneratorAction::NSPrimaryGeneratorAction(NSDetectorConstruction* DC)
-: Detector(DC)
+: Detector(DC),genEvaporation(0)
 {
   // Construct messenger
   fMessenger = new NSPrimaryGeneratorMessenger(this);
@@ -140,6 +140,13 @@ void NSPrimaryGeneratorAction::GeneratePrimaries(G4Event* anEvent)
   // Set primary particle direction
   fParticleGun->SetParticleMomentumDirection(G4ThreeVector(dx,dy,dz));
 
+  // Select from random evaporation spectrum
+	if (genEvaporation == 1) 
+	{
+    G4double evapEnergy = NSPrimaryGeneratorAction::GetEvaporationEnergy();
+    fParticleGun->SetParticleEnergy(evapEnergy*MeV);
+	}
+
   // Generate a particle
   fParticleGun->GeneratePrimaryVertex(anEvent);
 
@@ -149,3 +156,42 @@ void NSPrimaryGeneratorAction::GeneratePrimaries(G4Event* anEvent)
   event_cnt++;
 }
 
+void NSPrimaryGeneratorAction::SetGenEvaporation (G4int value)
+{
+  // Set which shield the particles are generated in
+  genEvaporation = value;
+}
+G4double NSPrimaryGeneratorAction::GetEvaporationEnergy(void) {
+
+  G4double evapEnergy=1.;
+
+  // Stolen from HALO code; integral MC method
+  // I am not sure this gives quite the right spectrum ?
+
+  const G4int nBins = 13;
+
+  G4double Edistrib[nBins][2] = {
+   {0.138,  .25},
+   {0.391,  .75},
+   {0.557, 1.25},
+   {0.687, 1.75},
+   {0.791, 2.25},
+   {0.866, 2.75},
+   {0.923, 3.25},
+   {0.957, 3.75},
+   {0.977, 4.25},
+   {0.989, 4.75},
+   {0.994, 5.25},
+   {0.998, 5.75},
+   {1.000, 6.25}
+   } ; 
+
+  G4int i=0;
+  G4double rnum = G4UniformRand();
+  while (Edistrib[i][0]< rnum) {
+    i++;
+  }
+
+  evapEnergy = Edistrib[i][1];
+  return evapEnergy;
+}

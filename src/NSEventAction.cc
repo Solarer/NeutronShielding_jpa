@@ -159,4 +159,8 @@ void NSEventAction::EndOfEventAction(const G4Event* event)
   	analysisManager->FillNtupleIColumn(2,7, cennsHit->GetTotal());
   	analysisManager->AddNtupleRow(2);
 	}
+	if(cennsHit->GetEdep()>4. && cennsHit->GetEdep()<4.5)
+	{
+  G4cout << "critical" << eventID << G4endl << G4endl;
+	}
 }

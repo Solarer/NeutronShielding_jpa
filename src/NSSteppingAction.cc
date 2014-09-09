@@ -53,8 +53,9 @@ NSSteppingAction::~NSSteppingAction()
 
 void NSSteppingAction::UserSteppingAction(const G4Step* step)
 {
-/*
   // Get step info
+  if(fEventAction->GetEventId()>24000 && fEventAction->GetEventId()<25000)
+	{
   G4int eventId = fEventAction->GetEventId();
   G4Track* track = step->GetTrack();
   G4int trackId = track->GetTrackID();
@@ -82,7 +83,8 @@ void NSSteppingAction::UserSteppingAction(const G4Step* step)
           << edep << "\t" << G4endl;
 
   outfile.close();
-*/
+	}
+
 }
 
 
