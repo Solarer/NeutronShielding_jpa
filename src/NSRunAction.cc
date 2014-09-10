@@ -77,6 +77,7 @@ NSRunAction::NSRunAction()
   analysisManager->CreateNtupleDColumn("primx");
   analysisManager->CreateNtupleDColumn("primy");
   analysisManager->CreateNtupleDColumn("primz");
+  analysisManager->CreateNtupleDColumn("primEnergy");
   analysisManager->CreateNtupleDColumn("primdx");
   analysisManager->CreateNtupleDColumn("primdy");
   analysisManager->CreateNtupleDColumn("primdz");

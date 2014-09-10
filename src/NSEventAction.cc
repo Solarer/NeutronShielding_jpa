@@ -118,10 +118,11 @@ void NSEventAction::EndOfEventAction(const G4Event* event)
   // Get the primary position/direction information
   G4PrimaryParticle* primary = event->GetPrimaryVertex(0)->GetPrimary(0);
 
-	G4double ID = eventID;
+  G4double ID = eventID;
   G4double x0 = (event->GetPrimaryVertex()->GetX0());
   G4double y0 = (event->GetPrimaryVertex()->GetY0());
   G4double z0 = (event->GetPrimaryVertex()->GetZ0());
+  G4double primEnergy = (primary->GetKineticEnergy());
   G4double px = (primary->GetPx());
   G4double py = (primary->GetPy());
   G4double pz = (primary->GetPz());
@@ -143,9 +144,10 @@ void NSEventAction::EndOfEventAction(const G4Event* event)
   	analysisManager->FillNtupleDColumn(1,4, x0);
   	analysisManager->FillNtupleDColumn(1,5, y0);
   	analysisManager->FillNtupleDColumn(1,6, z0);
-  	analysisManager->FillNtupleDColumn(1,7, dx);
-  	analysisManager->FillNtupleDColumn(1,8, dy);
-  	analysisManager->FillNtupleDColumn(1,9, dz);
+  	analysisManager->FillNtupleDColumn(1,7, primEnergy);
+  	analysisManager->FillNtupleDColumn(1,8, dx);
+  	analysisManager->FillNtupleDColumn(1,9, dy);
+  	analysisManager->FillNtupleDColumn(1,10, dz);
   	analysisManager->AddNtupleRow(1);
 
   	// Fill ntuple id=2
