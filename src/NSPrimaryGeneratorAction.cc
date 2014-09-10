@@ -99,30 +99,29 @@ void NSPrimaryGeneratorAction::GeneratePrimaries(G4Event* anEvent)
 	}
 	else // generate in watershield
 	{
-  	// Get detector configuration sizes
-  	G4int maxBoxNumber = Detector->GetShieldBoxNumber();
-  	G4double boxX, boxY, boxZ;
-			boxX = Detector->GetShieldBoxSizeX();
-			boxY = Detector->GetShieldBoxSizeY();
-			boxZ = Detector->GetShieldBoxSizeZ();
-		const G4ThreeVector* shieldBoxPosition = Detector->GetShieldBoxPosition();
-		G4int box;
+  	    // Get detector configuration sizes
+  	    G4int maxBoxNumber = Detector->GetShieldBoxNumber();
+  	    G4double boxX, boxY, boxZ;
+	    boxX = Detector->GetShieldBoxSizeX();
+	    boxY = Detector->GetShieldBoxSizeY();
+	    boxZ = Detector->GetShieldBoxSizeZ();
+	    const G4ThreeVector* shieldBoxPosition = Detector->GetShieldBoxPosition();
 
-		// Now generate in random box
-  	box =  int(maxBoxNumber * G4UniformRand());
-  	z0 = (boxZ * (G4UniformRand()-0.5)) + shieldBoxPosition[box].getZ();
+	    // Now generate in random box
+  	    G4int box =  int(maxBoxNumber * G4UniformRand());
+  	    z0 = (boxZ * (G4UniformRand()-0.5)) + shieldBoxPosition[box].getZ();
 	
-		// some boxes are turned by 90°
-		if(box >= maxBoxNumber-4 || box%6 == 1 || box%6 == 4) // box has to be turned by 90°
-		{
-  		x0 = (boxY * (G4UniformRand()-0.5)) + shieldBoxPosition[box].getX();
-  		y0 = (boxX * (G4UniformRand()-0.5)) + shieldBoxPosition[box].getY();
-		}
-		else	// box is not turned
-		{
-  		x0 = (boxX * (G4UniformRand()-0.5)) + shieldBoxPosition[box].getX();
-  		y0 = (boxY * (G4UniformRand()-0.5)) + shieldBoxPosition[box].getY();
-		}
+	    // some boxes are turned by 90°
+	    if(box >= maxBoxNumber-4 || box%6 == 1 || box%6 == 4) // box has to be turned by 90°
+	    {
+  	        x0 = (boxY * (G4UniformRand()-0.5)) + shieldBoxPosition[box].getX();
+  	        y0 = (boxX * (G4UniformRand()-0.5)) + shieldBoxPosition[box].getY();
+	    }
+	    else	// box is not turned
+	    {
+  	        x0 = (boxX * (G4UniformRand()-0.5)) + shieldBoxPosition[box].getX();
+  	        y0 = (boxY * (G4UniformRand()-0.5)) + shieldBoxPosition[box].getY();
+	    }
 	}
 
   // Set primary particle position
@@ -143,8 +142,8 @@ void NSPrimaryGeneratorAction::GeneratePrimaries(G4Event* anEvent)
   // Select from random evaporation spectrum
 	if (genEvaporation == 1) 
 	{
-    G4double evapEnergy = NSPrimaryGeneratorAction::GetEvaporationEnergy();
-    fParticleGun->SetParticleEnergy(evapEnergy*MeV);
+        G4double evapEnergy = NSPrimaryGeneratorAction::GetEvaporationEnergy();
+        fParticleGun->SetParticleEnergy(evapEnergy*MeV);
 	}
 
   // Generate a particle
@@ -153,7 +152,7 @@ void NSPrimaryGeneratorAction::GeneratePrimaries(G4Event* anEvent)
   //event count output
   if((event_cnt<1000 && event_cnt%100==0) || event_cnt%1000==0)
 	G4cout << "Reached " << event_cnt << " event mark. Ongoing..." << G4endl;
-  event_cnt++;
+    event_cnt++;
 }
 
 void NSPrimaryGeneratorAction::SetGenEvaporation (G4int value)
@@ -161,9 +160,8 @@ void NSPrimaryGeneratorAction::SetGenEvaporation (G4int value)
   // Set which shield the particles are generated in
   genEvaporation = value;
 }
-G4double NSPrimaryGeneratorAction::GetEvaporationEnergy(void) {
 
-  G4double evapEnergy=1.;
+G4double NSPrimaryGeneratorAction::GetEvaporationEnergy(void) {
 
   // Stolen from HALO code; integral MC method
   // I am not sure this gives quite the right spectrum ?
@@ -184,7 +182,7 @@ G4double NSPrimaryGeneratorAction::GetEvaporationEnergy(void) {
    {0.994, 5.25},
    {0.998, 5.75},
    {1.000, 6.25}
-   } ; 
+   }; 
 
   G4int i=0;
   G4double rnum = G4UniformRand();
@@ -192,6 +190,5 @@ G4double NSPrimaryGeneratorAction::GetEvaporationEnergy(void) {
     i++;
   }
 
-  evapEnergy = Edistrib[i][1];
-  return evapEnergy;
+  return Edistrib[i][1];
 }

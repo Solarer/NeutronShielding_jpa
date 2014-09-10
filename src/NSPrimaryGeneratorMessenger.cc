@@ -30,12 +30,10 @@
 #include "G4UIdirectory.hh"
 #include "G4UIcmdWithAnInteger.hh"
 
-NSPrimaryGeneratorMessenger::NSPrimaryGeneratorMessenger(
-                                          NSPrimaryGeneratorAction* Gun)
+NSPrimaryGeneratorMessenger::NSPrimaryGeneratorMessenger(NSPrimaryGeneratorAction* Gun)
 :Action(Gun)
 {
   // Directories
-
   fNSDirectory = new G4UIdirectory("/NS/");
   fNSDirectory->SetGuidance("UI commands specific to this project.");
 
@@ -60,7 +58,7 @@ NSPrimaryGeneratorMessenger::~NSPrimaryGeneratorMessenger()
   delete fGenInShieldCmd;
   delete fNSDirectory;
   delete fGenDirectory;
-	delete fGenEvaporationCmd;
+  delete fGenEvaporationCmd;
 }
 
 void NSPrimaryGeneratorMessenger::SetNewValue(G4UIcommand* command, G4String newValue)
