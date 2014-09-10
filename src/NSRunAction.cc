@@ -108,6 +108,11 @@ G4Run* NSRunAction::GenerateRun()
 
 void NSRunAction::BeginOfRunAction(const G4Run*)
 {
+	// clear outputfile
+	std::ofstream outfile;
+	outfile.open("allSteps.out", std::ios::out | std::ios::trunc );
+	outfile.close();
+
   // Inform the runManager to save random number seed
   // G4RunManager::GetRunManager()->SetRandomNumberStore(false);
 

@@ -8,6 +8,7 @@
 /run/verbose 0
 /run/particle/verbose 0
 /process/verbose 0
+/NS/gen/genEvaporation 1
 #
 # Update detector after setting some things
 /NS/det/update

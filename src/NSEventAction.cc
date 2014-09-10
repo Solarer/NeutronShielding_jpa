@@ -34,9 +34,12 @@
 #include "G4SDManager.hh"
 #include "G4HCofThisEvent.hh"
 #include "G4UnitsTable.hh"
+#include "G4SystemOfUnits.hh"
 
 #include "Randomize.hh"
 #include <iomanip>
+#include "G4ios.hh"
+#include <fstream>
 
 NSEventAction::NSEventAction()
 : G4UserEventAction(),
@@ -75,6 +78,10 @@ void NSEventAction::PrintEventStatistics(G4double Edep) const
 
 void NSEventAction::BeginOfEventAction(const G4Event* event)
 {
+	// clear outputfile
+	std::ofstream outfile;
+	outfile.open("temp.out", std::ios::out | std::ios::trunc );
+	outfile.close();
   // Get event ID
   eventID = event->GetEventID();
 }
@@ -161,8 +168,27 @@ void NSEventAction::EndOfEventAction(const G4Event* event)
   	analysisManager->FillNtupleIColumn(2,7, cennsHit->GetTotal());
   	analysisManager->AddNtupleRow(2);
 	}
-	if(cennsHit->GetEdep()>4. && cennsHit->GetEdep()<4.5)
+	if(cennsHit->GetEdep()>4.285 && cennsHit->GetEdep()<4.32)
 	{
-  G4cout << "critical" << eventID << G4endl << G4endl;
+		std::ifstream infile;
+		std::ofstream outfile;
+		std::string buffer;
+		
+		outfile.open("count.out");
+		outfile << "found: " << eventID << G4endl;
+		outfile.close();
+
+		infile.open("temp.out");
+		outfile.open("allSteps.out", std::ios::app);
+		outfile << "\n\n---------------------------------------------\nEvent found: " << cennsHit->GetEdep()/MeV << " MeV Energy deposition\n---------------------------------------------\n" << G4endl;
+
+		while(!infile.eof()) 
+    	{
+	      getline(infile,buffer);
+				outfile << buffer << G4endl;
+      }
+		
+		outfile.close();
+		infile.close();
 	}
 }
