@@ -110,7 +110,9 @@ void NSRunAction::BeginOfRunAction(const G4Run*)
 {
 	// clear outputfile
 	std::ofstream outfile;
-	outfile.open("allSteps.out", std::ios::out | std::ios::trunc );
+	outfile.open("allSteps1.out", std::ios::out | std::ios::trunc );
+	outfile.close();
+	outfile.open("allSteps2.out", std::ios::out | std::ios::trunc );
 	outfile.close();
 
   // Inform the runManager to save random number seed

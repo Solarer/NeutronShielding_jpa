@@ -57,7 +57,7 @@ void NSSteppingAction::UserSteppingAction(const G4Step* theStep)
 {
   outfile.open("temp.out", std::ofstream::out | std::ofstream::app);
 
-	outfile << "EventID: " << fEventAction->GetEventId() << " Parent/Track: " << theStep->GetTrack()->GetParentID() << "/" << theStep->GetTrack()->GetTrackID() << " Step is limited by '"
+	outfile << "Particle: " << theStep->GetTrack()->GetDefinition()->GetParticleName() << G4endl << "EventID: " << fEventAction->GetEventId() << " Parent/Track: " << theStep->GetTrack()->GetParentID() << "/" << theStep->GetTrack()->GetTrackID() << " Step is limited by '"
    << theStep->GetPostStepPoint()->GetProcessDefinedStep()->GetProcessName() ;
 	outfile << "' in: " << theStep->GetPreStepPoint()->GetTouchableHandle()->GetVolume()->GetLogicalVolume()->GetName()<<G4endl;
 	outfile << "ParticleEnergy: " << theStep->GetTrack()->GetKineticEnergy()/MeV << " MeV, Edep: " << theStep->GetTotalEnergyDeposit()/MeV << " MeV" << G4endl;
@@ -129,7 +129,6 @@ void NSSteppingAction::UserSteppingAction(const G4Step* theStep)
   }
 	outfile << G4endl;
   outfile.close();
-
 
 /*
 	G4double kineticEnergy = step->GetTrack()->GetKineticEnergy();

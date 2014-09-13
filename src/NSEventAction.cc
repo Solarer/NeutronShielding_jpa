@@ -82,6 +82,7 @@ void NSEventAction::BeginOfEventAction(const G4Event* event)
 	std::ofstream outfile;
 	outfile.open("temp.out", std::ios::out | std::ios::trunc );
 	outfile.close();
+
   // Get event ID
   eventID = event->GetEventID();
 }
@@ -168,18 +169,39 @@ void NSEventAction::EndOfEventAction(const G4Event* event)
   	analysisManager->FillNtupleIColumn(2,7, cennsHit->GetTotal());
   	analysisManager->AddNtupleRow(2);
 	}
+
+	bool peak1, peak2;
+	peak1=peak2=false;
+
 	if(cennsHit->GetEdep()>4.285 && cennsHit->GetEdep()<4.32)
+		peak1=true;
+	else if(cennsHit->GetEdep()>5.55 && cennsHit->GetEdep()<5.58)
+		peak2=true;
+	if(peak1||peak2)
 	{
 		std::ifstream infile;
 		std::ofstream outfile;
 		std::string buffer;
 		
-		outfile.open("count.out");
-		outfile << "found: " << eventID << G4endl;
-		outfile.close();
-
 		infile.open("temp.out");
-		outfile.open("allSteps.out", std::ios::app);
+		
+		if(peak1)
+		{
+			outfile.open("count1.out");
+			outfile << "found: " << eventID << G4endl;
+			outfile.close();
+
+			outfile.open("allSteps1.out", std::ios::app);
+		}
+		else if(peak2)
+		{
+			outfile.open("count2.out");
+			outfile << "found: " << eventID << G4endl;
+			outfile.close();
+
+			outfile.open("allSteps2.out", std::ios::app);
+		}
+
 		outfile << "\n\n---------------------------------------------\nEvent found: " << cennsHit->GetEdep()/MeV << " MeV Energy deposition\n---------------------------------------------\n" << G4endl;
 
 		while(!infile.eof()) 
@@ -191,4 +213,5 @@ void NSEventAction::EndOfEventAction(const G4Event* event)
 		outfile.close();
 		infile.close();
 	}
+
 }

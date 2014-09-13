@@ -133,13 +133,13 @@ void TreeReader::Loop()
    if (fChain == 0) return;
 
    fChain->SetBranchStatus("*",0);  // disable all branches
-   fChain->SetBranchStatus("Edep",1);  // activate branchname
+   fChain->SetBranchStatus("primEnergy",1);  // activate branchname
 
    Long64_t nentries = fChain->GetEntriesFast();
 
 
 	// create Histos
-	TH1F* histEdep = new TH1F("histo", "Energy deposition", 500, 0, 15);
+	TH1F* histEdep = new TH1F("histo", "Energy deposition", 500, 0, 20);
 
    Long64_t nbytes = 0, nb = 0;
    for (Long64_t jentry=0; jentry<nentries;jentry++) 
@@ -149,9 +149,9 @@ void TreeReader::Loop()
       nb = fChain->GetEntry(jentry);   nbytes += nb;
       // if (Cut(ientry) < 0) continue;
 
-			histEdep->Fill(Edep);
+			histEdep->Fill(primEnergy);
    	}
-gPad->SetLogY();
+//gPad->SetLogY();
 	histEdep->Write();
 }
 
