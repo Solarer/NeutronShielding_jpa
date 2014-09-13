@@ -169,6 +169,7 @@ G4double NSPrimaryGeneratorAction::GetEvaporationEnergy(void) {
   const G4int nBins = 13;
 
   G4double Edistrib[nBins][2] = {
+   {0.,    0.  },
    {0.138,  .25},
    {0.391,  .75},
    {0.557, 1.25},
@@ -184,11 +185,22 @@ G4double NSPrimaryGeneratorAction::GetEvaporationEnergy(void) {
    {1.000, 6.25}
    }; 
 
-  G4int i=0;
-  G4double rnum = G4UniformRand();
-  while (Edistrib[i][0]< rnum) {
-    i++;
-  }
+    while (true) 
+    {
+        G4double energy = G4UniformRand()*6.25;         // random energy
+        G4double rand = G4UniformRand();                // random value
 
-  return Edistrib[i][1];
+        G4int i=0;
+        while(Edistrib[i][1]>= energy)
+        {
+            i++;
+        }
+
+        if (energy == 6.25)
+            i--;                                        // dont leave array
+
+        G4double chance =  (Edistrib[i][0]-Edistrib[i-1])/(Edistrib[i][i]-Edistrib[i-1][i])
+        if(rand<=chance)
+            return energy;
+    }
 }
