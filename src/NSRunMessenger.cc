@@ -24,24 +24,47 @@
 // ********************************************************************
 //
 
+#include "NSRunMessenger.hh"
+#include "NSRunAction.hh"
 
-class NSSteppingVerbose;
+#include "G4UIdirectory.hh"
+#include "G4UIcmdWithAString.hh"
 
-#ifndef NSSteppingVerbose_h
-#define NSSteppingVerbose_h 1
-
-#include "G4SteppingVerbose.hh"
-
-class NSSteppingVerbose : public G4SteppingVerbose 
+NSRunMessenger::NSRunMessenger(NSRunAction* run)
+:Action(run)
 {
- public:
-   
-  NSSteppingVerbose();
- ~NSSteppingVerbose();
+  fNSDirectory = new G4UIdirectory("/NS/");
+  fNSDirectory->SetGuidance("UI commands specific to this project.");
 
-  void StepInfo();
-  void TrackingStarted();
+  fRunDirectory = new G4UIdirectory("/NS/run/");
+  fRunDirectory->SetGuidance("Run action control");
 
-};
+  fSingleRunFileNameCmd =
+    new G4UIcmdWithAString("/NS/run/setSingleRunFileName", this);
+  fSingleRunFileNameCmd->SetGuidance("Enter the name of files for one run");
+  fSingleRunFileNameCmd->SetParameterName("singleRunFileName",false);
+  fSingleRunFileNameCmd->AvailableForStates(G4State_PreInit, G4State_Idle);
 
-#endif
+  fSteppingFileNameCmd =
+    new G4UIcmdWithAString("/NS/run/setSteppingFileName", this);
+  fSingleRunFileNameCmd->SetGuidance("Enter the name of file for output");
+  fSingleRunFileNameCmd->SetParameterName("steppingFileName",false);
+  fSingleRunFileNameCmd->AvailableForStates(G4State_PreInit, G4State_Idle);
+}
+
+NSRunMessenger::~NSRunMessenger()
+{
+  delete fSingleRunFileNameCmd;
+  delete fSteppingFileNameCmd;
+  delete fNSDirectory;
+  delete fRunDirectory;
+}
+
+void NSRunMessenger::SetNewValue(G4UIcommand* command, G4String newValue)
+{ 
+  if( command == fSingleRunFileNameCmd )
+  { Action->SetSingleRunFileName(newValue); }
+  if( command == fSteppingFileNameCmd )
+  { Action->SetSteppingFileName(newValue); }
+}
+

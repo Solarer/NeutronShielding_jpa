@@ -30,28 +30,23 @@
 #include "G4UImessenger.hh"
 #include "globals.hh"
 
+class NSRunAction;
 class NSRun;
 class G4UIdirectory;
-class G4UIcmdWithAnInteger;
+class G4UIcmdWithAString;
 
 class NSRunMessenger: public G4UImessenger
 {
 public:
-  NSRunMessenger(NSRunAction* Action);
+  NSRunMessenger(NSRunAction*);
   virtual ~NSRunMessenger();
     
   virtual void SetNewValue(G4UIcommand*, G4String);
     
 private:
   NSRunAction* Action;
-
-  // Directories
   G4UIdirectory*            fNSDirectory;
-  G4UIdirectory*            fGenDirectory;
-
-  // Messenger
-  G4UIcmdWithABool     fOutputFileWithDate;
+  G4UIdirectory*            fRunDirectory;
 };
 
 #endif
-

@@ -24,38 +24,31 @@
 // ********************************************************************
 //
 
-#include "NSRunMessenger.hh"
-#include "NSRunAction.hh"
 
-#include "G4UIdirectory.hh"
-#include "G4UIcmdWithAString.hh"
+#ifndef NSVerboseMessenger_h
+#define NSVerboseMessenger_h 1
 
-NSRunMessenger::NSRunMessenger(NSRunAction* run)
-:Action(run)
+#include "G4VerboseMessenger.hh"
+
+class NSRun;
+class NSSteppingAction;
+class NSSD;
+
+class NSVerboseMessenger : public G4VerboseMessenger 
 {
-  fNSDirectory = new G4UIdirectory("/NS/");
-  fNSDirectory->SetGuidance("UI commands specific to this project.");
+private:
+  G4UIdirectory*            fNSDirectory;
+  G4UIdirectory*            fRunDirectory;
+  G4UIcmdWithAString*       fSingleRunFileNameCmd;
+  G4UIcmdWithAString*       fStepFileNameCmd;
 
-  fRunDirectory = new G4UIdirectory("/NS/run/");
-  fRunDirectory->SetGuidance("Run action control");
+ public:
+   
+  NSVerboseMessenger();
+ ~NSVerboseMessenger();
 
-  fSingleRunFileNameCmd =
-    new G4UIcmdWithAString("/NS/run/setSingleRunFileName", this);
-  fSingleRunFileNameCmd->SetGuidance("Enter the name of files for one run");
-  fSingleRunFileNameCmd->SetParameterName("singleRunFileName",false);
-  fSingleRunFileNameCmd->AvailableForStates(G4State_PreInit, G4State_Idle);
-}
+  virtual void SetNewValue(G4UIcommand*, G4String);
 
-NSRunMessenger::~NSRunMessenger()
-{
-  delete fSingleRunFileNameCmd;
-  delete fNSDirectory;
-  delete fRunDirectory;
-}
+};
 
-void NSRunMessenger::SetNewValue(G4UIcommand* command, G4String newValue)
-{ 
-  if( command == fSingleRunFileNameCmd )
-  { Action->SetSingleRunFileName(newValue); }
-}
-
+#endif

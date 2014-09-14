@@ -166,7 +166,7 @@ G4double NSPrimaryGeneratorAction::GetEvaporationEnergy(void) {
   // Stolen from HALO code; integral MC method
   // I am not sure this gives quite the right spectrum ?
 
-  const G4int nBins = 13;
+  const G4int nBins = 14;
 
   G4double Edistrib[nBins][2] = {
    {0.,    0.  },
@@ -199,7 +199,7 @@ G4double NSPrimaryGeneratorAction::GetEvaporationEnergy(void) {
         if (energy == 6.25)
             i--;                                        // dont leave array
 
-        G4double chance =  (Edistrib[i][0]-Edistrib[i-1])/(Edistrib[i][i]-Edistrib[i-1][i])
+        G4double chance =  (Edistrib[i][0]-Edistrib[i-1][0])/(Edistrib[i][1]-Edistrib[i-1][1]);
         if(rand<=chance)
             return energy;
     }

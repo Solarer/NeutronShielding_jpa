@@ -24,29 +24,41 @@
 // ********************************************************************
 //
 
-#ifndef NSRunMessenger_h
-#define NSRunMessenger_h 1
 
-#include "G4UImessenger.hh"
-#include "globals.hh"
+#include "NSVerboseMessenger.hh"
 
-class NSRunAction;
-class G4UIdirectory;
-class G4UIcmdWithAString;
+#include "G4SteppingManager.hh"
+#include "G4UnitsTable.hh"
 
-class NSRunMessenger: public G4UImessenger
+NSVerboseMessenger::NSVerboseMessenger(NSSteppingAction* stA)
+:StepAction(stA)
 {
-public:
-  NSRunMessenger(NSRunAction*);
-  virtual ~NSRunMessenger();
-    
-  virtual void SetNewValue(G4UIcommand*, G4String);
-    
-private:
-  NSRunAction* Action;
-  G4UIdirectory*            fNSDirectory;
-  G4UIdirectory*            fRunDirectory;
-  G4UIcmdWithAString*       fSingleRunFileNameCmd;
-};
+  // Directories
+  fNSDirectory = new G4UIdirectory("/NS/");
+  fNSDirectory->SetGuidance("UI commands specific to this project.");
 
-#endif
+  fGenDirectory = new G4UIdirectory("/NS/verbose/");
+  fGenDirectory->SetGuidance("Primary verbose action control");
+
+  // Command to choose which shield the primary particles are generated in
+  fStepFileNameCmd= new G4UIcmdWithAString("/NS/verbose/setStepFile", this);
+  fStepFileNameCmd->SetGuidance("Write Step output to a file?");
+  fStepFileNameCmd->SetParameterName("stepFile",false);
+  fStepFileNameCmd->AvailableForStates(G4State_Idle);
+
+
+NSVerboseMessenger::~NSVerboseMessenger()
+{
+	delete fRunDirectory;
+	delete fNSDirectory;
+	delete fSingleRunFileNameCmd;
+	delete fStepFileNameCmd;
+}
+ 
+void NSVerboseMessenger::SetNewValue(G4UIcommand* command, G4String newValue)
+{ 
+	if( command == fStepFileNameCmd )
+  { 
+		StepAction->SetStepFileName(newValue); 
+	}
+}
