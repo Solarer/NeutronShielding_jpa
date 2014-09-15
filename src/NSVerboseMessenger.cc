@@ -26,6 +26,8 @@
 
 
 #include "NSVerboseMessenger.hh"
+#include "NSSteppingAction.hh"
+
 
 #include "G4SteppingManager.hh"
 #include "G4UnitsTable.hh"
@@ -40,17 +42,23 @@ NSVerboseMessenger::NSVerboseMessenger(NSSteppingAction* stA)
   fGenDirectory = new G4UIdirectory("/NS/verbose/");
   fGenDirectory->SetGuidance("Primary verbose action control");
 
-  // Command to choose which shield the primary particles are generated in
+	// output stepping information or not?
+	fDoOutputStepCmd= new G4UIcmdWithABool("/NS/verbose/doOutputStep", this);
+  fDoOutputStepCmd->SetGuidance("Write Step output to a file?");
+  fDoOutputStepCmd->SetParameterName("doOutputStep",false);
+  fDoOutputStepCmd->AvailableForStates(G4State_Idle);
+
+  // set output file name for stepping information
   fStepFileNameCmd= new G4UIcmdWithAString("/NS/verbose/setStepFile", this);
-  fStepFileNameCmd->SetGuidance("Write Step output to a file?");
+  fStepFileNameCmd->SetGuidance("Write Step output to which file?");
   fStepFileNameCmd->SetParameterName("stepFile",false);
   fStepFileNameCmd->AvailableForStates(G4State_Idle);
-
+}
 
 NSVerboseMessenger::~NSVerboseMessenger()
 {
-	delete fRunDirectory;
 	delete fNSDirectory;
+	delete fGenDirectory;
 	delete fSingleRunFileNameCmd;
 	delete fStepFileNameCmd;
 }
@@ -61,4 +69,10 @@ void NSVerboseMessenger::SetNewValue(G4UIcommand* command, G4String newValue)
   { 
 		StepAction->SetStepFileName(newValue); 
 	}
+
+	if( command == fDoOutputStepCmd )
+  { 
+		StepAction->SetDoOutput(fDoOutputStepCmd->GetNewBoolValue(newValue)); 
+	}
+
 }

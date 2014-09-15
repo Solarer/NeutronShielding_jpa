@@ -28,13 +28,17 @@
 #define NSSteppingAction_h 1
 
 #include "G4UserSteppingAction.hh"
+
+
+
 #include "globals.hh"
 
 #include <fstream>
 
 class NSEventAction;
-
 class G4LogicalVolume;
+class NSVerboseMessenger;
+
 
 class NSSteppingAction : public G4UserSteppingAction
 {
@@ -44,6 +48,9 @@ class NSSteppingAction : public G4UserSteppingAction
 
     // method from the base class
     virtual void UserSteppingAction(const G4Step*);
+		void SetStepFileName(G4String fileName);
+		void SetFileOutput(G4bool output);
+		void SetDoOutput(G4bool output);
 
   private:
     NSEventAction*  fEventAction;
@@ -51,7 +58,10 @@ class NSSteppingAction : public G4UserSteppingAction
     // Output file for step information
     // Do not use unless needed; very large file
     G4String outfileName;
+		G4bool doOutput;
     std::ofstream outfile;
+
+		NSVerboseMessenger* fMessenger;
 };
 
 #endif

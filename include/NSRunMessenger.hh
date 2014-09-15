@@ -47,6 +47,9 @@ private:
   NSRunAction* Action;
   G4UIdirectory*            fNSDirectory;
   G4UIdirectory*            fRunDirectory;
+  G4UIcmdWithAString* fSingleRunFileNameCmd;
+  G4UIcmdWithAString* fSteppingFileNameCmd;
+
 };
 
 #endif

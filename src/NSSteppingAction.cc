@@ -32,6 +32,7 @@
 #include "NSEventAction.hh"
 #include "NSDetectorConstruction.hh"
 #include "NSRunAction.hh"
+#include "NSVerboseMessenger.hh"
 
 #include "G4Step.hh"
 #include "G4Event.hh"
@@ -47,14 +48,20 @@
 
 NSSteppingAction::NSSteppingAction(NSEventAction* eventAction)
 : G4UserSteppingAction(),
-  fEventAction(eventAction)
-{ }
+  fEventAction(eventAction),
+	doOutput(false)
+{
+	fMessenger = new NSVerboseMessenger(this);
+}
+
 
 NSSteppingAction::~NSSteppingAction()
 { }
 
 void NSSteppingAction::UserSteppingAction(const G4Step* theStep)
 {
+	if(doOutput)
+	{
   outfile.open("temp.out", std::ofstream::out | std::ofstream::app);
 
 	outfile << "Particle: " << theStep->GetTrack()->GetDefinition()->GetParticleName() << G4endl << "EventID: " << fEventAction->GetEventId() << " Parent/Track: " << theStep->GetTrack()->GetParentID() << "/" << theStep->GetTrack()->GetTrackID() << " Step is limited by '"
@@ -129,6 +136,7 @@ void NSSteppingAction::UserSteppingAction(const G4Step* theStep)
   }
 	outfile << G4endl;
   outfile.close();
+	}
 
 /*
 	G4double kineticEnergy = step->GetTrack()->GetKineticEnergy();
@@ -168,4 +176,13 @@ void NSSteppingAction::UserSteppingAction(const G4Step* theStep)
 */
 }
 
+void NSSteppingAction::SetStepFileName(G4String fileName)
+{
+	outfileName = fileName;
+}
+
+void NSSteppingAction::SetDoOutput(G4bool output)
+{
+	doOutput = output;
+}
 

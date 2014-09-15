@@ -191,7 +191,7 @@ G4double NSPrimaryGeneratorAction::GetEvaporationEnergy(void) {
         G4double rand = G4UniformRand();                // random value
 
         G4int i=0;
-        while(Edistrib[i][1]>= energy)
+        while(Edistrib[i][1]<= energy)
         {
             i++;
         }

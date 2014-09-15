@@ -66,6 +66,5 @@ class NSDetectorMessenger: public G4UImessenger
     // Update command, MUST be applied before "beamOn"
     G4UIcmdWithoutParameter*    fUpdateCmd;    
 };
-
 #endif
 

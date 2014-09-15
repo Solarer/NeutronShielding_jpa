@@ -28,23 +28,30 @@
 #ifndef NSVerboseMessenger_h
 #define NSVerboseMessenger_h 1
 
-#include "G4VerboseMessenger.hh"
+#include "G4UImessenger.hh"
+#include "G4UIcmdWithAString.hh"
+#include "G4UIcmdWithABool.hh"
+
 
 class NSRun;
 class NSSteppingAction;
 class NSSD;
 
-class NSVerboseMessenger : public G4VerboseMessenger 
+class NSVerboseMessenger : public G4UImessenger
+
 {
 private:
+  G4UIdirectory*            fGenDirectory;
   G4UIdirectory*            fNSDirectory;
-  G4UIdirectory*            fRunDirectory;
   G4UIcmdWithAString*       fSingleRunFileNameCmd;
   G4UIcmdWithAString*       fStepFileNameCmd;
+	G4UIcmdWithABool*					fDoOutputStepCmd;
+
+	NSSteppingAction* StepAction;
 
  public:
    
-  NSVerboseMessenger();
+  NSVerboseMessenger(NSSteppingAction* stA);
  ~NSVerboseMessenger();
 
   virtual void SetNewValue(G4UIcommand*, G4String);

@@ -62,9 +62,9 @@ NSRunMessenger::~NSRunMessenger()
 
 void NSRunMessenger::SetNewValue(G4UIcommand* command, G4String newValue)
 { 
-  if( command == fSingleRunFileNameCmd )
+ /* if( command == fSingleRunFileNameCmd )
   { Action->SetSingleRunFileName(newValue); }
   if( command == fSteppingFileNameCmd )
-  { Action->SetSteppingFileName(newValue); }
+ // { Action->SetSteppingFileName(newValue); }*/
 }
 
