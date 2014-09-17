@@ -37,7 +37,7 @@
 #include "Randomize.hh"
 
 NSPrimaryGeneratorAction::NSPrimaryGeneratorAction(NSDetectorConstruction* DC)
-: Detector(DC),genEvaporation(0)
+: Detector(DC),genEvaporation(0),primaryParticleEnergy(10)
 {
   // Construct messenger
   fMessenger = new NSPrimaryGeneratorMessenger(this);
@@ -55,7 +55,7 @@ NSPrimaryGeneratorAction::NSPrimaryGeneratorAction(NSDetectorConstruction* DC)
   G4ParticleDefinition* particle
     = particleTable->FindParticle(particleName="neutron");
   fParticleGun->SetParticleDefinition(particle);
-  fParticleGun->SetParticleEnergy(1.*MeV);
+  fParticleGun->SetParticleEnergy(primaryParticleEnergy*MeV);
 }
 
 NSPrimaryGeneratorAction::~NSPrimaryGeneratorAction()
@@ -155,9 +155,9 @@ void NSPrimaryGeneratorAction::GeneratePrimaries(G4Event* anEvent)
     event_cnt++;
 }
 
-void NSPrimaryGeneratorAction::SetGenEvaporation (G4int value)
+void NSPrimaryGeneratorAction::SetGenEvaporation (G4bool value)
 {
-  // Set which shield the particles are generated in
+  // Set whether energy distribution or not (-> monochromatic)
   genEvaporation = value;
 }
 
@@ -166,10 +166,11 @@ G4double NSPrimaryGeneratorAction::GetEvaporationEnergy(void) {
   // Stolen from HALO code; integral MC method
   // I am not sure this gives quite the right spectrum ?
 
-  const G4int nBins = 14;
+  const G4int nBins = 15;
 
   G4double Edistrib[nBins][2] = {
    {0.,    0.  },
+   {0.02,  0.07},
    {0.138,  .25},
    {0.391,  .75},
    {0.557, 1.25},
@@ -203,4 +204,12 @@ G4double NSPrimaryGeneratorAction::GetEvaporationEnergy(void) {
         if(rand<=chance)
             return energy;
     }
+}
+
+void NSPrimaryGeneratorAction::SetParticleEnergy(G4double energy) 
+{
+	if(energy>=0.)
+		fParticleGun->SetParticleEnergy(energy*MeV);
+	else
+		G4cerr << "ERROR: Invalid particle energy" << G4endl;
 }

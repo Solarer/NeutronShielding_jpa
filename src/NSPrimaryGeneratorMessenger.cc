@@ -29,6 +29,7 @@
 
 #include "G4UIdirectory.hh"
 #include "G4UIcmdWithAnInteger.hh"
+#include "G4UIcmdWithADouble.hh"
 
 NSPrimaryGeneratorMessenger::NSPrimaryGeneratorMessenger(NSPrimaryGeneratorAction* Gun)
 :Action(Gun)
@@ -45,6 +46,12 @@ NSPrimaryGeneratorMessenger::NSPrimaryGeneratorMessenger(NSPrimaryGeneratorActio
   fGenInShieldCmd->SetGuidance("Generate particles in which shield layer?");
   fGenInShieldCmd->SetParameterName("genInShield",false);
   fGenInShieldCmd->AvailableForStates(G4State_Idle);
+
+  // Command to choose primary particle energy
+  fParticleEnergyCmd = new G4UIcmdWithADouble("/NS/gen/particleEnergy", this);
+  fParticleEnergyCmd->SetGuidance("Generate particles with how much energy?");
+  fParticleEnergyCmd->SetParameterName("primaryParticleEnergy",false);
+  fParticleEnergyCmd->AvailableForStates(G4State_Idle);
 
   // Command to choose evaporation spectrum
   fGenEvaporationCmd = new G4UIcmdWithAnInteger("/NS/gen/genEvaporation", this);
@@ -66,6 +73,11 @@ void NSPrimaryGeneratorMessenger::SetNewValue(G4UIcommand* command, G4String new
 	if( command == fGenEvaporationCmd )
   { 
 		Action->SetGenEvaporation(fGenEvaporationCmd->GetNewIntValue(newValue)); 
+	}
+
+	if( command == fParticleEnergyCmd )
+  { 
+		Action->SetParticleEnergy(fParticleEnergyCmd->GetNewDoubleValue(newValue)); 
 	}
 }
 

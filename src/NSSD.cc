@@ -82,7 +82,7 @@ G4bool NSSD::ProcessHits(G4Step* step, G4TouchableHistory*)
 
 	// Get particle name
 	G4String particleName = step->GetTrack()->GetDefinition()->GetParticleName();
-
+/*
 	// count particles of track
 	if(std::find(trackIDs.begin(), trackIDs.end(), step->GetTrack()->GetTrackID()) == trackIDs.end())
 	{
@@ -109,6 +109,7 @@ G4bool NSSD::ProcessHits(G4Step* step, G4TouchableHistory*)
 			else
 				hit->AddOther(+1);
 	}
+*/
 
   // Particle entered sensitive detector
   hit->SetEntSD(1);
@@ -124,20 +125,30 @@ G4bool NSSD::ProcessHits(G4Step* step, G4TouchableHistory*)
 	G4double photon = 0;
 	G4PhysicsOrderedFreeVector* property = NULL;
 
-	if(particleName == "e-" || particleName == "e+" || particleName == "gamma")
-		photon = stepMaterial->GetMaterialPropertiesTable()->GetConstProperty("responseElectron")*edep;
-	else if(particleName == "proton")
-		property = stepMaterial->GetMaterialPropertiesTable()->GetProperty("responseProton");
-	else if(particleName == "deuteron")
-		photon= stepMaterial->GetMaterialPropertiesTable()->GetConstProperty("responseDeuteron")*edep;
-	else if(particleName == "alpha")
-		property = stepMaterial->GetMaterialPropertiesTable()->GetProperty("responseAlpha");
-	else if(particleName == "C12" || particleName == "C13")
-		property = stepMaterial->GetMaterialPropertiesTable()->GetProperty("responseCarbon");
-	else{
+
+	if(stepMaterial->GetMaterialPropertiesTable() == NULL)
+	{
+		G4cerr << "ERROR: no propertiesTable for material defined" << G4endl;
 		photon = 0;
-		G4cerr<< "ERROR: unknown particle '"<< particleName << "'" << G4endl;	
-		}
+	}
+	else
+	{
+		if(particleName == "e-" || particleName == "e+" || particleName == "gamma")
+			photon = stepMaterial->GetMaterialPropertiesTable()->GetConstProperty("responseElectron")*edep;
+		else if(particleName == "proton")
+			property = stepMaterial->GetMaterialPropertiesTable()->GetProperty("responseProton");
+		else if(particleName == "deuteron")
+			photon= stepMaterial->GetMaterialPropertiesTable()->GetConstProperty("responseDeuteron")*edep;
+		else if(particleName == "alpha")
+			property = stepMaterial->GetMaterialPropertiesTable()->GetProperty("responseAlpha");
+		else if(particleName == "C12" || particleName == "C13")
+			property = stepMaterial->GetMaterialPropertiesTable()->GetProperty("responseCarbon");
+		else
+			{
+			photon = 0;
+			G4cerr<< "ERROR: unknown particle '"<< particleName << "'" << G4endl;	
+			}
+	}
 
 	// now set photon response if not already set
 	if(property != NULL)

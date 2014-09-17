@@ -48,8 +48,11 @@ class NSPrimaryGeneratorAction : public G4VUserPrimaryGeneratorAction
     // method to access particle gun
     const G4ParticleGun* GetParticleGun() const { return fParticleGun; };
  		
-		// choose Evaporation spectrum
-		void SetGenEvaporation (G4int);          
+		// set primary particle energy for monochromatic
+		void SetParticleEnergy(G4double);
+
+		// choose Evaporation spectrum or not
+		void SetGenEvaporation (G4bool);          
 
 		// Get a random Energy from the spectrum
     G4double GetEvaporationEnergy(void);
@@ -62,6 +65,7 @@ class NSPrimaryGeneratorAction : public G4VUserPrimaryGeneratorAction
     G4bool genInLead;                       	// Where to generate particles
     NSPrimaryGeneratorMessenger* fMessenger; 	// Pointer to messenger
 		G4bool genEvaporation;										// custom energy distribution
+		G4double primaryParticleEnergy;						// energy of primary particle
 
 };
 
