@@ -39,7 +39,8 @@ class NSHit : public G4VHit
     G4double fEdep;
     G4double fPhoton;
     G4bool 	 fEntSD;
-		G4int		 fGamma, fElec, fProt, fDeut, fAlpha, fCarbon, fOther, fTotal;
+	G4int	fGamma, fElec, fProt, fDeut, fAlpha, fCarbon, fOther, fTotal;
+    G4double fFirstContact;
 
 
   public:
@@ -60,28 +61,30 @@ class NSHit : public G4VHit
 
     // methods to handle data
     void SetEntSD(G4bool entSD) { fEntSD = entSD; };
+    void SetFirstContact(G4double contact) { fFirstContact = contact; };
     inline void AddEdep(G4double dE) {fEdep += dE; };
     inline void AddPhoton(G4double dPh) {fPhoton += dPh; };
-		inline void AddGamma(G4int gamma) {fGamma += gamma; fTotal+=gamma; };
-		inline void AddElectron(G4int elec) {fElec += elec; fTotal+=elec; };
-		inline void AddProton(G4int prot) {fProt += prot; fTotal+=prot; };
-		inline void AddDeuteron(G4int deut) {fDeut += deut; fTotal+=deut; };
-		inline void AddAlpha(G4int alpha) {fAlpha += alpha; fTotal+=alpha; };
-		inline void AddCarbon(G4int carbon) {fCarbon += carbon; fTotal+=carbon; };
-		inline void AddOther(G4int other) {fOther += other; fTotal+=other; };
+	inline void AddGamma(G4int gamma) {fGamma += gamma; fTotal+=gamma; };
+	inline void AddElectron(G4int elec) {fElec += elec; fTotal+=elec; };
+	inline void AddProton(G4int prot) {fProt += prot; fTotal+=prot; };
+	inline void AddDeuteron(G4int deut) {fDeut += deut; fTotal+=deut; };
+	inline void AddAlpha(G4int alpha) {fAlpha += alpha; fTotal+=alpha; };
+	inline void AddCarbon(G4int carbon) {fCarbon += carbon; fTotal+=carbon; };
+	inline void AddOther(G4int other) {fOther += other; fTotal+=other; };
 
     // get methods
     G4double GetEdep()  const { return fEdep; };
     G4double GetPhoton()  const { return fPhoton; };
     G4bool   GetEntSD() const { return fEntSD; };      
-		G4int GetGamma() const { return fGamma; };
-		G4int GetElectron() const { return fElec; };
-		G4int GetProton() const { return fProt; };
-		G4int GetDeuteron() const { return fDeut; };
-		G4int GetAlpha() const { return fAlpha; };
-		G4int GetCarbon() const { return fCarbon; };
-		G4int GetOther() const { return fOther; };
-		G4int GetTotal() const { return fTotal; };
+    G4double GetFirstContact()  const { return fFirstContact; };
+	G4int GetGamma() const { return fGamma; };
+	G4int GetElectron() const { return fElec; };
+	G4int GetProton() const { return fProt; };
+	G4int GetDeuteron() const { return fDeut; };
+	G4int GetAlpha() const { return fAlpha; };
+	G4int GetCarbon() const { return fCarbon; };
+	G4int GetOther() const { return fOther; };
+	G4int GetTotal() const { return fTotal; };
 };
 
 typedef G4THitsCollection<NSHit> NSHitsCollection;

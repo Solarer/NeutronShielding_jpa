@@ -80,6 +80,9 @@ G4bool NSSD::ProcessHits(G4Step* step, G4TouchableHistory*)
   G4double edep = step->GetTotalEnergyDeposit();
   if ( edep==0.) return false;
 
+    if(hit->GetFirstContact() == -1)
+        hit->SetFirstContact(step->GetPreStepPoint()->GetGlobalTime());
+
 	// Get particle name
 	G4String particleName = step->GetTrack()->GetDefinition()->GetParticleName();
 /*

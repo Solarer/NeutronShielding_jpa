@@ -37,7 +37,8 @@ G4ThreadLocal G4Allocator<NSHit>* NSHitAllocator=0;
 
 NSHit::NSHit()
  : G4VHit(),
-   fEdep(0.), fPhoton(0.), fEntSD(0),
+    fEdep(0.), fPhoton(0.), fEntSD(0),
+    fFirstContact(-1),
 		fGamma(0), fElec(0), fProt(0),
  		fDeut(0), fAlpha(0), fCarbon(0), 
 		fOther(0),fTotal(0)
@@ -49,9 +50,12 @@ NSHit::~NSHit()
 NSHit::NSHit(const NSHit& right)
   : G4VHit()
 {
-  fEdep  = right.fEdep;
-  fPhoton= right.fPhoton;
-  fEntSD = right.fEntSD;
+    fEdep  = right.fEdep;
+    fPhoton= right.fPhoton;
+    fEntSD = right.fEntSD;
+    fFirstContact= right.fFirstContact;
+    fGamma = right.fGammma;
+    fElec= right.fElec;
 	fProt = right.fProt;
 	fDeut = right.fDeut;
 	fAlpha = right.fAlpha;
@@ -62,9 +66,12 @@ NSHit::NSHit(const NSHit& right)
 
 const NSHit& NSHit::operator=(const NSHit& right)
 {
-  fEdep  = right.fEdep;
-  fPhoton= right.fPhoton;
-  fEntSD = right.fEntSD;
+    fEdep  = right.fEdep;
+    fPhoton= right.fPhoton;
+    fEntSD = right.fEntSD;
+    fFirstContact= right.fFirstContact;
+    fGamma = right.fGammma;
+    fElec= right.fElec;
 	fProt = right.fProt;
 	fDeut = right.fDeut;
 	fAlpha = right.fAlpha;

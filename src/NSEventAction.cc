@@ -156,6 +156,7 @@ void NSEventAction::EndOfEventAction(const G4Event* event)
   	analysisManager->FillNtupleDColumn(1,8, dx);
   	analysisManager->FillNtupleDColumn(1,9, dy);
   	analysisManager->FillNtupleDColumn(1,10, dz);
+  	analysisManager->FillNtupleDColumn(1,11, cennsHit->GetFirstContact());
   	analysisManager->AddNtupleRow(1);
 
   	// Fill ntuple id=2

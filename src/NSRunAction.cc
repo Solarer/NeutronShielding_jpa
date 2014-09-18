@@ -56,10 +56,10 @@ NSRunAction::NSRunAction()
   // Default Settings
   char fileName[100];
 	sprintf(fileName,"singleRun_%i",int(time(NULL)));
-  analysisManager->SetVerboseLevel(1);
-  analysisManager->SetFirstHistoId(1);
-	analysisManager->SetFirstNtupleId(1);
-  analysisManager->SetFileName(fileName);
+    analysisManager->SetVerboseLevel(1);
+    analysisManager->SetFirstHistoId(1);
+    analysisManager->SetFirstNtupleId(1);
+    analysisManager->SetFileName(fileName);
 
   // Book histograms, ntuple
   
@@ -81,6 +81,7 @@ NSRunAction::NSRunAction()
   analysisManager->CreateNtupleDColumn("primdx");
   analysisManager->CreateNtupleDColumn("primdy");
   analysisManager->CreateNtupleDColumn("primdz");
+  analysisManager->CreateNtupleDColumn("firstContact");
   analysisManager->FinishNtuple();
 
 	// Creating ntuple id=2
