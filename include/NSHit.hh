@@ -39,8 +39,8 @@ class NSHit : public G4VHit
     G4double fEdep;
     G4double fPhoton;
     G4bool 	 fEntSD;
-	G4int	fGamma, fElec, fProt, fDeut, fAlpha, fCarbon, fOther, fTotal;
     G4double fFirstContact;
+	G4int	fGamma, fElec, fProt, fDeut, fAlpha, fCarbon, fOther, fTotal;
 
 
   public:

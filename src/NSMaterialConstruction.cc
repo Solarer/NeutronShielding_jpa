@@ -78,10 +78,8 @@ void NSDetectorConstruction::DefineMaterials()
 	EJ301->AddElement(hydrogen,10);
 
 	G4Material* Toluene = new G4Material("toluene",0.87*g/cm3, 2, kStateLiquid);
-  G4Element* carbon = new G4Element("carbon", "C", 6, 12.0107*g/mole);
-  G4Element* hydrogen = new G4Element("hydrogen", "H", 1, 1.00794*g/mole);
-	EJ301->AddElement(carbon,8);
-	EJ301->AddElement(hydrogen,10);
+	Toluene->AddElement(carbon,8);
+	Toluene->AddElement(hydrogen,10);
 	
 	// create properties with photon response
 	G4MaterialPropertiesTable *MPT = new G4MaterialPropertiesTable();

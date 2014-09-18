@@ -54,7 +54,7 @@ NSHit::NSHit(const NSHit& right)
     fPhoton= right.fPhoton;
     fEntSD = right.fEntSD;
     fFirstContact= right.fFirstContact;
-    fGamma = right.fGammma;
+    fGamma = right.fGamma;
     fElec= right.fElec;
 	fProt = right.fProt;
 	fDeut = right.fDeut;
@@ -70,7 +70,7 @@ const NSHit& NSHit::operator=(const NSHit& right)
     fPhoton= right.fPhoton;
     fEntSD = right.fEntSD;
     fFirstContact= right.fFirstContact;
-    fGamma = right.fGammma;
+    fGamma = right.fGamma;
     fElec= right.fElec;
 	fProt = right.fProt;
 	fDeut = right.fDeut;
