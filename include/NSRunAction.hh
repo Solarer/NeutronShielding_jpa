@@ -38,8 +38,10 @@ class NSRunAction : public G4UserRunAction
 {
 	private:
 		std::vector<G4int> eventIDs;
+		std::vector<G4string> outputFiles;
 		G4bool doCollectEvents, doProcessEvents;
 		int nextEvent;
+        std::string nextFile;
 
   public:
     NSRunAction();
@@ -47,7 +49,8 @@ class NSRunAction : public G4UserRunAction
 		
 		void FillVec();
 		G4bool GetNextEvent();
-		inline G4bool IsNextEvent(G4int eventID){return (nextEvent == eventID);};
+        inline std::string GetOutputFile(){ return nextFile; };
+		inline G4bool IsNextEvent(G4int eventID){ return (nextEvent == eventID); };
 
     virtual G4Run* GenerateRun();
     virtual void BeginOfRunAction(const G4Run*);

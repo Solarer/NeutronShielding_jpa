@@ -87,8 +87,11 @@ void NSEventAction::BeginOfEventAction(const G4Event* event)
 	NSRunAction* runAct = (NSRunAction*)(G4RunManager::GetRunManager()->GetUserRunAction());
 	if(runAct->IsNextEvent(eventID))
 	{
+        // set outputstatus and get final outputFile name
 		doOutputEvent = true;
-		// clear outputfile
+        outputFile = runAct->GetOutputFile();
+
+		// clear temp outputfile
 		std::ofstream outfile;
 		outfile.open("temp.out", std::ios::out | std::ios::trunc );
 		outfile.close();
@@ -119,8 +122,6 @@ void NSEventAction::EndOfEventAction(const G4Event* event)
 	if(doOutputEvent)
 	{
 		doOutputEvent = false;
-		NSRunAction* runAct = (NSRunAction*)(G4RunManager::GetRunManager()->GetUserRunAction());
-		runAct->GetNextEvent();  // get next Event ID
 
 G4cout << "should write" << G4endl;
 		std::ifstream infile;
@@ -128,18 +129,21 @@ G4cout << "should write" << G4endl;
 		std::string buffer;
 		
 		infile.open("temp.out");
-		outfile.open("allSteps.out", std::ios::app);
+		outfile.open(outputFile, std::ios::app);
 
 		outfile << "\n\n---------------------------------------------\nEvent found: " << cennsHit->GetEdep()/MeV << " MeV Energy deposition\n---------------------------------------------\n" << G4endl;
 
 		while(!infile.eof()) 
     	{
 	      getline(infile,buffer);
-				outfile << buffer << G4endl;
-      }
+		  outfile << buffer << G4endl;
+        }
 		
 		outfile.close();
 		infile.close();
+
+		NSRunAction* runAct = (NSRunAction*)(G4RunManager::GetRunManager()->GetUserRunAction());
+		runAct->GetNextEvent();  // get next Event ID
 	}
 
    // Print per event (modulo n)

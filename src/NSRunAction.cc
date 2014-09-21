@@ -241,7 +241,8 @@ void NSRunAction::EndOfRunAction(const G4Run* run)
 void NSRunAction::FillVec()
 {
 	std::ifstream infile;
-	G4int buffer;
+	G4int buffer_int;
+    std::string buffer_str,
 
 	// open input file
 	infile.open("criticalEventIDs",std::ios::in);
@@ -251,10 +252,13 @@ void NSRunAction::FillVec()
 	// save IDs to vector
 	while(1)
 	{
-		infile >> buffer;
+		infile >> buffer_int;
+		infile >> buffer_str;
 		if(infile.eof())
 			break;
 		eventIDs.push_back(buffer);
+		outputFiles.push_back(buffer);
+
 		G4cout << "Reading file "<< buffer << G4endl;
 	}
 		GetNextEvent();			 // set the first ID
@@ -272,6 +276,9 @@ G4bool NSRunAction::GetNextEvent()
 		// set next event ID from beginning of vector 
 		nextEvent = eventIDs.front();
 		eventIDs.erase(eventIDs.begin());
+		// set next outputFile from beginning of vector 
+		nextFile= outputFiles.front();
+		outputFiles.erase(outputFiles.begin());
 		return true;
 	}
 }
