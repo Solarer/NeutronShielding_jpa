@@ -46,11 +46,19 @@ class NSRunAction : public G4UserRunAction
   public:
     NSRunAction();
     virtual ~NSRunAction();
-		
-		void FillVec();
-		G4bool GetNextEvent();
-        inline std::string GetOutputFile(){ return nextFile; };
-		inline G4bool IsNextEvent(G4int eventID){ return (nextEvent == eventID); };
+	
+    // Get-Methods
+	G4bool GetNextEvent();
+    inline std::string GetOutputFile(){ return nextFile; };
+	inline G4bool GetDoCollectEvents(){ return doCollectEvents; };
+
+    // Set-Methods
+    void SetCollectEvents(G4bool collect){ doCollectEvents = collect; };
+    void SetProcessEvents(G4bool process){ doCollectEvents = process; };
+    
+    // Other-Methods
+	void FillVec();
+	inline G4bool IsNextEvent(G4int eventID){ return (nextEvent == eventID); };
 
     virtual G4Run* GenerateRun();
     virtual void BeginOfRunAction(const G4Run*);

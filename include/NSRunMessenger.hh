@@ -34,6 +34,7 @@ class NSRunAction;
 class NSRun;
 class G4UIdirectory;
 class G4UIcmdWithAString;
+class G4UIcmdWithABool;
 
 class NSRunMessenger: public G4UImessenger
 {
@@ -45,10 +46,12 @@ public:
     
 private:
   NSRunAction* Action;
-  G4UIdirectory*            fNSDirectory;
-  G4UIdirectory*            fRunDirectory;
-  G4UIcmdWithAString*				fSingleRunFileNameCmd;
+  G4UIdirectory*                fNSDirectory;
+  G4UIdirectory*                fRunDirectory;
+  G4UIcmdWithAString*			fSingleRunFileNameCmd;
   G4UIcmdWithAString* 			fSteppingFileNameCmd;
+  G4UIcmdWithABool* 			fDoCollectEventsCmd;
+  G4UIcmdWithABool* 			fDoProcessEventsCmd;
 
 };
 

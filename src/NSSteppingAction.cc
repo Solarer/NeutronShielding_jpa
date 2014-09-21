@@ -60,7 +60,6 @@ void NSSteppingAction::UserSteppingAction(const G4Step* theStep)
 {
 	if(fEventAction->DoOutputEvent()) 
 	{
-	G4cout << "Found event: " << fEventAction->GetEventId() << G4endl;
   outfile.open("temp.out", std::ofstream::out | std::ofstream::app);
 
 	outfile << "Particle: " << theStep->GetTrack()->GetDefinition()->GetParticleName() << G4endl << "EventID: " << fEventAction->GetEventId() << " Parent/Track: " << theStep->GetTrack()->GetParentID() << "/" << theStep->GetTrack()->GetTrackID() << " Step is limited by '"

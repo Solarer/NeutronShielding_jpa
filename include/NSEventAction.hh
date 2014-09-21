@@ -41,10 +41,11 @@ class NSEventAction : public G4UserEventAction
   void PrintEventStatistics(G4double Edep) const;
   
   // data members 
-  G4int fcennsHCID;  // hits collection ID for cennsSD sensitive detector
-  G4int eventID;     // event ID
-G4bool doOutputEvent;
-G4String outputFile;
+	NSRunAction* runAct;
+    G4int fcennsHCID;  // hits collection ID for cennsSD sensitive detector
+    G4int eventID;     // event ID
+    G4bool doOutputEvent;
+    G4String outputFile;
 
   public:
     NSEventAction();
@@ -54,7 +55,7 @@ G4String outputFile;
     virtual void EndOfEventAction(const G4Event* event);
 
     G4int GetEventId() { return eventID; };
-		G4bool DoOutputEvent() { return doOutputEvent; };
+	G4bool DoOutputEvent() { return doOutputEvent; };
 
 };
 

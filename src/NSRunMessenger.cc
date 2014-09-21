@@ -29,6 +29,7 @@
 
 #include "G4UIdirectory.hh"
 #include "G4UIcmdWithAString.hh"
+#include "G4UIcmdWithABool.hh"
 
 NSRunMessenger::NSRunMessenger(NSRunAction* run)
 :Action(run)
@@ -50,10 +51,24 @@ NSRunMessenger::NSRunMessenger(NSRunAction* run)
   fSingleRunFileNameCmd->SetGuidance("Enter the name of file for output");
   fSingleRunFileNameCmd->SetParameterName("steppingFileName",false);
   fSingleRunFileNameCmd->AvailableForStates(G4State_PreInit, G4State_Idle);
+
+  fDoCollectEventsCmd =
+    new G4UIcmdWithABool("/NS/run/doCollectEvents", this);
+  fSingleRunFileNameCmd->SetGuidance("Want to collect interesting Events for output?");
+  fSingleRunFileNameCmd->SetParameterName("doCollectEvents",false);
+  fSingleRunFileNameCmd->AvailableForStates(G4State_PreInit, G4State_Idle);
+
+  fDoProcessEventsCmd =
+    new G4UIcmdWithABool("/NS/run/doProcessEvents", this);
+  fSingleRunFileNameCmd->SetGuidance("Want to process previously collected Events?");
+  fSingleRunFileNameCmd->SetParameterName("doProcessEvents",false);
+  fSingleRunFileNameCmd->AvailableForStates(G4State_PreInit, G4State_Idle);
 }
 
 NSRunMessenger::~NSRunMessenger()
 {
+  delete fDoCollectEventsCmd;
+  delete fDoProcessEventsCmd;
   delete fSingleRunFileNameCmd;
   delete fSteppingFileNameCmd;
   delete fNSDirectory;
@@ -66,5 +81,15 @@ void NSRunMessenger::SetNewValue(G4UIcommand* command, G4String newValue)
   { Action->SetSingleRunFileName(newValue); }
   if( command == fSteppingFileNameCmd )
  // { Action->SetSteppingFileName(newValue); }*/
+  if( command == fDoCollectEventsCmd)
+  { 
+    Action->SetCollectEvents(newValue); 
+    Action->SetProcessEvents(!newValue); 
+  }
+  if( command == fDoProcessEventsCmd)
+  { 
+    Action->SetProcessEvents(newValue); 
+    Action->SetCollectEvents(!newValue); 
+  }
 }
 

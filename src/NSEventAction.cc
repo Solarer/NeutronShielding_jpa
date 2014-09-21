@@ -44,15 +44,18 @@
 
 NSEventAction::NSEventAction()
 : G4UserEventAction(),
-  fcennsHCID(-1),
-	doOutputEvent(0)
-{ } 
+  fcennsHCID(-1)
+{
+    runAct = (NSRunAction*)(G4RunManager::GetRunManager()->GetUserRunAction());
+    doOutputEvent = runAct->IsNextEvent(eventID);
+}
 
 NSEventAction::~NSEventAction()
-{ }
+{
+    delete runAct;
+}
 
-NSHitsCollection* NSEventAction::GetHitsCollection(G4int hcID,
-                                  const G4Event* event) const
+NSHitsCollection* NSEventAction::GetHitsCollection(G4int hcID, const G4Event* event) const
 {
   // Get hits collection
   NSHitsCollection* hitsCollection 
@@ -84,11 +87,9 @@ void NSEventAction::BeginOfEventAction(const G4Event* event)
   eventID = event->GetEventID();
 
 	// output for this event?
-	NSRunAction* runAct = (NSRunAction*)(G4RunManager::GetRunManager()->GetUserRunAction());
-	if(runAct->IsNextEvent(eventID))
+	if(doOutputEvent)
 	{
         // set outputstatus and get final outputFile name
-		doOutputEvent = true;
         outputFile = runAct->GetOutputFile();
 
 		// clear temp outputfile
@@ -117,13 +118,38 @@ void NSEventAction::EndOfEventAction(const G4Event* event)
   // Get analysis manager
   G4AnalysisManager* analysisManager = G4AnalysisManager::Instance();
 
+  // Do this, if we are currently collecting events and
+  // the current event is interesting
+    if(runAct->GetDoCollectEvents())
+    {
+        G4double edep = cennsHit->GetEdep(); 
+        G4bool collectThis = false;
+        G4String file;
+        if(edep>2.1*MeV && edep<2.5*MeV)
+        {
+            collectThis = true;
+            file = "2MEV";
+        }
+        else if(edep>5.2*MeV && edep<5.5*MeV)
+        {
+            collectThis = true;
+            file = "5MEV";
+        }
+        else if(edep>3.4*MeV && edep<3.7*MeV)
+        {
+            collectThis = true;
+            file = "3MEV";
+        }
+    
+        std::ofstream outfile;
+        outfile.open("criticalEventIDs", std::ios::app);
 
-	// reset output status after successfull output
-	if(doOutputEvent)
+        outfile << eventID << "\t" << file << std::endl;
+    }
+	// append temp output to final output
+    else if(doOutputEvent)
 	{
-		doOutputEvent = false;
-
-G4cout << "should write" << G4endl;
+        G4cout << "should write" << G4endl;
 		std::ifstream infile;
 		std::ofstream outfile;
 		std::string buffer;
@@ -142,8 +168,7 @@ G4cout << "should write" << G4endl;
 		outfile.close();
 		infile.close();
 
-		NSRunAction* runAct = (NSRunAction*)(G4RunManager::GetRunManager()->GetUserRunAction());
-		runAct->GetNextEvent();  // get next Event ID
+		runAct->GetNextEvent();  // load next Event ID from vector
 	}
 
    // Print per event (modulo n)
@@ -157,7 +182,6 @@ G4cout << "should write" << G4endl;
       PrintEventStatistics(cennsHit->GetEdep());
     }
   }
-
 
   // Fill histograms
   analysisManager->FillH1(1, cennsHit->GetEntSD());  	// number entering detector
@@ -181,7 +205,6 @@ G4cout << "should write" << G4endl;
   G4double dx = px / ptot;
   G4double dy = py / ptot;
   G4double dz = pz / ptot;
-
 
   if(cennsHit->GetEntSD() == 1) // only if a particle entered the SD
 	{
@@ -211,6 +234,4 @@ G4cout << "should write" << G4endl;
   	analysisManager->FillNtupleIColumn(2,7, cennsHit->GetTotal());
   	analysisManager->AddNtupleRow(2);
 	}
-
-
 }
