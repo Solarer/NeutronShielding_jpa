@@ -72,7 +72,7 @@ void NSVerboseMessenger::SetNewValue(G4UIcommand* command, G4String newValue)
 
 	if( command == fDoOutputStepCmd )
   { 
-		StepAction->SetDoOutput(fDoOutputStepCmd->GetNewBoolValue(newValue)); 
+	//	StepAction->SetDoOutput(fDoOutputStepCmd->GetNewBoolValue(newValue)); 
 	}
 
 }

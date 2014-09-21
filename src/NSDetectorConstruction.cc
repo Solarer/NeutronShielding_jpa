@@ -75,7 +75,7 @@ NSDetectorConstruction::NSDetectorConstruction()
   SetWorldMat("G4_AIR");
   SetShieldMat("G4_WATER");
   SetDetMat("G4_Pb");
-  SetScinMat("toluene");
+  SetScinMat("EJ301");
 
   // Commands for interactive definition of detector
   fMessenger = new NSDetectorMessenger(this);

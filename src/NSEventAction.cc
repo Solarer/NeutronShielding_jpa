@@ -25,6 +25,7 @@
 //
 
 #include "NSEventAction.hh"
+#include "NSRunAction.hh"
 #include "NSSD.hh"
 #include "NSHit.hh"
 #include "NSAnalysis.hh"
@@ -43,7 +44,8 @@
 
 NSEventAction::NSEventAction()
 : G4UserEventAction(),
-  fcennsHCID(-1)
+  fcennsHCID(-1),
+	doOutputEvent(0)
 { } 
 
 NSEventAction::~NSEventAction()
@@ -78,18 +80,24 @@ void NSEventAction::PrintEventStatistics(G4double Edep) const
 
 void NSEventAction::BeginOfEventAction(const G4Event* event)
 {
-	// clear outputfile
-	std::ofstream outfile;
-	outfile.open("temp.out", std::ios::out | std::ios::trunc );
-	outfile.close();
-
   // Get event ID
   eventID = event->GetEventID();
+
+	// output for this event?
+	NSRunAction* runAct = (NSRunAction*)(G4RunManager::GetRunManager()->GetUserRunAction());
+	if(runAct->IsNextEvent(eventID))
+	{
+		doOutputEvent = true;
+		// clear outputfile
+		std::ofstream outfile;
+		outfile.open("temp.out", std::ios::out | std::ios::trunc );
+		outfile.close();
+	}
+		
 }
 
 void NSEventAction::EndOfEventAction(const G4Event* event)
 {
-
   // Get hits collections IDs (only once)
   if ( fcennsHCID == -1 )
   {
@@ -97,13 +105,44 @@ void NSEventAction::EndOfEventAction(const G4Event* event)
       = G4SDManager::GetSDMpointer()->GetCollectionID("CennsHitsCollection");
   }
 
-  // Get hits collection
+ 	// Get hits collection
   NSHitsCollection* cennsHC = GetHitsCollection(fcennsHCID, event);
 
   // Get hit
   NSHit* cennsHit = (*cennsHC)[cennsHC->entries()-1];
 
-  // Print per event (modulo n)
+  // Get analysis manager
+  G4AnalysisManager* analysisManager = G4AnalysisManager::Instance();
+
+
+	// reset output status after successfull output
+	if(doOutputEvent)
+	{
+		doOutputEvent = false;
+		NSRunAction* runAct = (NSRunAction*)(G4RunManager::GetRunManager()->GetUserRunAction());
+		runAct->GetNextEvent();  // get next Event ID
+
+G4cout << "should write" << G4endl;
+		std::ifstream infile;
+		std::ofstream outfile;
+		std::string buffer;
+		
+		infile.open("temp.out");
+		outfile.open("allSteps.out", std::ios::app);
+
+		outfile << "\n\n---------------------------------------------\nEvent found: " << cennsHit->GetEdep()/MeV << " MeV Energy deposition\n---------------------------------------------\n" << G4endl;
+
+		while(!infile.eof()) 
+    	{
+	      getline(infile,buffer);
+				outfile << buffer << G4endl;
+      }
+		
+		outfile.close();
+		infile.close();
+	}
+
+   // Print per event (modulo n)
   G4int verboseLevel = G4RunManager::GetRunManager()->GetVerboseLevel();
   if (verboseLevel > 0)
   {
@@ -115,8 +154,6 @@ void NSEventAction::EndOfEventAction(const G4Event* event)
     }
   }
 
-  // Get analysis manager
-  G4AnalysisManager* analysisManager = G4AnalysisManager::Instance();
 
   // Fill histograms
   analysisManager->FillH1(1, cennsHit->GetEntSD());  	// number entering detector
@@ -171,48 +208,5 @@ void NSEventAction::EndOfEventAction(const G4Event* event)
   	analysisManager->AddNtupleRow(2);
 	}
 
-	bool peak1, peak2;
-	peak1=peak2=false;
-
-	if(cennsHit->GetEdep()>4.285 && cennsHit->GetEdep()<4.32)
-		peak1=true;
-	else if(cennsHit->GetEdep()>5.55 && cennsHit->GetEdep()<5.58)
-		peak2=true;
-	if(peak1||peak2)
-	{
-		std::ifstream infile;
-		std::ofstream outfile;
-		std::string buffer;
-		
-		infile.open("temp.out");
-		
-		if(peak1)
-		{
-			outfile.open("count1.out");
-			outfile << "found: " << eventID << G4endl;
-			outfile.close();
-
-			outfile.open("allSteps1.out", std::ios::app);
-		}
-		else if(peak2)
-		{
-			outfile.open("count2.out");
-			outfile << "found: " << eventID << G4endl;
-			outfile.close();
-
-			outfile.open("allSteps2.out", std::ios::app);
-		}
-
-		outfile << "\n\n---------------------------------------------\nEvent found: " << cennsHit->GetEdep()/MeV << " MeV Energy deposition\n---------------------------------------------\n" << G4endl;
-
-		while(!infile.eof()) 
-    	{
-	      getline(infile,buffer);
-				outfile << buffer << G4endl;
-      }
-		
-		outfile.close();
-		infile.close();
-	}
 
 }

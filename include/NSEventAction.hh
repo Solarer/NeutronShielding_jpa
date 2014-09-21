@@ -43,6 +43,7 @@ class NSEventAction : public G4UserEventAction
   // data members 
   G4int fcennsHCID;  // hits collection ID for cennsSD sensitive detector
   G4int eventID;     // event ID
+	G4bool doOutputEvent;
 
   public:
     NSEventAction();
@@ -52,6 +53,7 @@ class NSEventAction : public G4UserEventAction
     virtual void EndOfEventAction(const G4Event* event);
 
     G4int GetEventId() { return eventID; };
+		G4bool DoOutputEvent() { return doOutputEvent; };
 
 };
 

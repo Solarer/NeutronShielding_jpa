@@ -29,15 +29,25 @@
 
 #include "G4UserRunAction.hh"
 #include "globals.hh"
+#include <vector>
 
 class G4Run;
 class G4LogicalVolume;
 
 class NSRunAction : public G4UserRunAction
 {
+	private:
+		std::vector<G4int> eventIDs;
+		G4bool doCollectEvents, doProcessEvents;
+		int nextEvent;
+
   public:
     NSRunAction();
     virtual ~NSRunAction();
+		
+		void FillVec();
+		G4bool GetNextEvent();
+		inline G4bool IsNextEvent(G4int eventID){return (nextEvent == eventID);};
 
     virtual G4Run* GenerateRun();
     virtual void BeginOfRunAction(const G4Run*);

@@ -41,7 +41,8 @@
 #include <time.h>
 
 NSRunAction::NSRunAction()
-: G4UserRunAction()
+: G4UserRunAction(),
+	doCollectEvents(0), doProcessEvents(1), nextEvent(-1)
 {
   // Create analysis manager
   // The choice of analysis technology is done via selection of a namespace
@@ -49,7 +50,11 @@ NSRunAction::NSRunAction()
   G4AnalysisManager* analysisManager = G4AnalysisManager::Instance();
   G4cout << "Using " << analysisManager->GetType() << G4endl;
 
-  // Create directories if using UI commands
+	// Fill vector with events from file
+	if(doProcessEvents)
+		FillVec();
+
+ // Create directories if using UI commands
   //analysisManager->SetHistoDirectoryName("histograms");
   //analysisManager->SetNtupleDirectoryName("ntuple");
 
@@ -232,4 +237,42 @@ void NSRunAction::EndOfRunAction(const G4Run* run)
 
     outfile.close();
   }
+
+void NSRunAction::FillVec()
+{
+	std::ifstream infile;
+	G4int buffer;
+
+	// open input file
+	infile.open("criticalEventIDs",std::ios::in);
+	if(!infile.is_open())
+		return;
+	
+	// save IDs to vector
+	while(1)
+	{
+		infile >> buffer;
+		if(infile.eof())
+			break;
+		eventIDs.push_back(buffer);
+		G4cout << "Reading file "<< buffer << G4endl;
+	}
+		GetNextEvent();			 // set the first ID
+}
+
+G4bool NSRunAction::GetNextEvent()
+{
+	if(eventIDs.empty())
+	{
+		nextEvent = -1;
+		return false;
+	}
+	else
+	{
+		// set next event ID from beginning of vector 
+		nextEvent = eventIDs.front();
+		eventIDs.erase(eventIDs.begin());
+		return true;
+	}
+}
 
