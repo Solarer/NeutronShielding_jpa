@@ -38,7 +38,7 @@ class NSRunAction : public G4UserRunAction
 {
 	private:
 		std::vector<G4int> eventIDs;
-		std::vector<G4string> outputFiles;
+		std::vector<G4String> outputFiles;
 		G4bool doCollectEvents, doProcessEvents;
 		int nextEvent;
         std::string nextFile;

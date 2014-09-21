@@ -242,7 +242,7 @@ void NSRunAction::FillVec()
 {
 	std::ifstream infile;
 	G4int buffer_int;
-    std::string buffer_str,
+    std::string buffer_str;
 
 	// open input file
 	infile.open("criticalEventIDs",std::ios::in);
@@ -256,10 +256,10 @@ void NSRunAction::FillVec()
 		infile >> buffer_str;
 		if(infile.eof())
 			break;
-		eventIDs.push_back(buffer);
-		outputFiles.push_back(buffer);
+		eventIDs.push_back(buffer_int);
+		outputFiles.push_back(buffer_str);
 
-		G4cout << "Reading file "<< buffer << G4endl;
+		G4cout << "Reading file "<< buffer_str << G4endl;
 	}
 		GetNextEvent();			 // set the first ID
 }

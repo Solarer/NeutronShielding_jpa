@@ -44,7 +44,7 @@ class NSEventAction : public G4UserEventAction
   G4int fcennsHCID;  // hits collection ID for cennsSD sensitive detector
   G4int eventID;     // event ID
 G4bool doOutputEvent;
-G4string outputFile;
+G4String outputFile;
 
   public:
     NSEventAction();
