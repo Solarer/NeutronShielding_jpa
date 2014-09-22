@@ -59,22 +59,16 @@ NSDetectorConstruction::NSDetectorConstruction()
   solidDet    (0), logicDet    (0), physDet    (0)
 {
   // Default parameters
-  
-    worldSizeXY = 5*m;
-		worldSizeZ = 5*m;
-		shieldSizeXY = 1*m;
-		shieldSizeZ	= 1*m;
-    detSizeXY = 0.457*m;
-		detSizeZ = 0.625*m;
-  	scinRadIn1 = 0. *m;
-  	scinRadIn2 = 0. *m;
-  	scinRadOut1 = 0.05*m;
-  	scinRadOut2 = 0.1*m;
-  	scinHeight = 0.2*m;
-
-
-
-	// ComputeParameters();  not used right now, because detector size does not change
+  detRatio       = 0.5;
+	shield_layer	 = 6;
+  shieldBox_size[0] = 0.55*m;
+  shieldBox_size[1] = 0.27*m;
+  shieldBox_size[2] = 0.20*m;
+	hSpace = 0.02*m; 
+	vSpace = 0.02*m; 
+	scin_heightRatio = 0.9;
+	scin_radiusRatio=0.10;
+  ComputeParameters();
 
   // Default materials
   DefineMaterials();
@@ -114,13 +108,13 @@ G4VPhysicalVolume* NSDetectorConstruction::ConstructDetector()
   // World
   solidWorld =
     new G4Box("World",                          // name
-              0.5*worldSizeXY,                 // size x
-              0.5*worldSizeXY,                 // size y
-              0.5*worldSizeZ);                 // size z
+              0.5*world_sizeXY,                 // size x
+              0.5*world_sizeXY,                 // size y
+              0.5*world_sizeZ);                 // size z
 
   logicWorld =
     new G4LogicalVolume(solidWorld,             // solid
-                        worldMat,              // material
+                        world_mat,              // material
                         "World");               // name
 
   physWorld = 
@@ -133,24 +127,40 @@ G4VPhysicalVolume* NSDetectorConstruction::ConstructDetector()
                       0,                        // copy number
                       checkOverlaps);           // overlaps checking
 
-  // Water Shield
+  // Shield1
   solidShield =
     new G4Box("ShieldBox",                      // name
-              0.5*shieldSizeXY, 								// size x
-              0.5*shieldSizeXY, 								// size y
-              0.5*shieldSizeZ) 								// size z
+              0.5*shieldBox_size[0],            // size x
+              0.5*shieldBox_size[1],            // size y 
+              0.5*shieldBox_size[2]);           // size z
 
   logicShield =
     new G4LogicalVolume(solidShield,           	// solid
-                        shieldMat,            	// material
+                        shield_mat,            	// material
                         "Shield");             	// name
 
 
 
+	// Prepare for turning boxes
+	G4RotationMatrix* doRot = new G4RotationMatrix; 
+	doRot->rotateZ(90*deg);
+	G4RotationMatrix* doNotRot = new G4RotationMatrix; 
+	doNotRot->rotateZ(0*deg);
+	G4RotationMatrix* rotMat;
 
-	physShield = 
-		new G4PVPlacement(0,															// no rotation
-                    G4ThreeVector(),  								// at (0, 0, 0)
+
+	// Place and turn them
+	for (int shield_cnt=0 ; shield_cnt<shieldBox_number ; shield_cnt++)
+		{
+				if(shield_cnt%6 == 1 || shield_cnt%6 == 4 || shield_cnt>=shieldBox_number-4)
+					rotMat=doRot;
+				else
+					rotMat=doNotRot;
+
+				physShield[shield_cnt] = 
+					new G4PVPlacement(
+										rotMat,                    				// rotation
+                    shieldBox_position[shield_cnt],  	// at (0, 0, 0)
                     logicShield,               				// logical volume
                     "Shield",                  				// name
                     logicWorld,                 			// mother volume
@@ -163,27 +173,27 @@ G4VPhysicalVolume* NSDetectorConstruction::ConstructDetector()
   // Detector
   solidDet =
     new G4Box("Det",                    				// name
-              0.5*0.457*m,      										// size x
-              0.5*0.457*m,      										// size y
-              0.5*0.625*m);      										// size z
+              detRatio*det_sizeXY,      				// size x
+              detRatio*det_sizeXY,      				// size y
+              detRatio*det_sizeZ);      				// size z
 
   logicDet =
     new G4LogicalVolume(solidDet,               // solid
-                        det_mat,              	// material
-                        "DetSpace");            // name
+                        det_mat,                // material
+                        "Det");                 // name
 
   physDet =
     new G4PVPlacement(0,                        // no rotation
                       G4ThreeVector(),          // at (0, 0, 0)
                       logicDet,                 // logical volume
                       "Det",                    // name
-                      logicShield,            	// mother volume
+                      logicWorld,            		// mother volume
                       false,                    // no boolean operation
                       0,                        // copy number
                       checkOverlaps);           // overlaps checking
 
 
-  // Scintillator 
+  // Szintillator 
   solidScin =
     new G4Tubs(	"Scin",                    			// name
 								0,															// inner radius
@@ -196,29 +206,30 @@ G4VPhysicalVolume* NSDetectorConstruction::ConstructDetector()
                         scin_mat,               // material
                         "Scin");                // name
 
-	// Place 4 Scintillators
-	for (G4int i = -1; i < 2; i+=2)
-  {
-		for (G4int j = -1; j < 2; j+=2)
-  	{
-    	x = i*0.1016*m;
-    	y = j*0.1016*m;
-			posScin = G4ThreeVector(x, y, z);
-
-   		physScin = new G4PVPlacement(0,   							// no rotation
-                        posScin,        // at position
-                        logicScin,      // logical volume
-                        "Scin",         // name
-                        logicDet,       // mother volume
-                        false,          // no boolean operation
-                        copyNo++,       // copy number
-                        checkOverlaps); // overlaps checking
+  physScin=
+    new G4PVPlacement(0,                        // no rotation
+                      G4ThreeVector(),          // at (0, 0, 0)
+                      logicScin,                // logical volume
+                      "Scin",                   // name
+                      logicDet,            			// mother volume
+                      false,                    // no boolean operation
+                      0,                        // copy number
+                      checkOverlaps);           // overlaps checking
 
 
-
+	// prepare and set visuable attributes
+	G4VisAttributes visShield, visDet, visScin;
+	visShield.SetColour(0,0,1);
+	visDet.SetColour(1,1,0);
+	visScin.SetColour(1,1,0);
+	visScin.SetForceSolid(true);
+ 
+	logicShield->SetVisAttributes(visShield);
+	logicDet->SetVisAttributes(visDet);
+	logicScin->SetVisAttributes(visScin);
 
   // Print volumes
-  G4cout << "volumes: " << logicDet << " " << logicWaterShield << " " << logicWorld << G4endl;
+  G4cout << "volumes: " << logicDet << " " << logicShield << " " << logicWorld << G4endl;
 
   // Make world box invisible
   logicWorld->SetVisAttributes (G4VisAttributes::Invisible);

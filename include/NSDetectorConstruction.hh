@@ -47,40 +47,32 @@ class NSDetectorConstruction : public G4VUserDetectorConstruction
   private:
 
     // Materials
-    G4Material* world_mat;
-    G4Material* shield_mat;
-    G4Material* det_mat;
-    G4Material* scin_mat;
+    G4Material* worldMat;
+    G4Material* shieldMat;
+    G4Material* detMat;
+    G4Material* scinMat;
 
-		// Sizes
+	
+		// World size
+    G4double worldSizeXY, worldSizeZ;
 
-		// world
-    G4double world_sizeXY, world_sizeZ;
+		// Shield size
+		G4double shieldSizeXY, shieldSizeZ;
 
-		// lead
-    G4double det_sizeXY, det_sizeZ, detRatio;
+		// Lead size
+    G4double detSizeXY, detSizeZ;
 
-		// water shielding
-		int shield_layer;												// number of layer
-		G4double shieldSize[3];
-		int shieldBox_number;										// total number of boxes
-    G4double shieldBox_size[3];							// size of box (length,width,height)
-		G4double hSpace, vSpace;								// some space between the boxes
-		G4ThreeVector* shieldBox_position;			// box positions
-
-		// scintillator
-		G4double scin_radius, scin_radiusRatio;
-		G4double scin_height, scin_heightRatio;
+		// Scintillator Size
+		G4double  scinRadIn1, scinRadIn2, scinRadOut1, scinRadOut2, scinHeight;
 
 		// Volumes
-
     G4Box*             solidWorld;
     G4LogicalVolume*   logicWorld;
     G4VPhysicalVolume* physWorld;
 
-    G4Box*             solidShield;
-    G4LogicalVolume*   logicShield;
-    G4VPhysicalVolume**  physShield; 
+    G4Box*             		solidShield;
+    G4LogicalVolume*   		logicShield;
+    G4VPhysicalVolume**  	physShield; 
 
     G4Box*             solidDet;
     G4LogicalVolume*   logicDet;
@@ -113,28 +105,22 @@ class NSDetectorConstruction : public G4VUserDetectorConstruction
     void UpdateGeometry();
 
     // Set methods
-    void SetDetRatio     (G4double);
-    void SetShieldBoxSize  (G4double,G4double,G4double);
-    void SetShieldBoxMat (G4double,G4double,G4double);
-    void SetWorldMat     (G4String);
-    void SetShieldMat     (G4String);
-    void SetDetMat       (G4String);
+    void SetWorldMat(G4String);
+    void SetShieldMat(G4String);
+    void SetDetMat(G4String);
 		void SetScinMat(G4String);
 
     // Get methods
-    G4Material* GetWorldMaterial()   const {return world_mat;};
-    G4Material* GetShieldMaterial() const {return shield_mat;};
-    G4Material* GetDetMaterial()     const {return det_mat;};
-    G4double    GetDetRatio()        const {return detRatio;};
-		G4ThreeVector* GetShieldBoxPosition() const {return shieldBox_position;};
-    G4double    GetShieldBoxNumber()   const {return shieldBox_number;};
-    G4double    GetShieldBoxSizeX()   const {return shieldBox_size[0];};
-    G4double    GetShieldBoxSizeY()   const {return shieldBox_size[1];};
-    G4double    GetShieldBoxSizeZ()   const {return shieldBox_size[2];};
-		G4double 		GetDetSizeXY()			const {return det_sizeXY;};
-		G4double 		GetDetSizeZ()			const {return det_sizeZ;};
-		G4double 		GetScinRad()			const {return scin_radius;};
-		G4double 		GetScinHeight()			const {return scin_height;};
+    G4Material* GetWorldMaterial()   const {return worldMat;};
+    G4Material* GetShieldMaterial() const {return shieldMat;};
+    G4Material* GetDetMaterial()     const {return detMat;};
+    G4Material* GetDetMaterial()     const {return detMat;};
+    G4Material* GetScinMaterial()     const {return scinMat;};
+		G4double 		GetDetSizeXY()			const {return detSizeXY;};
+		G4double 		GetDetSizeZ()			const {return detSizeZ;};
+		G4double 		GetScinRadIn()			const {return scinRadiusIn;};
+		G4double 		GetScinRadOut()			const {return scinRadiusOut;};
+		G4double 		GetScinHeight()			const {return scinHeight;};
 };
 #endif
 

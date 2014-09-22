@@ -1,0 +1,5326 @@
+
+*************************************************************
+ Geant4 version Name: geant4-10-00-patch-02    (13-June-2014)
+                      Copyright : Geant4 Collaboration
+                      Reference : NIM A 506 (2003), 250-303
+                            WWW : http://cern.ch/geant4
+*************************************************************
+
+G4Material WARNING: duplicate name of material BdP0_7
+G4Material WARNING: duplicate name of material BdP0_9
+G4Material WARNING: duplicate name of material BdP4_6
+<<< Geant4 Physics List simulation engine: QGSP_BIC_HP 2.0
+
+Reading initialising0
+Using Root
+Checking overlaps for volume Shield ... OK! 
+Checking overlaps for volume Shield ... OK! 
+Checking overlaps for volume Shield ... OK! 
+Checking overlaps for volume Shield ... OK! 
+Checking overlaps for volume Shield ... OK! 
+Checking overlaps for volume Shield ... OK! 
+Checking overlaps for volume Shield ... OK! 
+Checking overlaps for volume Shield ... OK! 
+Checking overlaps for volume Shield ... OK! 
+Checking overlaps for volume Shield ... OK! 
+Checking overlaps for volume Shield ... OK! 
+Checking overlaps for volume Shield ... OK! 
+Checking overlaps for volume Shield ... OK! 
+Checking overlaps for volume Shield ... OK! 
+Checking overlaps for volume Shield ... OK! 
+Checking overlaps for volume Shield ... OK! 
+Checking overlaps for volume Shield ... OK! 
+Checking overlaps for volume Shield ... OK! 
+Checking overlaps for volume Shield ... OK! 
+Checking overlaps for volume Shield ... OK! 
+Checking overlaps for volume Shield ... OK! 
+Checking overlaps for volume Shield ... OK! 
+Checking overlaps for volume Shield ... OK! 
+Checking overlaps for volume Shield ... OK! 
+Checking overlaps for volume Shield ... OK! 
+Checking overlaps for volume Shield ... OK! 
+Checking overlaps for volume Shield ... OK! 
+Checking overlaps for volume Shield ... OK! 
+Checking overlaps for volume Shield ... OK! 
+Checking overlaps for volume Shield ... OK! 
+Checking overlaps for volume Shield ... OK! 
+Checking overlaps for volume Shield ... OK! 
+Checking overlaps for volume Shield ... OK! 
+Checking overlaps for volume Shield ... OK! 
+Checking overlaps for volume Shield ... OK! 
+Checking overlaps for volume Shield ... OK! 
+Checking overlaps for volume Shield ... OK! 
+Checking overlaps for volume Shield ... OK! 
+Checking overlaps for volume Shield ... OK! 
+Checking overlaps for volume Shield ... OK! 
+Checking overlaps for volume Det ... OK! 
+Checking overlaps for volume Scin ... OK! 
+volumes: 0x150a310 0x1508ca0 0x14feb70
+NeutronHP: /Elastic file for Z = 6, A = 12 is not found and NeutronHP will use /var/phy/project/hep/neutrino/soft-SL6/geant4/Geant4-10.0.2-Linux/share/Geant4-10.0.2/data/G4NDL4.4/Elastic/CrossSection/6_nat_Carbon
+NeutronHP: /Elastic file for Z = 6, A = 13 is not found and NeutronHP will use /var/phy/project/hep/neutrino/soft-SL6/geant4/Geant4-10.0.2-Linux/share/Geant4-10.0.2/data/G4NDL4.4/Elastic/CrossSection/6_nat_Carbon
+NeutronHP: /Elastic file for Z = 8, A = 18 is not found and NeutronHP will use /var/phy/project/hep/neutrino/soft-SL6/geant4/Geant4-10.0.2-Linux/share/Geant4-10.0.2/data/G4NDL4.4/Elastic/CrossSection/8_17_Oxygen
+NeutronHP: /Elastic file for Z = 6, A = 12 is not found and NeutronHP will use /var/phy/project/hep/neutrino/soft-SL6/geant4/Geant4-10.0.2-Linux/share/Geant4-10.0.2/data/G4NDL4.4/Elastic/CrossSection/6_nat_Carbon
+NeutronHP: /Elastic file for Z = 6, A = 13 is not found and NeutronHP will use /var/phy/project/hep/neutrino/soft-SL6/geant4/Geant4-10.0.2-Linux/share/Geant4-10.0.2/data/G4NDL4.4/Elastic/CrossSection/6_nat_Carbon
+/var/phy/project/hep/neutrino/soft-SL6/geant4/Geant4-10.0.2-Linux/share/Geant4-10.0.2/data/G4NDL4.4
+NeutronHP: /Capture file for Z = 6, A = 12 is not found and NeutronHP will use /var/phy/project/hep/neutrino/soft-SL6/geant4/Geant4-10.0.2-Linux/share/Geant4-10.0.2/data/G4NDL4.4/Capture/CrossSection/6_nat_Carbon
+NeutronHP: /Capture file for Z = 6, A = 13 is not found and NeutronHP will use /var/phy/project/hep/neutrino/soft-SL6/geant4/Geant4-10.0.2-Linux/share/Geant4-10.0.2/data/G4NDL4.4/Capture/CrossSection/6_nat_Carbon
+NeutronHP: /Capture file for Z = 8, A = 18 is not found and NeutronHP will use /var/phy/project/hep/neutrino/soft-SL6/geant4/Geant4-10.0.2-Linux/share/Geant4-10.0.2/data/G4NDL4.4/Capture/CrossSection/8_17_Oxygen
+NeutronHP: /Capture file for Z = 6, A = 12 is not found and NeutronHP will use /var/phy/project/hep/neutrino/soft-SL6/geant4/Geant4-10.0.2-Linux/share/Geant4-10.0.2/data/G4NDL4.4/Capture/CrossSection/6_nat_Carbon
+NeutronHP: /Capture file for Z = 6, A = 13 is not found and NeutronHP will use /var/phy/project/hep/neutrino/soft-SL6/geant4/Geant4-10.0.2-Linux/share/Geant4-10.0.2/data/G4NDL4.4/Capture/CrossSection/6_nat_Carbon
+Visualization Manager instantiating with verbosity "warnings (3)"...
+Visualization Manager initialising...
+Registering graphics systems...
+
+You have successfully registered the following graphics systems.
+Current available graphics systems are:
+  ASCIITree (ATree)
+  DAWNFILE (DAWNFILE)
+  FukuiRenderer (DAWN)
+  G4HepRep (HepRepXML)
+  G4HepRepFile (HepRepFile)
+  OpenGLImmediateX (OGLI, OGLIX)
+  OpenGLStoredX (OGL, OGLS, OGLSX)
+  RayTracer (RayTracer)
+  RayTracerX (RayTracerX)
+  VRML1 (VRML1)
+  VRML1FILE (VRML1FILE)
+  VRML2 (VRML2)
+  VRML2FILE (VRML2FILE)
+  gMocrenFile (gMocrenFile)
+
+Registering model factories...
+
+You have successfully registered the following model factories.
+Registered model factories:
+  generic
+  drawByCharge
+  drawByParticleID
+  drawByOriginVolume
+  drawByAttribute
+
+Registered filter factories:
+  chargeFilter
+  particleFilter
+  originVolumeFilter
+  attributeFilter
+
+You have successfully registered the following user vis actions.
+Run Duration User Vis Actions: none
+End of Event User Vis Actions: none
+End of Run User Vis Actions: none
+
+Some /vis commands (optionally) take a string to specify colour.
+Available colours:
+  black, blue, brown, cyan, gray, green, grey, magenta, red, white, yellow
+
+Checking overlaps for volume Shield ... OK! 
+Checking overlaps for volume Shield ... OK! 
+Checking overlaps for volume Shield ... OK! 
+Checking overlaps for volume Shield ... OK! 
+Checking overlaps for volume Shield ... OK! 
+Checking overlaps for volume Shield ... OK! 
+Checking overlaps for volume Shield ... OK! 
+Checking overlaps for volume Shield ... OK! 
+Checking overlaps for volume Shield ... OK! 
+Checking overlaps for volume Shield ... OK! 
+Checking overlaps for volume Shield ... OK! 
+Checking overlaps for volume Shield ... OK! 
+Checking overlaps for volume Shield ... OK! 
+Checking overlaps for volume Shield ... OK! 
+Checking overlaps for volume Shield ... OK! 
+Checking overlaps for volume Shield ... OK! 
+Checking overlaps for volume Shield ... OK! 
+Checking overlaps for volume Shield ... OK! 
+Checking overlaps for volume Shield ... OK! 
+Checking overlaps for volume Shield ... OK! 
+Checking overlaps for volume Shield ... OK! 
+Checking overlaps for volume Shield ... OK! 
+Checking overlaps for volume Shield ... OK! 
+Checking overlaps for volume Shield ... OK! 
+Checking overlaps for volume Shield ... OK! 
+Checking overlaps for volume Shield ... OK! 
+Checking overlaps for volume Shield ... OK! 
+Checking overlaps for volume Shield ... OK! 
+Checking overlaps for volume Shield ... OK! 
+Checking overlaps for volume Shield ... OK! 
+Checking overlaps for volume Shield ... OK! 
+Checking overlaps for volume Shield ... OK! 
+Checking overlaps for volume Shield ... OK! 
+Checking overlaps for volume Shield ... OK! 
+Checking overlaps for volume Shield ... OK! 
+Checking overlaps for volume Shield ... OK! 
+Checking overlaps for volume Shield ... OK! 
+Checking overlaps for volume Shield ... OK! 
+Checking overlaps for volume Shield ... OK! 
+Checking overlaps for volume Shield ... OK! 
+Checking overlaps for volume Det ... OK! 
+Checking overlaps for volume Scin ... OK! 
+volumes: 0x1508ca0 0x150a310 0x150a530
+ERROR: Current scene handler not defined.  Please select or create one.
+ERROR: G4VisCommandsViewerSet::SetNewValue: no current viewer.
+ERROR: G4VisCommandsViewerSet::SetNewValue: no current viewer.
+ERROR: G4VisCommandsViewerSet::SetNewValue: no current viewer.
+ERROR: G4VisCommandsViewerZoom::SetNewValue: no current viewer.
+/tracking/storeTrajectory 2
+Attributes available for modeling and filtering with
+  "/vis/modeling/trajectories/create/drawByAttribute" and
+  "/vis/filtering/trajectories/create/attributeFilter" commands:
+G4TrajectoriesModel:
+  Event ID (EventID): G4int
+G4SmoothTrajectory:
+  Charge (Ch): unit: e+ (G4double)
+  Track ID (ID): G4int
+  Initial kinetic energy (IKE): G4BestUnit (G4double)
+  Initial momentum magnitude (IMag): G4BestUnit (G4double)
+  Initial momentum (IMom): G4BestUnit (G4ThreeVector)
+  No. of points (NTP): G4int
+  PDG Encoding (PDG): G4int
+  Parent ID (PID): G4int
+  Particle Name (PN): G4String
+G4SmoothTrajectoryPoint:
+  Auxiliary Point Position (Aux): G4BestUnit (G4ThreeVector)
+  Step Position (Pos): G4BestUnit (G4ThreeVector)
+WARNING: Trajectory storing has been requested.  This action may be
+  reversed with "/tracking/storeTrajectory 0".
+WARNING: No current scene handler.
+WARNING: No current scene handler.
+ERROR: No current sceneHandler.  Please create one.
+ERROR: G4VisCommandsViewerSet::SetNewValue: no current viewer.
+
+phot:   for  gamma    SubType= 12
+      LambdaPrime table from 200 keV to 10 TeV in 54 bins 
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+       PhotoElectric :  Emin=        0 eV    Emax=       10 TeV   AngularGenSauterGavrila  FluoActive
+
+compt:   for  gamma    SubType= 13
+      Lambda table from 100 eV  to 1 MeV in 28 bins, spline: 1
+      LambdaPrime table from 1 MeV to 10 TeV in 49 bins 
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+       Klein-Nishina :  Emin=        0 eV    Emax=       10 TeV
+
+conv:   for  gamma    SubType= 14
+      Lambda table from 1.022 MeV to 10 TeV in 140 bins, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+        BetheHeitler :  Emin=        0 eV    Emax=       80 GeV
+     BetheHeitlerLPM :  Emin=       80 GeV   Emax=       10 TeV
+
+msc:   for e-    SubType= 10
+      RangeFactor= 0.04, stepLimitType: 1, latDisplacement: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+            UrbanMsc :  Emin=        0 eV    Emax=      100 MeV  Table with 42 bins Emin=    100 eV    Emax=    100 MeV
+        WentzelVIUni :  Emin=      100 MeV   Emax=       10 TeV  Table with 35 bins Emin=    100 MeV   Emax=     10 TeV
+
+eIoni:   for  e-    SubType= 2
+      dE/dx and range tables from 100 eV  to 10 TeV in 77 bins
+      Lambda tables from threshold to 10 TeV in 77 bins, spline: 1
+      finalRange(mm)= 1, dRoverRange= 0.2, integral: 1, fluct: 1, linLossLimit= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+        MollerBhabha :  Emin=        0 eV    Emax=       10 TeV
+
+eBrem:   for  e-    SubType= 3
+      dE/dx and range tables from 100 eV  to 10 TeV in 77 bins
+      Lambda tables from threshold to 10 TeV in 77 bins, spline: 1
+      LPM flag: 1 for E > 1 GeV
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+             eBremSB :  Emin=        0 eV    Emax=        1 GeV   DipBustGen
+            eBremLPM :  Emin=        1 GeV   Emax=       10 TeV   DipBustGen
+
+CoulombScat:   for  e-    SubType= 1
+      Lambda table from 100 MeV to 10 TeV in 35 bins, spline: 1
+      180 < Theta(degree) < 180; pLimit(GeV^1)= 0.139531
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+  eCoulombScattering :  Emin=      100 MeV   Emax=       10 TeV
+
+msc:   for e+    SubType= 10
+      RangeFactor= 0.04, stepLimitType: 1, latDisplacement: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+            UrbanMsc :  Emin=        0 eV    Emax=      100 MeV  Table with 42 bins Emin=    100 eV    Emax=    100 MeV
+        WentzelVIUni :  Emin=      100 MeV   Emax=       10 TeV  Table with 35 bins Emin=    100 MeV   Emax=     10 TeV
+
+eIoni:   for  e+    SubType= 2
+      dE/dx and range tables from 100 eV  to 10 TeV in 77 bins
+      Lambda tables from threshold to 10 TeV in 77 bins, spline: 1
+      finalRange(mm)= 1, dRoverRange= 0.2, integral: 1, fluct: 1, linLossLimit= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+        MollerBhabha :  Emin=        0 eV    Emax=       10 TeV
+
+eBrem:   for  e+    SubType= 3
+      dE/dx and range tables from 100 eV  to 10 TeV in 77 bins
+      Lambda tables from threshold to 10 TeV in 77 bins, spline: 1
+      LPM flag: 1 for E > 1 GeV
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+             eBremSB :  Emin=        0 eV    Emax=        1 GeV   DipBustGen
+            eBremLPM :  Emin=        1 GeV   Emax=       10 TeV   DipBustGen
+
+annihil:   for  e+    SubType= 5
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+            eplus2gg :  Emin=        0 eV    Emax=       10 TeV
+
+CoulombScat:   for  e+    SubType= 1
+      Lambda table from 100 MeV to 10 TeV in 35 bins, spline: 1
+      180 < Theta(degree) < 180; pLimit(GeV^1)= 0.139531
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+  eCoulombScattering :  Emin=      100 MeV   Emax=       10 TeV
+
+msc:   for proton    SubType= 10
+      RangeFactor= 0.2, step limit type: 0, lateralDisplacement: 1, polarAngleLimit(deg)= 180
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+        WentzelVIUni :  Emin=        0 eV    Emax=       10 TeV  Table with 77 bins Emin=    100 eV    Emax=     10 TeV
+
+hIoni:   for  proton    SubType= 2
+      dE/dx and range tables from 100 eV  to 10 TeV in 77 bins
+      Lambda tables from threshold to 10 TeV in 77 bins, spline: 1
+      finalRange(mm)= 0.1, dRoverRange= 0.2, integral: 1, fluct: 1, linLossLimit= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               Bragg :  Emin=        0 eV    Emax=        2 MeV
+          BetheBloch :  Emin=        2 MeV   Emax=       10 TeV
+
+hBrems:   for  proton    SubType= 3
+      dE/dx and range tables from 100 eV  to 10 TeV in 77 bins
+      Lambda tables from threshold to 10 TeV in 77 bins, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               hBrem :  Emin=        0 eV    Emax=       10 TeV
+
+hPairProd:   for  proton    SubType= 4
+      dE/dx and range tables from 100 eV  to 10 TeV in 77 bins
+      Lambda tables from threshold to 10 TeV in 77 bins, spline: 1
+      Sampling table 13x1001; from 7.50618 GeV to 10 TeV 
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+           hPairProd :  Emin=        0 eV    Emax=       10 TeV
+
+CoulombScat:   for  proton    SubType= 1
+      Lambda table from 100 eV  to 10 TeV in 49 bins, spline: 1
+      180 < Theta(degree) < 180; pLimit(GeV^1)= 0.139531
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+  eCoulombScattering :  Emin=        0 eV    Emax=       10 TeV
+
+msc:   for GenericIon    SubType= 10
+      RangeFactor= 0.2, stepLimitType: 0, latDisplacement: 0
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+            UrbanMsc :  Emin=        0 eV    Emax=       10 TeV
+
+ionIoni:   for  GenericIon    SubType= 2
+      dE/dx and range tables from 100 eV  to 10 TeV in 77 bins
+      Lambda tables from threshold to 10 TeV in 77 bins, spline: 1
+      finalRange(mm)= 0.01, dRoverRange= 0.1, integral: 1, fluct: 1, linLossLimit= 0.02
+      Stopping Power data for 17 ion/material pairs 
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+            BraggIon :  Emin=        0 eV    Emax=        2 MeV
+          BetheBloch :  Emin=        2 MeV   Emax=       10 TeV
+
+msc:   for alpha    SubType= 10
+      RangeFactor= 0.2, stepLimitType: 0, latDisplacement: 0
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+            UrbanMsc :  Emin=        0 eV    Emax=       10 TeV  Table with 77 bins Emin=    100 eV    Emax=     10 TeV
+
+ionIoni:   for  alpha    SubType= 2
+      dE/dx and range tables from 100 eV  to 10 TeV in 77 bins
+      Lambda tables from threshold to 10 TeV in 77 bins, spline: 1
+      finalRange(mm)= 0.01, dRoverRange= 0.1, integral: 1, fluct: 1, linLossLimit= 0.02
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+            BraggIon :  Emin=        0 eV    Emax=   7.9452 MeV
+          BetheBloch :  Emin=   7.9452 MeV   Emax=       10 TeV
+
+msc:   for anti_proton    SubType= 10
+      RangeFactor= 0.2, step limit type: 0, lateralDisplacement: 1, polarAngleLimit(deg)= 180
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+        WentzelVIUni :  Emin=        0 eV    Emax=       10 TeV  Table with 77 bins Emin=    100 eV    Emax=     10 TeV
+
+hIoni:   for  anti_proton    SubType= 2
+      dE/dx and range tables from 100 eV  to 10 TeV in 77 bins
+      Lambda tables from threshold to 10 TeV in 77 bins, spline: 1
+      finalRange(mm)= 0.1, dRoverRange= 0.2, integral: 1, fluct: 1, linLossLimit= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+            ICRU73QO :  Emin=        0 eV    Emax=        2 MeV
+          BetheBloch :  Emin=        2 MeV   Emax=       10 TeV
+
+hBrems:   for  anti_proton    SubType= 3
+      dE/dx and range tables from 100 eV  to 10 TeV in 77 bins
+      Lambda tables from threshold to 10 TeV in 77 bins, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               hBrem :  Emin=        0 eV    Emax=       10 TeV
+
+hPairProd:   for  anti_proton    SubType= 4
+      dE/dx and range tables from 100 eV  to 10 TeV in 77 bins
+      Lambda tables from threshold to 10 TeV in 77 bins, spline: 1
+      Sampling table 13x1001; from 7.50618 GeV to 10 TeV 
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+           hPairProd :  Emin=        0 eV    Emax=       10 TeV
+
+msc:   for kaon+    SubType= 10
+      RangeFactor= 0.2, step limit type: 0, lateralDisplacement: 1, polarAngleLimit(deg)= 180
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+        WentzelVIUni :  Emin=        0 eV    Emax=       10 TeV  Table with 77 bins Emin=    100 eV    Emax=     10 TeV
+
+hIoni:   for  kaon+    SubType= 2
+      dE/dx and range tables from 100 eV  to 10 TeV in 77 bins
+      Lambda tables from threshold to 10 TeV in 77 bins, spline: 1
+      finalRange(mm)= 0.1, dRoverRange= 0.2, integral: 1, fluct: 1, linLossLimit= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               Bragg :  Emin=        0 eV    Emax=  1.05231 MeV
+          BetheBloch :  Emin=  1.05231 MeV   Emax=       10 TeV
+
+hBrems:   for  kaon+    SubType= 3
+      dE/dx and range tables from 100 eV  to 10 TeV in 77 bins
+      Lambda tables from threshold to 10 TeV in 77 bins, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               hBrem :  Emin=        0 eV    Emax=       10 TeV
+
+hPairProd:   for  kaon+    SubType= 4
+      dE/dx and range tables from 100 eV  to 10 TeV in 77 bins
+      Lambda tables from threshold to 10 TeV in 77 bins, spline: 1
+      Sampling table 14x1001; from 3.94942 GeV to 10 TeV 
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+           hPairProd :  Emin=        0 eV    Emax=       10 TeV
+
+CoulombScat:   for  kaon+    SubType= 1
+      Lambda table from 100 eV  to 10 TeV in 47 bins, spline: 1
+      180 < Theta(degree) < 180; pLimit(GeV^1)= 0.139531
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+  eCoulombScattering :  Emin=        0 eV    Emax=       10 TeV
+
+msc:   for kaon-    SubType= 10
+      RangeFactor= 0.2, step limit type: 0, lateralDisplacement: 1, polarAngleLimit(deg)= 180
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+        WentzelVIUni :  Emin=        0 eV    Emax=       10 TeV  Table with 77 bins Emin=    100 eV    Emax=     10 TeV
+
+hIoni:   for  kaon-    SubType= 2
+      dE/dx and range tables from 100 eV  to 10 TeV in 77 bins
+      Lambda tables from threshold to 10 TeV in 77 bins, spline: 1
+      finalRange(mm)= 0.1, dRoverRange= 0.2, integral: 1, fluct: 1, linLossLimit= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+            ICRU73QO :  Emin=        0 eV    Emax=  1.05231 MeV
+          BetheBloch :  Emin=  1.05231 MeV   Emax=       10 TeV
+
+hBrems:   for  kaon-    SubType= 3
+      dE/dx and range tables from 100 eV  to 10 TeV in 77 bins
+      Lambda tables from threshold to 10 TeV in 77 bins, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               hBrem :  Emin=        0 eV    Emax=       10 TeV
+
+hPairProd:   for  kaon-    SubType= 4
+      dE/dx and range tables from 100 eV  to 10 TeV in 77 bins
+      Lambda tables from threshold to 10 TeV in 77 bins, spline: 1
+      Sampling table 14x1001; from 3.94942 GeV to 10 TeV 
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+           hPairProd :  Emin=        0 eV    Emax=       10 TeV
+
+msc:   for mu+    SubType= 10
+      RangeFactor= 0.2, step limit type: 0, lateralDisplacement: 1, polarAngleLimit(deg)= 180
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+        WentzelVIUni :  Emin=        0 eV    Emax=       10 TeV  Table with 77 bins Emin=    100 eV    Emax=     10 TeV
+
+muIoni:   for  mu+    SubType= 2
+      dE/dx and range tables from 100 eV  to 10 TeV in 77 bins
+      Lambda tables from threshold to 10 TeV in 77 bins, spline: 1
+      finalRange(mm)= 1, dRoverRange= 0.2, integral: 1, fluct: 1, linLossLimit= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               Bragg :  Emin=        0 eV    Emax=      200 keV
+          BetheBloch :  Emin=      200 keV   Emax=        1 GeV
+        MuBetheBloch :  Emin=        1 GeV   Emax=       10 TeV
+
+muBrems:   for  mu+    SubType= 3
+      dE/dx and range tables from 100 eV  to 10 TeV in 77 bins
+      Lambda tables from threshold to 10 TeV in 77 bins, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+              MuBrem :  Emin=        0 eV    Emax=       10 TeV
+
+muPairProd:   for  mu+    SubType= 4
+      dE/dx and range tables from 100 eV  to 10 TeV in 77 bins
+      Lambda tables from threshold to 10 TeV in 77 bins, spline: 1
+      Sampling table 17x1001; from 1 GeV to 10 TeV 
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+          muPairProd :  Emin=        0 eV    Emax=       10 TeV
+
+CoulombScat:   for  mu+    SubType= 1
+      Lambda table from 100 eV  to 10 TeV in 43 bins, spline: 1
+      180 < Theta(degree) < 180; pLimit(GeV^1)= 0.139531
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+  eCoulombScattering :  Emin=        0 eV    Emax=       10 TeV
+
+msc:   for mu-    SubType= 10
+      RangeFactor= 0.2, step limit type: 0, lateralDisplacement: 1, polarAngleLimit(deg)= 180
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+        WentzelVIUni :  Emin=        0 eV    Emax=       10 TeV  Table with 77 bins Emin=    100 eV    Emax=     10 TeV
+
+muIoni:   for  mu-    SubType= 2
+      dE/dx and range tables from 100 eV  to 10 TeV in 77 bins
+      Lambda tables from threshold to 10 TeV in 77 bins, spline: 1
+      finalRange(mm)= 1, dRoverRange= 0.2, integral: 1, fluct: 1, linLossLimit= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+            ICRU73QO :  Emin=        0 eV    Emax=      200 keV
+          BetheBloch :  Emin=      200 keV   Emax=        1 GeV
+        MuBetheBloch :  Emin=        1 GeV   Emax=       10 TeV
+
+muBrems:   for  mu-    SubType= 3
+      dE/dx and range tables from 100 eV  to 10 TeV in 77 bins
+      Lambda tables from threshold to 10 TeV in 77 bins, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+              MuBrem :  Emin=        0 eV    Emax=       10 TeV
+
+muPairProd:   for  mu-    SubType= 4
+      dE/dx and range tables from 100 eV  to 10 TeV in 77 bins
+      Lambda tables from threshold to 10 TeV in 77 bins, spline: 1
+      Sampling table 17x1001; from 1 GeV to 10 TeV 
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+          muPairProd :  Emin=        0 eV    Emax=       10 TeV
+
+CoulombScat:   for  mu-    SubType= 1
+      Lambda table from 100 eV  to 10 TeV in 43 bins, spline: 1
+      180 < Theta(degree) < 180; pLimit(GeV^1)= 0.139531
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+  eCoulombScattering :  Emin=        0 eV    Emax=       10 TeV
+NeutronHP: /Capture file for Z = 6, A = 12 is not found and NeutronHP will use /var/phy/project/hep/neutrino/soft-SL6/geant4/Geant4-10.0.2-Linux/share/Geant4-10.0.2/data/G4NDL4.4/Capture/CrossSection/6_nat_Carbon
+NeutronHP: /Elastic file for Z = 6, A = 12 is not found and NeutronHP will use /var/phy/project/hep/neutrino/soft-SL6/geant4/Geant4-10.0.2-Linux/share/Geant4-10.0.2/data/G4NDL4.4/Elastic/CrossSection/6_nat_Carbon
+NeutronHP: /Inelastic file for Z = 6, A = 12 is not found and NeutronHP will use /var/phy/project/hep/neutrino/soft-SL6/geant4/Geant4-10.0.2-Linux/share/Geant4-10.0.2/data/G4NDL4.4/Inelastic/CrossSection/6_nat_Carbon
+NeutronHP: /Capture file for Z = 6, A = 13 is not found and NeutronHP will use /var/phy/project/hep/neutrino/soft-SL6/geant4/Geant4-10.0.2-Linux/share/Geant4-10.0.2/data/G4NDL4.4/Capture/CrossSection/6_nat_Carbon
+NeutronHP: /Elastic file for Z = 6, A = 13 is not found and NeutronHP will use /var/phy/project/hep/neutrino/soft-SL6/geant4/Geant4-10.0.2-Linux/share/Geant4-10.0.2/data/G4NDL4.4/Elastic/CrossSection/6_nat_Carbon
+NeutronHP: /Inelastic file for Z = 6, A = 13 is not found and NeutronHP will use /var/phy/project/hep/neutrino/soft-SL6/geant4/Geant4-10.0.2-Linux/share/Geant4-10.0.2/data/G4NDL4.4/Inelastic/CrossSection/6_nat_Carbon
+NeutronHP: /Capture file for Z = 8, A = 18 is not found and NeutronHP will use /var/phy/project/hep/neutrino/soft-SL6/geant4/Geant4-10.0.2-Linux/share/Geant4-10.0.2/data/G4NDL4.4/Capture/CrossSection/8_17_Oxygen
+NeutronHP: /Elastic file for Z = 8, A = 18 is not found and NeutronHP will use /var/phy/project/hep/neutrino/soft-SL6/geant4/Geant4-10.0.2-Linux/share/Geant4-10.0.2/data/G4NDL4.4/Elastic/CrossSection/8_17_Oxygen
+NeutronHP: /Inelastic file for Z = 8, A = 18 is not found and NeutronHP will use /var/phy/project/hep/neutrino/soft-SL6/geant4/Geant4-10.0.2-Linux/share/Geant4-10.0.2/data/G4NDL4.4/Inelastic/CrossSection/8_17_Oxygen
+NeutronHP: /Capture file for Z = 6, A = 12 is not found and NeutronHP will use /var/phy/project/hep/neutrino/soft-SL6/geant4/Geant4-10.0.2-Linux/share/Geant4-10.0.2/data/G4NDL4.4/Capture/CrossSection/6_nat_Carbon
+NeutronHP: /Elastic file for Z = 6, A = 12 is not found and NeutronHP will use /var/phy/project/hep/neutrino/soft-SL6/geant4/Geant4-10.0.2-Linux/share/Geant4-10.0.2/data/G4NDL4.4/Elastic/CrossSection/6_nat_Carbon
+NeutronHP: /Inelastic file for Z = 6, A = 12 is not found and NeutronHP will use /var/phy/project/hep/neutrino/soft-SL6/geant4/Geant4-10.0.2-Linux/share/Geant4-10.0.2/data/G4NDL4.4/Inelastic/CrossSection/6_nat_Carbon
+NeutronHP: /Capture file for Z = 6, A = 13 is not found and NeutronHP will use /var/phy/project/hep/neutrino/soft-SL6/geant4/Geant4-10.0.2-Linux/share/Geant4-10.0.2/data/G4NDL4.4/Capture/CrossSection/6_nat_Carbon
+NeutronHP: /Elastic file for Z = 6, A = 13 is not found and NeutronHP will use /var/phy/project/hep/neutrino/soft-SL6/geant4/Geant4-10.0.2-Linux/share/Geant4-10.0.2/data/G4NDL4.4/Elastic/CrossSection/6_nat_Carbon
+NeutronHP: /Inelastic file for Z = 6, A = 13 is not found and NeutronHP will use /var/phy/project/hep/neutrino/soft-SL6/geant4/Geant4-10.0.2-Linux/share/Geant4-10.0.2/data/G4NDL4.4/Inelastic/CrossSection/6_nat_Carbon
+
+msc:   for pi+    SubType= 10
+      RangeFactor= 0.2, step limit type: 0, lateralDisplacement: 1, polarAngleLimit(deg)= 180
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+        WentzelVIUni :  Emin=        0 eV    Emax=       10 TeV  Table with 77 bins Emin=    100 eV    Emax=     10 TeV
+
+hIoni:   for  pi+    SubType= 2
+      dE/dx and range tables from 100 eV  to 10 TeV in 77 bins
+      Lambda tables from threshold to 10 TeV in 77 bins, spline: 1
+      finalRange(mm)= 0.1, dRoverRange= 0.2, integral: 1, fluct: 1, linLossLimit= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               Bragg :  Emin=        0 eV    Emax=  297.505 keV
+          BetheBloch :  Emin=  297.505 keV   Emax=       10 TeV
+
+hBrems:   for  pi+    SubType= 3
+      dE/dx and range tables from 100 eV  to 10 TeV in 77 bins
+      Lambda tables from threshold to 10 TeV in 77 bins, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               hBrem :  Emin=        0 eV    Emax=       10 TeV
+
+hPairProd:   for  pi+    SubType= 4
+      dE/dx and range tables from 100 eV  to 10 TeV in 77 bins
+      Lambda tables from threshold to 10 TeV in 77 bins, spline: 1
+      Sampling table 16x1001; from 1.11656 GeV to 10 TeV 
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+           hPairProd :  Emin=        0 eV    Emax=       10 TeV
+
+CoulombScat:   for  pi+    SubType= 1
+      Lambda table from 100 eV  to 10 TeV in 44 bins, spline: 1
+      180 < Theta(degree) < 180; pLimit(GeV^1)= 0.139531
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+  eCoulombScattering :  Emin=        0 eV    Emax=       10 TeV
+
+msc:   for pi-    SubType= 10
+      RangeFactor= 0.2, step limit type: 0, lateralDisplacement: 1, polarAngleLimit(deg)= 180
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+        WentzelVIUni :  Emin=        0 eV    Emax=       10 TeV  Table with 77 bins Emin=    100 eV    Emax=     10 TeV
+
+hIoni:   for  pi-    SubType= 2
+      dE/dx and range tables from 100 eV  to 10 TeV in 77 bins
+      Lambda tables from threshold to 10 TeV in 77 bins, spline: 1
+      finalRange(mm)= 0.1, dRoverRange= 0.2, integral: 1, fluct: 1, linLossLimit= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+            ICRU73QO :  Emin=        0 eV    Emax=  297.505 keV
+          BetheBloch :  Emin=  297.505 keV   Emax=       10 TeV
+
+hBrems:   for  pi-    SubType= 3
+      dE/dx and range tables from 100 eV  to 10 TeV in 77 bins
+      Lambda tables from threshold to 10 TeV in 77 bins, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               hBrem :  Emin=        0 eV    Emax=       10 TeV
+
+hPairProd:   for  pi-    SubType= 4
+      dE/dx and range tables from 100 eV  to 10 TeV in 77 bins
+      Lambda tables from threshold to 10 TeV in 77 bins, spline: 1
+      Sampling table 16x1001; from 1.11656 GeV to 10 TeV 
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+           hPairProd :  Emin=        0 eV    Emax=       10 TeV
+
+====================================================================
+                  HADRONIC PROCESSES SUMMARY (verbose level 1)
+
+---------------------------------------------------
+                           Hadronic Processes for GenericIon
+
+  Process: ionInelastic
+        Model:  Binary Light Ion Cascade: 0 eV  ---> 4 GeV
+        Model:                      FTFP: 2 GeV ---> 100 TeV
+     Cr_sctns: Glauber-Gribov nucleus nucleus: 0 eV  ---> 2.88022e+295 J  
+     Cr_sctns:          GheishaInelastic: 0 eV  ---> 100 TeV
+
+---------------------------------------------------
+                           Hadronic Processes for anti_neutron
+
+  Process: hadElastic
+        Model:              hElasticLHEP: 0 eV  ---> 100 TeV
+     Cr_sctns:            GheishaElastic: 0 eV  ---> 100 TeV
+
+  Process: anti_neutronInelastic
+        Model:                      FTFP: 0 eV  ---> 100 TeV
+     Cr_sctns:              AntiAGlauber: 0 eV  ---> 2.88022e+295 J  
+     Cr_sctns:          GheishaInelastic: 0 eV  ---> 100 TeV
+
+---------------------------------------------------
+                           Hadronic Processes for anti_proton
+
+  Process: hadElastic
+        Model:              hElasticLHEP: 0 eV  ---> 100.1 MeV
+        Model:              AntiAElastic: 100 MeV ---> 100 TeV
+     Cr_sctns:              AntiAGlauber: 0 eV  ---> 2.88022e+295 J  
+     Cr_sctns:            GheishaElastic: 0 eV  ---> 100 TeV
+
+  Process: anti_protonInelastic
+        Model:                      FTFP: 0 eV  ---> 100 TeV
+     Cr_sctns:              AntiAGlauber: 0 eV  ---> 2.88022e+295 J  
+     Cr_sctns:          GheishaInelastic: 0 eV  ---> 100 TeV
+
+  Process: hFritiofCaptureAtRest
+
+---------------------------------------------------
+                           Hadronic Processes for e+
+
+  Process: positronNuclear
+        Model:   G4ElectroVDNuclearModel: 0 eV  ---> 1 PeV
+     Cr_sctns:          ElectroNuclearXS: 0 eV  ---> 100 TeV
+     Cr_sctns:          GheishaInelastic: 0 eV  ---> 100 TeV
+
+---------------------------------------------------
+                           Hadronic Processes for e-
+
+  Process: electronNuclear
+        Model:   G4ElectroVDNuclearModel: 0 eV  ---> 1 PeV
+     Cr_sctns:          ElectroNuclearXS: 0 eV  ---> 100 TeV
+     Cr_sctns:          GheishaInelastic: 0 eV  ---> 100 TeV
+
+---------------------------------------------------
+                           Hadronic Processes for gamma
+
+  Process: photonNuclear
+        Model:            BertiniCascade: 0 eV  ---> 3.5 GeV
+        Model:           TheoFSGenerator: 3 GeV ---> 100 TeV
+     Cr_sctns:            PhotoNuclearXS: 0 eV  ---> 100 TeV
+     Cr_sctns:          GheishaInelastic: 0 eV  ---> 100 TeV
+
+---------------------------------------------------
+                           Hadronic Processes for kaon+
+
+  Process: hadElastic
+        Model:              hElasticLHEP: 0 eV  ---> 100 TeV
+     Cr_sctns:            GheishaElastic: 0 eV  ---> 100 TeV
+
+  Process: kaon+Inelastic
+        Model:                      QGSP: 12 GeV ---> 100 TeV
+        Model:                      FTFP: 4 GeV ---> 25 GeV
+        Model:            BertiniCascade: 0 eV  ---> 5 GeV
+     Cr_sctns:  ChipsKaonPlusInelasticXS: 0 eV  ---> 100 TeV
+     Cr_sctns:          GheishaInelastic: 0 eV  ---> 100 TeV
+
+---------------------------------------------------
+                           Hadronic Processes for kaon-
+
+  Process: hadElastic
+        Model:              hElasticLHEP: 0 eV  ---> 100 TeV
+     Cr_sctns:            GheishaElastic: 0 eV  ---> 100 TeV
+
+  Process: kaon-Inelastic
+        Model:                      QGSP: 12 GeV ---> 100 TeV
+        Model:                      FTFP: 4 GeV ---> 25 GeV
+        Model:            BertiniCascade: 0 eV  ---> 5 GeV
+     Cr_sctns: ChipsKaonMinusInelasticXS: 0 eV  ---> 100 TeV
+     Cr_sctns:          GheishaInelastic: 0 eV  ---> 100 TeV
+
+  Process: hBertiniCaptureAtRest
+
+---------------------------------------------------
+                           Hadronic Processes for lambda
+
+  Process: hadElastic
+        Model:              hElasticLHEP: 0 eV  ---> 100 TeV
+     Cr_sctns:            GheishaElastic: 0 eV  ---> 100 TeV
+
+  Process: lambdaInelastic
+        Model:            BertiniCascade: 0 eV  ---> 6 GeV
+        Model:                      FTFP: 2 GeV ---> 100 TeV
+     Cr_sctns:   ChipsHyperonInelasticXS: 0 eV  ---> 100 TeV
+     Cr_sctns:          GheishaInelastic: 0 eV  ---> 100 TeV
+
+---------------------------------------------------
+                           Hadronic Processes for mu-
+
+  Process: muMinusCaptureAtRest
+
+---------------------------------------------------
+                           Hadronic Processes for neutron
+
+  Process: hadElastic
+        Model:             hElasticCHIPS: 19.5 MeV ---> 100 TeV
+        Model:          NeutronHPElastic: 0 eV  ---> 20 MeV
+     Cr_sctns:        NeutronHPElasticXS: 0 eV  ---> 20 MeV
+     Cr_sctns:     ChipsNeutronElasticXS: 0 eV  ---> 100 TeV
+     Cr_sctns:            GheishaElastic: 0 eV  ---> 100 TeV
+
+  Process: neutronInelastic
+        Model:                      QGSP: 12 GeV ---> 100 TeV
+        Model:                      FTFP: 9.5 GeV ---> 25 GeV
+        Model:            Binary Cascade: 19.9 MeV ---> 9.9 GeV
+        Model:        NeutronHPInelastic: 0 eV  ---> 20 MeV
+     Cr_sctns:      NeutronHPInelasticXS: 0 eV  ---> 20 MeV
+     Cr_sctns:       Barashenkov-Glauber: 0 eV  ---> 100 TeV
+     Cr_sctns:       Barashenkov-Glauber: 0 eV  ---> 100 TeV
+     Cr_sctns:          GheishaInelastic: 0 eV  ---> 100 TeV
+
+  Process: nCapture
+        Model:          NeutronHPCapture: 0 eV  ---> 20 MeV
+        Model:               nRadCapture: 19.9 MeV ---> 100 TeV
+     Cr_sctns:        NeutronHPCaptureXS: 0 eV  ---> 20 MeV
+     Cr_sctns:        G4NeutronCaptureXS: 0 eV  ---> 100 TeV
+     Cr_sctns:        NeutronHPCaptureXS: 0 eV  ---> 20 MeV
+     Cr_sctns:          GheishaCaptureXS: 0 eV  ---> 100 TeV
+
+  Process: nFission
+        Model:          NeutronHPFission: 0 eV  ---> 20 MeV
+        Model:                G4LFission: 19.9 MeV ---> 2.88022e+295 J  
+     Cr_sctns:        NeutronHPFissionXS: 0 eV  ---> 20 MeV
+     Cr_sctns:          GheishaFissionXS: 0 eV  ---> 100 TeV
+
+---------------------------------------------------
+                           Hadronic Processes for pi+
+
+  Process: hadElastic
+        Model:              hElasticLHEP: 0 eV  ---> 1.0001 GeV
+        Model:           hElasticGlauber: 1 GeV ---> 100 TeV
+     Cr_sctns:       Barashenkov-Glauber: 0 eV  ---> 100 TeV
+     Cr_sctns:            GheishaElastic: 0 eV  ---> 100 TeV
+
+  Process: pi+Inelastic
+        Model:                      QGSP: 12 GeV ---> 100 TeV
+        Model:                      FTFP: 4 GeV ---> 25 GeV
+        Model:            BertiniCascade: 0 eV  ---> 5 GeV
+     Cr_sctns:      G4CrossSectionPairGG: 0 eV  ---> 100 TeV
+                         G4CrossSectionPairGG: G4PiNuclearCrossSection cross sections 
+                           below 91 GeV, Glauber-Gribov above 
+     Cr_sctns:      G4CrossSectionPairGG: 0 eV  ---> 100 TeV
+                         G4CrossSectionPairGG: G4PiNuclearCrossSection cross sections 
+                           below 91 GeV, Glauber-Gribov above 
+     Cr_sctns:          GheishaInelastic: 0 eV  ---> 100 TeV
+
+---------------------------------------------------
+                           Hadronic Processes for pi-
+
+  Process: hadElastic
+        Model:              hElasticLHEP: 0 eV  ---> 1.0001 GeV
+        Model:           hElasticGlauber: 1 GeV ---> 100 TeV
+     Cr_sctns:       Barashenkov-Glauber: 0 eV  ---> 100 TeV
+     Cr_sctns:            GheishaElastic: 0 eV  ---> 100 TeV
+
+  Process: pi-Inelastic
+        Model:                      QGSP: 12 GeV ---> 100 TeV
+        Model:                      FTFP: 4 GeV ---> 25 GeV
+        Model:            BertiniCascade: 0 eV  ---> 5 GeV
+     Cr_sctns:      G4CrossSectionPairGG: 0 eV  ---> 100 TeV
+                         G4CrossSectionPairGG: G4PiNuclearCrossSection cross sections 
+                           below 91 GeV, Glauber-Gribov above 
+     Cr_sctns:      G4CrossSectionPairGG: 0 eV  ---> 100 TeV
+                         G4CrossSectionPairGG: G4PiNuclearCrossSection cross sections 
+                           below 91 GeV, Glauber-Gribov above 
+     Cr_sctns:          GheishaInelastic: 0 eV  ---> 100 TeV
+
+  Process: hBertiniCaptureAtRest
+
+---------------------------------------------------
+                           Hadronic Processes for proton
+
+  Process: hadElastic
+        Model:             hElasticCHIPS: 0 eV  ---> 100 TeV
+     Cr_sctns:      ChipsProtonElasticXS: 0 eV  ---> 100 TeV
+     Cr_sctns:            GheishaElastic: 0 eV  ---> 100 TeV
+
+  Process: protonInelastic
+        Model:                      QGSP: 12 GeV ---> 100 TeV
+        Model:                      FTFP: 9.5 GeV ---> 25 GeV
+        Model:            Binary Cascade: 0 eV  ---> 9.9 GeV
+     Cr_sctns:       Barashenkov-Glauber: 0 eV  ---> 100 TeV
+     Cr_sctns:       Barashenkov-Glauber: 0 eV  ---> 100 TeV
+     Cr_sctns:          GheishaInelastic: 0 eV  ---> 100 TeV
+
+================================================================
+WARNING: No current scene handler.
+Reading line 354 3MEV
+Reading line 468 5MEV
+Reading line 612 2MEV
+Reading line 677 2MEV
+Reading line 953 2MEV
+Reading line 1494 2MEV
+Reading line 1955 2MEV
+Reading line 2524 2MEV
+Reading line 2587 2MEV
+Reading line 2673 2MEV
+Reading line 2874 2MEV
+Reading line 3248 2MEV
+Reading line 3512 3MEV
+Reading line 3806 3MEV
+Reading line 3886 3MEV
+Reading line 4498 2MEV
+Reading line 4565 3MEV
+Reading line 5011 5MEV
+Reading line 5215 2MEV
+Reading line 5930 2MEV
+Reading line 6366 2MEV
+Reading line 6419 5MEV
+Reading line 6671 3MEV
+Reading line 7118 3MEV
+Reading line 7520 5MEV
+Reading line 8261 3MEV
+Reading line 8471 3MEV
+Reading line 8799 3MEV
+Reading line 8865 2MEV
+Reading line 8924 3MEV
+Reading line 9043 3MEV
+Reading line 9082 2MEV
+Reading line 9097 3MEV
+Reading line 9227 2MEV
+Reading line 10027 2MEV
+Reading line 10499 3MEV
+Reading line 10750 3MEV
+Reading line 10985 2MEV
+Reading line 11502 3MEV
+Reading line 11761 2MEV
+Reading line 12371 2MEV
+Reading line 12706 2MEV
+Reading line 12995 3MEV
+Reading line 13498 2MEV
+Reading line 13643 3MEV
+Reading line 13993 2MEV
+Reading line 14310 2MEV
+Reading line 14570 2MEV
+Reading line 14637 2MEV
+Reading line 14752 2MEV
+Reading line 15092 2MEV
+Reading line 15268 2MEV
+Reading line 15269 3MEV
+Reading line 15308 3MEV
+Reading line 15479 2MEV
+Reading line 15586 2MEV
+Reading line 15847 2MEV
+Reading line 16118 2MEV
+Reading line 16278 3MEV
+Reading line 16421 2MEV
+Reading line 16653 2MEV
+Reading line 16824 3MEV
+Reading line 17286 3MEV
+Reading line 17468 5MEV
+Reading line 17670 2MEV
+Reading line 17722 2MEV
+Reading line 18089 2MEV
+Reading line 18905 2MEV
+Reading line 19142 2MEV
+Reading line 20033 2MEV
+Reading line 20124 2MEV
+Reading line 20478 3MEV
+Reading line 20576 3MEV
+Reading line 21235 2MEV
+Reading line 21787 2MEV
+Reading line 21865 2MEV
+Reading line 21959 2MEV
+Reading line 22006 2MEV
+Reading line 22065 2MEV
+Reading line 22832 2MEV
+Reading line 23357 3MEV
+Reading line 23873 2MEV
+Reading line 23881 2MEV
+Reading line 24263 3MEV
+Reading line 24314 2MEV
+Reading line 24880 2MEV
+Reading line 25153 2MEV
+Reading line 25352 5MEV
+Reading line 25451 2MEV
+Reading line 26236 3MEV
+Reading line 26254 2MEV
+Reading line 26332 2MEV
+Reading line 26427 2MEV
+Reading line 26485 2MEV
+Reading line 27160 3MEV
+Reading line 27400 2MEV
+Reading line 27401 3MEV
+Reading line 27482 3MEV
+Reading line 27544 2MEV
+Reading line 28067 3MEV
+Reading line 28181 3MEV
+Reading line 28334 2MEV
+Reading line 28454 2MEV
+Reading line 29271 3MEV
+Reading line 29289 2MEV
+Reading line 29296 3MEV
+Reading line 29805 2MEV
+Reading line 30196 2MEV
+Reading line 30213 2MEV
+Reading line 30437 5MEV
+Reading line 30553 3MEV
+Reading line 30619 2MEV
+Reading line 30747 3MEV
+Reading line 30775 3MEV
+Reading line 31183 2MEV
+Reading line 31294 5MEV
+Reading line 31610 2MEV
+Reading line 31663 2MEV
+Reading line 31904 2MEV
+Reading line 32040 3MEV
+Reading line 32081 2MEV
+Reading line 33678 2MEV
+Reading line 33860 3MEV
+Reading line 34957 3MEV
+Reading line 35037 3MEV
+Reading line 35167 5MEV
+Reading line 35338 2MEV
+Reading line 35711 3MEV
+Reading line 36367 2MEV
+Reading line 36419 2MEV
+Reading line 36520 3MEV
+Reading line 36584 3MEV
+Reading line 36866 2MEV
+Reading line 37091 3MEV
+Reading line 37422 2MEV
+Reading line 37650 3MEV
+Reading line 38591 2MEV
+Reading line 38809 3MEV
+Reading line 38984 3MEV
+Reading line 39132 3MEV
+Reading line 39171 5MEV
+Reading line 39205 2MEV
+Reading line 39224 2MEV
+Reading line 39472 3MEV
+Reading line 39574 2MEV
+Reading line 39818 2MEV
+Reading line 40089 2MEV
+Reading line 40514 2MEV
+Reading line 40664 2MEV
+Reading line 41080 5MEV
+Reading line 42013 2MEV
+Reading line 42314 2MEV
+Reading line 42317 2MEV
+Reading line 42410 2MEV
+Reading line 42532 3MEV
+Reading line 42540 3MEV
+Reading line 42628 3MEV
+Reading line 42797 2MEV
+Reading line 42804 5MEV
+Reading line 42824 2MEV
+Reading line 42827 3MEV
+Reading line 42858 2MEV
+Reading line 43008 2MEV
+Reading line 43088 2MEV
+Reading line 44023 2MEV
+Reading line 44312 5MEV
+Reading line 44320 5MEV
+Reading line 44834 2MEV
+Reading line 45150 2MEV
+Reading line 46031 2MEV
+Reading line 46515 3MEV
+Reading line 46972 2MEV
+Reading line 47004 2MEV
+Reading line 47181 5MEV
+Reading line 47330 2MEV
+Reading line 48743 2MEV
+Reading line 49174 5MEV
+Reading line 49241 2MEV
+Reading line 49378 3MEV
+Reading line 49715 3MEV
+Reading line 50236 2MEV
+Reading line 50358 2MEV
+Reading line 50420 3MEV
+Reading line 50853 3MEV
+Reading line 50875 3MEV
+Reading line 51276 5MEV
+Reading line 51349 3MEV
+Reading line 51401 5MEV
+Reading line 51440 3MEV
+Reading line 51818 3MEV
+Reading line 51939 2MEV
+Reading line 51990 2MEV
+Reading line 53101 2MEV
+Reading line 53290 5MEV
+Reading line 53669 2MEV
+Reading line 53727 2MEV
+Reading line 55716 2MEV
+Reading line 56556 3MEV
+Reading line 56684 2MEV
+Reading line 57716 3MEV
+Reading line 58040 5MEV
+Reading line 58061 2MEV
+Reading line 58123 2MEV
+Reading line 58217 2MEV
+Reading line 58975 3MEV
+Reading line 59541 2MEV
+Reading line 59793 2MEV
+Reading line 60091 3MEV
+Reading line 60105 2MEV
+Reading line 60346 3MEV
+Reading line 60538 2MEV
+Reading line 60541 2MEV
+Reading line 60542 2MEV
+Reading line 60712 2MEV
+Reading line 61189 2MEV
+Reading line 61778 5MEV
+Reading line 62612 3MEV
+Reading line 62760 2MEV
+Reading line 63451 2MEV
+Reading line 63827 5MEV
+Reading line 64136 2MEV
+Reading line 64316 2MEV
+Reading line 64649 2MEV
+Reading line 64776 2MEV
+Reading line 65653 5MEV
+Reading line 65692 2MEV
+Reading line 65697 3MEV
+Reading line 65711 3MEV
+Reading line 65743 3MEV
+Reading line 66028 2MEV
+Reading line 66158 3MEV
+Reading line 66606 3MEV
+Reading line 66976 2MEV
+Reading line 67380 5MEV
+Reading line 67523 2MEV
+Reading line 67597 3MEV
+Reading line 67817 3MEV
+Reading line 67915 3MEV
+Reading line 68692 3MEV
+Reading line 68761 2MEV
+Reading line 69045 2MEV
+Reading line 69204 2MEV
+Reading line 69615 2MEV
+Reading line 70212 2MEV
+Reading line 70330 2MEV
+Reading line 70964 3MEV
+Reading line 70977 2MEV
+Reading line 71091 3MEV
+Reading line 71787 2MEV
+Reading line 71848 2MEV
+Reading line 72117 2MEV
+Reading line 72363 3MEV
+Reading line 72625 5MEV
+Reading line 72843 3MEV
+Reading line 73018 3MEV
+Reading line 73051 2MEV
+Reading line 73413 3MEV
+Reading line 73704 2MEV
+Reading line 73718 5MEV
+Reading line 73719 2MEV
+Reading line 74423 3MEV
+Reading line 74655 2MEV
+Reading line 74941 2MEV
+Reading line 75249 2MEV
+Reading line 76307 2MEV
+Reading line 76312 5MEV
+Reading line 76826 2MEV
+Reading line 76954 5MEV
+Reading line 77001 2MEV
+Reading line 77231 2MEV
+Reading line 77577 2MEV
+Reading line 77997 2MEV
+Reading line 78453 2MEV
+Reading line 78673 5MEV
+Reading line 78973 3MEV
+Reading line 79496 3MEV
+Reading line 80110 2MEV
+Reading line 80254 3MEV
+Reading line 80553 3MEV
+Reading line 80987 2MEV
+Reading line 81528 5MEV
+Reading line 82537 2MEV
+Reading line 82876 2MEV
+Reading line 82958 2MEV
+Reading line 83122 2MEV
+Reading line 83230 2MEV
+Reading line 83329 3MEV
+Reading line 83757 2MEV
+Reading line 83877 3MEV
+Reading line 84542 2MEV
+Reading line 84967 2MEV
+Reading line 85136 2MEV
+Reading line 85592 2MEV
+Reading line 85595 5MEV
+Reading line 85895 2MEV
+Reading line 86098 5MEV
+Reading line 86351 3MEV
+Reading line 87316 3MEV
+Reading line 87339 3MEV
+Reading line 87346 3MEV
+Reading line 87582 3MEV
+Reading line 87708 2MEV
+Reading line 87753 2MEV
+Reading line 87877 3MEV
+Reading line 87952 2MEV
+Reading line 88816 3MEV
+Reading line 89556 2MEV
+Reading line 90304 2MEV
+Reading line 90820 2MEV
+Reading line 91084 3MEV
+Reading line 91739 3MEV
+Reading line 91945 2MEV
+Reading line 92030 3MEV
+Reading line 92489 3MEV
+Reading line 93082 3MEV
+Reading line 93124 2MEV
+Reading line 93159 2MEV
+Reading line 93232 5MEV
+Reading line 93270 5MEV
+Reading line 93421 2MEV
+Reading line 93437 2MEV
+Reading line 93440 2MEV
+Reading line 93855 5MEV
+Reading line 94155 2MEV
+Reading line 94985 3MEV
+Reading line 95216 2MEV
+Reading line 95498 2MEV
+Reading line 96716 2MEV
+Reading line 96750 3MEV
+Reading line 96922 2MEV
+Reading line 97331 3MEV
+Reading line 97441 2MEV
+Reading line 97922 3MEV
+Reading line 98033 2MEV
+Reading line 98145 3MEV
+Reading line 98676 2MEV
+Reading line 98701 3MEV
+Reading line 99183 2MEV
+Reading line 99323 2MEV
+Reading line 99894 2MEV
+Reading line 100007 5MEV
+Reading line 100251 2MEV
+Reading line 100292 2MEV
+Reading line 100349 2MEV
+Reading line 100560 3MEV
+Reading line 100798 2MEV
+Reading line 101244 2MEV
+Reading line 101274 3MEV
+Reading line 101700 2MEV
+Reading line 101730 2MEV
+Reading line 101837 3MEV
+Reading line 101967 2MEV
+Reading line 102329 3MEV
+Reading line 102539 2MEV
+Reading line 102640 2MEV
+Reading line 103508 3MEV
+Reading line 104419 3MEV
+Reading line 104573 2MEV
+Reading line 104903 2MEV
+Reading line 105068 2MEV
+Reading line 105238 2MEV
+Reading line 105406 2MEV
+Reading line 105523 2MEV
+Reading line 105621 2MEV
+Reading line 105763 3MEV
+Reading line 105817 2MEV
+Reading line 105928 2MEV
+Reading line 106554 3MEV
+Reading line 106968 5MEV
+Reading line 107241 2MEV
+Reading line 108268 2MEV
+Reading line 108669 3MEV
+Reading line 108736 2MEV
+Reading line 108893 3MEV
+Reading line 109147 2MEV
+Reading line 109159 2MEV
+Reading line 109180 2MEV
+Reading line 109494 3MEV
+Reading line 109719 3MEV
+Reading line 110591 2MEV
+Reading line 110712 2MEV
+Reading line 110715 2MEV
+Reading line 110907 2MEV
+Reading line 111463 3MEV
+Reading line 111488 5MEV
+Reading line 111626 3MEV
+Reading line 111869 2MEV
+Reading line 111975 3MEV
+Reading line 113238 2MEV
+Reading line 113508 2MEV
+Reading line 113555 3MEV
+Reading line 114172 3MEV
+Reading line 114249 5MEV
+Reading line 114334 2MEV
+Reading line 114535 3MEV
+Reading line 114555 3MEV
+Reading line 114825 2MEV
+Reading line 115130 5MEV
+Reading line 115147 2MEV
+Reading line 115190 3MEV
+Reading line 115245 5MEV
+Reading line 115581 5MEV
+Reading line 115795 2MEV
+Reading line 116454 3MEV
+Reading line 116518 2MEV
+Reading line 116601 2MEV
+Reading line 116882 5MEV
+Reading line 116935 2MEV
+Reading line 117055 3MEV
+Reading line 117110 3MEV
+Reading line 117222 3MEV
+Reading line 117286 2MEV
+Reading line 117317 3MEV
+Reading line 117653 2MEV
+Reading line 117925 2MEV
+Reading line 118422 3MEV
+Reading line 118655 2MEV
+Reading line 118716 2MEV
+Reading line 119088 3MEV
+Reading line 119399 2MEV
+Reading line 119811 3MEV
+Reading line 119829 2MEV
+Reading line 119902 2MEV
+Reading line 119967 3MEV
+Reading line 120029 3MEV
+Reading line 120103 3MEV
+Reading line 120355 3MEV
+Reading line 120721 3MEV
+Reading line 120784 3MEV
+Reading line 120877 3MEV
+Reading line 121132 3MEV
+Reading line 121985 2MEV
+Reading line 122004 5MEV
+Reading line 122178 2MEV
+Reading line 122274 2MEV
+Reading line 122783 3MEV
+Reading line 122878 5MEV
+Reading line 123867 2MEV
+Reading line 124154 2MEV
+Reading line 124347 2MEV
+Reading line 124506 2MEV
+Reading line 124610 2MEV
+Reading line 124948 3MEV
+Reading line 125535 2MEV
+Reading line 126157 5MEV
+Reading line 126167 2MEV
+Reading line 126525 2MEV
+Reading line 126777 3MEV
+Reading line 127185 2MEV
+Reading line 127207 2MEV
+Reading line 127255 3MEV
+Reading line 127314 3MEV
+Reading line 127347 5MEV
+Reading line 128023 2MEV
+Reading line 129029 2MEV
+Reading line 129053 3MEV
+Reading line 129735 2MEV
+Reading line 130645 2MEV
+Reading line 130844 3MEV
+Reading line 131089 2MEV
+Reading line 131374 2MEV
+Reading line 132263 5MEV
+Reading line 132912 2MEV
+Reading line 133155 3MEV
+Reading line 133291 5MEV
+Reading line 133395 3MEV
+Reading line 133662 2MEV
+Reading line 134206 3MEV
+Reading line 134346 5MEV
+Reading line 134466 3MEV
+Reading line 134711 3MEV
+Reading line 134750 3MEV
+Reading line 134927 3MEV
+Reading line 135340 2MEV
+Reading line 137189 3MEV
+Reading line 137460 2MEV
+Reading line 138036 5MEV
+Reading line 138471 3MEV
+Reading line 138500 2MEV
+Reading line 138653 2MEV
+Reading line 139139 2MEV
+Reading line 139498 2MEV
+Reading line 139676 3MEV
+Reading line 140237 2MEV
+Reading line 141056 3MEV
+Reading line 141291 3MEV
+Reading line 141536 2MEV
+Reading line 141621 3MEV
+Reading line 141791 2MEV
+Reading line 141960 3MEV
+Reading line 142379 3MEV
+Reading line 142681 5MEV
+Reading line 143240 3MEV
+Reading line 143935 3MEV
+Reading line 144130 3MEV
+Reading line 144223 3MEV
+Reading line 144604 3MEV
+Reading line 144749 2MEV
+Reading line 144841 3MEV
+Reading line 144916 3MEV
+Reading line 144952 5MEV
+Reading line 146238 2MEV
+Reading line 146383 3MEV
+Reading line 146712 2MEV
+Reading line 146898 2MEV
+Reading line 146990 3MEV
+Reading line 147133 2MEV
+Reading line 147416 2MEV
+Reading line 147750 5MEV
+Reading line 148015 3MEV
+Reading line 148169 5MEV
+Reading line 149000 5MEV
+Reading line 149123 3MEV
+Reading line 149162 3MEV
+Reading line 149209 3MEV
+Reading line 149314 2MEV
+Reading line 149326 2MEV
+Reading line 149613 3MEV
+Reading line 149636 5MEV
+Reading line 149920 3MEV
+Reading line 150444 3MEV
+Reading line 150757 2MEV
+Reading line 151052 3MEV
+Reading line 151220 3MEV
+Reading line 151458 3MEV
+Reading line 151585 5MEV
+Reading line 151762 2MEV
+Reading line 152131 2MEV
+Reading line 152244 2MEV
+Reading line 152547 2MEV
+Reading line 153193 2MEV
+Reading line 153393 2MEV
+Reading line 153815 2MEV
+Reading line 154018 2MEV
+Reading line 154161 2MEV
+Reading line 154238 3MEV
+Reading line 154456 2MEV
+Reading line 154568 2MEV
+Reading line 154947 2MEV
+Reading line 155103 3MEV
+Reading line 155250 2MEV
+Reading line 155442 3MEV
+Reading line 155617 3MEV
+Reading line 155832 3MEV
+Reading line 155842 3MEV
+Reading line 156131 2MEV
+Reading line 156550 2MEV
+Reading line 157142 2MEV
+Reading line 157677 2MEV
+Reading line 158053 2MEV
+Reading line 158392 5MEV
+Reading line 158454 2MEV
+Reading line 159073 2MEV
+Reading line 159123 3MEV
+Reading line 159557 3MEV
+Reading line 159733 3MEV
+Reading line 159978 3MEV
+Reading line 160052 3MEV
+Reading line 160207 5MEV
+Reading line 160850 2MEV
+Reading line 161592 2MEV
+Reading line 161617 2MEV
+Reading line 161876 2MEV
+Reading line 162023 3MEV
+Reading line 162472 2MEV
+Reading line 162523 2MEV
+Reading line 162524 3MEV
+Reading line 162583 2MEV
+Reading line 163114 3MEV
+Reading line 163223 2MEV
+Reading line 164316 2MEV
+Reading line 164400 2MEV
+Reading line 164536 2MEV
+Reading line 164563 2MEV
+Reading line 164926 2MEV
+Reading line 164952 2MEV
+Reading line 165026 2MEV
+Reading line 165060 2MEV
+Reading line 165631 3MEV
+Reading line 165741 2MEV
+Reading line 166125 3MEV
+Reading line 166186 3MEV
+Reading line 166286 2MEV
+Reading line 166392 2MEV
+Reading line 166509 2MEV
+Reading line 166642 2MEV
+Reading line 167434 2MEV
+Reading line 167671 3MEV
+Reading line 167777 5MEV
+Reading line 168631 2MEV
+Reading line 168737 2MEV
+Reading line 168751 2MEV
+Reading line 169261 5MEV
+Reading line 169318 2MEV
+Reading line 169541 2MEV
+Reading line 169806 5MEV
+Reading line 169847 2MEV
+Reading line 169945 2MEV
+Reading line 170035 2MEV
+Reading line 170123 3MEV
+Reading line 170452 5MEV
+Reading line 170684 2MEV
+Reading line 171457 2MEV
+Reading line 171883 3MEV
+Reading line 171924 2MEV
+Reading line 172479 3MEV
+Reading line 172622 3MEV
+Reading line 172971 3MEV
+Reading line 173124 2MEV
+Reading line 173765 2MEV
+Reading line 174234 3MEV
+Reading line 174572 5MEV
+Reading line 174618 2MEV
+Reading line 174964 2MEV
+Reading line 175032 2MEV
+Reading line 175118 2MEV
+Reading line 175181 2MEV
+Reading line 175832 2MEV
+Reading line 175864 2MEV
+Reading line 176274 2MEV
+Reading line 176369 2MEV
+Reading line 177277 2MEV
+Reading line 178314 3MEV
+Reading line 178784 2MEV
+Reading line 178851 5MEV
+Reading line 178954 3MEV
+Reading line 179718 3MEV
+Reading line 179730 3MEV
+Reading line 180032 3MEV
+Reading line 180580 2MEV
+Reading line 180797 2MEV
+Reading line 181261 3MEV
+Reading line 181526 2MEV
+Reading line 182047 2MEV
+Reading line 182322 2MEV
+Reading line 182670 2MEV
+Reading line 182978 2MEV
+Reading line 182987 3MEV
+Reading line 184587 3MEV
+Reading line 185383 3MEV
+Reading line 185543 2MEV
+Reading line 185931 2MEV
+Reading line 186410 2MEV
+Reading line 187383 3MEV
+Reading line 187483 3MEV
+Reading line 188023 5MEV
+Reading line 188049 3MEV
+Reading line 188126 2MEV
+Reading line 188189 2MEV
+Reading line 188493 2MEV
+Reading line 188515 2MEV
+Reading line 188902 3MEV
+Reading line 189196 3MEV
+Reading line 189381 2MEV
+Reading line 190178 2MEV
+Reading line 190671 2MEV
+Reading line 191410 2MEV
+Reading line 191630 3MEV
+Reading line 192280 3MEV
+Reading line 192383 3MEV
+Reading line 192565 2MEV
+Reading line 192987 2MEV
+Reading line 193237 3MEV
+Reading line 193478 5MEV
+Reading line 193602 3MEV
+Reading line 193762 3MEV
+Reading line 193966 2MEV
+Reading line 194272 3MEV
+Reading line 194525 2MEV
+Reading line 194676 2MEV
+Reading line 194981 3MEV
+Reading line 195231 2MEV
+Reading line 195250 3MEV
+Reading line 196055 2MEV
+Reading line 196522 5MEV
+Reading line 196552 2MEV
+Reading line 197159 2MEV
+Reading line 197356 3MEV
+Reading line 197532 2MEV
+Reading line 198078 3MEV
+Reading line 198168 3MEV
+Reading line 198572 2MEV
+Reading line 198573 3MEV
+Reading line 198727 2MEV
+Reading line 198874 3MEV
+Reading line 199053 2MEV
+Reading line 199232 3MEV
+Reading line 199326 2MEV
+Reading line 199887 2MEV
+Reading line 199986 2MEV
+Reading line 200686 2MEV
+Reading line 200752 3MEV
+Reading line 201366 5MEV
+Reading line 201615 2MEV
+Reading line 201931 2MEV
+Reading line 201945 2MEV
+Reading line 202399 2MEV
+Reading line 202521 5MEV
+Reading line 202573 2MEV
+Reading line 202582 2MEV
+Reading line 202772 2MEV
+Reading line 203257 5MEV
+Reading line 203581 2MEV
+Reading line 203596 2MEV
+Reading line 204040 2MEV
+Reading line 204053 3MEV
+Reading line 204364 3MEV
+Reading line 204536 3MEV
+Reading line 204831 3MEV
+Reading line 205115 2MEV
+Reading line 205174 3MEV
+Reading line 205437 2MEV
+Reading line 205698 3MEV
+Reading line 205709 2MEV
+Reading line 205861 3MEV
+Reading line 206157 2MEV
+Reading line 206445 2MEV
+Reading line 206742 2MEV
+Reading line 207010 3MEV
+Reading line 207294 2MEV
+Reading line 207470 2MEV
+Reading line 207503 5MEV
+Reading line 207739 2MEV
+Reading line 207756 5MEV
+Reading line 208014 2MEV
+Reading line 208248 2MEV
+Reading line 208417 2MEV
+Reading line 208471 2MEV
+Reading line 208948 2MEV
+Reading line 208961 3MEV
+Reading line 209054 2MEV
+Reading line 209176 2MEV
+Reading line 209233 3MEV
+Reading line 209300 3MEV
+Reading line 209464 2MEV
+Reading line 209686 3MEV
+Reading line 210245 3MEV
+Reading line 211286 2MEV
+Reading line 211571 5MEV
+Reading line 211614 2MEV
+Reading line 211708 2MEV
+Reading line 211742 3MEV
+Reading line 211843 2MEV
+Reading line 212095 3MEV
+Reading line 212631 2MEV
+Reading line 212892 2MEV
+Reading line 212947 2MEV
+Reading line 213200 3MEV
+Reading line 213243 2MEV
+Reading line 213850 3MEV
+Reading line 213985 3MEV
+Reading line 214126 2MEV
+Reading line 214454 3MEV
+Reading line 214499 2MEV
+Reading line 214559 3MEV
+Reading line 214845 2MEV
+Reading line 214886 2MEV
+Reading line 215108 2MEV
+Reading line 215562 3MEV
+Reading line 215617 2MEV
+Reading line 216250 2MEV
+Reading line 216339 3MEV
+Reading line 216673 3MEV
+Reading line 216981 2MEV
+Reading line 217335 2MEV
+Reading line 217746 3MEV
+Reading line 217759 3MEV
+Reading line 218707 2MEV
+Reading line 219871 2MEV
+Reading line 220139 2MEV
+Reading line 221104 3MEV
+Reading line 221237 5MEV
+Reading line 221433 5MEV
+Reading line 222009 2MEV
+Reading line 222231 2MEV
+Reading line 222303 3MEV
+Reading line 222684 3MEV
+Reading line 222942 2MEV
+Reading line 223211 3MEV
+Reading line 223351 3MEV
+Reading line 223560 2MEV
+Reading line 223628 3MEV
+Reading line 223761 2MEV
+Reading line 224014 2MEV
+Reading line 224217 3MEV
+Reading line 224297 2MEV
+Reading line 224417 3MEV
+Reading line 225900 3MEV
+Reading line 225918 3MEV
+Reading line 226173 2MEV
+Reading line 226254 2MEV
+Reading line 226365 2MEV
+Reading line 226400 2MEV
+Reading line 228068 5MEV
+Reading line 228255 3MEV
+Reading line 228684 3MEV
+Reading line 229334 3MEV
+Reading line 229462 2MEV
+Reading line 229543 3MEV
+Reading line 230022 2MEV
+Reading line 230039 3MEV
+Reading line 230043 2MEV
+Reading line 230323 2MEV
+Reading line 230718 2MEV
+Reading line 230923 2MEV
+Reading line 231028 3MEV
+Reading line 231053 2MEV
+Reading line 231101 3MEV
+Reading line 231136 2MEV
+Reading line 231378 2MEV
+Reading line 231961 3MEV
+Reading line 232038 2MEV
+Reading line 232792 3MEV
+Reading line 233862 2MEV
+Reading line 234466 3MEV
+Reading line 234796 2MEV
+Reading line 235647 3MEV
+Reading line 235720 2MEV
+Reading line 236004 3MEV
+Reading line 236103 3MEV
+Reading line 236745 5MEV
+Reading line 236915 3MEV
+Reading line 236933 5MEV
+Reading line 237220 3MEV
+Reading line 237577 2MEV
+Reading line 237642 2MEV
+Reading line 237719 3MEV
+Reading line 237768 2MEV
+Reading line 237898 5MEV
+Reading line 238114 2MEV
+Reading line 238371 5MEV
+Reading line 238824 3MEV
+Reading line 238969 2MEV
+Reading line 239086 3MEV
+Reading line 239626 2MEV
+Reading line 240118 3MEV
+Reading line 240403 3MEV
+Reading line 240653 3MEV
+Reading line 241636 5MEV
+Reading line 241705 3MEV
+Reading line 241722 2MEV
+Reading line 241827 5MEV
+Reading line 242152 2MEV
+Reading line 242824 2MEV
+Reading line 242863 3MEV
+Reading line 243249 2MEV
+Reading line 243348 3MEV
+Reading line 243739 2MEV
+Reading line 243874 5MEV
+Reading line 244139 3MEV
+Reading line 244162 3MEV
+Reading line 244169 2MEV
+Reading line 244340 2MEV
+Reading line 244521 2MEV
+Reading line 245287 2MEV
+Reading line 245346 2MEV
+Reading line 245539 5MEV
+Reading line 245865 2MEV
+Reading line 245976 3MEV
+Reading line 246216 5MEV
+Reading line 246555 2MEV
+Reading line 247139 3MEV
+Reading line 247263 3MEV
+Reading line 247310 5MEV
+Reading line 247315 2MEV
+Reading line 247713 2MEV
+Reading line 247864 2MEV
+Reading line 248412 3MEV
+Reading line 248441 2MEV
+Reading line 248448 2MEV
+Reading line 248644 2MEV
+Reading line 248679 2MEV
+Reading line 248873 2MEV
+Reading line 249000 2MEV
+Reading line 249021 3MEV
+Reading line 249070 2MEV
+Reading line 249252 2MEV
+Reading line 249358 2MEV
+Reading line 249668 2MEV
+Reading line 250741 2MEV
+Reading line 251202 5MEV
+Reading line 251241 3MEV
+Reading line 251501 2MEV
+Reading line 252038 2MEV
+Reading line 252876 2MEV
+Reading line 252993 2MEV
+Reading line 254353 2MEV
+Reading line 254478 2MEV
+Reading line 254550 3MEV
+Reading line 254593 2MEV
+Reading line 254971 2MEV
+Reading line 255611 2MEV
+Reading line 255628 2MEV
+Reading line 255970 2MEV
+Reading line 257341 2MEV
+Reading line 257817 2MEV
+Reading line 258037 5MEV
+Reading line 258128 2MEV
+Reading line 258171 5MEV
+Reading line 258208 2MEV
+Reading line 258452 3MEV
+Reading line 258515 2MEV
+Reading line 258949 2MEV
+Reading line 259236 3MEV
+Reading line 260226 2MEV
+Reading line 260467 2MEV
+Reading line 260937 2MEV
+Reading line 261383 2MEV
+Reading line 261689 2MEV
+Reading line 262054 2MEV
+Reading line 262630 3MEV
+Reading line 263290 2MEV
+Reading line 263492 2MEV
+Reading line 263941 2MEV
+Reading line 264141 3MEV
+Reading line 264191 2MEV
+Reading line 264228 2MEV
+Reading line 264518 2MEV
+Reading line 264599 2MEV
+Reading line 264660 2MEV
+Reading line 265221 2MEV
+Reading line 265275 3MEV
+Reading line 265532 3MEV
+Reading line 265742 5MEV
+Reading line 265912 2MEV
+Reading line 266000 2MEV
+Reading line 266282 2MEV
+Reading line 266593 2MEV
+Reading line 266874 3MEV
+Reading line 266907 5MEV
+Reading line 266986 2MEV
+Reading line 267793 2MEV
+Reading line 267852 3MEV
+Reading line 268089 5MEV
+Reading line 268135 3MEV
+Reading line 268172 5MEV
+Reading line 268472 3MEV
+Reading line 268722 3MEV
+Reading line 268851 2MEV
+Reading line 269276 3MEV
+Reading line 269381 3MEV
+Reading line 269428 2MEV
+Reading line 269576 2MEV
+Reading line 269752 2MEV
+Reading line 270969 2MEV
+Reading line 271172 2MEV
+Reading line 271575 2MEV
+Reading line 271969 2MEV
+Reading line 272293 3MEV
+Reading line 272670 3MEV
+Reading line 272700 2MEV
+Reading line 272909 3MEV
+Reading line 274290 2MEV
+Reading line 274891 2MEV
+Reading line 275070 2MEV
+Reading line 275541 3MEV
+Reading line 275556 5MEV
+Reading line 275713 2MEV
+Reading line 275752 3MEV
+Reading line 275905 3MEV
+Reading line 275948 3MEV
+Reading line 276239 2MEV
+Reading line 276277 3MEV
+Reading line 277753 3MEV
+Reading line 278250 2MEV
+Reading line 278354 3MEV
+Reading line 279924 5MEV
+Reading line 280895 2MEV
+Reading line 280928 2MEV
+Reading line 281088 3MEV
+Reading line 281443 2MEV
+Reading line 281576 5MEV
+Reading line 282317 3MEV
+Reading line 282325 3MEV
+Reading line 282566 2MEV
+Reading line 282781 2MEV
+Reading line 282835 3MEV
+Reading line 283177 3MEV
+Reading line 283358 2MEV
+Reading line 283623 3MEV
+Reading line 283933 5MEV
+Reading line 284017 2MEV
+Reading line 284050 5MEV
+Reading line 284106 2MEV
+Reading line 284911 3MEV
+Reading line 285081 3MEV
+Reading line 285308 2MEV
+Reading line 286311 5MEV
+Reading line 287262 2MEV
+Reading line 287647 3MEV
+Reading line 287914 2MEV
+Reading line 288277 2MEV
+Reading line 288356 3MEV
+Reading line 288504 2MEV
+Reading line 288637 5MEV
+Reading line 288719 2MEV
+Reading line 288935 2MEV
+Reading line 289268 2MEV
+Reading line 289320 3MEV
+Reading line 289487 2MEV
+Reading line 289581 5MEV
+Reading line 289593 2MEV
+Reading line 289601 5MEV
+Reading line 289997 2MEV
+Reading line 290727 3MEV
+Reading line 290901 5MEV
+Reading line 290992 2MEV
+Reading line 291244 3MEV
+Reading line 291304 3MEV
+Reading line 291413 2MEV
+Reading line 291477 2MEV
+Reading line 291492 2MEV
+Reading line 291565 3MEV
+Reading line 292135 3MEV
+Reading line 292753 2MEV
+Reading line 292883 2MEV
+Reading line 293139 2MEV
+Reading line 293193 3MEV
+Reading line 293517 2MEV
+Reading line 294056 5MEV
+Reading line 294151 2MEV
+Reading line 294208 2MEV
+Reading line 294534 3MEV
+Reading line 294853 3MEV
+Reading line 294883 2MEV
+Reading line 294988 3MEV
+Reading line 295026 3MEV
+Reading line 295316 2MEV
+Reading line 296018 2MEV
+Reading line 296325 2MEV
+Reading line 296389 2MEV
+Reading line 296683 2MEV
+Reading line 297323 3MEV
+Reading line 297610 3MEV
+Reading line 298527 3MEV
+Reading line 299746 5MEV
+Reading line 299781 2MEV
+Reading line 301004 2MEV
+Reading line 301477 2MEV
+Reading line 302133 2MEV
+Reading line 302344 2MEV
+Reading line 302621 2MEV
+Reading line 302875 2MEV
+Reading line 303038 3MEV
+Reading line 303349 3MEV
+Reading line 303370 2MEV
+Reading line 303381 2MEV
+Reading line 304348 2MEV
+Reading line 304703 2MEV
+Reading line 305123 3MEV
+Reading line 305571 2MEV
+Reading line 305741 2MEV
+Reading line 305779 2MEV
+Reading line 305932 2MEV
+Reading line 306472 2MEV
+Reading line 306596 3MEV
+Reading line 306952 2MEV
+Reading line 306976 2MEV
+Reading line 307037 3MEV
+Reading line 307421 5MEV
+Reading line 307822 2MEV
+Reading line 308225 3MEV
+Reading line 308231 2MEV
+Reading line 308397 2MEV
+Reading line 308417 5MEV
+Reading line 308587 2MEV
+Reading line 309016 2MEV
+Reading line 309558 2MEV
+Reading line 309756 3MEV
+Reading line 310336 2MEV
+Reading line 310637 3MEV
+Reading line 310974 5MEV
+Reading line 311057 2MEV
+Reading line 311336 2MEV
+Reading line 311518 2MEV
+Reading line 311592 3MEV
+Reading line 312267 5MEV
+Reading line 312986 2MEV
+Reading line 313090 2MEV
+Reading line 313280 2MEV
+Reading line 313640 3MEV
+Reading line 314011 2MEV
+Reading line 314274 2MEV
+Reading line 314315 2MEV
+Reading line 314639 2MEV
+Reading line 314922 2MEV
+Reading line 314953 2MEV
+Reading line 315083 2MEV
+Reading line 315638 2MEV
+Reading line 315848 2MEV
+Reading line 316048 2MEV
+Reading line 316057 5MEV
+Reading line 316205 2MEV
+Reading line 316287 3MEV
+Reading line 316344 2MEV
+Reading line 317621 2MEV
+Reading line 317747 5MEV
+Reading line 318136 2MEV
+Reading line 318207 3MEV
+Reading line 318553 2MEV
+Reading line 318888 3MEV
+Reading line 319066 3MEV
+Reading line 319462 2MEV
+Reading line 319590 5MEV
+Reading line 319656 2MEV
+Reading line 319724 2MEV
+Reading line 320002 2MEV
+Reading line 320491 3MEV
+Reading line 321014 3MEV
+Reading line 321055 2MEV
+Reading line 321238 2MEV
+Reading line 321894 2MEV
+Reading line 321917 2MEV
+Reading line 322264 2MEV
+Reading line 322445 2MEV
+Reading line 323510 2MEV
+Reading line 323615 5MEV
+Reading line 324085 2MEV
+Reading line 324110 2MEV
+Reading line 324120 2MEV
+Reading line 324592 5MEV
+Reading line 325067 3MEV
+Reading line 325089 2MEV
+Reading line 325226 3MEV
+Reading line 325454 2MEV
+Reading line 325472 2MEV
+Reading line 325846 2MEV
+Reading line 325878 2MEV
+Reading line 326221 3MEV
+Reading line 326425 2MEV
+Reading line 326733 2MEV
+Reading line 326758 2MEV
+Reading line 327747 5MEV
+Reading line 327846 2MEV
+Reading line 328088 3MEV
+Reading line 328307 2MEV
+Reading line 328588 2MEV
+Reading line 328670 2MEV
+Reading line 328884 2MEV
+Reading line 329077 5MEV
+Reading line 329219 2MEV
+Reading line 329262 3MEV
+Reading line 329310 3MEV
+Reading line 329553 2MEV
+Reading line 330201 3MEV
+Reading line 330240 3MEV
+Reading line 330318 5MEV
+Reading line 330716 2MEV
+Reading line 331063 2MEV
+Reading line 331315 2MEV
+Reading line 331717 2MEV
+Reading line 331877 3MEV
+Reading line 331956 2MEV
+Reading line 332308 3MEV
+Reading line 332310 3MEV
+Reading line 332315 2MEV
+Reading line 332380 2MEV
+Reading line 332653 3MEV
+Reading line 332731 2MEV
+Reading line 332871 3MEV
+Reading line 332968 2MEV
+Reading line 333328 2MEV
+Reading line 333380 2MEV
+Reading line 333515 2MEV
+Reading line 333708 3MEV
+Reading line 333877 3MEV
+Reading line 333965 2MEV
+Reading line 333999 2MEV
+Reading line 334373 2MEV
+Reading line 334500 5MEV
+Reading line 334676 3MEV
+Reading line 335119 2MEV
+Reading line 335332 3MEV
+Reading line 335466 2MEV
+Reading line 335984 2MEV
+Reading line 335993 2MEV
+Reading line 336750 2MEV
+Reading line 336929 2MEV
+Reading line 336999 2MEV
+Reading line 337095 2MEV
+Reading line 337389 2MEV
+Reading line 337740 2MEV
+Reading line 337820 3MEV
+Reading line 338199 2MEV
+Reading line 338927 2MEV
+Reading line 339422 3MEV
+Reading line 339455 2MEV
+Reading line 339862 3MEV
+Reading line 339876 3MEV
+Reading line 340030 2MEV
+Reading line 340304 2MEV
+Reading line 340445 2MEV
+Reading line 340516 2MEV
+Reading line 340782 2MEV
+Reading line 340815 2MEV
+Reading line 340942 2MEV
+Reading line 341017 2MEV
+Reading line 341286 3MEV
+Reading line 341656 2MEV
+Reading line 341663 2MEV
+Reading line 341755 3MEV
+Reading line 341777 2MEV
+Reading line 342459 2MEV
+Reading line 342927 3MEV
+Reading line 343036 2MEV
+Reading line 343142 2MEV
+Reading line 343487 2MEV
+Reading line 343658 2MEV
+Reading line 343767 2MEV
+Reading line 344221 2MEV
+Reading line 344349 3MEV
+Reading line 345054 2MEV
+Reading line 345839 2MEV
+Reading line 345911 2MEV
+Reading line 346159 2MEV
+Reading line 346274 2MEV
+Reading line 346422 2MEV
+Reading line 346763 5MEV
+Reading line 348726 2MEV
+Reading line 350174 5MEV
+Reading line 350603 2MEV
+Reading line 350734 3MEV
+Reading line 350861 3MEV
+Reading line 351051 2MEV
+Reading line 351418 5MEV
+Reading line 351771 2MEV
+Reading line 351811 5MEV
+Reading line 351844 5MEV
+Reading line 351951 5MEV
+Reading line 352455 2MEV
+Reading line 353593 2MEV
+Reading line 353794 3MEV
+Reading line 354097 2MEV
+Reading line 354277 2MEV
+Reading line 354526 2MEV
+Reading line 354649 3MEV
+Reading line 355357 3MEV
+Reading line 355360 5MEV
+Reading line 355546 2MEV
+Reading line 355812 3MEV
+Reading line 357000 2MEV
+Reading line 357036 2MEV
+Reading line 357166 3MEV
+Reading line 357611 5MEV
+Reading line 357619 5MEV
+Reading line 358469 2MEV
+Reading line 358598 2MEV
+Reading line 358819 3MEV
+Reading line 360402 3MEV
+Reading line 360689 2MEV
+Reading line 361476 2MEV
+Reading line 361791 3MEV
+Reading line 361808 5MEV
+Reading line 361811 2MEV
+Reading line 361876 3MEV
+Reading line 361917 3MEV
+Reading line 362119 3MEV
+Reading line 362560 3MEV
+Reading line 362678 2MEV
+Reading line 362876 3MEV
+Reading line 363257 2MEV
+Reading line 363656 3MEV
+Reading line 363945 3MEV
+Reading line 364113 5MEV
+Reading line 364200 2MEV
+Reading line 364798 2MEV
+Reading line 364835 2MEV
+Reading line 364980 3MEV
+Reading line 365182 2MEV
+Reading line 365351 2MEV
+Reading line 365719 5MEV
+Reading line 365784 3MEV
+Reading line 366193 5MEV
+Reading line 366272 2MEV
+Reading line 366394 3MEV
+Reading line 366496 2MEV
+Reading line 366508 5MEV
+Reading line 366671 2MEV
+Reading line 367107 2MEV
+Reading line 367167 2MEV
+Reading line 367598 2MEV
+Reading line 367942 3MEV
+Reading line 368561 2MEV
+Reading line 368874 2MEV
+Reading line 369065 2MEV
+Reading line 369281 2MEV
+Reading line 369340 2MEV
+Reading line 369436 2MEV
+Reading line 369736 3MEV
+Reading line 369915 2MEV
+Reading line 370223 2MEV
+Reading line 370313 3MEV
+Reading line 370449 2MEV
+Reading line 370581 2MEV
+Reading line 370773 3MEV
+Reading line 370798 5MEV
+Reading line 371319 2MEV
+Reading line 371498 3MEV
+Reading line 371944 3MEV
+Reading line 372142 2MEV
+Reading line 372613 2MEV
+Reading line 372654 2MEV
+Reading line 373144 3MEV
+Reading line 373420 2MEV
+Reading line 373546 5MEV
+Reading line 373710 3MEV
+Reading line 374004 2MEV
+Reading line 374251 3MEV
+Reading line 374770 2MEV
+Reading line 375058 2MEV
+Reading line 375185 2MEV
+Reading line 375380 3MEV
+Reading line 375394 2MEV
+Reading line 375667 2MEV
+Reading line 376127 3MEV
+Reading line 376155 5MEV
+Reading line 376235 2MEV
+Reading line 376391 2MEV
+Reading line 378376 2MEV
+Reading line 378493 2MEV
+Reading line 379079 3MEV
+Reading line 379307 3MEV
+Reading line 379322 5MEV
+Reading line 379356 2MEV
+Reading line 379597 2MEV
+Reading line 380255 2MEV
+Reading line 380425 2MEV
+Reading line 380812 5MEV
+Reading line 381502 3MEV
+Reading line 381849 2MEV
+Reading line 381870 5MEV
+Reading line 381872 2MEV
+Reading line 382072 3MEV
+Reading line 382222 2MEV
+Reading line 382681 2MEV
+Reading line 382760 3MEV
+Reading line 382916 2MEV
+Reading line 383135 2MEV
+Reading line 383164 2MEV
+Reading line 383483 3MEV
+Reading line 384496 2MEV
+Reading line 384730 2MEV
+Reading line 384795 2MEV
+Reading line 385573 2MEV
+Reading line 385588 2MEV
+Reading line 385731 2MEV
+Reading line 386043 2MEV
+Reading line 386290 3MEV
+Reading line 386357 3MEV
+Reading line 386823 2MEV
+Reading line 387071 2MEV
+Reading line 387098 2MEV
+Reading line 387356 2MEV
+Reading line 387505 3MEV
+Reading line 387975 2MEV
+Reading line 388009 5MEV
+Reading line 388449 2MEV
+Reading line 388481 2MEV
+Reading line 388507 3MEV
+Reading line 388631 3MEV
+Reading line 388812 5MEV
+Reading line 389039 3MEV
+Reading line 389752 3MEV
+Reading line 389908 2MEV
+Reading line 390339 2MEV
+Reading line 390466 2MEV
+Reading line 391762 5MEV
+Reading line 391862 2MEV
+Reading line 391970 3MEV
+Reading line 392150 2MEV
+Reading line 392542 3MEV
+Reading line 392925 2MEV
+Reading line 393264 2MEV
+Reading line 394156 3MEV
+Reading line 394477 2MEV
+Reading line 395049 3MEV
+Reading line 395504 3MEV
+Reading line 395588 2MEV
+Reading line 395620 2MEV
+Reading line 395902 2MEV
+Reading line 396241 5MEV
+Reading line 396298 5MEV
+Reading line 396895 5MEV
+Reading line 397025 3MEV
+Reading line 397150 3MEV
+Reading line 397434 2MEV
+Reading line 397981 2MEV
+Reading line 398424 3MEV
+Reading line 398426 2MEV
+Reading line 398554 2MEV
+Reading line 398990 2MEV
+Reading line 399051 2MEV
+Reading line 399739 3MEV
+Reading line 400636 2MEV
+Reading line 400785 2MEV
+Reading line 400802 2MEV
+Reading line 401248 2MEV
+Reading line 401668 3MEV
+Reading line 401854 3MEV
+Reading line 401958 2MEV
+Reading line 402542 3MEV
+Reading line 403264 2MEV
+Reading line 403379 3MEV
+Reading line 404120 5MEV
+Reading line 404147 3MEV
+Reading line 404463 2MEV
+Reading line 404654 2MEV
+Reading line 404827 2MEV
+Reading line 404919 3MEV
+Reading line 404958 2MEV
+Reading line 405331 2MEV
+Reading line 405754 2MEV
+Reading line 405846 5MEV
+Reading line 405875 3MEV
+Reading line 406055 3MEV
+Reading line 406602 2MEV
+Reading line 406819 2MEV
+Reading line 407200 2MEV
+Reading line 407714 3MEV
+Reading line 407753 3MEV
+Reading line 407905 3MEV
+Reading line 407982 2MEV
+Reading line 408181 3MEV
+Reading line 409327 3MEV
+Reading line 409336 5MEV
+Reading line 409616 2MEV
+Reading line 409819 2MEV
+Reading line 409843 3MEV
+Reading line 410348 2MEV
+Reading line 410733 3MEV
+Reading line 411296 2MEV
+Reading line 411358 3MEV
+Reading line 412657 3MEV
+Reading line 413070 2MEV
+Reading line 413359 3MEV
+Reading line 413444 2MEV
+Reading line 414095 2MEV
+Reading line 414220 2MEV
+Reading line 414257 2MEV
+Reading line 414601 3MEV
+Reading line 415391 2MEV
+Reading line 415394 2MEV
+Reading line 415545 3MEV
+Reading line 415558 2MEV
+Reading line 415639 5MEV
+Reading line 416068 2MEV
+Reading line 416255 5MEV
+Reading line 416306 2MEV
+Reading line 416590 2MEV
+Reading line 416824 2MEV
+Reading line 416901 2MEV
+Reading line 416982 2MEV
+Reading line 417621 2MEV
+Reading line 417643 5MEV
+Reading line 417926 2MEV
+Reading line 417994 3MEV
+Reading line 418193 2MEV
+Reading line 418384 2MEV
+Reading line 418440 3MEV
+Reading line 418596 3MEV
+Reading line 418694 2MEV
+Reading line 419043 3MEV
+Reading line 419101 2MEV
+Reading line 419866 2MEV
+Reading line 419903 2MEV
+Reading line 419945 2MEV
+Reading line 420070 3MEV
+Reading line 420555 2MEV
+Reading line 420759 2MEV
+Reading line 420911 2MEV
+Reading line 421341 2MEV
+Reading line 421487 2MEV
+Reading line 421658 3MEV
+Reading line 421677 3MEV
+Reading line 422286 3MEV
+Reading line 422883 3MEV
+Reading line 422984 5MEV
+Reading line 423198 2MEV
+Reading line 423425 5MEV
+Reading line 423448 3MEV
+Reading line 423487 3MEV
+Reading line 424341 5MEV
+Reading line 424651 2MEV
+Reading line 424971 3MEV
+Reading line 425120 3MEV
+Reading line 425689 3MEV
+Reading line 426109 2MEV
+Reading line 426209 2MEV
+Reading line 427803 3MEV
+Reading line 427895 3MEV
+Reading line 428040 2MEV
+Reading line 428600 2MEV
+Reading line 429189 3MEV
+Reading line 429320 2MEV
+Reading line 429973 2MEV
+Reading line 430039 2MEV
+Reading line 430082 2MEV
+Reading line 430197 2MEV
+Reading line 430211 2MEV
+Reading line 430293 3MEV
+Reading line 430319 3MEV
+Reading line 430886 3MEV
+Reading line 431148 2MEV
+Reading line 431173 2MEV
+Reading line 431236 2MEV
+Reading line 431549 3MEV
+Reading line 432067 2MEV
+Reading line 432166 3MEV
+Reading line 432330 2MEV
+Reading line 433268 2MEV
+Reading line 433277 3MEV
+Reading line 433403 3MEV
+Reading line 433457 3MEV
+Reading line 433698 2MEV
+Reading line 433716 5MEV
+Reading line 433725 2MEV
+Reading line 433753 3MEV
+Reading line 435740 2MEV
+Reading line 436132 3MEV
+Reading line 436511 3MEV
+Reading line 436665 2MEV
+Reading line 436709 3MEV
+Reading line 436865 3MEV
+Reading line 437013 2MEV
+Reading line 437356 3MEV
+Reading line 437617 3MEV
+Reading line 437764 5MEV
+Reading line 438168 3MEV
+Reading line 438273 3MEV
+Reading line 438743 3MEV
+Reading line 438945 2MEV
+Reading line 439001 3MEV
+Reading line 439013 5MEV
+Reading line 439048 2MEV
+Reading line 439066 3MEV
+Reading line 439080 2MEV
+Reading line 439191 3MEV
+Reading line 440210 2MEV
+Reading line 440218 2MEV
+Reading line 440325 3MEV
+Reading line 440729 2MEV
+Reading line 440872 3MEV
+Reading line 440940 3MEV
+Reading line 441231 2MEV
+Reading line 441337 5MEV
+Reading line 441837 5MEV
+Reading line 441903 2MEV
+Reading line 441910 3MEV
+Reading line 442072 3MEV
+Reading line 442308 2MEV
+Reading line 442415 3MEV
+Reading line 442775 2MEV
+Reading line 442886 2MEV
+Reading line 443211 3MEV
+Reading line 443631 3MEV
+Reading line 443977 2MEV
+Reading line 444013 2MEV
+Reading line 444203 5MEV
+Reading line 444830 3MEV
+Reading line 444952 3MEV
+Reading line 445136 2MEV
+Reading line 445525 3MEV
+Reading line 445684 3MEV
+Reading line 445784 2MEV
+Reading line 446208 2MEV
+Reading line 446211 2MEV
+Reading line 446640 3MEV
+Reading line 446809 2MEV
+Reading line 447011 3MEV
+Reading line 447245 3MEV
+Reading line 447567 2MEV
+Reading line 448018 5MEV
+Reading line 448349 3MEV
+Reading line 448599 5MEV
+Reading line 449060 2MEV
+Reading line 449592 2MEV
+Reading line 449711 3MEV
+Reading line 449730 2MEV
+Reading line 450212 3MEV
+Reading line 450780 3MEV
+Reading line 450823 2MEV
+Reading line 451076 2MEV
+Reading line 451539 2MEV
+Reading line 451657 2MEV
+Reading line 451684 2MEV
+Reading line 451920 3MEV
+Reading line 452303 2MEV
+Reading line 452410 2MEV
+Reading line 452496 5MEV
+Reading line 452679 2MEV
+Reading line 452765 2MEV
+Reading line 453473 2MEV
+Reading line 453487 5MEV
+Reading line 453596 5MEV
+Reading line 453605 3MEV
+Reading line 453669 3MEV
+Reading line 454274 3MEV
+Reading line 454291 3MEV
+Reading line 454421 3MEV
+Reading line 455158 5MEV
+Reading line 455243 2MEV
+Reading line 455660 2MEV
+Reading line 455728 3MEV
+Reading line 455976 3MEV
+Reading line 456138 2MEV
+Reading line 456614 5MEV
+Reading line 456790 3MEV
+Reading line 457062 2MEV
+Reading line 457074 2MEV
+Reading line 457201 3MEV
+Reading line 457377 2MEV
+Reading line 457460 3MEV
+Reading line 457536 3MEV
+Reading line 457588 3MEV
+Reading line 457646 2MEV
+Reading line 457769 3MEV
+Reading line 457787 2MEV
+Reading line 458504 2MEV
+Reading line 458705 3MEV
+Reading line 459153 3MEV
+Reading line 459164 2MEV
+Reading line 460005 5MEV
+Reading line 460333 3MEV
+Reading line 460412 3MEV
+Reading line 460956 2MEV
+Reading line 461003 5MEV
+Reading line 461380 2MEV
+Reading line 461546 2MEV
+Reading line 461914 2MEV
+Reading line 462062 2MEV
+Reading line 462119 3MEV
+Reading line 462471 2MEV
+Reading line 462578 3MEV
+Reading line 462604 2MEV
+Reading line 462785 2MEV
+Reading line 462937 2MEV
+Reading line 463231 3MEV
+Reading line 463241 2MEV
+Reading line 463644 3MEV
+Reading line 463704 3MEV
+Reading line 464058 2MEV
+Reading line 464091 5MEV
+Reading line 464276 5MEV
+Reading line 465030 2MEV
+Reading line 465547 3MEV
+Reading line 465852 2MEV
+Reading line 466332 2MEV
+Reading line 466508 2MEV
+Reading line 466601 3MEV
+Reading line 467028 2MEV
+Reading line 467301 3MEV
+Reading line 467620 2MEV
+Reading line 467669 2MEV
+Reading line 467749 2MEV
+Reading line 467975 3MEV
+Reading line 468450 3MEV
+Reading line 468513 2MEV
+Reading line 468660 5MEV
+Reading line 469009 2MEV
+Reading line 469388 2MEV
+Reading line 469393 3MEV
+Reading line 469605 3MEV
+Reading line 469644 2MEV
+Reading line 469737 2MEV
+Reading line 469796 5MEV
+Reading line 469860 5MEV
+Reading line 470078 5MEV
+Reading line 470108 2MEV
+Reading line 470281 5MEV
+Reading line 470512 2MEV
+Reading line 470710 2MEV
+Reading line 472025 2MEV
+Reading line 472232 5MEV
+Reading line 472896 2MEV
+Reading line 473265 2MEV
+Reading line 473939 2MEV
+Reading line 475520 5MEV
+Reading line 475603 2MEV
+Reading line 475965 2MEV
+Reading line 476134 2MEV
+Reading line 476297 3MEV
+Reading line 476424 3MEV
+Reading line 476519 2MEV
+Reading line 476786 2MEV
+Reading line 476848 2MEV
+Reading line 476908 3MEV
+Reading line 476949 2MEV
+Reading line 477184 2MEV
+Reading line 477317 2MEV
+Reading line 477714 2MEV
+Reading line 477932 2MEV
+Reading line 478500 2MEV
+Reading line 478949 2MEV
+Reading line 478988 2MEV
+Reading line 479146 2MEV
+Reading line 479347 5MEV
+Reading line 480229 2MEV
+Reading line 480635 3MEV
+Reading line 480664 3MEV
+Reading line 481444 5MEV
+Reading line 481928 3MEV
+Reading line 482483 3MEV
+Reading line 482513 2MEV
+Reading line 482590 5MEV
+Reading line 483491 3MEV
+Reading line 483646 3MEV
+Reading line 483995 2MEV
+Reading line 484007 2MEV
+Reading line 484066 3MEV
+Reading line 484073 5MEV
+Reading line 484153 3MEV
+Reading line 484421 2MEV
+Reading line 484556 3MEV
+Reading line 485240 2MEV
+Reading line 485440 2MEV
+Reading line 486660 3MEV
+Reading line 487573 2MEV
+Reading line 487691 2MEV
+Reading line 488221 2MEV
+Reading line 488465 2MEV
+Reading line 488712 3MEV
+Reading line 488736 3MEV
+Reading line 489179 3MEV
+Reading line 489470 2MEV
+Reading line 489697 3MEV
+Reading line 490145 3MEV
+Reading line 490156 2MEV
+Reading line 490805 3MEV
+Reading line 491125 3MEV
+Reading line 492316 2MEV
+Reading line 492319 2MEV
+Reading line 492334 3MEV
+Reading line 493491 5MEV
+Reading line 493766 2MEV
+Reading line 494243 2MEV
+Reading line 494263 2MEV
+Reading line 494648 3MEV
+Reading line 496060 2MEV
+Reading line 496113 2MEV
+Reading line 496448 3MEV
+Reading line 497530 3MEV
+Reading line 498303 2MEV
+Reading line 498568 3MEV
+Reading line 498882 2MEV
+Reading line 498921 3MEV
+Reading line 499043 2MEV
+Reading line 499127 2MEV
+Reading line 499265 3MEV
+Reading line 499272 2MEV
+Reading line 499566 5MEV
+Reading line 499572 3MEV
+Reading line 499679 2MEV
+Reading line 500134 2MEV
+Reading line 500738 3MEV
+Reading line 500917 5MEV
+Reading line 501058 2MEV
+Reading line 501129 5MEV
+Reading line 501167 2MEV
+Reading line 502026 2MEV
+Reading line 502131 3MEV
+Reading line 502324 2MEV
+Reading line 502442 2MEV
+Reading line 502676 2MEV
+Reading line 503278 3MEV
+Reading line 503636 3MEV
+Reading line 503743 2MEV
+Reading line 504932 5MEV
+Reading line 504962 2MEV
+Reading line 505031 2MEV
+Reading line 505037 3MEV
+Reading line 505201 3MEV
+Reading line 505442 2MEV
+Reading line 505790 3MEV
+Reading line 506189 3MEV
+Reading line 506400 3MEV
+Reading line 506537 2MEV
+Reading line 506666 2MEV
+Reading line 506938 2MEV
+Reading line 507014 3MEV
+Reading line 507425 2MEV
+Reading line 507479 2MEV
+Reading line 507803 2MEV
+Reading line 507898 3MEV
+Reading line 508109 3MEV
+Reading line 508196 2MEV
+Reading line 508820 2MEV
+Reading line 508824 3MEV
+Reading line 509120 3MEV
+Reading line 509431 2MEV
+Reading line 509534 2MEV
+Reading line 509647 2MEV
+Reading line 509654 3MEV
+Reading line 509892 2MEV
+Reading line 510035 5MEV
+Reading line 510639 2MEV
+Reading line 511029 3MEV
+Reading line 511095 2MEV
+Reading line 511135 2MEV
+Reading line 511207 2MEV
+Reading line 511285 3MEV
+Reading line 511353 3MEV
+Reading line 511834 3MEV
+Reading line 511862 2MEV
+Reading line 512778 3MEV
+Reading line 512952 2MEV
+Reading line 513486 2MEV
+Reading line 514190 2MEV
+Reading line 514608 2MEV
+Reading line 514619 2MEV
+Reading line 514701 3MEV
+Reading line 514764 5MEV
+Reading line 514995 2MEV
+Reading line 515193 5MEV
+Reading line 515625 2MEV
+Reading line 515674 2MEV
+Reading line 515695 2MEV
+Reading line 516058 2MEV
+Reading line 516626 2MEV
+Reading line 516674 3MEV
+Reading line 516908 2MEV
+Reading line 517040 2MEV
+Reading line 517194 2MEV
+Reading line 517371 5MEV
+Reading line 517539 2MEV
+Reading line 517826 2MEV
+Reading line 517926 2MEV
+Reading line 518105 3MEV
+Reading line 518108 3MEV
+Reading line 518290 3MEV
+Reading line 518444 3MEV
+Reading line 519121 3MEV
+Reading line 519712 5MEV
+Reading line 519745 2MEV
+Reading line 519819 3MEV
+Reading line 519883 2MEV
+Reading line 520873 3MEV
+Reading line 521481 2MEV
+Reading line 521627 2MEV
+Reading line 521751 3MEV
+Reading line 522093 3MEV
+Reading line 522156 3MEV
+Reading line 522466 3MEV
+Reading line 523172 2MEV
+Reading line 523738 2MEV
+Reading line 523751 5MEV
+Reading line 524099 3MEV
+Reading line 524255 2MEV
+Reading line 524342 2MEV
+Reading line 524350 2MEV
+Reading line 524486 5MEV
+Reading line 524698 2MEV
+Reading line 524922 2MEV
+Reading line 525096 3MEV
+Reading line 525323 2MEV
+Reading line 525424 2MEV
+Reading line 525836 2MEV
+Reading line 526014 3MEV
+Reading line 526480 2MEV
+Reading line 526639 3MEV
+Reading line 526733 2MEV
+Reading line 527026 2MEV
+Reading line 527331 5MEV
+Reading line 527449 2MEV
+Reading line 527781 3MEV
+Reading line 527813 2MEV
+Reading line 528301 2MEV
+Reading line 528334 2MEV
+Reading line 528800 2MEV
+Reading line 528897 3MEV
+Reading line 529108 2MEV
+Reading line 529726 3MEV
+Reading line 529858 2MEV
+Reading line 530254 3MEV
+Reading line 530433 2MEV
+Reading line 530555 2MEV
+Reading line 530827 2MEV
+Reading line 530874 2MEV
+Reading line 530942 2MEV
+Reading line 531262 2MEV
+Reading line 531372 2MEV
+Reading line 531625 3MEV
+Reading line 531679 3MEV
+Reading line 531837 3MEV
+Reading line 532082 2MEV
+Reading line 532250 2MEV
+Reading line 532491 2MEV
+Reading line 533874 2MEV
+Reading line 534085 3MEV
+Reading line 534369 2MEV
+Reading line 534391 3MEV
+Reading line 534396 2MEV
+Reading line 534700 2MEV
+Reading line 534843 2MEV
+Reading line 535076 3MEV
+Reading line 535344 2MEV
+Reading line 535745 3MEV
+Reading line 536044 2MEV
+Reading line 536996 2MEV
+Reading line 537033 5MEV
+Reading line 537063 2MEV
+Reading line 537069 2MEV
+Reading line 537301 3MEV
+Reading line 537357 2MEV
+Reading line 537416 2MEV
+Reading line 537555 3MEV
+Reading line 537562 2MEV
+Reading line 538118 2MEV
+Reading line 538385 2MEV
+Reading line 538611 2MEV
+Reading line 538612 2MEV
+Reading line 538785 3MEV
+Reading line 538883 2MEV
+Reading line 539093 3MEV
+Reading line 539252 5MEV
+Reading line 539723 2MEV
+Reading line 540239 3MEV
+Reading line 540281 2MEV
+Reading line 540556 2MEV
+Reading line 540726 3MEV
+Reading line 541113 3MEV
+Reading line 541200 2MEV
+Reading line 541730 3MEV
+Reading line 541733 2MEV
+Reading line 541816 2MEV
+Reading line 542047 5MEV
+Reading line 542131 2MEV
+Reading line 542711 3MEV
+Reading line 542867 2MEV
+Reading line 543000 2MEV
+Reading line 543642 2MEV
+Reading line 543814 3MEV
+Reading line 543870 3MEV
+Reading line 543879 3MEV
+Reading line 543891 2MEV
+Reading line 543925 5MEV
+Reading line 544409 3MEV
+Reading line 544608 3MEV
+Reading line 544629 2MEV
+Reading line 544709 3MEV
+Reading line 544756 2MEV
+Reading line 545182 3MEV
+Reading line 545206 5MEV
+Reading line 545690 5MEV
+Reading line 547131 3MEV
+Reading line 547286 3MEV
+Reading line 547346 2MEV
+Reading line 547836 3MEV
+Reading line 548511 2MEV
+Reading line 548635 5MEV
+Reading line 548656 2MEV
+Reading line 549259 2MEV
+Reading line 549476 5MEV
+Reading line 549630 2MEV
+Reading line 550147 2MEV
+Reading line 550662 2MEV
+Reading line 551127 3MEV
+Reading line 551640 2MEV
+Reading line 552221 2MEV
+Reading line 552407 5MEV
+Reading line 552412 2MEV
+Reading line 552592 3MEV
+Reading line 552754 2MEV
+Reading line 553426 5MEV
+Reading line 554443 5MEV
+Reading line 554713 2MEV
+Reading line 554797 3MEV
+Reading line 554929 2MEV
+Reading line 554988 3MEV
+Reading line 555220 3MEV
+Reading line 555678 2MEV
+Reading line 556080 3MEV
+Reading line 556101 2MEV
+Reading line 556794 2MEV
+Reading line 557217 2MEV
+Reading line 557457 3MEV
+Reading line 558525 5MEV
+Reading line 558535 5MEV
+Reading line 558795 2MEV
+Reading line 558959 3MEV
+Reading line 559184 3MEV
+Reading line 559750 2MEV
+Reading line 559805 5MEV
+Reading line 560103 2MEV
+Reading line 560195 2MEV
+Reading line 561158 5MEV
+Reading line 561285 5MEV
+Reading line 561384 5MEV
+Reading line 561394 3MEV
+Reading line 561472 5MEV
+Reading line 561497 5MEV
+Reading line 561864 3MEV
+Reading line 561925 5MEV
+Reading line 562460 2MEV
+Reading line 562570 2MEV
+Reading line 562645 2MEV
+Reading line 563106 2MEV
+Reading line 563159 3MEV
+Reading line 563592 2MEV
+Reading line 563672 3MEV
+Reading line 564020 3MEV
+Reading line 564437 3MEV
+Reading line 564995 5MEV
+Reading line 565520 5MEV
+Reading line 565858 3MEV
+Reading line 566138 2MEV
+Reading line 567520 3MEV
+Reading line 567608 2MEV
+Reading line 567627 2MEV
+Reading line 569000 3MEV
+Reading line 569118 2MEV
+Reading line 569400 3MEV
+Reading line 569753 3MEV
+Reading line 569760 2MEV
+Reading line 569801 2MEV
+Reading line 570033 2MEV
+Reading line 570567 2MEV
+Reading line 571127 2MEV
+Reading line 571514 2MEV
+Reading line 571914 2MEV
+Reading line 572038 3MEV
+Reading line 572388 2MEV
+Reading line 572662 3MEV
+Reading line 572791 2MEV
+Reading line 572980 5MEV
+Reading line 573257 2MEV
+Reading line 573542 2MEV
+Reading line 573675 2MEV
+Reading line 573738 2MEV
+Reading line 574707 2MEV
+Reading line 574839 3MEV
+Reading line 574921 2MEV
+Reading line 575480 2MEV
+Reading line 575787 2MEV
+Reading line 575805 2MEV
+Reading line 575913 2MEV
+Reading line 575984 2MEV
+Reading line 575991 2MEV
+Reading line 576053 2MEV
+Reading line 576129 3MEV
+Reading line 576151 3MEV
+Reading line 576188 3MEV
+Reading line 576269 2MEV
+Reading line 576892 2MEV
+Reading line 577233 3MEV
+Reading line 577576 3MEV
+Reading line 577935 5MEV
+Reading line 578147 2MEV
+Reading line 578544 2MEV
+Reading line 578689 2MEV
+Reading line 578797 5MEV
+Reading line 579288 3MEV
+Reading line 579630 3MEV
+Reading line 579826 2MEV
+Reading line 580374 2MEV
+Reading line 581291 2MEV
+Reading line 581731 2MEV
+Reading line 582161 2MEV
+Reading line 582428 3MEV
+Reading line 582588 2MEV
+Reading line 583436 2MEV
+Reading line 583543 2MEV
+Reading line 583793 3MEV
+Reading line 584099 2MEV
+Reading line 584200 2MEV
+Reading line 585067 5MEV
+Reading line 585081 2MEV
+Reading line 585235 2MEV
+Reading line 585314 5MEV
+Reading line 585547 2MEV
+Reading line 585920 2MEV
+Reading line 585965 5MEV
+Reading line 586350 2MEV
+Reading line 586682 2MEV
+Reading line 587004 2MEV
+Reading line 587243 3MEV
+Reading line 587278 2MEV
+Reading line 587456 5MEV
+Reading line 587952 3MEV
+Reading line 588182 3MEV
+Reading line 588299 5MEV
+Reading line 588614 2MEV
+Reading line 588739 2MEV
+Reading line 590152 2MEV
+Reading line 590170 3MEV
+Reading line 590469 3MEV
+Reading line 591224 2MEV
+Reading line 591587 2MEV
+Reading line 591674 2MEV
+Reading line 592202 2MEV
+Reading line 592411 2MEV
+Reading line 592577 2MEV
+Reading line 592665 2MEV
+Reading line 592801 2MEV
+Reading line 593537 2MEV
+Reading line 593717 3MEV
+Reading line 594009 2MEV
+Reading line 594209 5MEV
+Reading line 594421 3MEV
+Reading line 594512 3MEV
+Reading line 594683 2MEV
+Reading line 594716 2MEV
+Reading line 595647 3MEV
+Reading line 595955 2MEV
+Reading line 596792 3MEV
+Reading line 597035 3MEV
+Reading line 597202 2MEV
+Reading line 597696 3MEV
+Reading line 597970 2MEV
+Reading line 598165 2MEV
+Reading line 598321 2MEV
+Reading line 598347 3MEV
+Reading line 598486 3MEV
+Reading line 598545 3MEV
+Reading line 598547 3MEV
+Reading line 598901 2MEV
+Reading line 599364 3MEV
+Reading line 599723 2MEV
+Reading line 600643 2MEV
+Reading line 600675 2MEV
+Reading line 601129 2MEV
+Reading line 601518 5MEV
+Reading line 601739 2MEV
+Reading line 601977 2MEV
+Reading line 602141 2MEV
+Reading line 602239 2MEV
+Reading line 602384 2MEV
+Reading line 602843 2MEV
+Reading line 603084 3MEV
+Reading line 603093 3MEV
+Reading line 603335 3MEV
+Reading line 603410 2MEV
+Reading line 603455 3MEV
+Reading line 603794 2MEV
+Reading line 604423 5MEV
+Reading line 604644 2MEV
+Reading line 604864 2MEV
+Reading line 605035 2MEV
+Reading line 605667 3MEV
+Reading line 605750 5MEV
+Reading line 605977 3MEV
+Reading line 606045 2MEV
+Reading line 606202 2MEV
+Reading line 606456 3MEV
+Reading line 606669 2MEV
+Reading line 606677 2MEV
+Reading line 606785 5MEV
+Reading line 607217 5MEV
+Reading line 607281 3MEV
+Reading line 607362 2MEV
+Reading line 607446 3MEV
+Reading line 608147 2MEV
+Reading line 608790 2MEV
+Reading line 609375 2MEV
+Reading line 609397 3MEV
+Reading line 609527 3MEV
+Reading line 610578 2MEV
+Reading line 611240 3MEV
+Reading line 611719 3MEV
+Reading line 611730 3MEV
+Reading line 611767 3MEV
+Reading line 611868 2MEV
+Reading line 612132 3MEV
+Reading line 612236 2MEV
+Reading line 612312 5MEV
+Reading line 612371 2MEV
+Reading line 613495 3MEV
+Reading line 613906 5MEV
+Reading line 614407 3MEV
+Reading line 614453 5MEV
+Reading line 614483 2MEV
+Reading line 614956 3MEV
+Reading line 615072 2MEV
+Reading line 616483 2MEV
+Reading line 616804 2MEV
+Reading line 616865 2MEV
+Reading line 617016 3MEV
+Reading line 617022 3MEV
+Reading line 617085 2MEV
+Reading line 617284 3MEV
+Reading line 617464 2MEV
+Reading line 617740 2MEV
+Reading line 617762 2MEV
+Reading line 618029 2MEV
+Reading line 618192 3MEV
+Reading line 618299 2MEV
+Reading line 618557 5MEV
+Reading line 618683 3MEV
+Reading line 618706 2MEV
+Reading line 619128 2MEV
+Reading line 619429 2MEV
+Reading line 619453 2MEV
+Reading line 619925 2MEV
+Reading line 620079 3MEV
+Reading line 620127 2MEV
+Reading line 620263 2MEV
+Reading line 620488 2MEV
+Reading line 621425 3MEV
+Reading line 621783 2MEV
+Reading line 622068 2MEV
+Reading line 622304 2MEV
+Reading line 622465 2MEV
+Reading line 623049 3MEV
+Reading line 623442 2MEV
+Reading line 623860 2MEV
+Reading line 624357 3MEV
+Reading line 624401 2MEV
+Reading line 625181 2MEV
+Reading line 625497 2MEV
+Reading line 626504 2MEV
+Reading line 627163 3MEV
+Reading line 627239 2MEV
+Reading line 627439 2MEV
+Reading line 627884 3MEV
+Reading line 627981 2MEV
+Reading line 628191 3MEV
+Reading line 628367 3MEV
+Reading line 628441 3MEV
+Reading line 628583 2MEV
+Reading line 629001 3MEV
+Reading line 629231 2MEV
+Reading line 629372 3MEV
+Reading line 629493 5MEV
+Reading line 630151 2MEV
+Reading line 630176 2MEV
+Reading line 630181 3MEV
+Reading line 631168 2MEV
+Reading line 631292 2MEV
+Reading line 631702 2MEV
+Reading line 632173 2MEV
+Reading line 632262 2MEV
+Reading line 632482 3MEV
+Reading line 632930 2MEV
+Reading line 633011 2MEV
+Reading line 633036 3MEV
+Reading line 634331 2MEV
+Reading line 634533 3MEV
+Reading line 634594 3MEV
+Reading line 635089 2MEV
+Reading line 636016 2MEV
+Reading line 636267 2MEV
+Reading line 636458 3MEV
+Reading line 636479 2MEV
+Reading line 636863 3MEV
+Reading line 637007 2MEV
+Reading line 637257 2MEV
+Reading line 637316 3MEV
+Reading line 638098 2MEV
+Reading line 639273 5MEV
+Reading line 639589 3MEV
+Reading line 639965 2MEV
+Reading line 640086 2MEV
+Reading line 640225 5MEV
+Reading line 640526 2MEV
+Reading line 640608 5MEV
+Reading line 640734 2MEV
+Reading line 640813 3MEV
+Reading line 641093 2MEV
+Reading line 641140 2MEV
+Reading line 641216 3MEV
+Reading line 641331 5MEV
+Reading line 642165 3MEV
+Reading line 642203 3MEV
+Reading line 642726 2MEV
+Reading line 642739 2MEV
+Reading line 642780 2MEV
+Reading line 643079 3MEV
+Reading line 643468 2MEV
+Reading line 643617 3MEV
+Reading line 643763 5MEV
+Reading line 643813 3MEV
+Reading line 644233 3MEV
+Reading line 645055 3MEV
+Reading line 645075 3MEV
+Reading line 645080 3MEV
+Reading line 645270 2MEV
+Reading line 645285 2MEV
+Reading line 645422 2MEV
+Reading line 645764 3MEV
+Reading line 645945 3MEV
+Reading line 646269 3MEV
+Reading line 646316 3MEV
+Reading line 646411 2MEV
+Reading line 646473 2MEV
+Reading line 646568 5MEV
+Reading line 646591 5MEV
+Reading line 646680 2MEV
+Reading line 647011 3MEV
+Reading line 647110 5MEV
+Reading line 647242 2MEV
+Reading line 647522 3MEV
+Reading line 648042 2MEV
+Reading line 648083 2MEV
+Reading line 648248 2MEV
+Reading line 648503 2MEV
+Reading line 648758 5MEV
+Reading line 649356 2MEV
+Reading line 649523 3MEV
+Reading line 650218 2MEV
+Reading line 650433 2MEV
+Reading line 650906 5MEV
+Reading line 650941 2MEV
+Reading line 650996 3MEV
+Reading line 651180 2MEV
+Reading line 651228 5MEV
+Reading line 651369 3MEV
+Reading line 651416 2MEV
+Reading line 651462 2MEV
+Reading line 651864 3MEV
+Reading line 652321 3MEV
+Reading line 652529 3MEV
+Reading line 652687 3MEV
+Reading line 652768 2MEV
+Reading line 653304 3MEV
+Reading line 653392 3MEV
+Reading line 653937 3MEV
+Reading line 654447 2MEV
+Reading line 654666 5MEV
+Reading line 655738 2MEV
+Reading line 655754 2MEV
+Reading line 656447 2MEV
+Reading line 656475 5MEV
+Reading line 656639 3MEV
+Reading line 656699 2MEV
+Reading line 656757 3MEV
+Reading line 656818 3MEV
+Reading line 657143 3MEV
+Reading line 657400 5MEV
+Reading line 658093 2MEV
+Reading line 658525 3MEV
+Reading line 658652 2MEV
+Reading line 658817 3MEV
+Reading line 659433 3MEV
+Reading line 660076 2MEV
+Reading line 660370 5MEV
+Reading line 660394 5MEV
+Reading line 660395 3MEV
+Reading line 660673 3MEV
+Reading line 661175 2MEV
+Reading line 661699 2MEV
+Reading line 661730 3MEV
+Reading line 661950 2MEV
+Reading line 662518 2MEV
+Reading line 662787 2MEV
+Reading line 663333 2MEV
+Reading line 663363 2MEV
+Reading line 664004 2MEV
+Reading line 664089 3MEV
+Reading line 664654 2MEV
+Reading line 665240 3MEV
+Reading line 665547 2MEV
+Reading line 665609 3MEV
+Reading line 665661 2MEV
+Reading line 665710 2MEV
+Reading line 666391 3MEV
+Reading line 666600 2MEV
+Reading line 666986 3MEV
+Reading line 667555 3MEV
+Reading line 667826 2MEV
+Reading line 667828 2MEV
+Reading line 668394 2MEV
+Reading line 668843 2MEV
+Reading line 668916 2MEV
+Reading line 668945 2MEV
+Reading line 669475 2MEV
+Reading line 669583 2MEV
+Reading line 669615 2MEV
+Reading line 669870 5MEV
+Reading line 669972 2MEV
+Reading line 670087 2MEV
+Reading line 670849 2MEV
+Reading line 670980 2MEV
+Reading line 671041 5MEV
+Reading line 671085 2MEV
+Reading line 671281 3MEV
+Reading line 671320 2MEV
+Reading line 671333 2MEV
+Reading line 671361 2MEV
+Reading line 671714 2MEV
+Reading line 671816 3MEV
+Reading line 671949 2MEV
+Reading line 671958 2MEV
+Reading line 672577 3MEV
+Reading line 672852 3MEV
+Reading line 673567 2MEV
+Reading line 673670 2MEV
+Reading line 673910 3MEV
+Reading line 674231 5MEV
+Reading line 674240 2MEV
+Reading line 674318 5MEV
+Reading line 674620 2MEV
+Reading line 675144 3MEV
+Reading line 675315 3MEV
+Reading line 675362 2MEV
+Reading line 675631 3MEV
+Reading line 676006 2MEV
+Reading line 676585 3MEV
+Reading line 676687 2MEV
+Reading line 676701 3MEV
+Reading line 677031 2MEV
+Reading line 677249 2MEV
+Reading line 679917 2MEV
+Reading line 680065 2MEV
+Reading line 680715 2MEV
+Reading line 680828 2MEV
+Reading line 680994 3MEV
+Reading line 681179 2MEV
+Reading line 681241 2MEV
+Reading line 681470 2MEV
+Reading line 681751 5MEV
+Reading line 681769 3MEV
+Reading line 682004 2MEV
+Reading line 682123 2MEV
+Reading line 682190 5MEV
+Reading line 682198 3MEV
+Reading line 682593 2MEV
+Reading line 682960 2MEV
+Reading line 683095 3MEV
+Reading line 683417 2MEV
+Reading line 683452 2MEV
+Reading line 683685 3MEV
+Reading line 683801 2MEV
+Reading line 684106 2MEV
+Reading line 684157 5MEV
+Reading line 684209 2MEV
+Reading line 684699 3MEV
+Reading line 684771 2MEV
+Reading line 684866 3MEV
+Reading line 685370 5MEV
+Reading line 685495 3MEV
+Reading line 685497 2MEV
+Reading line 685774 2MEV
+Reading line 685996 2MEV
+Reading line 686183 2MEV
+Reading line 686533 2MEV
+Reading line 686754 2MEV
+Reading line 686934 3MEV
+Reading line 686941 2MEV
+Reading line 687351 5MEV
+Reading line 687500 3MEV
+Reading line 687701 2MEV
+Reading line 688223 2MEV
+Reading line 688857 2MEV
+Reading line 689019 2MEV
+Reading line 689755 2MEV
+Reading line 690228 2MEV
+Reading line 690271 2MEV
+Reading line 690569 3MEV
+Reading line 690657 2MEV
+Reading line 690767 2MEV
+Reading line 691128 2MEV
+Reading line 691277 3MEV
+Reading line 691303 3MEV
+Reading line 691758 3MEV
+Reading line 691962 2MEV
+Reading line 692243 2MEV
+Reading line 693077 2MEV
+Reading line 693612 2MEV
+Reading line 693813 2MEV
+Reading line 693899 2MEV
+Reading line 694200 3MEV
+Reading line 694693 2MEV
+Reading line 694697 2MEV
+Reading line 695024 2MEV
+Reading line 695125 2MEV
+Reading line 695419 3MEV
+Reading line 695502 3MEV
+Reading line 695589 2MEV
+Reading line 695856 3MEV
+Reading line 696039 5MEV
+Reading line 696152 5MEV
+Reading line 696272 2MEV
+Reading line 696476 2MEV
+Reading line 696603 2MEV
+Reading line 696658 2MEV
+Reading line 697168 2MEV
+Reading line 697253 2MEV
+Reading line 697562 2MEV
+Reading line 697571 2MEV
+Reading line 697888 2MEV
+Reading line 698292 2MEV
+Reading line 698430 2MEV
+Reading line 698433 5MEV
+Reading line 698838 2MEV
+Reading line 699020 2MEV
+Reading line 699035 2MEV
+Reading line 699643 2MEV
+Reading line 699648 2MEV
+Reading line 700154 2MEV
+Reading line 700767 3MEV
+Reading line 701089 2MEV
+Reading line 701126 2MEV
+Reading line 701230 2MEV
+Reading line 701292 2MEV
+Reading line 701795 2MEV
+Reading line 702711 3MEV
+Reading line 703164 3MEV
+Reading line 703303 2MEV
+Reading line 703348 2MEV
+Reading line 704213 5MEV
+Reading line 704273 3MEV
+Reading line 705082 2MEV
+Reading line 705482 3MEV
+Reading line 705852 2MEV
+Reading line 705955 2MEV
+Reading line 706101 2MEV
+Reading line 706176 3MEV
+Reading line 706297 2MEV
+Reading line 706827 3MEV
+Reading line 707930 2MEV
+Reading line 707993 3MEV
+Reading line 708526 3MEV
+Reading line 708563 2MEV
+Reading line 708689 2MEV
+Reading line 708721 2MEV
+Reading line 709005 2MEV
+Reading line 709034 2MEV
+Reading line 709159 5MEV
+Reading line 709369 2MEV
+Reading line 709842 2MEV
+Reading line 710169 2MEV
+Reading line 710226 3MEV
+Reading line 711018 3MEV
+Reading line 711023 2MEV
+Reading line 711150 2MEV
+Reading line 711407 3MEV
+Reading line 711593 2MEV
+Reading line 711829 3MEV
+Reading line 712126 2MEV
+Reading line 712377 5MEV
+Reading line 712463 2MEV
+Reading line 712931 2MEV
+Reading line 713071 3MEV
+Reading line 713113 2MEV
+Reading line 713236 2MEV
+Reading line 713393 2MEV
+Reading line 713978 2MEV
+Reading line 714023 3MEV
+Reading line 714259 2MEV
+Reading line 714404 3MEV
+Reading line 714890 2MEV
+Reading line 714962 3MEV
+Reading line 715098 3MEV
+Reading line 715358 2MEV
+Reading line 715943 3MEV
+Reading line 716012 3MEV
+Reading line 716094 3MEV
+Reading line 716279 2MEV
+Reading line 716324 2MEV
+Reading line 716624 3MEV
+Reading line 716985 2MEV
+Reading line 717239 2MEV
+Reading line 717338 3MEV
+Reading line 717524 2MEV
+Reading line 717763 3MEV
+Reading line 717921 3MEV
+Reading line 718024 2MEV
+Reading line 718131 2MEV
+Reading line 718153 3MEV
+Reading line 718783 2MEV
+Reading line 719130 5MEV
+Reading line 719288 2MEV
+Reading line 719330 2MEV
+Reading line 719380 3MEV
+Reading line 719562 2MEV
+Reading line 720192 5MEV
+Reading line 720234 5MEV
+Reading line 721493 5MEV
+Reading line 721660 3MEV
+Reading line 722624 2MEV
+Reading line 722878 2MEV
+Reading line 723137 2MEV
+Reading line 723461 2MEV
+Reading line 723531 2MEV
+Reading line 723994 5MEV
+Reading line 724431 2MEV
+Reading line 725031 2MEV
+Reading line 725434 3MEV
+Reading line 725771 3MEV
+Reading line 726052 3MEV
+Reading line 726458 3MEV
+Reading line 726499 5MEV
+Reading line 726582 5MEV
+Reading line 726725 5MEV
+Reading line 726822 2MEV
+Reading line 726920 3MEV
+Reading line 726940 3MEV
+Reading line 727205 2MEV
+Reading line 727847 2MEV
+Reading line 727876 3MEV
+Reading line 728034 2MEV
+Reading line 728435 3MEV
+Reading line 728965 2MEV
+Reading line 728977 3MEV
+Reading line 729253 2MEV
+Reading line 729431 2MEV
+Reading line 729465 2MEV
+Reading line 729482 2MEV
+Reading line 729584 3MEV
+Reading line 730298 2MEV
+Reading line 730533 3MEV
+Reading line 730912 2MEV
+Reading line 731219 3MEV
+Reading line 731501 2MEV
+Reading line 732312 2MEV
+Reading line 732626 2MEV
+Reading line 732642 3MEV
+Reading line 732840 3MEV
+Reading line 732915 2MEV
+Reading line 732973 2MEV
+Reading line 733050 5MEV
+Reading line 733671 2MEV
+Reading line 733738 5MEV
+Reading line 733743 2MEV
+Reading line 733867 3MEV
+Reading line 733889 3MEV
+Reading line 733968 2MEV
+Reading line 734075 2MEV
+Reading line 734862 2MEV
+Reading line 735153 2MEV
+Reading line 735166 3MEV
+Reading line 735243 2MEV
+Reading line 735560 2MEV
+Reading line 735748 2MEV
+Reading line 735952 2MEV
+Reading line 735955 2MEV
+Reading line 736438 2MEV
+Reading line 736945 2MEV
+Reading line 737262 3MEV
+Reading line 737294 5MEV
+Reading line 737600 3MEV
+Reading line 737721 2MEV
+Reading line 737864 3MEV
+Reading line 737925 2MEV
+Reading line 738943 2MEV
+Reading line 739275 2MEV
+Reading line 739323 5MEV
+Reading line 740033 5MEV
+Reading line 740209 2MEV
+Reading line 740477 3MEV
+Reading line 740938 2MEV
+Reading line 741021 2MEV
+Reading line 741032 2MEV
+Reading line 741396 5MEV
+Reading line 741418 2MEV
+Reading line 741541 3MEV
+Reading line 741930 3MEV
+Reading line 742014 2MEV
+Reading line 742326 3MEV
+Reading line 742581 2MEV
+Reading line 742660 2MEV
+Reading line 742676 2MEV
+Reading line 742729 2MEV
+Reading line 742783 5MEV
+Reading line 742831 2MEV
+Reading line 743265 2MEV
+Reading line 744045 5MEV
+Reading line 744171 3MEV
+Reading line 744335 2MEV
+Reading line 744778 2MEV
+Reading line 745128 5MEV
+Reading line 745272 2MEV
+Reading line 745542 2MEV
+Reading line 745942 2MEV
+Reading line 746330 2MEV
+Reading line 746332 2MEV
+Reading line 746620 5MEV
+Reading line 746712 2MEV
+Reading line 746772 3MEV
+Reading line 747106 2MEV
+Reading line 747560 2MEV
+Reading line 747611 3MEV
+Reading line 747665 2MEV
+Reading line 748187 2MEV
+Reading line 748375 2MEV
+Reading line 748413 3MEV
+Reading line 748640 3MEV
+Reading line 749079 2MEV
+Reading line 749094 3MEV
+Reading line 749389 5MEV
+Reading line 749602 2MEV
+Reading line 750109 2MEV
+Reading line 750317 3MEV
+Reading line 750373 2MEV
+Reading line 750407 2MEV
+Reading line 751322 3MEV
+Reading line 751574 2MEV
+Reading line 752308 2MEV
+Reading line 752560 3MEV
+Reading line 752665 2MEV
+Reading line 752774 2MEV
+Reading line 753499 3MEV
+Reading line 753619 2MEV
+Reading line 753988 2MEV
+Reading line 753992 2MEV
+Reading line 754030 5MEV
+Reading line 754085 2MEV
+Reading line 754134 2MEV
+Reading line 754993 2MEV
+Reading line 754998 2MEV
+Reading line 756573 2MEV
+Reading line 756586 2MEV
+Reading line 757164 2MEV
+Reading line 757250 2MEV
+Reading line 757549 2MEV
+Reading line 757723 3MEV
+Reading line 757788 5MEV
+Reading line 758645 2MEV
+Reading line 759044 5MEV
+Reading line 759746 2MEV
+Reading line 760315 3MEV
+Reading line 760625 5MEV
+Reading line 761311 2MEV
+Reading line 761583 3MEV
+Reading line 761875 3MEV
+Reading line 761990 2MEV
+Reading line 762030 2MEV
+Reading line 762234 2MEV
+Reading line 762783 2MEV
+Reading line 763184 2MEV
+Reading line 763756 5MEV
+Reading line 764032 3MEV
+Reading line 764119 2MEV
+Reading line 764276 5MEV
+Reading line 765054 2MEV
+Reading line 766093 2MEV
+Reading line 766294 5MEV
+Reading line 766374 2MEV
+Reading line 766567 2MEV
+Reading line 766999 3MEV
+Reading line 767163 3MEV
+Reading line 767436 2MEV
+Reading line 768076 2MEV
+Reading line 768089 2MEV
+Reading line 768114 2MEV
+Reading line 768248 5MEV
+Reading line 768672 2MEV
+Reading line 768858 5MEV
+Reading line 769600 3MEV
+Reading line 770028 2MEV
+Reading line 770245 3MEV
+Reading line 770504 5MEV
+Reading line 770653 5MEV
+Reading line 770930 5MEV
+Reading line 770941 2MEV
+Reading line 771053 2MEV
+Reading line 771223 3MEV
+Reading line 771412 2MEV
+Reading line 772577 2MEV
+Reading line 772616 5MEV
+Reading line 772694 3MEV
+Reading line 773044 2MEV
+Reading line 773066 2MEV
+Reading line 773167 2MEV
+Reading line 773194 2MEV
+Reading line 773275 3MEV
+Reading line 773363 2MEV
+Reading line 773536 3MEV
+Reading line 773563 2MEV
+Reading line 774199 2MEV
+Reading line 774208 2MEV
+Reading line 774231 3MEV
+Reading line 774921 5MEV
+Reading line 775149 3MEV
+Reading line 775355 2MEV
+Reading line 775555 2MEV
+Reading line 775742 3MEV
+Reading line 776346 2MEV
+Reading line 776487 3MEV
+Reading line 776624 2MEV
+Reading line 777026 3MEV
+Reading line 777290 2MEV
+Reading line 777911 5MEV
+Reading line 778654 2MEV
+Reading line 778759 5MEV
+Reading line 778888 5MEV
+Reading line 779059 2MEV
+Reading line 779512 2MEV
+Reading line 779516 2MEV
+Reading line 779542 3MEV
+Reading line 779774 2MEV
+Reading line 780331 3MEV
+Reading line 781059 3MEV
+Reading line 781498 2MEV
+Reading line 781530 2MEV
+Reading line 782150 2MEV
+Reading line 782440 2MEV
+Reading line 782537 3MEV
+Reading line 783049 2MEV
+Reading line 783162 3MEV
+Reading line 783608 3MEV
+Reading line 784023 2MEV
+Reading line 784063 3MEV
+Reading line 784199 2MEV
+Reading line 784744 2MEV
+Reading line 785204 3MEV
+Reading line 785205 2MEV
+Reading line 785260 3MEV
+Reading line 785341 2MEV
+Reading line 785697 3MEV
+Reading line 785788 2MEV
+Reading line 786028 3MEV
+Reading line 786050 3MEV
+Reading line 786393 3MEV
+Reading line 786654 3MEV
+Reading line 787233 2MEV
+Reading line 787404 2MEV
+Reading line 787666 2MEV
+Reading line 787758 2MEV
+Reading line 788311 2MEV
+Reading line 788377 2MEV
+Reading line 788731 5MEV
+Reading line 789456 3MEV
+Reading line 790132 3MEV
+Reading line 790628 2MEV
+Reading line 790932 2MEV
+Reading line 791252 2MEV
+Reading line 791366 5MEV
+Reading line 791519 3MEV
+Reading line 791710 5MEV
+Reading line 791979 3MEV
+Reading line 792044 2MEV
+Reading line 792199 2MEV
+Reading line 792238 3MEV
+Reading line 792904 3MEV
+Reading line 793226 2MEV
+Reading line 793384 2MEV
+Reading line 793562 2MEV
+Reading line 794253 2MEV
+Reading line 794629 2MEV
+Reading line 795089 3MEV
+Reading line 795106 2MEV
+Reading line 795160 3MEV
+Reading line 795849 2MEV
+Reading line 795850 2MEV
+Reading line 795879 5MEV
+Reading line 796167 5MEV
+Reading line 796197 2MEV
+Reading line 796472 2MEV
+Reading line 796688 2MEV
+Reading line 796718 3MEV
+Reading line 797106 2MEV
+Reading line 797781 2MEV
+Reading line 798093 2MEV
+Reading line 798562 3MEV
+Reading line 799045 2MEV
+Reading line 799125 3MEV
+Reading line 799810 5MEV
+Reading line 800044 2MEV
+Reading line 800165 2MEV
+Reading line 800382 3MEV
+Reading line 800617 3MEV
+Reading line 800627 3MEV
+Reading line 801338 2MEV
+Reading line 802022 2MEV
+Reading line 802137 2MEV
+Reading line 802411 2MEV
+Reading line 802680 2MEV
+Reading line 802846 2MEV
+Reading line 802940 2MEV
+Reading line 802999 3MEV
+Reading line 803158 2MEV
+Reading line 803352 2MEV
+Reading line 804111 2MEV
+Reading line 804453 3MEV
+Reading line 804557 3MEV
+Reading line 804789 2MEV
+Reading line 805306 2MEV
+Reading line 805356 3MEV
+Reading line 805664 2MEV
+Reading line 806278 2MEV
+Reading line 806401 2MEV
+Reading line 806762 3MEV
+Reading line 806897 2MEV
+Reading line 806938 3MEV
+Reading line 806941 2MEV
+Reading line 807565 3MEV
+Reading line 807573 5MEV
+Reading line 807743 2MEV
+Reading line 807838 2MEV
+Reading line 807839 2MEV
+Reading line 807855 2MEV
+Reading line 808191 2MEV
+Reading line 808201 3MEV
+Reading line 808439 3MEV
+Reading line 808732 3MEV
+Reading line 809010 3MEV
+Reading line 809190 2MEV
+Reading line 810225 2MEV
+Reading line 810258 2MEV
+Reading line 810274 2MEV
+Reading line 810505 2MEV
+Reading line 810876 2MEV
+Reading line 811095 5MEV
+Reading line 811858 2MEV
+Reading line 812025 3MEV
+Reading line 812356 2MEV
+Reading line 812507 5MEV
+Reading line 812854 2MEV
+Reading line 813017 3MEV
+Reading line 813529 3MEV
+Reading line 813691 2MEV
+Reading line 813899 2MEV
+Reading line 814335 2MEV
+Reading line 815052 2MEV
+Reading line 815198 3MEV
+Reading line 815319 3MEV
+Reading line 815334 5MEV
+Reading line 815427 2MEV
+Reading line 815854 3MEV
+Reading line 816040 2MEV
+Reading line 816256 2MEV
+Reading line 816275 3MEV
+Reading line 816726 3MEV
+Reading line 817389 2MEV
+Reading line 817649 2MEV
+Reading line 818189 3MEV
+Reading line 818398 2MEV
+Reading line 818918 3MEV
+Reading line 819801 2MEV
+Reading line 819835 3MEV
+Reading line 820478 2MEV
+Reading line 820602 2MEV
+Reading line 821127 3MEV
+Reading line 821743 2MEV
+Reading line 821842 3MEV
+Reading line 821929 3MEV
+Reading line 822475 3MEV
+Reading line 822913 2MEV
+Reading line 823033 3MEV
+Reading line 823036 2MEV
+Reading line 823410 3MEV
+Reading line 823587 2MEV
+Reading line 823589 2MEV
+Reading line 823773 3MEV
+Reading line 824151 2MEV
+Reading line 824328 3MEV
+Reading line 824932 3MEV
+Reading line 825540 3MEV
+Reading line 825878 3MEV
+Reading line 826276 2MEV
+Reading line 826414 3MEV
+Reading line 826768 2MEV
+Reading line 826989 2MEV
+Reading line 827248 2MEV
+Reading line 827580 2MEV
+Reading line 827749 5MEV
+Reading line 828124 2MEV
+Reading line 828315 5MEV
+Reading line 828835 3MEV
+Reading line 828864 2MEV
+Reading line 828895 3MEV
+Reading line 829239 2MEV
+Reading line 829294 5MEV
+Reading line 829566 3MEV
+Reading line 829826 2MEV
+Reading line 829997 3MEV
+Reading line 830002 2MEV
+Reading line 830157 2MEV
+Reading line 830331 2MEV
+Reading line 830717 2MEV
+Reading line 830866 5MEV
+Reading line 830920 3MEV
+Reading line 831216 3MEV
+Reading line 831733 2MEV
+Reading line 831763 5MEV
+Reading line 831869 3MEV
+Reading line 832223 2MEV
+Reading line 832849 3MEV
+Reading line 834815 3MEV
+Reading line 834950 2MEV
+Reading line 835154 3MEV
+Reading line 835374 2MEV
+Reading line 836101 2MEV
+Reading line 836388 2MEV
+Reading line 836722 3MEV
+Reading line 836782 5MEV
+Reading line 836809 3MEV
+Reading line 836836 2MEV
+Reading line 837541 2MEV
+Reading line 838607 3MEV
+Reading line 838677 2MEV
+Reading line 838856 2MEV
+Reading line 839017 2MEV
+Reading line 839927 2MEV
+Reading line 840330 5MEV
+Reading line 840594 3MEV
+Reading line 840721 3MEV
+Reading line 840813 2MEV
+Reading line 841086 3MEV
+Reading line 841500 3MEV
+Reading line 841838 3MEV
+Reading line 842055 5MEV
+Reading line 842582 2MEV
+Reading line 842600 2MEV
+Reading line 842982 3MEV
+Reading line 843584 3MEV
+Reading line 843837 3MEV
+Reading line 843931 5MEV
+Reading line 844613 2MEV
+Reading line 845196 3MEV
+Reading line 845238 2MEV
+Reading line 845495 3MEV
+Reading line 845887 3MEV
+Reading line 845893 2MEV
+Reading line 846795 2MEV
+Reading line 846846 5MEV
+Reading line 848127 5MEV
+Reading line 848471 2MEV
+Reading line 848547 3MEV
+Reading line 849110 5MEV
+Reading line 849500 2MEV
+Reading line 849790 3MEV
+Reading line 849875 2MEV
+Reading line 850072 2MEV
+Reading line 850194 3MEV
+Reading line 850418 3MEV
+Reading line 850586 2MEV
+Reading line 850710 2MEV
+Reading line 851149 2MEV
+Reading line 851245 3MEV
+Reading line 851268 2MEV
+Reading line 851766 5MEV
+Reading line 851808 3MEV
+Reading line 852041 2MEV
+Reading line 852162 3MEV
+Reading line 852202 2MEV
+Reading line 852312 2MEV
+Reading line 852314 2MEV
+Reading line 852409 5MEV
+Reading line 852487 2MEV
+Reading line 852538 5MEV
+Reading line 852871 2MEV
+Reading line 853054 2MEV
+Reading line 853421 3MEV
+Reading line 853530 3MEV
+Reading line 853700 3MEV
+Reading line 853966 2MEV
+Reading line 854042 2MEV
+Reading line 854245 2MEV
+Reading line 854320 3MEV
+Reading line 854385 2MEV
+Reading line 854491 3MEV
+Reading line 854504 2MEV
+Reading line 854819 3MEV
+Reading line 855170 3MEV
+Reading line 855273 3MEV
+Reading line 855277 2MEV
+Reading line 855492 2MEV
+Reading line 855672 2MEV
+Reading line 855838 2MEV
+Reading line 856800 2MEV
+Reading line 857083 2MEV
+Reading line 857196 2MEV
+Reading line 857226 2MEV
+Reading line 857363 2MEV
+Reading line 857595 5MEV
+Reading line 857797 3MEV
+Reading line 857804 2MEV
+Reading line 857938 2MEV
+Reading line 858022 2MEV
+Reading line 858193 3MEV
+Reading line 858847 3MEV
+Reading line 858984 2MEV
+Reading line 859003 2MEV
+Reading line 859223 2MEV
+Reading line 859568 2MEV
+Reading line 860207 2MEV
+Reading line 860343 2MEV
+Reading line 860621 3MEV
+Reading line 860825 2MEV
+Reading line 860879 3MEV
+Reading line 861762 2MEV
+Reading line 861879 3MEV
+Reading line 862762 3MEV
+Reading line 862802 3MEV
+Reading line 863168 2MEV
+Reading line 863375 3MEV
+Reading line 863380 2MEV
+Reading line 863422 3MEV
+Reading line 863512 3MEV
+Reading line 864069 2MEV
+Reading line 864894 5MEV
+Reading line 865185 2MEV
+Reading line 865192 5MEV
+Reading line 865798 2MEV
+Reading line 865813 3MEV
+Reading line 865833 5MEV
+Reading line 866236 2MEV
+Reading line 866582 3MEV
+Reading line 866761 2MEV
+Reading line 867182 2MEV
+Reading line 867254 3MEV
+Reading line 867382 2MEV
+Reading line 867472 2MEV
+Reading line 867586 2MEV
+Reading line 867594 2MEV
+Reading line 867721 3MEV
+Reading line 868194 5MEV
+Reading line 868329 3MEV
+Reading line 868483 3MEV
+Reading line 868504 2MEV
+Reading line 868775 5MEV
+Reading line 868964 2MEV
+Reading line 869139 2MEV
+Reading line 869266 2MEV
+Reading line 869287 2MEV
+Reading line 869313 5MEV
+Reading line 869578 2MEV
+Reading line 869708 3MEV
+Reading line 869835 2MEV
+Reading line 870025 2MEV
+Reading line 870153 3MEV
+Reading line 870250 2MEV
+Reading line 870462 3MEV
+Reading line 870871 3MEV
+Reading line 870946 2MEV
+Reading line 870996 3MEV
+Reading line 871148 5MEV
+Reading line 871272 2MEV
+Reading line 871561 2MEV
+Reading line 871731 2MEV
+Reading line 872297 3MEV
+Reading line 872362 5MEV
+Reading line 872429 3MEV
+Reading line 872969 2MEV
+Reading line 873113 5MEV
+Reading line 874126 5MEV
+Reading line 874724 2MEV
+Reading line 874752 3MEV
+Reading line 874937 3MEV
+Reading line 875031 3MEV
+Reading line 875160 2MEV
+Reading line 875200 3MEV
+Reading line 875574 2MEV
+Reading line 875688 2MEV
+Reading line 875728 5MEV
+Reading line 876333 3MEV
+Reading line 876467 3MEV
+Reading line 876582 2MEV
+Reading line 876637 3MEV
+Reading line 876955 3MEV
+Reading line 877098 3MEV
+Reading line 877187 3MEV
+Reading line 877214 3MEV
+Reading line 877980 3MEV
+Reading line 878167 2MEV
+Reading line 878299 2MEV
+Reading line 878869 5MEV
+Reading line 879251 3MEV
+Reading line 879273 3MEV
+Reading line 879337 3MEV
+Reading line 879367 2MEV
+Reading line 879746 3MEV
+Reading line 879975 2MEV
+Reading line 880635 2MEV
+Reading line 880805 3MEV
+Reading line 881027 2MEV
+Reading line 881029 5MEV
+Reading line 881238 2MEV
+Reading line 881513 2MEV
+Reading line 881517 2MEV
+Reading line 882184 3MEV
+Reading line 882267 3MEV
+Reading line 882796 2MEV
+Reading line 883799 2MEV
+Reading line 884651 3MEV
+Reading line 884765 3MEV
+Reading line 884768 2MEV
+Reading line 884825 3MEV
+Reading line 884991 2MEV
+Reading line 885087 3MEV
+Reading line 885168 2MEV
+Reading line 885301 3MEV
+Reading line 885659 2MEV
+Reading line 885701 3MEV
+Reading line 886080 2MEV
+Reading line 886244 3MEV
+Reading line 886341 2MEV
+Reading line 887045 3MEV
+Reading line 887794 2MEV
+Reading line 887890 2MEV
+Reading line 888172 2MEV
+Reading line 888728 2MEV
+Reading line 888949 2MEV
+Reading line 889148 3MEV
+Reading line 889280 2MEV
+Reading line 889518 5MEV
+Reading line 889859 2MEV
+Reading line 890253 3MEV
+Reading line 890958 2MEV
+Reading line 891201 2MEV
+Reading line 892301 2MEV
+Reading line 892447 2MEV
+Reading line 892914 2MEV
+Reading line 893055 2MEV
+Reading line 893169 2MEV
+Reading line 893321 3MEV
+Reading line 894007 2MEV
+Reading line 894351 5MEV
+Reading line 894382 2MEV
+Reading line 894512 2MEV
+Reading line 894948 2MEV
+Reading line 895081 5MEV
+Reading line 895539 2MEV
+Reading line 895596 3MEV
+Reading line 895809 3MEV
+Reading line 896020 2MEV
+Reading line 896116 5MEV
+Reading line 896407 2MEV
+Reading line 896761 5MEV
+Reading line 896822 2MEV
+Reading line 896855 3MEV
+Reading line 897018 2MEV
+Reading line 897203 3MEV
+Reading line 897394 3MEV
+Reading line 897509 5MEV
+Reading line 897863 3MEV
+Reading line 898172 3MEV
+Reading line 899144 2MEV
+Reading line 899367 2MEV
+Reading line 899696 3MEV
+Reading line 899944 5MEV
+Reading line 899991 2MEV
+Reading line 900075 2MEV
+Reading line 900298 5MEV
+Reading line 900686 2MEV
+Reading line 901019 2MEV
+Reading line 901049 2MEV
+Reading line 901207 3MEV
+Reading line 901353 5MEV
+Reading line 901406 5MEV
+Reading line 901805 2MEV
+Reading line 902451 3MEV
+Reading line 902613 3MEV
+Reading line 903244 3MEV
+Reading line 903247 5MEV
+Reading line 904289 2MEV
+Reading line 904377 2MEV
+Reading line 904819 3MEV
+Reading line 904839 5MEV
+Reading line 904963 5MEV
+Reading line 905166 5MEV
+Reading line 905609 3MEV
+Reading line 905803 2MEV
+Reading line 906074 2MEV
+Reading line 906210 3MEV
+Reading line 906487 2MEV
+Reading line 907335 2MEV
+Reading line 907576 5MEV
+Reading line 907917 5MEV
+Reading line 908917 3MEV
+Reading line 909143 5MEV
+Reading line 909587 2MEV
+Reading line 910147 3MEV
+Reading line 910885 2MEV
+Reading line 912182 2MEV
+Reading line 912672 3MEV
+Reading line 912675 2MEV
+Reading line 913011 3MEV
+Reading line 913126 2MEV
+Reading line 913215 2MEV
+Reading line 913353 5MEV
+Reading line 913389 2MEV
+Reading line 913701 5MEV
+Reading line 914252 2MEV
+Reading line 914396 2MEV
+Reading line 914526 5MEV
+Reading line 914536 3MEV
+Reading line 914569 2MEV
+Reading line 915356 2MEV
+Reading line 915358 2MEV
+Reading line 915441 2MEV
+Reading line 915474 3MEV
+Reading line 915595 3MEV
+Reading line 916002 2MEV
+Reading line 916076 2MEV
+Reading line 916647 3MEV
+Reading line 916787 2MEV
+Reading line 917141 3MEV
+Reading line 917656 3MEV
+Reading line 917765 2MEV
+Reading line 917858 3MEV
+Reading line 917878 3MEV
+Reading line 919184 3MEV
+Reading line 919654 2MEV
+Reading line 919888 3MEV
+Reading line 919981 2MEV
+Reading line 920217 2MEV
+Reading line 920283 5MEV
+Reading line 920686 2MEV
+Reading line 921030 2MEV
+Reading line 921069 3MEV
+Reading line 921182 2MEV
+Reading line 921261 3MEV
+Reading line 921281 2MEV
+Reading line 921914 3MEV
+Reading line 921916 2MEV
+Reading line 921995 2MEV
+Reading line 922006 3MEV
+Reading line 922245 3MEV
+Reading line 922300 2MEV
+Reading line 922658 2MEV
+Reading line 922711 2MEV
+Reading line 923381 5MEV
+Reading line 923523 5MEV
+Reading line 923951 3MEV
+Reading line 924462 3MEV
+Reading line 925491 3MEV
+Reading line 925721 5MEV
+Reading line 925817 2MEV
+Reading line 926484 2MEV
+Reading line 926650 2MEV
+Reading line 927089 2MEV
+Reading line 927107 2MEV
+Reading line 927395 2MEV
+Reading line 927436 3MEV
+Reading line 927709 5MEV
+Reading line 928529 2MEV
+Reading line 929194 2MEV
+Reading line 929250 2MEV
+Reading line 929506 3MEV
+Reading line 929532 2MEV
+Reading line 929695 2MEV
+Reading line 929880 3MEV
+Reading line 930146 2MEV
+Reading line 930181 3MEV
+Reading line 930646 2MEV
+Reading line 930671 5MEV
+Reading line 930897 5MEV
+Reading line 931072 2MEV
+Reading line 931128 3MEV
+Reading line 931407 2MEV
+Reading line 931654 2MEV
+Reading line 932178 3MEV
+Reading line 932206 3MEV
+Reading line 932663 2MEV
+Reading line 932851 3MEV
+Reading line 933208 2MEV
+Reading line 933626 3MEV
+Reading line 933923 3MEV
+Reading line 933956 3MEV
+Reading line 934074 2MEV
+Reading line 934258 2MEV
+Reading line 934504 5MEV
+Reading line 934539 5MEV
+Reading line 934662 3MEV
+Reading line 935673 2MEV
+Reading line 935705 2MEV
+Reading line 935769 2MEV
+Reading line 936108 2MEV
+Reading line 936647 3MEV
+Reading line 936750 3MEV
+Reading line 937184 5MEV
+Reading line 937297 2MEV
+Reading line 937555 2MEV
+Reading line 937625 2MEV
+Reading line 937679 3MEV
+Reading line 937853 2MEV
+Reading line 938295 2MEV
+Reading line 938660 5MEV
+Reading line 938780 2MEV
+Reading line 938805 5MEV
+Reading line 938838 3MEV
+Reading line 939481 2MEV
+Reading line 939587 2MEV
+Reading line 939799 3MEV
+Reading line 939804 5MEV
+Reading line 940627 2MEV
+Reading line 940650 5MEV
+Reading line 941051 5MEV
+Reading line 941266 2MEV
+Reading line 942011 2MEV
+Reading line 942494 3MEV
+Reading line 943755 2MEV
+Reading line 943770 2MEV
+Reading line 944103 2MEV
+Reading line 944359 3MEV
+Reading line 944492 2MEV
+Reading line 944701 3MEV
+Reading line 945647 2MEV
+Reading line 946051 2MEV
+Reading line 946518 2MEV
+Reading line 946558 2MEV
+Reading line 946601 2MEV
+Reading line 947136 2MEV
+Reading line 947674 3MEV
+Reading line 947943 2MEV
+Reading line 948090 2MEV
+Reading line 948328 2MEV
+Reading line 948375 2MEV
+Reading line 948558 3MEV
+Reading line 949265 5MEV
+Reading line 949797 3MEV
+Reading line 950056 2MEV
+Reading line 950111 2MEV
+Reading line 950215 2MEV
+Reading line 951133 3MEV
+Reading line 951826 3MEV
+Reading line 951865 2MEV
+Reading line 951897 5MEV
+Reading line 951932 2MEV
+Reading line 952530 2MEV
+Reading line 953814 3MEV
+Reading line 953889 3MEV
+Reading line 954180 2MEV
+Reading line 954330 3MEV
+Reading line 954630 2MEV
+Reading line 954884 3MEV
+Reading line 955023 3MEV
+Reading line 955216 2MEV
+Reading line 955765 3MEV
+Reading line 956012 2MEV
+Reading line 956089 2MEV
+Reading line 956674 3MEV
+Reading line 956949 3MEV
+Reading line 957222 3MEV
+Reading line 957333 2MEV
+Reading line 958273 3MEV
+Reading line 958773 3MEV
+Reading line 959184 3MEV
+Reading line 959238 2MEV
+Reading line 959832 5MEV
+Reading line 960228 2MEV
+Reading line 960830 3MEV
+Reading line 961176 2MEV
+Reading line 961300 3MEV
+Reading line 961579 5MEV
+Reading line 961629 3MEV
+Reading line 962203 2MEV
+Reading line 962225 3MEV
+Reading line 962302 2MEV
+Reading line 962393 2MEV
+Reading line 962769 5MEV
+Reading line 963262 5MEV
+Reading line 963611 3MEV
+Reading line 963804 2MEV
+Reading line 964035 2MEV
+Reading line 964103 2MEV
+Reading line 964388 5MEV
+Reading line 964479 3MEV
+Reading line 964704 3MEV
+Reading line 965002 2MEV
+Reading line 965053 2MEV
+Reading line 965103 5MEV
+Reading line 965151 2MEV
+Reading line 965606 2MEV
+Reading line 966200 2MEV
+Reading line 966253 5MEV
+Reading line 966503 5MEV
+Reading line 966953 2MEV
+Reading line 967054 2MEV
+Reading line 967812 2MEV
+Reading line 968050 2MEV
+Reading line 968241 2MEV
+Reading line 968246 5MEV
+Reading line 968559 2MEV
+Reading line 968624 2MEV
+Reading line 968669 2MEV
+Reading line 968975 2MEV
+Reading line 969692 2MEV
+Reading line 970585 2MEV
+Reading line 971065 3MEV
+Reading line 971077 2MEV
+Reading line 971657 2MEV
+Reading line 972067 2MEV
+Reading line 972431 2MEV
+Reading line 972982 3MEV
+Reading line 973429 3MEV
+Reading line 973436 2MEV
+Reading line 973729 2MEV
+Reading line 973797 3MEV
+Reading line 974030 2MEV
+Reading line 974263 2MEV
+Reading line 974419 5MEV
+Reading line 974754 2MEV
+Reading line 976444 5MEV
+Reading line 976753 2MEV
+Reading line 977809 5MEV
+Reading line 977891 2MEV
+Reading line 977986 3MEV
+Reading line 978068 2MEV
+Reading line 978343 2MEV
+Reading line 978384 2MEV
+Reading line 979116 2MEV
+Reading line 979368 2MEV
+Reading line 979746 2MEV
+Reading line 979779 2MEV
+Reading line 979987 2MEV
+Reading line 980017 2MEV
+Reading line 980036 3MEV
+Reading line 980087 3MEV
+Reading line 980653 3MEV
+Reading line 980690 2MEV
+Reading line 980706 3MEV
+Reading line 981921 5MEV
+Reading line 982102 2MEV
+Reading line 982531 2MEV
+Reading line 982608 3MEV
+Reading line 982856 2MEV
+Reading line 983327 3MEV
+Reading line 983397 5MEV
+Reading line 983746 2MEV
+Reading line 983816 2MEV
+Reading line 983818 3MEV
+Reading line 984320 2MEV
+Reading line 984480 2MEV
+Reading line 984496 3MEV
+Reading line 984711 2MEV
+Reading line 985811 2MEV
+Reading line 985945 3MEV
+Reading line 986060 5MEV
+Reading line 986683 5MEV
+Reading line 986741 3MEV
+Reading line 986783 5MEV
+Reading line 987112 2MEV
+Reading line 987528 2MEV
+Reading line 987700 3MEV
+Reading line 987784 3MEV
+Reading line 987786 3MEV
+Reading line 989778 3MEV
+Reading line 990430 3MEV
+Reading line 990709 3MEV
+Reading line 990937 3MEV
+Reading line 991122 2MEV
+Reading line 991322 3MEV
+Reading line 991484 2MEV
+Reading line 991550 2MEV
+Reading line 992313 2MEV
+Reading line 992923 3MEV
+Reading line 993061 2MEV
+Reading line 993436 3MEV
+Reading line 994012 2MEV
+Reading line 994316 5MEV
+Reading line 994664 2MEV
+Reading line 995290 2MEV
+Reading line 995551 2MEV
+Reading line 996299 2MEV
+Reading line 996351 3MEV
+Reading line 996769 3MEV
+Reading line 997385 3MEV
+Reading line 997490 2MEV
+Reading line 997826 3MEV
+Reading line 997840 5MEV
+Reading line 998773 2MEV
+Reading line 999057 2MEV
+Reading line 999196 2MEV
+Reading line 999295 3MEV
+Reading line 999548 2MEV
+Reading line 999694 2MEV
+Reading line 999705 3MEV
+Reading line 999835 5MEV
+Reading line 999837 3MEV
+Reading line 999987 3MEV
+... open Root analysis file : singleRun_1411289760.root - done
+Reached 100 event mark. Ongoing...
+Reached 200 event mark. Ongoing...
+Reached 300 event mark. Ongoing...
+Reached 400 event mark. Ongoing...
+Reached 500 event mark. Ongoing...
+Reached 600 event mark. Ongoing...
+Reached 700 event mark. Ongoing...
+Reached 800 event mark. Ongoing...
+Reached 900 event mark. Ongoing...
+Reached 1000 event mark. Ongoing...
+Reached 2000 event mark. Ongoing...
+Reached 3000 event mark. Ongoing...
+Reached 4000 event mark. Ongoing...
+Reached 5000 event mark. Ongoing...
+Reached 6000 event mark. Ongoing...
+Reached 7000 event mark. Ongoing...
+Reached 8000 event mark. Ongoing...
+Reached 9000 event mark. Ongoing...
+Reached 10000 event mark. Ongoing...
+Reached 11000 event mark. Ongoing...
+Reached 12000 event mark. Ongoing...
+Reached 13000 event mark. Ongoing...
+Reached 14000 event mark. Ongoing...
+Reached 15000 event mark. Ongoing...
+Reached 16000 event mark. Ongoing...
+Reached 17000 event mark. Ongoing...
+Reached 18000 event mark. Ongoing...
+Reached 19000 event mark. Ongoing...
+Reached 20000 event mark. Ongoing...
+Reached 21000 event mark. Ongoing...
+Reached 22000 event mark. Ongoing...
+Reached 23000 event mark. Ongoing...
+Reached 24000 event mark. Ongoing...
+Reached 25000 event mark. Ongoing...
+Reached 26000 event mark. Ongoing...
+Reached 27000 event mark. Ongoing...
+Reached 28000 event mark. Ongoing...
+Reached 29000 event mark. Ongoing...
+Reached 30000 event mark. Ongoing...
+Reached 31000 event mark. Ongoing...
+Reached 32000 event mark. Ongoing...
+Reached 33000 event mark. Ongoing...
+Reached 34000 event mark. Ongoing...
+Reached 35000 event mark. Ongoing...
+Reached 36000 event mark. Ongoing...
+Reached 37000 event mark. Ongoing...
+Reached 38000 event mark. Ongoing...
+Reached 39000 event mark. Ongoing...
+Reached 40000 event mark. Ongoing...
+Reached 41000 event mark. Ongoing...
+Reached 42000 event mark. Ongoing...
+Reached 43000 event mark. Ongoing...
+Reached 44000 event mark. Ongoing...
+Reached 45000 event mark. Ongoing...
+Reached 46000 event mark. Ongoing...
+Reached 47000 event mark. Ongoing...
+Reached 48000 event mark. Ongoing...
+Reached 49000 event mark. Ongoing...
+Reached 50000 event mark. Ongoing...
+Reached 51000 event mark. Ongoing...
+Reached 52000 event mark. Ongoing...
+Reached 53000 event mark. Ongoing...
+Reached 54000 event mark. Ongoing...
+Reached 55000 event mark. Ongoing...
+Reached 56000 event mark. Ongoing...
+Reached 57000 event mark. Ongoing...
+Reached 58000 event mark. Ongoing...
+Reached 59000 event mark. Ongoing...
+Reached 60000 event mark. Ongoing...
+Reached 61000 event mark. Ongoing...
+Reached 62000 event mark. Ongoing...
+Reached 63000 event mark. Ongoing...
+Reached 64000 event mark. Ongoing...
+Reached 65000 event mark. Ongoing...
+Reached 66000 event mark. Ongoing...
+Reached 67000 event mark. Ongoing...
+Reached 68000 event mark. Ongoing...
+Reached 69000 event mark. Ongoing...
+Reached 70000 event mark. Ongoing...
+Reached 71000 event mark. Ongoing...
+Reached 72000 event mark. Ongoing...
+Reached 73000 event mark. Ongoing...
+Reached 74000 event mark. Ongoing...
+Reached 75000 event mark. Ongoing...
+Reached 76000 event mark. Ongoing...
+Reached 77000 event mark. Ongoing...
+Reached 78000 event mark. Ongoing...
+Reached 79000 event mark. Ongoing...
+Reached 80000 event mark. Ongoing...
+Reached 81000 event mark. Ongoing...
+Reached 82000 event mark. Ongoing...
+Reached 83000 event mark. Ongoing...
+Reached 84000 event mark. Ongoing...
+Reached 85000 event mark. Ongoing...
+Reached 86000 event mark. Ongoing...
+Reached 87000 event mark. Ongoing...
+Reached 88000 event mark. Ongoing...
+Reached 89000 event mark. Ongoing...
+Reached 90000 event mark. Ongoing...
+Reached 91000 event mark. Ongoing...
+Reached 92000 event mark. Ongoing...
+Reached 93000 event mark. Ongoing...
+Reached 94000 event mark. Ongoing...
+Reached 95000 event mark. Ongoing...
+Reached 96000 event mark. Ongoing...
+Reached 97000 event mark. Ongoing...
+Reached 98000 event mark. Ongoing...
+Reached 99000 event mark. Ongoing...
+Reached 100000 event mark. Ongoing...
+Reached 101000 event mark. Ongoing...
+Reached 102000 event mark. Ongoing...
+Reached 103000 event mark. Ongoing...
+Reached 104000 event mark. Ongoing...
+Reached 105000 event mark. Ongoing...
+Reached 106000 event mark. Ongoing...
+Reached 107000 event mark. Ongoing...
+Reached 108000 event mark. Ongoing...
+Reached 109000 event mark. Ongoing...
+Reached 110000 event mark. Ongoing...
+Reached 111000 event mark. Ongoing...
+Reached 112000 event mark. Ongoing...
+Reached 113000 event mark. Ongoing...
+Reached 114000 event mark. Ongoing...
+Reached 115000 event mark. Ongoing...
+Reached 116000 event mark. Ongoing...
+Reached 117000 event mark. Ongoing...
+Reached 118000 event mark. Ongoing...
+Reached 119000 event mark. Ongoing...
+Reached 120000 event mark. Ongoing...
+Reached 121000 event mark. Ongoing...
+Reached 122000 event mark. Ongoing...
+Reached 123000 event mark. Ongoing...
+Reached 124000 event mark. Ongoing...
+Reached 125000 event mark. Ongoing...
+Reached 126000 event mark. Ongoing...
+Reached 127000 event mark. Ongoing...
+Reached 128000 event mark. Ongoing...
+Reached 129000 event mark. Ongoing...
+Reached 130000 event mark. Ongoing...
+Reached 131000 event mark. Ongoing...
+Reached 132000 event mark. Ongoing...
+Reached 133000 event mark. Ongoing...
+Reached 134000 event mark. Ongoing...
+Reached 135000 event mark. Ongoing...
+Reached 136000 event mark. Ongoing...
+Reached 137000 event mark. Ongoing...
+Reached 138000 event mark. Ongoing...
+Reached 139000 event mark. Ongoing...
+Reached 140000 event mark. Ongoing...
+Reached 141000 event mark. Ongoing...
+Reached 142000 event mark. Ongoing...
+Reached 143000 event mark. Ongoing...
+Reached 144000 event mark. Ongoing...
+Reached 145000 event mark. Ongoing...
+Reached 146000 event mark. Ongoing...
+Reached 147000 event mark. Ongoing...
+Reached 148000 event mark. Ongoing...
+Reached 149000 event mark. Ongoing...
+Reached 150000 event mark. Ongoing...
+Reached 151000 event mark. Ongoing...
+Reached 152000 event mark. Ongoing...
+Reached 153000 event mark. Ongoing...
+Reached 154000 event mark. Ongoing...
+Reached 155000 event mark. Ongoing...
+Reached 156000 event mark. Ongoing...
+Reached 157000 event mark. Ongoing...
+Reached 158000 event mark. Ongoing...
+Reached 159000 event mark. Ongoing...
+Reached 160000 event mark. Ongoing...
+Reached 161000 event mark. Ongoing...
+Reached 162000 event mark. Ongoing...
+Reached 163000 event mark. Ongoing...
+Reached 164000 event mark. Ongoing...
+Reached 165000 event mark. Ongoing...
+Reached 166000 event mark. Ongoing...
+Reached 167000 event mark. Ongoing...
+Reached 168000 event mark. Ongoing...
+Reached 169000 event mark. Ongoing...
+Reached 170000 event mark. Ongoing...
+Reached 171000 event mark. Ongoing...
+Reached 172000 event mark. Ongoing...
+Reached 173000 event mark. Ongoing...
+Reached 174000 event mark. Ongoing...
+Reached 175000 event mark. Ongoing...
+Reached 176000 event mark. Ongoing...
+Reached 177000 event mark. Ongoing...
+Reached 178000 event mark. Ongoing...
+Reached 179000 event mark. Ongoing...
+Reached 180000 event mark. Ongoing...
+Reached 181000 event mark. Ongoing...
+Reached 182000 event mark. Ongoing...
+Reached 183000 event mark. Ongoing...
+Reached 184000 event mark. Ongoing...
+Reached 185000 event mark. Ongoing...
+Reached 186000 event mark. Ongoing...
+Reached 187000 event mark. Ongoing...
+Reached 188000 event mark. Ongoing...
+Reached 189000 event mark. Ongoing...
+Reached 190000 event mark. Ongoing...
+Reached 191000 event mark. Ongoing...
+Reached 192000 event mark. Ongoing...
+Reached 193000 event mark. Ongoing...
+Reached 194000 event mark. Ongoing...
+Reached 195000 event mark. Ongoing...
+Reached 196000 event mark. Ongoing...
+Reached 197000 event mark. Ongoing...
+Reached 198000 event mark. Ongoing...
+Reached 199000 event mark. Ongoing...
+Reached 200000 event mark. Ongoing...
+Reached 201000 event mark. Ongoing...
+Reached 202000 event mark. Ongoing...
+Reached 203000 event mark. Ongoing...
+Reached 204000 event mark. Ongoing...
+Reached 205000 event mark. Ongoing...
+Reached 206000 event mark. Ongoing...
+Reached 207000 event mark. Ongoing...
+Reached 208000 event mark. Ongoing...
+Reached 209000 event mark. Ongoing...
+Reached 210000 event mark. Ongoing...
+Reached 211000 event mark. Ongoing...
+Reached 212000 event mark. Ongoing...
+Reached 213000 event mark. Ongoing...
+Reached 214000 event mark. Ongoing...
+Reached 215000 event mark. Ongoing...
+Reached 216000 event mark. Ongoing...
+Reached 217000 event mark. Ongoing...
+Reached 218000 event mark. Ongoing...
+Reached 219000 event mark. Ongoing...
+Reached 220000 event mark. Ongoing...
+Reached 221000 event mark. Ongoing...
+Reached 222000 event mark. Ongoing...
+Reached 223000 event mark. Ongoing...
+Reached 224000 event mark. Ongoing...
+Reached 225000 event mark. Ongoing...
+Reached 226000 event mark. Ongoing...
+Reached 227000 event mark. Ongoing...
+Reached 228000 event mark. Ongoing...
+Reached 229000 event mark. Ongoing...
+Reached 230000 event mark. Ongoing...
+Reached 231000 event mark. Ongoing...
+Reached 232000 event mark. Ongoing...
+Reached 233000 event mark. Ongoing...
+Reached 234000 event mark. Ongoing...
+Reached 235000 event mark. Ongoing...
+Reached 236000 event mark. Ongoing...
+Reached 237000 event mark. Ongoing...
+Reached 238000 event mark. Ongoing...
+Reached 239000 event mark. Ongoing...
+Reached 240000 event mark. Ongoing...
+Reached 241000 event mark. Ongoing...
+Reached 242000 event mark. Ongoing...
+Reached 243000 event mark. Ongoing...
+Reached 244000 event mark. Ongoing...
+Reached 245000 event mark. Ongoing...
+Reached 246000 event mark. Ongoing...
+Reached 247000 event mark. Ongoing...
+Reached 248000 event mark. Ongoing...
+Reached 249000 event mark. Ongoing...
+Reached 250000 event mark. Ongoing...
+Reached 251000 event mark. Ongoing...
+Reached 252000 event mark. Ongoing...
+Reached 253000 event mark. Ongoing...
+Reached 254000 event mark. Ongoing...
+Reached 255000 event mark. Ongoing...
+Reached 256000 event mark. Ongoing...
+Reached 257000 event mark. Ongoing...
+Reached 258000 event mark. Ongoing...
+Reached 259000 event mark. Ongoing...
+Reached 260000 event mark. Ongoing...
+Reached 261000 event mark. Ongoing...
+Reached 262000 event mark. Ongoing...
+Reached 263000 event mark. Ongoing...
+Reached 264000 event mark. Ongoing...
+Reached 265000 event mark. Ongoing...
+Reached 266000 event mark. Ongoing...
+Reached 267000 event mark. Ongoing...
+Reached 268000 event mark. Ongoing...
+Reached 269000 event mark. Ongoing...
+Reached 270000 event mark. Ongoing...
+Reached 271000 event mark. Ongoing...
+Reached 272000 event mark. Ongoing...
+Reached 273000 event mark. Ongoing...
+Reached 274000 event mark. Ongoing...
+Reached 275000 event mark. Ongoing...
+Reached 276000 event mark. Ongoing...
+Reached 277000 event mark. Ongoing...
+Reached 278000 event mark. Ongoing...
+Reached 279000 event mark. Ongoing...
+Reached 280000 event mark. Ongoing...
+Reached 281000 event mark. Ongoing...
+Reached 282000 event mark. Ongoing...
+Reached 283000 event mark. Ongoing...
+Reached 284000 event mark. Ongoing...
+Reached 285000 event mark. Ongoing...
+Reached 286000 event mark. Ongoing...
+Reached 287000 event mark. Ongoing...
+Reached 288000 event mark. Ongoing...
+Reached 289000 event mark. Ongoing...
+Reached 290000 event mark. Ongoing...
+Reached 291000 event mark. Ongoing...
+Reached 292000 event mark. Ongoing...
+Reached 293000 event mark. Ongoing...
+Reached 294000 event mark. Ongoing...
+Reached 295000 event mark. Ongoing...
+Reached 296000 event mark. Ongoing...
+Reached 297000 event mark. Ongoing...
+Reached 298000 event mark. Ongoing...
+Reached 299000 event mark. Ongoing...
+Reached 300000 event mark. Ongoing...
+Reached 301000 event mark. Ongoing...
+Reached 302000 event mark. Ongoing...
+Reached 303000 event mark. Ongoing...
+Reached 304000 event mark. Ongoing...
+Reached 305000 event mark. Ongoing...
+Reached 306000 event mark. Ongoing...
+Reached 307000 event mark. Ongoing...
+Reached 308000 event mark. Ongoing...
+Reached 309000 event mark. Ongoing...
+Reached 310000 event mark. Ongoing...
+Reached 311000 event mark. Ongoing...
+Reached 312000 event mark. Ongoing...
+Reached 313000 event mark. Ongoing...
+Reached 314000 event mark. Ongoing...
+Reached 315000 event mark. Ongoing...
+Reached 316000 event mark. Ongoing...
+Reached 317000 event mark. Ongoing...
+Reached 318000 event mark. Ongoing...
+Reached 319000 event mark. Ongoing...
+Reached 320000 event mark. Ongoing...
+Reached 321000 event mark. Ongoing...
+Reached 322000 event mark. Ongoing...
+Reached 323000 event mark. Ongoing...
+Reached 324000 event mark. Ongoing...
+Reached 325000 event mark. Ongoing...
+Reached 326000 event mark. Ongoing...
+Reached 327000 event mark. Ongoing...
+Reached 328000 event mark. Ongoing...
+Reached 329000 event mark. Ongoing...
+Reached 330000 event mark. Ongoing...
+Reached 331000 event mark. Ongoing...
+Reached 332000 event mark. Ongoing...
+Reached 333000 event mark. Ongoing...
+Reached 334000 event mark. Ongoing...
+Reached 335000 event mark. Ongoing...
+Reached 336000 event mark. Ongoing...
+Reached 337000 event mark. Ongoing...
+Reached 338000 event mark. Ongoing...
+Reached 339000 event mark. Ongoing...
+Reached 340000 event mark. Ongoing...
+Reached 341000 event mark. Ongoing...
+Reached 342000 event mark. Ongoing...
+Reached 343000 event mark. Ongoing...
+Reached 344000 event mark. Ongoing...
+Reached 345000 event mark. Ongoing...
+Reached 346000 event mark. Ongoing...
+Reached 347000 event mark. Ongoing...
+Reached 348000 event mark. Ongoing...
+Reached 349000 event mark. Ongoing...
+Reached 350000 event mark. Ongoing...
+Reached 351000 event mark. Ongoing...
+Reached 352000 event mark. Ongoing...
+Reached 353000 event mark. Ongoing...
+Reached 354000 event mark. Ongoing...
+Reached 355000 event mark. Ongoing...
+Reached 356000 event mark. Ongoing...
+Reached 357000 event mark. Ongoing...
+Reached 358000 event mark. Ongoing...
+Reached 359000 event mark. Ongoing...
+Reached 360000 event mark. Ongoing...
+Reached 361000 event mark. Ongoing...
+Reached 362000 event mark. Ongoing...
+Reached 363000 event mark. Ongoing...
+Reached 364000 event mark. Ongoing...
+Reached 365000 event mark. Ongoing...
+Reached 366000 event mark. Ongoing...
+Reached 367000 event mark. Ongoing...
+Reached 368000 event mark. Ongoing...
+Reached 369000 event mark. Ongoing...
+Reached 370000 event mark. Ongoing...
+Reached 371000 event mark. Ongoing...
+Reached 372000 event mark. Ongoing...
+Reached 373000 event mark. Ongoing...
+Reached 374000 event mark. Ongoing...
+Reached 375000 event mark. Ongoing...
+Reached 376000 event mark. Ongoing...
+Reached 377000 event mark. Ongoing...
+Reached 378000 event mark. Ongoing...
+Reached 379000 event mark. Ongoing...
+Reached 380000 event mark. Ongoing...
+Reached 381000 event mark. Ongoing...
+Reached 382000 event mark. Ongoing...
+Reached 383000 event mark. Ongoing...
+Reached 384000 event mark. Ongoing...
+Reached 385000 event mark. Ongoing...
+Reached 386000 event mark. Ongoing...
+Reached 387000 event mark. Ongoing...
+Reached 388000 event mark. Ongoing...
+Reached 389000 event mark. Ongoing...
+Reached 390000 event mark. Ongoing...
+Reached 391000 event mark. Ongoing...
+Reached 392000 event mark. Ongoing...
+Reached 393000 event mark. Ongoing...
+Reached 394000 event mark. Ongoing...
+Reached 395000 event mark. Ongoing...
+Reached 396000 event mark. Ongoing...
+Reached 397000 event mark. Ongoing...
+Reached 398000 event mark. Ongoing...
+Reached 399000 event mark. Ongoing...
+Reached 400000 event mark. Ongoing...
+Reached 401000 event mark. Ongoing...
+Reached 402000 event mark. Ongoing...
+Reached 403000 event mark. Ongoing...
+Reached 404000 event mark. Ongoing...
+Reached 405000 event mark. Ongoing...
+Reached 406000 event mark. Ongoing...
+Reached 407000 event mark. Ongoing...
+Reached 408000 event mark. Ongoing...
+Reached 409000 event mark. Ongoing...
+Reached 410000 event mark. Ongoing...
+Reached 411000 event mark. Ongoing...
+Reached 412000 event mark. Ongoing...
+Reached 413000 event mark. Ongoing...
+Reached 414000 event mark. Ongoing...
+Reached 415000 event mark. Ongoing...
+Reached 416000 event mark. Ongoing...
+Reached 417000 event mark. Ongoing...
+Reached 418000 event mark. Ongoing...
+Reached 419000 event mark. Ongoing...
+Reached 420000 event mark. Ongoing...
+Reached 421000 event mark. Ongoing...
+Reached 422000 event mark. Ongoing...
+Reached 423000 event mark. Ongoing...
+Reached 424000 event mark. Ongoing...
+Reached 425000 event mark. Ongoing...
+Reached 426000 event mark. Ongoing...
+Reached 427000 event mark. Ongoing...
+Reached 428000 event mark. Ongoing...
+Reached 429000 event mark. Ongoing...
+Reached 430000 event mark. Ongoing...
+Reached 431000 event mark. Ongoing...
+Reached 432000 event mark. Ongoing...
+Reached 433000 event mark. Ongoing...
+Reached 434000 event mark. Ongoing...
+Reached 435000 event mark. Ongoing...
+Reached 436000 event mark. Ongoing...
+Reached 437000 event mark. Ongoing...
+Reached 438000 event mark. Ongoing...
+Reached 439000 event mark. Ongoing...
+Reached 440000 event mark. Ongoing...
+Reached 441000 event mark. Ongoing...
+Reached 442000 event mark. Ongoing...
+Reached 443000 event mark. Ongoing...
+Reached 444000 event mark. Ongoing...
+Reached 445000 event mark. Ongoing...
+Reached 446000 event mark. Ongoing...
+Reached 447000 event mark. Ongoing...
+Reached 448000 event mark. Ongoing...
+Reached 449000 event mark. Ongoing...
+Reached 450000 event mark. Ongoing...
+Reached 451000 event mark. Ongoing...
+Reached 452000 event mark. Ongoing...
+Reached 453000 event mark. Ongoing...
+Reached 454000 event mark. Ongoing...
+Reached 455000 event mark. Ongoing...
+Reached 456000 event mark. Ongoing...
+Reached 457000 event mark. Ongoing...
+Reached 458000 event mark. Ongoing...
+Reached 459000 event mark. Ongoing...
+Reached 460000 event mark. Ongoing...
+Reached 461000 event mark. Ongoing...
+Reached 462000 event mark. Ongoing...
+Reached 463000 event mark. Ongoing...
+Reached 464000 event mark. Ongoing...
+Reached 465000 event mark. Ongoing...
+Reached 466000 event mark. Ongoing...
+Reached 467000 event mark. Ongoing...
+Reached 468000 event mark. Ongoing...
+Reached 469000 event mark. Ongoing...
+Reached 470000 event mark. Ongoing...
+Reached 471000 event mark. Ongoing...
+Reached 472000 event mark. Ongoing...
+Reached 473000 event mark. Ongoing...
+Reached 474000 event mark. Ongoing...
+Reached 475000 event mark. Ongoing...
+Reached 476000 event mark. Ongoing...
+Reached 477000 event mark. Ongoing...
+Reached 478000 event mark. Ongoing...
+Reached 479000 event mark. Ongoing...
+Reached 480000 event mark. Ongoing...
+Reached 481000 event mark. Ongoing...
+Reached 482000 event mark. Ongoing...
+Reached 483000 event mark. Ongoing...
+Reached 484000 event mark. Ongoing...
+Reached 485000 event mark. Ongoing...
+Reached 486000 event mark. Ongoing...
+Reached 487000 event mark. Ongoing...
+Reached 488000 event mark. Ongoing...
+Reached 489000 event mark. Ongoing...
+Reached 490000 event mark. Ongoing...
+Reached 491000 event mark. Ongoing...
+Reached 492000 event mark. Ongoing...
+Reached 493000 event mark. Ongoing...
+Reached 494000 event mark. Ongoing...
+Reached 495000 event mark. Ongoing...
+Reached 496000 event mark. Ongoing...
+Reached 497000 event mark. Ongoing...
+Reached 498000 event mark. Ongoing...
+Reached 499000 event mark. Ongoing...
+Reached 500000 event mark. Ongoing...
+Reached 501000 event mark. Ongoing...
+Reached 502000 event mark. Ongoing...
+Reached 503000 event mark. Ongoing...
+Reached 504000 event mark. Ongoing...
+Reached 505000 event mark. Ongoing...
+Reached 506000 event mark. Ongoing...
+Reached 507000 event mark. Ongoing...
+Reached 508000 event mark. Ongoing...
+Reached 509000 event mark. Ongoing...
+Reached 510000 event mark. Ongoing...
+Reached 511000 event mark. Ongoing...
+Reached 512000 event mark. Ongoing...
+Reached 513000 event mark. Ongoing...
+Reached 514000 event mark. Ongoing...
+Reached 515000 event mark. Ongoing...
+Reached 516000 event mark. Ongoing...
+Reached 517000 event mark. Ongoing...
+Reached 518000 event mark. Ongoing...
+Reached 519000 event mark. Ongoing...
+Reached 520000 event mark. Ongoing...
+Reached 521000 event mark. Ongoing...
+Reached 522000 event mark. Ongoing...
+Reached 523000 event mark. Ongoing...
+Reached 524000 event mark. Ongoing...
+Reached 525000 event mark. Ongoing...
+Reached 526000 event mark. Ongoing...
+Reached 527000 event mark. Ongoing...
+Reached 528000 event mark. Ongoing...
+Reached 529000 event mark. Ongoing...
+Reached 530000 event mark. Ongoing...
+Reached 531000 event mark. Ongoing...
+Reached 532000 event mark. Ongoing...
+Reached 533000 event mark. Ongoing...
+Reached 534000 event mark. Ongoing...
+Reached 535000 event mark. Ongoing...
+Reached 536000 event mark. Ongoing...
+Reached 537000 event mark. Ongoing...
+Reached 538000 event mark. Ongoing...
+Reached 539000 event mark. Ongoing...
+Reached 540000 event mark. Ongoing...
+Reached 541000 event mark. Ongoing...
+Reached 542000 event mark. Ongoing...
+Reached 543000 event mark. Ongoing...
+Reached 544000 event mark. Ongoing...
+Reached 545000 event mark. Ongoing...
+Reached 546000 event mark. Ongoing...
+Reached 547000 event mark. Ongoing...
+Reached 548000 event mark. Ongoing...
+Reached 549000 event mark. Ongoing...
+Reached 550000 event mark. Ongoing...
+Reached 551000 event mark. Ongoing...
+Reached 552000 event mark. Ongoing...
+Reached 553000 event mark. Ongoing...
+Reached 554000 event mark. Ongoing...
+Reached 555000 event mark. Ongoing...
+Reached 556000 event mark. Ongoing...
+Reached 557000 event mark. Ongoing...
+Reached 558000 event mark. Ongoing...
+Reached 559000 event mark. Ongoing...
+Reached 560000 event mark. Ongoing...
+Reached 561000 event mark. Ongoing...
+Reached 562000 event mark. Ongoing...
+Reached 563000 event mark. Ongoing...
+Reached 564000 event mark. Ongoing...
+Reached 565000 event mark. Ongoing...
+Reached 566000 event mark. Ongoing...
+Reached 567000 event mark. Ongoing...
+Reached 568000 event mark. Ongoing...
+Reached 569000 event mark. Ongoing...
+Reached 570000 event mark. Ongoing...
+Reached 571000 event mark. Ongoing...
+Reached 572000 event mark. Ongoing...
+Reached 573000 event mark. Ongoing...
+Reached 574000 event mark. Ongoing...
+Reached 575000 event mark. Ongoing...
+Reached 576000 event mark. Ongoing...
+Reached 577000 event mark. Ongoing...
+Reached 578000 event mark. Ongoing...
+Reached 579000 event mark. Ongoing...
+Reached 580000 event mark. Ongoing...
+Reached 581000 event mark. Ongoing...
+Reached 582000 event mark. Ongoing...
+Reached 583000 event mark. Ongoing...
+Reached 584000 event mark. Ongoing...
+Reached 585000 event mark. Ongoing...
+Reached 586000 event mark. Ongoing...
+Reached 587000 event mark. Ongoing...
+Reached 588000 event mark. Ongoing...
+Reached 589000 event mark. Ongoing...
+Reached 590000 event mark. Ongoing...
+Reached 591000 event mark. Ongoing...
+Reached 592000 event mark. Ongoing...
+Reached 593000 event mark. Ongoing...
+Reached 594000 event mark. Ongoing...
+Reached 595000 event mark. Ongoing...
+Reached 596000 event mark. Ongoing...
+Reached 597000 event mark. Ongoing...
+Reached 598000 event mark. Ongoing...
+Reached 599000 event mark. Ongoing...
+Reached 600000 event mark. Ongoing...
+Reached 601000 event mark. Ongoing...
+Reached 602000 event mark. Ongoing...
+Reached 603000 event mark. Ongoing...
+Reached 604000 event mark. Ongoing...
+Reached 605000 event mark. Ongoing...
+Reached 606000 event mark. Ongoing...
+Reached 607000 event mark. Ongoing...
+Reached 608000 event mark. Ongoing...
+Reached 609000 event mark. Ongoing...
+Reached 610000 event mark. Ongoing...
+Reached 611000 event mark. Ongoing...
+Reached 612000 event mark. Ongoing...
+Reached 613000 event mark. Ongoing...
+Reached 614000 event mark. Ongoing...
+Reached 615000 event mark. Ongoing...
+Reached 616000 event mark. Ongoing...
+Reached 617000 event mark. Ongoing...
+Reached 618000 event mark. Ongoing...
+Reached 619000 event mark. Ongoing...
+Reached 620000 event mark. Ongoing...
+Reached 621000 event mark. Ongoing...
+Reached 622000 event mark. Ongoing...
+Reached 623000 event mark. Ongoing...
+Reached 624000 event mark. Ongoing...
+Reached 625000 event mark. Ongoing...
+Reached 626000 event mark. Ongoing...
+Reached 627000 event mark. Ongoing...
+Reached 628000 event mark. Ongoing...
+Reached 629000 event mark. Ongoing...
+Reached 630000 event mark. Ongoing...
+Reached 631000 event mark. Ongoing...
+Reached 632000 event mark. Ongoing...
+Reached 633000 event mark. Ongoing...
+Reached 634000 event mark. Ongoing...
+Reached 635000 event mark. Ongoing...
+Reached 636000 event mark. Ongoing...
+Reached 637000 event mark. Ongoing...
+Reached 638000 event mark. Ongoing...
+Reached 639000 event mark. Ongoing...
+Reached 640000 event mark. Ongoing...
+Reached 641000 event mark. Ongoing...
+Reached 642000 event mark. Ongoing...
+Reached 643000 event mark. Ongoing...
+Reached 644000 event mark. Ongoing...
+Reached 645000 event mark. Ongoing...
+Reached 646000 event mark. Ongoing...
+Reached 647000 event mark. Ongoing...
+Reached 648000 event mark. Ongoing...
+Reached 649000 event mark. Ongoing...
+Reached 650000 event mark. Ongoing...
+Reached 651000 event mark. Ongoing...
+Reached 652000 event mark. Ongoing...
+Reached 653000 event mark. Ongoing...
+Reached 654000 event mark. Ongoing...
+Reached 655000 event mark. Ongoing...
+Reached 656000 event mark. Ongoing...
+Reached 657000 event mark. Ongoing...
+Reached 658000 event mark. Ongoing...
+Reached 659000 event mark. Ongoing...
+Reached 660000 event mark. Ongoing...
+Reached 661000 event mark. Ongoing...
+Reached 662000 event mark. Ongoing...
+Reached 663000 event mark. Ongoing...
+Reached 664000 event mark. Ongoing...
+Reached 665000 event mark. Ongoing...
+Reached 666000 event mark. Ongoing...
+Reached 667000 event mark. Ongoing...
+Reached 668000 event mark. Ongoing...
+Reached 669000 event mark. Ongoing...
+Reached 670000 event mark. Ongoing...
+Reached 671000 event mark. Ongoing...
+Reached 672000 event mark. Ongoing...
+Reached 673000 event mark. Ongoing...
+Reached 674000 event mark. Ongoing...
+Reached 675000 event mark. Ongoing...
+Reached 676000 event mark. Ongoing...
+Reached 677000 event mark. Ongoing...
+Reached 678000 event mark. Ongoing...
+Reached 679000 event mark. Ongoing...
+Reached 680000 event mark. Ongoing...
+Reached 681000 event mark. Ongoing...
+Reached 682000 event mark. Ongoing...
+Reached 683000 event mark. Ongoing...
+Reached 684000 event mark. Ongoing...
+Reached 685000 event mark. Ongoing...
+Reached 686000 event mark. Ongoing...
+Reached 687000 event mark. Ongoing...
+Reached 688000 event mark. Ongoing...
+Reached 689000 event mark. Ongoing...
+Reached 690000 event mark. Ongoing...
+Reached 691000 event mark. Ongoing...
+Reached 692000 event mark. Ongoing...
+Reached 693000 event mark. Ongoing...
+Reached 694000 event mark. Ongoing...
+Reached 695000 event mark. Ongoing...
+Reached 696000 event mark. Ongoing...
+Reached 697000 event mark. Ongoing...
+Reached 698000 event mark. Ongoing...
+Reached 699000 event mark. Ongoing...
+Reached 700000 event mark. Ongoing...
+Reached 701000 event mark. Ongoing...
+Reached 702000 event mark. Ongoing...
+Reached 703000 event mark. Ongoing...
+Reached 704000 event mark. Ongoing...
+Reached 705000 event mark. Ongoing...
+Reached 706000 event mark. Ongoing...
+Reached 707000 event mark. Ongoing...
+Reached 708000 event mark. Ongoing...
+Reached 709000 event mark. Ongoing...
+Reached 710000 event mark. Ongoing...
+Reached 711000 event mark. Ongoing...
+Reached 712000 event mark. Ongoing...
+Reached 713000 event mark. Ongoing...
+Reached 714000 event mark. Ongoing...
+Reached 715000 event mark. Ongoing...
+Reached 716000 event mark. Ongoing...
+Reached 717000 event mark. Ongoing...
+Reached 718000 event mark. Ongoing...
+Reached 719000 event mark. Ongoing...
+Reached 720000 event mark. Ongoing...
+Reached 721000 event mark. Ongoing...
+Reached 722000 event mark. Ongoing...
+Reached 723000 event mark. Ongoing...
+Reached 724000 event mark. Ongoing...
+Reached 725000 event mark. Ongoing...
+Reached 726000 event mark. Ongoing...
+Reached 727000 event mark. Ongoing...
+Reached 728000 event mark. Ongoing...
+Reached 729000 event mark. Ongoing...
+Reached 730000 event mark. Ongoing...
+Reached 731000 event mark. Ongoing...
+Reached 732000 event mark. Ongoing...
+Reached 733000 event mark. Ongoing...
+Reached 734000 event mark. Ongoing...
+Reached 735000 event mark. Ongoing...
+Reached 736000 event mark. Ongoing...
+Reached 737000 event mark. Ongoing...
+Reached 738000 event mark. Ongoing...
+Reached 739000 event mark. Ongoing...
+Reached 740000 event mark. Ongoing...
+Reached 741000 event mark. Ongoing...
+Reached 742000 event mark. Ongoing...
+Reached 743000 event mark. Ongoing...
+Reached 744000 event mark. Ongoing...
+Reached 745000 event mark. Ongoing...
+Reached 746000 event mark. Ongoing...
+Reached 747000 event mark. Ongoing...
+Reached 748000 event mark. Ongoing...
+Reached 749000 event mark. Ongoing...
+Reached 750000 event mark. Ongoing...
+Reached 751000 event mark. Ongoing...
+Reached 752000 event mark. Ongoing...
+Reached 753000 event mark. Ongoing...
+Reached 754000 event mark. Ongoing...
+Reached 755000 event mark. Ongoing...
+Reached 756000 event mark. Ongoing...
+Reached 757000 event mark. Ongoing...
+Reached 758000 event mark. Ongoing...
+Reached 759000 event mark. Ongoing...
+Reached 760000 event mark. Ongoing...
+Reached 761000 event mark. Ongoing...
+Reached 762000 event mark. Ongoing...
+Reached 763000 event mark. Ongoing...
+Reached 764000 event mark. Ongoing...
+Reached 765000 event mark. Ongoing...
+Reached 766000 event mark. Ongoing...
+Reached 767000 event mark. Ongoing...
+Reached 768000 event mark. Ongoing...
+Reached 769000 event mark. Ongoing...
+Reached 770000 event mark. Ongoing...
+Reached 771000 event mark. Ongoing...
+Reached 772000 event mark. Ongoing...
+Reached 773000 event mark. Ongoing...
+Reached 774000 event mark. Ongoing...
+Reached 775000 event mark. Ongoing...
+Reached 776000 event mark. Ongoing...
+Reached 777000 event mark. Ongoing...
+Reached 778000 event mark. Ongoing...
+Reached 779000 event mark. Ongoing...
+Reached 780000 event mark. Ongoing...
+Reached 781000 event mark. Ongoing...
+Reached 782000 event mark. Ongoing...
+Reached 783000 event mark. Ongoing...
+Reached 784000 event mark. Ongoing...
+Reached 785000 event mark. Ongoing...
+Reached 786000 event mark. Ongoing...
+Reached 787000 event mark. Ongoing...
+Reached 788000 event mark. Ongoing...
+Reached 789000 event mark. Ongoing...
+Reached 790000 event mark. Ongoing...
+Reached 791000 event mark. Ongoing...
+Reached 792000 event mark. Ongoing...
+Reached 793000 event mark. Ongoing...
+Reached 794000 event mark. Ongoing...
+Reached 795000 event mark. Ongoing...
+Reached 796000 event mark. Ongoing...
+Reached 797000 event mark. Ongoing...
+Reached 798000 event mark. Ongoing...
+Reached 799000 event mark. Ongoing...
+Reached 800000 event mark. Ongoing...
+Reached 801000 event mark. Ongoing...
+Reached 802000 event mark. Ongoing...
+Reached 803000 event mark. Ongoing...
+Reached 804000 event mark. Ongoing...
+Reached 805000 event mark. Ongoing...
+Reached 806000 event mark. Ongoing...
+Reached 807000 event mark. Ongoing...
+Reached 808000 event mark. Ongoing...
+Reached 809000 event mark. Ongoing...
+Reached 810000 event mark. Ongoing...
+Reached 811000 event mark. Ongoing...
+Reached 812000 event mark. Ongoing...
+Reached 813000 event mark. Ongoing...
+Reached 814000 event mark. Ongoing...
+Reached 815000 event mark. Ongoing...
+Reached 816000 event mark. Ongoing...
+Reached 817000 event mark. Ongoing...
+Reached 818000 event mark. Ongoing...
+Reached 819000 event mark. Ongoing...
+Reached 820000 event mark. Ongoing...
+Reached 821000 event mark. Ongoing...
+Reached 822000 event mark. Ongoing...
+Reached 823000 event mark. Ongoing...
+Reached 824000 event mark. Ongoing...
+Reached 825000 event mark. Ongoing...
+Reached 826000 event mark. Ongoing...
+Reached 827000 event mark. Ongoing...
+Reached 828000 event mark. Ongoing...
+Reached 829000 event mark. Ongoing...
+Reached 830000 event mark. Ongoing...
+Reached 831000 event mark. Ongoing...
+Reached 832000 event mark. Ongoing...
+Reached 833000 event mark. Ongoing...
+Reached 834000 event mark. Ongoing...
+Reached 835000 event mark. Ongoing...
+Reached 836000 event mark. Ongoing...
+Reached 837000 event mark. Ongoing...
+Reached 838000 event mark. Ongoing...
+Reached 839000 event mark. Ongoing...
+Reached 840000 event mark. Ongoing...
+Reached 841000 event mark. Ongoing...
+Reached 842000 event mark. Ongoing...
+Reached 843000 event mark. Ongoing...
+Reached 844000 event mark. Ongoing...
+Reached 845000 event mark. Ongoing...
+Reached 846000 event mark. Ongoing...
+Reached 847000 event mark. Ongoing...
+Reached 848000 event mark. Ongoing...
+Reached 849000 event mark. Ongoing...
+Reached 850000 event mark. Ongoing...
+Reached 851000 event mark. Ongoing...
+Reached 852000 event mark. Ongoing...
+Reached 853000 event mark. Ongoing...
+Reached 854000 event mark. Ongoing...
+Reached 855000 event mark. Ongoing...
+Reached 856000 event mark. Ongoing...
+Reached 857000 event mark. Ongoing...
+Reached 858000 event mark. Ongoing...
+Reached 859000 event mark. Ongoing...
+Reached 860000 event mark. Ongoing...
+Reached 861000 event mark. Ongoing...
+Reached 862000 event mark. Ongoing...
+Reached 863000 event mark. Ongoing...
+Reached 864000 event mark. Ongoing...
+Reached 865000 event mark. Ongoing...
+Reached 866000 event mark. Ongoing...
+Reached 867000 event mark. Ongoing...
+Reached 868000 event mark. Ongoing...
+Reached 869000 event mark. Ongoing...
+Reached 870000 event mark. Ongoing...
+Reached 871000 event mark. Ongoing...
+Reached 872000 event mark. Ongoing...
+Reached 873000 event mark. Ongoing...
+Reached 874000 event mark. Ongoing...
+Reached 875000 event mark. Ongoing...
+Reached 876000 event mark. Ongoing...
+Reached 877000 event mark. Ongoing...
+Reached 878000 event mark. Ongoing...
+Reached 879000 event mark. Ongoing...
+Reached 880000 event mark. Ongoing...
+Reached 881000 event mark. Ongoing...
+Reached 882000 event mark. Ongoing...
+Reached 883000 event mark. Ongoing...
+Reached 884000 event mark. Ongoing...
+Reached 885000 event mark. Ongoing...
+Reached 886000 event mark. Ongoing...
+Reached 887000 event mark. Ongoing...
+Reached 888000 event mark. Ongoing...
+Reached 889000 event mark. Ongoing...
+Reached 890000 event mark. Ongoing...
+Reached 891000 event mark. Ongoing...
+Reached 892000 event mark. Ongoing...
+Reached 893000 event mark. Ongoing...
+Reached 894000 event mark. Ongoing...
+Reached 895000 event mark. Ongoing...
+Reached 896000 event mark. Ongoing...
+Reached 897000 event mark. Ongoing...
+Reached 898000 event mark. Ongoing...
+Reached 899000 event mark. Ongoing...
+Reached 900000 event mark. Ongoing...
+Reached 901000 event mark. Ongoing...
+Reached 902000 event mark. Ongoing...
+Reached 903000 event mark. Ongoing...
+Reached 904000 event mark. Ongoing...
+Reached 905000 event mark. Ongoing...
+Reached 906000 event mark. Ongoing...
+Reached 907000 event mark. Ongoing...
+Reached 908000 event mark. Ongoing...
+Reached 909000 event mark. Ongoing...
+Reached 910000 event mark. Ongoing...
+Reached 911000 event mark. Ongoing...
+Reached 912000 event mark. Ongoing...
+Reached 913000 event mark. Ongoing...
+Reached 914000 event mark. Ongoing...
+Reached 915000 event mark. Ongoing...
+Reached 916000 event mark. Ongoing...
+Reached 917000 event mark. Ongoing...
+Reached 918000 event mark. Ongoing...
+Reached 919000 event mark. Ongoing...
+Reached 920000 event mark. Ongoing...
+Reached 921000 event mark. Ongoing...
+Reached 922000 event mark. Ongoing...
+Reached 923000 event mark. Ongoing...
+Reached 924000 event mark. Ongoing...
+Reached 925000 event mark. Ongoing...
+Reached 926000 event mark. Ongoing...
+Reached 927000 event mark. Ongoing...
+Reached 928000 event mark. Ongoing...
+Reached 929000 event mark. Ongoing...
+Reached 930000 event mark. Ongoing...
+Reached 931000 event mark. Ongoing...
+Reached 932000 event mark. Ongoing...
+Reached 933000 event mark. Ongoing...
+Reached 934000 event mark. Ongoing...
+Reached 935000 event mark. Ongoing...
+Reached 936000 event mark. Ongoing...
+Reached 937000 event mark. Ongoing...
+Reached 938000 event mark. Ongoing...
+Reached 939000 event mark. Ongoing...
+Reached 940000 event mark. Ongoing...
+Reached 941000 event mark. Ongoing...
+Reached 942000 event mark. Ongoing...
+Reached 943000 event mark. Ongoing...
+Reached 944000 event mark. Ongoing...
+Reached 945000 event mark. Ongoing...
+Reached 946000 event mark. Ongoing...
+Reached 947000 event mark. Ongoing...
+Reached 948000 event mark. Ongoing...
+Reached 949000 event mark. Ongoing...
+Reached 950000 event mark. Ongoing...
+Reached 951000 event mark. Ongoing...
+Reached 952000 event mark. Ongoing...
+Reached 953000 event mark. Ongoing...
+Reached 954000 event mark. Ongoing...
+Reached 955000 event mark. Ongoing...
+Reached 956000 event mark. Ongoing...
+Reached 957000 event mark. Ongoing...
+Reached 958000 event mark. Ongoing...
+Reached 959000 event mark. Ongoing...
+Reached 960000 event mark. Ongoing...
+Reached 961000 event mark. Ongoing...
+Reached 962000 event mark. Ongoing...
+Reached 963000 event mark. Ongoing...
+Reached 964000 event mark. Ongoing...
+Reached 965000 event mark. Ongoing...
+Reached 966000 event mark. Ongoing...
+Reached 967000 event mark. Ongoing...
+Reached 968000 event mark. Ongoing...
+Reached 969000 event mark. Ongoing...
+Reached 970000 event mark. Ongoing...
+Reached 971000 event mark. Ongoing...
+Reached 972000 event mark. Ongoing...
+Reached 973000 event mark. Ongoing...
+Reached 974000 event mark. Ongoing...
+Reached 975000 event mark. Ongoing...
+Reached 976000 event mark. Ongoing...
+Reached 977000 event mark. Ongoing...
+Reached 978000 event mark. Ongoing...
+Reached 979000 event mark. Ongoing...
+Reached 980000 event mark. Ongoing...
+Reached 981000 event mark. Ongoing...
+Reached 982000 event mark. Ongoing...
+Reached 983000 event mark. Ongoing...
+Reached 984000 event mark. Ongoing...
+Reached 985000 event mark. Ongoing...
+Reached 986000 event mark. Ongoing...
+Reached 987000 event mark. Ongoing...
+Reached 988000 event mark. Ongoing...
+Reached 989000 event mark. Ongoing...
+Reached 990000 event mark. Ongoing...
+Reached 991000 event mark. Ongoing...
+Reached 992000 event mark. Ongoing...
+Reached 993000 event mark. Ongoing...
+Reached 994000 event mark. Ongoing...
+Reached 995000 event mark. Ongoing...
+Reached 996000 event mark. Ongoing...
+Reached 997000 event mark. Ongoing...
+Reached 998000 event mark. Ongoing...
+Reached 999000 event mark. Ongoing...
+
+ ----> print histograms statistic for the entire run 
+
+ Edep : mean = 167.288 keV rms = 743.508 keV
+ Primary particles entering detector = 0.134695
+... write Root file : singleRun_1411289760.root - done
+... close Root file : singleRun_1411289760.root - done
+Graphics systems deleted.
+Visualization Manager deleting...

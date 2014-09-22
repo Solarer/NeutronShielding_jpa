@@ -47,13 +47,10 @@ NSEventAction::NSEventAction()
   fcennsHCID(-1)
 {
     runAct = (NSRunAction*)(G4RunManager::GetRunManager()->GetUserRunAction());
-    doOutputEvent = runAct->IsNextEvent(eventID);
 }
 
 NSEventAction::~NSEventAction()
-{
-    delete runAct;
-}
+{}
 
 NSHitsCollection* NSEventAction::GetHitsCollection(G4int hcID, const G4Event* event) const
 {
@@ -87,10 +84,12 @@ void NSEventAction::BeginOfEventAction(const G4Event* event)
   eventID = event->GetEventID();
 
 	// output for this event?
+  doOutputEvent = runAct->IsNextEvent(eventID);
+
 	if(doOutputEvent)
 	{
-        // set outputstatus and get final outputFile name
-        outputFile = runAct->GetOutputFile();
+    // set outputstatus and get final outputFile name
+    outputFile = runAct->GetOutputFile();
 
 		// clear temp outputfile
 		std::ofstream outfile;
@@ -125,31 +124,35 @@ void NSEventAction::EndOfEventAction(const G4Event* event)
         G4double edep = cennsHit->GetEdep(); 
         G4bool collectThis = false;
         G4String file;
-        if(edep>2.1*MeV && edep<2.5*MeV)
+        if(edep>2.25*MeV && edep<2.35*MeV)
         {
             collectThis = true;
-            file = "2MEV";
+            file = "2.2MEV";
         }
-        else if(edep>5.2*MeV && edep<5.5*MeV)
+        else if(edep>1.9*MeV && edep<2.15*MeV)
         {
             collectThis = true;
-            file = "5MEV";
+            file = "2.1MEV";
         }
-        else if(edep>3.4*MeV && edep<3.7*MeV)
+        else if(edep>.25*MeV && edep<.42*MeV)
         {
             collectThis = true;
-            file = "3MEV";
+            file = "0MEV";
         }
+
+		if(collectThis)
+		{
+			G4cout << "collecting: " << eventID << " " << file << G4endl;
     
         std::ofstream outfile;
         outfile.open("criticalEventIDs", std::ios::app);
 
         outfile << eventID << "\t" << file << std::endl;
+		}
     }
 	// append temp output to final output
     else if(doOutputEvent)
 	{
-        G4cout << "should write" << G4endl;
 		std::ifstream infile;
 		std::ofstream outfile;
 		std::string buffer;
@@ -162,13 +165,14 @@ void NSEventAction::EndOfEventAction(const G4Event* event)
 		while(!infile.eof()) 
     	{
 	      getline(infile,buffer);
-		  outfile << buffer << G4endl;
-        }
+		  	outfile << buffer << G4endl;
+      }
 		
 		outfile.close();
 		infile.close();
 
-		runAct->GetNextEvent();  // load next Event ID from vector
+		if(!runAct->PopEvent())  // pop processed Event ID from vector
+			G4RunManager::GetRunManager()->AbortRun(); //stop if it was the last ID
 	}
 
    // Print per event (modulo n)

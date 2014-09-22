@@ -27,6 +27,7 @@
 #include <fstream>
 
 #include "NSRunAction.hh"
+#include "NSRunMessenger.hh"
 #include "NSAnalysis.hh"
 #include "NSPrimaryGeneratorAction.hh"
 #include "NSDetectorConstruction.hh"
@@ -42,18 +43,18 @@
 
 NSRunAction::NSRunAction()
 : G4UserRunAction(),
-	doCollectEvents(0), doProcessEvents(1), nextEvent(-1)
+	doCollectEvents(0), doProcessEvents(0)
 {
+G4cout << "Reading initialising" << doProcessEvents << G4endl;
   // Create analysis manager
   // The choice of analysis technology is done via selection of a namespace
   // in NSAnalysis.hh
   G4AnalysisManager* analysisManager = G4AnalysisManager::Instance();
   G4cout << "Using " << analysisManager->GetType() << G4endl;
 
-	// Fill vector with events from file
-	if(doProcessEvents)
-		FillVec();
-
+	//construct Messenger
+	fMessenger = new NSRunMessenger(this);
+	
  // Create directories if using UI commands
   //analysisManager->SetHistoDirectoryName("histograms");
   //analysisManager->SetNtupleDirectoryName("ntuple");
@@ -114,12 +115,15 @@ G4Run* NSRunAction::GenerateRun()
 
 void NSRunAction::BeginOfRunAction(const G4Run*)
 {
-	// clear outputfile
-	std::ofstream outfile;
-	outfile.open("allSteps1.out", std::ios::out | std::ios::trunc );
-	outfile.close();
-	outfile.open("allSteps2.out", std::ios::out | std::ios::trunc );
-	outfile.close();
+	// Fill vector with events from file
+	if(doProcessEvents)
+		FillVec();
+	else if(doCollectEvents)
+	{
+		std::ofstream outfile;
+		outfile.open("criticalEventIDs", std::ios::out | std::ios::trunc );
+		outfile.close();
+	}
 
   // Inform the runManager to save random number seed
   // G4RunManager::GetRunManager()->SetRandomNumberStore(false);
@@ -133,7 +137,6 @@ void NSRunAction::BeginOfRunAction(const G4Run*)
 
 void NSRunAction::EndOfRunAction(const G4Run* run)
 {
-
   // Print histogram statistics
   G4AnalysisManager* analysisManager = G4AnalysisManager::Instance();
   G4double meanPer  = analysisManager->GetH1(1)->mean();
@@ -259,27 +262,16 @@ void NSRunAction::FillVec()
 		eventIDs.push_back(buffer_int);
 		outputFiles.push_back(buffer_str);
 
-		G4cout << "Reading file "<< buffer_str << G4endl;
+		G4cout << "Reading line "<< buffer_int << " " << buffer_str << G4endl;
 	}
-		GetNextEvent();			 // set the first ID
 }
 
-G4bool NSRunAction::GetNextEvent()
+G4bool NSRunAction::PopEvent()
 {
-	if(eventIDs.empty())
-	{
-		nextEvent = -1;
-		return false;
-	}
-	else
-	{
-		// set next event ID from beginning of vector 
-		nextEvent = eventIDs.front();
+	// remove first elemets of both vectors
 		eventIDs.erase(eventIDs.begin());
-		// set next outputFile from beginning of vector 
-		nextFile= outputFiles.front();
 		outputFiles.erase(outputFiles.begin());
-		return true;
-	}
+	// were they the last elemets?
+	return (!eventIDs.empty());
 }
 

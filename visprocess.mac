@@ -8,10 +8,14 @@
 /run/verbose 0
 /run/particle/verbose 0
 /process/verbose 0
+
+###############################
+#User stuff
 /NS/gen/genEvaporation 0
-/NS/gen/particleEnergy 10
+/NS/gen/particleEnergy 3
 /NS/verbose/doOutputStep false
-#
+/NS/run/doProcessEvents 1
+###############################
 # Update detector after setting some things
 /NS/det/update
 #
@@ -85,4 +89,4 @@
 # For file-based drivers, use this to create an empty detector view:
 #/vis/viewer/flush
 #
-/run/beamOn 100000
+/run/beamOn 1000000

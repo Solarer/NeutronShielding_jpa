@@ -33,6 +33,8 @@
 
 #include "globals.hh"
 
+class NSRunAction;
+
 class NSEventAction : public G4UserEventAction
 {
   private:
@@ -41,7 +43,7 @@ class NSEventAction : public G4UserEventAction
   void PrintEventStatistics(G4double Edep) const;
   
   // data members 
-	NSRunAction* runAct;
+		NSRunAction* runAct;
     G4int fcennsHCID;  // hits collection ID for cennsSD sensitive detector
     G4int eventID;     // event ID
     G4bool doOutputEvent;

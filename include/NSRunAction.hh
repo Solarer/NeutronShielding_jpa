@@ -33,32 +33,34 @@
 
 class G4Run;
 class G4LogicalVolume;
+class NSRunMessenger;
 
 class NSRunAction : public G4UserRunAction
 {
 	private:
+		NSRunMessenger* fMessenger;
+
 		std::vector<G4int> eventIDs;
 		std::vector<G4String> outputFiles;
 		G4bool doCollectEvents, doProcessEvents;
-		int nextEvent;
-        std::string nextFile;
 
   public:
     NSRunAction();
     virtual ~NSRunAction();
 	
     // Get-Methods
-	G4bool GetNextEvent();
-    inline std::string GetOutputFile(){ return nextFile; };
-	inline G4bool GetDoCollectEvents(){ return doCollectEvents; };
+		G4int GetEventID(){ return eventIDs.empty() ? -1 : eventIDs.front(); };
+    inline G4String GetOutputFile(){ return outputFiles.front(); };
+		inline G4bool GetDoCollectEvents(){ return doCollectEvents; };
 
     // Set-Methods
     void SetCollectEvents(G4bool collect){ doCollectEvents = collect; };
-    void SetProcessEvents(G4bool process){ doCollectEvents = process; };
+    void SetProcessEvents(G4bool process){ doProcessEvents = process; };
     
     // Other-Methods
-	void FillVec();
-	inline G4bool IsNextEvent(G4int eventID){ return (nextEvent == eventID); };
+		void FillVec();
+		G4bool PopEvent();
+		inline G4bool IsNextEvent(G4int eventID){ return (GetEventID() == eventID); };
 
     virtual G4Run* GenerateRun();
     virtual void BeginOfRunAction(const G4Run*);

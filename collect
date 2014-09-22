@@ -1,0 +1,5327 @@
+
+*************************************************************
+ Geant4 version Name: geant4-10-00-patch-02    (13-June-2014)
+                      Copyright : Geant4 Collaboration
+                      Reference : NIM A 506 (2003), 250-303
+                            WWW : http://cern.ch/geant4
+*************************************************************
+
+G4Material WARNING: duplicate name of material BdP0_7
+G4Material WARNING: duplicate name of material BdP0_9
+G4Material WARNING: duplicate name of material BdP4_6
+<<< Geant4 Physics List simulation engine: QGSP_BIC_HP 2.0
+
+Reading initialising0
+Using Root
+Checking overlaps for volume Shield ... OK! 
+Checking overlaps for volume Shield ... OK! 
+Checking overlaps for volume Shield ... OK! 
+Checking overlaps for volume Shield ... OK! 
+Checking overlaps for volume Shield ... OK! 
+Checking overlaps for volume Shield ... OK! 
+Checking overlaps for volume Shield ... OK! 
+Checking overlaps for volume Shield ... OK! 
+Checking overlaps for volume Shield ... OK! 
+Checking overlaps for volume Shield ... OK! 
+Checking overlaps for volume Shield ... OK! 
+Checking overlaps for volume Shield ... OK! 
+Checking overlaps for volume Shield ... OK! 
+Checking overlaps for volume Shield ... OK! 
+Checking overlaps for volume Shield ... OK! 
+Checking overlaps for volume Shield ... OK! 
+Checking overlaps for volume Shield ... OK! 
+Checking overlaps for volume Shield ... OK! 
+Checking overlaps for volume Shield ... OK! 
+Checking overlaps for volume Shield ... OK! 
+Checking overlaps for volume Shield ... OK! 
+Checking overlaps for volume Shield ... OK! 
+Checking overlaps for volume Shield ... OK! 
+Checking overlaps for volume Shield ... OK! 
+Checking overlaps for volume Shield ... OK! 
+Checking overlaps for volume Shield ... OK! 
+Checking overlaps for volume Shield ... OK! 
+Checking overlaps for volume Shield ... OK! 
+Checking overlaps for volume Shield ... OK! 
+Checking overlaps for volume Shield ... OK! 
+Checking overlaps for volume Shield ... OK! 
+Checking overlaps for volume Shield ... OK! 
+Checking overlaps for volume Shield ... OK! 
+Checking overlaps for volume Shield ... OK! 
+Checking overlaps for volume Shield ... OK! 
+Checking overlaps for volume Shield ... OK! 
+Checking overlaps for volume Shield ... OK! 
+Checking overlaps for volume Shield ... OK! 
+Checking overlaps for volume Shield ... OK! 
+Checking overlaps for volume Shield ... OK! 
+Checking overlaps for volume Det ... OK! 
+Checking overlaps for volume Scin ... OK! 
+volumes: 0x2991310 0x298fca0 0x2985b70
+NeutronHP: /Elastic file for Z = 6, A = 12 is not found and NeutronHP will use /var/phy/project/hep/neutrino/soft-SL6/geant4/Geant4-10.0.2-Linux/share/Geant4-10.0.2/data/G4NDL4.4/Elastic/CrossSection/6_nat_Carbon
+NeutronHP: /Elastic file for Z = 6, A = 13 is not found and NeutronHP will use /var/phy/project/hep/neutrino/soft-SL6/geant4/Geant4-10.0.2-Linux/share/Geant4-10.0.2/data/G4NDL4.4/Elastic/CrossSection/6_nat_Carbon
+NeutronHP: /Elastic file for Z = 8, A = 18 is not found and NeutronHP will use /var/phy/project/hep/neutrino/soft-SL6/geant4/Geant4-10.0.2-Linux/share/Geant4-10.0.2/data/G4NDL4.4/Elastic/CrossSection/8_17_Oxygen
+NeutronHP: /Elastic file for Z = 6, A = 12 is not found and NeutronHP will use /var/phy/project/hep/neutrino/soft-SL6/geant4/Geant4-10.0.2-Linux/share/Geant4-10.0.2/data/G4NDL4.4/Elastic/CrossSection/6_nat_Carbon
+NeutronHP: /Elastic file for Z = 6, A = 13 is not found and NeutronHP will use /var/phy/project/hep/neutrino/soft-SL6/geant4/Geant4-10.0.2-Linux/share/Geant4-10.0.2/data/G4NDL4.4/Elastic/CrossSection/6_nat_Carbon
+/var/phy/project/hep/neutrino/soft-SL6/geant4/Geant4-10.0.2-Linux/share/Geant4-10.0.2/data/G4NDL4.4
+NeutronHP: /Capture file for Z = 6, A = 12 is not found and NeutronHP will use /var/phy/project/hep/neutrino/soft-SL6/geant4/Geant4-10.0.2-Linux/share/Geant4-10.0.2/data/G4NDL4.4/Capture/CrossSection/6_nat_Carbon
+NeutronHP: /Capture file for Z = 6, A = 13 is not found and NeutronHP will use /var/phy/project/hep/neutrino/soft-SL6/geant4/Geant4-10.0.2-Linux/share/Geant4-10.0.2/data/G4NDL4.4/Capture/CrossSection/6_nat_Carbon
+NeutronHP: /Capture file for Z = 8, A = 18 is not found and NeutronHP will use /var/phy/project/hep/neutrino/soft-SL6/geant4/Geant4-10.0.2-Linux/share/Geant4-10.0.2/data/G4NDL4.4/Capture/CrossSection/8_17_Oxygen
+NeutronHP: /Capture file for Z = 6, A = 12 is not found and NeutronHP will use /var/phy/project/hep/neutrino/soft-SL6/geant4/Geant4-10.0.2-Linux/share/Geant4-10.0.2/data/G4NDL4.4/Capture/CrossSection/6_nat_Carbon
+NeutronHP: /Capture file for Z = 6, A = 13 is not found and NeutronHP will use /var/phy/project/hep/neutrino/soft-SL6/geant4/Geant4-10.0.2-Linux/share/Geant4-10.0.2/data/G4NDL4.4/Capture/CrossSection/6_nat_Carbon
+Visualization Manager instantiating with verbosity "warnings (3)"...
+Visualization Manager initialising...
+Registering graphics systems...
+
+You have successfully registered the following graphics systems.
+Current available graphics systems are:
+  ASCIITree (ATree)
+  DAWNFILE (DAWNFILE)
+  FukuiRenderer (DAWN)
+  G4HepRep (HepRepXML)
+  G4HepRepFile (HepRepFile)
+  OpenGLImmediateX (OGLI, OGLIX)
+  OpenGLStoredX (OGL, OGLS, OGLSX)
+  RayTracer (RayTracer)
+  RayTracerX (RayTracerX)
+  VRML1 (VRML1)
+  VRML1FILE (VRML1FILE)
+  VRML2 (VRML2)
+  VRML2FILE (VRML2FILE)
+  gMocrenFile (gMocrenFile)
+
+Registering model factories...
+
+You have successfully registered the following model factories.
+Registered model factories:
+  generic
+  drawByCharge
+  drawByParticleID
+  drawByOriginVolume
+  drawByAttribute
+
+Registered filter factories:
+  chargeFilter
+  particleFilter
+  originVolumeFilter
+  attributeFilter
+
+You have successfully registered the following user vis actions.
+Run Duration User Vis Actions: none
+End of Event User Vis Actions: none
+End of Run User Vis Actions: none
+
+Some /vis commands (optionally) take a string to specify colour.
+Available colours:
+  black, blue, brown, cyan, gray, green, grey, magenta, red, white, yellow
+
+Checking overlaps for volume Shield ... OK! 
+Checking overlaps for volume Shield ... OK! 
+Checking overlaps for volume Shield ... OK! 
+Checking overlaps for volume Shield ... OK! 
+Checking overlaps for volume Shield ... OK! 
+Checking overlaps for volume Shield ... OK! 
+Checking overlaps for volume Shield ... OK! 
+Checking overlaps for volume Shield ... OK! 
+Checking overlaps for volume Shield ... OK! 
+Checking overlaps for volume Shield ... OK! 
+Checking overlaps for volume Shield ... OK! 
+Checking overlaps for volume Shield ... OK! 
+Checking overlaps for volume Shield ... OK! 
+Checking overlaps for volume Shield ... OK! 
+Checking overlaps for volume Shield ... OK! 
+Checking overlaps for volume Shield ... OK! 
+Checking overlaps for volume Shield ... OK! 
+Checking overlaps for volume Shield ... OK! 
+Checking overlaps for volume Shield ... OK! 
+Checking overlaps for volume Shield ... OK! 
+Checking overlaps for volume Shield ... OK! 
+Checking overlaps for volume Shield ... OK! 
+Checking overlaps for volume Shield ... OK! 
+Checking overlaps for volume Shield ... OK! 
+Checking overlaps for volume Shield ... OK! 
+Checking overlaps for volume Shield ... OK! 
+Checking overlaps for volume Shield ... OK! 
+Checking overlaps for volume Shield ... OK! 
+Checking overlaps for volume Shield ... OK! 
+Checking overlaps for volume Shield ... OK! 
+Checking overlaps for volume Shield ... OK! 
+Checking overlaps for volume Shield ... OK! 
+Checking overlaps for volume Shield ... OK! 
+Checking overlaps for volume Shield ... OK! 
+Checking overlaps for volume Shield ... OK! 
+Checking overlaps for volume Shield ... OK! 
+Checking overlaps for volume Shield ... OK! 
+Checking overlaps for volume Shield ... OK! 
+Checking overlaps for volume Shield ... OK! 
+Checking overlaps for volume Shield ... OK! 
+Checking overlaps for volume Det ... OK! 
+Checking overlaps for volume Scin ... OK! 
+volumes: 0x298fca0 0x2991310 0x2991530
+ERROR: Current scene handler not defined.  Please select or create one.
+ERROR: G4VisCommandsViewerSet::SetNewValue: no current viewer.
+ERROR: G4VisCommandsViewerSet::SetNewValue: no current viewer.
+ERROR: G4VisCommandsViewerSet::SetNewValue: no current viewer.
+ERROR: G4VisCommandsViewerZoom::SetNewValue: no current viewer.
+/tracking/storeTrajectory 2
+Attributes available for modeling and filtering with
+  "/vis/modeling/trajectories/create/drawByAttribute" and
+  "/vis/filtering/trajectories/create/attributeFilter" commands:
+G4TrajectoriesModel:
+  Event ID (EventID): G4int
+G4SmoothTrajectory:
+  Charge (Ch): unit: e+ (G4double)
+  Track ID (ID): G4int
+  Initial kinetic energy (IKE): G4BestUnit (G4double)
+  Initial momentum magnitude (IMag): G4BestUnit (G4double)
+  Initial momentum (IMom): G4BestUnit (G4ThreeVector)
+  No. of points (NTP): G4int
+  PDG Encoding (PDG): G4int
+  Parent ID (PID): G4int
+  Particle Name (PN): G4String
+G4SmoothTrajectoryPoint:
+  Auxiliary Point Position (Aux): G4BestUnit (G4ThreeVector)
+  Step Position (Pos): G4BestUnit (G4ThreeVector)
+WARNING: Trajectory storing has been requested.  This action may be
+  reversed with "/tracking/storeTrajectory 0".
+WARNING: No current scene handler.
+WARNING: No current scene handler.
+ERROR: No current sceneHandler.  Please create one.
+ERROR: G4VisCommandsViewerSet::SetNewValue: no current viewer.
+
+phot:   for  gamma    SubType= 12
+      LambdaPrime table from 200 keV to 10 TeV in 54 bins 
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+       PhotoElectric :  Emin=        0 eV    Emax=       10 TeV   AngularGenSauterGavrila  FluoActive
+
+compt:   for  gamma    SubType= 13
+      Lambda table from 100 eV  to 1 MeV in 28 bins, spline: 1
+      LambdaPrime table from 1 MeV to 10 TeV in 49 bins 
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+       Klein-Nishina :  Emin=        0 eV    Emax=       10 TeV
+
+conv:   for  gamma    SubType= 14
+      Lambda table from 1.022 MeV to 10 TeV in 140 bins, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+        BetheHeitler :  Emin=        0 eV    Emax=       80 GeV
+     BetheHeitlerLPM :  Emin=       80 GeV   Emax=       10 TeV
+
+msc:   for e-    SubType= 10
+      RangeFactor= 0.04, stepLimitType: 1, latDisplacement: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+            UrbanMsc :  Emin=        0 eV    Emax=      100 MeV  Table with 42 bins Emin=    100 eV    Emax=    100 MeV
+        WentzelVIUni :  Emin=      100 MeV   Emax=       10 TeV  Table with 35 bins Emin=    100 MeV   Emax=     10 TeV
+
+eIoni:   for  e-    SubType= 2
+      dE/dx and range tables from 100 eV  to 10 TeV in 77 bins
+      Lambda tables from threshold to 10 TeV in 77 bins, spline: 1
+      finalRange(mm)= 1, dRoverRange= 0.2, integral: 1, fluct: 1, linLossLimit= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+        MollerBhabha :  Emin=        0 eV    Emax=       10 TeV
+
+eBrem:   for  e-    SubType= 3
+      dE/dx and range tables from 100 eV  to 10 TeV in 77 bins
+      Lambda tables from threshold to 10 TeV in 77 bins, spline: 1
+      LPM flag: 1 for E > 1 GeV
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+             eBremSB :  Emin=        0 eV    Emax=        1 GeV   DipBustGen
+            eBremLPM :  Emin=        1 GeV   Emax=       10 TeV   DipBustGen
+
+CoulombScat:   for  e-    SubType= 1
+      Lambda table from 100 MeV to 10 TeV in 35 bins, spline: 1
+      180 < Theta(degree) < 180; pLimit(GeV^1)= 0.139531
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+  eCoulombScattering :  Emin=      100 MeV   Emax=       10 TeV
+
+msc:   for e+    SubType= 10
+      RangeFactor= 0.04, stepLimitType: 1, latDisplacement: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+            UrbanMsc :  Emin=        0 eV    Emax=      100 MeV  Table with 42 bins Emin=    100 eV    Emax=    100 MeV
+        WentzelVIUni :  Emin=      100 MeV   Emax=       10 TeV  Table with 35 bins Emin=    100 MeV   Emax=     10 TeV
+
+eIoni:   for  e+    SubType= 2
+      dE/dx and range tables from 100 eV  to 10 TeV in 77 bins
+      Lambda tables from threshold to 10 TeV in 77 bins, spline: 1
+      finalRange(mm)= 1, dRoverRange= 0.2, integral: 1, fluct: 1, linLossLimit= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+        MollerBhabha :  Emin=        0 eV    Emax=       10 TeV
+
+eBrem:   for  e+    SubType= 3
+      dE/dx and range tables from 100 eV  to 10 TeV in 77 bins
+      Lambda tables from threshold to 10 TeV in 77 bins, spline: 1
+      LPM flag: 1 for E > 1 GeV
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+             eBremSB :  Emin=        0 eV    Emax=        1 GeV   DipBustGen
+            eBremLPM :  Emin=        1 GeV   Emax=       10 TeV   DipBustGen
+
+annihil:   for  e+    SubType= 5
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+            eplus2gg :  Emin=        0 eV    Emax=       10 TeV
+
+CoulombScat:   for  e+    SubType= 1
+      Lambda table from 100 MeV to 10 TeV in 35 bins, spline: 1
+      180 < Theta(degree) < 180; pLimit(GeV^1)= 0.139531
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+  eCoulombScattering :  Emin=      100 MeV   Emax=       10 TeV
+
+msc:   for proton    SubType= 10
+      RangeFactor= 0.2, step limit type: 0, lateralDisplacement: 1, polarAngleLimit(deg)= 180
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+        WentzelVIUni :  Emin=        0 eV    Emax=       10 TeV  Table with 77 bins Emin=    100 eV    Emax=     10 TeV
+
+hIoni:   for  proton    SubType= 2
+      dE/dx and range tables from 100 eV  to 10 TeV in 77 bins
+      Lambda tables from threshold to 10 TeV in 77 bins, spline: 1
+      finalRange(mm)= 0.1, dRoverRange= 0.2, integral: 1, fluct: 1, linLossLimit= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               Bragg :  Emin=        0 eV    Emax=        2 MeV
+          BetheBloch :  Emin=        2 MeV   Emax=       10 TeV
+
+hBrems:   for  proton    SubType= 3
+      dE/dx and range tables from 100 eV  to 10 TeV in 77 bins
+      Lambda tables from threshold to 10 TeV in 77 bins, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               hBrem :  Emin=        0 eV    Emax=       10 TeV
+
+hPairProd:   for  proton    SubType= 4
+      dE/dx and range tables from 100 eV  to 10 TeV in 77 bins
+      Lambda tables from threshold to 10 TeV in 77 bins, spline: 1
+      Sampling table 13x1001; from 7.50618 GeV to 10 TeV 
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+           hPairProd :  Emin=        0 eV    Emax=       10 TeV
+
+CoulombScat:   for  proton    SubType= 1
+      Lambda table from 100 eV  to 10 TeV in 49 bins, spline: 1
+      180 < Theta(degree) < 180; pLimit(GeV^1)= 0.139531
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+  eCoulombScattering :  Emin=        0 eV    Emax=       10 TeV
+
+msc:   for GenericIon    SubType= 10
+      RangeFactor= 0.2, stepLimitType: 0, latDisplacement: 0
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+            UrbanMsc :  Emin=        0 eV    Emax=       10 TeV
+
+ionIoni:   for  GenericIon    SubType= 2
+      dE/dx and range tables from 100 eV  to 10 TeV in 77 bins
+      Lambda tables from threshold to 10 TeV in 77 bins, spline: 1
+      finalRange(mm)= 0.01, dRoverRange= 0.1, integral: 1, fluct: 1, linLossLimit= 0.02
+      Stopping Power data for 17 ion/material pairs 
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+            BraggIon :  Emin=        0 eV    Emax=        2 MeV
+          BetheBloch :  Emin=        2 MeV   Emax=       10 TeV
+
+msc:   for alpha    SubType= 10
+      RangeFactor= 0.2, stepLimitType: 0, latDisplacement: 0
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+            UrbanMsc :  Emin=        0 eV    Emax=       10 TeV  Table with 77 bins Emin=    100 eV    Emax=     10 TeV
+
+ionIoni:   for  alpha    SubType= 2
+      dE/dx and range tables from 100 eV  to 10 TeV in 77 bins
+      Lambda tables from threshold to 10 TeV in 77 bins, spline: 1
+      finalRange(mm)= 0.01, dRoverRange= 0.1, integral: 1, fluct: 1, linLossLimit= 0.02
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+            BraggIon :  Emin=        0 eV    Emax=   7.9452 MeV
+          BetheBloch :  Emin=   7.9452 MeV   Emax=       10 TeV
+
+msc:   for anti_proton    SubType= 10
+      RangeFactor= 0.2, step limit type: 0, lateralDisplacement: 1, polarAngleLimit(deg)= 180
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+        WentzelVIUni :  Emin=        0 eV    Emax=       10 TeV  Table with 77 bins Emin=    100 eV    Emax=     10 TeV
+
+hIoni:   for  anti_proton    SubType= 2
+      dE/dx and range tables from 100 eV  to 10 TeV in 77 bins
+      Lambda tables from threshold to 10 TeV in 77 bins, spline: 1
+      finalRange(mm)= 0.1, dRoverRange= 0.2, integral: 1, fluct: 1, linLossLimit= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+            ICRU73QO :  Emin=        0 eV    Emax=        2 MeV
+          BetheBloch :  Emin=        2 MeV   Emax=       10 TeV
+
+hBrems:   for  anti_proton    SubType= 3
+      dE/dx and range tables from 100 eV  to 10 TeV in 77 bins
+      Lambda tables from threshold to 10 TeV in 77 bins, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               hBrem :  Emin=        0 eV    Emax=       10 TeV
+
+hPairProd:   for  anti_proton    SubType= 4
+      dE/dx and range tables from 100 eV  to 10 TeV in 77 bins
+      Lambda tables from threshold to 10 TeV in 77 bins, spline: 1
+      Sampling table 13x1001; from 7.50618 GeV to 10 TeV 
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+           hPairProd :  Emin=        0 eV    Emax=       10 TeV
+
+msc:   for kaon+    SubType= 10
+      RangeFactor= 0.2, step limit type: 0, lateralDisplacement: 1, polarAngleLimit(deg)= 180
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+        WentzelVIUni :  Emin=        0 eV    Emax=       10 TeV  Table with 77 bins Emin=    100 eV    Emax=     10 TeV
+
+hIoni:   for  kaon+    SubType= 2
+      dE/dx and range tables from 100 eV  to 10 TeV in 77 bins
+      Lambda tables from threshold to 10 TeV in 77 bins, spline: 1
+      finalRange(mm)= 0.1, dRoverRange= 0.2, integral: 1, fluct: 1, linLossLimit= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               Bragg :  Emin=        0 eV    Emax=  1.05231 MeV
+          BetheBloch :  Emin=  1.05231 MeV   Emax=       10 TeV
+
+hBrems:   for  kaon+    SubType= 3
+      dE/dx and range tables from 100 eV  to 10 TeV in 77 bins
+      Lambda tables from threshold to 10 TeV in 77 bins, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               hBrem :  Emin=        0 eV    Emax=       10 TeV
+
+hPairProd:   for  kaon+    SubType= 4
+      dE/dx and range tables from 100 eV  to 10 TeV in 77 bins
+      Lambda tables from threshold to 10 TeV in 77 bins, spline: 1
+      Sampling table 14x1001; from 3.94942 GeV to 10 TeV 
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+           hPairProd :  Emin=        0 eV    Emax=       10 TeV
+
+CoulombScat:   for  kaon+    SubType= 1
+      Lambda table from 100 eV  to 10 TeV in 47 bins, spline: 1
+      180 < Theta(degree) < 180; pLimit(GeV^1)= 0.139531
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+  eCoulombScattering :  Emin=        0 eV    Emax=       10 TeV
+
+msc:   for kaon-    SubType= 10
+      RangeFactor= 0.2, step limit type: 0, lateralDisplacement: 1, polarAngleLimit(deg)= 180
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+        WentzelVIUni :  Emin=        0 eV    Emax=       10 TeV  Table with 77 bins Emin=    100 eV    Emax=     10 TeV
+
+hIoni:   for  kaon-    SubType= 2
+      dE/dx and range tables from 100 eV  to 10 TeV in 77 bins
+      Lambda tables from threshold to 10 TeV in 77 bins, spline: 1
+      finalRange(mm)= 0.1, dRoverRange= 0.2, integral: 1, fluct: 1, linLossLimit= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+            ICRU73QO :  Emin=        0 eV    Emax=  1.05231 MeV
+          BetheBloch :  Emin=  1.05231 MeV   Emax=       10 TeV
+
+hBrems:   for  kaon-    SubType= 3
+      dE/dx and range tables from 100 eV  to 10 TeV in 77 bins
+      Lambda tables from threshold to 10 TeV in 77 bins, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               hBrem :  Emin=        0 eV    Emax=       10 TeV
+
+hPairProd:   for  kaon-    SubType= 4
+      dE/dx and range tables from 100 eV  to 10 TeV in 77 bins
+      Lambda tables from threshold to 10 TeV in 77 bins, spline: 1
+      Sampling table 14x1001; from 3.94942 GeV to 10 TeV 
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+           hPairProd :  Emin=        0 eV    Emax=       10 TeV
+
+msc:   for mu+    SubType= 10
+      RangeFactor= 0.2, step limit type: 0, lateralDisplacement: 1, polarAngleLimit(deg)= 180
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+        WentzelVIUni :  Emin=        0 eV    Emax=       10 TeV  Table with 77 bins Emin=    100 eV    Emax=     10 TeV
+
+muIoni:   for  mu+    SubType= 2
+      dE/dx and range tables from 100 eV  to 10 TeV in 77 bins
+      Lambda tables from threshold to 10 TeV in 77 bins, spline: 1
+      finalRange(mm)= 1, dRoverRange= 0.2, integral: 1, fluct: 1, linLossLimit= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               Bragg :  Emin=        0 eV    Emax=      200 keV
+          BetheBloch :  Emin=      200 keV   Emax=        1 GeV
+        MuBetheBloch :  Emin=        1 GeV   Emax=       10 TeV
+
+muBrems:   for  mu+    SubType= 3
+      dE/dx and range tables from 100 eV  to 10 TeV in 77 bins
+      Lambda tables from threshold to 10 TeV in 77 bins, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+              MuBrem :  Emin=        0 eV    Emax=       10 TeV
+
+muPairProd:   for  mu+    SubType= 4
+      dE/dx and range tables from 100 eV  to 10 TeV in 77 bins
+      Lambda tables from threshold to 10 TeV in 77 bins, spline: 1
+      Sampling table 17x1001; from 1 GeV to 10 TeV 
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+          muPairProd :  Emin=        0 eV    Emax=       10 TeV
+
+CoulombScat:   for  mu+    SubType= 1
+      Lambda table from 100 eV  to 10 TeV in 43 bins, spline: 1
+      180 < Theta(degree) < 180; pLimit(GeV^1)= 0.139531
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+  eCoulombScattering :  Emin=        0 eV    Emax=       10 TeV
+
+msc:   for mu-    SubType= 10
+      RangeFactor= 0.2, step limit type: 0, lateralDisplacement: 1, polarAngleLimit(deg)= 180
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+        WentzelVIUni :  Emin=        0 eV    Emax=       10 TeV  Table with 77 bins Emin=    100 eV    Emax=     10 TeV
+
+muIoni:   for  mu-    SubType= 2
+      dE/dx and range tables from 100 eV  to 10 TeV in 77 bins
+      Lambda tables from threshold to 10 TeV in 77 bins, spline: 1
+      finalRange(mm)= 1, dRoverRange= 0.2, integral: 1, fluct: 1, linLossLimit= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+            ICRU73QO :  Emin=        0 eV    Emax=      200 keV
+          BetheBloch :  Emin=      200 keV   Emax=        1 GeV
+        MuBetheBloch :  Emin=        1 GeV   Emax=       10 TeV
+
+muBrems:   for  mu-    SubType= 3
+      dE/dx and range tables from 100 eV  to 10 TeV in 77 bins
+      Lambda tables from threshold to 10 TeV in 77 bins, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+              MuBrem :  Emin=        0 eV    Emax=       10 TeV
+
+muPairProd:   for  mu-    SubType= 4
+      dE/dx and range tables from 100 eV  to 10 TeV in 77 bins
+      Lambda tables from threshold to 10 TeV in 77 bins, spline: 1
+      Sampling table 17x1001; from 1 GeV to 10 TeV 
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+          muPairProd :  Emin=        0 eV    Emax=       10 TeV
+
+CoulombScat:   for  mu-    SubType= 1
+      Lambda table from 100 eV  to 10 TeV in 43 bins, spline: 1
+      180 < Theta(degree) < 180; pLimit(GeV^1)= 0.139531
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+  eCoulombScattering :  Emin=        0 eV    Emax=       10 TeV
+NeutronHP: /Capture file for Z = 6, A = 12 is not found and NeutronHP will use /var/phy/project/hep/neutrino/soft-SL6/geant4/Geant4-10.0.2-Linux/share/Geant4-10.0.2/data/G4NDL4.4/Capture/CrossSection/6_nat_Carbon
+NeutronHP: /Elastic file for Z = 6, A = 12 is not found and NeutronHP will use /var/phy/project/hep/neutrino/soft-SL6/geant4/Geant4-10.0.2-Linux/share/Geant4-10.0.2/data/G4NDL4.4/Elastic/CrossSection/6_nat_Carbon
+NeutronHP: /Inelastic file for Z = 6, A = 12 is not found and NeutronHP will use /var/phy/project/hep/neutrino/soft-SL6/geant4/Geant4-10.0.2-Linux/share/Geant4-10.0.2/data/G4NDL4.4/Inelastic/CrossSection/6_nat_Carbon
+NeutronHP: /Capture file for Z = 6, A = 13 is not found and NeutronHP will use /var/phy/project/hep/neutrino/soft-SL6/geant4/Geant4-10.0.2-Linux/share/Geant4-10.0.2/data/G4NDL4.4/Capture/CrossSection/6_nat_Carbon
+NeutronHP: /Elastic file for Z = 6, A = 13 is not found and NeutronHP will use /var/phy/project/hep/neutrino/soft-SL6/geant4/Geant4-10.0.2-Linux/share/Geant4-10.0.2/data/G4NDL4.4/Elastic/CrossSection/6_nat_Carbon
+NeutronHP: /Inelastic file for Z = 6, A = 13 is not found and NeutronHP will use /var/phy/project/hep/neutrino/soft-SL6/geant4/Geant4-10.0.2-Linux/share/Geant4-10.0.2/data/G4NDL4.4/Inelastic/CrossSection/6_nat_Carbon
+NeutronHP: /Capture file for Z = 8, A = 18 is not found and NeutronHP will use /var/phy/project/hep/neutrino/soft-SL6/geant4/Geant4-10.0.2-Linux/share/Geant4-10.0.2/data/G4NDL4.4/Capture/CrossSection/8_17_Oxygen
+NeutronHP: /Elastic file for Z = 8, A = 18 is not found and NeutronHP will use /var/phy/project/hep/neutrino/soft-SL6/geant4/Geant4-10.0.2-Linux/share/Geant4-10.0.2/data/G4NDL4.4/Elastic/CrossSection/8_17_Oxygen
+NeutronHP: /Inelastic file for Z = 8, A = 18 is not found and NeutronHP will use /var/phy/project/hep/neutrino/soft-SL6/geant4/Geant4-10.0.2-Linux/share/Geant4-10.0.2/data/G4NDL4.4/Inelastic/CrossSection/8_17_Oxygen
+NeutronHP: /Capture file for Z = 6, A = 12 is not found and NeutronHP will use /var/phy/project/hep/neutrino/soft-SL6/geant4/Geant4-10.0.2-Linux/share/Geant4-10.0.2/data/G4NDL4.4/Capture/CrossSection/6_nat_Carbon
+NeutronHP: /Elastic file for Z = 6, A = 12 is not found and NeutronHP will use /var/phy/project/hep/neutrino/soft-SL6/geant4/Geant4-10.0.2-Linux/share/Geant4-10.0.2/data/G4NDL4.4/Elastic/CrossSection/6_nat_Carbon
+NeutronHP: /Inelastic file for Z = 6, A = 12 is not found and NeutronHP will use /var/phy/project/hep/neutrino/soft-SL6/geant4/Geant4-10.0.2-Linux/share/Geant4-10.0.2/data/G4NDL4.4/Inelastic/CrossSection/6_nat_Carbon
+NeutronHP: /Capture file for Z = 6, A = 13 is not found and NeutronHP will use /var/phy/project/hep/neutrino/soft-SL6/geant4/Geant4-10.0.2-Linux/share/Geant4-10.0.2/data/G4NDL4.4/Capture/CrossSection/6_nat_Carbon
+NeutronHP: /Elastic file for Z = 6, A = 13 is not found and NeutronHP will use /var/phy/project/hep/neutrino/soft-SL6/geant4/Geant4-10.0.2-Linux/share/Geant4-10.0.2/data/G4NDL4.4/Elastic/CrossSection/6_nat_Carbon
+NeutronHP: /Inelastic file for Z = 6, A = 13 is not found and NeutronHP will use /var/phy/project/hep/neutrino/soft-SL6/geant4/Geant4-10.0.2-Linux/share/Geant4-10.0.2/data/G4NDL4.4/Inelastic/CrossSection/6_nat_Carbon
+
+msc:   for pi+    SubType= 10
+      RangeFactor= 0.2, step limit type: 0, lateralDisplacement: 1, polarAngleLimit(deg)= 180
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+        WentzelVIUni :  Emin=        0 eV    Emax=       10 TeV  Table with 77 bins Emin=    100 eV    Emax=     10 TeV
+
+hIoni:   for  pi+    SubType= 2
+      dE/dx and range tables from 100 eV  to 10 TeV in 77 bins
+      Lambda tables from threshold to 10 TeV in 77 bins, spline: 1
+      finalRange(mm)= 0.1, dRoverRange= 0.2, integral: 1, fluct: 1, linLossLimit= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               Bragg :  Emin=        0 eV    Emax=  297.505 keV
+          BetheBloch :  Emin=  297.505 keV   Emax=       10 TeV
+
+hBrems:   for  pi+    SubType= 3
+      dE/dx and range tables from 100 eV  to 10 TeV in 77 bins
+      Lambda tables from threshold to 10 TeV in 77 bins, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               hBrem :  Emin=        0 eV    Emax=       10 TeV
+
+hPairProd:   for  pi+    SubType= 4
+      dE/dx and range tables from 100 eV  to 10 TeV in 77 bins
+      Lambda tables from threshold to 10 TeV in 77 bins, spline: 1
+      Sampling table 16x1001; from 1.11656 GeV to 10 TeV 
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+           hPairProd :  Emin=        0 eV    Emax=       10 TeV
+
+CoulombScat:   for  pi+    SubType= 1
+      Lambda table from 100 eV  to 10 TeV in 44 bins, spline: 1
+      180 < Theta(degree) < 180; pLimit(GeV^1)= 0.139531
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+  eCoulombScattering :  Emin=        0 eV    Emax=       10 TeV
+
+msc:   for pi-    SubType= 10
+      RangeFactor= 0.2, step limit type: 0, lateralDisplacement: 1, polarAngleLimit(deg)= 180
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+        WentzelVIUni :  Emin=        0 eV    Emax=       10 TeV  Table with 77 bins Emin=    100 eV    Emax=     10 TeV
+
+hIoni:   for  pi-    SubType= 2
+      dE/dx and range tables from 100 eV  to 10 TeV in 77 bins
+      Lambda tables from threshold to 10 TeV in 77 bins, spline: 1
+      finalRange(mm)= 0.1, dRoverRange= 0.2, integral: 1, fluct: 1, linLossLimit= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+            ICRU73QO :  Emin=        0 eV    Emax=  297.505 keV
+          BetheBloch :  Emin=  297.505 keV   Emax=       10 TeV
+
+hBrems:   for  pi-    SubType= 3
+      dE/dx and range tables from 100 eV  to 10 TeV in 77 bins
+      Lambda tables from threshold to 10 TeV in 77 bins, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               hBrem :  Emin=        0 eV    Emax=       10 TeV
+
+hPairProd:   for  pi-    SubType= 4
+      dE/dx and range tables from 100 eV  to 10 TeV in 77 bins
+      Lambda tables from threshold to 10 TeV in 77 bins, spline: 1
+      Sampling table 16x1001; from 1.11656 GeV to 10 TeV 
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+           hPairProd :  Emin=        0 eV    Emax=       10 TeV
+
+====================================================================
+                  HADRONIC PROCESSES SUMMARY (verbose level 1)
+
+---------------------------------------------------
+                           Hadronic Processes for GenericIon
+
+  Process: ionInelastic
+        Model:  Binary Light Ion Cascade: 0 eV  ---> 4 GeV
+        Model:                      FTFP: 2 GeV ---> 100 TeV
+     Cr_sctns: Glauber-Gribov nucleus nucleus: 0 eV  ---> 2.88022e+295 J  
+     Cr_sctns:          GheishaInelastic: 0 eV  ---> 100 TeV
+
+---------------------------------------------------
+                           Hadronic Processes for anti_neutron
+
+  Process: hadElastic
+        Model:              hElasticLHEP: 0 eV  ---> 100 TeV
+     Cr_sctns:            GheishaElastic: 0 eV  ---> 100 TeV
+
+  Process: anti_neutronInelastic
+        Model:                      FTFP: 0 eV  ---> 100 TeV
+     Cr_sctns:              AntiAGlauber: 0 eV  ---> 2.88022e+295 J  
+     Cr_sctns:          GheishaInelastic: 0 eV  ---> 100 TeV
+
+---------------------------------------------------
+                           Hadronic Processes for anti_proton
+
+  Process: hadElastic
+        Model:              hElasticLHEP: 0 eV  ---> 100.1 MeV
+        Model:              AntiAElastic: 100 MeV ---> 100 TeV
+     Cr_sctns:              AntiAGlauber: 0 eV  ---> 2.88022e+295 J  
+     Cr_sctns:            GheishaElastic: 0 eV  ---> 100 TeV
+
+  Process: anti_protonInelastic
+        Model:                      FTFP: 0 eV  ---> 100 TeV
+     Cr_sctns:              AntiAGlauber: 0 eV  ---> 2.88022e+295 J  
+     Cr_sctns:          GheishaInelastic: 0 eV  ---> 100 TeV
+
+  Process: hFritiofCaptureAtRest
+
+---------------------------------------------------
+                           Hadronic Processes for e+
+
+  Process: positronNuclear
+        Model:   G4ElectroVDNuclearModel: 0 eV  ---> 1 PeV
+     Cr_sctns:          ElectroNuclearXS: 0 eV  ---> 100 TeV
+     Cr_sctns:          GheishaInelastic: 0 eV  ---> 100 TeV
+
+---------------------------------------------------
+                           Hadronic Processes for e-
+
+  Process: electronNuclear
+        Model:   G4ElectroVDNuclearModel: 0 eV  ---> 1 PeV
+     Cr_sctns:          ElectroNuclearXS: 0 eV  ---> 100 TeV
+     Cr_sctns:          GheishaInelastic: 0 eV  ---> 100 TeV
+
+---------------------------------------------------
+                           Hadronic Processes for gamma
+
+  Process: photonNuclear
+        Model:            BertiniCascade: 0 eV  ---> 3.5 GeV
+        Model:           TheoFSGenerator: 3 GeV ---> 100 TeV
+     Cr_sctns:            PhotoNuclearXS: 0 eV  ---> 100 TeV
+     Cr_sctns:          GheishaInelastic: 0 eV  ---> 100 TeV
+
+---------------------------------------------------
+                           Hadronic Processes for kaon+
+
+  Process: hadElastic
+        Model:              hElasticLHEP: 0 eV  ---> 100 TeV
+     Cr_sctns:            GheishaElastic: 0 eV  ---> 100 TeV
+
+  Process: kaon+Inelastic
+        Model:                      QGSP: 12 GeV ---> 100 TeV
+        Model:                      FTFP: 4 GeV ---> 25 GeV
+        Model:            BertiniCascade: 0 eV  ---> 5 GeV
+     Cr_sctns:  ChipsKaonPlusInelasticXS: 0 eV  ---> 100 TeV
+     Cr_sctns:          GheishaInelastic: 0 eV  ---> 100 TeV
+
+---------------------------------------------------
+                           Hadronic Processes for kaon-
+
+  Process: hadElastic
+        Model:              hElasticLHEP: 0 eV  ---> 100 TeV
+     Cr_sctns:            GheishaElastic: 0 eV  ---> 100 TeV
+
+  Process: kaon-Inelastic
+        Model:                      QGSP: 12 GeV ---> 100 TeV
+        Model:                      FTFP: 4 GeV ---> 25 GeV
+        Model:            BertiniCascade: 0 eV  ---> 5 GeV
+     Cr_sctns: ChipsKaonMinusInelasticXS: 0 eV  ---> 100 TeV
+     Cr_sctns:          GheishaInelastic: 0 eV  ---> 100 TeV
+
+  Process: hBertiniCaptureAtRest
+
+---------------------------------------------------
+                           Hadronic Processes for lambda
+
+  Process: hadElastic
+        Model:              hElasticLHEP: 0 eV  ---> 100 TeV
+     Cr_sctns:            GheishaElastic: 0 eV  ---> 100 TeV
+
+  Process: lambdaInelastic
+        Model:            BertiniCascade: 0 eV  ---> 6 GeV
+        Model:                      FTFP: 2 GeV ---> 100 TeV
+     Cr_sctns:   ChipsHyperonInelasticXS: 0 eV  ---> 100 TeV
+     Cr_sctns:          GheishaInelastic: 0 eV  ---> 100 TeV
+
+---------------------------------------------------
+                           Hadronic Processes for mu-
+
+  Process: muMinusCaptureAtRest
+
+---------------------------------------------------
+                           Hadronic Processes for neutron
+
+  Process: hadElastic
+        Model:             hElasticCHIPS: 19.5 MeV ---> 100 TeV
+        Model:          NeutronHPElastic: 0 eV  ---> 20 MeV
+     Cr_sctns:        NeutronHPElasticXS: 0 eV  ---> 20 MeV
+     Cr_sctns:     ChipsNeutronElasticXS: 0 eV  ---> 100 TeV
+     Cr_sctns:            GheishaElastic: 0 eV  ---> 100 TeV
+
+  Process: neutronInelastic
+        Model:                      QGSP: 12 GeV ---> 100 TeV
+        Model:                      FTFP: 9.5 GeV ---> 25 GeV
+        Model:            Binary Cascade: 19.9 MeV ---> 9.9 GeV
+        Model:        NeutronHPInelastic: 0 eV  ---> 20 MeV
+     Cr_sctns:      NeutronHPInelasticXS: 0 eV  ---> 20 MeV
+     Cr_sctns:       Barashenkov-Glauber: 0 eV  ---> 100 TeV
+     Cr_sctns:       Barashenkov-Glauber: 0 eV  ---> 100 TeV
+     Cr_sctns:          GheishaInelastic: 0 eV  ---> 100 TeV
+
+  Process: nCapture
+        Model:          NeutronHPCapture: 0 eV  ---> 20 MeV
+        Model:               nRadCapture: 19.9 MeV ---> 100 TeV
+     Cr_sctns:        NeutronHPCaptureXS: 0 eV  ---> 20 MeV
+     Cr_sctns:        G4NeutronCaptureXS: 0 eV  ---> 100 TeV
+     Cr_sctns:        NeutronHPCaptureXS: 0 eV  ---> 20 MeV
+     Cr_sctns:          GheishaCaptureXS: 0 eV  ---> 100 TeV
+
+  Process: nFission
+        Model:          NeutronHPFission: 0 eV  ---> 20 MeV
+        Model:                G4LFission: 19.9 MeV ---> 2.88022e+295 J  
+     Cr_sctns:        NeutronHPFissionXS: 0 eV  ---> 20 MeV
+     Cr_sctns:          GheishaFissionXS: 0 eV  ---> 100 TeV
+
+---------------------------------------------------
+                           Hadronic Processes for pi+
+
+  Process: hadElastic
+        Model:              hElasticLHEP: 0 eV  ---> 1.0001 GeV
+        Model:           hElasticGlauber: 1 GeV ---> 100 TeV
+     Cr_sctns:       Barashenkov-Glauber: 0 eV  ---> 100 TeV
+     Cr_sctns:            GheishaElastic: 0 eV  ---> 100 TeV
+
+  Process: pi+Inelastic
+        Model:                      QGSP: 12 GeV ---> 100 TeV
+        Model:                      FTFP: 4 GeV ---> 25 GeV
+        Model:            BertiniCascade: 0 eV  ---> 5 GeV
+     Cr_sctns:      G4CrossSectionPairGG: 0 eV  ---> 100 TeV
+                         G4CrossSectionPairGG: G4PiNuclearCrossSection cross sections 
+                           below 91 GeV, Glauber-Gribov above 
+     Cr_sctns:      G4CrossSectionPairGG: 0 eV  ---> 100 TeV
+                         G4CrossSectionPairGG: G4PiNuclearCrossSection cross sections 
+                           below 91 GeV, Glauber-Gribov above 
+     Cr_sctns:          GheishaInelastic: 0 eV  ---> 100 TeV
+
+---------------------------------------------------
+                           Hadronic Processes for pi-
+
+  Process: hadElastic
+        Model:              hElasticLHEP: 0 eV  ---> 1.0001 GeV
+        Model:           hElasticGlauber: 1 GeV ---> 100 TeV
+     Cr_sctns:       Barashenkov-Glauber: 0 eV  ---> 100 TeV
+     Cr_sctns:            GheishaElastic: 0 eV  ---> 100 TeV
+
+  Process: pi-Inelastic
+        Model:                      QGSP: 12 GeV ---> 100 TeV
+        Model:                      FTFP: 4 GeV ---> 25 GeV
+        Model:            BertiniCascade: 0 eV  ---> 5 GeV
+     Cr_sctns:      G4CrossSectionPairGG: 0 eV  ---> 100 TeV
+                         G4CrossSectionPairGG: G4PiNuclearCrossSection cross sections 
+                           below 91 GeV, Glauber-Gribov above 
+     Cr_sctns:      G4CrossSectionPairGG: 0 eV  ---> 100 TeV
+                         G4CrossSectionPairGG: G4PiNuclearCrossSection cross sections 
+                           below 91 GeV, Glauber-Gribov above 
+     Cr_sctns:          GheishaInelastic: 0 eV  ---> 100 TeV
+
+  Process: hBertiniCaptureAtRest
+
+---------------------------------------------------
+                           Hadronic Processes for proton
+
+  Process: hadElastic
+        Model:             hElasticCHIPS: 0 eV  ---> 100 TeV
+     Cr_sctns:      ChipsProtonElasticXS: 0 eV  ---> 100 TeV
+     Cr_sctns:            GheishaElastic: 0 eV  ---> 100 TeV
+
+  Process: protonInelastic
+        Model:                      QGSP: 12 GeV ---> 100 TeV
+        Model:                      FTFP: 9.5 GeV ---> 25 GeV
+        Model:            Binary Cascade: 0 eV  ---> 9.9 GeV
+     Cr_sctns:       Barashenkov-Glauber: 0 eV  ---> 100 TeV
+     Cr_sctns:       Barashenkov-Glauber: 0 eV  ---> 100 TeV
+     Cr_sctns:          GheishaInelastic: 0 eV  ---> 100 TeV
+
+================================================================
+WARNING: No current scene handler.
+... open Root analysis file : singleRun_1411275733.root - done
+Reached 100 event mark. Ongoing...
+Reached 200 event mark. Ongoing...
+Reached 300 event mark. Ongoing...
+collecting: 354 3MEV
+Reached 400 event mark. Ongoing...
+collecting: 468 5MEV
+Reached 500 event mark. Ongoing...
+Reached 600 event mark. Ongoing...
+collecting: 612 2MEV
+collecting: 677 2MEV
+Reached 700 event mark. Ongoing...
+Reached 800 event mark. Ongoing...
+Reached 900 event mark. Ongoing...
+collecting: 953 2MEV
+Reached 1000 event mark. Ongoing...
+collecting: 1494 2MEV
+collecting: 1955 2MEV
+Reached 2000 event mark. Ongoing...
+collecting: 2524 2MEV
+collecting: 2587 2MEV
+collecting: 2673 2MEV
+collecting: 2874 2MEV
+Reached 3000 event mark. Ongoing...
+collecting: 3248 2MEV
+collecting: 3512 3MEV
+collecting: 3806 3MEV
+collecting: 3886 3MEV
+Reached 4000 event mark. Ongoing...
+collecting: 4498 2MEV
+collecting: 4565 3MEV
+Reached 5000 event mark. Ongoing...
+collecting: 5011 5MEV
+collecting: 5215 2MEV
+collecting: 5930 2MEV
+Reached 6000 event mark. Ongoing...
+collecting: 6366 2MEV
+collecting: 6419 5MEV
+collecting: 6671 3MEV
+Reached 7000 event mark. Ongoing...
+collecting: 7118 3MEV
+collecting: 7520 5MEV
+Reached 8000 event mark. Ongoing...
+collecting: 8261 3MEV
+collecting: 8471 3MEV
+collecting: 8799 3MEV
+collecting: 8865 2MEV
+collecting: 8924 3MEV
+Reached 9000 event mark. Ongoing...
+collecting: 9043 3MEV
+collecting: 9082 2MEV
+collecting: 9097 3MEV
+collecting: 9227 2MEV
+Reached 10000 event mark. Ongoing...
+collecting: 10027 2MEV
+collecting: 10499 3MEV
+collecting: 10750 3MEV
+collecting: 10985 2MEV
+Reached 11000 event mark. Ongoing...
+collecting: 11502 3MEV
+collecting: 11761 2MEV
+Reached 12000 event mark. Ongoing...
+collecting: 12371 2MEV
+collecting: 12706 2MEV
+collecting: 12995 3MEV
+Reached 13000 event mark. Ongoing...
+collecting: 13498 2MEV
+collecting: 13643 3MEV
+collecting: 13993 2MEV
+Reached 14000 event mark. Ongoing...
+collecting: 14310 2MEV
+collecting: 14570 2MEV
+collecting: 14637 2MEV
+collecting: 14752 2MEV
+Reached 15000 event mark. Ongoing...
+collecting: 15092 2MEV
+collecting: 15268 2MEV
+collecting: 15269 3MEV
+collecting: 15308 3MEV
+collecting: 15479 2MEV
+collecting: 15586 2MEV
+collecting: 15847 2MEV
+Reached 16000 event mark. Ongoing...
+collecting: 16118 2MEV
+collecting: 16278 3MEV
+collecting: 16421 2MEV
+collecting: 16653 2MEV
+collecting: 16824 3MEV
+Reached 17000 event mark. Ongoing...
+collecting: 17286 3MEV
+collecting: 17468 5MEV
+collecting: 17670 2MEV
+collecting: 17722 2MEV
+Reached 18000 event mark. Ongoing...
+collecting: 18089 2MEV
+collecting: 18905 2MEV
+Reached 19000 event mark. Ongoing...
+collecting: 19142 2MEV
+Reached 20000 event mark. Ongoing...
+collecting: 20033 2MEV
+collecting: 20124 2MEV
+collecting: 20478 3MEV
+collecting: 20576 3MEV
+Reached 21000 event mark. Ongoing...
+collecting: 21235 2MEV
+collecting: 21787 2MEV
+collecting: 21865 2MEV
+collecting: 21959 2MEV
+Reached 22000 event mark. Ongoing...
+collecting: 22006 2MEV
+collecting: 22065 2MEV
+collecting: 22832 2MEV
+Reached 23000 event mark. Ongoing...
+collecting: 23357 3MEV
+collecting: 23873 2MEV
+collecting: 23881 2MEV
+Reached 24000 event mark. Ongoing...
+collecting: 24263 3MEV
+collecting: 24314 2MEV
+collecting: 24880 2MEV
+Reached 25000 event mark. Ongoing...
+collecting: 25153 2MEV
+collecting: 25352 5MEV
+collecting: 25451 2MEV
+Reached 26000 event mark. Ongoing...
+collecting: 26236 3MEV
+collecting: 26254 2MEV
+collecting: 26332 2MEV
+collecting: 26427 2MEV
+collecting: 26485 2MEV
+Reached 27000 event mark. Ongoing...
+collecting: 27160 3MEV
+collecting: 27400 2MEV
+collecting: 27401 3MEV
+collecting: 27482 3MEV
+collecting: 27544 2MEV
+Reached 28000 event mark. Ongoing...
+collecting: 28067 3MEV
+collecting: 28181 3MEV
+collecting: 28334 2MEV
+collecting: 28454 2MEV
+Reached 29000 event mark. Ongoing...
+collecting: 29271 3MEV
+collecting: 29289 2MEV
+collecting: 29296 3MEV
+collecting: 29805 2MEV
+Reached 30000 event mark. Ongoing...
+collecting: 30196 2MEV
+collecting: 30213 2MEV
+collecting: 30437 5MEV
+collecting: 30553 3MEV
+collecting: 30619 2MEV
+collecting: 30747 3MEV
+collecting: 30775 3MEV
+Reached 31000 event mark. Ongoing...
+collecting: 31183 2MEV
+collecting: 31294 5MEV
+collecting: 31610 2MEV
+collecting: 31663 2MEV
+collecting: 31904 2MEV
+Reached 32000 event mark. Ongoing...
+collecting: 32040 3MEV
+collecting: 32081 2MEV
+Reached 33000 event mark. Ongoing...
+collecting: 33678 2MEV
+collecting: 33860 3MEV
+Reached 34000 event mark. Ongoing...
+collecting: 34957 3MEV
+Reached 35000 event mark. Ongoing...
+collecting: 35037 3MEV
+collecting: 35167 5MEV
+collecting: 35338 2MEV
+collecting: 35711 3MEV
+Reached 36000 event mark. Ongoing...
+collecting: 36367 2MEV
+collecting: 36419 2MEV
+collecting: 36520 3MEV
+collecting: 36584 3MEV
+collecting: 36866 2MEV
+Reached 37000 event mark. Ongoing...
+collecting: 37091 3MEV
+collecting: 37422 2MEV
+collecting: 37650 3MEV
+Reached 38000 event mark. Ongoing...
+collecting: 38591 2MEV
+collecting: 38809 3MEV
+collecting: 38984 3MEV
+Reached 39000 event mark. Ongoing...
+collecting: 39132 3MEV
+collecting: 39171 5MEV
+collecting: 39205 2MEV
+collecting: 39224 2MEV
+collecting: 39472 3MEV
+collecting: 39574 2MEV
+collecting: 39818 2MEV
+Reached 40000 event mark. Ongoing...
+collecting: 40089 2MEV
+collecting: 40514 2MEV
+collecting: 40664 2MEV
+Reached 41000 event mark. Ongoing...
+collecting: 41080 5MEV
+Reached 42000 event mark. Ongoing...
+collecting: 42013 2MEV
+collecting: 42314 2MEV
+collecting: 42317 2MEV
+collecting: 42410 2MEV
+collecting: 42532 3MEV
+collecting: 42540 3MEV
+collecting: 42628 3MEV
+collecting: 42797 2MEV
+collecting: 42804 5MEV
+collecting: 42824 2MEV
+collecting: 42827 3MEV
+collecting: 42858 2MEV
+Reached 43000 event mark. Ongoing...
+collecting: 43008 2MEV
+collecting: 43088 2MEV
+Reached 44000 event mark. Ongoing...
+collecting: 44023 2MEV
+collecting: 44312 5MEV
+collecting: 44320 5MEV
+collecting: 44834 2MEV
+Reached 45000 event mark. Ongoing...
+collecting: 45150 2MEV
+Reached 46000 event mark. Ongoing...
+collecting: 46031 2MEV
+collecting: 46515 3MEV
+collecting: 46972 2MEV
+Reached 47000 event mark. Ongoing...
+collecting: 47004 2MEV
+collecting: 47181 5MEV
+collecting: 47330 2MEV
+Reached 48000 event mark. Ongoing...
+collecting: 48743 2MEV
+Reached 49000 event mark. Ongoing...
+collecting: 49174 5MEV
+collecting: 49241 2MEV
+collecting: 49378 3MEV
+collecting: 49715 3MEV
+Reached 50000 event mark. Ongoing...
+collecting: 50236 2MEV
+collecting: 50358 2MEV
+collecting: 50420 3MEV
+collecting: 50853 3MEV
+collecting: 50875 3MEV
+Reached 51000 event mark. Ongoing...
+collecting: 51276 5MEV
+collecting: 51349 3MEV
+collecting: 51401 5MEV
+collecting: 51440 3MEV
+collecting: 51818 3MEV
+collecting: 51939 2MEV
+collecting: 51990 2MEV
+Reached 52000 event mark. Ongoing...
+Reached 53000 event mark. Ongoing...
+collecting: 53101 2MEV
+collecting: 53290 5MEV
+collecting: 53669 2MEV
+collecting: 53727 2MEV
+Reached 54000 event mark. Ongoing...
+Reached 55000 event mark. Ongoing...
+collecting: 55716 2MEV
+Reached 56000 event mark. Ongoing...
+collecting: 56556 3MEV
+collecting: 56684 2MEV
+Reached 57000 event mark. Ongoing...
+collecting: 57716 3MEV
+Reached 58000 event mark. Ongoing...
+collecting: 58040 5MEV
+collecting: 58061 2MEV
+collecting: 58123 2MEV
+collecting: 58217 2MEV
+collecting: 58975 3MEV
+Reached 59000 event mark. Ongoing...
+collecting: 59541 2MEV
+collecting: 59793 2MEV
+Reached 60000 event mark. Ongoing...
+collecting: 60091 3MEV
+collecting: 60105 2MEV
+collecting: 60346 3MEV
+collecting: 60538 2MEV
+collecting: 60541 2MEV
+collecting: 60542 2MEV
+collecting: 60712 2MEV
+Reached 61000 event mark. Ongoing...
+collecting: 61189 2MEV
+collecting: 61778 5MEV
+Reached 62000 event mark. Ongoing...
+collecting: 62612 3MEV
+collecting: 62760 2MEV
+Reached 63000 event mark. Ongoing...
+collecting: 63451 2MEV
+collecting: 63827 5MEV
+Reached 64000 event mark. Ongoing...
+collecting: 64136 2MEV
+collecting: 64316 2MEV
+collecting: 64649 2MEV
+collecting: 64776 2MEV
+Reached 65000 event mark. Ongoing...
+collecting: 65653 5MEV
+collecting: 65692 2MEV
+collecting: 65697 3MEV
+collecting: 65711 3MEV
+collecting: 65743 3MEV
+Reached 66000 event mark. Ongoing...
+collecting: 66028 2MEV
+collecting: 66158 3MEV
+collecting: 66606 3MEV
+collecting: 66976 2MEV
+Reached 67000 event mark. Ongoing...
+collecting: 67380 5MEV
+collecting: 67523 2MEV
+collecting: 67597 3MEV
+collecting: 67817 3MEV
+collecting: 67915 3MEV
+Reached 68000 event mark. Ongoing...
+collecting: 68692 3MEV
+collecting: 68761 2MEV
+Reached 69000 event mark. Ongoing...
+collecting: 69045 2MEV
+collecting: 69204 2MEV
+collecting: 69615 2MEV
+Reached 70000 event mark. Ongoing...
+collecting: 70212 2MEV
+collecting: 70330 2MEV
+collecting: 70964 3MEV
+collecting: 70977 2MEV
+Reached 71000 event mark. Ongoing...
+collecting: 71091 3MEV
+collecting: 71787 2MEV
+collecting: 71848 2MEV
+Reached 72000 event mark. Ongoing...
+collecting: 72117 2MEV
+collecting: 72363 3MEV
+collecting: 72625 5MEV
+collecting: 72843 3MEV
+Reached 73000 event mark. Ongoing...
+collecting: 73018 3MEV
+collecting: 73051 2MEV
+collecting: 73413 3MEV
+collecting: 73704 2MEV
+collecting: 73718 5MEV
+collecting: 73719 2MEV
+Reached 74000 event mark. Ongoing...
+collecting: 74423 3MEV
+collecting: 74655 2MEV
+collecting: 74941 2MEV
+Reached 75000 event mark. Ongoing...
+collecting: 75249 2MEV
+Reached 76000 event mark. Ongoing...
+collecting: 76307 2MEV
+collecting: 76312 5MEV
+collecting: 76826 2MEV
+collecting: 76954 5MEV
+Reached 77000 event mark. Ongoing...
+collecting: 77001 2MEV
+collecting: 77231 2MEV
+collecting: 77577 2MEV
+collecting: 77997 2MEV
+Reached 78000 event mark. Ongoing...
+collecting: 78453 2MEV
+collecting: 78673 5MEV
+collecting: 78973 3MEV
+Reached 79000 event mark. Ongoing...
+collecting: 79496 3MEV
+Reached 80000 event mark. Ongoing...
+collecting: 80110 2MEV
+collecting: 80254 3MEV
+collecting: 80553 3MEV
+collecting: 80987 2MEV
+Reached 81000 event mark. Ongoing...
+collecting: 81528 5MEV
+Reached 82000 event mark. Ongoing...
+collecting: 82537 2MEV
+collecting: 82876 2MEV
+collecting: 82958 2MEV
+Reached 83000 event mark. Ongoing...
+collecting: 83122 2MEV
+collecting: 83230 2MEV
+collecting: 83329 3MEV
+collecting: 83757 2MEV
+collecting: 83877 3MEV
+Reached 84000 event mark. Ongoing...
+collecting: 84542 2MEV
+collecting: 84967 2MEV
+Reached 85000 event mark. Ongoing...
+collecting: 85136 2MEV
+collecting: 85592 2MEV
+collecting: 85595 5MEV
+collecting: 85895 2MEV
+Reached 86000 event mark. Ongoing...
+collecting: 86098 5MEV
+collecting: 86351 3MEV
+Reached 87000 event mark. Ongoing...
+collecting: 87316 3MEV
+collecting: 87339 3MEV
+collecting: 87346 3MEV
+collecting: 87582 3MEV
+collecting: 87708 2MEV
+collecting: 87753 2MEV
+collecting: 87877 3MEV
+collecting: 87952 2MEV
+Reached 88000 event mark. Ongoing...
+collecting: 88816 3MEV
+Reached 89000 event mark. Ongoing...
+collecting: 89556 2MEV
+Reached 90000 event mark. Ongoing...
+collecting: 90304 2MEV
+collecting: 90820 2MEV
+Reached 91000 event mark. Ongoing...
+collecting: 91084 3MEV
+collecting: 91739 3MEV
+collecting: 91945 2MEV
+Reached 92000 event mark. Ongoing...
+collecting: 92030 3MEV
+collecting: 92489 3MEV
+Reached 93000 event mark. Ongoing...
+collecting: 93082 3MEV
+collecting: 93124 2MEV
+collecting: 93159 2MEV
+collecting: 93232 5MEV
+collecting: 93270 5MEV
+collecting: 93421 2MEV
+collecting: 93437 2MEV
+collecting: 93440 2MEV
+collecting: 93855 5MEV
+Reached 94000 event mark. Ongoing...
+collecting: 94155 2MEV
+collecting: 94985 3MEV
+Reached 95000 event mark. Ongoing...
+collecting: 95216 2MEV
+collecting: 95498 2MEV
+Reached 96000 event mark. Ongoing...
+collecting: 96716 2MEV
+collecting: 96750 3MEV
+collecting: 96922 2MEV
+Reached 97000 event mark. Ongoing...
+collecting: 97331 3MEV
+collecting: 97441 2MEV
+collecting: 97922 3MEV
+Reached 98000 event mark. Ongoing...
+collecting: 98033 2MEV
+collecting: 98145 3MEV
+collecting: 98676 2MEV
+collecting: 98701 3MEV
+Reached 99000 event mark. Ongoing...
+collecting: 99183 2MEV
+collecting: 99323 2MEV
+collecting: 99894 2MEV
+Reached 100000 event mark. Ongoing...
+collecting: 100007 5MEV
+collecting: 100251 2MEV
+collecting: 100292 2MEV
+collecting: 100349 2MEV
+collecting: 100560 3MEV
+collecting: 100798 2MEV
+Reached 101000 event mark. Ongoing...
+collecting: 101244 2MEV
+collecting: 101274 3MEV
+collecting: 101700 2MEV
+collecting: 101730 2MEV
+collecting: 101837 3MEV
+collecting: 101967 2MEV
+Reached 102000 event mark. Ongoing...
+collecting: 102329 3MEV
+collecting: 102539 2MEV
+collecting: 102640 2MEV
+Reached 103000 event mark. Ongoing...
+collecting: 103508 3MEV
+Reached 104000 event mark. Ongoing...
+collecting: 104419 3MEV
+collecting: 104573 2MEV
+collecting: 104903 2MEV
+Reached 105000 event mark. Ongoing...
+collecting: 105068 2MEV
+collecting: 105238 2MEV
+collecting: 105406 2MEV
+collecting: 105523 2MEV
+collecting: 105621 2MEV
+collecting: 105763 3MEV
+collecting: 105817 2MEV
+collecting: 105928 2MEV
+Reached 106000 event mark. Ongoing...
+collecting: 106554 3MEV
+collecting: 106968 5MEV
+Reached 107000 event mark. Ongoing...
+collecting: 107241 2MEV
+Reached 108000 event mark. Ongoing...
+collecting: 108268 2MEV
+collecting: 108669 3MEV
+collecting: 108736 2MEV
+collecting: 108893 3MEV
+Reached 109000 event mark. Ongoing...
+collecting: 109147 2MEV
+collecting: 109159 2MEV
+collecting: 109180 2MEV
+collecting: 109494 3MEV
+collecting: 109719 3MEV
+Reached 110000 event mark. Ongoing...
+collecting: 110591 2MEV
+collecting: 110712 2MEV
+collecting: 110715 2MEV
+collecting: 110907 2MEV
+Reached 111000 event mark. Ongoing...
+collecting: 111463 3MEV
+collecting: 111488 5MEV
+collecting: 111626 3MEV
+collecting: 111869 2MEV
+collecting: 111975 3MEV
+Reached 112000 event mark. Ongoing...
+Reached 113000 event mark. Ongoing...
+collecting: 113238 2MEV
+collecting: 113508 2MEV
+collecting: 113555 3MEV
+Reached 114000 event mark. Ongoing...
+collecting: 114172 3MEV
+collecting: 114249 5MEV
+collecting: 114334 2MEV
+collecting: 114535 3MEV
+collecting: 114555 3MEV
+collecting: 114825 2MEV
+Reached 115000 event mark. Ongoing...
+collecting: 115130 5MEV
+collecting: 115147 2MEV
+collecting: 115190 3MEV
+collecting: 115245 5MEV
+collecting: 115581 5MEV
+collecting: 115795 2MEV
+Reached 116000 event mark. Ongoing...
+collecting: 116454 3MEV
+collecting: 116518 2MEV
+collecting: 116601 2MEV
+collecting: 116882 5MEV
+collecting: 116935 2MEV
+Reached 117000 event mark. Ongoing...
+collecting: 117055 3MEV
+collecting: 117110 3MEV
+collecting: 117222 3MEV
+collecting: 117286 2MEV
+collecting: 117317 3MEV
+collecting: 117653 2MEV
+collecting: 117925 2MEV
+Reached 118000 event mark. Ongoing...
+collecting: 118422 3MEV
+collecting: 118655 2MEV
+collecting: 118716 2MEV
+Reached 119000 event mark. Ongoing...
+collecting: 119088 3MEV
+collecting: 119399 2MEV
+collecting: 119811 3MEV
+collecting: 119829 2MEV
+collecting: 119902 2MEV
+collecting: 119967 3MEV
+Reached 120000 event mark. Ongoing...
+collecting: 120029 3MEV
+collecting: 120103 3MEV
+collecting: 120355 3MEV
+collecting: 120721 3MEV
+collecting: 120784 3MEV
+collecting: 120877 3MEV
+Reached 121000 event mark. Ongoing...
+collecting: 121132 3MEV
+collecting: 121985 2MEV
+Reached 122000 event mark. Ongoing...
+collecting: 122004 5MEV
+collecting: 122178 2MEV
+collecting: 122274 2MEV
+collecting: 122783 3MEV
+collecting: 122878 5MEV
+Reached 123000 event mark. Ongoing...
+collecting: 123867 2MEV
+Reached 124000 event mark. Ongoing...
+collecting: 124154 2MEV
+collecting: 124347 2MEV
+collecting: 124506 2MEV
+collecting: 124610 2MEV
+collecting: 124948 3MEV
+Reached 125000 event mark. Ongoing...
+collecting: 125535 2MEV
+Reached 126000 event mark. Ongoing...
+collecting: 126157 5MEV
+collecting: 126167 2MEV
+collecting: 126525 2MEV
+collecting: 126777 3MEV
+Reached 127000 event mark. Ongoing...
+collecting: 127185 2MEV
+collecting: 127207 2MEV
+collecting: 127255 3MEV
+collecting: 127314 3MEV
+collecting: 127347 5MEV
+Reached 128000 event mark. Ongoing...
+collecting: 128023 2MEV
+Reached 129000 event mark. Ongoing...
+collecting: 129029 2MEV
+collecting: 129053 3MEV
+collecting: 129735 2MEV
+Reached 130000 event mark. Ongoing...
+collecting: 130645 2MEV
+collecting: 130844 3MEV
+Reached 131000 event mark. Ongoing...
+collecting: 131089 2MEV
+collecting: 131374 2MEV
+Reached 132000 event mark. Ongoing...
+collecting: 132263 5MEV
+collecting: 132912 2MEV
+Reached 133000 event mark. Ongoing...
+collecting: 133155 3MEV
+collecting: 133291 5MEV
+collecting: 133395 3MEV
+collecting: 133662 2MEV
+Reached 134000 event mark. Ongoing...
+collecting: 134206 3MEV
+collecting: 134346 5MEV
+collecting: 134466 3MEV
+collecting: 134711 3MEV
+collecting: 134750 3MEV
+collecting: 134927 3MEV
+Reached 135000 event mark. Ongoing...
+collecting: 135340 2MEV
+Reached 136000 event mark. Ongoing...
+Reached 137000 event mark. Ongoing...
+collecting: 137189 3MEV
+collecting: 137460 2MEV
+Reached 138000 event mark. Ongoing...
+collecting: 138036 5MEV
+collecting: 138471 3MEV
+collecting: 138500 2MEV
+collecting: 138653 2MEV
+Reached 139000 event mark. Ongoing...
+collecting: 139139 2MEV
+collecting: 139498 2MEV
+collecting: 139676 3MEV
+Reached 140000 event mark. Ongoing...
+collecting: 140237 2MEV
+Reached 141000 event mark. Ongoing...
+collecting: 141056 3MEV
+collecting: 141291 3MEV
+collecting: 141536 2MEV
+collecting: 141621 3MEV
+collecting: 141791 2MEV
+collecting: 141960 3MEV
+Reached 142000 event mark. Ongoing...
+collecting: 142379 3MEV
+collecting: 142681 5MEV
+Reached 143000 event mark. Ongoing...
+collecting: 143240 3MEV
+collecting: 143935 3MEV
+Reached 144000 event mark. Ongoing...
+collecting: 144130 3MEV
+collecting: 144223 3MEV
+collecting: 144604 3MEV
+collecting: 144749 2MEV
+collecting: 144841 3MEV
+collecting: 144916 3MEV
+collecting: 144952 5MEV
+Reached 145000 event mark. Ongoing...
+Reached 146000 event mark. Ongoing...
+collecting: 146238 2MEV
+collecting: 146383 3MEV
+collecting: 146712 2MEV
+collecting: 146898 2MEV
+collecting: 146990 3MEV
+Reached 147000 event mark. Ongoing...
+collecting: 147133 2MEV
+collecting: 147416 2MEV
+collecting: 147750 5MEV
+Reached 148000 event mark. Ongoing...
+collecting: 148015 3MEV
+collecting: 148169 5MEV
+Reached 149000 event mark. Ongoing...
+collecting: 149000 5MEV
+collecting: 149123 3MEV
+collecting: 149162 3MEV
+collecting: 149209 3MEV
+collecting: 149314 2MEV
+collecting: 149326 2MEV
+collecting: 149613 3MEV
+collecting: 149636 5MEV
+collecting: 149920 3MEV
+Reached 150000 event mark. Ongoing...
+collecting: 150444 3MEV
+collecting: 150757 2MEV
+Reached 151000 event mark. Ongoing...
+collecting: 151052 3MEV
+collecting: 151220 3MEV
+collecting: 151458 3MEV
+collecting: 151585 5MEV
+collecting: 151762 2MEV
+Reached 152000 event mark. Ongoing...
+collecting: 152131 2MEV
+collecting: 152244 2MEV
+collecting: 152547 2MEV
+Reached 153000 event mark. Ongoing...
+collecting: 153193 2MEV
+collecting: 153393 2MEV
+collecting: 153815 2MEV
+Reached 154000 event mark. Ongoing...
+collecting: 154018 2MEV
+collecting: 154161 2MEV
+collecting: 154238 3MEV
+collecting: 154456 2MEV
+collecting: 154568 2MEV
+collecting: 154947 2MEV
+Reached 155000 event mark. Ongoing...
+collecting: 155103 3MEV
+collecting: 155250 2MEV
+collecting: 155442 3MEV
+collecting: 155617 3MEV
+collecting: 155832 3MEV
+collecting: 155842 3MEV
+Reached 156000 event mark. Ongoing...
+collecting: 156131 2MEV
+collecting: 156550 2MEV
+Reached 157000 event mark. Ongoing...
+collecting: 157142 2MEV
+collecting: 157677 2MEV
+Reached 158000 event mark. Ongoing...
+collecting: 158053 2MEV
+collecting: 158392 5MEV
+collecting: 158454 2MEV
+Reached 159000 event mark. Ongoing...
+collecting: 159073 2MEV
+collecting: 159123 3MEV
+collecting: 159557 3MEV
+collecting: 159733 3MEV
+collecting: 159978 3MEV
+Reached 160000 event mark. Ongoing...
+collecting: 160052 3MEV
+collecting: 160207 5MEV
+collecting: 160850 2MEV
+Reached 161000 event mark. Ongoing...
+collecting: 161592 2MEV
+collecting: 161617 2MEV
+collecting: 161876 2MEV
+Reached 162000 event mark. Ongoing...
+collecting: 162023 3MEV
+collecting: 162472 2MEV
+collecting: 162523 2MEV
+collecting: 162524 3MEV
+collecting: 162583 2MEV
+Reached 163000 event mark. Ongoing...
+collecting: 163114 3MEV
+collecting: 163223 2MEV
+Reached 164000 event mark. Ongoing...
+collecting: 164316 2MEV
+collecting: 164400 2MEV
+collecting: 164536 2MEV
+collecting: 164563 2MEV
+collecting: 164926 2MEV
+collecting: 164952 2MEV
+Reached 165000 event mark. Ongoing...
+collecting: 165026 2MEV
+collecting: 165060 2MEV
+collecting: 165631 3MEV
+collecting: 165741 2MEV
+Reached 166000 event mark. Ongoing...
+collecting: 166125 3MEV
+collecting: 166186 3MEV
+collecting: 166286 2MEV
+collecting: 166392 2MEV
+collecting: 166509 2MEV
+collecting: 166642 2MEV
+Reached 167000 event mark. Ongoing...
+collecting: 167434 2MEV
+collecting: 167671 3MEV
+collecting: 167777 5MEV
+Reached 168000 event mark. Ongoing...
+collecting: 168631 2MEV
+collecting: 168737 2MEV
+collecting: 168751 2MEV
+Reached 169000 event mark. Ongoing...
+collecting: 169261 5MEV
+collecting: 169318 2MEV
+collecting: 169541 2MEV
+collecting: 169806 5MEV
+collecting: 169847 2MEV
+collecting: 169945 2MEV
+Reached 170000 event mark. Ongoing...
+collecting: 170035 2MEV
+collecting: 170123 3MEV
+collecting: 170452 5MEV
+collecting: 170684 2MEV
+Reached 171000 event mark. Ongoing...
+collecting: 171457 2MEV
+collecting: 171883 3MEV
+collecting: 171924 2MEV
+Reached 172000 event mark. Ongoing...
+collecting: 172479 3MEV
+collecting: 172622 3MEV
+collecting: 172971 3MEV
+Reached 173000 event mark. Ongoing...
+collecting: 173124 2MEV
+collecting: 173765 2MEV
+Reached 174000 event mark. Ongoing...
+collecting: 174234 3MEV
+collecting: 174572 5MEV
+collecting: 174618 2MEV
+collecting: 174964 2MEV
+Reached 175000 event mark. Ongoing...
+collecting: 175032 2MEV
+collecting: 175118 2MEV
+collecting: 175181 2MEV
+collecting: 175832 2MEV
+collecting: 175864 2MEV
+Reached 176000 event mark. Ongoing...
+collecting: 176274 2MEV
+collecting: 176369 2MEV
+Reached 177000 event mark. Ongoing...
+collecting: 177277 2MEV
+Reached 178000 event mark. Ongoing...
+collecting: 178314 3MEV
+collecting: 178784 2MEV
+collecting: 178851 5MEV
+collecting: 178954 3MEV
+Reached 179000 event mark. Ongoing...
+collecting: 179718 3MEV
+collecting: 179730 3MEV
+Reached 180000 event mark. Ongoing...
+collecting: 180032 3MEV
+collecting: 180580 2MEV
+collecting: 180797 2MEV
+Reached 181000 event mark. Ongoing...
+collecting: 181261 3MEV
+collecting: 181526 2MEV
+Reached 182000 event mark. Ongoing...
+collecting: 182047 2MEV
+collecting: 182322 2MEV
+collecting: 182670 2MEV
+collecting: 182978 2MEV
+collecting: 182987 3MEV
+Reached 183000 event mark. Ongoing...
+Reached 184000 event mark. Ongoing...
+collecting: 184587 3MEV
+Reached 185000 event mark. Ongoing...
+collecting: 185383 3MEV
+collecting: 185543 2MEV
+collecting: 185931 2MEV
+Reached 186000 event mark. Ongoing...
+collecting: 186410 2MEV
+Reached 187000 event mark. Ongoing...
+collecting: 187383 3MEV
+collecting: 187483 3MEV
+Reached 188000 event mark. Ongoing...
+collecting: 188023 5MEV
+collecting: 188049 3MEV
+collecting: 188126 2MEV
+collecting: 188189 2MEV
+collecting: 188493 2MEV
+collecting: 188515 2MEV
+collecting: 188902 3MEV
+Reached 189000 event mark. Ongoing...
+collecting: 189196 3MEV
+collecting: 189381 2MEV
+Reached 190000 event mark. Ongoing...
+collecting: 190178 2MEV
+collecting: 190671 2MEV
+Reached 191000 event mark. Ongoing...
+collecting: 191410 2MEV
+collecting: 191630 3MEV
+Reached 192000 event mark. Ongoing...
+collecting: 192280 3MEV
+collecting: 192383 3MEV
+collecting: 192565 2MEV
+collecting: 192987 2MEV
+Reached 193000 event mark. Ongoing...
+collecting: 193237 3MEV
+collecting: 193478 5MEV
+collecting: 193602 3MEV
+collecting: 193762 3MEV
+collecting: 193966 2MEV
+Reached 194000 event mark. Ongoing...
+collecting: 194272 3MEV
+collecting: 194525 2MEV
+collecting: 194676 2MEV
+collecting: 194981 3MEV
+Reached 195000 event mark. Ongoing...
+collecting: 195231 2MEV
+collecting: 195250 3MEV
+Reached 196000 event mark. Ongoing...
+collecting: 196055 2MEV
+collecting: 196522 5MEV
+collecting: 196552 2MEV
+Reached 197000 event mark. Ongoing...
+collecting: 197159 2MEV
+collecting: 197356 3MEV
+collecting: 197532 2MEV
+Reached 198000 event mark. Ongoing...
+collecting: 198078 3MEV
+collecting: 198168 3MEV
+collecting: 198572 2MEV
+collecting: 198573 3MEV
+collecting: 198727 2MEV
+collecting: 198874 3MEV
+Reached 199000 event mark. Ongoing...
+collecting: 199053 2MEV
+collecting: 199232 3MEV
+collecting: 199326 2MEV
+collecting: 199887 2MEV
+collecting: 199986 2MEV
+Reached 200000 event mark. Ongoing...
+collecting: 200686 2MEV
+collecting: 200752 3MEV
+Reached 201000 event mark. Ongoing...
+collecting: 201366 5MEV
+collecting: 201615 2MEV
+collecting: 201931 2MEV
+collecting: 201945 2MEV
+Reached 202000 event mark. Ongoing...
+collecting: 202399 2MEV
+collecting: 202521 5MEV
+collecting: 202573 2MEV
+collecting: 202582 2MEV
+collecting: 202772 2MEV
+Reached 203000 event mark. Ongoing...
+collecting: 203257 5MEV
+collecting: 203581 2MEV
+collecting: 203596 2MEV
+Reached 204000 event mark. Ongoing...
+collecting: 204040 2MEV
+collecting: 204053 3MEV
+collecting: 204364 3MEV
+collecting: 204536 3MEV
+collecting: 204831 3MEV
+Reached 205000 event mark. Ongoing...
+collecting: 205115 2MEV
+collecting: 205174 3MEV
+collecting: 205437 2MEV
+collecting: 205698 3MEV
+collecting: 205709 2MEV
+collecting: 205861 3MEV
+Reached 206000 event mark. Ongoing...
+collecting: 206157 2MEV
+collecting: 206445 2MEV
+collecting: 206742 2MEV
+Reached 207000 event mark. Ongoing...
+collecting: 207010 3MEV
+collecting: 207294 2MEV
+collecting: 207470 2MEV
+collecting: 207503 5MEV
+collecting: 207739 2MEV
+collecting: 207756 5MEV
+Reached 208000 event mark. Ongoing...
+collecting: 208014 2MEV
+collecting: 208248 2MEV
+collecting: 208417 2MEV
+collecting: 208471 2MEV
+collecting: 208948 2MEV
+collecting: 208961 3MEV
+Reached 209000 event mark. Ongoing...
+collecting: 209054 2MEV
+collecting: 209176 2MEV
+collecting: 209233 3MEV
+collecting: 209300 3MEV
+collecting: 209464 2MEV
+collecting: 209686 3MEV
+Reached 210000 event mark. Ongoing...
+collecting: 210245 3MEV
+Reached 211000 event mark. Ongoing...
+collecting: 211286 2MEV
+collecting: 211571 5MEV
+collecting: 211614 2MEV
+collecting: 211708 2MEV
+collecting: 211742 3MEV
+collecting: 211843 2MEV
+Reached 212000 event mark. Ongoing...
+collecting: 212095 3MEV
+collecting: 212631 2MEV
+collecting: 212892 2MEV
+collecting: 212947 2MEV
+Reached 213000 event mark. Ongoing...
+collecting: 213200 3MEV
+collecting: 213243 2MEV
+collecting: 213850 3MEV
+collecting: 213985 3MEV
+Reached 214000 event mark. Ongoing...
+collecting: 214126 2MEV
+collecting: 214454 3MEV
+collecting: 214499 2MEV
+collecting: 214559 3MEV
+collecting: 214845 2MEV
+collecting: 214886 2MEV
+Reached 215000 event mark. Ongoing...
+collecting: 215108 2MEV
+collecting: 215562 3MEV
+collecting: 215617 2MEV
+Reached 216000 event mark. Ongoing...
+collecting: 216250 2MEV
+collecting: 216339 3MEV
+collecting: 216673 3MEV
+collecting: 216981 2MEV
+Reached 217000 event mark. Ongoing...
+collecting: 217335 2MEV
+collecting: 217746 3MEV
+collecting: 217759 3MEV
+Reached 218000 event mark. Ongoing...
+collecting: 218707 2MEV
+Reached 219000 event mark. Ongoing...
+collecting: 219871 2MEV
+Reached 220000 event mark. Ongoing...
+collecting: 220139 2MEV
+Reached 221000 event mark. Ongoing...
+collecting: 221104 3MEV
+collecting: 221237 5MEV
+collecting: 221433 5MEV
+Reached 222000 event mark. Ongoing...
+collecting: 222009 2MEV
+collecting: 222231 2MEV
+collecting: 222303 3MEV
+collecting: 222684 3MEV
+collecting: 222942 2MEV
+Reached 223000 event mark. Ongoing...
+collecting: 223211 3MEV
+collecting: 223351 3MEV
+collecting: 223560 2MEV
+collecting: 223628 3MEV
+collecting: 223761 2MEV
+Reached 224000 event mark. Ongoing...
+collecting: 224014 2MEV
+collecting: 224217 3MEV
+collecting: 224297 2MEV
+collecting: 224417 3MEV
+Reached 225000 event mark. Ongoing...
+collecting: 225900 3MEV
+collecting: 225918 3MEV
+Reached 226000 event mark. Ongoing...
+collecting: 226173 2MEV
+collecting: 226254 2MEV
+collecting: 226365 2MEV
+collecting: 226400 2MEV
+Reached 227000 event mark. Ongoing...
+Reached 228000 event mark. Ongoing...
+collecting: 228068 5MEV
+collecting: 228255 3MEV
+collecting: 228684 3MEV
+Reached 229000 event mark. Ongoing...
+collecting: 229334 3MEV
+collecting: 229462 2MEV
+collecting: 229543 3MEV
+Reached 230000 event mark. Ongoing...
+collecting: 230022 2MEV
+collecting: 230039 3MEV
+collecting: 230043 2MEV
+collecting: 230323 2MEV
+collecting: 230718 2MEV
+collecting: 230923 2MEV
+Reached 231000 event mark. Ongoing...
+collecting: 231028 3MEV
+collecting: 231053 2MEV
+collecting: 231101 3MEV
+collecting: 231136 2MEV
+collecting: 231378 2MEV
+collecting: 231961 3MEV
+Reached 232000 event mark. Ongoing...
+collecting: 232038 2MEV
+collecting: 232792 3MEV
+Reached 233000 event mark. Ongoing...
+collecting: 233862 2MEV
+Reached 234000 event mark. Ongoing...
+collecting: 234466 3MEV
+collecting: 234796 2MEV
+Reached 235000 event mark. Ongoing...
+collecting: 235647 3MEV
+collecting: 235720 2MEV
+Reached 236000 event mark. Ongoing...
+collecting: 236004 3MEV
+collecting: 236103 3MEV
+collecting: 236745 5MEV
+collecting: 236915 3MEV
+collecting: 236933 5MEV
+Reached 237000 event mark. Ongoing...
+collecting: 237220 3MEV
+collecting: 237577 2MEV
+collecting: 237642 2MEV
+collecting: 237719 3MEV
+collecting: 237768 2MEV
+collecting: 237898 5MEV
+Reached 238000 event mark. Ongoing...
+collecting: 238114 2MEV
+collecting: 238371 5MEV
+collecting: 238824 3MEV
+collecting: 238969 2MEV
+Reached 239000 event mark. Ongoing...
+collecting: 239086 3MEV
+collecting: 239626 2MEV
+Reached 240000 event mark. Ongoing...
+collecting: 240118 3MEV
+collecting: 240403 3MEV
+collecting: 240653 3MEV
+Reached 241000 event mark. Ongoing...
+collecting: 241636 5MEV
+collecting: 241705 3MEV
+collecting: 241722 2MEV
+collecting: 241827 5MEV
+Reached 242000 event mark. Ongoing...
+collecting: 242152 2MEV
+collecting: 242824 2MEV
+collecting: 242863 3MEV
+Reached 243000 event mark. Ongoing...
+collecting: 243249 2MEV
+collecting: 243348 3MEV
+collecting: 243739 2MEV
+collecting: 243874 5MEV
+Reached 244000 event mark. Ongoing...
+collecting: 244139 3MEV
+collecting: 244162 3MEV
+collecting: 244169 2MEV
+collecting: 244340 2MEV
+collecting: 244521 2MEV
+Reached 245000 event mark. Ongoing...
+collecting: 245287 2MEV
+collecting: 245346 2MEV
+collecting: 245539 5MEV
+collecting: 245865 2MEV
+collecting: 245976 3MEV
+Reached 246000 event mark. Ongoing...
+collecting: 246216 5MEV
+collecting: 246555 2MEV
+Reached 247000 event mark. Ongoing...
+collecting: 247139 3MEV
+collecting: 247263 3MEV
+collecting: 247310 5MEV
+collecting: 247315 2MEV
+collecting: 247713 2MEV
+collecting: 247864 2MEV
+Reached 248000 event mark. Ongoing...
+collecting: 248412 3MEV
+collecting: 248441 2MEV
+collecting: 248448 2MEV
+collecting: 248644 2MEV
+collecting: 248679 2MEV
+collecting: 248873 2MEV
+Reached 249000 event mark. Ongoing...
+collecting: 249000 2MEV
+collecting: 249021 3MEV
+collecting: 249070 2MEV
+collecting: 249252 2MEV
+collecting: 249358 2MEV
+collecting: 249668 2MEV
+Reached 250000 event mark. Ongoing...
+collecting: 250741 2MEV
+Reached 251000 event mark. Ongoing...
+collecting: 251202 5MEV
+collecting: 251241 3MEV
+collecting: 251501 2MEV
+Reached 252000 event mark. Ongoing...
+collecting: 252038 2MEV
+collecting: 252876 2MEV
+collecting: 252993 2MEV
+Reached 253000 event mark. Ongoing...
+Reached 254000 event mark. Ongoing...
+collecting: 254353 2MEV
+collecting: 254478 2MEV
+collecting: 254550 3MEV
+collecting: 254593 2MEV
+collecting: 254971 2MEV
+Reached 255000 event mark. Ongoing...
+collecting: 255611 2MEV
+collecting: 255628 2MEV
+collecting: 255970 2MEV
+Reached 256000 event mark. Ongoing...
+Reached 257000 event mark. Ongoing...
+collecting: 257341 2MEV
+collecting: 257817 2MEV
+Reached 258000 event mark. Ongoing...
+collecting: 258037 5MEV
+collecting: 258128 2MEV
+collecting: 258171 5MEV
+collecting: 258208 2MEV
+collecting: 258452 3MEV
+collecting: 258515 2MEV
+collecting: 258949 2MEV
+Reached 259000 event mark. Ongoing...
+collecting: 259236 3MEV
+Reached 260000 event mark. Ongoing...
+collecting: 260226 2MEV
+collecting: 260467 2MEV
+collecting: 260937 2MEV
+Reached 261000 event mark. Ongoing...
+collecting: 261383 2MEV
+collecting: 261689 2MEV
+Reached 262000 event mark. Ongoing...
+collecting: 262054 2MEV
+collecting: 262630 3MEV
+Reached 263000 event mark. Ongoing...
+collecting: 263290 2MEV
+collecting: 263492 2MEV
+collecting: 263941 2MEV
+Reached 264000 event mark. Ongoing...
+collecting: 264141 3MEV
+collecting: 264191 2MEV
+collecting: 264228 2MEV
+collecting: 264518 2MEV
+collecting: 264599 2MEV
+collecting: 264660 2MEV
+Reached 265000 event mark. Ongoing...
+collecting: 265221 2MEV
+collecting: 265275 3MEV
+collecting: 265532 3MEV
+collecting: 265742 5MEV
+collecting: 265912 2MEV
+Reached 266000 event mark. Ongoing...
+collecting: 266000 2MEV
+collecting: 266282 2MEV
+collecting: 266593 2MEV
+collecting: 266874 3MEV
+collecting: 266907 5MEV
+collecting: 266986 2MEV
+Reached 267000 event mark. Ongoing...
+collecting: 267793 2MEV
+collecting: 267852 3MEV
+Reached 268000 event mark. Ongoing...
+collecting: 268089 5MEV
+collecting: 268135 3MEV
+collecting: 268172 5MEV
+collecting: 268472 3MEV
+collecting: 268722 3MEV
+collecting: 268851 2MEV
+Reached 269000 event mark. Ongoing...
+collecting: 269276 3MEV
+collecting: 269381 3MEV
+collecting: 269428 2MEV
+collecting: 269576 2MEV
+collecting: 269752 2MEV
+Reached 270000 event mark. Ongoing...
+collecting: 270969 2MEV
+Reached 271000 event mark. Ongoing...
+collecting: 271172 2MEV
+collecting: 271575 2MEV
+collecting: 271969 2MEV
+Reached 272000 event mark. Ongoing...
+collecting: 272293 3MEV
+collecting: 272670 3MEV
+collecting: 272700 2MEV
+collecting: 272909 3MEV
+Reached 273000 event mark. Ongoing...
+Reached 274000 event mark. Ongoing...
+collecting: 274290 2MEV
+collecting: 274891 2MEV
+Reached 275000 event mark. Ongoing...
+collecting: 275070 2MEV
+collecting: 275541 3MEV
+collecting: 275556 5MEV
+collecting: 275713 2MEV
+collecting: 275752 3MEV
+collecting: 275905 3MEV
+collecting: 275948 3MEV
+Reached 276000 event mark. Ongoing...
+collecting: 276239 2MEV
+collecting: 276277 3MEV
+Reached 277000 event mark. Ongoing...
+collecting: 277753 3MEV
+Reached 278000 event mark. Ongoing...
+collecting: 278250 2MEV
+collecting: 278354 3MEV
+Reached 279000 event mark. Ongoing...
+collecting: 279924 5MEV
+Reached 280000 event mark. Ongoing...
+collecting: 280895 2MEV
+collecting: 280928 2MEV
+Reached 281000 event mark. Ongoing...
+collecting: 281088 3MEV
+collecting: 281443 2MEV
+collecting: 281576 5MEV
+Reached 282000 event mark. Ongoing...
+collecting: 282317 3MEV
+collecting: 282325 3MEV
+collecting: 282566 2MEV
+collecting: 282781 2MEV
+collecting: 282835 3MEV
+Reached 283000 event mark. Ongoing...
+collecting: 283177 3MEV
+collecting: 283358 2MEV
+collecting: 283623 3MEV
+collecting: 283933 5MEV
+Reached 284000 event mark. Ongoing...
+collecting: 284017 2MEV
+collecting: 284050 5MEV
+collecting: 284106 2MEV
+collecting: 284911 3MEV
+Reached 285000 event mark. Ongoing...
+collecting: 285081 3MEV
+collecting: 285308 2MEV
+Reached 286000 event mark. Ongoing...
+collecting: 286311 5MEV
+Reached 287000 event mark. Ongoing...
+collecting: 287262 2MEV
+collecting: 287647 3MEV
+collecting: 287914 2MEV
+Reached 288000 event mark. Ongoing...
+collecting: 288277 2MEV
+collecting: 288356 3MEV
+collecting: 288504 2MEV
+collecting: 288637 5MEV
+collecting: 288719 2MEV
+collecting: 288935 2MEV
+Reached 289000 event mark. Ongoing...
+collecting: 289268 2MEV
+collecting: 289320 3MEV
+collecting: 289487 2MEV
+collecting: 289581 5MEV
+collecting: 289593 2MEV
+collecting: 289601 5MEV
+collecting: 289997 2MEV
+Reached 290000 event mark. Ongoing...
+collecting: 290727 3MEV
+collecting: 290901 5MEV
+collecting: 290992 2MEV
+Reached 291000 event mark. Ongoing...
+collecting: 291244 3MEV
+collecting: 291304 3MEV
+collecting: 291413 2MEV
+collecting: 291477 2MEV
+collecting: 291492 2MEV
+collecting: 291565 3MEV
+Reached 292000 event mark. Ongoing...
+collecting: 292135 3MEV
+collecting: 292753 2MEV
+collecting: 292883 2MEV
+Reached 293000 event mark. Ongoing...
+collecting: 293139 2MEV
+collecting: 293193 3MEV
+collecting: 293517 2MEV
+Reached 294000 event mark. Ongoing...
+collecting: 294056 5MEV
+collecting: 294151 2MEV
+collecting: 294208 2MEV
+collecting: 294534 3MEV
+collecting: 294853 3MEV
+collecting: 294883 2MEV
+collecting: 294988 3MEV
+Reached 295000 event mark. Ongoing...
+collecting: 295026 3MEV
+collecting: 295316 2MEV
+Reached 296000 event mark. Ongoing...
+collecting: 296018 2MEV
+collecting: 296325 2MEV
+collecting: 296389 2MEV
+collecting: 296683 2MEV
+Reached 297000 event mark. Ongoing...
+collecting: 297323 3MEV
+collecting: 297610 3MEV
+Reached 298000 event mark. Ongoing...
+collecting: 298527 3MEV
+Reached 299000 event mark. Ongoing...
+collecting: 299746 5MEV
+collecting: 299781 2MEV
+Reached 300000 event mark. Ongoing...
+Reached 301000 event mark. Ongoing...
+collecting: 301004 2MEV
+collecting: 301477 2MEV
+Reached 302000 event mark. Ongoing...
+collecting: 302133 2MEV
+collecting: 302344 2MEV
+collecting: 302621 2MEV
+collecting: 302875 2MEV
+Reached 303000 event mark. Ongoing...
+collecting: 303038 3MEV
+collecting: 303349 3MEV
+collecting: 303370 2MEV
+collecting: 303381 2MEV
+Reached 304000 event mark. Ongoing...
+collecting: 304348 2MEV
+collecting: 304703 2MEV
+Reached 305000 event mark. Ongoing...
+collecting: 305123 3MEV
+collecting: 305571 2MEV
+collecting: 305741 2MEV
+collecting: 305779 2MEV
+collecting: 305932 2MEV
+Reached 306000 event mark. Ongoing...
+collecting: 306472 2MEV
+collecting: 306596 3MEV
+collecting: 306952 2MEV
+collecting: 306976 2MEV
+Reached 307000 event mark. Ongoing...
+collecting: 307037 3MEV
+collecting: 307421 5MEV
+collecting: 307822 2MEV
+Reached 308000 event mark. Ongoing...
+collecting: 308225 3MEV
+collecting: 308231 2MEV
+collecting: 308397 2MEV
+collecting: 308417 5MEV
+collecting: 308587 2MEV
+Reached 309000 event mark. Ongoing...
+collecting: 309016 2MEV
+collecting: 309558 2MEV
+collecting: 309756 3MEV
+Reached 310000 event mark. Ongoing...
+collecting: 310336 2MEV
+collecting: 310637 3MEV
+collecting: 310974 5MEV
+Reached 311000 event mark. Ongoing...
+collecting: 311057 2MEV
+collecting: 311336 2MEV
+collecting: 311518 2MEV
+collecting: 311592 3MEV
+Reached 312000 event mark. Ongoing...
+collecting: 312267 5MEV
+collecting: 312986 2MEV
+Reached 313000 event mark. Ongoing...
+collecting: 313090 2MEV
+collecting: 313280 2MEV
+collecting: 313640 3MEV
+Reached 314000 event mark. Ongoing...
+collecting: 314011 2MEV
+collecting: 314274 2MEV
+collecting: 314315 2MEV
+collecting: 314639 2MEV
+collecting: 314922 2MEV
+collecting: 314953 2MEV
+Reached 315000 event mark. Ongoing...
+collecting: 315083 2MEV
+collecting: 315638 2MEV
+collecting: 315848 2MEV
+Reached 316000 event mark. Ongoing...
+collecting: 316048 2MEV
+collecting: 316057 5MEV
+collecting: 316205 2MEV
+collecting: 316287 3MEV
+collecting: 316344 2MEV
+Reached 317000 event mark. Ongoing...
+collecting: 317621 2MEV
+collecting: 317747 5MEV
+Reached 318000 event mark. Ongoing...
+collecting: 318136 2MEV
+collecting: 318207 3MEV
+collecting: 318553 2MEV
+collecting: 318888 3MEV
+Reached 319000 event mark. Ongoing...
+collecting: 319066 3MEV
+collecting: 319462 2MEV
+collecting: 319590 5MEV
+collecting: 319656 2MEV
+collecting: 319724 2MEV
+Reached 320000 event mark. Ongoing...
+collecting: 320002 2MEV
+collecting: 320491 3MEV
+Reached 321000 event mark. Ongoing...
+collecting: 321014 3MEV
+collecting: 321055 2MEV
+collecting: 321238 2MEV
+collecting: 321894 2MEV
+collecting: 321917 2MEV
+Reached 322000 event mark. Ongoing...
+collecting: 322264 2MEV
+collecting: 322445 2MEV
+Reached 323000 event mark. Ongoing...
+collecting: 323510 2MEV
+collecting: 323615 5MEV
+Reached 324000 event mark. Ongoing...
+collecting: 324085 2MEV
+collecting: 324110 2MEV
+collecting: 324120 2MEV
+collecting: 324592 5MEV
+Reached 325000 event mark. Ongoing...
+collecting: 325067 3MEV
+collecting: 325089 2MEV
+collecting: 325226 3MEV
+collecting: 325454 2MEV
+collecting: 325472 2MEV
+collecting: 325846 2MEV
+collecting: 325878 2MEV
+Reached 326000 event mark. Ongoing...
+collecting: 326221 3MEV
+collecting: 326425 2MEV
+collecting: 326733 2MEV
+collecting: 326758 2MEV
+Reached 327000 event mark. Ongoing...
+collecting: 327747 5MEV
+collecting: 327846 2MEV
+Reached 328000 event mark. Ongoing...
+collecting: 328088 3MEV
+collecting: 328307 2MEV
+collecting: 328588 2MEV
+collecting: 328670 2MEV
+collecting: 328884 2MEV
+Reached 329000 event mark. Ongoing...
+collecting: 329077 5MEV
+collecting: 329219 2MEV
+collecting: 329262 3MEV
+collecting: 329310 3MEV
+collecting: 329553 2MEV
+Reached 330000 event mark. Ongoing...
+collecting: 330201 3MEV
+collecting: 330240 3MEV
+collecting: 330318 5MEV
+collecting: 330716 2MEV
+Reached 331000 event mark. Ongoing...
+collecting: 331063 2MEV
+collecting: 331315 2MEV
+collecting: 331717 2MEV
+collecting: 331877 3MEV
+collecting: 331956 2MEV
+Reached 332000 event mark. Ongoing...
+collecting: 332308 3MEV
+collecting: 332310 3MEV
+collecting: 332315 2MEV
+collecting: 332380 2MEV
+collecting: 332653 3MEV
+collecting: 332731 2MEV
+collecting: 332871 3MEV
+collecting: 332968 2MEV
+Reached 333000 event mark. Ongoing...
+collecting: 333328 2MEV
+collecting: 333380 2MEV
+collecting: 333515 2MEV
+collecting: 333708 3MEV
+collecting: 333877 3MEV
+collecting: 333965 2MEV
+Reached 334000 event mark. Ongoing...
+collecting: 333999 2MEV
+collecting: 334373 2MEV
+collecting: 334500 5MEV
+collecting: 334676 3MEV
+Reached 335000 event mark. Ongoing...
+collecting: 335119 2MEV
+collecting: 335332 3MEV
+collecting: 335466 2MEV
+collecting: 335984 2MEV
+collecting: 335993 2MEV
+Reached 336000 event mark. Ongoing...
+collecting: 336750 2MEV
+collecting: 336929 2MEV
+Reached 337000 event mark. Ongoing...
+collecting: 336999 2MEV
+collecting: 337095 2MEV
+collecting: 337389 2MEV
+collecting: 337740 2MEV
+collecting: 337820 3MEV
+Reached 338000 event mark. Ongoing...
+collecting: 338199 2MEV
+collecting: 338927 2MEV
+Reached 339000 event mark. Ongoing...
+collecting: 339422 3MEV
+collecting: 339455 2MEV
+collecting: 339862 3MEV
+collecting: 339876 3MEV
+Reached 340000 event mark. Ongoing...
+collecting: 340030 2MEV
+collecting: 340304 2MEV
+collecting: 340445 2MEV
+collecting: 340516 2MEV
+collecting: 340782 2MEV
+collecting: 340815 2MEV
+collecting: 340942 2MEV
+Reached 341000 event mark. Ongoing...
+collecting: 341017 2MEV
+collecting: 341286 3MEV
+collecting: 341656 2MEV
+collecting: 341663 2MEV
+collecting: 341755 3MEV
+collecting: 341777 2MEV
+Reached 342000 event mark. Ongoing...
+collecting: 342459 2MEV
+collecting: 342927 3MEV
+Reached 343000 event mark. Ongoing...
+collecting: 343036 2MEV
+collecting: 343142 2MEV
+collecting: 343487 2MEV
+collecting: 343658 2MEV
+collecting: 343767 2MEV
+Reached 344000 event mark. Ongoing...
+collecting: 344221 2MEV
+collecting: 344349 3MEV
+Reached 345000 event mark. Ongoing...
+collecting: 345054 2MEV
+collecting: 345839 2MEV
+collecting: 345911 2MEV
+Reached 346000 event mark. Ongoing...
+collecting: 346159 2MEV
+collecting: 346274 2MEV
+collecting: 346422 2MEV
+collecting: 346763 5MEV
+Reached 347000 event mark. Ongoing...
+Reached 348000 event mark. Ongoing...
+collecting: 348726 2MEV
+Reached 349000 event mark. Ongoing...
+Reached 350000 event mark. Ongoing...
+collecting: 350174 5MEV
+collecting: 350603 2MEV
+collecting: 350734 3MEV
+collecting: 350861 3MEV
+Reached 351000 event mark. Ongoing...
+collecting: 351051 2MEV
+collecting: 351418 5MEV
+collecting: 351771 2MEV
+collecting: 351811 5MEV
+collecting: 351844 5MEV
+collecting: 351951 5MEV
+Reached 352000 event mark. Ongoing...
+collecting: 352455 2MEV
+Reached 353000 event mark. Ongoing...
+collecting: 353593 2MEV
+collecting: 353794 3MEV
+Reached 354000 event mark. Ongoing...
+collecting: 354097 2MEV
+collecting: 354277 2MEV
+collecting: 354526 2MEV
+collecting: 354649 3MEV
+Reached 355000 event mark. Ongoing...
+collecting: 355357 3MEV
+collecting: 355360 5MEV
+collecting: 355546 2MEV
+collecting: 355812 3MEV
+Reached 356000 event mark. Ongoing...
+Reached 357000 event mark. Ongoing...
+collecting: 357000 2MEV
+collecting: 357036 2MEV
+collecting: 357166 3MEV
+collecting: 357611 5MEV
+collecting: 357619 5MEV
+Reached 358000 event mark. Ongoing...
+collecting: 358469 2MEV
+collecting: 358598 2MEV
+collecting: 358819 3MEV
+Reached 359000 event mark. Ongoing...
+Reached 360000 event mark. Ongoing...
+collecting: 360402 3MEV
+collecting: 360689 2MEV
+Reached 361000 event mark. Ongoing...
+collecting: 361476 2MEV
+collecting: 361791 3MEV
+collecting: 361808 5MEV
+collecting: 361811 2MEV
+collecting: 361876 3MEV
+collecting: 361917 3MEV
+Reached 362000 event mark. Ongoing...
+collecting: 362119 3MEV
+collecting: 362560 3MEV
+collecting: 362678 2MEV
+collecting: 362876 3MEV
+Reached 363000 event mark. Ongoing...
+collecting: 363257 2MEV
+collecting: 363656 3MEV
+collecting: 363945 3MEV
+Reached 364000 event mark. Ongoing...
+collecting: 364113 5MEV
+collecting: 364200 2MEV
+collecting: 364798 2MEV
+collecting: 364835 2MEV
+collecting: 364980 3MEV
+Reached 365000 event mark. Ongoing...
+collecting: 365182 2MEV
+collecting: 365351 2MEV
+collecting: 365719 5MEV
+collecting: 365784 3MEV
+Reached 366000 event mark. Ongoing...
+collecting: 366193 5MEV
+collecting: 366272 2MEV
+collecting: 366394 3MEV
+collecting: 366496 2MEV
+collecting: 366508 5MEV
+collecting: 366671 2MEV
+Reached 367000 event mark. Ongoing...
+collecting: 367107 2MEV
+collecting: 367167 2MEV
+collecting: 367598 2MEV
+collecting: 367942 3MEV
+Reached 368000 event mark. Ongoing...
+collecting: 368561 2MEV
+collecting: 368874 2MEV
+Reached 369000 event mark. Ongoing...
+collecting: 369065 2MEV
+collecting: 369281 2MEV
+collecting: 369340 2MEV
+collecting: 369436 2MEV
+collecting: 369736 3MEV
+collecting: 369915 2MEV
+Reached 370000 event mark. Ongoing...
+collecting: 370223 2MEV
+collecting: 370313 3MEV
+collecting: 370449 2MEV
+collecting: 370581 2MEV
+collecting: 370773 3MEV
+collecting: 370798 5MEV
+Reached 371000 event mark. Ongoing...
+collecting: 371319 2MEV
+collecting: 371498 3MEV
+collecting: 371944 3MEV
+Reached 372000 event mark. Ongoing...
+collecting: 372142 2MEV
+collecting: 372613 2MEV
+collecting: 372654 2MEV
+Reached 373000 event mark. Ongoing...
+collecting: 373144 3MEV
+collecting: 373420 2MEV
+collecting: 373546 5MEV
+collecting: 373710 3MEV
+Reached 374000 event mark. Ongoing...
+collecting: 374004 2MEV
+collecting: 374251 3MEV
+collecting: 374770 2MEV
+Reached 375000 event mark. Ongoing...
+collecting: 375058 2MEV
+collecting: 375185 2MEV
+collecting: 375380 3MEV
+collecting: 375394 2MEV
+collecting: 375667 2MEV
+Reached 376000 event mark. Ongoing...
+collecting: 376127 3MEV
+collecting: 376155 5MEV
+collecting: 376235 2MEV
+collecting: 376391 2MEV
+Reached 377000 event mark. Ongoing...
+Reached 378000 event mark. Ongoing...
+collecting: 378376 2MEV
+collecting: 378493 2MEV
+Reached 379000 event mark. Ongoing...
+collecting: 379079 3MEV
+collecting: 379307 3MEV
+collecting: 379322 5MEV
+collecting: 379356 2MEV
+collecting: 379597 2MEV
+Reached 380000 event mark. Ongoing...
+collecting: 380255 2MEV
+collecting: 380425 2MEV
+collecting: 380812 5MEV
+Reached 381000 event mark. Ongoing...
+collecting: 381502 3MEV
+collecting: 381849 2MEV
+collecting: 381870 5MEV
+collecting: 381872 2MEV
+Reached 382000 event mark. Ongoing...
+collecting: 382072 3MEV
+collecting: 382222 2MEV
+collecting: 382681 2MEV
+collecting: 382760 3MEV
+collecting: 382916 2MEV
+Reached 383000 event mark. Ongoing...
+collecting: 383135 2MEV
+collecting: 383164 2MEV
+collecting: 383483 3MEV
+Reached 384000 event mark. Ongoing...
+collecting: 384496 2MEV
+collecting: 384730 2MEV
+collecting: 384795 2MEV
+Reached 385000 event mark. Ongoing...
+collecting: 385573 2MEV
+collecting: 385588 2MEV
+collecting: 385731 2MEV
+Reached 386000 event mark. Ongoing...
+collecting: 386043 2MEV
+collecting: 386290 3MEV
+collecting: 386357 3MEV
+collecting: 386823 2MEV
+Reached 387000 event mark. Ongoing...
+collecting: 387071 2MEV
+collecting: 387098 2MEV
+collecting: 387356 2MEV
+collecting: 387505 3MEV
+collecting: 387975 2MEV
+Reached 388000 event mark. Ongoing...
+collecting: 388009 5MEV
+collecting: 388449 2MEV
+collecting: 388481 2MEV
+collecting: 388507 3MEV
+collecting: 388631 3MEV
+collecting: 388812 5MEV
+Reached 389000 event mark. Ongoing...
+collecting: 389039 3MEV
+collecting: 389752 3MEV
+collecting: 389908 2MEV
+Reached 390000 event mark. Ongoing...
+collecting: 390339 2MEV
+collecting: 390466 2MEV
+Reached 391000 event mark. Ongoing...
+collecting: 391762 5MEV
+collecting: 391862 2MEV
+collecting: 391970 3MEV
+Reached 392000 event mark. Ongoing...
+collecting: 392150 2MEV
+collecting: 392542 3MEV
+collecting: 392925 2MEV
+Reached 393000 event mark. Ongoing...
+collecting: 393264 2MEV
+Reached 394000 event mark. Ongoing...
+collecting: 394156 3MEV
+collecting: 394477 2MEV
+Reached 395000 event mark. Ongoing...
+collecting: 395049 3MEV
+collecting: 395504 3MEV
+collecting: 395588 2MEV
+collecting: 395620 2MEV
+collecting: 395902 2MEV
+Reached 396000 event mark. Ongoing...
+collecting: 396241 5MEV
+collecting: 396298 5MEV
+collecting: 396895 5MEV
+Reached 397000 event mark. Ongoing...
+collecting: 397025 3MEV
+collecting: 397150 3MEV
+collecting: 397434 2MEV
+collecting: 397981 2MEV
+Reached 398000 event mark. Ongoing...
+collecting: 398424 3MEV
+collecting: 398426 2MEV
+collecting: 398554 2MEV
+collecting: 398990 2MEV
+Reached 399000 event mark. Ongoing...
+collecting: 399051 2MEV
+collecting: 399739 3MEV
+Reached 400000 event mark. Ongoing...
+collecting: 400636 2MEV
+collecting: 400785 2MEV
+collecting: 400802 2MEV
+Reached 401000 event mark. Ongoing...
+collecting: 401248 2MEV
+collecting: 401668 3MEV
+collecting: 401854 3MEV
+collecting: 401958 2MEV
+Reached 402000 event mark. Ongoing...
+collecting: 402542 3MEV
+Reached 403000 event mark. Ongoing...
+collecting: 403264 2MEV
+collecting: 403379 3MEV
+Reached 404000 event mark. Ongoing...
+collecting: 404120 5MEV
+collecting: 404147 3MEV
+collecting: 404463 2MEV
+collecting: 404654 2MEV
+collecting: 404827 2MEV
+collecting: 404919 3MEV
+collecting: 404958 2MEV
+Reached 405000 event mark. Ongoing...
+collecting: 405331 2MEV
+collecting: 405754 2MEV
+collecting: 405846 5MEV
+collecting: 405875 3MEV
+Reached 406000 event mark. Ongoing...
+collecting: 406055 3MEV
+collecting: 406602 2MEV
+collecting: 406819 2MEV
+Reached 407000 event mark. Ongoing...
+collecting: 407200 2MEV
+collecting: 407714 3MEV
+collecting: 407753 3MEV
+collecting: 407905 3MEV
+collecting: 407982 2MEV
+Reached 408000 event mark. Ongoing...
+collecting: 408181 3MEV
+Reached 409000 event mark. Ongoing...
+collecting: 409327 3MEV
+collecting: 409336 5MEV
+collecting: 409616 2MEV
+collecting: 409819 2MEV
+collecting: 409843 3MEV
+Reached 410000 event mark. Ongoing...
+collecting: 410348 2MEV
+collecting: 410733 3MEV
+Reached 411000 event mark. Ongoing...
+collecting: 411296 2MEV
+collecting: 411358 3MEV
+Reached 412000 event mark. Ongoing...
+collecting: 412657 3MEV
+Reached 413000 event mark. Ongoing...
+collecting: 413070 2MEV
+collecting: 413359 3MEV
+collecting: 413444 2MEV
+Reached 414000 event mark. Ongoing...
+collecting: 414095 2MEV
+collecting: 414220 2MEV
+collecting: 414257 2MEV
+collecting: 414601 3MEV
+Reached 415000 event mark. Ongoing...
+collecting: 415391 2MEV
+collecting: 415394 2MEV
+collecting: 415545 3MEV
+collecting: 415558 2MEV
+collecting: 415639 5MEV
+Reached 416000 event mark. Ongoing...
+collecting: 416068 2MEV
+collecting: 416255 5MEV
+collecting: 416306 2MEV
+collecting: 416590 2MEV
+collecting: 416824 2MEV
+collecting: 416901 2MEV
+collecting: 416982 2MEV
+Reached 417000 event mark. Ongoing...
+collecting: 417621 2MEV
+collecting: 417643 5MEV
+collecting: 417926 2MEV
+collecting: 417994 3MEV
+Reached 418000 event mark. Ongoing...
+collecting: 418193 2MEV
+collecting: 418384 2MEV
+collecting: 418440 3MEV
+collecting: 418596 3MEV
+collecting: 418694 2MEV
+Reached 419000 event mark. Ongoing...
+collecting: 419043 3MEV
+collecting: 419101 2MEV
+collecting: 419866 2MEV
+collecting: 419903 2MEV
+collecting: 419945 2MEV
+Reached 420000 event mark. Ongoing...
+collecting: 420070 3MEV
+collecting: 420555 2MEV
+collecting: 420759 2MEV
+collecting: 420911 2MEV
+Reached 421000 event mark. Ongoing...
+collecting: 421341 2MEV
+collecting: 421487 2MEV
+collecting: 421658 3MEV
+collecting: 421677 3MEV
+Reached 422000 event mark. Ongoing...
+collecting: 422286 3MEV
+collecting: 422883 3MEV
+collecting: 422984 5MEV
+Reached 423000 event mark. Ongoing...
+collecting: 423198 2MEV
+collecting: 423425 5MEV
+collecting: 423448 3MEV
+collecting: 423487 3MEV
+Reached 424000 event mark. Ongoing...
+collecting: 424341 5MEV
+collecting: 424651 2MEV
+collecting: 424971 3MEV
+Reached 425000 event mark. Ongoing...
+collecting: 425120 3MEV
+collecting: 425689 3MEV
+Reached 426000 event mark. Ongoing...
+collecting: 426109 2MEV
+collecting: 426209 2MEV
+Reached 427000 event mark. Ongoing...
+collecting: 427803 3MEV
+collecting: 427895 3MEV
+Reached 428000 event mark. Ongoing...
+collecting: 428040 2MEV
+collecting: 428600 2MEV
+Reached 429000 event mark. Ongoing...
+collecting: 429189 3MEV
+collecting: 429320 2MEV
+collecting: 429973 2MEV
+Reached 430000 event mark. Ongoing...
+collecting: 430039 2MEV
+collecting: 430082 2MEV
+collecting: 430197 2MEV
+collecting: 430211 2MEV
+collecting: 430293 3MEV
+collecting: 430319 3MEV
+collecting: 430886 3MEV
+Reached 431000 event mark. Ongoing...
+collecting: 431148 2MEV
+collecting: 431173 2MEV
+collecting: 431236 2MEV
+collecting: 431549 3MEV
+Reached 432000 event mark. Ongoing...
+collecting: 432067 2MEV
+collecting: 432166 3MEV
+collecting: 432330 2MEV
+Reached 433000 event mark. Ongoing...
+collecting: 433268 2MEV
+collecting: 433277 3MEV
+collecting: 433403 3MEV
+collecting: 433457 3MEV
+collecting: 433698 2MEV
+collecting: 433716 5MEV
+collecting: 433725 2MEV
+collecting: 433753 3MEV
+Reached 434000 event mark. Ongoing...
+Reached 435000 event mark. Ongoing...
+collecting: 435740 2MEV
+Reached 436000 event mark. Ongoing...
+collecting: 436132 3MEV
+collecting: 436511 3MEV
+collecting: 436665 2MEV
+collecting: 436709 3MEV
+collecting: 436865 3MEV
+Reached 437000 event mark. Ongoing...
+collecting: 437013 2MEV
+collecting: 437356 3MEV
+collecting: 437617 3MEV
+collecting: 437764 5MEV
+Reached 438000 event mark. Ongoing...
+collecting: 438168 3MEV
+collecting: 438273 3MEV
+collecting: 438743 3MEV
+collecting: 438945 2MEV
+Reached 439000 event mark. Ongoing...
+collecting: 439001 3MEV
+collecting: 439013 5MEV
+collecting: 439048 2MEV
+collecting: 439066 3MEV
+collecting: 439080 2MEV
+collecting: 439191 3MEV
+Reached 440000 event mark. Ongoing...
+collecting: 440210 2MEV
+collecting: 440218 2MEV
+collecting: 440325 3MEV
+collecting: 440729 2MEV
+collecting: 440872 3MEV
+collecting: 440940 3MEV
+Reached 441000 event mark. Ongoing...
+collecting: 441231 2MEV
+collecting: 441337 5MEV
+collecting: 441837 5MEV
+collecting: 441903 2MEV
+collecting: 441910 3MEV
+Reached 442000 event mark. Ongoing...
+collecting: 442072 3MEV
+collecting: 442308 2MEV
+collecting: 442415 3MEV
+collecting: 442775 2MEV
+collecting: 442886 2MEV
+Reached 443000 event mark. Ongoing...
+collecting: 443211 3MEV
+collecting: 443631 3MEV
+collecting: 443977 2MEV
+Reached 444000 event mark. Ongoing...
+collecting: 444013 2MEV
+collecting: 444203 5MEV
+collecting: 444830 3MEV
+collecting: 444952 3MEV
+Reached 445000 event mark. Ongoing...
+collecting: 445136 2MEV
+collecting: 445525 3MEV
+collecting: 445684 3MEV
+collecting: 445784 2MEV
+Reached 446000 event mark. Ongoing...
+collecting: 446208 2MEV
+collecting: 446211 2MEV
+collecting: 446640 3MEV
+collecting: 446809 2MEV
+Reached 447000 event mark. Ongoing...
+collecting: 447011 3MEV
+collecting: 447245 3MEV
+collecting: 447567 2MEV
+Reached 448000 event mark. Ongoing...
+collecting: 448018 5MEV
+collecting: 448349 3MEV
+collecting: 448599 5MEV
+Reached 449000 event mark. Ongoing...
+collecting: 449060 2MEV
+collecting: 449592 2MEV
+collecting: 449711 3MEV
+collecting: 449730 2MEV
+Reached 450000 event mark. Ongoing...
+collecting: 450212 3MEV
+collecting: 450780 3MEV
+collecting: 450823 2MEV
+Reached 451000 event mark. Ongoing...
+collecting: 451076 2MEV
+collecting: 451539 2MEV
+collecting: 451657 2MEV
+collecting: 451684 2MEV
+collecting: 451920 3MEV
+Reached 452000 event mark. Ongoing...
+collecting: 452303 2MEV
+collecting: 452410 2MEV
+collecting: 452496 5MEV
+collecting: 452679 2MEV
+collecting: 452765 2MEV
+Reached 453000 event mark. Ongoing...
+collecting: 453473 2MEV
+collecting: 453487 5MEV
+collecting: 453596 5MEV
+collecting: 453605 3MEV
+collecting: 453669 3MEV
+Reached 454000 event mark. Ongoing...
+collecting: 454274 3MEV
+collecting: 454291 3MEV
+collecting: 454421 3MEV
+Reached 455000 event mark. Ongoing...
+collecting: 455158 5MEV
+collecting: 455243 2MEV
+collecting: 455660 2MEV
+collecting: 455728 3MEV
+collecting: 455976 3MEV
+Reached 456000 event mark. Ongoing...
+collecting: 456138 2MEV
+collecting: 456614 5MEV
+collecting: 456790 3MEV
+Reached 457000 event mark. Ongoing...
+collecting: 457062 2MEV
+collecting: 457074 2MEV
+collecting: 457201 3MEV
+collecting: 457377 2MEV
+collecting: 457460 3MEV
+collecting: 457536 3MEV
+collecting: 457588 3MEV
+collecting: 457646 2MEV
+collecting: 457769 3MEV
+collecting: 457787 2MEV
+Reached 458000 event mark. Ongoing...
+collecting: 458504 2MEV
+collecting: 458705 3MEV
+Reached 459000 event mark. Ongoing...
+collecting: 459153 3MEV
+collecting: 459164 2MEV
+Reached 460000 event mark. Ongoing...
+collecting: 460005 5MEV
+collecting: 460333 3MEV
+collecting: 460412 3MEV
+collecting: 460956 2MEV
+Reached 461000 event mark. Ongoing...
+collecting: 461003 5MEV
+collecting: 461380 2MEV
+collecting: 461546 2MEV
+collecting: 461914 2MEV
+Reached 462000 event mark. Ongoing...
+collecting: 462062 2MEV
+collecting: 462119 3MEV
+collecting: 462471 2MEV
+collecting: 462578 3MEV
+collecting: 462604 2MEV
+collecting: 462785 2MEV
+collecting: 462937 2MEV
+Reached 463000 event mark. Ongoing...
+collecting: 463231 3MEV
+collecting: 463241 2MEV
+collecting: 463644 3MEV
+collecting: 463704 3MEV
+Reached 464000 event mark. Ongoing...
+collecting: 464058 2MEV
+collecting: 464091 5MEV
+collecting: 464276 5MEV
+Reached 465000 event mark. Ongoing...
+collecting: 465030 2MEV
+collecting: 465547 3MEV
+collecting: 465852 2MEV
+Reached 466000 event mark. Ongoing...
+collecting: 466332 2MEV
+collecting: 466508 2MEV
+collecting: 466601 3MEV
+Reached 467000 event mark. Ongoing...
+collecting: 467028 2MEV
+collecting: 467301 3MEV
+collecting: 467620 2MEV
+collecting: 467669 2MEV
+collecting: 467749 2MEV
+collecting: 467975 3MEV
+Reached 468000 event mark. Ongoing...
+collecting: 468450 3MEV
+collecting: 468513 2MEV
+collecting: 468660 5MEV
+Reached 469000 event mark. Ongoing...
+collecting: 469009 2MEV
+collecting: 469388 2MEV
+collecting: 469393 3MEV
+collecting: 469605 3MEV
+collecting: 469644 2MEV
+collecting: 469737 2MEV
+collecting: 469796 5MEV
+collecting: 469860 5MEV
+Reached 470000 event mark. Ongoing...
+collecting: 470078 5MEV
+collecting: 470108 2MEV
+collecting: 470281 5MEV
+collecting: 470512 2MEV
+collecting: 470710 2MEV
+Reached 471000 event mark. Ongoing...
+Reached 472000 event mark. Ongoing...
+collecting: 472025 2MEV
+collecting: 472232 5MEV
+collecting: 472896 2MEV
+Reached 473000 event mark. Ongoing...
+collecting: 473265 2MEV
+collecting: 473939 2MEV
+Reached 474000 event mark. Ongoing...
+Reached 475000 event mark. Ongoing...
+collecting: 475520 5MEV
+collecting: 475603 2MEV
+collecting: 475965 2MEV
+Reached 476000 event mark. Ongoing...
+collecting: 476134 2MEV
+collecting: 476297 3MEV
+collecting: 476424 3MEV
+collecting: 476519 2MEV
+collecting: 476786 2MEV
+collecting: 476848 2MEV
+collecting: 476908 3MEV
+collecting: 476949 2MEV
+Reached 477000 event mark. Ongoing...
+collecting: 477184 2MEV
+collecting: 477317 2MEV
+collecting: 477714 2MEV
+collecting: 477932 2MEV
+Reached 478000 event mark. Ongoing...
+collecting: 478500 2MEV
+collecting: 478949 2MEV
+collecting: 478988 2MEV
+Reached 479000 event mark. Ongoing...
+collecting: 479146 2MEV
+collecting: 479347 5MEV
+Reached 480000 event mark. Ongoing...
+collecting: 480229 2MEV
+collecting: 480635 3MEV
+collecting: 480664 3MEV
+Reached 481000 event mark. Ongoing...
+collecting: 481444 5MEV
+collecting: 481928 3MEV
+Reached 482000 event mark. Ongoing...
+collecting: 482483 3MEV
+collecting: 482513 2MEV
+collecting: 482590 5MEV
+Reached 483000 event mark. Ongoing...
+collecting: 483491 3MEV
+collecting: 483646 3MEV
+collecting: 483995 2MEV
+Reached 484000 event mark. Ongoing...
+collecting: 484007 2MEV
+collecting: 484066 3MEV
+collecting: 484073 5MEV
+collecting: 484153 3MEV
+collecting: 484421 2MEV
+collecting: 484556 3MEV
+Reached 485000 event mark. Ongoing...
+collecting: 485240 2MEV
+collecting: 485440 2MEV
+Reached 486000 event mark. Ongoing...
+collecting: 486660 3MEV
+Reached 487000 event mark. Ongoing...
+collecting: 487573 2MEV
+collecting: 487691 2MEV
+Reached 488000 event mark. Ongoing...
+collecting: 488221 2MEV
+collecting: 488465 2MEV
+collecting: 488712 3MEV
+collecting: 488736 3MEV
+Reached 489000 event mark. Ongoing...
+collecting: 489179 3MEV
+collecting: 489470 2MEV
+collecting: 489697 3MEV
+Reached 490000 event mark. Ongoing...
+collecting: 490145 3MEV
+collecting: 490156 2MEV
+collecting: 490805 3MEV
+Reached 491000 event mark. Ongoing...
+collecting: 491125 3MEV
+Reached 492000 event mark. Ongoing...
+collecting: 492316 2MEV
+collecting: 492319 2MEV
+collecting: 492334 3MEV
+Reached 493000 event mark. Ongoing...
+collecting: 493491 5MEV
+collecting: 493766 2MEV
+Reached 494000 event mark. Ongoing...
+collecting: 494243 2MEV
+collecting: 494263 2MEV
+collecting: 494648 3MEV
+Reached 495000 event mark. Ongoing...
+Reached 496000 event mark. Ongoing...
+collecting: 496060 2MEV
+collecting: 496113 2MEV
+collecting: 496448 3MEV
+Reached 497000 event mark. Ongoing...
+collecting: 497530 3MEV
+Reached 498000 event mark. Ongoing...
+collecting: 498303 2MEV
+collecting: 498568 3MEV
+collecting: 498882 2MEV
+collecting: 498921 3MEV
+Reached 499000 event mark. Ongoing...
+collecting: 499043 2MEV
+collecting: 499127 2MEV
+collecting: 499265 3MEV
+collecting: 499272 2MEV
+collecting: 499566 5MEV
+collecting: 499572 3MEV
+collecting: 499679 2MEV
+Reached 500000 event mark. Ongoing...
+collecting: 500134 2MEV
+collecting: 500738 3MEV
+collecting: 500917 5MEV
+Reached 501000 event mark. Ongoing...
+collecting: 501058 2MEV
+collecting: 501129 5MEV
+collecting: 501167 2MEV
+Reached 502000 event mark. Ongoing...
+collecting: 502026 2MEV
+collecting: 502131 3MEV
+collecting: 502324 2MEV
+collecting: 502442 2MEV
+collecting: 502676 2MEV
+Reached 503000 event mark. Ongoing...
+collecting: 503278 3MEV
+collecting: 503636 3MEV
+collecting: 503743 2MEV
+Reached 504000 event mark. Ongoing...
+collecting: 504932 5MEV
+collecting: 504962 2MEV
+Reached 505000 event mark. Ongoing...
+collecting: 505031 2MEV
+collecting: 505037 3MEV
+collecting: 505201 3MEV
+collecting: 505442 2MEV
+collecting: 505790 3MEV
+Reached 506000 event mark. Ongoing...
+collecting: 506189 3MEV
+collecting: 506400 3MEV
+collecting: 506537 2MEV
+collecting: 506666 2MEV
+collecting: 506938 2MEV
+Reached 507000 event mark. Ongoing...
+collecting: 507014 3MEV
+collecting: 507425 2MEV
+collecting: 507479 2MEV
+collecting: 507803 2MEV
+collecting: 507898 3MEV
+Reached 508000 event mark. Ongoing...
+collecting: 508109 3MEV
+collecting: 508196 2MEV
+collecting: 508820 2MEV
+collecting: 508824 3MEV
+Reached 509000 event mark. Ongoing...
+collecting: 509120 3MEV
+collecting: 509431 2MEV
+collecting: 509534 2MEV
+collecting: 509647 2MEV
+collecting: 509654 3MEV
+collecting: 509892 2MEV
+Reached 510000 event mark. Ongoing...
+collecting: 510035 5MEV
+collecting: 510639 2MEV
+Reached 511000 event mark. Ongoing...
+collecting: 511029 3MEV
+collecting: 511095 2MEV
+collecting: 511135 2MEV
+collecting: 511207 2MEV
+collecting: 511285 3MEV
+collecting: 511353 3MEV
+collecting: 511834 3MEV
+collecting: 511862 2MEV
+Reached 512000 event mark. Ongoing...
+collecting: 512778 3MEV
+collecting: 512952 2MEV
+Reached 513000 event mark. Ongoing...
+collecting: 513486 2MEV
+Reached 514000 event mark. Ongoing...
+collecting: 514190 2MEV
+collecting: 514608 2MEV
+collecting: 514619 2MEV
+collecting: 514701 3MEV
+collecting: 514764 5MEV
+collecting: 514995 2MEV
+Reached 515000 event mark. Ongoing...
+collecting: 515193 5MEV
+collecting: 515625 2MEV
+collecting: 515674 2MEV
+collecting: 515695 2MEV
+Reached 516000 event mark. Ongoing...
+collecting: 516058 2MEV
+collecting: 516626 2MEV
+collecting: 516674 3MEV
+collecting: 516908 2MEV
+Reached 517000 event mark. Ongoing...
+collecting: 517040 2MEV
+collecting: 517194 2MEV
+collecting: 517371 5MEV
+collecting: 517539 2MEV
+collecting: 517826 2MEV
+collecting: 517926 2MEV
+Reached 518000 event mark. Ongoing...
+collecting: 518105 3MEV
+collecting: 518108 3MEV
+collecting: 518290 3MEV
+collecting: 518444 3MEV
+Reached 519000 event mark. Ongoing...
+collecting: 519121 3MEV
+collecting: 519712 5MEV
+collecting: 519745 2MEV
+collecting: 519819 3MEV
+collecting: 519883 2MEV
+Reached 520000 event mark. Ongoing...
+collecting: 520873 3MEV
+Reached 521000 event mark. Ongoing...
+collecting: 521481 2MEV
+collecting: 521627 2MEV
+collecting: 521751 3MEV
+Reached 522000 event mark. Ongoing...
+collecting: 522093 3MEV
+collecting: 522156 3MEV
+collecting: 522466 3MEV
+Reached 523000 event mark. Ongoing...
+collecting: 523172 2MEV
+collecting: 523738 2MEV
+collecting: 523751 5MEV
+Reached 524000 event mark. Ongoing...
+collecting: 524099 3MEV
+collecting: 524255 2MEV
+collecting: 524342 2MEV
+collecting: 524350 2MEV
+collecting: 524486 5MEV
+collecting: 524698 2MEV
+collecting: 524922 2MEV
+Reached 525000 event mark. Ongoing...
+collecting: 525096 3MEV
+collecting: 525323 2MEV
+collecting: 525424 2MEV
+collecting: 525836 2MEV
+Reached 526000 event mark. Ongoing...
+collecting: 526014 3MEV
+collecting: 526480 2MEV
+collecting: 526639 3MEV
+collecting: 526733 2MEV
+Reached 527000 event mark. Ongoing...
+collecting: 527026 2MEV
+collecting: 527331 5MEV
+collecting: 527449 2MEV
+collecting: 527781 3MEV
+collecting: 527813 2MEV
+Reached 528000 event mark. Ongoing...
+collecting: 528301 2MEV
+collecting: 528334 2MEV
+collecting: 528800 2MEV
+collecting: 528897 3MEV
+Reached 529000 event mark. Ongoing...
+collecting: 529108 2MEV
+collecting: 529726 3MEV
+collecting: 529858 2MEV
+Reached 530000 event mark. Ongoing...
+collecting: 530254 3MEV
+collecting: 530433 2MEV
+collecting: 530555 2MEV
+collecting: 530827 2MEV
+collecting: 530874 2MEV
+collecting: 530942 2MEV
+Reached 531000 event mark. Ongoing...
+collecting: 531262 2MEV
+collecting: 531372 2MEV
+collecting: 531625 3MEV
+collecting: 531679 3MEV
+collecting: 531837 3MEV
+Reached 532000 event mark. Ongoing...
+collecting: 532082 2MEV
+collecting: 532250 2MEV
+collecting: 532491 2MEV
+Reached 533000 event mark. Ongoing...
+collecting: 533874 2MEV
+Reached 534000 event mark. Ongoing...
+collecting: 534085 3MEV
+collecting: 534369 2MEV
+collecting: 534391 3MEV
+collecting: 534396 2MEV
+collecting: 534700 2MEV
+collecting: 534843 2MEV
+Reached 535000 event mark. Ongoing...
+collecting: 535076 3MEV
+collecting: 535344 2MEV
+collecting: 535745 3MEV
+Reached 536000 event mark. Ongoing...
+collecting: 536044 2MEV
+collecting: 536996 2MEV
+Reached 537000 event mark. Ongoing...
+collecting: 537033 5MEV
+collecting: 537063 2MEV
+collecting: 537069 2MEV
+collecting: 537301 3MEV
+collecting: 537357 2MEV
+collecting: 537416 2MEV
+collecting: 537555 3MEV
+collecting: 537562 2MEV
+Reached 538000 event mark. Ongoing...
+collecting: 538118 2MEV
+collecting: 538385 2MEV
+collecting: 538611 2MEV
+collecting: 538612 2MEV
+collecting: 538785 3MEV
+collecting: 538883 2MEV
+Reached 539000 event mark. Ongoing...
+collecting: 539093 3MEV
+collecting: 539252 5MEV
+collecting: 539723 2MEV
+Reached 540000 event mark. Ongoing...
+collecting: 540239 3MEV
+collecting: 540281 2MEV
+collecting: 540556 2MEV
+collecting: 540726 3MEV
+Reached 541000 event mark. Ongoing...
+collecting: 541113 3MEV
+collecting: 541200 2MEV
+collecting: 541730 3MEV
+collecting: 541733 2MEV
+collecting: 541816 2MEV
+Reached 542000 event mark. Ongoing...
+collecting: 542047 5MEV
+collecting: 542131 2MEV
+collecting: 542711 3MEV
+collecting: 542867 2MEV
+Reached 543000 event mark. Ongoing...
+collecting: 543000 2MEV
+collecting: 543642 2MEV
+collecting: 543814 3MEV
+collecting: 543870 3MEV
+collecting: 543879 3MEV
+collecting: 543891 2MEV
+collecting: 543925 5MEV
+Reached 544000 event mark. Ongoing...
+collecting: 544409 3MEV
+collecting: 544608 3MEV
+collecting: 544629 2MEV
+collecting: 544709 3MEV
+collecting: 544756 2MEV
+Reached 545000 event mark. Ongoing...
+collecting: 545182 3MEV
+collecting: 545206 5MEV
+collecting: 545690 5MEV
+Reached 546000 event mark. Ongoing...
+Reached 547000 event mark. Ongoing...
+collecting: 547131 3MEV
+collecting: 547286 3MEV
+collecting: 547346 2MEV
+collecting: 547836 3MEV
+Reached 548000 event mark. Ongoing...
+collecting: 548511 2MEV
+collecting: 548635 5MEV
+collecting: 548656 2MEV
+Reached 549000 event mark. Ongoing...
+collecting: 549259 2MEV
+collecting: 549476 5MEV
+collecting: 549630 2MEV
+Reached 550000 event mark. Ongoing...
+collecting: 550147 2MEV
+collecting: 550662 2MEV
+Reached 551000 event mark. Ongoing...
+collecting: 551127 3MEV
+collecting: 551640 2MEV
+Reached 552000 event mark. Ongoing...
+collecting: 552221 2MEV
+collecting: 552407 5MEV
+collecting: 552412 2MEV
+collecting: 552592 3MEV
+collecting: 552754 2MEV
+Reached 553000 event mark. Ongoing...
+collecting: 553426 5MEV
+Reached 554000 event mark. Ongoing...
+collecting: 554443 5MEV
+collecting: 554713 2MEV
+collecting: 554797 3MEV
+collecting: 554929 2MEV
+collecting: 554988 3MEV
+Reached 555000 event mark. Ongoing...
+collecting: 555220 3MEV
+collecting: 555678 2MEV
+Reached 556000 event mark. Ongoing...
+collecting: 556080 3MEV
+collecting: 556101 2MEV
+collecting: 556794 2MEV
+Reached 557000 event mark. Ongoing...
+collecting: 557217 2MEV
+collecting: 557457 3MEV
+Reached 558000 event mark. Ongoing...
+collecting: 558525 5MEV
+collecting: 558535 5MEV
+collecting: 558795 2MEV
+collecting: 558959 3MEV
+Reached 559000 event mark. Ongoing...
+collecting: 559184 3MEV
+collecting: 559750 2MEV
+collecting: 559805 5MEV
+Reached 560000 event mark. Ongoing...
+collecting: 560103 2MEV
+collecting: 560195 2MEV
+Reached 561000 event mark. Ongoing...
+collecting: 561158 5MEV
+collecting: 561285 5MEV
+collecting: 561384 5MEV
+collecting: 561394 3MEV
+collecting: 561472 5MEV
+collecting: 561497 5MEV
+collecting: 561864 3MEV
+collecting: 561925 5MEV
+Reached 562000 event mark. Ongoing...
+collecting: 562460 2MEV
+collecting: 562570 2MEV
+collecting: 562645 2MEV
+Reached 563000 event mark. Ongoing...
+collecting: 563106 2MEV
+collecting: 563159 3MEV
+collecting: 563592 2MEV
+collecting: 563672 3MEV
+Reached 564000 event mark. Ongoing...
+collecting: 564020 3MEV
+collecting: 564437 3MEV
+collecting: 564995 5MEV
+Reached 565000 event mark. Ongoing...
+collecting: 565520 5MEV
+collecting: 565858 3MEV
+Reached 566000 event mark. Ongoing...
+collecting: 566138 2MEV
+Reached 567000 event mark. Ongoing...
+collecting: 567520 3MEV
+collecting: 567608 2MEV
+collecting: 567627 2MEV
+Reached 568000 event mark. Ongoing...
+Reached 569000 event mark. Ongoing...
+collecting: 569000 3MEV
+collecting: 569118 2MEV
+collecting: 569400 3MEV
+collecting: 569753 3MEV
+collecting: 569760 2MEV
+collecting: 569801 2MEV
+Reached 570000 event mark. Ongoing...
+collecting: 570033 2MEV
+collecting: 570567 2MEV
+Reached 571000 event mark. Ongoing...
+collecting: 571127 2MEV
+collecting: 571514 2MEV
+collecting: 571914 2MEV
+Reached 572000 event mark. Ongoing...
+collecting: 572038 3MEV
+collecting: 572388 2MEV
+collecting: 572662 3MEV
+collecting: 572791 2MEV
+collecting: 572980 5MEV
+Reached 573000 event mark. Ongoing...
+collecting: 573257 2MEV
+collecting: 573542 2MEV
+collecting: 573675 2MEV
+collecting: 573738 2MEV
+Reached 574000 event mark. Ongoing...
+collecting: 574707 2MEV
+collecting: 574839 3MEV
+collecting: 574921 2MEV
+Reached 575000 event mark. Ongoing...
+collecting: 575480 2MEV
+collecting: 575787 2MEV
+collecting: 575805 2MEV
+collecting: 575913 2MEV
+collecting: 575984 2MEV
+collecting: 575991 2MEV
+Reached 576000 event mark. Ongoing...
+collecting: 576053 2MEV
+collecting: 576129 3MEV
+collecting: 576151 3MEV
+collecting: 576188 3MEV
+collecting: 576269 2MEV
+collecting: 576892 2MEV
+Reached 577000 event mark. Ongoing...
+collecting: 577233 3MEV
+collecting: 577576 3MEV
+collecting: 577935 5MEV
+Reached 578000 event mark. Ongoing...
+collecting: 578147 2MEV
+collecting: 578544 2MEV
+collecting: 578689 2MEV
+collecting: 578797 5MEV
+Reached 579000 event mark. Ongoing...
+collecting: 579288 3MEV
+collecting: 579630 3MEV
+collecting: 579826 2MEV
+Reached 580000 event mark. Ongoing...
+collecting: 580374 2MEV
+Reached 581000 event mark. Ongoing...
+collecting: 581291 2MEV
+collecting: 581731 2MEV
+Reached 582000 event mark. Ongoing...
+collecting: 582161 2MEV
+collecting: 582428 3MEV
+collecting: 582588 2MEV
+Reached 583000 event mark. Ongoing...
+collecting: 583436 2MEV
+collecting: 583543 2MEV
+collecting: 583793 3MEV
+Reached 584000 event mark. Ongoing...
+collecting: 584099 2MEV
+collecting: 584200 2MEV
+Reached 585000 event mark. Ongoing...
+collecting: 585067 5MEV
+collecting: 585081 2MEV
+collecting: 585235 2MEV
+collecting: 585314 5MEV
+collecting: 585547 2MEV
+collecting: 585920 2MEV
+collecting: 585965 5MEV
+Reached 586000 event mark. Ongoing...
+collecting: 586350 2MEV
+collecting: 586682 2MEV
+Reached 587000 event mark. Ongoing...
+collecting: 587004 2MEV
+collecting: 587243 3MEV
+collecting: 587278 2MEV
+collecting: 587456 5MEV
+collecting: 587952 3MEV
+Reached 588000 event mark. Ongoing...
+collecting: 588182 3MEV
+collecting: 588299 5MEV
+collecting: 588614 2MEV
+collecting: 588739 2MEV
+Reached 589000 event mark. Ongoing...
+Reached 590000 event mark. Ongoing...
+collecting: 590152 2MEV
+collecting: 590170 3MEV
+collecting: 590469 3MEV
+Reached 591000 event mark. Ongoing...
+collecting: 591224 2MEV
+collecting: 591587 2MEV
+collecting: 591674 2MEV
+Reached 592000 event mark. Ongoing...
+collecting: 592202 2MEV
+collecting: 592411 2MEV
+collecting: 592577 2MEV
+collecting: 592665 2MEV
+collecting: 592801 2MEV
+Reached 593000 event mark. Ongoing...
+collecting: 593537 2MEV
+collecting: 593717 3MEV
+Reached 594000 event mark. Ongoing...
+collecting: 594009 2MEV
+collecting: 594209 5MEV
+collecting: 594421 3MEV
+collecting: 594512 3MEV
+collecting: 594683 2MEV
+collecting: 594716 2MEV
+Reached 595000 event mark. Ongoing...
+collecting: 595647 3MEV
+collecting: 595955 2MEV
+Reached 596000 event mark. Ongoing...
+collecting: 596792 3MEV
+Reached 597000 event mark. Ongoing...
+collecting: 597035 3MEV
+collecting: 597202 2MEV
+collecting: 597696 3MEV
+collecting: 597970 2MEV
+Reached 598000 event mark. Ongoing...
+collecting: 598165 2MEV
+collecting: 598321 2MEV
+collecting: 598347 3MEV
+collecting: 598486 3MEV
+collecting: 598545 3MEV
+collecting: 598547 3MEV
+collecting: 598901 2MEV
+Reached 599000 event mark. Ongoing...
+collecting: 599364 3MEV
+collecting: 599723 2MEV
+Reached 600000 event mark. Ongoing...
+collecting: 600643 2MEV
+collecting: 600675 2MEV
+Reached 601000 event mark. Ongoing...
+collecting: 601129 2MEV
+collecting: 601518 5MEV
+collecting: 601739 2MEV
+collecting: 601977 2MEV
+Reached 602000 event mark. Ongoing...
+collecting: 602141 2MEV
+collecting: 602239 2MEV
+collecting: 602384 2MEV
+collecting: 602843 2MEV
+Reached 603000 event mark. Ongoing...
+collecting: 603084 3MEV
+collecting: 603093 3MEV
+collecting: 603335 3MEV
+collecting: 603410 2MEV
+collecting: 603455 3MEV
+collecting: 603794 2MEV
+Reached 604000 event mark. Ongoing...
+collecting: 604423 5MEV
+collecting: 604644 2MEV
+collecting: 604864 2MEV
+Reached 605000 event mark. Ongoing...
+collecting: 605035 2MEV
+collecting: 605667 3MEV
+collecting: 605750 5MEV
+collecting: 605977 3MEV
+Reached 606000 event mark. Ongoing...
+collecting: 606045 2MEV
+collecting: 606202 2MEV
+collecting: 606456 3MEV
+collecting: 606669 2MEV
+collecting: 606677 2MEV
+collecting: 606785 5MEV
+Reached 607000 event mark. Ongoing...
+collecting: 607217 5MEV
+collecting: 607281 3MEV
+collecting: 607362 2MEV
+collecting: 607446 3MEV
+Reached 608000 event mark. Ongoing...
+collecting: 608147 2MEV
+collecting: 608790 2MEV
+Reached 609000 event mark. Ongoing...
+collecting: 609375 2MEV
+collecting: 609397 3MEV
+collecting: 609527 3MEV
+Reached 610000 event mark. Ongoing...
+collecting: 610578 2MEV
+Reached 611000 event mark. Ongoing...
+collecting: 611240 3MEV
+collecting: 611719 3MEV
+collecting: 611730 3MEV
+collecting: 611767 3MEV
+collecting: 611868 2MEV
+Reached 612000 event mark. Ongoing...
+collecting: 612132 3MEV
+collecting: 612236 2MEV
+collecting: 612312 5MEV
+collecting: 612371 2MEV
+Reached 613000 event mark. Ongoing...
+collecting: 613495 3MEV
+collecting: 613906 5MEV
+Reached 614000 event mark. Ongoing...
+collecting: 614407 3MEV
+collecting: 614453 5MEV
+collecting: 614483 2MEV
+collecting: 614956 3MEV
+Reached 615000 event mark. Ongoing...
+collecting: 615072 2MEV
+Reached 616000 event mark. Ongoing...
+collecting: 616483 2MEV
+collecting: 616804 2MEV
+collecting: 616865 2MEV
+Reached 617000 event mark. Ongoing...
+collecting: 617016 3MEV
+collecting: 617022 3MEV
+collecting: 617085 2MEV
+collecting: 617284 3MEV
+collecting: 617464 2MEV
+collecting: 617740 2MEV
+collecting: 617762 2MEV
+Reached 618000 event mark. Ongoing...
+collecting: 618029 2MEV
+collecting: 618192 3MEV
+collecting: 618299 2MEV
+collecting: 618557 5MEV
+collecting: 618683 3MEV
+collecting: 618706 2MEV
+Reached 619000 event mark. Ongoing...
+collecting: 619128 2MEV
+collecting: 619429 2MEV
+collecting: 619453 2MEV
+collecting: 619925 2MEV
+Reached 620000 event mark. Ongoing...
+collecting: 620079 3MEV
+collecting: 620127 2MEV
+collecting: 620263 2MEV
+collecting: 620488 2MEV
+Reached 621000 event mark. Ongoing...
+collecting: 621425 3MEV
+collecting: 621783 2MEV
+Reached 622000 event mark. Ongoing...
+collecting: 622068 2MEV
+collecting: 622304 2MEV
+collecting: 622465 2MEV
+Reached 623000 event mark. Ongoing...
+collecting: 623049 3MEV
+collecting: 623442 2MEV
+collecting: 623860 2MEV
+Reached 624000 event mark. Ongoing...
+collecting: 624357 3MEV
+collecting: 624401 2MEV
+Reached 625000 event mark. Ongoing...
+collecting: 625181 2MEV
+collecting: 625497 2MEV
+Reached 626000 event mark. Ongoing...
+collecting: 626504 2MEV
+Reached 627000 event mark. Ongoing...
+collecting: 627163 3MEV
+collecting: 627239 2MEV
+collecting: 627439 2MEV
+collecting: 627884 3MEV
+collecting: 627981 2MEV
+Reached 628000 event mark. Ongoing...
+collecting: 628191 3MEV
+collecting: 628367 3MEV
+collecting: 628441 3MEV
+collecting: 628583 2MEV
+Reached 629000 event mark. Ongoing...
+collecting: 629001 3MEV
+collecting: 629231 2MEV
+collecting: 629372 3MEV
+collecting: 629493 5MEV
+Reached 630000 event mark. Ongoing...
+collecting: 630151 2MEV
+collecting: 630176 2MEV
+collecting: 630181 3MEV
+Reached 631000 event mark. Ongoing...
+collecting: 631168 2MEV
+collecting: 631292 2MEV
+collecting: 631702 2MEV
+Reached 632000 event mark. Ongoing...
+collecting: 632173 2MEV
+collecting: 632262 2MEV
+collecting: 632482 3MEV
+collecting: 632930 2MEV
+Reached 633000 event mark. Ongoing...
+collecting: 633011 2MEV
+collecting: 633036 3MEV
+Reached 634000 event mark. Ongoing...
+collecting: 634331 2MEV
+collecting: 634533 3MEV
+collecting: 634594 3MEV
+Reached 635000 event mark. Ongoing...
+collecting: 635089 2MEV
+Reached 636000 event mark. Ongoing...
+collecting: 636016 2MEV
+collecting: 636267 2MEV
+collecting: 636458 3MEV
+collecting: 636479 2MEV
+collecting: 636863 3MEV
+Reached 637000 event mark. Ongoing...
+collecting: 637007 2MEV
+collecting: 637257 2MEV
+collecting: 637316 3MEV
+Reached 638000 event mark. Ongoing...
+collecting: 638098 2MEV
+Reached 639000 event mark. Ongoing...
+collecting: 639273 5MEV
+collecting: 639589 3MEV
+collecting: 639965 2MEV
+Reached 640000 event mark. Ongoing...
+collecting: 640086 2MEV
+collecting: 640225 5MEV
+collecting: 640526 2MEV
+collecting: 640608 5MEV
+collecting: 640734 2MEV
+collecting: 640813 3MEV
+Reached 641000 event mark. Ongoing...
+collecting: 641093 2MEV
+collecting: 641140 2MEV
+collecting: 641216 3MEV
+collecting: 641331 5MEV
+Reached 642000 event mark. Ongoing...
+collecting: 642165 3MEV
+collecting: 642203 3MEV
+collecting: 642726 2MEV
+collecting: 642739 2MEV
+collecting: 642780 2MEV
+Reached 643000 event mark. Ongoing...
+collecting: 643079 3MEV
+collecting: 643468 2MEV
+collecting: 643617 3MEV
+collecting: 643763 5MEV
+collecting: 643813 3MEV
+Reached 644000 event mark. Ongoing...
+collecting: 644233 3MEV
+Reached 645000 event mark. Ongoing...
+collecting: 645055 3MEV
+collecting: 645075 3MEV
+collecting: 645080 3MEV
+collecting: 645270 2MEV
+collecting: 645285 2MEV
+collecting: 645422 2MEV
+collecting: 645764 3MEV
+collecting: 645945 3MEV
+Reached 646000 event mark. Ongoing...
+collecting: 646269 3MEV
+collecting: 646316 3MEV
+collecting: 646411 2MEV
+collecting: 646473 2MEV
+collecting: 646568 5MEV
+collecting: 646591 5MEV
+collecting: 646680 2MEV
+Reached 647000 event mark. Ongoing...
+collecting: 647011 3MEV
+collecting: 647110 5MEV
+collecting: 647242 2MEV
+collecting: 647522 3MEV
+Reached 648000 event mark. Ongoing...
+collecting: 648042 2MEV
+collecting: 648083 2MEV
+collecting: 648248 2MEV
+collecting: 648503 2MEV
+collecting: 648758 5MEV
+Reached 649000 event mark. Ongoing...
+collecting: 649356 2MEV
+collecting: 649523 3MEV
+Reached 650000 event mark. Ongoing...
+collecting: 650218 2MEV
+collecting: 650433 2MEV
+collecting: 650906 5MEV
+collecting: 650941 2MEV
+collecting: 650996 3MEV
+Reached 651000 event mark. Ongoing...
+collecting: 651180 2MEV
+collecting: 651228 5MEV
+collecting: 651369 3MEV
+collecting: 651416 2MEV
+collecting: 651462 2MEV
+collecting: 651864 3MEV
+Reached 652000 event mark. Ongoing...
+collecting: 652321 3MEV
+collecting: 652529 3MEV
+collecting: 652687 3MEV
+collecting: 652768 2MEV
+Reached 653000 event mark. Ongoing...
+collecting: 653304 3MEV
+collecting: 653392 3MEV
+collecting: 653937 3MEV
+Reached 654000 event mark. Ongoing...
+collecting: 654447 2MEV
+collecting: 654666 5MEV
+Reached 655000 event mark. Ongoing...
+collecting: 655738 2MEV
+collecting: 655754 2MEV
+Reached 656000 event mark. Ongoing...
+collecting: 656447 2MEV
+collecting: 656475 5MEV
+collecting: 656639 3MEV
+collecting: 656699 2MEV
+collecting: 656757 3MEV
+collecting: 656818 3MEV
+Reached 657000 event mark. Ongoing...
+collecting: 657143 3MEV
+collecting: 657400 5MEV
+Reached 658000 event mark. Ongoing...
+collecting: 658093 2MEV
+collecting: 658525 3MEV
+collecting: 658652 2MEV
+collecting: 658817 3MEV
+Reached 659000 event mark. Ongoing...
+collecting: 659433 3MEV
+Reached 660000 event mark. Ongoing...
+collecting: 660076 2MEV
+collecting: 660370 5MEV
+collecting: 660394 5MEV
+collecting: 660395 3MEV
+collecting: 660673 3MEV
+Reached 661000 event mark. Ongoing...
+collecting: 661175 2MEV
+collecting: 661699 2MEV
+collecting: 661730 3MEV
+collecting: 661950 2MEV
+Reached 662000 event mark. Ongoing...
+collecting: 662518 2MEV
+collecting: 662787 2MEV
+Reached 663000 event mark. Ongoing...
+collecting: 663333 2MEV
+collecting: 663363 2MEV
+Reached 664000 event mark. Ongoing...
+collecting: 664004 2MEV
+collecting: 664089 3MEV
+collecting: 664654 2MEV
+Reached 665000 event mark. Ongoing...
+collecting: 665240 3MEV
+collecting: 665547 2MEV
+collecting: 665609 3MEV
+collecting: 665661 2MEV
+collecting: 665710 2MEV
+Reached 666000 event mark. Ongoing...
+collecting: 666391 3MEV
+collecting: 666600 2MEV
+collecting: 666986 3MEV
+Reached 667000 event mark. Ongoing...
+collecting: 667555 3MEV
+collecting: 667826 2MEV
+collecting: 667828 2MEV
+Reached 668000 event mark. Ongoing...
+collecting: 668394 2MEV
+collecting: 668843 2MEV
+collecting: 668916 2MEV
+collecting: 668945 2MEV
+Reached 669000 event mark. Ongoing...
+collecting: 669475 2MEV
+collecting: 669583 2MEV
+collecting: 669615 2MEV
+collecting: 669870 5MEV
+collecting: 669972 2MEV
+Reached 670000 event mark. Ongoing...
+collecting: 670087 2MEV
+collecting: 670849 2MEV
+collecting: 670980 2MEV
+Reached 671000 event mark. Ongoing...
+collecting: 671041 5MEV
+collecting: 671085 2MEV
+collecting: 671281 3MEV
+collecting: 671320 2MEV
+collecting: 671333 2MEV
+collecting: 671361 2MEV
+collecting: 671714 2MEV
+collecting: 671816 3MEV
+collecting: 671949 2MEV
+collecting: 671958 2MEV
+Reached 672000 event mark. Ongoing...
+collecting: 672577 3MEV
+collecting: 672852 3MEV
+Reached 673000 event mark. Ongoing...
+collecting: 673567 2MEV
+collecting: 673670 2MEV
+collecting: 673910 3MEV
+Reached 674000 event mark. Ongoing...
+collecting: 674231 5MEV
+collecting: 674240 2MEV
+collecting: 674318 5MEV
+collecting: 674620 2MEV
+Reached 675000 event mark. Ongoing...
+collecting: 675144 3MEV
+collecting: 675315 3MEV
+collecting: 675362 2MEV
+collecting: 675631 3MEV
+Reached 676000 event mark. Ongoing...
+collecting: 676006 2MEV
+collecting: 676585 3MEV
+collecting: 676687 2MEV
+collecting: 676701 3MEV
+Reached 677000 event mark. Ongoing...
+collecting: 677031 2MEV
+collecting: 677249 2MEV
+Reached 678000 event mark. Ongoing...
+Reached 679000 event mark. Ongoing...
+collecting: 679917 2MEV
+Reached 680000 event mark. Ongoing...
+collecting: 680065 2MEV
+collecting: 680715 2MEV
+collecting: 680828 2MEV
+collecting: 680994 3MEV
+Reached 681000 event mark. Ongoing...
+collecting: 681179 2MEV
+collecting: 681241 2MEV
+collecting: 681470 2MEV
+collecting: 681751 5MEV
+collecting: 681769 3MEV
+Reached 682000 event mark. Ongoing...
+collecting: 682004 2MEV
+collecting: 682123 2MEV
+collecting: 682190 5MEV
+collecting: 682198 3MEV
+collecting: 682593 2MEV
+collecting: 682960 2MEV
+Reached 683000 event mark. Ongoing...
+collecting: 683095 3MEV
+collecting: 683417 2MEV
+collecting: 683452 2MEV
+collecting: 683685 3MEV
+collecting: 683801 2MEV
+Reached 684000 event mark. Ongoing...
+collecting: 684106 2MEV
+collecting: 684157 5MEV
+collecting: 684209 2MEV
+collecting: 684699 3MEV
+collecting: 684771 2MEV
+collecting: 684866 3MEV
+Reached 685000 event mark. Ongoing...
+collecting: 685370 5MEV
+collecting: 685495 3MEV
+collecting: 685497 2MEV
+collecting: 685774 2MEV
+collecting: 685996 2MEV
+Reached 686000 event mark. Ongoing...
+collecting: 686183 2MEV
+collecting: 686533 2MEV
+collecting: 686754 2MEV
+collecting: 686934 3MEV
+collecting: 686941 2MEV
+Reached 687000 event mark. Ongoing...
+collecting: 687351 5MEV
+collecting: 687500 3MEV
+collecting: 687701 2MEV
+Reached 688000 event mark. Ongoing...
+collecting: 688223 2MEV
+collecting: 688857 2MEV
+Reached 689000 event mark. Ongoing...
+collecting: 689019 2MEV
+collecting: 689755 2MEV
+Reached 690000 event mark. Ongoing...
+collecting: 690228 2MEV
+collecting: 690271 2MEV
+collecting: 690569 3MEV
+collecting: 690657 2MEV
+collecting: 690767 2MEV
+Reached 691000 event mark. Ongoing...
+collecting: 691128 2MEV
+collecting: 691277 3MEV
+collecting: 691303 3MEV
+collecting: 691758 3MEV
+collecting: 691962 2MEV
+Reached 692000 event mark. Ongoing...
+collecting: 692243 2MEV
+Reached 693000 event mark. Ongoing...
+collecting: 693077 2MEV
+collecting: 693612 2MEV
+collecting: 693813 2MEV
+collecting: 693899 2MEV
+Reached 694000 event mark. Ongoing...
+collecting: 694200 3MEV
+collecting: 694693 2MEV
+collecting: 694697 2MEV
+Reached 695000 event mark. Ongoing...
+collecting: 695024 2MEV
+collecting: 695125 2MEV
+collecting: 695419 3MEV
+collecting: 695502 3MEV
+collecting: 695589 2MEV
+collecting: 695856 3MEV
+Reached 696000 event mark. Ongoing...
+collecting: 696039 5MEV
+collecting: 696152 5MEV
+collecting: 696272 2MEV
+collecting: 696476 2MEV
+collecting: 696603 2MEV
+collecting: 696658 2MEV
+Reached 697000 event mark. Ongoing...
+collecting: 697168 2MEV
+collecting: 697253 2MEV
+collecting: 697562 2MEV
+collecting: 697571 2MEV
+collecting: 697888 2MEV
+Reached 698000 event mark. Ongoing...
+collecting: 698292 2MEV
+collecting: 698430 2MEV
+collecting: 698433 5MEV
+collecting: 698838 2MEV
+Reached 699000 event mark. Ongoing...
+collecting: 699020 2MEV
+collecting: 699035 2MEV
+collecting: 699643 2MEV
+collecting: 699648 2MEV
+Reached 700000 event mark. Ongoing...
+collecting: 700154 2MEV
+collecting: 700767 3MEV
+Reached 701000 event mark. Ongoing...
+collecting: 701089 2MEV
+collecting: 701126 2MEV
+collecting: 701230 2MEV
+collecting: 701292 2MEV
+collecting: 701795 2MEV
+Reached 702000 event mark. Ongoing...
+collecting: 702711 3MEV
+Reached 703000 event mark. Ongoing...
+collecting: 703164 3MEV
+collecting: 703303 2MEV
+collecting: 703348 2MEV
+Reached 704000 event mark. Ongoing...
+collecting: 704213 5MEV
+collecting: 704273 3MEV
+Reached 705000 event mark. Ongoing...
+collecting: 705082 2MEV
+collecting: 705482 3MEV
+collecting: 705852 2MEV
+collecting: 705955 2MEV
+Reached 706000 event mark. Ongoing...
+collecting: 706101 2MEV
+collecting: 706176 3MEV
+collecting: 706297 2MEV
+collecting: 706827 3MEV
+Reached 707000 event mark. Ongoing...
+collecting: 707930 2MEV
+collecting: 707993 3MEV
+Reached 708000 event mark. Ongoing...
+collecting: 708526 3MEV
+collecting: 708563 2MEV
+collecting: 708689 2MEV
+collecting: 708721 2MEV
+Reached 709000 event mark. Ongoing...
+collecting: 709005 2MEV
+collecting: 709034 2MEV
+collecting: 709159 5MEV
+collecting: 709369 2MEV
+collecting: 709842 2MEV
+Reached 710000 event mark. Ongoing...
+collecting: 710169 2MEV
+collecting: 710226 3MEV
+Reached 711000 event mark. Ongoing...
+collecting: 711018 3MEV
+collecting: 711023 2MEV
+collecting: 711150 2MEV
+collecting: 711407 3MEV
+collecting: 711593 2MEV
+collecting: 711829 3MEV
+Reached 712000 event mark. Ongoing...
+collecting: 712126 2MEV
+collecting: 712377 5MEV
+collecting: 712463 2MEV
+collecting: 712931 2MEV
+Reached 713000 event mark. Ongoing...
+collecting: 713071 3MEV
+collecting: 713113 2MEV
+collecting: 713236 2MEV
+collecting: 713393 2MEV
+collecting: 713978 2MEV
+Reached 714000 event mark. Ongoing...
+collecting: 714023 3MEV
+collecting: 714259 2MEV
+collecting: 714404 3MEV
+collecting: 714890 2MEV
+collecting: 714962 3MEV
+Reached 715000 event mark. Ongoing...
+collecting: 715098 3MEV
+collecting: 715358 2MEV
+collecting: 715943 3MEV
+Reached 716000 event mark. Ongoing...
+collecting: 716012 3MEV
+collecting: 716094 3MEV
+collecting: 716279 2MEV
+collecting: 716324 2MEV
+collecting: 716624 3MEV
+collecting: 716985 2MEV
+Reached 717000 event mark. Ongoing...
+collecting: 717239 2MEV
+collecting: 717338 3MEV
+collecting: 717524 2MEV
+collecting: 717763 3MEV
+collecting: 717921 3MEV
+Reached 718000 event mark. Ongoing...
+collecting: 718024 2MEV
+collecting: 718131 2MEV
+collecting: 718153 3MEV
+collecting: 718783 2MEV
+Reached 719000 event mark. Ongoing...
+collecting: 719130 5MEV
+collecting: 719288 2MEV
+collecting: 719330 2MEV
+collecting: 719380 3MEV
+collecting: 719562 2MEV
+Reached 720000 event mark. Ongoing...
+collecting: 720192 5MEV
+collecting: 720234 5MEV
+Reached 721000 event mark. Ongoing...
+collecting: 721493 5MEV
+collecting: 721660 3MEV
+Reached 722000 event mark. Ongoing...
+collecting: 722624 2MEV
+collecting: 722878 2MEV
+Reached 723000 event mark. Ongoing...
+collecting: 723137 2MEV
+collecting: 723461 2MEV
+collecting: 723531 2MEV
+collecting: 723994 5MEV
+Reached 724000 event mark. Ongoing...
+collecting: 724431 2MEV
+Reached 725000 event mark. Ongoing...
+collecting: 725031 2MEV
+collecting: 725434 3MEV
+collecting: 725771 3MEV
+Reached 726000 event mark. Ongoing...
+collecting: 726052 3MEV
+collecting: 726458 3MEV
+collecting: 726499 5MEV
+collecting: 726582 5MEV
+collecting: 726725 5MEV
+collecting: 726822 2MEV
+collecting: 726920 3MEV
+collecting: 726940 3MEV
+Reached 727000 event mark. Ongoing...
+collecting: 727205 2MEV
+collecting: 727847 2MEV
+collecting: 727876 3MEV
+Reached 728000 event mark. Ongoing...
+collecting: 728034 2MEV
+collecting: 728435 3MEV
+collecting: 728965 2MEV
+collecting: 728977 3MEV
+Reached 729000 event mark. Ongoing...
+collecting: 729253 2MEV
+collecting: 729431 2MEV
+collecting: 729465 2MEV
+collecting: 729482 2MEV
+collecting: 729584 3MEV
+Reached 730000 event mark. Ongoing...
+collecting: 730298 2MEV
+collecting: 730533 3MEV
+collecting: 730912 2MEV
+Reached 731000 event mark. Ongoing...
+collecting: 731219 3MEV
+collecting: 731501 2MEV
+Reached 732000 event mark. Ongoing...
+collecting: 732312 2MEV
+collecting: 732626 2MEV
+collecting: 732642 3MEV
+collecting: 732840 3MEV
+collecting: 732915 2MEV
+collecting: 732973 2MEV
+Reached 733000 event mark. Ongoing...
+collecting: 733050 5MEV
+collecting: 733671 2MEV
+collecting: 733738 5MEV
+collecting: 733743 2MEV
+collecting: 733867 3MEV
+collecting: 733889 3MEV
+collecting: 733968 2MEV
+Reached 734000 event mark. Ongoing...
+collecting: 734075 2MEV
+collecting: 734862 2MEV
+Reached 735000 event mark. Ongoing...
+collecting: 735153 2MEV
+collecting: 735166 3MEV
+collecting: 735243 2MEV
+collecting: 735560 2MEV
+collecting: 735748 2MEV
+collecting: 735952 2MEV
+collecting: 735955 2MEV
+Reached 736000 event mark. Ongoing...
+collecting: 736438 2MEV
+collecting: 736945 2MEV
+Reached 737000 event mark. Ongoing...
+collecting: 737262 3MEV
+collecting: 737294 5MEV
+collecting: 737600 3MEV
+collecting: 737721 2MEV
+collecting: 737864 3MEV
+collecting: 737925 2MEV
+Reached 738000 event mark. Ongoing...
+collecting: 738943 2MEV
+Reached 739000 event mark. Ongoing...
+collecting: 739275 2MEV
+collecting: 739323 5MEV
+Reached 740000 event mark. Ongoing...
+collecting: 740033 5MEV
+collecting: 740209 2MEV
+collecting: 740477 3MEV
+collecting: 740938 2MEV
+Reached 741000 event mark. Ongoing...
+collecting: 741021 2MEV
+collecting: 741032 2MEV
+collecting: 741396 5MEV
+collecting: 741418 2MEV
+collecting: 741541 3MEV
+collecting: 741930 3MEV
+Reached 742000 event mark. Ongoing...
+collecting: 742014 2MEV
+collecting: 742326 3MEV
+collecting: 742581 2MEV
+collecting: 742660 2MEV
+collecting: 742676 2MEV
+collecting: 742729 2MEV
+collecting: 742783 5MEV
+collecting: 742831 2MEV
+Reached 743000 event mark. Ongoing...
+collecting: 743265 2MEV
+Reached 744000 event mark. Ongoing...
+collecting: 744045 5MEV
+collecting: 744171 3MEV
+collecting: 744335 2MEV
+collecting: 744778 2MEV
+Reached 745000 event mark. Ongoing...
+collecting: 745128 5MEV
+collecting: 745272 2MEV
+collecting: 745542 2MEV
+collecting: 745942 2MEV
+Reached 746000 event mark. Ongoing...
+collecting: 746330 2MEV
+collecting: 746332 2MEV
+collecting: 746620 5MEV
+collecting: 746712 2MEV
+collecting: 746772 3MEV
+Reached 747000 event mark. Ongoing...
+collecting: 747106 2MEV
+collecting: 747560 2MEV
+collecting: 747611 3MEV
+collecting: 747665 2MEV
+Reached 748000 event mark. Ongoing...
+collecting: 748187 2MEV
+collecting: 748375 2MEV
+collecting: 748413 3MEV
+collecting: 748640 3MEV
+Reached 749000 event mark. Ongoing...
+collecting: 749079 2MEV
+collecting: 749094 3MEV
+collecting: 749389 5MEV
+collecting: 749602 2MEV
+Reached 750000 event mark. Ongoing...
+collecting: 750109 2MEV
+collecting: 750317 3MEV
+collecting: 750373 2MEV
+collecting: 750407 2MEV
+Reached 751000 event mark. Ongoing...
+collecting: 751322 3MEV
+collecting: 751574 2MEV
+Reached 752000 event mark. Ongoing...
+collecting: 752308 2MEV
+collecting: 752560 3MEV
+collecting: 752665 2MEV
+collecting: 752774 2MEV
+Reached 753000 event mark. Ongoing...
+collecting: 753499 3MEV
+collecting: 753619 2MEV
+collecting: 753988 2MEV
+collecting: 753992 2MEV
+Reached 754000 event mark. Ongoing...
+collecting: 754030 5MEV
+collecting: 754085 2MEV
+collecting: 754134 2MEV
+collecting: 754993 2MEV
+collecting: 754998 2MEV
+Reached 755000 event mark. Ongoing...
+Reached 756000 event mark. Ongoing...
+collecting: 756573 2MEV
+collecting: 756586 2MEV
+Reached 757000 event mark. Ongoing...
+collecting: 757164 2MEV
+collecting: 757250 2MEV
+collecting: 757549 2MEV
+collecting: 757723 3MEV
+collecting: 757788 5MEV
+Reached 758000 event mark. Ongoing...
+collecting: 758645 2MEV
+Reached 759000 event mark. Ongoing...
+collecting: 759044 5MEV
+collecting: 759746 2MEV
+Reached 760000 event mark. Ongoing...
+collecting: 760315 3MEV
+collecting: 760625 5MEV
+Reached 761000 event mark. Ongoing...
+collecting: 761311 2MEV
+collecting: 761583 3MEV
+collecting: 761875 3MEV
+collecting: 761990 2MEV
+Reached 762000 event mark. Ongoing...
+collecting: 762030 2MEV
+collecting: 762234 2MEV
+collecting: 762783 2MEV
+Reached 763000 event mark. Ongoing...
+collecting: 763184 2MEV
+collecting: 763756 5MEV
+Reached 764000 event mark. Ongoing...
+collecting: 764032 3MEV
+collecting: 764119 2MEV
+collecting: 764276 5MEV
+Reached 765000 event mark. Ongoing...
+collecting: 765054 2MEV
+Reached 766000 event mark. Ongoing...
+collecting: 766093 2MEV
+collecting: 766294 5MEV
+collecting: 766374 2MEV
+collecting: 766567 2MEV
+Reached 767000 event mark. Ongoing...
+collecting: 766999 3MEV
+collecting: 767163 3MEV
+collecting: 767436 2MEV
+Reached 768000 event mark. Ongoing...
+collecting: 768076 2MEV
+collecting: 768089 2MEV
+collecting: 768114 2MEV
+collecting: 768248 5MEV
+collecting: 768672 2MEV
+collecting: 768858 5MEV
+Reached 769000 event mark. Ongoing...
+collecting: 769600 3MEV
+Reached 770000 event mark. Ongoing...
+collecting: 770028 2MEV
+collecting: 770245 3MEV
+collecting: 770504 5MEV
+collecting: 770653 5MEV
+collecting: 770930 5MEV
+collecting: 770941 2MEV
+Reached 771000 event mark. Ongoing...
+collecting: 771053 2MEV
+collecting: 771223 3MEV
+collecting: 771412 2MEV
+Reached 772000 event mark. Ongoing...
+collecting: 772577 2MEV
+collecting: 772616 5MEV
+collecting: 772694 3MEV
+Reached 773000 event mark. Ongoing...
+collecting: 773044 2MEV
+collecting: 773066 2MEV
+collecting: 773167 2MEV
+collecting: 773194 2MEV
+collecting: 773275 3MEV
+collecting: 773363 2MEV
+collecting: 773536 3MEV
+collecting: 773563 2MEV
+Reached 774000 event mark. Ongoing...
+collecting: 774199 2MEV
+collecting: 774208 2MEV
+collecting: 774231 3MEV
+collecting: 774921 5MEV
+Reached 775000 event mark. Ongoing...
+collecting: 775149 3MEV
+collecting: 775355 2MEV
+collecting: 775555 2MEV
+collecting: 775742 3MEV
+Reached 776000 event mark. Ongoing...
+collecting: 776346 2MEV
+collecting: 776487 3MEV
+collecting: 776624 2MEV
+Reached 777000 event mark. Ongoing...
+collecting: 777026 3MEV
+collecting: 777290 2MEV
+collecting: 777911 5MEV
+Reached 778000 event mark. Ongoing...
+collecting: 778654 2MEV
+collecting: 778759 5MEV
+collecting: 778888 5MEV
+Reached 779000 event mark. Ongoing...
+collecting: 779059 2MEV
+collecting: 779512 2MEV
+collecting: 779516 2MEV
+collecting: 779542 3MEV
+collecting: 779774 2MEV
+Reached 780000 event mark. Ongoing...
+collecting: 780331 3MEV
+Reached 781000 event mark. Ongoing...
+collecting: 781059 3MEV
+collecting: 781498 2MEV
+collecting: 781530 2MEV
+Reached 782000 event mark. Ongoing...
+collecting: 782150 2MEV
+collecting: 782440 2MEV
+collecting: 782537 3MEV
+Reached 783000 event mark. Ongoing...
+collecting: 783049 2MEV
+collecting: 783162 3MEV
+collecting: 783608 3MEV
+Reached 784000 event mark. Ongoing...
+collecting: 784023 2MEV
+collecting: 784063 3MEV
+collecting: 784199 2MEV
+collecting: 784744 2MEV
+Reached 785000 event mark. Ongoing...
+collecting: 785204 3MEV
+collecting: 785205 2MEV
+collecting: 785260 3MEV
+collecting: 785341 2MEV
+collecting: 785697 3MEV
+collecting: 785788 2MEV
+Reached 786000 event mark. Ongoing...
+collecting: 786028 3MEV
+collecting: 786050 3MEV
+collecting: 786393 3MEV
+collecting: 786654 3MEV
+Reached 787000 event mark. Ongoing...
+collecting: 787233 2MEV
+collecting: 787404 2MEV
+collecting: 787666 2MEV
+collecting: 787758 2MEV
+Reached 788000 event mark. Ongoing...
+collecting: 788311 2MEV
+collecting: 788377 2MEV
+collecting: 788731 5MEV
+Reached 789000 event mark. Ongoing...
+collecting: 789456 3MEV
+Reached 790000 event mark. Ongoing...
+collecting: 790132 3MEV
+collecting: 790628 2MEV
+collecting: 790932 2MEV
+Reached 791000 event mark. Ongoing...
+collecting: 791252 2MEV
+collecting: 791366 5MEV
+collecting: 791519 3MEV
+collecting: 791710 5MEV
+collecting: 791979 3MEV
+Reached 792000 event mark. Ongoing...
+collecting: 792044 2MEV
+collecting: 792199 2MEV
+collecting: 792238 3MEV
+collecting: 792904 3MEV
+Reached 793000 event mark. Ongoing...
+collecting: 793226 2MEV
+collecting: 793384 2MEV
+collecting: 793562 2MEV
+Reached 794000 event mark. Ongoing...
+collecting: 794253 2MEV
+collecting: 794629 2MEV
+Reached 795000 event mark. Ongoing...
+collecting: 795089 3MEV
+collecting: 795106 2MEV
+collecting: 795160 3MEV
+collecting: 795849 2MEV
+collecting: 795850 2MEV
+collecting: 795879 5MEV
+Reached 796000 event mark. Ongoing...
+collecting: 796167 5MEV
+collecting: 796197 2MEV
+collecting: 796472 2MEV
+collecting: 796688 2MEV
+collecting: 796718 3MEV
+Reached 797000 event mark. Ongoing...
+collecting: 797106 2MEV
+collecting: 797781 2MEV
+Reached 798000 event mark. Ongoing...
+collecting: 798093 2MEV
+collecting: 798562 3MEV
+Reached 799000 event mark. Ongoing...
+collecting: 799045 2MEV
+collecting: 799125 3MEV
+collecting: 799810 5MEV
+Reached 800000 event mark. Ongoing...
+collecting: 800044 2MEV
+collecting: 800165 2MEV
+collecting: 800382 3MEV
+collecting: 800617 3MEV
+collecting: 800627 3MEV
+Reached 801000 event mark. Ongoing...
+collecting: 801338 2MEV
+Reached 802000 event mark. Ongoing...
+collecting: 802022 2MEV
+collecting: 802137 2MEV
+collecting: 802411 2MEV
+collecting: 802680 2MEV
+collecting: 802846 2MEV
+collecting: 802940 2MEV
+Reached 803000 event mark. Ongoing...
+collecting: 802999 3MEV
+collecting: 803158 2MEV
+collecting: 803352 2MEV
+Reached 804000 event mark. Ongoing...
+collecting: 804111 2MEV
+collecting: 804453 3MEV
+collecting: 804557 3MEV
+collecting: 804789 2MEV
+Reached 805000 event mark. Ongoing...
+collecting: 805306 2MEV
+collecting: 805356 3MEV
+collecting: 805664 2MEV
+Reached 806000 event mark. Ongoing...
+collecting: 806278 2MEV
+collecting: 806401 2MEV
+collecting: 806762 3MEV
+collecting: 806897 2MEV
+collecting: 806938 3MEV
+collecting: 806941 2MEV
+Reached 807000 event mark. Ongoing...
+collecting: 807565 3MEV
+collecting: 807573 5MEV
+collecting: 807743 2MEV
+collecting: 807838 2MEV
+collecting: 807839 2MEV
+collecting: 807855 2MEV
+Reached 808000 event mark. Ongoing...
+collecting: 808191 2MEV
+collecting: 808201 3MEV
+collecting: 808439 3MEV
+collecting: 808732 3MEV
+Reached 809000 event mark. Ongoing...
+collecting: 809010 3MEV
+collecting: 809190 2MEV
+Reached 810000 event mark. Ongoing...
+collecting: 810225 2MEV
+collecting: 810258 2MEV
+collecting: 810274 2MEV
+collecting: 810505 2MEV
+collecting: 810876 2MEV
+Reached 811000 event mark. Ongoing...
+collecting: 811095 5MEV
+collecting: 811858 2MEV
+Reached 812000 event mark. Ongoing...
+collecting: 812025 3MEV
+collecting: 812356 2MEV
+collecting: 812507 5MEV
+collecting: 812854 2MEV
+Reached 813000 event mark. Ongoing...
+collecting: 813017 3MEV
+collecting: 813529 3MEV
+collecting: 813691 2MEV
+collecting: 813899 2MEV
+Reached 814000 event mark. Ongoing...
+collecting: 814335 2MEV
+Reached 815000 event mark. Ongoing...
+collecting: 815052 2MEV
+collecting: 815198 3MEV
+collecting: 815319 3MEV
+collecting: 815334 5MEV
+collecting: 815427 2MEV
+collecting: 815854 3MEV
+Reached 816000 event mark. Ongoing...
+collecting: 816040 2MEV
+collecting: 816256 2MEV
+collecting: 816275 3MEV
+collecting: 816726 3MEV
+Reached 817000 event mark. Ongoing...
+collecting: 817389 2MEV
+collecting: 817649 2MEV
+Reached 818000 event mark. Ongoing...
+collecting: 818189 3MEV
+collecting: 818398 2MEV
+collecting: 818918 3MEV
+Reached 819000 event mark. Ongoing...
+collecting: 819801 2MEV
+collecting: 819835 3MEV
+Reached 820000 event mark. Ongoing...
+collecting: 820478 2MEV
+collecting: 820602 2MEV
+Reached 821000 event mark. Ongoing...
+collecting: 821127 3MEV
+collecting: 821743 2MEV
+collecting: 821842 3MEV
+collecting: 821929 3MEV
+Reached 822000 event mark. Ongoing...
+collecting: 822475 3MEV
+collecting: 822913 2MEV
+Reached 823000 event mark. Ongoing...
+collecting: 823033 3MEV
+collecting: 823036 2MEV
+collecting: 823410 3MEV
+collecting: 823587 2MEV
+collecting: 823589 2MEV
+collecting: 823773 3MEV
+Reached 824000 event mark. Ongoing...
+collecting: 824151 2MEV
+collecting: 824328 3MEV
+collecting: 824932 3MEV
+Reached 825000 event mark. Ongoing...
+collecting: 825540 3MEV
+collecting: 825878 3MEV
+Reached 826000 event mark. Ongoing...
+collecting: 826276 2MEV
+collecting: 826414 3MEV
+collecting: 826768 2MEV
+collecting: 826989 2MEV
+Reached 827000 event mark. Ongoing...
+collecting: 827248 2MEV
+collecting: 827580 2MEV
+collecting: 827749 5MEV
+Reached 828000 event mark. Ongoing...
+collecting: 828124 2MEV
+collecting: 828315 5MEV
+collecting: 828835 3MEV
+collecting: 828864 2MEV
+collecting: 828895 3MEV
+Reached 829000 event mark. Ongoing...
+collecting: 829239 2MEV
+collecting: 829294 5MEV
+collecting: 829566 3MEV
+collecting: 829826 2MEV
+collecting: 829997 3MEV
+Reached 830000 event mark. Ongoing...
+collecting: 830002 2MEV
+collecting: 830157 2MEV
+collecting: 830331 2MEV
+collecting: 830717 2MEV
+collecting: 830866 5MEV
+collecting: 830920 3MEV
+Reached 831000 event mark. Ongoing...
+collecting: 831216 3MEV
+collecting: 831733 2MEV
+collecting: 831763 5MEV
+collecting: 831869 3MEV
+Reached 832000 event mark. Ongoing...
+collecting: 832223 2MEV
+collecting: 832849 3MEV
+Reached 833000 event mark. Ongoing...
+Reached 834000 event mark. Ongoing...
+collecting: 834815 3MEV
+collecting: 834950 2MEV
+Reached 835000 event mark. Ongoing...
+collecting: 835154 3MEV
+collecting: 835374 2MEV
+Reached 836000 event mark. Ongoing...
+collecting: 836101 2MEV
+collecting: 836388 2MEV
+collecting: 836722 3MEV
+collecting: 836782 5MEV
+collecting: 836809 3MEV
+collecting: 836836 2MEV
+Reached 837000 event mark. Ongoing...
+collecting: 837541 2MEV
+Reached 838000 event mark. Ongoing...
+collecting: 838607 3MEV
+collecting: 838677 2MEV
+collecting: 838856 2MEV
+Reached 839000 event mark. Ongoing...
+collecting: 839017 2MEV
+collecting: 839927 2MEV
+Reached 840000 event mark. Ongoing...
+collecting: 840330 5MEV
+collecting: 840594 3MEV
+collecting: 840721 3MEV
+collecting: 840813 2MEV
+Reached 841000 event mark. Ongoing...
+collecting: 841086 3MEV
+collecting: 841500 3MEV
+collecting: 841838 3MEV
+Reached 842000 event mark. Ongoing...
+collecting: 842055 5MEV
+collecting: 842582 2MEV
+collecting: 842600 2MEV
+collecting: 842982 3MEV
+Reached 843000 event mark. Ongoing...
+collecting: 843584 3MEV
+collecting: 843837 3MEV
+collecting: 843931 5MEV
+Reached 844000 event mark. Ongoing...
+collecting: 844613 2MEV
+Reached 845000 event mark. Ongoing...
+collecting: 845196 3MEV
+collecting: 845238 2MEV
+collecting: 845495 3MEV
+collecting: 845887 3MEV
+collecting: 845893 2MEV
+Reached 846000 event mark. Ongoing...
+collecting: 846795 2MEV
+collecting: 846846 5MEV
+Reached 847000 event mark. Ongoing...
+Reached 848000 event mark. Ongoing...
+collecting: 848127 5MEV
+collecting: 848471 2MEV
+collecting: 848547 3MEV
+Reached 849000 event mark. Ongoing...
+collecting: 849110 5MEV
+collecting: 849500 2MEV
+collecting: 849790 3MEV
+collecting: 849875 2MEV
+Reached 850000 event mark. Ongoing...
+collecting: 850072 2MEV
+collecting: 850194 3MEV
+collecting: 850418 3MEV
+collecting: 850586 2MEV
+collecting: 850710 2MEV
+Reached 851000 event mark. Ongoing...
+collecting: 851149 2MEV
+collecting: 851245 3MEV
+collecting: 851268 2MEV
+collecting: 851766 5MEV
+collecting: 851808 3MEV
+Reached 852000 event mark. Ongoing...
+collecting: 852041 2MEV
+collecting: 852162 3MEV
+collecting: 852202 2MEV
+collecting: 852312 2MEV
+collecting: 852314 2MEV
+collecting: 852409 5MEV
+collecting: 852487 2MEV
+collecting: 852538 5MEV
+collecting: 852871 2MEV
+Reached 853000 event mark. Ongoing...
+collecting: 853054 2MEV
+collecting: 853421 3MEV
+collecting: 853530 3MEV
+collecting: 853700 3MEV
+collecting: 853966 2MEV
+Reached 854000 event mark. Ongoing...
+collecting: 854042 2MEV
+collecting: 854245 2MEV
+collecting: 854320 3MEV
+collecting: 854385 2MEV
+collecting: 854491 3MEV
+collecting: 854504 2MEV
+collecting: 854819 3MEV
+Reached 855000 event mark. Ongoing...
+collecting: 855170 3MEV
+collecting: 855273 3MEV
+collecting: 855277 2MEV
+collecting: 855492 2MEV
+collecting: 855672 2MEV
+collecting: 855838 2MEV
+Reached 856000 event mark. Ongoing...
+collecting: 856800 2MEV
+Reached 857000 event mark. Ongoing...
+collecting: 857083 2MEV
+collecting: 857196 2MEV
+collecting: 857226 2MEV
+collecting: 857363 2MEV
+collecting: 857595 5MEV
+collecting: 857797 3MEV
+collecting: 857804 2MEV
+collecting: 857938 2MEV
+Reached 858000 event mark. Ongoing...
+collecting: 858022 2MEV
+collecting: 858193 3MEV
+collecting: 858847 3MEV
+collecting: 858984 2MEV
+Reached 859000 event mark. Ongoing...
+collecting: 859003 2MEV
+collecting: 859223 2MEV
+collecting: 859568 2MEV
+Reached 860000 event mark. Ongoing...
+collecting: 860207 2MEV
+collecting: 860343 2MEV
+collecting: 860621 3MEV
+collecting: 860825 2MEV
+collecting: 860879 3MEV
+Reached 861000 event mark. Ongoing...
+collecting: 861762 2MEV
+collecting: 861879 3MEV
+Reached 862000 event mark. Ongoing...
+collecting: 862762 3MEV
+collecting: 862802 3MEV
+Reached 863000 event mark. Ongoing...
+collecting: 863168 2MEV
+collecting: 863375 3MEV
+collecting: 863380 2MEV
+collecting: 863422 3MEV
+collecting: 863512 3MEV
+Reached 864000 event mark. Ongoing...
+collecting: 864069 2MEV
+collecting: 864894 5MEV
+Reached 865000 event mark. Ongoing...
+collecting: 865185 2MEV
+collecting: 865192 5MEV
+collecting: 865798 2MEV
+collecting: 865813 3MEV
+collecting: 865833 5MEV
+Reached 866000 event mark. Ongoing...
+collecting: 866236 2MEV
+collecting: 866582 3MEV
+collecting: 866761 2MEV
+Reached 867000 event mark. Ongoing...
+collecting: 867182 2MEV
+collecting: 867254 3MEV
+collecting: 867382 2MEV
+collecting: 867472 2MEV
+collecting: 867586 2MEV
+collecting: 867594 2MEV
+collecting: 867721 3MEV
+Reached 868000 event mark. Ongoing...
+collecting: 868194 5MEV
+collecting: 868329 3MEV
+collecting: 868483 3MEV
+collecting: 868504 2MEV
+collecting: 868775 5MEV
+collecting: 868964 2MEV
+Reached 869000 event mark. Ongoing...
+collecting: 869139 2MEV
+collecting: 869266 2MEV
+collecting: 869287 2MEV
+collecting: 869313 5MEV
+collecting: 869578 2MEV
+collecting: 869708 3MEV
+collecting: 869835 2MEV
+Reached 870000 event mark. Ongoing...
+collecting: 870025 2MEV
+collecting: 870153 3MEV
+collecting: 870250 2MEV
+collecting: 870462 3MEV
+collecting: 870871 3MEV
+collecting: 870946 2MEV
+collecting: 870996 3MEV
+Reached 871000 event mark. Ongoing...
+collecting: 871148 5MEV
+collecting: 871272 2MEV
+collecting: 871561 2MEV
+collecting: 871731 2MEV
+Reached 872000 event mark. Ongoing...
+collecting: 872297 3MEV
+collecting: 872362 5MEV
+collecting: 872429 3MEV
+collecting: 872969 2MEV
+Reached 873000 event mark. Ongoing...
+collecting: 873113 5MEV
+Reached 874000 event mark. Ongoing...
+collecting: 874126 5MEV
+collecting: 874724 2MEV
+collecting: 874752 3MEV
+collecting: 874937 3MEV
+Reached 875000 event mark. Ongoing...
+collecting: 875031 3MEV
+collecting: 875160 2MEV
+collecting: 875200 3MEV
+collecting: 875574 2MEV
+collecting: 875688 2MEV
+collecting: 875728 5MEV
+Reached 876000 event mark. Ongoing...
+collecting: 876333 3MEV
+collecting: 876467 3MEV
+collecting: 876582 2MEV
+collecting: 876637 3MEV
+collecting: 876955 3MEV
+Reached 877000 event mark. Ongoing...
+collecting: 877098 3MEV
+collecting: 877187 3MEV
+collecting: 877214 3MEV
+collecting: 877980 3MEV
+Reached 878000 event mark. Ongoing...
+collecting: 878167 2MEV
+collecting: 878299 2MEV
+collecting: 878869 5MEV
+Reached 879000 event mark. Ongoing...
+collecting: 879251 3MEV
+collecting: 879273 3MEV
+collecting: 879337 3MEV
+collecting: 879367 2MEV
+collecting: 879746 3MEV
+collecting: 879975 2MEV
+Reached 880000 event mark. Ongoing...
+collecting: 880635 2MEV
+collecting: 880805 3MEV
+Reached 881000 event mark. Ongoing...
+collecting: 881027 2MEV
+collecting: 881029 5MEV
+collecting: 881238 2MEV
+collecting: 881513 2MEV
+collecting: 881517 2MEV
+Reached 882000 event mark. Ongoing...
+collecting: 882184 3MEV
+collecting: 882267 3MEV
+collecting: 882796 2MEV
+Reached 883000 event mark. Ongoing...
+collecting: 883799 2MEV
+Reached 884000 event mark. Ongoing...
+collecting: 884651 3MEV
+collecting: 884765 3MEV
+collecting: 884768 2MEV
+collecting: 884825 3MEV
+collecting: 884991 2MEV
+Reached 885000 event mark. Ongoing...
+collecting: 885087 3MEV
+collecting: 885168 2MEV
+collecting: 885301 3MEV
+collecting: 885659 2MEV
+collecting: 885701 3MEV
+Reached 886000 event mark. Ongoing...
+collecting: 886080 2MEV
+collecting: 886244 3MEV
+collecting: 886341 2MEV
+Reached 887000 event mark. Ongoing...
+collecting: 887045 3MEV
+collecting: 887794 2MEV
+collecting: 887890 2MEV
+Reached 888000 event mark. Ongoing...
+collecting: 888172 2MEV
+collecting: 888728 2MEV
+collecting: 888949 2MEV
+Reached 889000 event mark. Ongoing...
+collecting: 889148 3MEV
+collecting: 889280 2MEV
+collecting: 889518 5MEV
+collecting: 889859 2MEV
+Reached 890000 event mark. Ongoing...
+collecting: 890253 3MEV
+collecting: 890958 2MEV
+Reached 891000 event mark. Ongoing...
+collecting: 891201 2MEV
+Reached 892000 event mark. Ongoing...
+collecting: 892301 2MEV
+collecting: 892447 2MEV
+collecting: 892914 2MEV
+Reached 893000 event mark. Ongoing...
+collecting: 893055 2MEV
+collecting: 893169 2MEV
+collecting: 893321 3MEV
+Reached 894000 event mark. Ongoing...
+collecting: 894007 2MEV
+collecting: 894351 5MEV
+collecting: 894382 2MEV
+collecting: 894512 2MEV
+collecting: 894948 2MEV
+Reached 895000 event mark. Ongoing...
+collecting: 895081 5MEV
+collecting: 895539 2MEV
+collecting: 895596 3MEV
+collecting: 895809 3MEV
+Reached 896000 event mark. Ongoing...
+collecting: 896020 2MEV
+collecting: 896116 5MEV
+collecting: 896407 2MEV
+collecting: 896761 5MEV
+collecting: 896822 2MEV
+collecting: 896855 3MEV
+Reached 897000 event mark. Ongoing...
+collecting: 897018 2MEV
+collecting: 897203 3MEV
+collecting: 897394 3MEV
+collecting: 897509 5MEV
+collecting: 897863 3MEV
+Reached 898000 event mark. Ongoing...
+collecting: 898172 3MEV
+Reached 899000 event mark. Ongoing...
+collecting: 899144 2MEV
+collecting: 899367 2MEV
+collecting: 899696 3MEV
+collecting: 899944 5MEV
+collecting: 899991 2MEV
+Reached 900000 event mark. Ongoing...
+collecting: 900075 2MEV
+collecting: 900298 5MEV
+collecting: 900686 2MEV
+Reached 901000 event mark. Ongoing...
+collecting: 901019 2MEV
+collecting: 901049 2MEV
+collecting: 901207 3MEV
+collecting: 901353 5MEV
+collecting: 901406 5MEV
+collecting: 901805 2MEV
+Reached 902000 event mark. Ongoing...
+collecting: 902451 3MEV
+collecting: 902613 3MEV
+Reached 903000 event mark. Ongoing...
+collecting: 903244 3MEV
+collecting: 903247 5MEV
+Reached 904000 event mark. Ongoing...
+collecting: 904289 2MEV
+collecting: 904377 2MEV
+collecting: 904819 3MEV
+collecting: 904839 5MEV
+collecting: 904963 5MEV
+Reached 905000 event mark. Ongoing...
+collecting: 905166 5MEV
+collecting: 905609 3MEV
+collecting: 905803 2MEV
+Reached 906000 event mark. Ongoing...
+collecting: 906074 2MEV
+collecting: 906210 3MEV
+collecting: 906487 2MEV
+Reached 907000 event mark. Ongoing...
+collecting: 907335 2MEV
+collecting: 907576 5MEV
+collecting: 907917 5MEV
+Reached 908000 event mark. Ongoing...
+collecting: 908917 3MEV
+Reached 909000 event mark. Ongoing...
+collecting: 909143 5MEV
+collecting: 909587 2MEV
+Reached 910000 event mark. Ongoing...
+collecting: 910147 3MEV
+collecting: 910885 2MEV
+Reached 911000 event mark. Ongoing...
+Reached 912000 event mark. Ongoing...
+collecting: 912182 2MEV
+collecting: 912672 3MEV
+collecting: 912675 2MEV
+Reached 913000 event mark. Ongoing...
+collecting: 913011 3MEV
+collecting: 913126 2MEV
+collecting: 913215 2MEV
+collecting: 913353 5MEV
+collecting: 913389 2MEV
+collecting: 913701 5MEV
+Reached 914000 event mark. Ongoing...
+collecting: 914252 2MEV
+collecting: 914396 2MEV
+collecting: 914526 5MEV
+collecting: 914536 3MEV
+collecting: 914569 2MEV
+Reached 915000 event mark. Ongoing...
+collecting: 915356 2MEV
+collecting: 915358 2MEV
+collecting: 915441 2MEV
+collecting: 915474 3MEV
+collecting: 915595 3MEV
+Reached 916000 event mark. Ongoing...
+collecting: 916002 2MEV
+collecting: 916076 2MEV
+collecting: 916647 3MEV
+collecting: 916787 2MEV
+Reached 917000 event mark. Ongoing...
+collecting: 917141 3MEV
+collecting: 917656 3MEV
+collecting: 917765 2MEV
+collecting: 917858 3MEV
+collecting: 917878 3MEV
+Reached 918000 event mark. Ongoing...
+Reached 919000 event mark. Ongoing...
+collecting: 919184 3MEV
+collecting: 919654 2MEV
+collecting: 919888 3MEV
+collecting: 919981 2MEV
+Reached 920000 event mark. Ongoing...
+collecting: 920217 2MEV
+collecting: 920283 5MEV
+collecting: 920686 2MEV
+Reached 921000 event mark. Ongoing...
+collecting: 921030 2MEV
+collecting: 921069 3MEV
+collecting: 921182 2MEV
+collecting: 921261 3MEV
+collecting: 921281 2MEV
+collecting: 921914 3MEV
+collecting: 921916 2MEV
+collecting: 921995 2MEV
+Reached 922000 event mark. Ongoing...
+collecting: 922006 3MEV
+collecting: 922245 3MEV
+collecting: 922300 2MEV
+collecting: 922658 2MEV
+collecting: 922711 2MEV
+Reached 923000 event mark. Ongoing...
+collecting: 923381 5MEV
+collecting: 923523 5MEV
+collecting: 923951 3MEV
+Reached 924000 event mark. Ongoing...
+collecting: 924462 3MEV
+Reached 925000 event mark. Ongoing...
+collecting: 925491 3MEV
+collecting: 925721 5MEV
+collecting: 925817 2MEV
+Reached 926000 event mark. Ongoing...
+collecting: 926484 2MEV
+collecting: 926650 2MEV
+Reached 927000 event mark. Ongoing...
+collecting: 927089 2MEV
+collecting: 927107 2MEV
+collecting: 927395 2MEV
+collecting: 927436 3MEV
+collecting: 927709 5MEV
+Reached 928000 event mark. Ongoing...
+collecting: 928529 2MEV
+Reached 929000 event mark. Ongoing...
+collecting: 929194 2MEV
+collecting: 929250 2MEV
+collecting: 929506 3MEV
+collecting: 929532 2MEV
+collecting: 929695 2MEV
+collecting: 929880 3MEV
+Reached 930000 event mark. Ongoing...
+collecting: 930146 2MEV
+collecting: 930181 3MEV
+collecting: 930646 2MEV
+collecting: 930671 5MEV
+collecting: 930897 5MEV
+Reached 931000 event mark. Ongoing...
+collecting: 931072 2MEV
+collecting: 931128 3MEV
+collecting: 931407 2MEV
+collecting: 931654 2MEV
+Reached 932000 event mark. Ongoing...
+collecting: 932178 3MEV
+collecting: 932206 3MEV
+collecting: 932663 2MEV
+collecting: 932851 3MEV
+Reached 933000 event mark. Ongoing...
+collecting: 933208 2MEV
+collecting: 933626 3MEV
+collecting: 933923 3MEV
+collecting: 933956 3MEV
+Reached 934000 event mark. Ongoing...
+collecting: 934074 2MEV
+collecting: 934258 2MEV
+collecting: 934504 5MEV
+collecting: 934539 5MEV
+collecting: 934662 3MEV
+Reached 935000 event mark. Ongoing...
+collecting: 935673 2MEV
+collecting: 935705 2MEV
+collecting: 935769 2MEV
+Reached 936000 event mark. Ongoing...
+collecting: 936108 2MEV
+collecting: 936647 3MEV
+collecting: 936750 3MEV
+Reached 937000 event mark. Ongoing...
+collecting: 937184 5MEV
+collecting: 937297 2MEV
+collecting: 937555 2MEV
+collecting: 937625 2MEV
+collecting: 937679 3MEV
+collecting: 937853 2MEV
+Reached 938000 event mark. Ongoing...
+collecting: 938295 2MEV
+collecting: 938660 5MEV
+collecting: 938780 2MEV
+collecting: 938805 5MEV
+collecting: 938838 3MEV
+Reached 939000 event mark. Ongoing...
+collecting: 939481 2MEV
+collecting: 939587 2MEV
+collecting: 939799 3MEV
+collecting: 939804 5MEV
+Reached 940000 event mark. Ongoing...
+collecting: 940627 2MEV
+collecting: 940650 5MEV
+Reached 941000 event mark. Ongoing...
+collecting: 941051 5MEV
+collecting: 941266 2MEV
+Reached 942000 event mark. Ongoing...
+collecting: 942011 2MEV
+collecting: 942494 3MEV
+Reached 943000 event mark. Ongoing...
+collecting: 943755 2MEV
+collecting: 943770 2MEV
+Reached 944000 event mark. Ongoing...
+collecting: 944103 2MEV
+collecting: 944359 3MEV
+collecting: 944492 2MEV
+collecting: 944701 3MEV
+Reached 945000 event mark. Ongoing...
+collecting: 945647 2MEV
+Reached 946000 event mark. Ongoing...
+collecting: 946051 2MEV
+collecting: 946518 2MEV
+collecting: 946558 2MEV
+collecting: 946601 2MEV
+Reached 947000 event mark. Ongoing...
+collecting: 947136 2MEV
+collecting: 947674 3MEV
+collecting: 947943 2MEV
+Reached 948000 event mark. Ongoing...
+collecting: 948090 2MEV
+collecting: 948328 2MEV
+collecting: 948375 2MEV
+collecting: 948558 3MEV
+Reached 949000 event mark. Ongoing...
+collecting: 949265 5MEV
+collecting: 949797 3MEV
+Reached 950000 event mark. Ongoing...
+collecting: 950056 2MEV
+collecting: 950111 2MEV
+collecting: 950215 2MEV
+Reached 951000 event mark. Ongoing...
+collecting: 951133 3MEV
+collecting: 951826 3MEV
+collecting: 951865 2MEV
+collecting: 951897 5MEV
+collecting: 951932 2MEV
+Reached 952000 event mark. Ongoing...
+collecting: 952530 2MEV
+Reached 953000 event mark. Ongoing...
+collecting: 953814 3MEV
+collecting: 953889 3MEV
+Reached 954000 event mark. Ongoing...
+collecting: 954180 2MEV
+collecting: 954330 3MEV
+collecting: 954630 2MEV
+collecting: 954884 3MEV
+Reached 955000 event mark. Ongoing...
+collecting: 955023 3MEV
+collecting: 955216 2MEV
+collecting: 955765 3MEV
+Reached 956000 event mark. Ongoing...
+collecting: 956012 2MEV
+collecting: 956089 2MEV
+collecting: 956674 3MEV
+collecting: 956949 3MEV
+Reached 957000 event mark. Ongoing...
+collecting: 957222 3MEV
+collecting: 957333 2MEV
+Reached 958000 event mark. Ongoing...
+collecting: 958273 3MEV
+collecting: 958773 3MEV
+Reached 959000 event mark. Ongoing...
+collecting: 959184 3MEV
+collecting: 959238 2MEV
+collecting: 959832 5MEV
+Reached 960000 event mark. Ongoing...
+collecting: 960228 2MEV
+collecting: 960830 3MEV
+Reached 961000 event mark. Ongoing...
+collecting: 961176 2MEV
+collecting: 961300 3MEV
+collecting: 961579 5MEV
+collecting: 961629 3MEV
+Reached 962000 event mark. Ongoing...
+collecting: 962203 2MEV
+collecting: 962225 3MEV
+collecting: 962302 2MEV
+collecting: 962393 2MEV
+collecting: 962769 5MEV
+Reached 963000 event mark. Ongoing...
+collecting: 963262 5MEV
+collecting: 963611 3MEV
+collecting: 963804 2MEV
+Reached 964000 event mark. Ongoing...
+collecting: 964035 2MEV
+collecting: 964103 2MEV
+collecting: 964388 5MEV
+collecting: 964479 3MEV
+collecting: 964704 3MEV
+Reached 965000 event mark. Ongoing...
+collecting: 965002 2MEV
+collecting: 965053 2MEV
+collecting: 965103 5MEV
+collecting: 965151 2MEV
+collecting: 965606 2MEV
+Reached 966000 event mark. Ongoing...
+collecting: 966200 2MEV
+collecting: 966253 5MEV
+collecting: 966503 5MEV
+collecting: 966953 2MEV
+Reached 967000 event mark. Ongoing...
+collecting: 967054 2MEV
+collecting: 967812 2MEV
+Reached 968000 event mark. Ongoing...
+collecting: 968050 2MEV
+collecting: 968241 2MEV
+collecting: 968246 5MEV
+collecting: 968559 2MEV
+collecting: 968624 2MEV
+collecting: 968669 2MEV
+collecting: 968975 2MEV
+Reached 969000 event mark. Ongoing...
+collecting: 969692 2MEV
+Reached 970000 event mark. Ongoing...
+collecting: 970585 2MEV
+Reached 971000 event mark. Ongoing...
+collecting: 971065 3MEV
+collecting: 971077 2MEV
+collecting: 971657 2MEV
+Reached 972000 event mark. Ongoing...
+collecting: 972067 2MEV
+collecting: 972431 2MEV
+collecting: 972982 3MEV
+Reached 973000 event mark. Ongoing...
+collecting: 973429 3MEV
+collecting: 973436 2MEV
+collecting: 973729 2MEV
+collecting: 973797 3MEV
+Reached 974000 event mark. Ongoing...
+collecting: 974030 2MEV
+collecting: 974263 2MEV
+collecting: 974419 5MEV
+collecting: 974754 2MEV
+Reached 975000 event mark. Ongoing...
+Reached 976000 event mark. Ongoing...
+collecting: 976444 5MEV
+collecting: 976753 2MEV
+Reached 977000 event mark. Ongoing...
+collecting: 977809 5MEV
+collecting: 977891 2MEV
+collecting: 977986 3MEV
+Reached 978000 event mark. Ongoing...
+collecting: 978068 2MEV
+collecting: 978343 2MEV
+collecting: 978384 2MEV
+Reached 979000 event mark. Ongoing...
+collecting: 979116 2MEV
+collecting: 979368 2MEV
+collecting: 979746 2MEV
+collecting: 979779 2MEV
+collecting: 979987 2MEV
+Reached 980000 event mark. Ongoing...
+collecting: 980017 2MEV
+collecting: 980036 3MEV
+collecting: 980087 3MEV
+collecting: 980653 3MEV
+collecting: 980690 2MEV
+collecting: 980706 3MEV
+Reached 981000 event mark. Ongoing...
+collecting: 981921 5MEV
+Reached 982000 event mark. Ongoing...
+collecting: 982102 2MEV
+collecting: 982531 2MEV
+collecting: 982608 3MEV
+collecting: 982856 2MEV
+Reached 983000 event mark. Ongoing...
+collecting: 983327 3MEV
+collecting: 983397 5MEV
+collecting: 983746 2MEV
+collecting: 983816 2MEV
+collecting: 983818 3MEV
+Reached 984000 event mark. Ongoing...
+collecting: 984320 2MEV
+collecting: 984480 2MEV
+collecting: 984496 3MEV
+collecting: 984711 2MEV
+Reached 985000 event mark. Ongoing...
+collecting: 985811 2MEV
+collecting: 985945 3MEV
+Reached 986000 event mark. Ongoing...
+collecting: 986060 5MEV
+collecting: 986683 5MEV
+collecting: 986741 3MEV
+collecting: 986783 5MEV
+Reached 987000 event mark. Ongoing...
+collecting: 987112 2MEV
+collecting: 987528 2MEV
+collecting: 987700 3MEV
+collecting: 987784 3MEV
+collecting: 987786 3MEV
+Reached 988000 event mark. Ongoing...
+Reached 989000 event mark. Ongoing...
+collecting: 989778 3MEV
+Reached 990000 event mark. Ongoing...
+collecting: 990430 3MEV
+collecting: 990709 3MEV
+collecting: 990937 3MEV
+Reached 991000 event mark. Ongoing...
+collecting: 991122 2MEV
+collecting: 991322 3MEV
+collecting: 991484 2MEV
+collecting: 991550 2MEV
+Reached 992000 event mark. Ongoing...
+collecting: 992313 2MEV
+collecting: 992923 3MEV
+Reached 993000 event mark. Ongoing...
+collecting: 993061 2MEV
+collecting: 993436 3MEV
+Reached 994000 event mark. Ongoing...
+collecting: 994012 2MEV
+collecting: 994316 5MEV
+collecting: 994664 2MEV
+Reached 995000 event mark. Ongoing...
+collecting: 995290 2MEV
+collecting: 995551 2MEV
+Reached 996000 event mark. Ongoing...
+collecting: 996299 2MEV
+collecting: 996351 3MEV
+collecting: 996769 3MEV
+Reached 997000 event mark. Ongoing...
+collecting: 997385 3MEV
+collecting: 997490 2MEV
+collecting: 997826 3MEV
+collecting: 997840 5MEV
+Reached 998000 event mark. Ongoing...
+collecting: 998773 2MEV
+Reached 999000 event mark. Ongoing...
+collecting: 999057 2MEV
+collecting: 999196 2MEV
+collecting: 999295 3MEV
+collecting: 999548 2MEV
+collecting: 999694 2MEV
+collecting: 999705 3MEV
+collecting: 999835 5MEV
+collecting: 999837 3MEV
+collecting: 999987 3MEV
+Reached 1000000 event mark. Ongoing...
+
+ ----> print histograms statistic for the entire run 
+
+ Edep : mean = 167.298 keV rms = 743.546 keV
+ Primary particles entering detector = 0.134698
+... write Root file : singleRun_1411275733.root - done
+... close Root file : singleRun_1411275733.root - done
+Graphics systems deleted.
+Visualization Manager deleting...

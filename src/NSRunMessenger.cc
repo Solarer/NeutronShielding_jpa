@@ -55,13 +55,13 @@ NSRunMessenger::NSRunMessenger(NSRunAction* run)
   fDoCollectEventsCmd =
     new G4UIcmdWithABool("/NS/run/doCollectEvents", this);
   fSingleRunFileNameCmd->SetGuidance("Want to collect interesting Events for output?");
-  fSingleRunFileNameCmd->SetParameterName("doCollectEvents",false);
+  fSingleRunFileNameCmd->SetParameterName("doCollectEventsCmd",false);
   fSingleRunFileNameCmd->AvailableForStates(G4State_PreInit, G4State_Idle);
 
   fDoProcessEventsCmd =
     new G4UIcmdWithABool("/NS/run/doProcessEvents", this);
   fSingleRunFileNameCmd->SetGuidance("Want to process previously collected Events?");
-  fSingleRunFileNameCmd->SetParameterName("doProcessEvents",false);
+  fSingleRunFileNameCmd->SetParameterName("doProcessEventsCmd",false);
   fSingleRunFileNameCmd->AvailableForStates(G4State_PreInit, G4State_Idle);
 }
 
@@ -84,12 +84,14 @@ void NSRunMessenger::SetNewValue(G4UIcommand* command, G4String newValue)
   if( command == fDoCollectEventsCmd)
   { 
     Action->SetCollectEvents(newValue); 
-    Action->SetProcessEvents(!newValue); 
+		if(newValue)
+    	Action->SetProcessEvents(!newValue); 
   }
   if( command == fDoProcessEventsCmd)
   { 
     Action->SetProcessEvents(newValue); 
-    Action->SetCollectEvents(!newValue); 
+		if(newValue)
+    	Action->SetCollectEvents(!newValue); 
   }
 }
 
