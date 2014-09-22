@@ -32,7 +32,7 @@
 #include "G4ThreeVector.hh"
 #include "globals.hh"
 #include "G4RotationMatrix.hh"
-#include "G4Tubs.hh"
+#include "G4Cons.hh"
 
 class G4Material;
 class G4Element;
@@ -72,13 +72,13 @@ class NSDetectorConstruction : public G4VUserDetectorConstruction
 
     G4Box*             		solidShield;
     G4LogicalVolume*   		logicShield;
-    G4VPhysicalVolume**  	physShield; 
+    G4VPhysicalVolume*  	physShield; 
 
     G4Box*             solidDet;
     G4LogicalVolume*   logicDet;
     G4VPhysicalVolume* physDet;
 
-    G4Tubs*            solidScin;
+    G4Cons*            solidScin;
     G4LogicalVolume*   logicScin;
     G4VPhysicalVolume* physScin;
 
@@ -114,12 +114,12 @@ class NSDetectorConstruction : public G4VUserDetectorConstruction
     G4Material* GetWorldMaterial()   const {return worldMat;};
     G4Material* GetShieldMaterial() const {return shieldMat;};
     G4Material* GetDetMaterial()     const {return detMat;};
-    G4Material* GetDetMaterial()     const {return detMat;};
     G4Material* GetScinMaterial()     const {return scinMat;};
 		G4double 		GetDetSizeXY()			const {return detSizeXY;};
 		G4double 		GetDetSizeZ()			const {return detSizeZ;};
-		G4double 		GetScinRadIn()			const {return scinRadiusIn;};
-		G4double 		GetScinRadOut()			const {return scinRadiusOut;};
+		G4double 		GetScinRadIn()			const {return scinRadIn1;};
+		G4double 		GetScinRadOut1()			const {return scinRadOut1;};
+		G4double 		GetScinRadOut2()			const {return scinRadOut2;};
 		G4double 		GetScinHeight()			const {return scinHeight;};
 };
 #endif

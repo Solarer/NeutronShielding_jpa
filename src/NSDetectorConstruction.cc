@@ -53,7 +53,7 @@
 
 NSDetectorConstruction::NSDetectorConstruction()
 : G4VUserDetectorConstruction(),
-  world_mat   (0), shield_mat (0),  det_mat(0),
+  worldMat   (0), shieldMat (0),  detMat(0),
   solidWorld  (0), logicWorld  (0), physWorld  (0),
   solidShield(0), logicShield(0),
   solidDet    (0), logicDet    (0), physDet    (0)
@@ -138,7 +138,7 @@ G4VPhysicalVolume* NSDetectorConstruction::ConstructDetector()
     new G4Box("ShieldBox",                      // name
               0.5*shieldSizeXY, 								// size x
               0.5*shieldSizeXY, 								// size y
-              0.5*shieldSizeZ) 								// size z
+              0.5*shieldSizeZ); 								// size z
 
   logicShield =
     new G4LogicalVolume(solidShield,           	// solid
@@ -157,7 +157,7 @@ G4VPhysicalVolume* NSDetectorConstruction::ConstructDetector()
                     false,                      			// no boolean operation
                     0,                          			// copy number
                     checkOverlaps);             			// overlaps checking    
-		}
+		
 
 
   // Detector
@@ -169,7 +169,7 @@ G4VPhysicalVolume* NSDetectorConstruction::ConstructDetector()
 
   logicDet =
     new G4LogicalVolume(solidDet,               // solid
-                        det_mat,              	// material
+                        detMat,              	// material
                         "DetSpace");            // name
 
   physDet =
@@ -185,27 +185,35 @@ G4VPhysicalVolume* NSDetectorConstruction::ConstructDetector()
 
   // Scintillator 
   solidScin =
-    new G4Tubs(	"Scin",                    			// name
-								0,															// inner radius
-								scin_radius,										// outer radius
-								0.5*scin_height,								// heigth
-								0,															// start angle
-								360*deg);												// end angle
+    new G4Cons("Scin",                  // name
+               scinRadIn1,              // small radius 1
+               scinRadIn2,              // small radius 2
+               scinRadOut1,             // big radius 1
+               scinRadOut2,             // big radius 2
+               0.5*scinHeight,          // height
+               0,                       // start cut (radians)
+               360*deg);                // end cut (radians)
+
   logicScin =
     new G4LogicalVolume(solidScin,              // solid
-                        scin_mat,               // material
+                        scinMat,               // material
                         "Scin");                // name
 
 	// Place 4 Scintillators
+	G4double x,y,z;
+	z = -0.5*detSizeZ + 0.1524*m + 0.5*scinHeight;		// magic number 0.1524 is thickness of 6" lead ground plate
+	G4int copyNo = 0;
+	G4ThreeVector posScin;
+
 	for (G4int i = -1; i < 2; i+=2)
   {
 		for (G4int j = -1; j < 2; j+=2)
   	{
-    	x = i*0.1016*m;
-    	y = j*0.1016*m;
+    	x = i*detSizeXY/4;
+    	y = j*detSizeXY/4;
 			posScin = G4ThreeVector(x, y, z);
 
-   		physScin = new G4PVPlacement(0,   							// no rotation
+   		physScin = new G4PVPlacement(0,   // no rotation
                         posScin,        // at position
                         logicScin,      // logical volume
                         "Scin",         // name
@@ -213,12 +221,10 @@ G4VPhysicalVolume* NSDetectorConstruction::ConstructDetector()
                         false,          // no boolean operation
                         copyNo++,       // copy number
                         checkOverlaps); // overlaps checking
-
-
-
-
+		}
+	}
   // Print volumes
-  G4cout << "volumes: " << logicDet << " " << logicWaterShield << " " << logicWorld << G4endl;
+  G4cout << "volumes: " << logicWorld << " " << logicDet << " " << logicShield << " " << logicScin << G4endl;
 
   // Make world box invisible
   logicWorld->SetVisAttributes (G4VisAttributes::Invisible);
@@ -236,55 +242,32 @@ void NSDetectorConstruction::ConstructSDandField()
   SetSensitiveDetector("Scin", cennsSD);
 }
 
-void NSDetectorConstruction::SetDetRatio(G4double ratio)
-{
-  // Check that detector has been constructed
-  if (!solidDet) 
-  {
-    G4cerr << "Detector has not yet been constructed." << G4endl;
-    return;
-  }
-
-  // Check that new detector ratio is between 0 and 1
-  if (ratio < 0. || ratio > 1.)
-  {
-    G4cout << "Invalid detector ratio " << ratio
-           << "!  No change to geometry." << G4endl;
-    return;
-  }
-
-  // Set new detector ratio
-  detRatio = ratio;
-
-  G4cout << "Detector ratio set: " << detRatio << G4endl;
-}
-
 void NSDetectorConstruction::SetWorldMat(G4String materialChoice)
 {
   // search the material by its name   
   G4Material* pttoMaterial = G4Material::GetMaterial(materialChoice);     
-  if (pttoMaterial) world_mat = pttoMaterial;
+  if (pttoMaterial) worldMat = pttoMaterial;
 }
 
 void NSDetectorConstruction::SetShieldMat(G4String materialChoice)
 {
   // search the material by its name   
   G4Material* pttoMaterial = G4Material::GetMaterial(materialChoice);     
-  if (pttoMaterial) shield_mat = pttoMaterial;
+  if (pttoMaterial) shieldMat = pttoMaterial;
 }
 
 void NSDetectorConstruction::SetDetMat(G4String materialChoice)
 {
   // search the material by its name   
   G4Material* pttoMaterial = G4Material::GetMaterial(materialChoice);     
-  if (pttoMaterial) det_mat = pttoMaterial;
+  if (pttoMaterial) detMat = pttoMaterial;
 }
 
 void NSDetectorConstruction::SetScinMat(G4String materialChoice)
 {
   // search the material by its name   
   G4Material* pttoMaterial = G4Material::GetMaterial(materialChoice);     
-  if (pttoMaterial) scin_mat = pttoMaterial;
+  if (pttoMaterial) scinMat = pttoMaterial;
 }
 
 void NSDetectorConstruction::UpdateGeometry()
@@ -300,72 +283,7 @@ void NSDetectorConstruction::ComputeParameters()
 {
   // These parameters are dependent upon other parameters and
   // must therefore be recalculated when the geometry is changed.
-  world_sizeXY   = 20.0*m;
-  world_sizeZ    = 20.0*m;
-  det_sizeXY     = 1.0*m*detRatio;
-  det_sizeZ      = 1.0*m*detRatio;
-	shieldBox_number = shield_layer == 0 ? 0:shield_layer*6+4;
-	shieldSize[0]	 = 2*shieldBox_size[0]+hSpace;
-	shieldSize[1]	 = shieldBox_size[0]+2*shieldBox_size[1]+2*hSpace;
-	shieldSize[2]	 = shield_layer == 0 ? 0 : shield_layer*shieldBox_size[2]+(shield_layer-1)*hSpace;
-
-	scin_radius = det_sizeXY*scin_radiusRatio;
-	scin_height= det_sizeZ*scin_heightRatio;
-
-	physShield = new G4VPhysicalVolume*[shieldBox_number];
-  shieldBox_position = new G4ThreeVector[shieldBox_number];
-	
-	// Positions and rotation of the shield boxes (first layer) 
-	if(shieldBox_number!=0)		// don't do this if there is no water shielding at all
-	{
-		shieldBox_position[0].setX(0.5*hSpace+0.5*shieldBox_size[0]);
-		shieldBox_position[0].setY(0.5*shieldBox_size[0]+hSpace+0.5*shieldBox_size[1]);
-		shieldBox_position[0].setZ(0.5*shieldBox_size[2]-0.5*shieldSize[2]);
-	
-		shieldBox_position[1].setX(0.5*hSpace+shieldBox_size[0]-0.5*shieldBox_size[1]);
-		shieldBox_position[1].setY(0.0);
-		shieldBox_position[1].setZ(0.5*shieldBox_size[2]-0.5*shieldSize[2]);
-
-		shieldBox_position[2].setX(shieldBox_position[0].getX());
-		shieldBox_position[2].setY(-shieldBox_position[0].getY());
-		shieldBox_position[2].setZ(0.5*shieldBox_size[2]-0.5*shieldSize[2]);
-
-		shieldBox_position[3].setX(-shieldBox_position[0].getX());
-		shieldBox_position[3].setY(-shieldBox_position[0].getY());
-		shieldBox_position[3].setZ(0.5*shieldBox_size[2]-0.5*shieldSize[2]);
-
-		shieldBox_position[4].setX(-shieldBox_position[1].getX());
-		shieldBox_position[4].setY(0.0);
-		shieldBox_position[4].setZ(0.5*shieldBox_size[2]-0.5*shieldSize[2]);
-
-		shieldBox_position[5].setX(-shieldBox_position[0].getX());
-		shieldBox_position[5].setY(shieldBox_position[0].getY());
-		shieldBox_position[5].setZ(0.5*shieldBox_size[2]-0.5*shieldSize[2]);
-
-		// top and bottom position
-		// first box bottom
-		shieldBox_position[shieldBox_number-4].setX(0.25*hSpace+0.5*shieldBox_size[1]);
-		shieldBox_position[shieldBox_number-4].setY(0.0);
-		shieldBox_position[shieldBox_number-4].setZ(-0.5*shieldSize[2]+0.5*shieldBox_size[2]);
-		// second box bottom
-		shieldBox_position[shieldBox_number-3].setX(-0.25*hSpace-0.5*shieldBox_size[1]);
-		shieldBox_position[shieldBox_number-3].setY(0.0);
-		shieldBox_position[shieldBox_number-3].setZ(-0.5*shieldSize[2]+0.5*shieldBox_size[2]);
-		// first box top
-		shieldBox_position[shieldBox_number-2]=shieldBox_position[shieldBox_number-4];
-		shieldBox_position[shieldBox_number-2].setZ(0.5*shieldSize[2]-0.5*shieldBox_size[2]);
-		// second box top
-		shieldBox_position[shieldBox_number-1]=shieldBox_position[shieldBox_number-3];
-		shieldBox_position[shieldBox_number-1].setZ(0.5*shieldSize[2]-0.5*shieldBox_size[2]);
-	}
-
-
-	// calculate missing layers
-	for (int currentLayer=1 ; currentLayer<shield_layer ; currentLayer++)
-		for (int currentBox=0 ; currentBox<6 ; currentBox++)
-			{
-					shieldBox_position[currentBox+currentLayer*6]=shieldBox_position[currentBox];
-					shieldBox_position[currentBox+currentLayer*6].setZ(shieldBox_position[0].getZ()+currentLayer*(shieldBox_size[2]+vSpace));
-			}
+  worldSizeXY   = 20.0*m;
+  worldSizeZ    = 20.0*m;
 }
 

@@ -61,15 +61,6 @@ NSDetectorMessenger::NSDetectorMessenger(NSDetectorConstruction* Det)
 
 NSDetectorMessenger::~NSDetectorMessenger()
 {
-  //delete fShieldSizeCmd;
-  //delete fShield2RatioCmd;
-  //delete fDetRatioCmd;
-
-  //delete fWorldMatCmd;
-  //delete fShieldMatCmd;
-  //delete fShield2MatCmd;
-  //delete fDetMatCmd;
-
   delete fUpdateCmd;
 
   delete fNSDirectory;
@@ -78,15 +69,7 @@ NSDetectorMessenger::~NSDetectorMessenger()
 
 void NSDetectorMessenger::SetNewValue(G4UIcommand* command,G4String newValue)
 {
-  // Detector size commands
-
-  if( command == fDetRatioCmd ) {
-    fDetectorConstruction
-      ->SetDetRatio(fDetRatioCmd->GetNewDoubleValue(newValue));
-  }
-
   // Detector materials commands
-
   if( command == fWorldMatCmd )
    { fDetectorConstruction->SetWorldMat(newValue);}
 
