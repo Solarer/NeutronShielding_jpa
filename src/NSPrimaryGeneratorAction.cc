@@ -84,7 +84,7 @@ void NSPrimaryGeneratorAction::GeneratePrimaries(G4Event* anEvent)
 		G4double scinRad, scinHeight;
 		shieldX = shieldY = Detector->GetDetSizeXY();
 		shieldZ = Detector->GetDetSizeZ();
-		scinRad = Detector->GetScinRad();
+		scinRad2 = Detector->GetScinRadOut2();
 		scinHeight = Detector->GetScinHeight();
 		
 		while(1) // generate, until particle not in scintillator
@@ -93,7 +93,7 @@ void NSPrimaryGeneratorAction::GeneratePrimaries(G4Event* anEvent)
   		y0 = shieldY * (G4UniformRand()-0.5);
   		z0 = shieldZ * (G4UniformRand()-0.5);
 			
-			if(sqrt(x0*x0+y0*y0)>scinRad || abs(z0)>shieldZ) // particle not in scintillator
+			if(sqrt(x0*x0+y0*y0)>scinRad2 || abs(z0)>scinHeight) // particle not in scintillator
 				break;
 		}
 	}
