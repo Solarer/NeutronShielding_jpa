@@ -80,9 +80,6 @@ G4bool NSSD::ProcessHits(G4Step* step, G4TouchableHistory*)
   G4double edep = step->GetTotalEnergyDeposit();
   if ( edep==0.) return false;
 
-    if(hit->GetFirstContact() == -1)
-        hit->SetFirstContact(step->GetPreStepPoint()->GetGlobalTime());
-
 	// Get particle name
 	G4String particleName = step->GetTrack()->GetDefinition()->GetParticleName();
 /*
@@ -114,7 +111,7 @@ G4bool NSSD::ProcessHits(G4Step* step, G4TouchableHistory*)
 	}
 */
 
-  // Particle entered sensitive detector
+	// Entered sensitive detector
   hit->SetEntSD(1);
 
 	// Get current particle energy
@@ -149,7 +146,7 @@ G4bool NSSD::ProcessHits(G4Step* step, G4TouchableHistory*)
 		else
 			{
 			photon = 0;
-			G4cerr<< "ERROR: unknown particle '"<< particleName << "'" << G4endl;	
+		//	G4cerr<< "ERROR: unknown particle '"<< particleName << "'" << G4endl;	
 			}
 	}
 
@@ -183,6 +180,12 @@ G4bool NSSD::ProcessHits(G4Step* step, G4TouchableHistory*)
 	// Add everything to hit object
   hit->AddEdep(edep);
 	hit->AddPhoton(photon);
+
+  if(hit->GetFirstContact() == -1)
+		if(hit->GetPhoton()>30*11499.9*keV){
+			//G4cout << hit->GetPhoton() << "\t" <<photon << G4endl;
+			hit->SetFirstContact((step->GetPostStepPoint()->GetGlobalTime()));
+}
   return true;
 }
 

@@ -78,50 +78,39 @@ void NSPrimaryGeneratorAction::GeneratePrimaries(G4Event* anEvent)
   // on DetectorConstruction class we get Envelope volume
   // from G4LogicalVolumeStore.
 
-	if(genInLead) // generate in leadshield
+	if(true) // generate in leadshield
 	{
 		G4double shieldX, shieldY, shieldZ;
 		G4double scinRad, scinHeight;
 		shieldX = shieldY = Detector->GetDetSizeXY();
 		shieldZ = Detector->GetDetSizeZ();
-		scinRad2 = Detector->GetScinRadOut2();
+		scinRad = Detector->GetScinRadOut2();
 		scinHeight = Detector->GetScinHeight();
 		
 		while(1) // generate, until particle not in scintillator
 		{
-  		x0 = shieldX * (G4UniformRand()-0.5);
-  		y0 = shieldY * (G4UniformRand()-0.5);
-  		z0 = shieldZ * (G4UniformRand()-0.5);
+			// generate at radom position...
+  		x0 = shieldX/2 * (G4UniformRand()-0.5);
+  		y0 = shieldY/2 * (G4UniformRand()-0.5);
+  		z0 = shieldZ   * (G4UniformRand()-0.5);
 			
-			if(sqrt(x0*x0+y0*y0)>scinRad2 || abs(z0)>scinHeight) // particle not in scintillator
+			// ... until the particle is not inside of a scintilator
+			if((x0)*(x0)+(y0)*(y0)>scinRad*scinRad || (z0+shieldZ/2)<0.1524*m)
 				break;
 		}
+		if(G4UniformRand()<0.5)
+			x0 += shieldX/4;
+		else
+			x0 -= shieldX/4;
+
+		if(G4UniformRand()<0.5)
+			y0 += shieldY/4;
+		else
+			y0 -= shieldY/4;
 	}
 	else // generate in watershield
 	{
-  	    // Get detector configuration sizes
-  	    G4int maxBoxNumber = Detector->GetShieldBoxNumber();
-  	    G4double boxX, boxY, boxZ;
-	    boxX = Detector->GetShieldBoxSizeX();
-	    boxY = Detector->GetShieldBoxSizeY();
-	    boxZ = Detector->GetShieldBoxSizeZ();
-	    const G4ThreeVector* shieldBoxPosition = Detector->GetShieldBoxPosition();
 
-	    // Now generate in random box
-  	    G4int box =  int(maxBoxNumber * G4UniformRand());
-  	    z0 = (boxZ * (G4UniformRand()-0.5)) + shieldBoxPosition[box].getZ();
-	
-	    // some boxes are turned by 90°
-	    if(box >= maxBoxNumber-4 || box%6 == 1 || box%6 == 4) // box has to be turned by 90°
-	    {
-  	        x0 = (boxY * (G4UniformRand()-0.5)) + shieldBoxPosition[box].getX();
-  	        y0 = (boxX * (G4UniformRand()-0.5)) + shieldBoxPosition[box].getY();
-	    }
-	    else	// box is not turned
-	    {
-  	        x0 = (boxX * (G4UniformRand()-0.5)) + shieldBoxPosition[box].getX();
-  	        y0 = (boxY * (G4UniformRand()-0.5)) + shieldBoxPosition[box].getY();
-	    }
 	}
 
   // Set primary particle position
@@ -166,11 +155,11 @@ G4double NSPrimaryGeneratorAction::GetEvaporationEnergy(void) {
   // Stolen from HALO code; integral MC method
   // I am not sure this gives quite the right spectrum ?
 
-  const G4int nBins = 15;
+  const G4int nBins = 16;
 
   G4double Edistrib[nBins][2] = {
    {0.,    0.  },
-   {0.02,  0.07},
+   {0.02,  0.12},
    {0.138,  .25},
    {0.391,  .75},
    {0.557, 1.25},

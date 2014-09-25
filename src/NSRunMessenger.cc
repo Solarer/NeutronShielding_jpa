@@ -83,15 +83,15 @@ void NSRunMessenger::SetNewValue(G4UIcommand* command, G4String newValue)
  // { Action->SetSteppingFileName(newValue); }*/
   if( command == fDoCollectEventsCmd)
   { 
-    Action->SetCollectEvents(newValue); 
-		if(newValue)
-    	Action->SetProcessEvents(!newValue); 
+    Action->SetCollectEvents(fDoCollectEventsCmd->GetNewBoolValue(newValue)); 
+		if(fDoProcessEventsCmd->GetNewBoolValue(newValue))
+    	Action->SetProcessEvents(!fDoProcessEventsCmd->GetNewBoolValue(newValue)); 
   }
   if( command == fDoProcessEventsCmd)
   { 
-    Action->SetProcessEvents(newValue); 
-		if(newValue)
-    	Action->SetCollectEvents(!newValue); 
+    Action->SetProcessEvents(fDoProcessEventsCmd->GetNewBoolValue(newValue)); 
+		if(fDoProcessEventsCmd->GetNewBoolValue(newValue))
+    	Action->SetCollectEvents(!fDoCollectEventsCmd->GetNewBoolValue(newValue)); 
   }
 }
 

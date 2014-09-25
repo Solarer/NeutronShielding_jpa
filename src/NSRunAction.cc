@@ -78,8 +78,6 @@ G4cout << "Reading initialising" << doProcessEvents << G4endl;
   analysisManager->CreateNtuple("singleRun", "Event info from one run");
   analysisManager->CreateNtupleIColumn("EventID");
   analysisManager->CreateNtupleIColumn("EntInner");
-  analysisManager->CreateNtupleDColumn("Edep");
-  analysisManager->CreateNtupleDColumn("Photons");
   analysisManager->CreateNtupleDColumn("primx");
   analysisManager->CreateNtupleDColumn("primy");
   analysisManager->CreateNtupleDColumn("primz");
@@ -87,6 +85,11 @@ G4cout << "Reading initialising" << doProcessEvents << G4endl;
   analysisManager->CreateNtupleDColumn("primdx");
   analysisManager->CreateNtupleDColumn("primdy");
   analysisManager->CreateNtupleDColumn("primdz");
+  analysisManager->FinishNtuple();
+
+  analysisManager->CreateNtuple("entered", "Events that actualy deposited Energy");
+  analysisManager->CreateNtupleDColumn("Edep");
+  analysisManager->CreateNtupleDColumn("Photons");
   analysisManager->CreateNtupleDColumn("firstContact");
   analysisManager->FinishNtuple();
 
@@ -182,7 +185,7 @@ void NSRunAction::EndOfRunAction(const G4Run* run)
 
   G4double shield1_sizeXY = 0;//detectorConstruction->GetShield1SizeXY();
   G4double shield2Ratio = 0;//detectorConstruction->GetShield2Ratio();
-  G4double detRatio = detectorConstruction->GetDetRatio();
+  G4double detRatio = -1;
   G4String world_mat = detectorConstruction->GetWorldMaterial()->GetName();
   G4String shield1_mat = detectorConstruction->GetShieldMaterial()->GetName();
   G4String shield2_mat = "nan";//detectorConstruction->GetShield2Material()->GetName();
