@@ -111,8 +111,6 @@ G4bool NSSD::ProcessHits(G4Step* step, G4TouchableHistory*)
 	}
 */
 
-	// Entered sensitive detector
-  hit->SetEntSD(1);
 
 	// Get current particle energy
 	G4double particleEnergy = step->GetPreStepPoint()->GetKineticEnergy();
@@ -181,11 +179,14 @@ G4bool NSSD::ProcessHits(G4Step* step, G4TouchableHistory*)
   hit->AddEdep(edep);
 	hit->AddPhoton(photon);
 
-  if(hit->GetFirstContact() == -1)
-		if(hit->GetPhoton()>30*11499.9*keV){
-			//G4cout << hit->GetPhoton() << "\t" <<photon << G4endl;
-			hit->SetFirstContact((step->GetPostStepPoint()->GetGlobalTime()));
-}
+	if(hit->GetPhoton()>30*11499.9/1000)		// 30keVee threshold
+		{
+			// Entered sensitive detector
+  		hit->SetEntSD(1);
+			// Timestamp
+  		if(hit->GetFirstContact() == -1)
+				hit->SetFirstContact((step->GetPostStepPoint()->GetGlobalTime()));
+		}
   return true;
 }
 

@@ -34,8 +34,10 @@
 #include "G4NistManager.hh"
 
 #include "G4Box.hh"
+#include "G4Tubs.hh"
 #include "G4LogicalVolume.hh"
 #include "G4PVPlacement.hh"
+#include "G4SubtractionSolid.hh"
 
 #include "G4GeometryManager.hh"
 #include "G4PhysicalVolumeStore.hh"
@@ -158,38 +160,14 @@ G4VPhysicalVolume* NSDetectorConstruction::ConstructDetector()
                     0,                          			// copy number
                     checkOverlaps);             			// overlaps checking    
 		
-
-
-  // Detector
-  solidDet =
-    new G4Box("Det",                    				// name
-              0.5*0.457*m,      										// size x
-              0.5*0.457*m,      										// size y
-              0.5*0.625*m);      										// size z
-
-  logicDet =
-    new G4LogicalVolume(solidDet,               // solid
-                        detMat,              	// material
-                        "DetSpace");            // name
-
-  physDet =
-    new G4PVPlacement(0,                        // no rotation
-                      G4ThreeVector(),          // at (0, 0, 0)
-                      logicDet,                 // logical volume
-                      "Det",                    // name
-                      logicShield,            	// mother volume
-                      false,                    // no boolean operation
-                      0,                        // copy number
-                      checkOverlaps);           // overlaps checking
-
-
   // Scintillator 
+	G4double x,y,z;
   solidScin =
     new G4Cons("Scin",                  // name
-               scinRadIn1,              // small radius 1
                scinRadIn2,              // small radius 2
-               scinRadOut1,             // big radius 1
                scinRadOut2,             // big radius 2
+               scinRadIn1,              // small radius 1
+               scinRadOut1,             // big radius 1
                0.5*scinHeight,          // height
                0,                       // start cut (radians)
                360*deg);                // end cut (radians)
@@ -199,11 +177,45 @@ G4VPhysicalVolume* NSDetectorConstruction::ConstructDetector()
                         scinMat,               // material
                         "Scin");                // name
 
-	// Place 4 Scintillators
-	G4double x,y,z;
+	// Place  Scintillator in Detector
 	z = -0.5*detSizeZ + 0.1524*m + 0.5*scinHeight;		// magic number 0.1524 is thickness of 6" lead ground plate
-	G4int copyNo = 0;
 	G4ThreeVector posScin;
+
+
+   		physScin = new G4PVPlacement(0,   // no rotation
+                        G4ThreeVector(0, 0, z),        // at position
+                        logicScin,      // logical volume
+                        "Scin",         // name
+                        logicDet,       // mother volume
+                        false,          // no boolean operation
+                        0,       				// copy number
+                        checkOverlaps); // overlaps checking
+		
+
+  // Detector
+  G4VSolid* leadBox =
+    new G4Box("Lead",                    				// name
+              detSizeXY/4,      										// size x
+              detSizeXY/4,      										// size y
+              0.5*detSizeZ);      										// size z
+	G4VSolid* airHole =
+		new G4Tubs("AirHole",
+							0.,										// inner radius
+							scinRadOut2+0.5*cm,		// outer radius
+							2*0.127*m,						// heigth
+							0.,										// beginn degree
+							360*deg);							// end degree
+
+	G4VSolid* solidDetQuarter = new G4SubtractionSolid("DetQuarter", leadBox, airHole, new G4RotationMatrix(), G4ThreeVector(0,0,-0.2032*m));
+
+  logicDet =
+    new G4LogicalVolume(solidDetQuarter,               // solid
+                        detMat,              	// material
+                        "Det");            // name
+
+	// Place 4 Detector quarters
+	G4int copyNo = 0;
+	z = 0;
 
 	for (G4int i = -1; i < 2; i+=2)
   {
@@ -211,24 +223,28 @@ G4VPhysicalVolume* NSDetectorConstruction::ConstructDetector()
   	{
     	x = i*detSizeXY/4;
     	y = j*detSizeXY/4;
-			posScin = G4ThreeVector(x, y, z);
 
-   		physScin = new G4PVPlacement(0,   // no rotation
-                        posScin,        // at position
-                        logicScin,      // logical volume
-                        "Scin",         // name
-                        logicDet,       // mother volume
+   		physDet= new G4PVPlacement(0,   // no rotation
+                        G4ThreeVector(x, y, z),        // at position
+                        logicDet,      // logical volume
+                        "DetQuarter",         // name
+                        logicShield,       // mother volume
                         false,          // no boolean operation
                         copyNo++,       // copy number
                         checkOverlaps); // overlaps checking
 		}
 	}
+
+	
   // Print volumes
   G4cout << "volumes: " << logicWorld << " " << logicDet << " " << logicShield << " " << logicScin << G4endl;
 
-  // Make world box invisible
+  // Make world box invisible and scintillator solid
   logicWorld->SetVisAttributes (G4VisAttributes::Invisible);
-
+	G4VisAttributes solid;
+	solid.SetForceSolid(true);
+	solid.SetColor(1,0,0);
+  logicScin->SetVisAttributes (solid);
   // Always return the physical World
   return physWorld;
 }
