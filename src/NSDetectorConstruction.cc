@@ -265,15 +265,15 @@ G4VPhysicalVolume* NSDetectorConstruction::ConstructDetector()
     	y = j*holeSizeXY/4;
 
 			physAir = 
-				new G4PVPlacement(rm[copyAir-2],															// no rotation
+				new G4PVPlacement(rm[copyAir-1],															// no rotation
                     G4ThreeVector(x,y,0),  								// at (0, 0, 0)
                     logicAir,     	          				// logical volume
                     "AirQuarter",     		             				// name
                     logicShield,                 			// mother volume
                     false,                      			// no boolean operation
-                    copyAir++,                          			// copy number
+                    copyAir,                          			// copy number
                     checkOverlaps);             			// overlaps checking    
-
+		copyAir++;
 		}
 	}
 	

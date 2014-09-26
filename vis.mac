@@ -86,6 +86,5 @@
 #/vis/viewer/flush
 #
 
-/NS/gen/genEvaporation 0
-/NS/gen/particleEnergy 10
+/NS/gen/genEvaporation 1
 /run/beamOn 10000
