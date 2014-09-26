@@ -37,12 +37,18 @@ G4ThreadLocal G4Allocator<NSHit>* NSHitAllocator=0;
 
 NSHit::NSHit()
  : G4VHit(),
-    fEdep(0.), fPhoton(0.), fEntSD(0),
     fFirstContact(-1),
 		fGamma(0), fElec(0), fProt(0),
  		fDeut(0), fAlpha(0), fCarbon(0), 
 		fOther(0),fTotal(0)
-{ }
+{ 
+	for(G4int i=0; i<4; i++)
+	{
+    fEdep[i] = 0;
+		fPhoton[i] = 0;
+		fEntSD[i] = 0;
+	}
+}
 
 NSHit::~NSHit()
 { }
@@ -50,9 +56,12 @@ NSHit::~NSHit()
 NSHit::NSHit(const NSHit& right)
   : G4VHit()
 {
-    fEdep  = right.fEdep;
-    fPhoton= right.fPhoton;
-    fEntSD = right.fEntSD;
+	for(G4int i=0; i<4; i++)
+	{
+    fEdep[i]  = right.fEdep[i];
+    fPhoton[i]= right.fPhoton[i];
+    fEntSD[i] = right.fEntSD[i];
+	}
     fFirstContact= right.fFirstContact;
     fGamma = right.fGamma;
     fElec= right.fElec;
@@ -66,9 +75,12 @@ NSHit::NSHit(const NSHit& right)
 
 const NSHit& NSHit::operator=(const NSHit& right)
 {
-    fEdep  = right.fEdep;
-    fPhoton= right.fPhoton;
-    fEntSD = right.fEntSD;
+	for(G4int i=0; i<4; i++)
+	{
+    fEdep[i]  = right.fEdep[i];
+    fPhoton[i]= right.fPhoton[i];
+    fEntSD[i] = right.fEntSD[i];
+	}
     fFirstContact= right.fFirstContact;
     fGamma = right.fGamma;
     fElec= right.fElec;
@@ -89,8 +101,8 @@ G4int NSHit::operator==(const NSHit& right) const
 void NSHit::Print()
 {
   G4cout
-     << "Edep: " 
-     << std::setw(7) << G4BestUnit(fEdep,"Energy")
+     //<< "Edep: " 
+     //<< std::setw(7) << G4BestUnit(fEdep,"Energy")
      << "\tEntered Detector? "<< fEntSD
      << G4endl;
 }

@@ -96,10 +96,12 @@ void NSEventAction::BeginOfEventAction(const G4Event* event)
 		outfile.open("temp.out", std::ios::out | std::ios::trunc );
 		outfile.close();
 	}
-		
+
   //event count output
-  if((eventID+1<1000 && eventID+1%100==0) || eventID+1%1000==0)
-		G4cout << "Reached " << eventID+1 << " event. Continue..." << G4endl;
+  if((eventID<1000 && eventID%100==0) || eventID%1000==0)
+	{
+		G4cout << "Reached " << eventID << " event. Continue..." << G4endl;
+	}
 }
 
 void NSEventAction::EndOfEventAction(const G4Event* event)
@@ -120,24 +122,43 @@ void NSEventAction::EndOfEventAction(const G4Event* event)
   // Get analysis manager
   G4AnalysisManager* analysisManager = G4AnalysisManager::Instance();
 
+	// Calculate some values to fill them into root file
+	G4int enteredSD[5];			// entered which one of the 4 scintillators? enteredSD[0] is total of entered scintillators 
+	G4double totalEdep, totalPhoton;
+	totalEdep = totalPhoton = 0;
+	enteredSD[0]=0;
+
+	for(G4int i = 0; i<4; i++)
+	{
+		if(cennsHit->GetEntSD(i))
+		{
+			enteredSD[i+1] = 1;
+			enteredSD[0]++;
+			totalEdep += cennsHit->GetEdep(i);
+			totalPhoton += cennsHit->GetPhoton(i);
+		}
+		else
+			enteredSD[i+1] = 0;
+	}
+	
+
   // Do this, if we are currently collecting events and
   // the current event is interesting
     if(runAct->GetDoCollectEvents())
     {
-        G4double edep = cennsHit->GetEdep(); 
         G4bool collectThis = false;
         G4String file;
-        if(edep>2.25*MeV && edep<2.35*MeV)
+        if(totalEdep>2.25*MeV && totalEdep<2.35*MeV)
         {
             collectThis = true;
             file = "2.2MEV";
         }
-        else if(edep>1.9*MeV && edep<2.15*MeV)
+        else if(totalEdep>1.9*MeV && totalEdep<2.15*MeV)
         {
             collectThis = true;
             file = "2.1MEV";
         }
-        else if(edep>.25*MeV && edep<.42*MeV)
+        else if(totalEdep>.25*MeV && totalEdep<.42*MeV)
         {
             collectThis = true;
             file = "0MEV";
@@ -163,7 +184,7 @@ void NSEventAction::EndOfEventAction(const G4Event* event)
 		infile.open("temp.out");
 		outfile.open(outputFile, std::ios::app);
 
-		outfile << "\n\n---------------------------------------------\nEvent found: " << cennsHit->GetEdep()/MeV << " MeV Energy deposition\n---------------------------------------------\n" << G4endl;
+		outfile << "\n\n---------------------------------------------\nEvent found: " << totalEdep/MeV << " MeV Energy deposition\n---------------------------------------------\n" << G4endl;
 
 		while(!infile.eof()) 
     	{
@@ -186,14 +207,15 @@ void NSEventAction::EndOfEventAction(const G4Event* event)
     if ( ( printModulo > 0 ) && ( eventID % printModulo == 0 ) )
     {
       G4cout << "---> End of event: " << eventID << G4endl;     
-      PrintEventStatistics(cennsHit->GetEdep());
+      PrintEventStatistics(totalEdep);
     }
   }
+	
 
   // Fill histograms
-  analysisManager->FillH1(1, cennsHit->GetEntSD());  	// number entering detector
-  analysisManager->FillH1(2, cennsHit->GetEdep());   	// energy deposition
-  analysisManager->FillH1(3, cennsHit->GetPhoton());  // photons created
+  analysisManager->FillH1(1, enteredSD[0]? 1:0);// number entering detector
+  analysisManager->FillH1(2, totalEdep);   	// energy deposition
+  analysisManager->FillH1(3, totalPhoton);  // photons created
 
   // Get the primary position/direction information
   G4PrimaryParticle* primary = event->GetPrimaryVertex(0)->GetPrimary(0);
@@ -215,7 +237,7 @@ void NSEventAction::EndOfEventAction(const G4Event* event)
 
   // Fill ntuple id=1
   analysisManager->FillNtupleIColumn(1,0, ID);
-  analysisManager->FillNtupleIColumn(1,1, cennsHit->GetEntSD());
+  analysisManager->FillNtupleIColumn(1,1, enteredSD[0]? 1:0);
   analysisManager->FillNtupleDColumn(1,2, x0);
   analysisManager->FillNtupleDColumn(1,3, y0);
   analysisManager->FillNtupleDColumn(1,4, z0);
@@ -225,12 +247,13 @@ void NSEventAction::EndOfEventAction(const G4Event* event)
   analysisManager->FillNtupleDColumn(1,8, dz);
   analysisManager->AddNtupleRow(1);
 
-  if(cennsHit->GetEntSD() == 1) // only if a particle entered the SD
+  if(enteredSD[0]) // only if a particle entered one the SDs
 	{
 		// Fill ntuple id=2
-  	analysisManager->FillNtupleDColumn(2,0, cennsHit->GetEdep());
-  	analysisManager->FillNtupleDColumn(2,1, cennsHit->GetPhoton()/11499.9/keV); // change to keVee
-  	analysisManager->FillNtupleDColumn(2,2, cennsHit->GetFirstContact());
+  	analysisManager->FillNtupleIColumn(2,0, enteredSD[0]);
+  	analysisManager->FillNtupleDColumn(2,1, totalEdep);
+  	analysisManager->FillNtupleDColumn(2,2, totalPhoton/11499.9/keV); // change to keVee
+  	analysisManager->FillNtupleDColumn(2,3, cennsHit->GetFirstContact());
   	analysisManager->AddNtupleRow(2);
   	
 		// Fill ntuple id=3

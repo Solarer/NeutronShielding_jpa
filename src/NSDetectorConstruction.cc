@@ -82,8 +82,8 @@ NSDetectorConstruction::NSDetectorConstruction()
 
   // Default materials
   DefineMaterials();
-  SetWorldMat("G4_AIR");
-  SetShieldMat("G4_WATER");
+  SetWorldMat("G4_Galactic");
+  SetShieldMat("G4_Galactic");
   SetDetMat("G4_Pb");
   SetScinMat("EJ301");
 

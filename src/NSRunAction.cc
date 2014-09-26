@@ -84,13 +84,15 @@ G4cout << "Reading initialising" << doProcessEvents << G4endl;
   analysisManager->CreateNtupleDColumn("primdz");
   analysisManager->FinishNtuple();
 
+	// Creating ntuple id=2
   analysisManager->CreateNtuple("entered", "Events that actualy deposited Energy");
+  analysisManager->CreateNtupleIColumn("ScintillatorsHit");
   analysisManager->CreateNtupleDColumn("Edep");
   analysisManager->CreateNtupleDColumn("Photons");
   analysisManager->CreateNtupleDColumn("firstContact");
   analysisManager->FinishNtuple();
 
-	// Creating ntuple id=2
+	// Creating ntuple id=3
   analysisManager->CreateNtuple("particles", "Particles Created in that run");
   analysisManager->CreateNtupleIColumn("Gamma");
   analysisManager->CreateNtupleIColumn("Electron");
