@@ -97,6 +97,9 @@ void NSEventAction::BeginOfEventAction(const G4Event* event)
 		outfile.close();
 	}
 		
+  //event count output
+  if((eventID+1<1000 && eventID+1%100==0) || eventID+1%1000==0)
+		G4cout << "Reached " << eventID+1 << " event. Continue..." << G4endl;
 }
 
 void NSEventAction::EndOfEventAction(const G4Event* event)

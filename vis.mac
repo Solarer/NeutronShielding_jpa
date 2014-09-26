@@ -16,7 +16,7 @@
 /NS/det/update
 #
 # Use this open statement to create an OpenGL view:
-/vis/open OGL 1200x800-0+0
+#/vis/open OGL 1200x800-0+0
 #
 # Use this open statement to create a .prim file suitable for
 # viewing in DAWN:
@@ -39,7 +39,7 @@
 #
 # Specify view: 
 /vis/viewer/set/upVector 1
-/vis/viewer/set/viewpointThetaPhi 250. 45.
+/vis/viewer/set/viewpointThetaPhi 70. 225.
 /vis/viewer/set/hiddenEdge 0 
 #
 # Specify zoom value:
@@ -85,4 +85,51 @@
 # For file-based drivers, use this to create an empty detector view:
 #/vis/viewer/flush
 #
-/run/beamOn 0
+
+/NS/gen/genEvaporation 0
+/NS/gen/particleEnergy 10
+/run/beamOn 10000
+/NS/gen/particleEnergy 9.5
+/run/beamOn 10000
+/NS/gen/particleEnergy 9.0
+/run/beamOn 10000
+/NS/gen/particleEnergy 8.5
+/run/beamOn 10000
+/NS/gen/particleEnergy 8.0
+/run/beamOn 10000
+/NS/gen/particleEnergy 7.5
+/run/beamOn 10000
+/NS/gen/particleEnergy 7.0
+/run/beamOn 10000
+/NS/gen/particleEnergy 6.5
+/run/beamOn 10000
+/NS/gen/particleEnergy 6.0
+/run/beamOn 10000
+/NS/gen/particleEnergy 5.5
+/run/beamOn 10000
+/NS/gen/particleEnergy 5.0
+/run/beamOn 10000
+/NS/gen/particleEnergy 4.5
+/run/beamOn 10000
+/NS/gen/particleEnergy 4.0
+/run/beamOn 10000
+/NS/gen/particleEnergy 3.5
+/run/beamOn 10000
+/NS/gen/particleEnergy 3.0
+/run/beamOn 10000
+/NS/gen/particleEnergy 2.5
+/run/beamOn 10000
+/NS/gen/particleEnergy 2.0
+/run/beamOn 10000
+/NS/gen/particleEnergy 1.5
+/run/beamOn 10000
+/NS/gen/particleEnergy 1.0
+/run/beamOn 10000
+/NS/gen/particleEnergy 0.75
+/run/beamOn 10000
+/NS/gen/particleEnergy 0.5
+/run/beamOn 10000
+/NS/gen/particleEnergy 0.25
+/run/beamOn 10000
+/NS/gen/particleEnergy 0.1
+/run/beamOn 10000

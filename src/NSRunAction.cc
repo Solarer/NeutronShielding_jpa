@@ -60,12 +60,9 @@ G4cout << "Reading initialising" << doProcessEvents << G4endl;
   //analysisManager->SetNtupleDirectoryName("ntuple");
 
   // Default Settings
-  char fileName[100];
-	sprintf(fileName,"singleRun_%i",int(time(NULL)));
-    analysisManager->SetVerboseLevel(1);
-    analysisManager->SetFirstHistoId(1);
-    analysisManager->SetFirstNtupleId(1);
-    analysisManager->SetFileName(fileName);
+  analysisManager->SetVerboseLevel(1);
+  analysisManager->SetFirstHistoId(1);
+  analysisManager->SetFirstNtupleId(1);
 
   // Book histograms, ntuple
   
@@ -118,7 +115,15 @@ G4Run* NSRunAction::GenerateRun()
 
 void NSRunAction::BeginOfRunAction(const G4Run*)
 {
-	// Fill vector with events from file
+  // Get analysis manager
+  G4AnalysisManager* analysisManager = G4AnalysisManager::Instance();
+
+	// Set output file name
+  char fileName[100];
+	sprintf(fileName,"singleRun_%i",int(time(NULL)));
+  analysisManager->SetFileName(fileName);
+
+	// if you want to get step output for a list of events: Fill vector with event IDs from file
 	if(doProcessEvents)
 		FillVec();
 	else if(doCollectEvents)
@@ -131,8 +136,6 @@ void NSRunAction::BeginOfRunAction(const G4Run*)
   // Inform the runManager to save random number seed
   // G4RunManager::GetRunManager()->SetRandomNumberStore(false);
 
-  // Get analysis manager
-  G4AnalysisManager* analysisManager = G4AnalysisManager::Instance();
 
   // Open an output file for histograms
   analysisManager->OpenFile();
@@ -143,6 +146,7 @@ void NSRunAction::EndOfRunAction(const G4Run* run)
   // Print histogram statistics
   G4AnalysisManager* analysisManager = G4AnalysisManager::Instance();
   G4double meanPer  = analysisManager->GetH1(1)->mean();
+  G4double entries = analysisManager->GetH1(1)->entries();
   G4double meanEdep = analysisManager->GetH1(2)->mean();
 
   if ( analysisManager->GetH1(1) ) {
@@ -183,16 +187,14 @@ void NSRunAction::EndOfRunAction(const G4Run* run)
     = static_cast<const NSDetectorConstruction*>
     (G4RunManager::GetRunManager()->GetUserDetectorConstruction());
 
-  G4double shield1_sizeXY = 0;//detectorConstruction->GetShield1SizeXY();
-  G4double shield2Ratio = 0;//detectorConstruction->GetShield2Ratio();
-  G4double detRatio = -1;
+  G4double shield_sizeXY = detectorConstruction->GetShieldSizeXY();
   G4String world_mat = detectorConstruction->GetWorldMaterial()->GetName();
-  G4String shield1_mat = detectorConstruction->GetShieldMaterial()->GetName();
-  G4String shield2_mat = "nan";//detectorConstruction->GetShield2Material()->GetName();
+  G4String shield_mat = detectorConstruction->GetShieldMaterial()->GetName();
   G4String det_mat = detectorConstruction->GetDetMaterial()->GetName();
+  G4String scin_mat= detectorConstruction->GetScinMaterial()->GetName();
 
   // Find which shield layer uses BdP (if any) and get dopant percent
-  G4String mat[] = {world_mat, shield1_mat, shield2_mat, det_mat};
+  G4String mat[] = {world_mat, shield_mat, det_mat, scin_mat};
   G4int nOfLayers = 4;
   G4int i;
   G4Material* mat_i;
@@ -221,6 +223,7 @@ void NSRunAction::EndOfRunAction(const G4Run* run)
   if (runID == 0) // New set of runs
   {
     outfile.open(outfileName, std::ofstream::out | std::ofstream::trunc);
+		outfile << "runID\t#entries\tparticleEnergy[MeV]\tshieldSizeXY\tpercentBdP\tworldMat\tshieldMat\tdetMat\tscinMat\tmeanEdep[MeV]\tmeanPerEntered" << G4endl;
   }
   // Open file for appending
   else // Continuing set of runs
@@ -230,8 +233,8 @@ void NSRunAction::EndOfRunAction(const G4Run* run)
   
   if (outfile.is_open())
     {
-      outfile << runID << "\t" << particleEnergy/MeV << "\t" << shield1_sizeXY/m
-              << "\t" << shield2Ratio << "\t" << detRatio << "\t" << percentBdP
+      outfile << runID << "\t" << entries << "\t" << particleEnergy/MeV << "\t" << shield_sizeXY/m
+              << "\t" << percentBdP
               << "\t" << mat[0] << "\t" << mat[1] << "\t" << mat[2]
               << "\t" << mat[3] << "\t" << meanEdep/MeV << "\t" << meanPer
               << G4endl;

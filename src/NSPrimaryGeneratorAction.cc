@@ -66,9 +66,6 @@ NSPrimaryGeneratorAction::~NSPrimaryGeneratorAction()
 
 void NSPrimaryGeneratorAction::GeneratePrimaries(G4Event* anEvent)
 {
-  //event counter for output
-  static unsigned long event_cnt=1;
-
 	// particle position
   G4double x0, y0, z0;
 
@@ -80,33 +77,37 @@ void NSPrimaryGeneratorAction::GeneratePrimaries(G4Event* anEvent)
 
 	if(true) // generate in leadshield
 	{
-		G4double shieldX, shieldY, shieldZ;
+		G4double holeX, holeY, holeZ;
+		G4double detX, detY, detZ, detLowerPart;
 		G4double scinRad, scinHeight;
-		shieldX = shieldY = Detector->GetDetSizeXY();
-		shieldZ = Detector->GetDetSizeZ();
+		holeX= holeY = Detector->GetHoleSizeXY();
+		holeZ = Detector->GetDetSizeZ();
+		detX= detY = Detector->GetHoleSizeXY();
+		detZ = Detector->GetDetSizeZ();
+		detLowerPart = Detector->GetDetLowerPart();
 		scinRad = Detector->GetScinRadOut2();
 		scinHeight = Detector->GetScinHeight();
 		
 		while(1) // generate, until particle not in scintillator
 		{
 			// generate at radom position...
-  		x0 = shieldX/2 * (G4UniformRand()-0.5);
-  		y0 = shieldY/2 * (G4UniformRand()-0.5);
-  		z0 = shieldZ   * (G4UniformRand()-0.5);
+  		x0 = detX/2 * (G4UniformRand()-0.5);
+  		y0 = detY/2 * (G4UniformRand()-0.5);
+  		z0 = detZ   * (G4UniformRand()-0.5) - 0.5*holeZ + 0.5*detZ;
 			
 			// ... until the particle is not inside of a scintilator
-			if((x0)*(x0)+(y0)*(y0)>scinRad*scinRad || (z0+shieldZ/2)<0.1524*m)
+			if((x0)*(x0)+(y0)*(y0)>scinRad*scinRad || -holeZ/2+detLowerPart>z0)
 				break;
 		}
 		if(G4UniformRand()<0.5)
-			x0 += shieldX/4;
+			x0 += detX/4;
 		else
-			x0 -= shieldX/4;
+			x0 -= detX/4;
 
 		if(G4UniformRand()<0.5)
-			y0 += shieldY/4;
+			y0 += detY/4;
 		else
-			y0 -= shieldY/4;
+			y0 -= detY/4;
 	}
 	else // generate in watershield
 	{
@@ -137,11 +138,6 @@ void NSPrimaryGeneratorAction::GeneratePrimaries(G4Event* anEvent)
 
   // Generate a particle
   fParticleGun->GeneratePrimaryVertex(anEvent);
-
-  //event count output
-  if((event_cnt<1000 && event_cnt%100==0) || event_cnt%1000==0)
-	G4cout << "Reached " << event_cnt << " event mark. Ongoing..." << G4endl;
-    event_cnt++;
 }
 
 void NSPrimaryGeneratorAction::SetGenEvaporation (G4bool value)

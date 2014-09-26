@@ -59,8 +59,11 @@ class NSDetectorConstruction : public G4VUserDetectorConstruction
 		// Shield size
 		G4double shieldSizeXY, shieldSizeZ;
 
+		// Size of hole in shield
+		G4double holeSizeXY, holeSizeZ;
+
 		// Lead size
-    G4double detSizeXY, detSizeZ;
+    G4double detSizeXY, detSizeZ, detLowerPart;
 
 		// Scintillator Size
 		G4double  scinRadIn1, scinRadIn2, scinRadOut1, scinRadOut2, scinHeight;
@@ -115,8 +118,13 @@ class NSDetectorConstruction : public G4VUserDetectorConstruction
     G4Material* GetShieldMaterial() const {return shieldMat;};
     G4Material* GetDetMaterial()     const {return detMat;};
     G4Material* GetScinMaterial()     const {return scinMat;};
+		G4double 		GetShieldSizeXY()			const {return shieldSizeXY;};
+		G4double 		GetShieldSizeZ()			const {return shieldSizeZ;};
+		G4double 		GetHoleSizeXY()			const {return holeSizeXY;};
+		G4double 		GetHoleSizeZ()			const {return holeSizeZ;};
 		G4double 		GetDetSizeXY()			const {return detSizeXY;};
 		G4double 		GetDetSizeZ()			const {return detSizeZ;};
+		G4double 		GetDetLowerPart()			const {return detLowerPart;};
 		G4double 		GetScinRadIn()			const {return scinRadIn1;};
 		G4double 		GetScinRadOut1()			const {return scinRadOut1;};
 		G4double 		GetScinRadOut2()			const {return scinRadOut2;};
