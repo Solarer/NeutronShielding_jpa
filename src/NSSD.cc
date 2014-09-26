@@ -80,6 +80,8 @@ G4bool NSSD::ProcessHits(G4Step* step, G4TouchableHistory*)
   G4double edep = step->GetTotalEnergyDeposit();
   if ( edep==0.) return false;
 
+	// Get scintillator ID
+	G4int scinID = step->GetPreStepPoint()->GetPhysicalVolume()->GetCopyNo();
 	// Get particle name
 	G4String particleName = step->GetTrack()->GetDefinition()->GetParticleName();
 /*
@@ -176,16 +178,16 @@ G4bool NSSD::ProcessHits(G4Step* step, G4TouchableHistory*)
 */
 	
 	// Add everything to hit object
-  hit->AddEdep(edep);
-	hit->AddPhoton(photon);
+  hit->AddEdep(edep,scinID);
+	hit->AddPhoton(photon,scinID);
 
-	if(hit->GetPhoton()>30*11499.9/1000)		// 30keVee threshold
+	if(hit->GetPhoton(scinID)>30*11499.9/1000)		// 30keVee threshold
 		{
 			// Entered sensitive detector
-  		hit->SetEntSD(1);
+  		hit->SetEntSD(1,scinID);
 			// Timestamp
-  		if(hit->GetFirstContact() == -1)
-				hit->SetFirstContact((step->GetPostStepPoint()->GetGlobalTime()));
+  		if(hit->GetFirstContact(scinID) == -1)
+				hit->SetFirstContact((step->GetPostStepPoint()->GetGlobalTime()),scinID);
 		}
   return true;
 }

@@ -36,10 +36,10 @@
 class NSHit : public G4VHit
 {
   private:
-    G4double fEdep;
-    G4double fPhoton;
-    G4bool 	 fEntSD;
-    G4double fFirstContact;
+    G4double fEdep[4];
+    G4double fPhoton[4];
+    G4bool 	 fEntSD[4];
+    G4double fFirstContact[4];
 	G4int	fGamma, fElec, fProt, fDeut, fAlpha, fCarbon, fOther, fTotal;
 
 
@@ -60,10 +60,10 @@ class NSHit : public G4VHit
     virtual void Print();
 
     // methods to handle data
-    void SetEntSD(G4bool entSD) { fEntSD = entSD; };
-    void SetFirstContact(G4double contact) { fFirstContact = contact; };
-    inline void AddEdep(G4double dE) {fEdep += dE; };
-    inline void AddPhoton(G4double dPh) {fPhoton += dPh; };
+    void SetEntSD(G4bool entSD, G4int scinID) { fEntSD[scinID] = entSD; };
+    void SetFirstContact(G4double contact, G4int scinID) { fFirstContact[scinID] = contact; };
+    inline void AddEdep(G4double dE, G4int scinID) {fEdep[scinID] += dE; };
+    inline void AddPhoton(G4double dPh, G4int scinID) {fPhoton[scinID] += dPh; };
 	inline void AddGamma(G4int gamma) {fGamma += gamma; fTotal+=gamma; };
 	inline void AddElectron(G4int elec) {fElec += elec; fTotal+=elec; };
 	inline void AddProton(G4int prot) {fProt += prot; fTotal+=prot; };
@@ -73,10 +73,10 @@ class NSHit : public G4VHit
 	inline void AddOther(G4int other) {fOther += other; fTotal+=other; };
 
     // get methods
-    G4double GetEdep()  const { return fEdep; };
-    G4double GetPhoton()  const { return fPhoton; };
-    G4bool   GetEntSD() const { return fEntSD; };      
-    G4double GetFirstContact()  const { return fFirstContact; };
+    G4double GetEdep(G4int scinID)  const { return fEdep[scinID]; };
+    G4double GetPhoton(G4int scinID)  const { return fPhoton[scinID]; };
+    G4bool   GetEntSD(G4int scinID) const { return fEntSD[scinID]; };      
+    G4double GetFirstContact(G4int scinID)  const { return fFirstContact[scinID]; };
 	G4int GetGamma() const { return fGamma; };
 	G4int GetElectron() const { return fElec; };
 	G4int GetProton() const { return fProt; };
