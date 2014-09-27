@@ -81,9 +81,22 @@ G4bool NSSD::ProcessHits(G4Step* step, G4TouchableHistory*)
   if ( edep==0.) return false;
 
 	// Get scintillator ID
-	G4int scinID = step->GetPreStepPoint()->GetPhysicalVolume()->GetCopyNo();
-	if(scinID!=0)
-		G4cout << "copyNR: " << scinID<< G4endl;
+	G4ThreeVector position = step->GetPreStepPoint()->GetPosition();
+	G4int scinID; 
+	if(position.x()<0)
+	{
+		if(position.y()<0)
+			scinID = 0;
+		else
+			scinID = 1;
+	}
+	else
+	{
+		if(position.y()<0)
+			scinID = 2;
+		else
+			scinID = 3;
+	}
 	// Get particle name
 	G4String particleName = step->GetTrack()->GetDefinition()->GetParticleName();
 /*

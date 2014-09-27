@@ -123,8 +123,8 @@ void NSEventAction::EndOfEventAction(const G4Event* event)
   G4AnalysisManager* analysisManager = G4AnalysisManager::Instance();
 
 	// Calculate some values to fill them into root file
-	G4int enteredSD[5];			// entered which one of the 4 scintillators? enteredSD[0] is total of entered scintillators 
-	G4double totalEdep, totalPhoton;
+	G4int enteredSD[5];			// entered which one of the 4 scintillators? enteredSD[0] is total count of entered scintillators 
+	G4double totalEdep, totalPhoton;	// total Edep and Photons in all scintillators that were hit
 	totalEdep = totalPhoton = 0;
 	enteredSD[0]=0;
 
@@ -247,7 +247,7 @@ void NSEventAction::EndOfEventAction(const G4Event* event)
   analysisManager->FillNtupleDColumn(1,8, dz);
   analysisManager->AddNtupleRow(1);
 
-  if(enteredSD[0]) // only if a particle entered one the SDs
+  if(enteredSD[0]) // only if a particle entered at least one the SDs
 	{
 		// Fill ntuple id=2
   	analysisManager->FillNtupleIColumn(2,0, enteredSD[0]);
