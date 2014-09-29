@@ -5,6 +5,7 @@
 
 void NSDetectorConstruction::DefineMaterials()
 {
+
   // Get NIST manager
   G4NistManager* nistManager = G4NistManager::Instance();
 
@@ -15,16 +16,16 @@ void NSDetectorConstruction::DefineMaterials()
 
   // Shielding Materials
   // Aluminium 7075
-  G4Element* al = nistManager->FindOrBuildMaterial("G4_Al");
-  G4Element* si = nistManager->FindOrBuildMaterial("G4_Si");
-  G4Element* fe = nistManager->FindOrBuildMaterial("G4_Fe");
-  G4Element* cu = nistManager->FindOrBuildMaterial("G4_Cu");
-  G4Element* mn = nistManager->FindOrBuildMaterial("G4_Mn");
-  G4Element* mg = nistManager->FindOrBuildMaterial("G4_Mg");
-  G4Element* cr = nistManager->FindOrBuildMaterial("G4_Cr");
-  G4Element* zn = nistManager->FindOrBuildMaterial("G4_Zn");
-  G4Element* ti = nistManager->FindOrBuildMaterial("G4_Ti");
-  G4double percentSi, percentFe, percentCu, percentMn, percentMg, percentCr, percentZn, percentTi;
+  G4Element* alElem = nistManager->FindOrBuildElement("Al");
+  G4Element* siElem = nistManager->FindOrBuildElement("Si");
+  G4Element* feElem = nistManager->FindOrBuildElement("Fe");
+  G4Element* cuElem = nistManager->FindOrBuildElement("Cu");
+  G4Element* mnElem = nistManager->FindOrBuildElement("Mn");
+  G4Element* mgElem = nistManager->FindOrBuildElement("Mg");
+  G4Element* crElem = nistManager->FindOrBuildElement("Cr");
+  G4Element* znElem = nistManager->FindOrBuildElement("Zn");
+  G4Element* tiElem = nistManager->FindOrBuildElement("Ti");
+  G4double percentAl, percentSi, percentFe, percentCu, percentMn, percentMg, percentCr, percentZn, percentTi;
   percentSi = 0.4;
   percentFe = 0.5;
   percentCu = 1.6;
@@ -35,15 +36,15 @@ void NSDetectorConstruction::DefineMaterials()
   percentTi = 0.2;
   percentAl = 100-percentSi-percentFe-percentCu-percentMn-percentMg-percentCr-percentZn-percentTi;
     G4Material* al7075= new G4Material("Aluminium7075", 2.81*g/cm3, 9, kStateSolid);
-	al7075->AddElement(al,percentAl*percent);
-	al7075->AddElement(si,percentSi*percent);
-	al7075->AddElement(fe,percentFe*percent);
-	al7075->AddElement(cu,percentCu*percent);
-	al7075->AddElement(mn,percentMn*percent);
-	al7075->AddElement(mg,percentMg*percent);
-	al7075->AddElement(cr,percentCr*percent);
-	al7075->AddElement(zn,percentZn*percent);
-	al7075->AddElement(ti,percentTi*percent);
+	al7075->AddElement(alElem,percentAl*perCent);
+	al7075->AddElement(siElem,percentSi*perCent);
+	al7075->AddElement(feElem,percentFe*perCent);
+	al7075->AddElement(cuElem,percentCu*perCent);
+	al7075->AddElement(mnElem,percentMn*perCent);
+	al7075->AddElement(mgElem,percentMg*perCent);
+	al7075->AddElement(crElem,percentCr*perCent);
+	al7075->AddElement(znElem,percentZn*perCent);
+	al7075->AddElement(tiElem,percentTi*perCent);
 	
   // Materials defined from NIST database
   nistManager->FindOrBuildMaterial("G4_Pb");

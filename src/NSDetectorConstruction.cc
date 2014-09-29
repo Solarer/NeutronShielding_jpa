@@ -71,6 +71,7 @@ NSDetectorConstruction::NSDetectorConstruction()
     detSizeXY = detSizeZ = 0.4064*m;
 		detLowerPart = 0.1524*m;
 		muonVetoThick = 0.02*m;
+		topShieldThick = 0.01*m;
   	scinRadIn1 = 0. *m;
   	scinRadIn2 = 0. *m;
   	scinRadOut1 = 0.05*m;
@@ -221,8 +222,7 @@ G4VPhysicalVolume* NSDetectorConstruction::ConstructDetector()
                         "TopShield");          // name
   // Scintillator 
 	G4double x,y;
-  solidScin =
-    new G4Cons("Scin",                  			// name
+    solidScin = new G4Cons("Scin",                  			// name
                scinRadIn2,              			// small radius 2
                scinRadOut2,             			// big radius 2
                scinRadIn1,              			// small radius 1
@@ -250,13 +250,14 @@ G4VPhysicalVolume* NSDetectorConstruction::ConstructDetector()
 
    physTopShield= 
 		new G4PVPlacement(0,	    								// no rotation
-                        G4ThreeVector(0,0, 0.5*holeSizeZ-0.5*topShieldThick),        // at position
-                        logicMuonVeto,       	// logical volume
-                        "MuonVeto",          	// name
+                        G4ThreeVector(holeSizeXY/4-detSizeXY/4,holeSizeXY/4-detSizeXY/4, 0.5*holeSizeZ-0.5*topShieldThick),        // at position
+                        logicTopShield,       	// logical volume
+                        "TopShield",          	// name
                         logicAir,       			// mother volume
                         false,          			// no boolean operation
                         0,			        			// copy number
                         checkOverlaps); 			// overlaps checking
+
    physMuonVeto = 
 		new G4PVPlacement(0,	    								// no rotation
                         G4ThreeVector(holeSizeXY/4-detSizeXY/4-muonVetoThick/2,holeSizeXY/4-detSizeXY/4-muonVetoThick/2, -0.5*holeSizeZ+0.5*detSizeZ+muonVetoThick/2),        // at position
@@ -361,6 +362,13 @@ void NSDetectorConstruction::SetMuonVetoMat(G4String materialChoice)
   // search the material by its name   
   G4Material* pttoMaterial = G4Material::GetMaterial(materialChoice);     
   if (pttoMaterial) muonVetoMat = pttoMaterial;
+}
+
+void NSDetectorConstruction::SetTopShieldMat(G4String materialChoice)
+{
+  // search the material by its name   
+  G4Material* pttoMaterial = G4Material::GetMaterial(materialChoice);     
+  if (pttoMaterial) topShieldMat = pttoMaterial;
 }
 
 void NSDetectorConstruction::SetDetMat(G4String materialChoice)

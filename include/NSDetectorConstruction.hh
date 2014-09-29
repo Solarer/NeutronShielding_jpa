@@ -89,6 +89,7 @@ class NSDetectorConstruction : public G4VUserDetectorConstruction
     G4VPhysicalVolume* physDet;
 
 	G4VPhysicalVolume* physMuonVeto;
+	G4VPhysicalVolume* physTopShield;
 
     G4Cons*            solidScin;
     G4LogicalVolume*   logicScin;
