@@ -49,9 +49,9 @@ class NSDetectorConstruction : public G4VUserDetectorConstruction
     // Materials
     G4Material* worldMat;
     G4Material* shieldMat;
+    G4Material* muonVetoMat;
     G4Material* detMat;
     G4Material* scinMat;
-
 	
 		// World size
     G4double worldSizeXY, worldSizeZ;
@@ -61,6 +61,9 @@ class NSDetectorConstruction : public G4VUserDetectorConstruction
 
 		// Size of hole in shield
 		G4double holeSizeXY, holeSizeZ;
+
+		// Thickness of muon veto shield
+		G4double muonVetoThick;
 
 		// Lead size
     G4double detSizeXY, detSizeZ, detLowerPart;
@@ -80,6 +83,8 @@ class NSDetectorConstruction : public G4VUserDetectorConstruction
     G4Box*             solidDet;
     G4LogicalVolume*   logicDet;
     G4VPhysicalVolume* physDet;
+
+		G4VPhysicalVolume* physMuonVeto;
 
     G4Cons*            solidScin;
     G4LogicalVolume*   logicScin;
@@ -112,11 +117,13 @@ class NSDetectorConstruction : public G4VUserDetectorConstruction
     void SetShieldMat(G4String);
     void SetDetMat(G4String);
 		void SetScinMat(G4String);
+		void SetMuonVetoMat(G4String);
 
     // Get methods
     G4Material* GetWorldMaterial()   const {return worldMat;};
     G4Material* GetShieldMaterial() const {return shieldMat;};
     G4Material* GetDetMaterial()     const {return detMat;};
+    G4Material* GetMuonVetoMaterial()     const {return muonVetoMat;};
     G4Material* GetScinMaterial()     const {return scinMat;};
 		G4double 		GetShieldSizeXY()			const {return shieldSizeXY;};
 		G4double 		GetShieldSizeZ()			const {return shieldSizeZ;};

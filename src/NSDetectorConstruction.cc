@@ -66,10 +66,11 @@ NSDetectorConstruction::NSDetectorConstruction()
 		worldSizeZ = 5*m;
 		shieldSizeXY = 1*m;
 		shieldSizeZ	= 1*m;
-		holeSizeXY = 0.4572*m;
+		holeSizeXY = 0.5*m;
 		holeSizeZ = 0.625475*m;
     detSizeXY = detSizeZ = 0.4064*m;
 		detLowerPart = 0.1524*m;
+		muonVetoThick = 0.02*m;
   	scinRadIn1 = 0. *m;
   	scinRadIn2 = 0. *m;
   	scinRadOut1 = 0.05*m;
@@ -83,9 +84,10 @@ NSDetectorConstruction::NSDetectorConstruction()
   // Default materials
   DefineMaterials();
   SetWorldMat("G4_Galactic");
-  SetShieldMat("G4_Galactic");
+  SetShieldMat("G4_WATER");
   SetDetMat("G4_Pb");
   SetScinMat("EJ301");
+  SetMuonVetoMat("EJ200");
 
   // Commands for interactive definition of detector
   fMessenger = new NSDetectorMessenger(this);
@@ -117,15 +119,15 @@ G4VPhysicalVolume* NSDetectorConstruction::ConstructDetector()
 
   // World
   solidWorld =
-    new G4Box("World",                          // name
+    new G4Box("World",                         // name
               0.5*worldSizeXY,                 // size x
               0.5*worldSizeXY,                 // size y
               0.5*worldSizeZ);                 // size z
 
   logicWorld =
-    new G4LogicalVolume(solidWorld,             // solid
+    new G4LogicalVolume(solidWorld,            // solid
                         worldMat,              // material
-                        "World");               // name
+                        "World");              // name
 
   physWorld = 
     new G4PVPlacement(0,                        // no rotation
@@ -149,9 +151,6 @@ G4VPhysicalVolume* NSDetectorConstruction::ConstructDetector()
                         shieldMat,            	// material
                         "Shield");             	// name
 
-
-
-
 	physShield = 
 		new G4PVPlacement(0,															// no rotation
                     G4ThreeVector(),  								// at (0, 0, 0)
@@ -162,85 +161,108 @@ G4VPhysicalVolume* NSDetectorConstruction::ConstructDetector()
                     0,                          			// copy number
                     checkOverlaps);             			// overlaps checking    
 
-		
-  G4Box* solidAir=
+	// Air chamber in water		
+  G4Box* airQuarter=
     new G4Box("ShieldBox",                    // name
               holeSizeXY/4, 									// size x
               holeSizeXY/4, 									// size y 
               0.5*holeSizeZ); 								// size z
 
   G4LogicalVolume* logicAir =
-    new G4LogicalVolume(solidAir,           	// solid
+    new G4LogicalVolume(airQuarter,           // solid
                         worldMat,            	// material
-                        "Shield");             	// name
-
+                        "Shield");            // name
   // Detector
-  G4VSolid* leadBox =
-    new G4Box("Lead",                    				// name
-              detSizeXY/4,      										// size x
-              detSizeXY/4,      										// size y
-              0.5*detSizeZ);      										// size z
+  G4VSolid* leadQuarter =
+    new G4Box("Lead",                    			// name
+              detSizeXY/4,      							// size x
+              detSizeXY/4,      							// size y
+              0.5*detSizeZ);      						// size z
 	G4VSolid* airHole =
 		new G4Tubs("AirHole",
-							0.,										// inner radius
-							scinRadOut2,		// outer radius
-							0.5*(detSizeZ-detLowerPart),						// heigth
-							0.,										// beginn degree
-							360*deg);							// end degree
+							0.,															// inner radius
+							scinRadOut2,										// outer radius
+							0.5*(detSizeZ-detLowerPart),		// heigth
+							0.,															// beginn degree
+							360*deg);												// end degree
 
-	G4VSolid* solidDetQuarter = new G4SubtractionSolid("DetQuarter", leadBox, airHole, new G4RotationMatrix(), G4ThreeVector(0,0,0.5*detLowerPart));
+	G4VSolid* solidDetQuarter = new G4SubtractionSolid("DetQuarter", leadQuarter, airHole, new G4RotationMatrix(), G4ThreeVector(0,0,0.5*detLowerPart));
 
-  logicDet =
-    new G4LogicalVolume(solidDetQuarter,               // solid
-                        detMat,              	// material
-                        "Det");            // name
+  logicDet=
+    new G4LogicalVolume(solidDetQuarter,      // solid
+                        detMat,               // material
+                        "Det");               // name
+
+	// Muon Shielding
+  G4Box* muonShield=
+    new G4Box("MuonShieldSide",               // name
+              detSizeXY/4+muonVetoThick/2,    // size x
+              detSizeXY/4+muonVetoThick/2,    // size y
+              detSizeZ/2+muonVetoThick/2); 		// size z
+
+	G4VSolid* solidMuonVetoQuarter = new G4SubtractionSolid("MuonQuarter", muonShield, leadQuarter, new G4RotationMatrix(), G4ThreeVector(muonVetoThick/2,muonVetoThick/2,muonVetoThick/2));
+
+  G4LogicalVolume* logicMuonVeto =
+    new G4LogicalVolume(solidMuonVetoQuarter, // solid
+                        muonVetoMat,          // material
+                        "MuonVeto");          // name
 
   // Scintillator 
 	G4double x,y;
   solidScin =
-    new G4Cons("Scin",                  // name
-               scinRadIn2,              // small radius 2
-               scinRadOut2,             // big radius 2
-               scinRadIn1,              // small radius 1
-               scinRadOut1,             // big radius 1
-               0.5*scinHeight,          // height
-               0,                       // start cut (radians)
-               360*deg);                // end cut (radians)
+    new G4Cons("Scin",                  			// name
+               scinRadIn2,              			// small radius 2
+               scinRadOut2,             			// big radius 2
+               scinRadIn1,              			// small radius 1
+               scinRadOut1,             			// big radius 1
+               0.5*scinHeight,          			// height
+               0,                       			// start cut (radians)
+               360*deg);                			// end cut (radians)
 
   logicScin =
-    new G4LogicalVolume(solidScin,              // solid
-                        scinMat,               // material
-                        "Scin");                // name
+    new G4LogicalVolume(solidScin,            // solid
+                        scinMat,              // material
+                        "Scin");              // name
 
 	// Placements for detector
 	G4int copyAir = 0;
 	G4PVPlacement* physAir = 
-		new G4PVPlacement(0,															// no rotation
+		new G4PVPlacement(0,											// no rotation
                     G4ThreeVector(-holeSizeXY/4,-holeSizeXY/4,0),  								// at (0, 0, 0)
-                    logicAir,     	          				// logical volume
-                    "AirQuarter",     		             				// name
-                    logicShield,                 			// mother volume
-                    false,                      			// no boolean operation
-                    copyAir++,                          			// copy number
-                    checkOverlaps);             			// overlaps checking    
+                    logicAir,     	          // logical volume
+                    "AirQuarter",     		    // name
+                    logicShield,              // mother volume
+                    false,                    // no boolean operation
+                    copyAir++,                // copy number
+                    checkOverlaps);           // overlaps checking    
 
-   		physDet= new G4PVPlacement(0,	    // no rotation
-                        G4ThreeVector(holeSizeXY/4-detSizeXY/4,holeSizeXY/4-detSizeXY/4, -0.5*holeSizeZ+0.5*detSizeZ),        // at position
-                        logicDet,       // logical volume
-                        "Det",          // name
-                        logicAir,       // mother volume
-                        false,          // no boolean operation
-                        0,			        // copy number
-                        checkOverlaps); // overlaps checking
+   physMuonVeto = 
+		new G4PVPlacement(0,	    								// no rotation
+                        G4ThreeVector(holeSizeXY/4-detSizeXY/4-muonVetoThick/2,holeSizeXY/4-detSizeXY/4-muonVetoThick/2, -0.5*holeSizeZ+0.5*detSizeZ+muonVetoThick/2),        // at position
+                        logicMuonVeto,       	// logical volume
+                        "MuonVeto",          	// name
+                        logicAir,       			// mother volume
+                        false,          			// no boolean operation
+                        0,			        			// copy number
+                        checkOverlaps); 			// overlaps checking
 
-   		physScin = new G4PVPlacement(0,   // no rotation
-                        G4ThreeVector(holeSizeXY/4-detSizeXY/4,holeSizeXY/4-detSizeXY/4, -0.5*holeSizeZ+detLowerPart+0.5*scinHeight),        // at position
-                        logicScin,      // logical volume
-                        "Scin",         // name
-                        logicAir,       // mother volume
-                        false,          // no boolean operation
-                        0,       				// copy number
-                        checkOverlaps); // overlaps checking
+   		physDet= new G4PVPlacement(0,	    			// no rotation
+                        G4ThreeVector(holeSizeXY/4-detSizeXY/4,holeSizeXY/4-detSizeXY/4, -0.5*holeSizeZ+0.5*detSizeZ+muonVetoThick),        // at position
+                        logicDet,       			// logical volume
+                        "Det",          			// name
+                        logicAir,       			// mother volume
+                        false,          			// no boolean operation
+                        0,			        			// copy number
+                        checkOverlaps); 			// overlaps checking
+
+   		physScin = new G4PVPlacement(0,   			// no rotation
+                        G4ThreeVector(holeSizeXY/4-detSizeXY/4,holeSizeXY/4-detSizeXY/4, -0.5*holeSizeZ+detLowerPart+0.5*scinHeight+muonVetoThick),        // at position
+                        logicScin,      			// logical volume
+                        "Scin",         			// name
+                        logicAir,       			// mother volume
+                        false,          			// no boolean operation
+                        0,       							// copy number
+                        checkOverlaps); 			// overlaps checking
 
 	// Place 3 remaining Detector quarters
 	G4RotationMatrix* rm[3];
@@ -265,14 +287,14 @@ G4VPhysicalVolume* NSDetectorConstruction::ConstructDetector()
     	y = j*holeSizeXY/4;
 
 			physAir = 
-				new G4PVPlacement(rm[copyAir-1],															// no rotation
-                    G4ThreeVector(x,y,0),  								// at (0, 0, 0)
-                    logicAir,     	          				// logical volume
-                    "AirQuarter",     		             				// name
-                    logicShield,                 			// mother volume
-                    false,                      			// no boolean operation
-                    copyAir,                          			// copy number
-                    checkOverlaps);             			// overlaps checking    
+				new G4PVPlacement(rm[copyAir-1],			// no rotation
+                    G4ThreeVector(x,y,0),  		// at (0, 0, 0)
+                    logicAir,     	          // logical volume
+                    "AirQuarter",     		    // name
+                    logicShield,              // mother volume
+                    false,                    // no boolean operation
+                    copyAir,                  // copy number
+                    checkOverlaps);           // overlaps checking    
 		copyAir++;
 		}
 	}
@@ -311,6 +333,13 @@ void NSDetectorConstruction::SetShieldMat(G4String materialChoice)
   // search the material by its name   
   G4Material* pttoMaterial = G4Material::GetMaterial(materialChoice);     
   if (pttoMaterial) shieldMat = pttoMaterial;
+}
+
+void NSDetectorConstruction::SetMuonVetoMat(G4String materialChoice)
+{
+  // search the material by its name   
+  G4Material* pttoMaterial = G4Material::GetMaterial(materialChoice);     
+  if (pttoMaterial) muonVetoMat = pttoMaterial;
 }
 
 void NSDetectorConstruction::SetDetMat(G4String materialChoice)

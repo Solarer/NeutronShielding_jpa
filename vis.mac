@@ -14,7 +14,7 @@
 /NS/det/update
 #
 # Use this open statement to create an OpenGL view:
-#/vis/open OGL 1200x800-0+0
+/vis/open OGL 1200x800-0+0
 #
 # Use this open statement to create a .prim file suitable for
 # viewing in DAWN:
@@ -86,102 +86,4 @@
 
 /NS/gen/genEvaporation 0
 /NS/gen/particleEnergy 10.0
-/run/beamOn 100000
-/NS/gen/particleEnergy 9.8 
-/run/beamOn 100000
-/NS/gen/particleEnergy 9.6 
-/run/beamOn 100000
-/NS/gen/particleEnergy 9.4 
-/run/beamOn 100000
-/NS/gen/particleEnergy 9.2 
-/run/beamOn 100000
-/NS/gen/particleEnergy 9.0
-/run/beamOn 100000
-/NS/gen/particleEnergy 8.8 
-/run/beamOn 100000
-/NS/gen/particleEnergy 8.6 
-/run/beamOn 100000
-/NS/gen/particleEnergy 8.4 
-/run/beamOn 100000
-/NS/gen/particleEnergy 8.2 
-/run/beamOn 100000
-/NS/gen/particleEnergy 8.0 
-/run/beamOn 100000
-/NS/gen/particleEnergy 7.8 
-/run/beamOn 100000
-/NS/gen/particleEnergy 7.6 
-/run/beamOn 100000
-/NS/gen/particleEnergy 7.4 
-/run/beamOn 100000
-/NS/gen/particleEnergy 7.2 
-/run/beamOn 100000
-/NS/gen/particleEnergy 7.0 
-/run/beamOn 100000
-/NS/gen/particleEnergy 6.8 
-/run/beamOn 100000
-/NS/gen/particleEnergy 6.6 
-/run/beamOn 100000
-/NS/gen/particleEnergy 6.4 
-/run/beamOn 100000
-/NS/gen/particleEnergy 6.2 
-/run/beamOn 100000
-/NS/gen/particleEnergy 6.0 
-/run/beamOn 100000
-/NS/gen/particleEnergy 5.8 
-/run/beamOn 100000
-/NS/gen/particleEnergy 5.6 
-/run/beamOn 100000
-/NS/gen/particleEnergy 5.4 
-/run/beamOn 100000
-/NS/gen/particleEnergy 5.2 
-/run/beamOn 100000
-/NS/gen/particleEnergy 5.0
-/run/beamOn 100000
-/NS/gen/particleEnergy 4.8 
-/run/beamOn 100000
-/NS/gen/particleEnergy 4.6 
-/run/beamOn 100000
-/NS/gen/particleEnergy 4.4 
-/run/beamOn 100000
-/NS/gen/particleEnergy 4.2 
-/run/beamOn 100000
-/NS/gen/particleEnergy 4.0 
-/run/beamOn 100000
-/NS/gen/particleEnergy 3.8 
-/run/beamOn 100000
-/NS/gen/particleEnergy 3.6 
-/run/beamOn 100000
-/NS/gen/particleEnergy 3.4 
-/run/beamOn 100000
-/NS/gen/particleEnergy 3.2 
-/run/beamOn 100000
-/NS/gen/particleEnergy 3.0 
-/run/beamOn 100000
-/NS/gen/particleEnergy 2.8 
-/run/beamOn 100000
-/NS/gen/particleEnergy 2.6 
-/run/beamOn 100000
-/NS/gen/particleEnergy 2.4 
-/run/beamOn 100000
-/NS/gen/particleEnergy 2.2 
-/run/beamOn 100000
-/NS/gen/particleEnergy 2.0 
-/run/beamOn 100000
-/NS/gen/particleEnergy 1.8 
-/run/beamOn 100000
-/NS/gen/particleEnergy 1.6 
-/run/beamOn 100000
-/NS/gen/particleEnergy 1.4 
-/run/beamOn 100000
-/NS/gen/particleEnergy 1.2 
-/run/beamOn 100000
-/NS/gen/particleEnergy 1.0 
-/run/beamOn 100000
-/NS/gen/particleEnergy 0.8 
-/run/beamOn 100000
-/NS/gen/particleEnergy 0.6 
-/run/beamOn 100000
-/NS/gen/particleEnergy 0.4 
-/run/beamOn 100000
-/NS/gen/particleEnergy 0.2 
-/run/beamOn 100000
+/run/beamOn 0
