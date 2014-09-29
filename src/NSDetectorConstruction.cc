@@ -88,6 +88,7 @@ NSDetectorConstruction::NSDetectorConstruction()
   SetDetMat("G4_Pb");
   SetScinMat("EJ301");
   SetMuonVetoMat("EJ200");
+  SetTopShieldMat("Aluminium7075");
 
   // Commands for interactive definition of detector
   fMessenger = new NSDetectorMessenger(this);
@@ -207,6 +208,17 @@ G4VPhysicalVolume* NSDetectorConstruction::ConstructDetector()
                         muonVetoMat,          // material
                         "MuonVeto");          // name
 
+	// Top Shielding
+  G4Box* topShield=
+    new G4Box("TopShield",                  // name
+              detSizeXY/4,    // size x
+              detSizeXY/4,    // size y
+              topShieldThick/2); 		// size z
+
+  G4LogicalVolume* logicTopShield=
+    new G4LogicalVolume(topShield,          // solid
+                        topShieldMat,          // material
+                        "TopShield");          // name
   // Scintillator 
 	G4double x,y;
   solidScin =
@@ -236,6 +248,15 @@ G4VPhysicalVolume* NSDetectorConstruction::ConstructDetector()
                     copyAir++,                // copy number
                     checkOverlaps);           // overlaps checking    
 
+   physTopShield= 
+		new G4PVPlacement(0,	    								// no rotation
+                        G4ThreeVector(0,0, 0.5*holeSizeZ-0.5*topShieldThick),        // at position
+                        logicMuonVeto,       	// logical volume
+                        "MuonVeto",          	// name
+                        logicAir,       			// mother volume
+                        false,          			// no boolean operation
+                        0,			        			// copy number
+                        checkOverlaps); 			// overlaps checking
    physMuonVeto = 
 		new G4PVPlacement(0,	    								// no rotation
                         G4ThreeVector(holeSizeXY/4-detSizeXY/4-muonVetoThick/2,holeSizeXY/4-detSizeXY/4-muonVetoThick/2, -0.5*holeSizeZ+0.5*detSizeZ+muonVetoThick/2),        // at position

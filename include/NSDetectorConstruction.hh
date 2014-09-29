@@ -50,11 +50,12 @@ class NSDetectorConstruction : public G4VUserDetectorConstruction
     G4Material* worldMat;
     G4Material* shieldMat;
     G4Material* muonVetoMat;
+    G4Material* topShieldMat;
     G4Material* detMat;
     G4Material* scinMat;
 	
 		// World size
-    G4double worldSizeXY, worldSizeZ;
+        G4double worldSizeXY, worldSizeZ;
 
 		// Shield size
 		G4double shieldSizeXY, shieldSizeZ;
@@ -65,13 +66,16 @@ class NSDetectorConstruction : public G4VUserDetectorConstruction
 		// Thickness of muon veto shield
 		G4double muonVetoThick;
 
+		// Thickness of top shield
+		G4double topShieldThick;
+
 		// Lead size
-    G4double detSizeXY, detSizeZ, detLowerPart;
+        G4double detSizeXY, detSizeZ, detLowerPart;
 
 		// Scintillator Size
 		G4double  scinRadIn1, scinRadIn2, scinRadOut1, scinRadOut2, scinHeight;
 
-		// Volumes
+	// Volumes
     G4Box*             solidWorld;
     G4LogicalVolume*   logicWorld;
     G4VPhysicalVolume* physWorld;
@@ -84,7 +88,7 @@ class NSDetectorConstruction : public G4VUserDetectorConstruction
     G4LogicalVolume*   logicDet;
     G4VPhysicalVolume* physDet;
 
-		G4VPhysicalVolume* physMuonVeto;
+	G4VPhysicalVolume* physMuonVeto;
 
     G4Cons*            solidScin;
     G4LogicalVolume*   logicScin;
@@ -97,7 +101,6 @@ class NSDetectorConstruction : public G4VUserDetectorConstruction
     // Methods
     void DefineMaterials();
     void ComputeParameters();
-		void CalcSlopes(G4double*, G4double*, G4int);
     G4VPhysicalVolume* ConstructDetector();
 
   public:
@@ -116,26 +119,28 @@ class NSDetectorConstruction : public G4VUserDetectorConstruction
     void SetWorldMat(G4String);
     void SetShieldMat(G4String);
     void SetDetMat(G4String);
-		void SetScinMat(G4String);
-		void SetMuonVetoMat(G4String);
+	void SetScinMat(G4String);
+	void SetMuonVetoMat(G4String);
+	void SetTopShieldMat(G4String);
 
     // Get methods
-    G4Material* GetWorldMaterial()   const {return worldMat;};
-    G4Material* GetShieldMaterial() const {return shieldMat;};
-    G4Material* GetDetMaterial()     const {return detMat;};
-    G4Material* GetMuonVetoMaterial()     const {return muonVetoMat;};
-    G4Material* GetScinMaterial()     const {return scinMat;};
-		G4double 		GetShieldSizeXY()			const {return shieldSizeXY;};
-		G4double 		GetShieldSizeZ()			const {return shieldSizeZ;};
-		G4double 		GetHoleSizeXY()			const {return holeSizeXY;};
-		G4double 		GetHoleSizeZ()			const {return holeSizeZ;};
-		G4double 		GetDetSizeXY()			const {return detSizeXY;};
-		G4double 		GetDetSizeZ()			const {return detSizeZ;};
-		G4double 		GetDetLowerPart()			const {return detLowerPart;};
-		G4double 		GetScinRadIn()			const {return scinRadIn1;};
-		G4double 		GetScinRadOut1()			const {return scinRadOut1;};
-		G4double 		GetScinRadOut2()			const {return scinRadOut2;};
-		G4double 		GetScinHeight()			const {return scinHeight;};
+    G4Material* GetWorldMaterial()      const {return worldMat;};
+    G4Material* GetShieldMaterial()     const {return shieldMat;};
+    G4Material* GetDetMaterial()        const {return detMat;};
+    G4Material* GetMuonVetoMaterial()   const {return muonVetoMat;};
+    G4Material* GetTopShieldMaterial()  const {return topShieldMat;};
+    G4Material* GetScinMaterial()       const {return scinMat;};
+	G4double 		GetShieldSizeXY()	const {return shieldSizeXY;};
+	G4double 		GetShieldSizeZ()    const {return shieldSizeZ;};
+	G4double 		GetHoleSizeXY()		const {return holeSizeXY;};
+	G4double 		GetHoleSizeZ()		const {return holeSizeZ;};
+	G4double 		GetDetSizeXY()		const {return detSizeXY;};
+	G4double 		GetDetSizeZ()		const {return detSizeZ;};
+	G4double 		GetDetLowerPart()	const {return detLowerPart;};
+	G4double 		GetScinRadIn()		const {return scinRadIn1;};
+	G4double 		GetScinRadOut1()	const {return scinRadOut1;};
+	G4double 		GetScinRadOut2()	const {return scinRadOut2;};
+	G4double 		GetScinHeight()		const {return scinHeight;};
 };
 #endif
 
