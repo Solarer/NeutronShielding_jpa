@@ -238,10 +238,10 @@ void NSEventAction::EndOfEventAction(const G4Event* event)
   // Fill ntuple id=1
   analysisManager->FillNtupleIColumn(1,0, ID);
   analysisManager->FillNtupleIColumn(1,1, enteredSD[0]? 1:0);
-  analysisManager->FillNtupleDColumn(1,2, x0);
-  analysisManager->FillNtupleDColumn(1,3, y0);
-  analysisManager->FillNtupleDColumn(1,4, z0);
-  analysisManager->FillNtupleDColumn(1,5, primEnergy);
+  analysisManager->FillNtupleDColumn(1,2, x0/cm);
+  analysisManager->FillNtupleDColumn(1,3, y0/cm);
+  analysisManager->FillNtupleDColumn(1,4, z0/cm);
+  analysisManager->FillNtupleDColumn(1,5, primEnergy/MeV);
   analysisManager->FillNtupleDColumn(1,6, dx);
   analysisManager->FillNtupleDColumn(1,7, dy);
   analysisManager->FillNtupleDColumn(1,8, dz);

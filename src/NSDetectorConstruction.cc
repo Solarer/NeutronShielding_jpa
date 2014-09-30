@@ -67,9 +67,9 @@ NSDetectorConstruction::NSDetectorConstruction()
 		shieldSizeXY = 1*m;
 		shieldSizeZ	= 1*m;
 		holeSizeXY = 0.5*m;
-		holeSizeZ = 0.625475*m;
-    detSizeXY = detSizeZ = 0.4064*m;
-		detLowerPart = 0.1524*m;
+		holeSizeZ = 0.625*m;
+    detSizeXY = detSizeZ = 0.405*m;
+		detLowerPart = 0.152*m;
 		muonVetoThick = 0.02*m;
 		topShieldThick = 0.01*m;
   	scinRadIn1 = 0. *m;
