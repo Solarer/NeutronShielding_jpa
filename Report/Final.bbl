@@ -1,0 +1,24 @@
+\providecommand{\href}[2]{#2}\begingroup\raggedright\begin{thebibliography}{1}
+
+\bibitem{CSI}
+D.~Akimov, A.~Bernstein, P.~Barbeau, P.~Barton, A.~Bolozdynya,
+  B.~Cabrera-Palmer, F.~Cavanna, V.~Cianciolo, J.~Collar, R.~Cooper, D.~Dean,
+  Y.~Efremenko, A.~Etenko, N.~Fields, M.~Foxe, E.~Figueroa-Feliciano, N.~Fomin,
+  F.~Gallmeier, I.~Garishvili, M.~Gerling, M.~Green, G.~Greene,
+  A.~Hatzikoutelis, R.~Henning, R.~Hix, D.~Hogan, D.~Hornback, I.~Jovanovic,
+  T.~Hossbach, E.~Iverson, S.~Klein, A.~Khromov, J.~Link, W.~Louis, W.~Lu,
+  C.~Mauger, P.~Marleau, D.~Markoff, R.~Martin, P.~Mueller, J.~Newby,
+  J.~Orrell, C.~O'Shaughnessy, S.~Pentilla, K.~Patton, A.~Poon, D.~Radford,
+  D.~Reyna, H.~Ray, K.~Scholberg, V.~Sosnovtsev, R.~Tayloe, K.~Vetter,
+  C.~Virtue, J.~Wilkerson, J.~Yoo. and C.~Yu. ``Coherent scattering
+  investigations at the spallation neutron source: a snowmass white paper.''
+  (2013). \href{http://arxiv.org/abs/1310.0125}{{\ttfamily arXiv:1310.0125
+  [hep-ex]}}.
+
+\bibitem{ppt}
+K.~Scholberg. ``Neutrino cross-section experiments at the spallation neutron
+  source.''
+  \url{http://www.hep.ph.ic.ac.uk/~wascko/nuint14/talks/4.2.3_scholberg_201405%
+22.pdf}. May, 2014.
+
+\end{thebibliography}\endgroup

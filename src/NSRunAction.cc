@@ -45,7 +45,6 @@ NSRunAction::NSRunAction()
 : G4UserRunAction(),
 	doCollectEvents(0), doProcessEvents(0)
 {
-G4cout << "Reading initialising" << doProcessEvents << G4endl;
   // Create analysis manager
   // The choice of analysis technology is done via selection of a namespace
   // in NSAnalysis.hh
@@ -220,7 +219,7 @@ void NSRunAction::EndOfRunAction(const G4Run* run)
   // Can be put into tree with "TreeMac.C"
 
   // Open file for writing
-  G4String outfileName = "NS.out2";
+  G4String outfileName = "NS.out3";
   std::ofstream outfile;
   if (runID == 0) // New set of runs
   {

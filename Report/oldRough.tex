@@ -1,0 +1,316 @@
+\iffalse
+\documentclass[12pt]{article}
+\usepackage{fullpage}
+\usepackage[affil-it]{authblk}
+\newcommand{\tab}{\hspace*{2em}}
+\usepackage{graphicx}
+\graphicspath{ {/var/phy/project/hep/neutrino/work/jms212/gproject/REU2014/NeutronShieldingSD/} }
+\usepackage{float}
+\usepackage{url}
+
+\begin{document}
+
+\title{Designing neutron shielding for a CENNS experiment}
+
+\author[1]{Jaclyn M. Schmitt}
+\author[2]{Kate Scholberg}
+\affil[1]{Clemson University, Department of Physics, Clemson, SC 29634}
+\affil[2]{Duke University, Department of Physics, Durham, NC 27705}
+\date{July 31, 2014}
+
+\maketitle
+
+\begin{abstract}
+The Spallation Neutron Source (SNS) at Oak Ridge National Lab is also a neutrino source. These particular neutrinos provide an optimal opportunity for the observation of coherent elastic neutrino-nucleus scattering (CENNS), a phenomenon that has been predicted but never observed. However, when the neutrinos enter the lead shielding, they may produce background neutrons that create a signal identical to that of CENNS. The Geant4 simulation toolkit was used to analyze the behavior of these neutrino-induced neutrons. The software was used to optimize neutron shielding and study the neutron energy deposition in potential detector materials.
+\end{abstract}
+\newpage
+
+\section{Introduction}
+
+\subsection{Coherent elastic neutrino-nucleus scatting \cite{CSI}}
+
+Coherent elastic neutrino-nucleus scattering (CENNS), illustrated in Figure \ref{fig:cenns}, is the process where a neutrino hits a nucleus and causes it to recoil. The momentum tranfer must be small, between 1 and 50 MeV, so that the waves of the nucleons in the nucleus are all in phase and add up coherently.
+
+\begin{figure}[H]
+  \caption{Feynman diagram of the CENNS process \cite{ppt}}
+  \includegraphics[width = 0.25\textwidth]{extraPics/cenns_feynman}
+  \label{fig:cenns}
+  \centering
+\end{figure}
+
+The most immediate purpose of studying CENNS is to test the Standard Model. The Standard Model predicts a value for the weak mixing angle, and this angle could be calculated from cross sections measurements of CENNS. A comparison between the predicted and calculated values would serve as a good test of the Standard Model.
+
+Other potential applications of CENNS measurements include supernova neutrino physics, dark matter search experiments, sterile neutrino search experiments, and the measurement of the neutron radius.
+
+\subsection{Benefits of SNS neutrinos \cite{CSI}}
+
+The SNS produces neutrons by bombarding a mercury target with a beam of protons. The resulting spallation reaction releases neutrons as well as mesons, and the decay chain of the mesons produces neutrinos. These neutrinos have many properties that are advantageous for studying CENNS:
+\begin{itemize}
+  \item The beam has different flavor content: the stopped pions produce muon neutrinos, and the subsequent muon decay produces electron neutrinos and muon antineutrinos. This variety allows for the study of flavor-dependent interactions.
+  \item The energy spectra of the neutrinos are well-known because the kinematics of the meson decay process they come from are well-defined. The muon neutrinos are monoenergetic at 30 MeV, and the electron neutrinos and muon antineutrinos have a spectrum of energies up to 52.6 MeV. 
+  \item These spectra are ideal for studying CENNS. As previously stated, conditions for CENNS require energies from 1 to 50 MeV.
+  \item The beam has a pulsed time structure. Time correlations can be made between candidate events and the beam pulse, enabling great reduction in background rates.
+  \item The neutrino beam has high flux, which means more events.
+\end{itemize}
+
+\subsection{Managing neutrino-induced neutrons}
+
+In most experiments, lead is used to block background radiation for most radiation detectors. However, neutrinos can interact with lead, causing it to emit neutrons. Neutrons can then enter the detector, cause detector nuclei to recoil, and thus create signals similar to those created by CENNS.
+
+The goal of this project is to design shielding that would block as many of these neutrons as possible and then study the effects of neutrons that do get through to the detector.
+
+\section{Simulation set up}
+
+The simulation toolkit Geant4 was used to simulate a CENNS detector. Since the primary focus of this project is the shielding, the detector simulated is a cube within larger cubes of shielding. Neutrons were generated randomly in the outermost layer of shielding, lead.
+
+For one layer of shielding, lead, the detector geometry was studied. A simulation with a few events is illustrated in Figure \ref{fig:det1}. Then an additional layer of shielding was added between the lead and the detector to block the neutrons generated in the lead. Figure \ref{fig:det2} illustrates this configuration. Geometry and materials were studied. 
+\begin{figure}[H]
+  \centering
+  \begin{minipage}[t]{0.45\linewidth}
+    \includegraphics[width=\textwidth]{extraPics/1LayerDetector}
+    \caption{One layer of shielding}
+    \label{fig:det1}
+  \end{minipage}
+  \quad
+  \begin{minipage}[t]{0.45\linewidth}
+    \includegraphics[width=\textwidth]{extraPics/2LayerDetector}
+    \caption{Two layers of shielding}
+    \label{fig:det2}
+  \end{minipage}
+\end{figure}
+
+Next, the energy deposition in the detector was analyzed for different detector materials and neutron energies. These energies can be compared to CENNS signals to see if distiguishing them would be possible.
+
+\section{Results and Discussion}
+
+\subsection{One layer of shielding}
+
+The first tests done were with one layer of lead shielding surrounding a detector. The default parameters of the detector configuration are summarized in Table \ref{table:oneLayer}.
+
+\begin{table}[H]
+  \caption{Parameters of detector configuration}
+  \centering
+  \begin{tabular}{c c}
+  \hline\hline
+  Parameter         & Value  \\
+  \hline
+  Shield Size       & 1.0 m  \\
+  Shield Material   & Lead   \\
+  Detector Size     & 0.5 m  \\
+  Detector Material & Vacuum \\
+  \hline
+  \end{tabular}
+  \label{table:oneLayer}
+\end{table}
+
+Before carrying out any tests, it was necessary to verify that the particles were being generated in the appropriate volume istropically. Figures \ref{fig:directions} and \ref{fig:directionsSlice} show that the particles are given a random direction. Figures \ref{fig:vertices} and \ref{fig:verticesSlice} show that the particles are given a random position in the outer shielding volume.
+
+\begin{figure}[H]
+  \centering
+  \begin{minipage}[t]{0.45\linewidth}
+    \includegraphics[width=\textwidth]{oneLayer/directions}
+    \caption{Initial direction of primary partice}
+    \label{fig:directions}
+  \end{minipage}
+  \quad
+  \begin{minipage}[t]{0.45\linewidth}
+    \includegraphics[width=\textwidth]{oneLayer/directionsSlice}
+    \caption{Slice of \ref{fig:directions}}
+    \label{fig:directionsSlice}
+  \end{minipage}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \begin{minipage}[t]{0.45\linewidth}
+    \includegraphics[width=\textwidth]{oneLayer/vertices}
+    \caption{Initial position of primary partice}
+    \label{fig:vertices}
+  \end{minipage}
+  \quad
+  \begin{minipage}[t]{0.45\linewidth}
+    \includegraphics[width=\textwidth]{oneLayer/verticesSlice}
+    \caption{Slice of \ref{fig:vertices}}
+    \label{fig:verticesSlice}
+  \end{minipage}
+\end{figure}
+
+For each of the following tests, vacuum was used as a control shielding material to study the effects of the lead shielding.
+
+The first test was to vary the ratio of the size of the shielding to the size of the detector, keeping the absolute size of the configuration constant. These results are presented in Figure \ref{fig:detRatio}. A smaller detector-to-shield size ratio resulted in fewer neutrons entering the detector. A smaller detector volume means there is a smaller chance  that a particle will enter it. Also, the lead causes more neutrons to enter the detector than vacuum. This is because the neutrons are diffusing through the lead, whereas in vacuum the particles are simply maintaining their initial direction. 
+
+Then, the absolute size of the detector configuration was varied and the detector-to-shielding size ratio held constant. As shown in Figure \ref{fig:size}, the size does not impact the number of neutrons entering the detector for vacuum, but there is a small increase in particles entering the detector for lead. This is consistent with the previous results. As the size increases, so does the amount of lead, and more neutrons are diffused into the detector.
+
+\begin{figure}[H]
+  \centering
+  \begin{minipage}[t]{0.45\linewidth}
+    \includegraphics[width=\textwidth]{oneLayer/detRatio}
+    \caption{Detector-to-Shield Size Ratio}
+    \label{fig:detRatio}
+  \end{minipage}
+  \quad
+  \begin{minipage}[t]{0.45\linewidth}
+    \includegraphics[width=\textwidth]{oneLayer/size}
+    \caption{Absolute size of the detector configuration}
+    \label{fig:size}
+  \end{minipage}
+\end{figure}
+
+Next, the energy of the neutrons was varied. Again, the lead causes more neutrons to enter the detector volume. Other than a small increase at the highest energies, the initial energy of the neutrons does not appear to affect the number entering the detector volume, as shown in Figure \ref{fig:energy}. Above about 8 MeV, the neutrons have enough energy to create secondary neutrons, causing more to enter the detector.
+
+\begin{figure}[H]
+ \centering
+ \includegraphics[width=0.45\textwidth]{oneLayer/energy}
+ \caption{Initial energy of neutrons}
+ \label{fig:energy}
+\end{figure}
+
+\subsection{Two layers of shielding}
+
+Next, a layer of shielding was added between the detector and the lead. The default parameters are defined in Table \ref{table:twoLayers}. Polyethylene was chosen as the material to put between the lead and detector because it is a good neutron moderator; it absorbs the neutrons' energy and slows them down so many cannot pass through. The polyethylene was doped with boron because boron-10 is a good neutron absorber. The idea is that the polyethylene slows the neutrons enough to enable the boron-10 to absorb them to become boron-11.
+
+\begin{table}[H]
+  \caption{Parameters of detector configuration}
+  \centering
+  \begin{tabular}{c c}
+  \hline\hline
+  Parameter         & Value  \\
+  \hline
+  Shield 1 Size     & 1.0 m  \\
+  Shield 1 Material & Lead   \\
+  Shield 2 Size     & 0.7 m  \\
+  Shield 2 Material & Boron-doped Polyethylene \\
+  Detector Size     & 0.5 m  \\
+  Detector Material & Vacuum \\
+  \hline
+  \end{tabular}
+  \label{table:twoLayers}
+\end{table}
+
+First, the relative sizes of the two shielding layers was varied, keeping the detector size and absolute size constant. Both vacuum and polyethylene were placed between the lead shielding and the detector to accurately determine how many neutrons were blocked by the polyethylene. As the inner layer of shielding grows relative to the outer layer of shielding, the amount of neutrons entering the detector from the outer lead layer decreases for both vacuum and polyethylene. However, Figure \ref{fig:shield2Ratio} shows that the polyethylene reduces the amount of neutrons entering to about one-third of the number that would enter with nothing between, confirming its neutron absorbing properties.
+
+Then the absolute size of the detector configuration was varied, keeping all size ratios constant. As the size increases, the number of neutrons through the detector slightly increases when there is vacuum between the shield and detector and decreases with polyethylene. This is shown in Figure \ref{fig:size2}. As the size increases, there is more polyethylene to block the neutrons, and less get through to the detector.
+
+\begin{figure}[H]
+  \centering
+  \begin{minipage}[t]{0.45\linewidth}
+    \includegraphics[width=\textwidth]{twoLayers/shield2Ratio}
+    \caption{Inner-to-Outer Shield Size Ratio}
+    \label{fig:shield2Ratio}
+  \end{minipage}
+  \quad
+  \begin{minipage}[t]{0.45\linewidth}
+    \includegraphics[width=\textwidth]{twoLayers/size2}
+    \caption{Absolute size of the detector configuration}
+    \label{fig:size2}
+  \end{minipage}
+\end{figure}
+
+Next the energy of the neutrons was varied. As shown in Figure \ref{energy2}, there is a slight increase in the number of neutrons entering the detector as the energy increases. Higher energy neutrons can more easily get through the polyethylene shielding.
+
+\begin{figure}[H]
+ \centering
+ \includegraphics[width=0.45\textwidth]{oneLayer/energy}
+ \caption{Initial energy of neutrons}
+ \label{fig:energy2}
+\end{figure}
+
+Last, the amount of boron in the polyethylene was tested, and the results are shown in Figure \ref{fig:dope}. These results show that the boron can reduce the amount of neutrons penetrating the shielding from about 3.3 \% to about 2.7 \%. In addition, weight percents of boron beyond 0.5 \% are not required to maximize the efficiency of the shielding.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[trim = 12cm 4cm 15cm 7cm, clip, width = 0.45\textwidth]{extraPics/PercentVsDope3}
+  \caption{Amount of boron in polyethylene shield}
+  \label{fig:dope}
+  \centering
+\end{figure}
+
+\subsection{Neutron energy deposition}
+The final study done for this project was an analysis of the energy deposited in the detector by the neutrons. Figures \ref{fig:xenon} and \ref{fig:xenon2} show the energy deposition for 1 MeV neutrons in liquid xenon.
+
+\begin{figure}[H]
+  \centering
+  \begin{minipage}[t]{0.45\linewidth}
+    \includegraphics[width=\textwidth]{Edep/1MeV_lXe}
+    \caption{Energy deposited in liquid xenon}
+    \label{fig:xenon}
+  \end{minipage}
+  \quad
+  \begin{minipage}[t]{0.45\linewidth}
+    \includegraphics[width=\textwidth]{Edep/1MeV_lXe}
+    \caption{Figure \ref{fig:xenon}, zero to one MeV}
+    \label{fig:xenon2}
+  \end{minipage}
+\end{figure}
+
+The peak is at approximately 0.4777 MeV. Table \ref{table:xenon} is a table summarizing the secondary particles from a sample event with a particularly high energy deposition. In this event, the excess energy is a result of neutron capture by Xenon-125 and its subsequent secondaries. The results were similar for the detector materials germanium, cesium iodide, and liquid argon. The peak values for germanium, cesium iodide, and liquid argon were, respectively, 0.4776, 0.4771, and 0.4774 MeV.
+
+\begin{table}[H]
+  \caption{Secondary particles from a single event (Edep = 14.11 MeV)}
+  \centering
+  \begin{tabular}{c c c c c c}
+  \hline\hline
+  Particle & Process & freq & Mean & Min & Max \\
+  \hline
+  \textsuperscript{131}Xe & hadElastic & 3 & 0.367 eV & 0.127 eV & 0.536 eV \\
+  \textsuperscript{129}Xe & hadElastic & 1 & 0.253 eV & - & - \\
+  \textsuperscript{136}Xe & hadElastic & 1 & 0.196 eV & - & - \\
+  \textsuperscript{125}Xe & nCapture   & 1 & 109 eV   & - & - \\
+  gamma & nCapture & 7  & 2.06 MeV & 438 keV  & 3.51 MeV \\
+  gamma & eBrem    & 4  & 189 keV  & 81.7 keV & 419 keV  \\
+  e-    & phot     & 11 & 368 keV  & 47.1 keV & 2.53 MeV \\
+  e-    & compt    & 16 & 454 keV  & 55.5 keV & 3.18 MeV \\
+  e-    & eIoni    & 2  & 619 keV  & 420 keV  & 817 keV  \\
+  \hline
+  \end{tabular}
+  \label{table:xenon}
+\end{table}
+
+When this test was was carried out for neutron energies of 2, 5, and 8 MeV, each gave a peak energy at the same value, around 0.477 MeV. This is due to the boron present in the polyethylene shielding. The following reaction takes place:
+$$^{10}B + n \rightarrow ^{11}B \rightarrow ^{7}Li + \alpha + \gamma$$
+where the gamma generated has an energy of about 0.477 MeV.
+
+\section{An Additional Detector}
+Neutrino-induced neutrons are not necessarily background that needs to be shielded. In fact, another future project at the SNS could be to study this phenomenon itself. Lead shielding already at the SNS could be used as a target, making this experiment convenient and cheap to carry out. A preliminary simulation of energy deposited in liquid scintillators sitting on top of a lead block was carried out, and the results for 1 MeV and 10 MeV neutrons are shown in Figures \ref{fig:1MeV} and \ref{fig:10MeV}, and the mean energy deposited for several energies is given in Figure \ref{fig:means}.
+
+\begin{figure}[H]
+  \centering
+  \begin{minipage}[t]{0.45\linewidth}
+    \includegraphics[width=\textwidth]{../LeadBox/Edep/Benzene/1000keV_Edep}
+    \caption{Energy deposited from 1 MeV neutrons}
+    \label{fig:1MeV}
+  \end{minipage}
+  \quad
+  \begin{minipage}[t]{0.45\linewidth}
+    \includegraphics[width=\textwidth]{../LeadBox/Edep/Benzene/10000keV_Edep}
+    \caption{Energy deposited from 10 MeV neutrons}
+    \label{fig:10MeV}
+  \end{minipage}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.45\textwidth]{../LeadBox/Edep/Benzene/means}
+  \caption{Mean energy deposited}
+  \label{fig:means}
+\end{figure}
+
+\section{Conclusion}
+To minimize the number of neutrino-induced neutrons entering a CENNS detector, as little lead shielding as possible should be used. More polyethylene is better, and, in particular, boron-doped polyethylene would be best. The amount of boron in the polyenthylene needs only to be at least 0.5 \%. The boron in the shielding significantly affected the energy deposited in the detector, and this must be taken into account when comparing this to predicted CENNS signal values.
+
+Similarly, the code for a new detector configuration to study neutrino-induced neutrons themselves is functioning properly and ready to be used. All size parameters can be modified, and energy deposited in the scintillator cylinders is counted.
+
+Future work primarily involves making these detectors more realistic and continuing to carry out the energy deposition studies.
+
+\section*{Acknowledgments}
+\begin{itemize}
+  \item[] Kate Scholberg and the Duke Neutrino Group.
+  \item[] Alex Crowell and the Triangle Universities Nuclear Laboratory Research Experience for Undergraduates program.
+  \item[] National Science Foundation Grant No. NSF-PHY-08-51813.
+\end{itemize}
+
+\bibliographystyle{my_utphys}
+\bibliography{RoughDraft}
+
+\end{document}
+\fi
