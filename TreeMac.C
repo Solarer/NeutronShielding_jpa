@@ -6,15 +6,14 @@
 int main()
 {
   Int_t runID;
-  Double_t ke;
-  Double_t shield1_sizexy;
-  Double_t shield2Ratio;
-  Double_t detRatio;
+  Int_t entries;
+  Double_t primaryEnergy;
+  Double_t shieldSizeXY;
   Double_t percentBdP;
-  Char_t world_mat;
-  Char_t shield1_mat;
-  Char_t shield2_mat;
-  Char_t det_mat;
+  Char_t worldMat;
+  Char_t shieldMat;
+  Char_t detMat;
+  Char_t scinMat;
   Double_t meanEdep;
   Double_t percent;
 
@@ -31,22 +30,21 @@ int main()
   // Declare tree and branches
   TTree *tree = new TTree("tree","Run Information");
   tree->Branch("runID", &runID, "runID/I");
-  tree->Branch("ke", &ke, "ke/D");
-  tree->Branch("shield1_sizexy", &shield1_sizexy, "shield1_sizexy/D");
-  tree->Branch("shield2Ratio", &shield2Ratio, "shield2Ratio/D");
-  tree->Branch("detRatio", &detRatio, "detRatio/D");
+  tree->Branch("entries", &entries, "entries/I");
+  tree->Branch("primaryEnergy", &primaryEnergy, "primaryEnergy/D");
+  tree->Branch("shieldSizeXY", &shieldSizeXY, "shieldSizeXY/D");
   tree->Branch("percentBdP", &percentBdP, "percentBdP/D");
-  tree->Branch("world_mat", world_mat, "world_mat/C");
-  tree->Branch("shield1_mat", shield1_mat, "shield1_mat/C");
-  tree->Branch("shield2_mat", shield2_mat, "shield2_mat/C");
-  tree->Branch("det_mat", det_mat, "det_mat/C");
+  tree->Branch("worldMat", worldMat, "worldMat/C");
+  tree->Branch("shieldMat", shieldMat, "shieldMat/C");
+  tree->Branch("detMat", detMat, "detMat/C");
+  tree->Branch("scinMat", scinMat, "scinMat/C");
   tree->Branch("meanEdep", &meanEdep, "meanEdep/D");
   tree->Branch("percent", &percent, "percent/D");
 
   // Fill tree
-  Long64_t nlines = tree->ReadFile("NS.out",
-    "runID/I:ke/D:shield1_sizexy/D:shield2Ratio/D:detRatio/D:percentBdP/D:"
-    "world_mat/C:shield1_mat/C:shield2_mat/C:det_mat/C:meanEdep/D:percent/D");
+  Long64_t nlines = tree->ReadFile("NS.out2",
+    "runID/I:entries/I:primaryEnergy/D:shieldSizeXY/D:percentBdP/D:"
+    "worldMat/C:shieldMat/C:detMat/C:scinMat/C:meanEdep/D:percent/D");
 
   // Write tree
   tree->Write();
@@ -54,8 +52,9 @@ int main()
   // Close input file
   fclose(fp);
 
+	cout << "Read " << nlines << " lines" << std::endl;
   // Free output file pointer
   delete hfile;
 
-  return 0;
+  return nlines;
 }

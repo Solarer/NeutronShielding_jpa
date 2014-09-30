@@ -34,6 +34,7 @@ class NSPrimaryGeneratorAction;
 class G4UIdirectory;
 class G4UIcmdWithAnInteger;
 class G4UIcmdWithADouble;
+class G4UIcmdWithABool;
 
 class NSPrimaryGeneratorMessenger: public G4UImessenger
 {
@@ -54,6 +55,7 @@ private:
   G4UIcmdWithAnInteger*     fGenInShieldCmd;
   G4UIcmdWithAnInteger*     fGenEvaporationCmd;
 	G4UIcmdWithADouble*				fParticleEnergyCmd;
+	G4UIcmdWithABool*					fGenTwoNeutronsCmd;
 };
 
 #endif

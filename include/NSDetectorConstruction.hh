@@ -142,6 +142,7 @@ class NSDetectorConstruction : public G4VUserDetectorConstruction
 	G4double 		GetScinRadOut1()	const {return scinRadOut1;};
 	G4double 		GetScinRadOut2()	const {return scinRadOut2;};
 	G4double 		GetScinHeight()		const {return scinHeight;};
+	G4double 		GetMuonVetoThick()		const {return muonVetoThick;};
 };
 #endif
 

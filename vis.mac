@@ -85,4 +85,4 @@
 #
 
 /NS/gen/genEvaporation 1
-/run/beamOn 1000000
+/run/beamOn 100000

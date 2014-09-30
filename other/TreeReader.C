@@ -18,8 +18,9 @@ TreeReader::TreeReader(std::string filename)
 					getline(cin,tempFileName);
       		f = new TFile(tempFileName.c_str(),"UPDATE");
       	}
-      tree = (TTree*)gDirectory->Get("singleRun");
+      tree = (TTree*)gDirectory->Get("entered");
    	  Init(tree);
+			Loop();
 }
 
 TreeReader::~TreeReader()
@@ -65,17 +66,8 @@ void TreeReader::Init(TTree *tree)
    fChain = tree;
    fCurrent = -1;
    fChain->SetMakeClass(1);
-   fChain->SetBranchAddress("EventID", &EventID, &b_EventID);
-   fChain->SetBranchAddress("EntInner", &EntInner, &b_EntInner);
-   fChain->SetBranchAddress("Edep", &Edep, &b_Edep);
    fChain->SetBranchAddress("Photons", &Photons, &b_Photons);
-   fChain->SetBranchAddress("primx", &primx, &b_primx);
-   fChain->SetBranchAddress("primy", &primy, &b_primy);
-   fChain->SetBranchAddress("primz", &primz, &b_primz);
-   fChain->SetBranchAddress("primEnergy", &primEnergy, &b_primEnergy);
-   fChain->SetBranchAddress("primdx", &primdx, &b_primdx);
-   fChain->SetBranchAddress("primdy", &primdy, &b_primdy);
-   fChain->SetBranchAddress("primdz", &primdz, &b_primdz);
+   fChain->SetBranchAddress("firstContact", &firstContact, &b_firstContact);
    Notify();
 }
 
@@ -115,31 +107,17 @@ void TreeReader::Loop()
 //      Root > t.Show(16);     // Read and show values of entry 16
 //      Root > t.Loop();       // Loop on all entries
 //
-
-//     This is the loop skeleton where:
-//    jentry is the global entry number in the chain
-//    ientry is the entry number in the current Tree
-//  	Note that the argument to GetEntry must be:
-//    jentry for TChain::GetEntry
-//    ientry for TTree::GetEntry and TBranch::GetEntry
-//
-//       To read only selected branches, Insert statements like:
-// METHOD1:
-//    fChain->SetBranchStatus("*",0);  // disable all branches
-//    fChain->SetBranchStatus("branchname",1);  // activate branchname
-// METHOD2: replace line
-//    fChain->GetEntry(jentry);       //read all branches
-//		by  b_branchname->GetEntry(ientry); //read only this branch
    if (fChain == 0) return;
 
    fChain->SetBranchStatus("*",0);  // disable all branches
-   fChain->SetBranchStatus("primEnergy",1);  // activate branchname
+   fChain->SetBranchStatus("Photons",1);  // activate branchname
+   fChain->SetBranchStatus("firstContact",1);  // activate branchname
 
    Long64_t nentries = fChain->GetEntriesFast();
 
-
 	// create Histos
-	TH1F* histEdep = new TH1F("histo", "Energy deposition", 500, 0, 20);
+	TH1F* histEdep = new TH1F("histo_edep", "Energy deposition [keVee]", 60, 0, 600);
+	TH1F* histTiming = new TH1F("histo_time", "Entering time", 100, 0, 200);
 
    Long64_t nbytes = 0, nb = 0;
    for (Long64_t jentry=0; jentry<nentries;jentry++) 
@@ -148,10 +126,10 @@ void TreeReader::Loop()
       if (ientry < 0) break;
       nb = fChain->GetEntry(jentry);   nbytes += nb;
       // if (Cut(ientry) < 0) continue;
-
-			histEdep->Fill(primEnergy);
+			histEdep->Fill(Photons,0.1);
+			histTiming->Fill(firstContact);
    	}
-//gPad->SetLogY();
+	gPad->SetLogY();
 	histEdep->Write();
 }
 

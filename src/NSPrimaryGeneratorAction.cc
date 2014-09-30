@@ -37,7 +37,7 @@
 #include "Randomize.hh"
 
 NSPrimaryGeneratorAction::NSPrimaryGeneratorAction(NSDetectorConstruction* DC)
-: Detector(DC),genEvaporation(0),primaryParticleEnergy(10)
+: Detector(DC),genEvaporation(0), genTwoNeutrons(0), primaryParticleEnergy(10)
 {
   // Construct messenger
   fMessenger = new NSPrimaryGeneratorMessenger(this);
@@ -68,6 +68,13 @@ void NSPrimaryGeneratorAction::GeneratePrimaries(G4Event* anEvent)
 {
 	// particle position
   G4double x0, y0, z0;
+	G4double detX, detY, detZ, detLowerPart;
+	G4double holeX, holeY, holeZ;
+	holeX= holeY = Detector->GetHoleSizeXY();
+	holeZ = Detector->GetHoleSizeZ();
+	detX = detY = Detector->GetDetSizeXY();
+	detZ = Detector->GetDetSizeZ();
+	detLowerPart = Detector->GetDetLowerPart();
 
   //this function is called at the begining of each event
   //
@@ -75,28 +82,26 @@ void NSPrimaryGeneratorAction::GeneratePrimaries(G4Event* anEvent)
   // on DetectorConstruction class we get Envelope volume
   // from G4LogicalVolumeStore.
 
-	if(true) // generate in leadshield
+	if(true) // generate in lead
 	{
-		G4double holeX, holeY, holeZ;
-		G4double detX, detY, detZ, detLowerPart;
 		G4double scinRad, scinHeight;
-		holeX= holeY = Detector->GetHoleSizeXY();
-		holeZ = Detector->GetDetSizeZ();
-		detX= detY = Detector->GetHoleSizeXY();
-		detZ = Detector->GetDetSizeZ();
-		detLowerPart = Detector->GetDetLowerPart();
+		G4double muonVetoThick = Detector->GetMuonVetoThick();
 		scinRad = Detector->GetScinRadOut2();
 		scinHeight = Detector->GetScinHeight();
+
+		// check if there is space to generate a particle
+		if(detZ<=scinHeight && detX*detX+detY*detY <= scinRad*scinRad)
+			G4cerr << "ERROR: no free space to generate particle!!! Change detector geometry!" << G4endl;
 		
 		while(1) // generate, until particle not in scintillator
 		{
-			// generate at radom position...
+			// generate at radom position in one quarter of the detector...
   		x0 = detX/2 * (G4UniformRand()-0.5);
   		y0 = detY/2 * (G4UniformRand()-0.5);
-  		z0 = detZ   * (G4UniformRand()-0.5) - 0.5*holeZ + 0.5*detZ;
+  		z0 = detZ   * (G4UniformRand()-0.5) - 0.5*holeZ + 0.5*detZ + muonVetoThick;
 			
 			// ... until the particle is not inside of a scintilator
-			if((x0)*(x0)+(y0)*(y0)>scinRad*scinRad || -holeZ/2+detLowerPart>z0)
+			if((x0)*(x0)+(y0)*(y0)>scinRad*scinRad || -holeZ/2+detLowerPart+muonVetoThick>z0)
 				break;
 		}
 		if(G4UniformRand()<0.5)
@@ -109,9 +114,26 @@ void NSPrimaryGeneratorAction::GeneratePrimaries(G4Event* anEvent)
 		else
 			y0 -= detY/4;
 	}
-	else // generate in watershield
+	else // generate somewhere inside watershield
 	{
+		G4double shieldXY, shieldZ;
+		shieldXY = Detector->GetShieldSizeXY();
+		shieldZ = Detector->GetShieldSizeZ();
+		
+		// check if there is space to generate a particle
+		if(detX<=holeX && detY<=holeY && detZ<=holeZ)
+			G4cerr << "ERROR: no free space to generate particle!!! Change detector geometry!" << G4endl;
 
+		while(1)
+		{		
+  		x0 = shieldXY * (G4UniformRand()-0.5);
+  		y0 = shieldXY * (G4UniformRand()-0.5);
+  		z0 = shieldZ  * (G4UniformRand()-0.5);
+			
+			// ... until the particle is inside the water
+			if(abs(x0)>holeX/2 || abs(y0)>holeY/2 || abs(z0)>holeZ/2)
+				break;
+		}
 	}
 
   // Set primary particle position
@@ -197,4 +219,9 @@ void NSPrimaryGeneratorAction::SetParticleEnergy(G4double energy)
 		fParticleGun->SetParticleEnergy(energy*MeV);
 	else
 		G4cerr << "ERROR: Invalid particle energy" << G4endl;
+}
+
+void NSPrimaryGeneratorAction::SetGenTwoNeutrons(G4bool value) 
+{
+	genTwoNeutrons = value;
 }

@@ -69,6 +69,7 @@ NSRunAction::NSRunAction()
   analysisManager->CreateH1("h1","Entered inner", 2, -0.5, 1.5);
   analysisManager->CreateH1("h2","Energy Deposited", 1000, 0, 30*MeV);
   analysisManager->CreateH1("h3","Photons Emmited", 100, 0, 2000);
+  analysisManager->CreateH1("h4","Entered 2 inner", 2, -.5, 1.5);
 
   // Creating ntuple id=1
   analysisManager->CreateNtuple("singleRun", "Event info from one run");
@@ -149,6 +150,7 @@ void NSRunAction::EndOfRunAction(const G4Run* run)
   G4double meanPer  = analysisManager->GetH1(1)->mean();
   G4double entries = analysisManager->GetH1(1)->entries();
   G4double meanEdep = analysisManager->GetH1(2)->mean();
+	G4double meanPer2 = analysisManager->GetH1(4)->mean();
 
   if ( analysisManager->GetH1(1) ) {
     G4cout << "\n ----> print histograms statistic ";
@@ -224,7 +226,7 @@ void NSRunAction::EndOfRunAction(const G4Run* run)
   if (runID == 0) // New set of runs
   {
     outfile.open(outfileName, std::ofstream::out | std::ofstream::trunc);
-		outfile << "runID\t#entries\tparticleEnergy[MeV]\tshieldSizeXY\tpercentBdP\tworldMat\tshieldMat\tdetMat\tscinMat\tmeanEdep[MeV]\tmeanPerEntered" << G4endl;
+		outfile << "# runID\t#entries\tparticleEnergy[MeV]\tshieldSizeXY\tpercentBdP\tworldMat\tshieldMat\tdetMat\tscinMat\tmeanEdep[MeV]\tmeanPerEntered1\tmeanPerEntered2" << G4endl;
   }
   // Open file for appending
   else // Continuing set of runs
@@ -237,7 +239,7 @@ void NSRunAction::EndOfRunAction(const G4Run* run)
       outfile << runID << "\t" << entries << "\t" << particleEnergy/MeV << "\t" << shield_sizeXY/m
               << "\t" << percentBdP
               << "\t" << mat[0] << "\t" << mat[1] << "\t" << mat[2]
-              << "\t" << mat[3] << "\t" << meanEdep/MeV << "\t" << meanPer
+              << "\t" << mat[3] << "\t" << meanEdep/MeV << "\t" << meanPer*100 << "\t" << meanPer2*100
               << G4endl;
     }
   else

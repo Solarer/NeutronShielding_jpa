@@ -24,7 +24,6 @@ public :
     Int_t           EventID;
     Int_t           EntInner;
     Double_t        Edep;
-    Double_t        Photons;
     Double_t        primx;
     Double_t        primy;
     Double_t        primz;
@@ -33,11 +32,13 @@ public :
     Double_t        primdy;
     Double_t        primdz;
 
+    Double_t        Photons;
+    Double_t        firstContact;
+
     // List of branches
     TBranch        *b_EventID;  	//!
     TBranch        *b_EntInner;   //!
     TBranch        *b_Edep;   		//!
-    TBranch        *b_Photons;   	//!
     TBranch        *b_primx;   		//!
     TBranch        *b_primy;   		//!
     TBranch        *b_primEnergy; //!
@@ -45,6 +46,9 @@ public :
     TBranch        *b_primdx;   	//!
     TBranch        *b_primdy;   	//!
     TBranch        *b_primdz;   	//!
+
+    TBranch        *b_Photons;   	//!
+    TBranch        *b_firstContact;   	//!
 
     TreeReader(std::string filename = "singleRun_1410363422.root");
     virtual ~TreeReader();

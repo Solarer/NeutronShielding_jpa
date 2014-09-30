@@ -54,6 +54,9 @@ class NSPrimaryGeneratorAction : public G4VUserPrimaryGeneratorAction
 		// choose Evaporation spectrum or not
 		void SetGenEvaporation (G4bool);          
 
+		// choose generation of two neutrons or not
+		void SetGenTwoNeutrons (G4bool);          
+
 		// Get a random Energy from the spectrum
     G4double GetEvaporationEnergy(void);
 
@@ -66,7 +69,7 @@ class NSPrimaryGeneratorAction : public G4VUserPrimaryGeneratorAction
     NSPrimaryGeneratorMessenger* fMessenger; 	// Pointer to messenger
 		G4bool genEvaporation;										// custom energy distribution
 		G4double primaryParticleEnergy;						// energy of primary particle
-
+		G4bool genTwoNeutrons;										// generate two neutrons with different directions
 };
 
 #endif
