@@ -47,7 +47,7 @@ class NSRunAction : public G4UserRunAction
   public:
     NSRunAction();
     virtual ~NSRunAction();
-	
+
     // Get-Methods
 		G4int GetEventID(){ return eventIDs.empty() ? -1 : eventIDs.front(); };
     inline G4String GetOutputFile(){ return outputFiles.front(); };
@@ -56,7 +56,7 @@ class NSRunAction : public G4UserRunAction
     // Set-Methods
     void SetCollectEvents(G4bool collect){ doCollectEvents = collect; };
     void SetProcessEvents(G4bool process){ doProcessEvents = process; };
-    
+
     // Other-Methods
 		void FillVec();
 		G4bool PopEvent();

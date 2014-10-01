@@ -58,6 +58,12 @@ NSPrimaryGeneratorMessenger::NSPrimaryGeneratorMessenger(NSPrimaryGeneratorActio
   fGenEvaporationCmd->SetGuidance("Generate particles with evaporation spectrum?");
   fGenEvaporationCmd->SetParameterName("genEvaporation",false);
   fGenEvaporationCmd->AvailableForStates(G4State_Idle);
+
+   // Command to choose to generate two neutrons at once or not
+  fGenTwoNeutronsCmd = new G4UIcmdWithABool("/NS/gen/genTwoNeutrons", this);
+  fGenTwoNeutronsCmd->SetGuidance("Generate two Neutrons at once?");
+  fGenTwoNeutronsCmd->SetParameterName("genTwoNeutrons",false);
+  fGenTwoNeutronsCmd->AvailableForStates(G4State_Idle);
 }
 
 NSPrimaryGeneratorMessenger::~NSPrimaryGeneratorMessenger()
@@ -69,15 +75,20 @@ NSPrimaryGeneratorMessenger::~NSPrimaryGeneratorMessenger()
 }
 
 void NSPrimaryGeneratorMessenger::SetNewValue(G4UIcommand* command, G4String newValue)
-{ 
+{
 	if( command == fGenEvaporationCmd )
-  { 
-		Action->SetGenEvaporation(fGenEvaporationCmd->GetNewIntValue(newValue)); 
+  {
+		Action->SetGenEvaporation(fGenEvaporationCmd->GetNewIntValue(newValue));
 	}
 
 	if( command == fParticleEnergyCmd )
-  { 
-		Action->SetParticleEnergy(fParticleEnergyCmd->GetNewDoubleValue(newValue)); 
+  {
+		Action->SetParticleEnergy(fParticleEnergyCmd->GetNewDoubleValue(newValue));
+	}
+
+		if( command == fGenTwoNeutronsCmd )
+  {
+		Action->SetGenTwoNeutrons(fGenTwoNeutronsCmd->GetNewBoolValue(newValue));
 	}
 }
 
