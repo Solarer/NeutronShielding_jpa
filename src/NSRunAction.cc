@@ -221,7 +221,7 @@ void NSRunAction::EndOfRunAction(const G4Run* run)
   // Can be put into tree with "TreeMac.C"
 
   // Open file for writing
-  G4String outfileName = "NS.out3";
+  G4String outfileName = "NS.out2";
   std::ofstream outfile;
   if (runID == 0) // New set of runs
   {

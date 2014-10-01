@@ -37,7 +37,7 @@
 #include "Randomize.hh"
 
 NSPrimaryGeneratorAction::NSPrimaryGeneratorAction(NSDetectorConstruction* DC)
-: Detector(DC),genEvaporation(0), genTwoNeutrons(0), primaryParticleEnergy(10)
+: Detector(DC),genEvaporation(0), primaryParticleEnergy(10), genTwoNeutrons(0)
 {
   // Construct messenger
   fMessenger = new NSPrimaryGeneratorMessenger(this);
