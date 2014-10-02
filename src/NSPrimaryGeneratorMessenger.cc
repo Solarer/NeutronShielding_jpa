@@ -30,6 +30,7 @@
 #include "G4UIdirectory.hh"
 #include "G4UIcmdWithAnInteger.hh"
 #include "G4UIcmdWithADouble.hh"
+#include "G4UIcmdWithABool.hh"
 
 NSPrimaryGeneratorMessenger::NSPrimaryGeneratorMessenger(NSPrimaryGeneratorAction* Gun)
 :Action(Gun)

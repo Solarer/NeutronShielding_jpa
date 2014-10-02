@@ -190,6 +190,7 @@ G4VPhysicalVolume* NSDetectorConstruction::ConstructDetector()
 
 	G4VSolid* solidDetQuarter = new G4SubtractionSolid("DetQuarter", leadQuarter, airHole, new G4RotationMatrix(), G4ThreeVector(0,0,0.5*detLowerPart));
 
+G4cout << "cube: " << solidDetQuarter->GetCubicVolume()<<G4endl;
   logicDet=
     new G4LogicalVolume(solidDetQuarter,      // solid
                         detMat,               // material

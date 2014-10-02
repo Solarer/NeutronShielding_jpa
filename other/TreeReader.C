@@ -116,8 +116,8 @@ void TreeReader::Loop()
    Long64_t nentries = fChain->GetEntriesFast();
 
 	// create Histos
-	TH1F* histEdep = new TH1F("histo_edep", "Energy deposition [keVee]", 60, 0, 600);
-	TH1F* histTiming = new TH1F("histo_time", "Entering time", 100, 0, 200);
+	TH1D* histEdep = new TH1D("histo_edep", "Energy deposition [keVee]", 60, 0, 600);
+	TH1D* histTiming = new TH1D("histo_time", "Entime", 100, 0, 200);
 
    Long64_t nbytes = 0, nb = 0;
    for (Long64_t jentry=0; jentry<nentries;jentry++) 
@@ -126,10 +126,14 @@ void TreeReader::Loop()
       if (ientry < 0) break;
       nb = fChain->GetEntry(jentry);   nbytes += nb;
       // if (Cut(ientry) < 0) continue;
-			histEdep->Fill(Photons,0.1);
+      if(Photons<=600)
+				histEdep->Fill(Photons);
 			histTiming->Fill(firstContact);
    	}
-	gPad->SetLogY();
-	histEdep->Write();
+	double scale = 1./histEdep->GetEntries()/10*2.5*0.55*60;
+cout << "entries: " << histEdep->GetEntries()<<std::endl<<"scale: " << scale << std::endl;
+	histEdep->Scale(scale);
+	histEdep->Draw();
+	//histTiming->Write();
 }
 

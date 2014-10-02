@@ -101,7 +101,7 @@ void NSPrimaryGeneratorAction::GeneratePrimaries(G4Event* anEvent)
   		z0 = detZ   * (G4UniformRand()-0.5) - 0.5*holeZ + 0.5*detZ + muonVetoThick;
 			
 			// ... until the particle is not inside of a scintilator
-			if((x0)*(x0)+(y0)*(y0)>scinRad*scinRad || -holeZ/2+detLowerPart+muonVetoThick>z0)
+			if((x0)*(x0)+(y0)*(y0)>scinRad*scinRad || -holeZ/2+muonVetoThick+detLowerPart>z0)
 				break;
 		}
 		if(G4UniformRand()<0.5)
@@ -172,45 +172,33 @@ G4double NSPrimaryGeneratorAction::GetEvaporationEnergy(void) {
 
   // Stolen from HALO code; integral MC method
   // I am not sure this gives quite the right spectrum ?
+ const G4int nBins = 13;
 
-  const G4int nBins = 16;
+	G4double Edistrib[nBins][2] = {
+	{0.138,  .25},
+	{0.391,  .75},
+	{0.557, 1.25},
+	{0.687, 1.75},
+	{0.791, 2.25},
+	{0.866, 2.75},
+	{0.923, 3.25},
+	{0.957, 3.75},
+	{0.977, 4.25},
+	{0.989, 4.75},
+	{0.994, 5.25},
+	{0.998, 5.75},
+	{1.000, 6.25}
+	};
 
-  G4double Edistrib[nBins][2] = {
-   {0.,    0.  },
-   {0.02,  0.12},
-   {0.138,  .25},
-   {0.391,  .75},
-   {0.557, 1.25},
-   {0.687, 1.75},
-   {0.791, 2.25},
-   {0.866, 2.75},
-   {0.923, 3.25},
-   {0.957, 3.75},
-   {0.977, 4.25},
-   {0.989, 4.75},
-   {0.994, 5.25},
-   {0.998, 5.75},
-   {1.000, 6.25}
-   }; 
 
-    while (true) 
-    {
-        G4double energy = G4UniformRand()*6.25;         // random energy
-        G4double rand = G4UniformRand();                // random value
+	G4int i=0;
+	G4double rnum = G4UniformRand();
+	while (Edistrib[i][0]< rnum) 
+	{
+		i++;
+	}
 
-        G4int i=0;
-        while(Edistrib[i][1]<= energy)
-        {
-            i++;
-        }
-
-        if (energy == 6.25)
-            i--;                                        // dont leave array
-
-        G4double chance =  (Edistrib[i][0]-Edistrib[i-1][0])/(Edistrib[i][1]-Edistrib[i-1][1]);
-        if(rand<=chance)
-            return energy;
-    }
+	return Edistrib[i][1]-(G4UniformRand()-0.5)*0.5;
 }
 
 void NSPrimaryGeneratorAction::SetParticleEnergy(G4double energy) 
