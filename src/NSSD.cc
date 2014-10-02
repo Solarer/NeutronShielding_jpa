@@ -81,9 +81,9 @@ G4bool NSSD::ProcessHits(G4Step* step, G4TouchableHistory*)
   if ( edep==0.) return false;
 
 	G4double temp = (step->GetPostStepPoint()->GetGlobalTime());
-/*	if(temp>5000*ns)		// 5 micro seconds cutoff
-		return false;
-*/
+	//if(temp>5000*ns)		// 5 micro seconds cutoff
+	//	return false;
+
 	// Get scintillator ID
 	G4ThreeVector position = step->GetPreStepPoint()->GetPosition();
 	G4int scinID; 
@@ -127,16 +127,16 @@ G4bool NSSD::ProcessHits(G4Step* step, G4TouchableHistory*)
 		if(particleName == "e-" || particleName == "e+" || particleName == "gamma")
 			photon = stepMaterial->GetMaterialPropertiesTable()->GetConstProperty("responseElectron")*edep;
 		else if(particleName == "proton")
-			photon = stepMaterial->GetMaterialPropertiesTable()->GetConstProperty("responseElectron")*edep/10;
-			//property = stepMaterial->GetMaterialPropertiesTable()->GetProperty("responseProton");
+			//photon = stepMaterial->GetMaterialPropertiesTable()->GetConstProperty("responseElectron")*edep/10;
+			property = stepMaterial->GetMaterialPropertiesTable()->GetProperty("responseProton");
 		else if(particleName == "deuteron")
 			photon= stepMaterial->GetMaterialPropertiesTable()->GetConstProperty("responseDeuteron")*edep*0;
 		else if(particleName == "alpha")
-			photon = 0;
-			//property = stepMaterial->GetMaterialPropertiesTable()->GetProperty("responseAlpha");
+			//photon = 0;
+			property = stepMaterial->GetMaterialPropertiesTable()->GetProperty("responseAlpha");
 		else if(particleName == "C12" || particleName == "C13")
-			photon = stepMaterial->GetMaterialPropertiesTable()->GetConstProperty("responseElectron")*edep/100;
-			//property = stepMaterial->GetMaterialPropertiesTable()->GetProperty("responseCarbon");
+			//photon = stepMaterial->GetMaterialPropertiesTable()->GetConstProperty("responseElectron")*edep/100;
+			property = stepMaterial->GetMaterialPropertiesTable()->GetProperty("responseCarbon");
 		else
 			{
 			photon = 0;

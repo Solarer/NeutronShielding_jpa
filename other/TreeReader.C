@@ -160,8 +160,8 @@ double values[] ={
 	// Legend
 	TLegend* leg = new TLegend(0.5,0.7,0.9,0.9);
 	leg->SetBorderSize(1);
-  leg->AddEntry(histEdep,"Geant4 linear energy deposition","l");
   leg->AddEntry(histo_edep,"MCNP","l");
+  leg->AddEntry(histEdep,"Geant4 linear energy deposition","l");
   leg->Draw("same");
 
 

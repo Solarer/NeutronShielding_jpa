@@ -1,0 +1,2 @@
+# runID	#entries	particleEnergy[MeV]	shieldSizeXY	percentBdP	worldMat	shieldMat	detMat	scinMat	meanEdep[MeV]	meanPerEntered1	rmsmeanPerEntered1	meanPerEntered2
+0	10000	10	1	0	G4_Galactic	G4_WATER	G4_Pb	EJ301	0.473705	15.26	35.9602	0.66

@@ -123,6 +123,7 @@ void NSRunAction::BeginOfRunAction(const G4Run*)
 	// Set output file name
   char fileName[100];
 	sprintf(fileName,"singleRun_%i",int(time(NULL)));
+	//sprintf(fileName,"singleRun_richtig_cutoff5ms");
   analysisManager->SetFileName(fileName);
 
 	// if you want to get step output for a list of events: Fill vector with event IDs from file
@@ -148,6 +149,7 @@ void NSRunAction::EndOfRunAction(const G4Run* run)
   // Print histogram statistics
   G4AnalysisManager* analysisManager = G4AnalysisManager::Instance();
   G4double meanPer  = analysisManager->GetH1(1)->mean();
+  G4double rmsPer= analysisManager->GetH1(1)->rms();
   G4double entries = analysisManager->GetH1(1)->entries();
   G4double meanEdep = analysisManager->GetH1(2)->mean();
 	G4double meanPer2 = analysisManager->GetH1(4)->mean();
@@ -221,12 +223,12 @@ void NSRunAction::EndOfRunAction(const G4Run* run)
   // Can be put into tree with "TreeMac.C"
 
   // Open file for writing
-  G4String outfileName = "NS.out_test";
+  G4String outfileName = "NS.out_richtig_energies30";
   std::ofstream outfile;
   if (runID == 0) // New set of runs
   {
     outfile.open(outfileName, std::ofstream::out | std::ofstream::trunc);
-		outfile << "# runID\t#entries\tparticleEnergy[MeV]\tshieldSizeXY\tpercentBdP\tworldMat\tshieldMat\tdetMat\tscinMat\tmeanEdep[MeV]\tmeanPerEntered1\tmeanPerEntered2" << G4endl;
+		outfile << "# runID\t#entries\tparticleEnergy[MeV]\tshieldSizeXY\tpercentBdP\tworldMat\tshieldMat\tdetMat\tscinMat\tmeanEdep[MeV]\tmeanPerEntered1\trmsmeanPerEntered1\tmeanPerEntered2" << G4endl;
   }
   // Open file for appending
   else // Continuing set of runs
@@ -239,7 +241,7 @@ void NSRunAction::EndOfRunAction(const G4Run* run)
       outfile << runID << "\t" << entries << "\t" << particleEnergy/MeV << "\t" << shield_sizeXY/m
               << "\t" << percentBdP
               << "\t" << mat[0] << "\t" << mat[1] << "\t" << mat[2]
-              << "\t" << mat[3] << "\t" << meanEdep/MeV << "\t" << meanPer*100 << "\t" << meanPer2*100
+              << "\t" << mat[3] << "\t" << meanEdep/MeV << "\t" << meanPer*100 << "\t" << rmsPer*100 << "\t" << meanPer2*100
               << G4endl;
     }
   else
