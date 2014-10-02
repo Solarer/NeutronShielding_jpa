@@ -172,22 +172,19 @@ G4double NSPrimaryGeneratorAction::GetEvaporationEnergy(void) {
 
   // Stolen from HALO code; integral MC method
   // I am not sure this gives quite the right spectrum ?
- const G4int nBins = 13;
+ const G4int nBins = 10;
 
 	G4double Edistrib[nBins][2] = {
-	{0.138,  .25},
-	{0.391,  .75},
-	{0.557, 1.25},
-	{0.687, 1.75},
-	{0.791, 2.25},
-	{0.866, 2.75},
-	{0.923, 3.25},
-	{0.957, 3.75},
-	{0.977, 4.25},
-	{0.989, 4.75},
-	{0.994, 5.25},
-	{0.998, 5.75},
-	{1.000, 6.25}
+	{0.148,  .25},
+	{0.401,  .75},
+	{0.567, 1.25},
+	{0.697, 1.75},
+	{0.801, 2.25},
+	{0.876, 2.75},
+	{0.933, 3.25},
+	{0.967, 3.75},
+	{0.987, 4.25},
+	{1.0, 4.75},
 	};
 
 

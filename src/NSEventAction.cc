@@ -216,7 +216,7 @@ void NSEventAction::EndOfEventAction(const G4Event* event)
   analysisManager->FillH1(1, enteredSD[0]? 1:0);// number entering detector
   analysisManager->FillH1(2, totalEdep);   	// energy deposition
   analysisManager->FillH1(3, totalPhoton);  // photons created
-  analysisManager->FillH1(4, enteredSD[2]);  // photons created
+  analysisManager->FillH1(4, enteredSD[0]==2 ? 1:0);  // two scintillators with over-threshold energy
 
   // Get the primary position/direction information
   G4PrimaryParticle* primary = event->GetPrimaryVertex(0)->GetPrimary(0);

@@ -86,7 +86,7 @@ NSRunAction::NSRunAction()
 
 	// Creating ntuple id=2
   analysisManager->CreateNtuple("entered", "Events that actualy deposited Energy");
-  analysisManager->CreateNtupleIColumn("ScintillatorsHit");
+  analysisManager->CreateNtupleIColumn("HowManyScintillatorsHit");
   analysisManager->CreateNtupleDColumn("Edep");
   analysisManager->CreateNtupleDColumn("Photons");
   analysisManager->CreateNtupleDColumn("firstContact");
@@ -221,7 +221,7 @@ void NSRunAction::EndOfRunAction(const G4Run* run)
   // Can be put into tree with "TreeMac.C"
 
   // Open file for writing
-  G4String outfileName = "NS.out2";
+  G4String outfileName = "NS.out3";
   std::ofstream outfile;
   if (runID == 0) // New set of runs
   {

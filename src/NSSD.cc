@@ -80,6 +80,10 @@ G4bool NSSD::ProcessHits(G4Step* step, G4TouchableHistory*)
   G4double edep = step->GetTotalEnergyDeposit();
   if ( edep==0.) return false;
 
+	G4double temp = (step->GetPostStepPoint()->GetGlobalTime());
+	if(temp>5000*ns)		// 5 micro seconds cutoff
+		return false;
+
 	// Get scintillator ID
 	G4ThreeVector position = step->GetPreStepPoint()->GetPosition();
 	G4int scinID; 
@@ -173,36 +177,22 @@ G4bool NSSD::ProcessHits(G4Step* step, G4TouchableHistory*)
 		else
 			photon = property->GetEnergy(particleEnergy)-property->GetEnergy(particleEnergy-edep);
 	}
-/*
-	G4cout <<G4endl<< particleName << G4endl << "Material: " << stepMaterial->GetName()<<G4endl;
-	G4cout << "TrackID: " << step->GetTrack()->GetTrackID() << "\t StepID: " << step->GetTrack()->GetCurrentStepNumber() << G4endl;
-	G4cout << "Vector: ";
-	for(int j=0; j<trackIDs.size();j++)
-	{
-		G4cout << trackIDs.at(j)<< " " ;
-	}
-	G4cout << G4endl<< "particle Energy: " << particleEnergy/MeV << "MeV" << G4endl;
-	G4cout << "Energyloss: " << edep/MeV <<"MeV"<< G4endl;
-	if(property!=NULL)
-	{
-		G4cout << "Val1: " << property->GetEnergy(particleEnergy) << " Val2: " << property->GetEnergy(particleEnergy+1*keV) <<G4endl;
-    G4cout << "MinVal: " << property->GetMinLowEdgeEnergy()<<G4endl;
-	}
-	G4cout << "PhotonFactor: " << photonFactor << G4endl;
-	G4cout << "eDep: " << edep/MeV<< " MeV " << edep*photonFactor << " photons" << G4endl;
-*/
 	
+
 	// Add everything to hit object
   hit->AddEdep(edep,scinID);
 	hit->AddPhoton(photon,scinID);
 
 	if(hit->GetPhoton(scinID)>30*11499.9/1000)		// 30keVee threshold in current SD
 		{
-			// Entered sensitive detector
-  		hit->SetEntSD(1,scinID);
 			// Timestamp
   		if(hit->GetFirstContact() == -1)
-				hit->SetFirstContact((step->GetPostStepPoint()->GetGlobalTime()));
+			{
+				// else...
+				// Entered sensitive detector
+				hit->SetFirstContact(temp);
+			}
+  		hit->SetEntSD(1,scinID);	
 		}
   return true;
 }

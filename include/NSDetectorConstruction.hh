@@ -37,6 +37,7 @@
 class G4Material;
 class G4Element;
 class G4Box;
+class G4Polyhedra;
 class G4LogicalVolume;
 class G4VPhysicalVolume;
 class NSDetectorMessenger;
@@ -91,7 +92,7 @@ class NSDetectorConstruction : public G4VUserDetectorConstruction
 	G4VPhysicalVolume* physMuonVeto;
 	G4VPhysicalVolume* physTopShield;
 
-    G4Cons*            solidScin;
+    G4Polyhedra*            solidScin;
     G4LogicalVolume*   logicScin;
     G4VPhysicalVolume* physScin;
 
