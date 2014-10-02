@@ -31,8 +31,6 @@
 
 #include "NSHit.hh"
 
-#include <vector>
-
 class G4Step;
 class G4HCofThisEvent;
 
@@ -49,7 +47,6 @@ class NSSD : public G4VSensitiveDetector
 
   private:
     NSHitsCollection* fHitsCollection;
-		std::vector<int> trackIDs;
 };
 
 #endif

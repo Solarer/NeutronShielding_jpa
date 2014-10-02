@@ -116,8 +116,13 @@ void TreeReader::Loop()
    Long64_t nentries = fChain->GetEntriesFast();
 
 	// create Histos
+	TCanvas* c1 = new TCanvas();
+  c1->SetLogy();
+
+
 	TH1D* histEdep = new TH1D("histo_edep", "Energy deposition [keVee]", 60, 0, 600);
 	TH1D* histTiming = new TH1D("histo_time", "Entime", 100, 0, 200);
+	TH1D *histo_edep = new TH1D("histo_edep","Energy deposition [keVee]",60,0,600);
 
    Long64_t nbytes = 0, nb = 0;
    for (Long64_t jentry=0; jentry<nentries;jentry++) 
@@ -130,10 +135,37 @@ void TreeReader::Loop()
 				histEdep->Fill(Photons);
 			histTiming->Fill(firstContact);
    	}
-	double scale = 1./histEdep->GetEntries()/10*2.5*0.55*60;
-cout << "entries: " << histEdep->GetEntries()<<std::endl<<"scale: " << scale << std::endl;
+	//3,4*10**-10 => 29
+	double total=100000;
+	double scale = 1./total*29*0.55*60;
 	histEdep->Scale(scale);
+	histEdep->GetYaxis()->SetRangeUser(0.001, 100.);
 	histEdep->Draw();
-	//histTiming->Write();
+	
+
+
+double values[] ={
+0,0,0,0.00,13.91,11.93,10.66,8.84,8.07,6.33,5.55,5.10,4.35,4.11,3.61,3.03,2.69,2.16,2.26,1.89,1.86,1.50,1.46,1.65,1.25,1.01,0.98,0.74,0.66,0.62,0.55,0.51,0.54,0.42,
+0.49,0.33,0.32,0.26,0.28,0.27,0.26,0.17,0.20, 0.19, 0.18, 0.21, 0.19, 0.18, 0.14, 0.09, 0.19, 0.14, 0.12, 0.10, 0.08, 0.07, 0.12, 0.03, 0.05, 0.02, 0.05};
+
+	for(int i=1; i<=60; i++)
+  	histo_edep->SetBinContent(i,values[i]);
+  
+  //histo_edep->SetMinimum(0.001);
+  //histo_edep->SetMaximum(100);
+	histo_edep->SetLineColor(2);
+	histo_edep->Draw("same");
+
+
+	// Legend
+	TLegend* leg = new TLegend(0.5,0.7,0.9,0.9);
+	leg->SetBorderSize(1);
+  leg->AddEntry(histEdep,"Geant4 linear energy deposition","l");
+  leg->AddEntry(histo_edep,"MCNP","l");
+  leg->Draw("same");
+
+
+	// Draw all
+	c1->Draw();
 }
 
