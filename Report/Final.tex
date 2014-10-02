@@ -3,6 +3,8 @@
 \usepackage[affil-it]{authblk} 
 \newcommand{\tab}{\hspace*{2em}}
 \usepackage{graphicx} 
+\usepackage{caption}
+\usepackage{subcaption}
 \graphicspath{ {.} } 
 \usepackage{float} 
 \usepackage{url} 
@@ -43,7 +45,11 @@ If a particle enters one of the scintillators and deposits energy, that amount w
 	\caption{Photon response of the EJ-301 scintillator.}
 	\label{fig:photonResponse}
 \end{figure}
-In addition to the four particles mentioned in this graph there is also a number of $\gamma$, $e^+$ and deuterons that enter the scintillator. Since $e^+$ have the same mass and charge as electrons and $\gamma$ will decay into $e^- + e^+$ both of them are treated as electrons. Deuterons will approximately emit a number of photons that lies in the middle between $p$ and $\alpha$. In approx. 0.5\% of the events the reaction \ce{n^1_0 + C^{12}_6 -> C^{13}_6 -> B^9_4 + \alpha^4_2 } can occur. In this case the electron-equivalent energy of the beryllium nucleus will not be calculated. This effect should be negligible, though.
+In addition to the four particles mentioned in this graph there is also a number of $\gamma$, $e^+$ and deuterons that enter the scintillator. Since $e^+$ have the same mass and charge as electrons and $\gamma$ will decay into $e^- + e^+$, both are treated as electrons. Deuterons will approximately emit a number of photons that lies in the middle between $p$ and $\alpha$. In approx. 0.5\% of the events the reaction 
+\begin{align}
+	\ce{n^1_0 + C^{12}_6 -> C^{13}_6 -> B^9_4 + \alpha^4_2 } 
+\end{align}
+can occur. Because this effect should be negligible, the electron-equivalent energy of the beryllium nucleus will not be calculated this case.
 
 \section{Results and Discussion}
 
@@ -51,16 +57,75 @@ In addition to the four particles mentioned in this graph there is also a number
 
 First of all, it was necessary to verify that the neutrons were generated in the correct volume. Figure \ref{} and \ref{} show that the particles were generated only inside the lead and not inside the holes which contain the scintillators. Figure \ref{} and \ref{} show that the direction of the neutrons is equally distributed.
 
+
 \subsection{Efficiency}
 
-An event will be marked as "valid" once the energy deposition in a single scintillator exceeds a given threshold in keVee. It is also noted if multiple scintillators received "valid" signals in a single event. Figure \ref{} and \ref{} show the percentage of events which were marked as "valid" at a given energy of the primary particle with an energy threshold of \SI{30}{keVee} and \SI{100}{keVee}. Figure \ref{} and \ref{} show the results of the MCNP simulation.
+An event will be marked as "valid" once the energy deposition in a single scintillator exceeds a given threshold in keVee.  Figure \ref{fig:efficiency30} and \ref{fig:efficiency100} show the percentage of events which were marked as "valid" at a given energy of the primary particle with an energy threshold of \SI{30}{keVee} and \SI{100}{keVee}.
 
+ \begin{figure}[H]
+ 	\begin{subfigure}[t]{0.49\textwidth}
+ 		\includegraphics[trim = 0cm 0cm 0cm 1.15cm, clip,width=\textwidth]{pics/timing.pdf}
+ 		\caption{Geant4 simulation.}
+ 	\end{subfigure}
+ 	\begin{subfigure}[t]{0.49\textwidth}
+ 		\includegraphics[trim = 0cm 0cm 0cm 1.15cm, clip, width=\textwidth]{pics/efficiency_MCNP30.pdf}
+ 		\caption{MCNP simulation.}
+ 	\end{subfigure}
+ 	\caption{Percentage of "valid" events for given monochromatic primary particles with a \SI{30}{keVee} threshold.}
+ 	\label{fig:efficiency30}
+ \end{figure}
+  \begin{figure}[H]
+  	\begin{subfigure}[t]{0.49\textwidth}
+  		\includegraphics[trim = 0cm 0cm 0cm 1.15cm, clip,width=\textwidth]{pics/timing.pdf}
+  		\caption{Geant4 simulation.}
+  	\end{subfigure}
+  	\begin{subfigure}[t]{0.49\textwidth}
+  		\includegraphics[trim = 0cm 0cm 0cm 1.15cm, clip, width=\textwidth]{pics/efficiency_MCNP100.pdf}
+  		\caption{MCNP simulation}
+  	\end{subfigure}
+  	\caption{Percentage of "valid" events for given monochromatic primary particles with a \SI{100}{keVee} threshold.}
+  	\label{fig:efficiency100}
+  \end{figure}
+  
+ The efficiency of the Geant4 simulation is about 5\% higher. This might be a result of the superior tracking algorithms of Geant which will also track secondaries, whereas the MCNP simulation was run in neutron and photon mode only \ref{}. 
+ 
+ Also, the scintillators were simulated as frustums of a cone instead as frustums of a hexagonal pyramid. This increases the cross-sectional area of each scintillator slightly and might result in more valid events.   
+ 
+\subsection{Timing}
 
+Figure \ref{fig:timing30} and \ref{fig:timing100} show a distribution of the arrival time of a signal. The neutron is being generated at $t=\SI{0}{ns}$ and a signal arrives once the energy deposition one scintillator exceeds a given threshold (\SI{30}{keVee} or \SI{100}{keVee}) for the first time.
+ \begin{figure}[H]
+ 	\begin{subfigure}[t]{0.49\textwidth}
+ 	     \includegraphics[trim = 0cm 0cm 0cm 1.15cm, clip, width=\textwidth]{pics/timing.pdf}
+ 		 \caption{Timing of Geant4 simulation.}
+ 	\end{subfigure}
+ 	\begin{subfigure}[t]{0.43\textwidth}
+ 	    \includegraphics[width=\textwidth]{pics/timing_MCNP.pdf}
+ 		\caption{Timing of MCNP simulation.}
+ 	\end{subfigure}
+ 	\caption{Threshold \SI{30}{keVee}}
+ 	\label{fig:timing30}
+ \end{figure}
 
+The timing graphs of both, Geant4 and MCNP simulation, show a dropoff at \SI{0}{ns} due to the threshold and end somewhere between \SI{100}{ns} and \SI{140}{ns}.  
 
+\subsection{Energy deposition}
 
+Finally, the energy deposition of both simulations are being compared. Figure \ref{fig:photonResponse} provided the necessary data to convert the energy to keV electron equivalent (keVee). As mentioned before, $\gamma$ and $e^+$ are treated as $e^-$ and deuterons lie in the middle between $p$ and $\alpha$. Seldom particles like beryllium will be ignored.
 
-
+ \begin{figure}[H]
+ 	\begin{subfigure}[t]{0.49\textwidth}
+ 		\includegraphics[trim = 0cm 0cm 0cm 1.15cm, clip, width=\textwidth]{pics/edep.pdf}
+ 		\caption{Timing of Geant4 simulation.}
+ 	\end{subfigure}
+ 	\begin{subfigure}[t]{0.49\textwidth}
+ 		\includegraphics[trim = 0cm 0cm 0cm 1.15cm, clip,width=\textwidth]{pics/edep_MCNP.pdf}
+ 		\caption{Timing of MCNP simulation.}
+ 	\end{subfigure}
+ 	\caption{Threshold \SI{30}{keVee}}
+ 	\label{fig:edep30}
+ \end{figure}
+ 
 \section{Conclusion}
 
 
