@@ -222,18 +222,18 @@ G4cout << "cube: " << solidDetQuarter->GetCubicVolume()<<G4endl;
     new G4LogicalVolume(topShield,          // solid
                         topShieldMat,          // material
                         "TopShield");          // name
-  // Scintillator 
-	G4double x,y;
-	G4double rScin[2] = {scinRadOut1,scinRadOut2};
-	G4double zScin[2] = {0,scinHeight};
 
-	solidScin = new G4Polyhedra("Scin",
-             0,
-             360*deg,
-             6,
-             2,
-             rScin,
-             zScin);
+// Scintillator
+	G4double x,y;
+		solidScin = new G4Cons("Scin", 						// name
+														scinRadIn2, 			// small radius 2
+														scinRadOut2, 			// big radius 2
+														scinRadIn1, 			// small radius 1
+														scinRadOut1, 			// big radius 1
+														0.5*scinHeight, 	// height
+														0, 								// start cut (radians)
+														360*deg); 				// end cut (radians)
+
 
   logicScin =
     new G4LogicalVolume(solidScin,            // solid
