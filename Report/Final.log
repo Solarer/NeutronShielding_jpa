@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014/Arch Linux) (preloaded format=pdflatex 2014.9.2)  1 OCT 2014 22:41
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014/Arch Linux) (preloaded format=pdflatex 2014.9.2)  2 OCT 2014 22:10
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -645,11 +645,12 @@ LaTeX Warning: Reference `' on page 3 undefined on input line 58.
 
 LaTeX Warning: Reference `' on page 3 undefined on input line 58.
 
-<pics/timing.pdf, id=27, 569.12625pt x 315.1775pt>
-File: pics/timing.pdf Graphic file (type pdf)
- <use pics/timing.pdf>
-Package pdftex.def Info: pics/timing.pdf used on input line 67.
-(pdftex.def)             Requested size: 230.18253pt x 114.2393pt.
+<pics/efficiencyGeant30.pdf, id=27, 569.12625pt x 344.28625pt>
+File: pics/efficiencyGeant30.pdf Graphic file (type pdf)
+
+<use pics/efficiencyGeant30.pdf>
+Package pdftex.def Info: pics/efficiencyGeant30.pdf used on input line 67.
+(pdftex.def)             Requested size: 230.18253pt x 126.01228pt.
 
 <pics/efficiency_MCNP30.pdf, id=29, 539.76656pt x 395.97937pt>
 File: pics/efficiency_MCNP30.pdf Graphic file (type pdf)
@@ -657,62 +658,73 @@ File: pics/efficiency_MCNP30.pdf Graphic file (type pdf)
 <use pics/efficiency_MCNP30.pdf>
 Package pdftex.def Info: pics/efficiency_MCNP30.pdf used on input line 71.
 (pdftex.def)             Requested size: 230.18253pt x 154.91232pt.
-File: pics/timing.pdf Graphic file (type pdf)
- <use pics/timing.pdf>
-Package pdftex.def Info: pics/timing.pdf used on input line 79.
-(pdftex.def)             Requested size: 230.18253pt x 114.2393pt.
 
-<pics/efficiency_MCNP100.pdf, id=32, 533.74406pt x 395.97937pt>
+<pics/efficiencyGeant100.pdf, id=31, 569.12625pt x 344.28625pt>
+File: pics/efficiencyGeant100.pdf Graphic file (type pdf)
+
+<use pics/efficiencyGeant100.pdf>
+Package pdftex.def Info: pics/efficiencyGeant100.pdf used on input line 79.
+(pdftex.def)             Requested size: 230.18253pt x 126.01228pt.
+
+<pics/efficiency_MCNP100.pdf, id=33, 533.74406pt x 395.97937pt>
 File: pics/efficiency_MCNP100.pdf Graphic file (type pdf)
 
 <use pics/efficiency_MCNP100.pdf>
 Package pdftex.def Info: pics/efficiency_MCNP100.pdf used on input line 83.
 (pdftex.def)             Requested size: 230.18253pt x 156.65833pt.
- [3 <./pics/timing.pdf, page is rotated 90 degrees> <./pics/efficiency_MCNP30.p
-df>]
+ [3 <./pics/efficiencyGeant30.pdf, page is rotated 90 degrees> <./pics/efficien
+cy_MCNP30.pdf>]
 
 LaTeX Warning: Reference `' on page 4 undefined on input line 90.
 
 
 LaTeX Warning: Reference `fig:timing100' on page 4 undefined on input line 96.
 
+<pics/timing.pdf, id=90, 569.12625pt x 315.1775pt>
 File: pics/timing.pdf Graphic file (type pdf)
-<use pics/timing.pdf>
+ <use pics/timing.pdf>
 Package pdftex.def Info: pics/timing.pdf used on input line 99.
 (pdftex.def)             Requested size: 230.18253pt x 114.2393pt.
- <pics/timing_MCNP.pdf, id=90, 587.19376pt x 353.82187pt>
+
+<pics/timing_MCNP.pdf, id=92, 587.19376pt x 353.82187pt>
 File: pics/timing_MCNP.pdf Graphic file (type pdf)
 
 <use pics/timing_MCNP.pdf>
 Package pdftex.def Info: pics/timing_MCNP.pdf used on input line 103.
 (pdftex.def)             Requested size: 201.99121pt x 121.71234pt.
- [4 <./pics/efficiency_MCNP100.pdf> <./pics/timing_MCNP.pdf
+ [4 <./pics/efficiencyGeant100.pdf, page is rotated 90 degrees> <./pics/efficie
+ncy_MCNP100.pdf> <./pics/timing.pdf, page is rotated 90 degrees> <./pics/timing
+_MCNP.pdf
 
 pdfTeX warning: pdflatex (file ./pics/timing_MCNP.pdf): PDF inclusion: multiple
  pdfs with page group included in a single page
->] <pics/edep.pdf, id=111, 569.12625pt x 344.28625pt>
+>] <pics/edep.pdf, id=199, 569.12625pt x 344.28625pt>
 File: pics/edep.pdf Graphic file (type pdf)
  <use pics/edep.pdf>
 Package pdftex.def Info: pics/edep.pdf used on input line 118.
 (pdftex.def)             Requested size: 230.18253pt x 126.01228pt.
 
-<pics/edep_MCNP.pdf, id=113, 643.6547pt x 455.45157pt>
+<pics/edep_MCNP.pdf, id=201, 643.6547pt x 455.45157pt>
 File: pics/edep_MCNP.pdf Graphic file (type pdf)
 
 <use pics/edep_MCNP.pdf>
 Package pdftex.def Info: pics/edep_MCNP.pdf used on input line 122.
 (pdftex.def)             Requested size: 230.18253pt x 151.17682pt.
- (./Final.bbl [5 <./pics/edep.pdf, page is rotated 90 degrees> <./pics/edep_MCN
-P.pdf>]) [6] (./Final.aux)
+ (./Final.bbl
+
+LaTeX Warning: Empty `thebibliography' environment on input line 3.
+
+) [5 <./pics/edep.pdf, page is rotated 90 degrees> <./pics/edep_MCNP.pdf>]
+(./Final.aux)
 
 LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 12066 strings out of 493108
- 252461 string characters out of 6140726
- 270479 words of memory out of 5000000
- 15419 multiletter control sequences out of 15000+600000
+ 12074 strings out of 493108
+ 252744 string characters out of 6140726
+ 270473 words of memory out of 5000000
+ 15425 multiletter control sequences out of 15000+600000
  14758 words of font info for 55 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  38i,19n,46p,10342b,730s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -724,11 +736,11 @@ mr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/
 share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist
 /fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/p
 ublic/amsfonts/cm/cmsy8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/
-cm/cmti12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on Final.pdf (6 pages, 724904 bytes).
+cm/cmti12.pfb>
+Output written on Final.pdf (5 pages, 738992 bytes).
 PDF statistics:
- 210 PDF objects out of 1000 (max. 8388607)
- 114 compressed objects within 2 object streams
+ 291 PDF objects out of 1000 (max. 8388607)
+ 145 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 78 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 88 words of extra memory for PDF output out of 10000 (max. 10000000)
 

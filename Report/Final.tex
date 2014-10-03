@@ -13,7 +13,7 @@
 
 \begin{document} 
 
-\title{Designing neutron shielding for a CENNS experiment} 
+\title{Comparing CENNS detector simulations of Geant4 and MCNP} 
 
 \author[1]{Jan P. Adam} 
 \author[2]{Kate Scholberg} 
@@ -23,7 +23,7 @@
 
 \maketitle
 \begin{abstract}
-The Spallation Neutron Source (SNS) at Oak Ridge National Laboratory is also a neutrino source.  These particular neutrinos provide an optimal opportunity for the observation of coherent elastic neutrino-nucleus scattering (CENNS), a process that has been predicted but never observed. The detector configuration must involve some lead shielding surrounding the CENNS detector to block background radiation. However, the neutrinos must pass through this lead shielding to reach the detector, and doing so may produce neutrino-induced neutrons that can enter the detector and create a false signal. The Geant4 simulation toolkit was used to study neutron shielding and the neutron energy deposition in the detector volume.
+The Spallation Neutron Source (SNS) at Oak Ridge National Laboratory is also a neutrino source. The Duke Neutrino Group build a detector prototype to observe coherent elastic neutrino-nucleus scattering (CENNS), a process that has been predicted but never observed so far. Beforehand the detector was simulated with the MCNP-Polimi framework and the goal of this paper is to reproduce the results with Geant4.
 \end{abstract}
 \newpage
 
@@ -64,7 +64,7 @@ An event will be marked as "valid" once the energy deposition in a single scinti
 
  \begin{figure}[H]
  	\begin{subfigure}[t]{0.49\textwidth}
- 		\includegraphics[trim = 0cm 0cm 0cm 1.15cm, clip,width=\textwidth]{pics/timing.pdf}
+ 		\includegraphics[trim = 0cm 0cm 0cm 1.15cm, clip,width=\textwidth]{pics/efficiencyGeant30.pdf}
  		\caption{Geant4 simulation.}
  	\end{subfigure}
  	\begin{subfigure}[t]{0.49\textwidth}
@@ -76,7 +76,7 @@ An event will be marked as "valid" once the energy deposition in a single scinti
  \end{figure}
   \begin{figure}[H]
   	\begin{subfigure}[t]{0.49\textwidth}
-  		\includegraphics[trim = 0cm 0cm 0cm 1.15cm, clip,width=\textwidth]{pics/timing.pdf}
+  		\includegraphics[trim = 0cm 0cm 0cm 1.15cm, clip,width=\textwidth]{pics/efficiencyGeant100.pdf}
   		\caption{Geant4 simulation.}
   	\end{subfigure}
   	\begin{subfigure}[t]{0.49\textwidth}
