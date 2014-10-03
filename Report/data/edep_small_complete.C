@@ -1,10 +1,10 @@
 {
 //=========Macro generated from canvas: c1/c1
-//=========  (Fri Oct  3 00:20:20 2014) by ROOT version5.28/00c
-   TCanvas *c1 = new TCanvas("c1", "c1",7,23,1393,873);
+//=========  (Fri Oct  3 11:44:35 2014) by ROOT version5.28/00c
+   TCanvas *c1 = new TCanvas("c1", "c1",7,23,1600,873);
    gStyle->SetOptFit(1);
    gStyle->SetOptStat(0);
-   c1->Range(-129.7297,-4.081081,681.0811,2.675676);
+   c1->Range(-129.7297,-2.864865,681.0811,2.540541);
    c1->SetFillColor(10);
    c1->SetBorderMode(0);
    c1->SetBorderSize(2);
@@ -79,10 +79,7 @@
    histo_edep->SetMinimum(0.01);
    histo_edep->SetMaximum(100);
    histo_edep->SetEntries(177300);
-
-   Int_t ci;   // for color index setting
-   ci = TColor::GetColor("#0000ff");
-   histo_edep->SetLineColor(ci);
+   histo_edep->SetLineColor(4);
    histo_edep->SetLineWidth(2);
    histo_edep->GetXaxis()->SetTitle("energy deposition [keVee]");
    histo_edep->GetXaxis()->CenterTitle(true);
@@ -104,43 +101,7 @@
    histo_edep->GetZaxis()->SetTitleSize(0.07);
    histo_edep->GetZaxis()->SetTitleFont(42);
    histo_edep->Draw("");
-
-  //###########################
-double values[] ={
-0,0,0.00,,13.91,11.93,10.6,8.84,8.07,6.33
-,5.55,5.10,4.35,4.11,3.61,3.03,2.69,2.16,2.26,1.89,1.86,1.50,1.46,1.65,1.25,1.01,0.98
-,0.74,0.66,0.62,0.55,0.51,0.54,0.42,0.49,0.33,0.32,0.26,0.28,0.27,0.26,0.17,0.20,0.19
-,0.18,0.21,0.19,0.18,0.14,0.09,0.19,0.14,0.12,0.10,0.08,0.07,0.12,0.03,0.05,0.02,0.05};
-  
-   TH1D *histo_edep1 = new TH1D("histo_edep1","Energy deposition [keVee]",60,0,600);
-
-	for(int i=0 ; i<60;i++)
-   histo_edep1->SetBinContent(i+1,values[i]);
-
-   Int_t ci;   // for color index setting
-   ci = TColor::GetColor("#000000");
-   histo_edep1->SetLineColor(ci);
-   histo_edep1->SetLineWidth(2);
-   histo_edep1->GetXaxis()->SetTitle("energy deposition [keVee]");
-   histo_edep1->GetXaxis()->CenterTitle(true);
-   histo_edep1->GetXaxis()->SetNdivisions(506);
-   histo_edep1->GetXaxis()->SetLabelFont(42);
-   histo_edep1->GetXaxis()->SetLabelSize(0.06);
-   histo_edep1->GetXaxis()->SetTitleSize(0.06);
-   histo_edep1->GetXaxis()->SetTitleFont(42);
-   histo_edep1->GetYaxis()->SetTitle("count / 10 keVee / 60 days");
-   histo_edep1->GetYaxis()->CenterTitle(true);
-   histo_edep1->GetYaxis()->SetNdivisions(506);
-   histo_edep1->GetYaxis()->SetLabelFont(42);
-   histo_edep1->GetYaxis()->SetLabelSize(0.06);
-   histo_edep1->GetYaxis()->SetTitleSize(0.06);
-   histo_edep1->GetYaxis()->SetTitleOffset(1.05);
-   histo_edep1->GetYaxis()->SetTitleFont(42);
-   histo_edep1->GetZaxis()->SetLabelFont(42);
-   histo_edep1->GetZaxis()->SetLabelSize(0.06);
-   histo_edep1->GetZaxis()->SetTitleSize(0.07);
-   histo_edep1->GetZaxis()->SetTitleFont(42);
-  //###########################
+   
    TH1D *histo_edep3 = new TH1D("histo_edep3","Energy deposition [keVee]",60,0,600);
    histo_edep3->SetBinContent(4,15.44311);
    histo_edep3->SetBinContent(5,11.78737);
@@ -200,10 +161,7 @@ double values[] ={
    histo_edep3->SetBinContent(59,0.343563);
    histo_edep3->SetBinContent(60,0.310068);
    histo_edep3->SetEntries(138814);
-
-   Int_t ci;   // for color index setting
-   ci = TColor::GetColor("#ff0000");
-   histo_edep3->SetLineColor(ci);
+   histo_edep3->SetLineColor(2);
    histo_edep3->SetLineWidth(2);
    histo_edep3->GetXaxis()->SetTitle("energy deposition [keVee]");
    histo_edep3->GetXaxis()->CenterTitle(true);
@@ -226,9 +184,6 @@ double values[] ={
    histo_edep3->GetZaxis()->SetTitleFont(42);
    histo_edep3->Draw("same");
    
-
-
-//#############################
    TH1D *histo_edep4 = new TH1D("histo_edep4","Energy deposition [keVee]",60,0,600);
    histo_edep4->SetBinContent(4,15.9197);
    histo_edep4->SetBinContent(5,12.15869);
@@ -288,10 +243,7 @@ double values[] ={
    histo_edep4->SetBinContent(59,0.299541);
    histo_edep4->SetBinContent(60,0.25839);
    histo_edep4->SetEntries(139403);
-
-   Int_t ci;   // for color index setting
-   ci = TColor::GetColor("#00ff00");
-   histo_edep4->SetLineColor(ci);
+   histo_edep4->SetLineColor(3);
    histo_edep4->SetLineWidth(2);
    histo_edep4->GetXaxis()->SetTitle("energy deposition [keVee]");
    histo_edep4->GetXaxis()->CenterTitle(true);
@@ -313,16 +265,88 @@ double values[] ={
    histo_edep4->GetZaxis()->SetTitleSize(0.07);
    histo_edep4->GetZaxis()->SetTitleFont(42);
    histo_edep4->Draw("same");
+   
+   TH1D *histo_edep1 = new TH1D("histo_edep1","Energy deposition [keVee]",60,0,600);
+   histo_edep1->SetBinContent(4,13.91);
+   histo_edep1->SetBinContent(5,11.93);
+   histo_edep1->SetBinContent(6,10.6);
+   histo_edep1->SetBinContent(7,8.84);
+   histo_edep1->SetBinContent(8,8.07);
+   histo_edep1->SetBinContent(9,6.33);
+   histo_edep1->SetBinContent(10,5.55);
+   histo_edep1->SetBinContent(11,5.1);
+   histo_edep1->SetBinContent(12,4.35);
+   histo_edep1->SetBinContent(13,4.11);
+   histo_edep1->SetBinContent(14,3.61);
+   histo_edep1->SetBinContent(15,3.03);
+   histo_edep1->SetBinContent(16,2.69);
+   histo_edep1->SetBinContent(17,2.16);
+   histo_edep1->SetBinContent(18,2.26);
+   histo_edep1->SetBinContent(19,1.89);
+   histo_edep1->SetBinContent(20,1.86);
+   histo_edep1->SetBinContent(21,1.5);
+   histo_edep1->SetBinContent(22,1.46);
+   histo_edep1->SetBinContent(23,1.65);
+   histo_edep1->SetBinContent(24,1.25);
+   histo_edep1->SetBinContent(25,1.01);
+   histo_edep1->SetBinContent(26,0.98);
+   histo_edep1->SetBinContent(27,0.74);
+   histo_edep1->SetBinContent(28,0.66);
+   histo_edep1->SetBinContent(29,0.62);
+   histo_edep1->SetBinContent(30,0.55);
+   histo_edep1->SetBinContent(31,0.51);
+   histo_edep1->SetBinContent(32,0.54);
+   histo_edep1->SetBinContent(33,0.42);
+   histo_edep1->SetBinContent(34,0.49);
+   histo_edep1->SetBinContent(35,0.33);
+   histo_edep1->SetBinContent(36,0.32);
+   histo_edep1->SetBinContent(37,0.26);
+   histo_edep1->SetBinContent(38,0.28);
+   histo_edep1->SetBinContent(39,0.27);
+   histo_edep1->SetBinContent(40,0.26);
+   histo_edep1->SetBinContent(41,0.17);
+   histo_edep1->SetBinContent(42,0.2);
+   histo_edep1->SetBinContent(43,0.19);
+   histo_edep1->SetBinContent(44,0.18);
+   histo_edep1->SetBinContent(45,0.21);
+   histo_edep1->SetBinContent(46,0.19);
+   histo_edep1->SetBinContent(47,0.18);
+   histo_edep1->SetBinContent(48,0.14);
+   histo_edep1->SetBinContent(49,0.09);
+   histo_edep1->SetBinContent(50,0.19);
+   histo_edep1->SetBinContent(51,0.14);
+   histo_edep1->SetBinContent(52,0.12);
+   histo_edep1->SetBinContent(53,0.1);
+   histo_edep1->SetBinContent(54,0.08);
+   histo_edep1->SetBinContent(55,0.07);
+   histo_edep1->SetBinContent(56,0.12);
+   histo_edep1->SetBinContent(57,0.03);
+   histo_edep1->SetBinContent(58,0.05);
+   histo_edep1->SetBinContent(59,0.02);
+   histo_edep1->SetBinContent(60,0.05);
+   histo_edep1->SetEntries(60);
+   histo_edep1->SetLineWidth(2);
+   histo_edep1->GetXaxis()->SetTitle("energy deposition [keVee]");
+   histo_edep1->GetXaxis()->CenterTitle(true);
+   histo_edep1->GetXaxis()->SetNdivisions(506);
+   histo_edep1->GetXaxis()->SetLabelFont(42);
+   histo_edep1->GetXaxis()->SetLabelSize(0.06);
+   histo_edep1->GetXaxis()->SetTitleSize(0.06);
+   histo_edep1->GetXaxis()->SetTitleFont(42);
+   histo_edep1->GetYaxis()->SetTitle("count / 10 keVee / 60 days");
+   histo_edep1->GetYaxis()->CenterTitle(true);
+   histo_edep1->GetYaxis()->SetNdivisions(506);
+   histo_edep1->GetYaxis()->SetLabelFont(42);
+   histo_edep1->GetYaxis()->SetLabelSize(0.06);
+   histo_edep1->GetYaxis()->SetTitleSize(0.06);
+   histo_edep1->GetYaxis()->SetTitleOffset(1.05);
+   histo_edep1->GetYaxis()->SetTitleFont(42);
+   histo_edep1->GetZaxis()->SetLabelFont(42);
+   histo_edep1->GetZaxis()->SetLabelSize(0.06);
+   histo_edep1->GetZaxis()->SetTitleSize(0.07);
+   histo_edep1->GetZaxis()->SetTitleFont(42);
    histo_edep1->Draw("same");
    
-  
-   //###########################
-//##########################
-//
-//
-//
-
-
    TLegend *leg = new TLegend(0.5,0.7,0.9,0.9,NULL,"brNDC");
    leg->SetBorderSize(1);
    leg->SetLineColor(1);
@@ -330,13 +354,29 @@ double values[] ={
    leg->SetLineWidth(1);
    leg->SetFillColor(10);
    leg->SetFillStyle(1001);
-   leg->AddEntry(histo_edep1,"MCNP data","l");
-   TLegendEntry *entry=leg->AddEntry("histo_edep","Geant4 linear energy deposition","l");
-   leg->AddEntry(histo_edep3,"Geant4 non-linear energy deposition","l");
-   leg->AddEntry(histo_edep4,"Geant4 non-linear and 5 #mus cutoff","l");
-
-   ci = TColor::GetColor("#0000ff");
-   entry->SetLineColor(ci);
+   TLegendEntry *entry=leg->AddEntry("histo_edep1","MCNP data","l");
+   entry->SetLineColor(1);
+   entry->SetLineStyle(1);
+   entry->SetLineWidth(2);
+   entry->SetMarkerColor(1);
+   entry->SetMarkerStyle(21);
+   entry->SetMarkerSize(1);
+   entry=leg->AddEntry("histo_edep","Geant4 linear energy deposition","l");
+   entry->SetLineColor(4);
+   entry->SetLineStyle(1);
+   entry->SetLineWidth(2);
+   entry->SetMarkerColor(1);
+   entry->SetMarkerStyle(21);
+   entry->SetMarkerSize(1);
+   entry=leg->AddEntry("histo_edep3","Geant4 non-linear energy deposition","l");
+   entry->SetLineColor(2);
+   entry->SetLineStyle(1);
+   entry->SetLineWidth(2);
+   entry->SetMarkerColor(1);
+   entry->SetMarkerStyle(21);
+   entry->SetMarkerSize(1);
+   entry=leg->AddEntry("histo_edep4","Geant4 non-linear and 5 #mus cutoff","l");
+   entry->SetLineColor(3);
    entry->SetLineStyle(1);
    entry->SetLineWidth(2);
    entry->SetMarkerColor(1);
@@ -348,6 +388,7 @@ double values[] ={
    pt->SetName("title");
    pt->SetBorderSize(0);
    pt->SetFillColor(0);
+   pt->SetTextFont(42);
    pt->Draw();
    c1->Modified();
    c1->cd();
