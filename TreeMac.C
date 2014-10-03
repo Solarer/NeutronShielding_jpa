@@ -3,7 +3,7 @@
 // the data from NS.out.
 //
 
-int main()
+int TreeMac()
 {
   Int_t runID;
   Int_t entries;
@@ -16,6 +16,8 @@ int main()
   Char_t scinMat;
   Double_t meanEdep;
   Double_t percent;
+  Double_t percent2;
+  Double_t rmsPercent;
 
   // Open input text file
   TString dir = gSystem->UnixPathName(gInterpreter->GetCurrentMacroName());
@@ -40,11 +42,14 @@ int main()
   tree->Branch("scinMat", scinMat, "scinMat/C");
   tree->Branch("meanEdep", &meanEdep, "meanEdep/D");
   tree->Branch("percent", &percent, "percent/D");
+  tree->Branch("rmsPercent", &rmsPercent, "rmsPercent/D");
+  tree->Branch("percent2", &percent2, "percent2/D");
+
 
   // Fill tree
-  Long64_t nlines = tree->ReadFile("NS.out2",
+  Long64_t nlines = tree->ReadFile("NS.out_richtig_energies100",
     "runID/I:entries/I:primaryEnergy/D:shieldSizeXY/D:percentBdP/D:"
-    "worldMat/C:shieldMat/C:detMat/C:scinMat/C:meanEdep/D:percent/D");
+    "worldMat/C:shieldMat/C:detMat/C:scinMat/C:meanEdep/D:percent/D:rmsPercent/D:percent2/D");
 
   // Write tree
   tree->Write();
