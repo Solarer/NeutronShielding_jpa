@@ -14,7 +14,7 @@
 /NS/det/update
 #
 # Use this open statement to create an OpenGL view:
-#/vis/open OGL 1200x800-0+0
+/vis/open OGL 1200x800-0+0
 #
 # Use this open statement to create a .prim file suitable for
 # viewing in DAWN:
@@ -85,4 +85,4 @@
 #
 
 /NS/gen/genEvaporation 1
-/run/beamOn 1000000
+/run/beamOn 1

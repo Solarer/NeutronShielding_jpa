@@ -294,7 +294,7 @@ for(int i =0; i<37 ;i++)
    leg->SetLineWidth(1);
    leg->SetFillColor(10);
    leg->SetFillStyle(1001);
-   leg->AddEntry(graph3,"MCNP once scint","p");
+   leg->AddEntry(graph3,"MCNP once scintillator","p");
    leg->AddEntry(graph,"Geant4 one scintillator","p");
    leg->AddEntry(graph4,"Geant4 linear energy deposition","p");
    leg->AddEntry(graph2,"Geant4 two scintillators","p");
