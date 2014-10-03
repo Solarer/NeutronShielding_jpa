@@ -6,7 +6,7 @@
 #include <TPad.h>
 TreeReader::TreeReader()
 {
-			std::string tempFileName = "singleRun_MCNP.root";
+			std::string tempFileName = "singleRun_richtig_cutoff5ms.root";
       f = new TFile(tempFileName.c_str(),"UPDATE");
       tree = (TTree*)gDirectory->Get("entered");
    	  Init(tree);
@@ -100,13 +100,16 @@ void TreeReader::Loop()
 	// create Histos
 	TCanvas* c1 = new TCanvas();
   c1->SetLogy();
+   c1->SetLeftMargin(0.16);
+   c1->SetBottomMargin(0.16);
+
 
 cout << "ok1"<< std::endl;
 
 	TH1D* histEdep = new TH1D("histo_edep", "Energy deposition [keVee]", 60, 0, 600);
-	TH1D* histEdep_full = new TH1D("histEdep_full", "Energy deposition [keVee]", 600, 0, 6.);
+	TH1D* histEdep_full = new TH1D("histEdep_full", "", 600, 0, 6.);
 	TH1D* histTiming = new TH1D("histo_time", "Entime", 100, 0, 200);
-	TH1D *histEdep2 = new TH1D("histo_edep","Energy deposition [keVee]",60,0,600);
+	TH1D *histEdep2 = new TH1D("histEdep2","Energy deposition [keVee]",60,0,600);
 
 cout << "ok2"<< std::endl;
    Long64_t nbytes = 0, nb = 0;
@@ -129,13 +132,64 @@ cout << "ok3"<< std::endl;
 	double total=1000000;
 	double scale = 1./total*29*0.55*60;
 	histEdep->Scale(scale);
-	histEdep->GetYaxis()->SetRangeUser(0.001, 100.);
-	//histEdep->Draw();
+	//histEdep->GetYaxis()->SetRangeUser(0.001, 100.);
+	 histEdep->Scale(scale);
+   histEdep->GetXaxis()->SetTitle("energy deposition [keVee]");
+   histEdep->GetXaxis()->CenterTitle(true);
+   histEdep->GetXaxis()->SetNdivisions(506);
+   histEdep->GetXaxis()->SetLabelFont(42);
+   histEdep->GetXaxis()->SetLabelSize(0.06);
+   histEdep->GetXaxis()->SetTitleSize(0.06);
+   histEdep->GetXaxis()->SetTitleFont(42);
+   histEdep->GetYaxis()->SetTitle("count / 10 keVee / 60 days");
+   histEdep->GetYaxis()->CenterTitle(true);
+   histEdep->GetYaxis()->SetNdivisions(506);
+   histEdep->GetYaxis()->SetLabelFont(42);
+   histEdep->GetYaxis()->SetLabelSize(0.06);
+   histEdep->GetYaxis()->SetTitleSize(0.06);
+   histEdep->GetYaxis()->SetTitleOffset(1.05);
+   histEdep->GetYaxis()->SetTitleFont(42);
+   histEdep->GetZaxis()->SetLabelFont(42);
+   histEdep->GetZaxis()->SetLabelSize(0.06);
+   histEdep->GetZaxis()->SetTitleSize(0.07);
+   histEdep->GetZaxis()->SetTitleFont(42);
+	histEdep->Draw();
 	
-	histEdep_full->Scale(scale);
+	// Legend
+	TLegend* leg1 = new TLegend(0.5,0.7,0.9,0.9);
+	leg1->SetBorderSize(1);
+  leg1->AddEntry(histEdep,"Geant4 non-linear and 5 #mus cutoff","l");
+  leg1->Draw("same");
+
+//################
+	 TCanvas* c2 = new TCanvas();
+   c2->SetLogy();
+   c2->SetLeftMargin(0.16);
+   c2->SetBottomMargin(0.16);
+
+	 histEdep_full->Scale(scale);
+   histEdep_full->GetXaxis()->SetTitle("energy deposition [MeVee]");
+   histEdep_full->GetXaxis()->CenterTitle(true);
+   histEdep_full->GetXaxis()->SetNdivisions(506);
+   histEdep_full->GetXaxis()->SetLabelFont(42);
+   histEdep_full->GetXaxis()->SetLabelSize(0.06);
+   histEdep_full->GetXaxis()->SetTitleSize(0.06);
+   histEdep_full->GetXaxis()->SetTitleFont(42);
+   histEdep_full->GetYaxis()->SetTitle("count / 10 keVee / 60 days");
+   histEdep_full->GetYaxis()->CenterTitle(true);
+   histEdep_full->GetYaxis()->SetNdivisions(506);
+   histEdep_full->GetYaxis()->SetLabelFont(42);
+   histEdep_full->GetYaxis()->SetLabelSize(0.06);
+   histEdep_full->GetYaxis()->SetTitleSize(0.06);
+   histEdep_full->GetYaxis()->SetTitleOffset(1.05);
+   histEdep_full->GetYaxis()->SetTitleFont(42);
+   histEdep_full->GetZaxis()->SetLabelFont(42);
+   histEdep_full->GetZaxis()->SetLabelSize(0.06);
+   histEdep_full->GetZaxis()->SetTitleSize(0.07);
+   histEdep_full->GetZaxis()->SetTitleFont(42);
+
 	histEdep_full->Draw();
 	
-cout << "ok4"<< std::endl;
 
 
 double values[] ={
@@ -145,18 +199,16 @@ double values[] ={
 	for(int i=1; i<=60; i++)
   	histEdep2->SetBinContent(i,values[i]);
   
-  //histo_edep->SetMinimum(0.001);
-  //histo_edep->SetMaximum(100);
+  histEdep2->SetMinimum(0.001);
+  histEdep2->SetMaximum(100);
 	histEdep2->SetLineColor(2);
 	//histo_edep->Draw("same");
 
 
-cout << "ok5"<< std::endl;
 	// Legend
 	TLegend* leg = new TLegend(0.5,0.7,0.9,0.9);
 	leg->SetBorderSize(1);
-  //leg->AddEntry(histEdep2,"MCNP","l");
-  leg->AddEntry(histEdep,"Geant4 linear energy deposition","l");
+  leg->AddEntry(histEdep,"Geant4 non-linear and 5 #mus cutoff","l");
   leg->Draw("same");
 
 
