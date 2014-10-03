@@ -6,7 +6,7 @@
 #include <TPad.h>
 TreeReader::TreeReader()
 {
-			std::string tempFileName = "singleRun_richtig_cutoff5ms.root";
+			std::string tempFileName = "singleRun_richtig.root";
       f = new TFile(tempFileName.c_str(),"UPDATE");
       tree = (TTree*)gDirectory->Get("entered");
    	  Init(tree);
