@@ -26,7 +26,7 @@ int TreeMac()
   FILE *fp = fopen(Form("%sNS.out",dir.Data()),"r");
 
   // Open root output file
-  TString filename = "NS.root";
+  TString filename = "NSlin100.root";
   TFile *hfile = TFile::Open(filename,"RECREATE");
 
   // Declare tree and branches
@@ -47,7 +47,7 @@ int TreeMac()
 
 
   // Fill tree
-  Long64_t nlines = tree->ReadFile("NS.out_richtig_energies100",
+  Long64_t nlines = tree->ReadFile("energies100_lin.out",
     "runID/I:entries/I:primaryEnergy/D:shieldSizeXY/D:percentBdP/D:"
     "worldMat/C:shieldMat/C:detMat/C:scinMat/C:meanEdep/D:percent/D:rmsPercent/D:percent2/D");
 

@@ -22,7 +22,7 @@
    htemp__1__1__2__1->SetStats(0);
    htemp__1__1__2__1->SetLineColor(4);
    htemp__1__1__2__1->SetLineWidth(2);
-   htemp__1__1__2__1->GetXaxis()->SetTitle("primary energy [MeV]");
+   htemp__1__1__2__1->GetXaxis()->SetTitle("neutron energy [MeV]");
    htemp__1__1__2__1->GetXaxis()->SetNdivisions(506);
    htemp__1__1__2__1->GetXaxis()->SetLabelFont(42);
    htemp__1__1__2__1->GetXaxis()->SetLabelSize(0.06);
@@ -167,7 +167,7 @@
    graph2->Draw("p");
    
 
-   TGraph *graph3 = new TGraph(37);
+TGraph *graph3 = new TGraph(37);
    graph3->SetName("Graph");
    graph3->SetTitle("Graph");
    graph3->SetFillColor(0);
@@ -193,6 +193,54 @@ for(int i =0; i<37 ;i++)
    graph3->SetHistogram(Graph_Graph_Graph_Graph_Graph1131);
 	graph3->Draw("p");
 
+   TGraph *graph4 = new TGraph(40);
+   graph4->SetName("Graph");
+   graph4->SetTitle("Graph");
+   graph4->SetMarkerColor(3);
+   graph4->SetMarkerStyle(21);
+   graph4->SetPoint(0,10,22.55);
+   graph4->SetPoint(1,9.75,21.88);
+   graph4->SetPoint(2,9.5,21.92);
+   graph4->SetPoint(3,9.25,21.01);
+   graph4->SetPoint(4,9,21.05);
+   graph4->SetPoint(5,8.75,20.17);
+   graph4->SetPoint(6,8.5,20.29);
+   graph4->SetPoint(7,8.25,20.13);
+   graph4->SetPoint(8,8,20.4);
+   graph4->SetPoint(9,7.75,18.91);
+   graph4->SetPoint(10,7.5,20.05);
+   graph4->SetPoint(11,7.25,18.83);
+   graph4->SetPoint(12,7,19.62);
+   graph4->SetPoint(13,6.75,19.7);
+   graph4->SetPoint(14,6.5,19.75);
+   graph4->SetPoint(15,6.25,19.97);
+   graph4->SetPoint(16,6,19.61);
+   graph4->SetPoint(17,5.75,20.13);
+   graph4->SetPoint(18,5.5,20.29);
+   graph4->SetPoint(19,5.25,19.41);
+   graph4->SetPoint(20,5,19.74);
+   graph4->SetPoint(21,4.75,19.34);
+   graph4->SetPoint(22,4.5,19);
+   graph4->SetPoint(23,4.25,18.4);
+   graph4->SetPoint(24,4,19.67);
+   graph4->SetPoint(25,3.75,19.45);
+   graph4->SetPoint(26,3.5,19.15);
+   graph4->SetPoint(27,3.25,20.19);
+   graph4->SetPoint(28,3,19.93);
+   graph4->SetPoint(29,2.75,18.6);
+   graph4->SetPoint(30,2.5,20.52);
+   graph4->SetPoint(31,2.25,20.95);
+   graph4->SetPoint(32,2,19.96);
+   graph4->SetPoint(33,1.75,20.57);
+   graph4->SetPoint(34,1.5,20.63);
+   graph4->SetPoint(35,1.25,21.79);
+   graph4->SetPoint(36,1,20.59);
+   graph4->SetPoint(37,0.75,20.33);
+   graph4->SetPoint(38,0.5,20.2);
+   graph4->SetPoint(39,0.25,2.11);
+   
+   graph4->SetHistogram(Graph_Graph_Graph_Graph_Graph1131);
+   graph4->Draw("p");
 
 
 
@@ -205,6 +253,7 @@ for(int i =0; i<37 ;i++)
    leg->SetFillStyle(1001);
    leg->AddEntry(graph3,"MCNP one scintillator","p");
    leg->AddEntry(graph1,"Geant4 one scintillator","p");
+   leg->AddEntry(graph4,"Geant4 linear energy deposition","p");
    leg->AddEntry(graph2,"Geant4 two scintillators","p");
    leg->Draw();
    c1->Modified();
