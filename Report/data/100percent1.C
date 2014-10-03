@@ -1,24 +1,55 @@
 {
 //=========Macro generated from canvas: c1/c1
-//=========  (Thu Oct  2 21:57:30 2014) by ROOT version5.28/00c
-   TCanvas *c1 = new TCanvas("c1", "c1",7,23,1600,873);
-   c1->Range(-1.3125,-4.605263,11.8125,28.28947);
+//=========  (Thu Oct  2 22:08:56 2014) by ROOT version5.28/00c
+   TCanvas *c1 = new TCanvas("c1", "c1",7,23,1393,873);
+   gStyle->SetOptFit(1);
+   gStyle->SetOptStat(0);
+   c1->Range(-2.27027,-4.236842,11.91892,26.02632);
    c1->SetFillColor(10);
+   c1->SetBorderMode(0);
    c1->SetBorderSize(2);
+   c1->SetTickx(1);
+   c1->SetTicky(1);
+   c1->SetLeftMargin(0.16);
    c1->SetBottomMargin(0.14);
+   c1->SetFrameLineWidth(2);
+   c1->SetFrameBorderMode(0);
+   c1->SetFrameLineWidth(2);
+   c1->SetFrameBorderMode(0);
    
-   TH2F *htemp__1__2 = new TH2F("htemp__1__2","percent:primaryEnergy",40,0,10.5,40,0,25);
-   htemp__1__2->SetDirectory(0);
-   htemp__1__2->SetStats(0);
-   htemp__1__2->GetXaxis()->SetTitle("primary energy [MeV]");
-   htemp__1__2->GetYaxis()->SetTitle("percent [%]");
-   htemp__1__2->Draw("");
+   TH2F *htemp__1__2__1 = new TH2F("htemp__1__2__1","percent:primaryEnergy",40,0,10.5,40,0,23);
+   htemp__1__2__1->SetDirectory(0);
+   htemp__1__2__1->SetStats(0);
+
+   Int_t ci;   // for color index setting
+   ci = TColor::GetColor("#0000ff");
+   htemp__1__2__1->SetLineColor(ci);
+   htemp__1__2__1->SetLineWidth(2);
+   htemp__1__2__1->GetXaxis()->SetTitle("primary energy [MeV]");
+   htemp__1__2__1->GetXaxis()->SetNdivisions(506);
+   htemp__1__2__1->GetXaxis()->SetLabelFont(42);
+   htemp__1__2__1->GetXaxis()->SetLabelSize(0.06);
+   htemp__1__2__1->GetXaxis()->SetTitleSize(0.07);
+   htemp__1__2__1->GetXaxis()->SetTitleFont(42);
+   htemp__1__2__1->GetYaxis()->SetTitle("percent [%]");
+   htemp__1__2__1->GetYaxis()->CenterTitle(true);
+   htemp__1__2__1->GetYaxis()->SetNdivisions(506);
+   htemp__1__2__1->GetYaxis()->SetLabelFont(42);
+   htemp__1__2__1->GetYaxis()->SetLabelSize(0.06);
+   htemp__1__2__1->GetYaxis()->SetTitleSize(0.07);
+   htemp__1__2__1->GetYaxis()->SetTitleOffset(0.9);
+   htemp__1__2__1->GetYaxis()->SetTitleFont(42);
+   htemp__1__2__1->GetZaxis()->SetLabelFont(42);
+   htemp__1__2__1->GetZaxis()->SetLabelSize(0.06);
+   htemp__1__2__1->GetZaxis()->SetTitleSize(0.07);
+   htemp__1__2__1->GetZaxis()->SetTitleFont(42);
+   htemp__1__2__1->Draw("");
    
    TPaveText *pt = new TPaveText(0.01,0.9434849,0.3673083,0.995,"blNDC");
    pt->SetName("title");
    pt->SetBorderSize(0);
    pt->SetFillColor(0);
-   TText *text = pt->AddText("percent:primaryEnergy");
+   pt->SetTextFont(42);
    pt->Draw();
    
    TGraph *graph = new TGraph(40);
@@ -68,12 +99,31 @@
    graph->SetPoint(38,0.5,1.69);
    graph->SetPoint(39,0.25,1.98);
    
-   TH1F *Graph_Graph_Graph13 = new TH1F("Graph_Graph_Graph13","Graph",100,0,10.975);
-   Graph_Graph_Graph13->SetMinimum(0);
-   Graph_Graph_Graph13->SetMaximum(16.648);
-   Graph_Graph_Graph13->SetDirectory(0);
-   Graph_Graph_Graph13->SetStats(0);
-   graph->SetHistogram(Graph_Graph_Graph13);
+   TH1F *Graph_Graph_Graph_Graph131 = new TH1F("Graph_Graph_Graph_Graph131","Graph",100,0,10.975);
+   Graph_Graph_Graph_Graph131->SetMinimum(0);
+   Graph_Graph_Graph_Graph131->SetMaximum(16.648);
+   Graph_Graph_Graph_Graph131->SetDirectory(0);
+   Graph_Graph_Graph_Graph131->SetStats(0);
+
+   ci = TColor::GetColor("#0000ff");
+   Graph_Graph_Graph_Graph131->SetLineColor(ci);
+   Graph_Graph_Graph_Graph131->SetLineWidth(2);
+   Graph_Graph_Graph_Graph131->GetXaxis()->SetNdivisions(506);
+   Graph_Graph_Graph_Graph131->GetXaxis()->SetLabelFont(42);
+   Graph_Graph_Graph_Graph131->GetXaxis()->SetLabelSize(0.06);
+   Graph_Graph_Graph_Graph131->GetXaxis()->SetTitleSize(0.07);
+   Graph_Graph_Graph_Graph131->GetXaxis()->SetTitleFont(42);
+   Graph_Graph_Graph_Graph131->GetYaxis()->SetNdivisions(506);
+   Graph_Graph_Graph_Graph131->GetYaxis()->SetLabelFont(42);
+   Graph_Graph_Graph_Graph131->GetYaxis()->SetLabelSize(0.06);
+   Graph_Graph_Graph_Graph131->GetYaxis()->SetTitleSize(0.07);
+   Graph_Graph_Graph_Graph131->GetYaxis()->SetTitleOffset(1.05);
+   Graph_Graph_Graph_Graph131->GetYaxis()->SetTitleFont(42);
+   Graph_Graph_Graph_Graph131->GetZaxis()->SetLabelFont(42);
+   Graph_Graph_Graph_Graph131->GetZaxis()->SetLabelSize(0.06);
+   Graph_Graph_Graph_Graph131->GetZaxis()->SetTitleSize(0.07);
+   Graph_Graph_Graph_Graph131->GetZaxis()->SetTitleFont(42);
+   graph->SetHistogram(Graph_Graph_Graph_Graph131);
    
    graph->Draw("p");
    
@@ -124,12 +174,31 @@
    graph->SetPoint(38,0.5,0);
    graph->SetPoint(39,0.25,0.01);
    
-   TH1F *Graph_Graph_Graph24 = new TH1F("Graph_Graph_Graph24","Graph",100,0,10.975);
-   Graph_Graph_Graph24->SetMinimum(0);
-   Graph_Graph_Graph24->SetMaximum(0.726);
-   Graph_Graph_Graph24->SetDirectory(0);
-   Graph_Graph_Graph24->SetStats(0);
-   graph->SetHistogram(Graph_Graph_Graph24);
+   TH1F *Graph_Graph_Graph_Graph242 = new TH1F("Graph_Graph_Graph_Graph242","Graph",100,0,10.975);
+   Graph_Graph_Graph_Graph242->SetMinimum(0);
+   Graph_Graph_Graph_Graph242->SetMaximum(0.726);
+   Graph_Graph_Graph_Graph242->SetDirectory(0);
+   Graph_Graph_Graph_Graph242->SetStats(0);
+
+   ci = TColor::GetColor("#0000ff");
+   Graph_Graph_Graph_Graph242->SetLineColor(ci);
+   Graph_Graph_Graph_Graph242->SetLineWidth(2);
+   Graph_Graph_Graph_Graph242->GetXaxis()->SetNdivisions(506);
+   Graph_Graph_Graph_Graph242->GetXaxis()->SetLabelFont(42);
+   Graph_Graph_Graph_Graph242->GetXaxis()->SetLabelSize(0.06);
+   Graph_Graph_Graph_Graph242->GetXaxis()->SetTitleSize(0.07);
+   Graph_Graph_Graph_Graph242->GetXaxis()->SetTitleFont(42);
+   Graph_Graph_Graph_Graph242->GetYaxis()->SetNdivisions(506);
+   Graph_Graph_Graph_Graph242->GetYaxis()->SetLabelFont(42);
+   Graph_Graph_Graph_Graph242->GetYaxis()->SetLabelSize(0.06);
+   Graph_Graph_Graph_Graph242->GetYaxis()->SetTitleSize(0.07);
+   Graph_Graph_Graph_Graph242->GetYaxis()->SetTitleOffset(1.05);
+   Graph_Graph_Graph_Graph242->GetYaxis()->SetTitleFont(42);
+   Graph_Graph_Graph_Graph242->GetZaxis()->SetLabelFont(42);
+   Graph_Graph_Graph_Graph242->GetZaxis()->SetLabelSize(0.06);
+   Graph_Graph_Graph_Graph242->GetZaxis()->SetTitleSize(0.07);
+   Graph_Graph_Graph_Graph242->GetZaxis()->SetTitleFont(42);
+   graph->SetHistogram(Graph_Graph_Graph_Graph242);
    
    graph->Draw("p");
    
