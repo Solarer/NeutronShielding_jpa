@@ -330,10 +330,13 @@ G4cout << "cube: " << solidDetQuarter->GetCubicVolume()<<G4endl;
 
   // Make world box invisible and scintillator solid
   logicWorld->SetVisAttributes (G4VisAttributes::Invisible);
-	G4VisAttributes solid;
-	solid.SetForceSolid(true);
-	solid.SetColor(1,0,0);
-  logicScin->SetVisAttributes (solid);
+	G4VisAttributes scin, topShielding;
+	scin.SetForceSolid(true);
+	scin.SetColor(1,0,0);
+	topShielding.SetForceSolid(true);
+	topShielding.SetColor(1,1,0);
+  logicScin->SetVisAttributes (scin);
+  logicTopShield->SetVisAttributes (topShielding);
   // Always return the physical World
   return physWorld;
 }

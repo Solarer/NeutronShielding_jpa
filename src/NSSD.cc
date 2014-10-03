@@ -127,16 +127,16 @@ G4bool NSSD::ProcessHits(G4Step* step, G4TouchableHistory*)
 		if(particleName == "e-" || particleName == "e+" || particleName == "gamma")
 			photon = stepMaterial->GetMaterialPropertiesTable()->GetConstProperty("responseElectron")*edep;
 		else if(particleName == "proton")
-			//photon = stepMaterial->GetMaterialPropertiesTable()->GetConstProperty("responseElectron")*edep/10;
-			property = stepMaterial->GetMaterialPropertiesTable()->GetProperty("responseProton");
+			photon = stepMaterial->GetMaterialPropertiesTable()->GetConstProperty("responseElectron")*edep/10;
+			//property = stepMaterial->GetMaterialPropertiesTable()->GetProperty("responseProton");
 		else if(particleName == "deuteron")
 			photon= stepMaterial->GetMaterialPropertiesTable()->GetConstProperty("responseDeuteron")*edep*0;
 		else if(particleName == "alpha")
-			//photon = 0;
-			property = stepMaterial->GetMaterialPropertiesTable()->GetProperty("responseAlpha");
+			photon = 0;
+			//property = stepMaterial->GetMaterialPropertiesTable()->GetProperty("responseAlpha");
 		else if(particleName == "C12" || particleName == "C13")
-			//photon = stepMaterial->GetMaterialPropertiesTable()->GetConstProperty("responseElectron")*edep/100;
-			property = stepMaterial->GetMaterialPropertiesTable()->GetProperty("responseCarbon");
+			photon = stepMaterial->GetMaterialPropertiesTable()->GetConstProperty("responseElectron")*edep/100;
+			//property = stepMaterial->GetMaterialPropertiesTable()->GetProperty("responseCarbon");
 		else
 			{
 			photon = 0;
@@ -176,7 +176,7 @@ G4bool NSSD::ProcessHits(G4Step* step, G4TouchableHistory*)
   hit->AddEdep(edep,scinID);
 	hit->AddPhoton(photon,scinID);
 
-	if(hit->GetPhoton(scinID)>30*11499.9/1000)		// 30keVee threshold in current SD
+	if(hit->GetPhoton(scinID)>100*11499.9/1000)		// 30keVee threshold in current SD
 		{
 			// Timestamp
   		if(hit->GetFirstContact() == -1)
