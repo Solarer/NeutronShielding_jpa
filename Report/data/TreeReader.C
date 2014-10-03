@@ -131,7 +131,6 @@ cout << "ok3"<< std::endl;
 	//3,4*10**-10 => 29
 	double total=1000000;
 	double scale = 1./total*29*0.55*60;
-	histEdep->Scale(scale);
 	//histEdep->GetYaxis()->SetRangeUser(0.001, 100.);
 	 histEdep->Scale(scale);
    histEdep->GetXaxis()->SetTitle("energy deposition [keVee]");
