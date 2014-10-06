@@ -10,6 +10,8 @@
 \usepackage{url} 
 \usepackage{mhchem}
 \usepackage{siunitx}
+\usepackage{amsmath}
+\usepackage{xfrac}
 
 \begin{document} 
 
@@ -23,19 +25,22 @@
 
 \maketitle
 \begin{abstract}
-The Spallation Neutron Source (SNS) at Oak Ridge National Laboratory is also a neutrino source. The Duke Neutrino Group build a detector prototype to observe coherent elastic neutrino-nucleus scattering (CENNS), a process that has been predicted but never observed so far. Beforehand the detector was simulated with the MCNP-Polimi framework and the goal of this paper is to reproduce the results with Geant4.
+The Spallation Neutron Source (SNS) at Oak Ridge National Laboratory is also a neutrino source. The Duke Neutrino Group has built a detector prototype to observe coherent elastic neutrino-nucleus scattering (CENNS), a process that has been predicted but never observed so far. Beforehand, the detector was simulated with the MCNP-Polimi framework and the goal of this paper is to reproduce the results with Geant4.
 \end{abstract}
 \newpage
 
-\section{Introduction}
+\section{Simulation setup}
 
+The Geant4 simulation toolkit was used to reproduce the results of \#paper\#. The detector setup can be seen in figure \ref{fig:detector}. The detector's core consists of a lead cube (\SI{50}{cm} edge-length) with 4 holes that hold one EJ-301 scintillator, each. These are frustums of a cone and are made of pure liquid EJ-301 (\cf{C_8H_{10}}). The sides and the bottom of the lead cube are covered with a \SI{1}{cm} thick layer of EJ-200 a solid plastic scintillator (\cf{C_{10}H_{11}}]). Above the lead cube is a gap of \SI{21}{cm} followed by an Al-7075 plate with a thickness of \SI{2}{cm}. This plate shall reduce signals of cosmic neutrinos in the real detector. The whole setup is enclosed by a \SI{1}{m^3} water cube.
 
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=0.7\textwidth]{./pics/Det2.jpg}
+	\caption{Layout of the detector. PMTs on top of the scintillators and rods to stabilize the setup were not simulated. The water bricks were replaced by a wall of pure water (no gaps or plastic inside) to speed up the simulation. }
+	\label{fig:detector}
+\end{figure}
 
-\section{Simulation set up}
-
-The Geant4 simulation toolkit was used to reproduce the results of. The detector set up can be seen in figure \ref{}. The detector's core consists of a lead cube (\SI{50}{cm} edge-length) with 4 holes that hold one EJ-301 scintillator, each. These are frustums of a cone and are made of pure liquid EJ-301 (\cf{C_8H_{10}}). The sides and the bottom of the lead cube are covered with a \SI{1}{cm} thick layer of EJ-200 a solid plastic scintillator (\cf{C_{10}H_{11}}]). Above the lead cube is a gap of \SI{21}{cm} followed by an Al-7075 plate with a thickness of \SI{2}{cm}. This plate shall reduce signals of cosmic neutrinos in the real detector. The whole setup is enclosed by a \SI{1}{m^3} water cube.
-
-Neutrons are being generated randomly inside the lead with a random direction.
+Neutrons are being generated only inside the lead at a random position with a random direction.
 
 If a particle enters one of the scintillators and deposits energy, that amount will be converted into electron-equivalent energy by using the graph in figure \ref{fig:photonResponse}.
 
@@ -45,11 +50,13 @@ If a particle enters one of the scintillators and deposits energy, that amount w
 	\caption{Photon response of the EJ-301 scintillator.}
 	\label{fig:photonResponse}
 \end{figure}
-In addition to the four particles mentioned in this graph there is also a number of $\gamma$, $e^+$ and deuterons that enter the scintillator. Since $e^+$ have the same mass and charge as electrons and $\gamma$ will decay into $e^- + e^+$, both are treated as electrons. Deuterons will approximately emit a number of photons that lies in the middle between $p$ and $\alpha$. In approx. 0.5\% of the events the reaction 
+In addition to the four particles mentioned in this graph there is also a number of $\gamma$, $e^+$ and deuterons that enter the scintillator. Since $e^+$ have the same mass and charge as $e^-$ and $\gamma$ will decay into $e^- + e^+$, both are treated as electrons. Deuterons will approximately emit a number of photons that lies in the middle between $p$ and $\alpha$. 
+
+Also, in approx. 0.5\% of the events the reaction 
 \begin{align}
 	\ce{n^1_0 + C^{12}_6 -> C^{13}_6 -> B^9_4 + \alpha^4_2 } 
 \end{align}
-can occur. Because this effect should be negligible, the electron-equivalent energy of the beryllium nucleus will not be calculated this case.
+can occur. The electron-equivalent energy of the beryllium nucleus will not be calculated because this effect should be negligible.
 
 \section{Results and Discussion}
 
@@ -60,31 +67,38 @@ First of all, it was necessary to verify that the neutrons were generated in the
 
 \subsection{Efficiency}
 
-An event will be marked as "valid" once the energy deposition in a single scintillator exceeds a given threshold in keVee.  Figure \ref{fig:efficiency30} and \ref{fig:efficiency100} show the percentage of events which were marked as "valid" at a given energy of the primary particle with an energy threshold of \SI{30}{keVee} and \SI{100}{keVee}.
+An event will be marked as "valid" once the energy deposition in a single scintillator exceeds a given threshold in keVee.  Figure \ref{fig:efficiency30} and \ref{fig:efficiency100} show the percentage of how many events were marked as "valid" at a given energy of the primary particle. Two different thresholds \SI{30}{keVee} and \SI{100}{keVee} were used.
 
  \begin{figure}[H]
  	\begin{subfigure}[t]{0.49\textwidth}
- 		\includegraphics[trim = 0cm 0cm 0cm 1.15cm, clip,width=\textwidth]{pics/efficiencyGeant30.pdf}
- 		\caption{Geant4 simulation.}
+ 		\includegraphics[width=\textwidth]{pics/efficiencyComplete30.pdf}
+ 		\caption{30 keVee threshold}
  	\end{subfigure}
  	\begin{subfigure}[t]{0.49\textwidth}
- 		\includegraphics[trim = 0cm 0cm 0cm 1.15cm, clip, width=\textwidth]{pics/efficiency_MCNP30.pdf}
- 		\caption{MCNP simulation.}
+ 		\includegraphics[width=\textwidth]{pics/efficiencyComplete100.pdf}
+ 		\caption{100 keVee threshold}
  	\end{subfigure}
- 	\caption{Percentage of "valid" events for given monochromatic primary particles with a \SI{30}{keVee} threshold.}
+ 	\caption{Percentage of "valid" events for given monochromatic primary particles with a given threshold. MCNP results of "two scintillators" were not included, they varied between 0-1\%.}
  	\label{fig:efficiency30}
  \end{figure}
-  \begin{figure}[H]
-  	\begin{subfigure}[t]{0.49\textwidth}
-  		\includegraphics[trim = 0cm 0cm 0cm 1.15cm, clip,width=\textwidth]{pics/efficiencyGeant100.pdf}
-  		\caption{Geant4 simulation.}
+ 
+ It has to be noted that the MCNP code did not use figure \ref{fig:photonResponse} to convert the deposited energy to keVee. Instead it was assumed that the scintillator response of a proton is about $\sfrac{1}{10}$\hspace{2pt}th and of a carbon \sfrac{1}{100}\hspace{2pt}th that of an electron. This approximation is valid for low energies but at $\sim\SI{0.7}{MeV}$ the proton response of protons rises. 
+ Figures \ref{fig_primaryEnergies}a/b show that most neutrons have energies $>\SI{1}{MeV}$. Therefore the non-linear part might not be negligible.
+  \begin{figure}[htbp]
+  	\begin{subfigure}[t]{0.4\textwidth}
+  		\centering
+  		\includegraphics[width=\textwidth]{./pics/primaryEnergy_orig.jpg}
+  		\caption{MCNP}
+  		\label{fig:primaryEnergyMCNP}
   	\end{subfigure}
-  	\begin{subfigure}[t]{0.49\textwidth}
-  		\includegraphics[trim = 0cm 0cm 0cm 1.15cm, clip, width=\textwidth]{pics/efficiency_MCNP100.pdf}
-  		\caption{MCNP simulation}
+  	\begin{subfigure}[t]{0.55\textwidth}
+  		\centering
+  		\includegraphics[width=\textwidth]{./pics/primaryEnergy.jpg}
+  		\caption{Geant4}
+  		\label{fig:primaryEnergyGeant4}
   	\end{subfigure}
-  	\caption{Percentage of "valid" events for given monochromatic primary particles with a \SI{100}{keVee} threshold.}
-  	\label{fig:efficiency100}
+  	\caption{Energy distribution of the primary neutrons. A \SI{5}{MeV} cutoff was used in both programs. To emulate a distribution like  \ref{fig:primaryEnergyMCNP}, 10 data points were\gvertneqq read by a digitizer. This results in the sharp edges in \ref{fig:primaryEnergyGeant4}.}
+  	\label{fig_primaryEnergies}
   \end{figure}
   
  The efficiency of the Geant4 simulation is about 5\% higher. This might be a result of the superior tracking algorithms of Geant which will also track secondaries, whereas the MCNP simulation was run in neutron and photon mode only \ref{}. 
@@ -95,15 +109,8 @@ An event will be marked as "valid" once the energy deposition in a single scinti
 
 Figure \ref{fig:timing30} and \ref{fig:timing100} show a distribution of the arrival time of a signal. The neutron is being generated at $t=\SI{0}{ns}$ and a signal arrives once the energy deposition one scintillator exceeds a given threshold (\SI{30}{keVee} or \SI{100}{keVee}) for the first time.
  \begin{figure}[H]
- 	\begin{subfigure}[t]{0.49\textwidth}
- 	     \includegraphics[trim = 0cm 0cm 0cm 1.15cm, clip, width=\textwidth]{pics/timing.pdf}
- 		 \caption{Timing of Geant4 simulation.}
- 	\end{subfigure}
- 	\begin{subfigure}[t]{0.43\textwidth}
- 	    \includegraphics[width=\textwidth]{pics/timing_MCNP.pdf}
- 		\caption{Timing of MCNP simulation.}
- 	\end{subfigure}
- 	\caption{Threshold \SI{30}{keVee}}
+ 	     \includegraphics[trim = 0cm 0cm 0cm 1.1cm, clip, width=\textwidth]{pics/timing.pdf}
+ 	\caption{Black: MCNP, blue: Geant4. Threshold is \SI{30}{keVee}. Both histograms are not normalized.}
  	\label{fig:timing30}
  \end{figure}
 
