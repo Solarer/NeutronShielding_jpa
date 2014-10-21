@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014/Arch Linux) (preloaded format=pdflatex 2014.9.2)  6 OCT 2014 00:57
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014/Arch Linux) (preloaded format=pdflatex 2014.9.2)  12 OCT 2014 06:04
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -849,24 +849,26 @@ Package pdftex.def Info: pics/timing.pdf used on input line 112.
 [4 <./pics/efficiencyComplete30.pdf, page is rotated 90 degrees> <./pics/effici
 encyComplete100.pdf, page is rotated 90 degrees> <./pics/primaryEnergy_orig.jpg
 > <./pics/primaryEnergy.jpg>]
-<pics/edep.pdf, id=128, 569.12625pt x 344.28625pt>
-File: pics/edep.pdf Graphic file (type pdf)
- <use pics/edep.pdf>
-Package pdftex.def Info: pics/edep.pdf used on input line 125.
-(pdftex.def)             Requested size: 230.18253pt x 126.01228pt.
+<pics/edep_full.pdf, id=128, 569.12625pt x 300.12125pt>
+File: pics/edep_full.pdf Graphic file (type pdf)
 
-<pics/edep_MCNP.pdf, id=130, 643.6547pt x 455.45157pt>
-File: pics/edep_MCNP.pdf Graphic file (type pdf)
+<use pics/edep_full.pdf>
+Package pdftex.def Info: pics/edep_full.pdf used on input line 129.
+(pdftex.def)             Requested size: 469.75502pt x 247.73131pt.
 
-<use pics/edep_MCNP.pdf>
-Package pdftex.def Info: pics/edep_MCNP.pdf used on input line 129.
-(pdftex.def)             Requested size: 230.18253pt x 151.17682pt.
- [5 <./pics/timing.pdf>] (./Final.bbl
+<pics/edep_small.pdf, id=129, 569.12625pt x 300.12125pt>
+File: pics/edep_small.pdf Graphic file (type pdf)
+
+<use pics/edep_small.pdf>
+Package pdftex.def Info: pics/edep_small.pdf used on input line 135.
+(pdftex.def)             Requested size: 469.75502pt x 247.73131pt.
+ [5 <./pics/timing.pdf>] [6 <./pics/edep_full.pdf, page is rotated 90 degrees> 
+<./pics/edep_small.pdf, page is rotated 90 degrees>]
+(./Final.bbl
 
 LaTeX Warning: Empty `thebibliography' environment on input line 3.
 
-) [6 <./pics/edep.pdf, page is rotated 90 degrees> <./pics/edep_MCNP.pdf>]
-(./Final.aux)
+) [7] (./Final.aux)
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 2.90001pt have occurred.
@@ -876,13 +878,13 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 12980 strings out of 493108
- 271974 string characters out of 6140726
- 292185 words of memory out of 5000000
- 16303 multiletter control sequences out of 15000+600000
+ 12982 strings out of 493108
+ 272037 string characters out of 6140726
+ 292203 words of memory out of 5000000
+ 16305 multiletter control sequences out of 15000+600000
  18246 words of font info for 65 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 38i,19n,46p,10342b,734s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 38i,19n,46p,10342b,737s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texmf-dist/fon
 ts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texmf-dist/fonts/type1/publi
 c/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/
@@ -894,10 +896,10 @@ ist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texmf-dist/fonts/type1
 /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texmf-dist/fonts/t
 ype1/urw/times/utmr8a.pfb>
-Output written on Final.pdf (6 pages, 1020782 bytes).
+Output written on Final.pdf (7 pages, 764541 bytes).
 PDF statistics:
- 238 PDF objects out of 1000 (max. 8388607)
- 123 compressed objects within 2 object streams
+ 275 PDF objects out of 1000 (max. 8388607)
+ 138 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 64 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 52 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -82,7 +82,7 @@ An event will be marked as "valid" once the energy deposition in a single scinti
  	\label{fig:efficiency30}
  \end{figure}
  
- It has to be noted that the MCNP code did not use figure \ref{fig:photonResponse} to convert the deposited energy to keVee. Instead it was assumed that the scintillator response of a proton is about $\sfrac{1}{10}$\hspace{2pt}th and of a carbon \sfrac{1}{100}\hspace{2pt}th that of an electron. This approximation is valid for low energies but at $\sim\SI{0.7}{MeV}$ the proton response of protons rises. 
+ It has to be noted that \label{part:eResponse} the MCNP code did not use figure \ref{fig:photonResponse} to convert the deposited energy to keVee. Instead it was assumed that the scintillator response of a proton is about $\sfrac{1}{10}$\hspace{2pt}th and of a carbon \sfrac{1}{100}\hspace{2pt}th that of an electron. This approximation is valid for low energies but at $\sim\SI{0.7}{MeV}$ the proton response of protons rises. 
  Figures \ref{fig_primaryEnergies}a/b show that most neutrons have energies $>\SI{1}{MeV}$. Therefore the non-linear part might not be negligible.
   \begin{figure}[htbp]
   	\begin{subfigure}[t]{0.4\textwidth}
@@ -97,7 +97,7 @@ An event will be marked as "valid" once the energy deposition in a single scinti
   		\caption{Geant4}
   		\label{fig:primaryEnergyGeant4}
   	\end{subfigure}
-  	\caption{Energy distribution of the primary neutrons. A \SI{5}{MeV} cutoff was used in both programs. To emulate a distribution like  \ref{fig:primaryEnergyMCNP}, 10 data points were\gvertneqq read by a digitizer. This results in the sharp edges in \ref{fig:primaryEnergyGeant4}.}
+  	\caption{Energy distribution of the primary neutrons. A \SI{5}{MeV} cutoff was used in both programs. To emulate a distribution like  \ref{fig:primaryEnergyMCNP}, 10 data points were read by a digitizer. This results in the sharp edges in \ref{fig:primaryEnergyGeant4}.}
   	\label{fig_primaryEnergies}
   \end{figure}
   
@@ -118,20 +118,31 @@ The timing graphs of both, Geant4 and MCNP simulation, show a dropoff at \SI{0}{
 
 \subsection{Energy deposition}
 
-Finally, the energy deposition of both simulations are being compared. Figure \ref{fig:photonResponse} provided the necessary data to convert the energy to keV electron equivalent (keVee). As mentioned before, $\gamma$ and $e^+$ are treated as $e^-$ and deuterons lie in the middle between $p$ and $\alpha$. Seldom particles like beryllium will be ignored.
+Finally, the energy depositions of both simulations are being compared. Figure \ref{fig:photonResponse} provided the necessary data to convert the energy to electron equivalent (keVee). As mentioned before, $\gamma$ and $e^+$ are treated as $e^-$ and deuterons lie in the middle between $p$ and $\alpha$. Seldom particles like beryllium will be ignored.
+
+Figure \ref{fig:edepFull} and \ref{fig:edepSmall} show the normalized count of valid events on a 60 day exposure. The blue curve uses the same photon response values as the MCNP code which was explained in paragraph \ref{part:eResponse}. The results of the MCNP simulation should look similar, but data was only available from 0-600 keVee (see black curve in fig. \ref{fig:edepSmall}). 
+The red curve uses the photon response of fig \ref{fig:photonResponse} and is expected to be closer to the  data of the real detector. Both curves however, show a peak at 2.2 MeVee which is a result of neutron capture at hydrogen.
+The green curve uses the same settings as the red one but a cutoff was applied after \SI{5}{$\mu$ s}. This removes almost all 2.2 MeVee neutron capture $\gamma$.
 
  \begin{figure}[H]
- 	\begin{subfigure}[t]{0.49\textwidth}
- 		\includegraphics[trim = 0cm 0cm 0cm 1.15cm, clip, width=\textwidth]{pics/edep.pdf}
- 		\caption{Timing of Geant4 simulation.}
- 	\end{subfigure}
- 	\begin{subfigure}[t]{0.49\textwidth}
- 		\includegraphics[trim = 0cm 0cm 0cm 1.15cm, clip,width=\textwidth]{pics/edep_MCNP.pdf}
- 		\caption{Timing of MCNP simulation.}
- 	\end{subfigure}
- 	\caption{Threshold \SI{30}{keVee}}
- 	\label{fig:edep30}
- \end{figure}
+ 	\centering
+ 		\includegraphics[width=1.\textwidth]{pics/edep_full.pdf}
+ 		\caption{Energy deposition of different energy settings in with Geant4. Blue curve uses the same settings as MCNP simulation and should resemble its results at energies > \SI{600}{keVee}.}
+ 		\label{fig:edepFull}
+\end{figure}
+\begin{figure}[H]
+	\centering
+ 		\includegraphics[width=1.\textwidth]{pics/edep_small.pdf}
+ 		\caption{Close up of figure \ref{fig:edepFull}. The black curve is the original data of the MCNP simulation that was only available from {0-600} {keVee}.}
+ 		\label{fig:edepSmall}
+ 	\end{figure} 
+ 	
+ Figure \ref{fig:edepSmall} shows a closeup of figure \ref{fig:edepFull} from 0-600 keVee. The blue curve has the same slope as the original data (black) but there is a small offset in the beginning.
+ The red and the green curve stay close together and even match the original data from 1-200 keVee better than the blue curve does but after that they ++++++++++ from the original data.
+ 
+ As can be seen in figure \ref{fig:edepFull} the blue curve shows a sharper drop off between 0.2 and 1.4 MeV than the red curve due to the linear energy deposition. Both curves have a peak at \SI{2.2}{MeVee} which is a result of neutron capture at hydrogen. This process emits a \SI{2.2}{MeVee} $\gamma$, that will deposit all of its energy in most events.
+ 
+The only difference between the red and the green
  
 \section{Conclusion}
 
