@@ -2,38 +2,33 @@ This is BibTeX, Version 0.99d (TeX Live 2014/Arch Linux)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: Final.aux
 The style file: my_utphys.bst
-I found no \citation commands---while reading file Final.aux
 Database file #1: Final.bib
-I was expecting a `,' or a `}'---line 3 of file Final.bib
- :   title = "
- :            A Desighn Document for the Neutrino-Induced Neutron Pile Concept",
-I'm skipping whatever remains of this entry
-You've used 0 entries,
+You've used 1 entry,
             2331 wiz_defined-function locations,
-            560 strings with 4003 characters,
-and the built_in function-call counts, 21 in all, are:
-= -- 0
-> -- 0
+            566 strings with 4195 characters,
+and the built_in function-call counts, 255 in all, are:
+= -- 15
+> -- 26
 < -- 0
-+ -- 0
-- -- 0
-* -- 3
-:= -- 9
-add.period$ -- 0
-call.type$ -- 0
-change.case$ -- 0
++ -- 9
+- -- 8
+* -- 24
+:= -- 54
+add.period$ -- 1
+call.type$ -- 1
+change.case$ -- 1
 chr.to.int$ -- 0
-cite$ -- 0
-duplicate$ -- 0
-empty$ -- 1
-format.name$ -- 0
-if$ -- 1
+cite$ -- 1
+duplicate$ -- 8
+empty$ -- 17
+format.name$ -- 8
+if$ -- 52
 int.to.chr$ -- 0
-int.to.str$ -- 0
-missing$ -- 0
-newline$ -- 3
-num.names$ -- 0
-pop$ -- 0
+int.to.str$ -- 1
+missing$ -- 3
+newline$ -- 6
+num.names$ -- 1
+pop$ -- 5
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
@@ -46,7 +41,6 @@ text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 0
-while$ -- 0
-width$ -- 0
-write$ -- 2
-(There were 2 error messages)
+while$ -- 1
+width$ -- 2
+write$ -- 9

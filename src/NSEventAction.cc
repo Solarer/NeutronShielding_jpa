@@ -83,7 +83,7 @@ void NSEventAction::BeginOfEventAction(const G4Event* event)
   // Get event ID
   eventID = event->GetEventID();
 
-	// output for this event?
+    // output for this event?
   doOutputEvent = runAct->IsNextEvent(eventID);
 
 	if(doOutputEvent)
@@ -151,17 +151,17 @@ void NSEventAction::EndOfEventAction(const G4Event* event)
         if(totalEdep>2.25*MeV && totalEdep<2.35*MeV)
         {
             collectThis = true;
-            file = "2.2MEV";
+            file = "2.2MEV_file";
         }
         else if(totalEdep>1.9*MeV && totalEdep<2.15*MeV)
         {
             collectThis = true;
-            file = "2.1MEV";
+            file = "2.1MEV_file";
         }
         else if(totalEdep>.25*MeV && totalEdep<.42*MeV)
         {
             collectThis = true;
-            file = "0MEV";
+            file = "0MEV_file";
         }
 
 		if(collectThis)

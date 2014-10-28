@@ -225,7 +225,7 @@ void NSRunAction::EndOfRunAction(const G4Run* run)
   // Open file for writing
   G4String outfileName = "NS.out";
   std::ofstream outfile;
-  if (runID == 0) // New set of runs
+  if (runID == 0) // this is a new set of runs so clear the file and create a new header line
   {
     outfile.open(outfileName, std::ofstream::out | std::ofstream::trunc);
 		outfile << "# runID\t#entries\tparticleEnergy[MeV]\tshieldSizeXY\tpercentBdP\tworldMat\tshieldMat\tdetMat\tscinMat\tmeanEdep[MeV]\tmeanPerEntered1\trmsmeanPerEntered1\tmeanPerEntered2" << G4endl;
@@ -252,6 +252,8 @@ void NSRunAction::EndOfRunAction(const G4Run* run)
     outfile.close();
   }
 
+// collect Event IDs for step output (if activated)
+// this explained in the readme file
 void NSRunAction::FillVec()
 {
 	std::ifstream infile;
@@ -276,7 +278,7 @@ void NSRunAction::FillVec()
 		G4cout << "Reading line "<< buffer_int << " " << buffer_str << G4endl;
 	}
 }
-
+// get an event ID from the vector
 G4bool NSRunAction::PopEvent()
 {
 	// remove first elemets of both vectors

@@ -64,24 +64,21 @@ NSDetectorConstruction::NSDetectorConstruction()
   // Default parameters
   
     worldSizeXY = 5*m;
-		worldSizeZ = 5*m;
-		shieldSizeXY = 1*m;
-		shieldSizeZ	= 1*m;
-		holeSizeXY = 0.5*m;
-		holeSizeZ = 0.625*m;
+	worldSizeZ = 5*m;
+	shieldSizeXY = 1*m;
+	shieldSizeZ	= 1*m;
+	holeSizeXY = 0.5*m;
+	holeSizeZ = 0.625*m;
     detSizeXY = detSizeZ = 0.405*m;
-		detLowerPart = 0.152*m;
-		muonVetoThick = 0.02*m;
-		topShieldThick = 0.01*m;
+	detLowerPart = 0.152*m;
+	muonVetoThick = 0.02*m;
+	topShieldThick = 0.01*m;
   	scinRadIn1 = 0. *m;
   	scinRadIn2 = 0. *m;
   	scinRadOut1 = 0.05*m;
   	scinRadOut2 = 0.075*m;
   	scinHeight = 0.16*m;
 
-
-
-	// ComputeParameters();  not used right now, because detector size does not change
 
   // Default materials
   DefineMaterials();
@@ -191,7 +188,6 @@ G4VPhysicalVolume* NSDetectorConstruction::ConstructDetector()
 
 	G4VSolid* solidDetQuarter = new G4SubtractionSolid("DetQuarter", leadQuarter, airHole, new G4RotationMatrix(), G4ThreeVector(0,0,0.5*detLowerPart));
 
-G4cout << "cube: " << solidDetQuarter->GetCubicVolume()<<G4endl;
   logicDet=
     new G4LogicalVolume(solidDetQuarter,      // solid
                         detMat,               // material
@@ -214,24 +210,24 @@ G4cout << "cube: " << solidDetQuarter->GetCubicVolume()<<G4endl;
 	// Top Shielding
   G4Box* topShield=
     new G4Box("TopShield",                  // name
-              detSizeXY/4,    // size x
-              detSizeXY/4,    // size y
-              topShieldThick/2); 		// size z
+              detSizeXY/4,                  // size x
+              detSizeXY/4,                  // size y
+              topShieldThick/2); 		    // size z
 
   G4LogicalVolume* logicTopShield=
     new G4LogicalVolume(topShield,          // solid
-                        topShieldMat,          // material
-                        "TopShield");          // name
+                        topShieldMat,       // material
+                        "TopShield");       // name
 
 // Scintillator
 	G4double x,y;
-		solidScin = new G4Cons("Scin", 						// name
+		solidScin = new G4Cons(                         "Scin", 				// name
 														scinRadIn2, 			// small radius 2
 														scinRadOut2, 			// big radius 2
 														scinRadIn1, 			// small radius 1
 														scinRadOut1, 			// big radius 1
-														0.5*scinHeight, 	// height
-														0, 								// start cut (radians)
+														0.5*scinHeight, 	    // height
+														0, 						// start cut (radians)
 														360*deg); 				// end cut (radians)
 
 
@@ -290,7 +286,7 @@ G4cout << "cube: " << solidDetQuarter->GetCubicVolume()<<G4endl;
                         0,       							// copy number
                         checkOverlaps); 			// overlaps checking
 
-	// Place 3 remaining Detector quarters
+	// Prepare 3 remaining Detector quarters
 	G4RotationMatrix* rm[3];
  	rm[0] = new G4RotationMatrix;
  	rm[1] = new G4RotationMatrix;
@@ -303,6 +299,7 @@ G4cout << "cube: " << solidDetQuarter->GetCubicVolume()<<G4endl;
 	G4RotationMatrix* ret = new G4RotationMatrix;
 	ret->rotateZ(90*deg);
 
+    // Place them and rotate them the right way
 	for (G4int i = -1; i < 2; i+=2)
   {
 		for (G4int j = -1; j < 2; j+=2)
@@ -328,6 +325,7 @@ G4cout << "cube: " << solidDetQuarter->GetCubicVolume()<<G4endl;
   // Print volumes
   G4cout << "volumes: " << logicWorld << " " << logicDet << " " << logicShield << " " << logicScin << G4endl;
 
+  // Some graphical stuff for openGL screen
   // Make world box invisible and scintillator solid
   logicWorld->SetVisAttributes (G4VisAttributes::Invisible);
 	G4VisAttributes scin, topShielding;
@@ -400,12 +398,3 @@ void NSDetectorConstruction::UpdateGeometry()
   // Reset sensitive detector
   SetSensitiveDetector("Scin", cennsSD);
 }
-
-void NSDetectorConstruction::ComputeParameters()
-{
-  // These parameters are dependent upon other parameters and
-  // must therefore be recalculated when the geometry is changed.
-  worldSizeXY   = 20.0*m;
-  worldSizeZ    = 20.0*m;
-}
-

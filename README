@@ -1,105 +1,136 @@
-Student: Jaclyn Schmitt
+Student: Jan Adam
 Advisor: Kate Scholberg
-Program: TUNL REU 2014
+Program: Rise 2014
 -------------------------------------------------------------------
 
      =========================================================
      Geant4 - an Object-Oriented Toolkit for Simulation in HEP
      =========================================================
 
-                     Neutron Shielding Project
+                        Simulation of the Detector of the Duke Neutrino Group
                      -------------------------
 
-The goal of this project is to design shielding for a coherent elastic neutrino-nucleus scattering (CENNS) experiment to take place at the Spallation Neutron Source at Oak Ridge National Lab. The primary challenge this detector faces is rogue neutrons. Although the SNS does produce many neutrons, the more problematic neutrons are the neutrino-induced neutrons that orginate in the lead shielding itself. The object of this project is to minimize the number of neutrons entering the detector. This document explains how to use the program.
+The goal of this project is to compare the results of a Geant4 simulation to a  previous MCNP simulation
 
 0. General notes
 
-You are now in the folder "NeutronShieldingSD" which contains all code and data for this project. The main function is in the file "NeutronsShielding.cc." The source code is in the folder "src," and the include files used in the source files are in the folder "include."  To run the program, be sure you are in the folder "NeutronShieldingSD" and enter
+The folder "NeutronShielding_jpa" contains all code and data for this project. The main function is in the file "NeutronsShielding_jpa.cc." The source code is in the folder "src," and the header files are in the folder "include."  To run the program, be sure you are in the folder "NeutronShielding_jpa" and enter
 
-$ bin/Linux-g++/NeutronShielding
+$ bin/Linux-g++/NeutronShielding_jpa
 
 	or
 
-$ bin/Linux-g++/NeutronShielding nameOfMacro.mac
+$ bin/Linux-g++/NeutronShielding_jpa nameOfMacro.mac
+
+To compile the code just run "make" after all dependencies in "GNUmakefile" were set up.
 
 The command that starts a run is "/run/beamOn numberOfEvents," so this must be at the end of a macro after all other commands to start the program.
 
 1. Detector description
 
-The detector is defined in NSDetectorConstruction.cc. The detector consists of an inner volume, the detector itself, and outer volumes, the layers of shielding. The detector is constructed as a series of concentric boxes, going outside in:
-   world
-   shield1
-   shield2
-   detector
+The detector is defined in NSDetectorConstruction.cc. The detector is constructed as a series of nested structures, namely:
+    world           //contains everything
+    physShield      // the water shield box which covers the detector
 
-A sensitive detector is assigned to the Detector volume using the "ConstructSDandField" function. This facilitates counting particles and energy depositions.
+    the actual detector is split in 4 quarters since it is point-symmetric:
+    airQuarter                      // contains all further detector elements and is placed 4 times
+       - solidDetQuarter                 // a quarter of the lead box inclusive a hole for the scintillator
+       - solidMuonVetoQuarter            // a thin plastic scintillator that covers the lead on all 4 sides and on the bottom
+       - topShield                       // a plate placed on top of the detector to absorb cosmic neutrinos
+       - solidScin                       // the scintillator, which is the "sensitive detector"
+
+A sensitive detector is assigned to the scintillator volume using the "ConstructSDandField" function. This facilitates counting particles and energy depositions.
 
 All relevant geometry and material parameters of the detector can be changed interactively with user-defined commands. These are defined in the Detector Messenger class. Here is a list:
+To change the geometry or material parameters of the detector, the program needs to be recompiled after changes were made to NSDetectorConstruction.cc.
 
-/NS/det/setShield1Size 1.0 m        # size of shield1 is 1.0 m
-/NS/det/setShield2Ratio 0.7         # size of shield2 is 0.7 * shield1_size
-/NS/det/setDetRatio 0.5             # size of detector is 0.5 * shield1_size
-/NS/det/setWorldMaterial G4_AIR     # material of world
-/NS/det/setShield1Material G4_Pb    # material of outermost shield
-/NS/det/setShield2Material BdP5_0   # material of next shield layer
-/NS/det/setDetMaterial lXe          # material inside detector
-/NS/det/update                      # MUST update geometry before run
+1.1 Materials
 
-It is imperative to use the update command before running the program, otherwise the geometry will not change properly.
+All materials are defined in NSMaterialConstruction.cc 
 
 2. Physics processes
 
 The physics processes are defined in the QGSP_BIC_HP list.
 
+3. Folders and files
+
+this is a list of all folders and containing files and a short description. For further information open the files, all are well commented.
+
+MACfiles    containes some macro files that were used or can be used as an example
+    - default.mac       deprecated, was used in a previos project
+    - energies.mac      was used to generate multiple runs with different primary energies. --> resulted in figure 3 (report)
+    - vis.mac           basic macro file with visual output so that the detector can be seen
+    - vis1.mac            "    same     "
+    - visCollect.mac    run the simulation and create a file with two rows: row1 = eventID, row2=fileName     (see visProcess.mac or 5. Output for details)
+    - visProcess.mac    run the simulation and write stepping output to file fileName if the current event ID equals eventID.  (see 5. Output for details)
+
+NSFiles     contains some outputfiles from energies.mac
+Report      contains tex files for the final report
+include     contains all header files
+other       contains some code to extract the data from root files for histograms and a gnuplot script to calculate the energy deposition for electrons. Both were used only once and the code is horrible.
+pics        contains pictures that were shown during the weekly talks
+src         contains source code
+    - NSDetectorConstruction    construction of the detector
+    - NSDetectorMessenger       defines commands to manipulate the detector with the "*.mac" files. Since the detector was not changed during this study, the file is almost empty.
+    - NSEventAction             handles everything that happens during an event. BeginOfEvent(): clears temporary output files, used in last event. EndOfEvent():processes all accumulated data and writes it to the root file.
+    - NSHit                     defines the "Hit" object that stores all data of an event before it will be written to a file.
+    - NSMaterialConstruction    defines all materials, this was originally done in NSDetectorConstruction but was moved to this file because it was a lot of code.
+    - NSPhysicsList             not used at all. Physicslist is set in main() function
+    - NSPrimaryGeneratorAction  defines primary particle, its energy and calculates where it should be generated. Uses a lot of random functions and checks that the particle will be generated at a valid place.
+    -NSPrimaryGeneratorMessenger
+    - 
 3. Primary Generator Action
 
-G4ParticleGun is instanciated in the constructor of NSPrimaryGeneratorAction class. Every event, the public method GeneratePrimaries(G4Event*) is invoked. In this method, G4ParticleGun is accessed to generate a primary particle (neutron).
+G4ParticleGun is instanciated in the constructor of NSPrimaryGeneratorAction class. Every event, the public method GeneratePrimaries(G4Event*) is invoked. 
+In this method, G4ParticleGun is accessed to generate a single primary particle (neutron). For further studies it might be valueable to generate two neutrons at once since the real decay will produce two neutrons at once. Therefore a boolean "genTwoNeutrons" was implemented. Its value is "false" by default but can be changed by using "/NS/gen/genTwoNeutrons 1" in a macro file. 
+The second neutron will be generated at the same position but with a different direction. The second neutron will have the same energy as the first (this will result in a 100% higher total energy deposition).
 
-Please note that the position and direction of the primary particle are set just before shooting, i.e. GeneratePrimaryVertex() method invokation. Randomizing code has been written to generate particles randomly in the shielding volume.
-
-The shield in which the particles are generated can be chosen using this user-defined command:
-
-/NS/gen/genInShield 1               # particles are generated in shield1
+Particles are generated only inside the lead of the detector and not inside the holes.
+This behavior can be changed in the source code so that neutrons will be generated only inside the water.
 
 4. main()
 
-NeutronShielding.cc has the main() method. In the main() method, three
+NeutronShieldingi_jpa.cc and its main() method are called first. In the main() method, three
 mandatory user classes (detector construction, physics list, user action initialization) are constructed and set to the G4RunManager object. Then, the "Initialize()" method of G4RunManager is invoked.
 
 Some UI commands for setting verbosity are applied via hard-coded "ApplyCommand()" method of G4UImanager class. The default commands are called from vis.mac
 
-
 5. Output
 
-Every run outputs a file "singleRun.root" with an ntuple of event information. For each event, the primary position and direction, the energy deposited in the detector, and whether or not the particle entered the detector (0=no/1=yes) is stored. If multiple runs are carried out, this file is overwritten each time unless the command "/analysis/setFileName" is implemented in a loop with a varible name. See energy deposition macros for an example. Otherwise, rename the file if you want to save it.
+Every run outputs a file "singleRun_$timestamp$.root", where $timestamp$ is the number of seconds since 1.Jan 1900. This behavior can be changed in "NSRunAction.cc" so that there is only a single root file that will be overwritten after each run.
+The root file contains 3 ntuple of event information. For each event, the primary position and direction, the energy deposited in the detector, and whether or not the particle entered the detector (0=no/1=yes) is stored. If multiple runs are carried out, this file is overwritten each time unless the command "/analysis/setFileName" is implemented in a loop with a varible name. See energy deposition macros for an example. Otherwise, rename the file if you want to save it.
 
 Every set of runs outputs a text file "NS.out" with run data from each run. This includes:
 	runID
+    number of events
 	initial particle energy (MeV)
-	shield1_sizeXY (m)
-	shield2 ratio
-	detector ratio
+	shield_sizeXY (m)
 	wt. % boron in polyethylene
 	world material
-	shield 1 material
-	shield 2 material
+	shield material
 	detector material
+    scintillator material
 	mean energy deposited in detector (MeV)
-	percent of neutrons that entered the detector
+	percent of events that were marked as "valid" (exceed scintillator threshold)
+    rms of valid events
+    percent of events that exceeded the scintillaotr threshold in 2 scintillators at once
 
 The file "TreeMac.C" can be used to create a tree from this data, and the tree is saved in "NS.root." Rename these files if you want to save them.
 
-Optionally, step data can be written to the file "step.out." Currently this option is commented out in the file "NSSteppingAction.cc" because this can be a very large file. Using this option is discouraged unless looking for specific secondary particles or processes because the file causes the program to run slower. A sample for 100 events is saved as "sample_step.out."
+Optionally, step data can be written to the file "step.out." 
+Since the file will become very large and the output will slow down the program, this output can be limited to a few events. Since the random generators use the same seed each time, it is possible to run the simulation once to create a list of interesting events (save event ID to a file) and then run the simulation a second time where the step information will only be written if the current event ID was saved to the file before.
+By default, both options are disabled but can be enabled in a macro file by "/NS/run/doCollectEvents 1" OR "/NS/run/doProcessEvents 1"
+Right now, events with an energy deposition around 2.2MeV , 2MeV and 0.45MeV will be collected. These criteria can be changed in NSEventAction. 
+If collectEvents is enabled, and the current event deposited the right amount of energy, the current event ID and a file name for the criterion will be saved to the file "criticalEventIDs" (see the file for example).
+If processEvents is enabled, the file "criticalEventIDs" will be read first and all event IDs and file names will be saved to a vector. At the begin of each event the current event ID and the first event ID in the vector will be compared. In case of a match the whole stepping information will be written to the corresponding file.
+Output is created in "NSSteppingAction.cc".
+
+
+Currently this option is commented out in the file "NSSteppingAction.cc" because this can be a very large file. Using this option is discouraged unless looking for specific secondary particles or processes because the file causes the program to run slower. A sample for 100 events is saved as "sample_step.out."
 
 6. Existing Data
 
-"default.mac" is a macro that gives the default parameters used in a run if others are not specified.
-
-Data for studies done with one layer of shielding and two layers of shielding have been carried out and are stored in the folders "oneLayer" and "twoLayers." Energy deposition studies are stored in the folder "Edep."
-
-The "AdditionalRuns" folder contains last minute tests requested by Dr. Scholberg.
-
-The "477Peak" folder contains files from trying to figure out where the 0.477 MeV peak was coming from.
+"vis.mac" is a macro that gives the default parameters used in a run if others are not specified.
 
 The folder "extraPics" holds pictures used in the final paper for this project and can be disregarded.
 

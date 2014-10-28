@@ -1,3 +1,8 @@
-\providecommand{\href}[2]{#2}\begingroup\raggedright\begin{thebibliography}{}
+\providecommand{\href}[2]{#2}\begingroup\raggedright\begin{thebibliography}{1}
+
+\bibitem{MCNP}
+P.~Barbeau, J.~Collar, Y.~Efremenko, D.Hornback, J.~Newby, D.~Reyna, G.~Rich.
+  and K.~Scholberg. ``A design document for the neutrino-induced neutron pile
+  concept.'' (2014).
 
 \end{thebibliography}\endgroup

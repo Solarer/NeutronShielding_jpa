@@ -101,7 +101,6 @@ class NSDetectorConstruction : public G4VUserDetectorConstruction
 
     // Methods
     void DefineMaterials();
-    void ComputeParameters();
     G4VPhysicalVolume* ConstructDetector();
 
   public:

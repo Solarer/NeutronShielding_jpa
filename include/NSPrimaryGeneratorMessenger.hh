@@ -38,7 +38,7 @@ class G4UIcmdWithABool;
 
 class NSPrimaryGeneratorMessenger: public G4UImessenger
 {
-public:
+public
   NSPrimaryGeneratorMessenger(NSPrimaryGeneratorAction*);
   virtual ~NSPrimaryGeneratorMessenger();
 
@@ -54,8 +54,8 @@ private:
   // Messenger
   G4UIcmdWithAnInteger*     fGenInShieldCmd;
   G4UIcmdWithAnInteger*     fGenEvaporationCmd;
-  G4UIcmdWithADouble*				fParticleEnergyCmd;
-	G4UIcmdWithABool*					fGenTwoNeutronsCmd;
+  G4UIcmdWithADouble*		fParticleEnergyCmd;
+  G4UIcmdWithABool*			fGenTwoNeutronsCmd;
 };
 
 #endif

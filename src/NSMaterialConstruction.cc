@@ -66,8 +66,8 @@ void NSDetectorConstruction::DefineMaterials()
   G4Material* BdP_List[int(max_percentBdP*10)]; 		
 
   for(double percentBdP = 0.0 ; percentBdP<max_percentBdP ; percentBdP+=0.1){
-		char str[20];	
-		sprintf(str,"%i_%i",int(percentBdP),int(percentBdP*10)%10);
+	char str[20];	
+    sprintf(str,"%i_%i",int(percentBdP),int(percentBdP*10)%10);
   	BdP_List[int(percentBdP*10)] = new G4Material(std::string("BdP"+std::string(str)), densityBdP, 2);
   	BdP_List[int(percentBdP*10)]->AddElement(boron, percentBdP*perCent);
   	BdP_List[int(percentBdP*10)]->AddMaterial(polyethylene, (100-percentBdP)*perCent);
@@ -88,7 +88,7 @@ void NSDetectorConstruction::DefineMaterials()
 	Toluene->AddElement(carbon,8);
 	Toluene->AddElement(hydrogen,10);
 	
-	// create properties with photon response
+	// create properties table with photon response for EJ301
 	G4MaterialPropertiesTable *MPT = new G4MaterialPropertiesTable();
 
 	G4double respElec = 11499.9/MeV;
@@ -98,7 +98,8 @@ void NSDetectorConstruction::DefineMaterials()
 	MPT->AddConstProperty("responseDeuteron",respDeut);
 
 	G4int arrayLen = 32;
-	G4double	respProtPos[] = {	0.1*MeV, 				0.1292866805*MeV,0.1686908915*MeV,0.1989778715*MeV,0.2390485181*MeV,
+    // proton response
+	G4double	respProtPos[] = {	0.1*MeV,0.1292866805*MeV,0.1686908915*MeV,0.1989778715*MeV,0.2390485181*MeV,
 									0.3006683051*MeV,0.3387509159*MeV,0.3995706917*MeV,0.4800372072*MeV,
 									0.5982633938*MeV,0.7187431277*MeV,0.8400454596*MeV,0.9908683037*MeV,
 									1.292866805*MeV,1.7024552192*MeV,2.0081162226*MeV,2.390485181*MeV,
@@ -116,13 +117,14 @@ void NSDetectorConstruction::DefineMaterials()
 									154122.813204584,201968.554556124,236470.466441508,283174.925236377};
 	MPT->AddProperty("responseProton",respProtValue,respProtPos,arrayLen);
 
+    // alpha response
 	G4double	respAlphaPos[] = {	0.0990868304*MeV,0.1281060738*MeV,0.1686908915*MeV,0.1989778715*MeV,
 									0.2390485181*MeV,0.3006683051*MeV,0.3387509159*MeV,0.3995706917*MeV,
 									0.4800372072*MeV,0.5982633938*MeV,0.7187431277*MeV,0.8400454596*MeV,
-									1.	*MeV,				1.3047816749*MeV,1.7024552192*MeV,1.9897787152*MeV,
+									1.	*MeV,1.3047816749*MeV,1.7024552192*MeV,1.9897787152*MeV,
 									2.390485181*MeV,3.0066830508*MeV,3.3875091588*MeV,3.9592193355*MeV,
 									4.8003720719*MeV,6.0377690106*MeV,7.1874312769*MeV,8.4004545964*MeV,
-									10*MeV,					12.9286680497*MeV,17.0245521924*MeV,20.0811622263*MeV,
+									10*MeV,	12.9286680497*MeV,17.0245521924*MeV,20.0811622263*MeV,
 									24.1251554016*MeV,30.066830508*MeV,33.8750915882*MeV,40.3253076359*MeV};
 	G4double respAlphaValue[] = {	20.5641870723,26.3477564263,33.0058558079,38.6441846621,
 									47.3311188778,60.6427468876,69.4204268699,83.1314137642,
@@ -134,6 +136,7 @@ void NSDetectorConstruction::DefineMaterials()
 									87750.2843180668,120291.470422557,144049.820073016,176431.181504442};
 	MPT->AddProperty("responseAlpha",respAlphaValue,respAlphaPos,arrayLen);
 
+    // carbon response
 	G4double	respCarbonPos[] = { 0.0990868304	*MeV,0.1281060738	*MeV,0.1686908915	*MeV,0.1989778715	*MeV,
 								    0.2390485181	*MeV,0.2952021539	*MeV,0.3356575454	*MeV,0.3923064947	*MeV,
 									0.4713101285	*MeV,0.5928002342	*MeV,0.7056763743	*MeV,0.8400454596	*MeV,

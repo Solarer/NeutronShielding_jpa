@@ -67,7 +67,7 @@ NSPrimaryGeneratorAction::~NSPrimaryGeneratorAction()
 void NSPrimaryGeneratorAction::GeneratePrimaries(G4Event* anEvent)
 {
 	// particle position
-  G4double x0, y0, z0;
+    G4double x0, y0, z0;
 	G4double detX, detY, detZ, detLowerPart;
 	G4double holeX, holeY, holeZ;
 	holeX= holeY = Detector->GetHoleSizeXY();
@@ -104,6 +104,7 @@ void NSPrimaryGeneratorAction::GeneratePrimaries(G4Event* anEvent)
 			if((x0)*(x0)+(y0)*(y0)>scinRad*scinRad || -holeZ/2+muonVetoThick+detLowerPart>z0)
 				break;
 		}
+        // now chose one quarter to generate the particle in
 		if(G4UniformRand()<0.5)
 			x0 += detX/4;
 		else
@@ -135,6 +136,38 @@ void NSPrimaryGeneratorAction::GeneratePrimaries(G4Event* anEvent)
 				break;
 		}
 	}
+    
+  //Generate a second Particle at the same time? needs to be implemented
+  if(genTwoNeutrons)
+  {
+    // just do everything once more
+    
+    // Set primary particle position
+    fParticleGun->SetParticlePosition(G4ThreeVector(x0,y0,z0));
+
+    // Isotropic in direction
+    G4double phi = 2.*CLHEP::pi*G4UniformRand();
+    G4double costh = 2.*G4UniformRand()-1;
+    G4double th = acos(costh);
+
+    G4double dx = cos(phi)*sin(th);
+    G4double dy = sin(phi)*sin(th);
+    G4double dz = costh;
+
+    // Set primary particle direction
+    fParticleGun->SetParticleMomentumDirection(G4ThreeVector(dx,dy,dz));
+
+    // Select from random evaporation spectrum
+	if (genEvaporation == 1) 
+	{
+        G4double evapEnergy = NSPrimaryGeneratorAction::GetEvaporationEnergy();
+        fParticleGun->SetParticleEnergy(evapEnergy*MeV);
+	}
+
+    // Generate a particle
+    fParticleGun->GeneratePrimaryVertex(anEvent);
+  }
+
 
   // Set primary particle position
   fParticleGun->SetParticlePosition(G4ThreeVector(x0,y0,z0));
@@ -164,14 +197,14 @@ void NSPrimaryGeneratorAction::GeneratePrimaries(G4Event* anEvent)
 
 void NSPrimaryGeneratorAction::SetGenEvaporation (G4bool value)
 {
-  // Set whether energy distribution or not (-> monochromatic)
+  // Set whether to use energy distribution or not (-> monochromatic)
   genEvaporation = value;
 }
 
 G4double NSPrimaryGeneratorAction::GetEvaporationEnergy(void) {
 
   // Stolen from HALO code; integral MC method
-  // I am not sure this gives quite the right spectrum ?
+  // This gives an approximation of the right spectrum
  const G4int nBins = 10;
 
 	G4double Edistrib[nBins][2] = {
