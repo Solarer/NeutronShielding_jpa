@@ -31,7 +31,7 @@ The Spallation Neutron Source (SNS) at Oak Ridge National Laboratory is also a n
 
 \section{Simulation setup}
 
-The Geant4 simulation toolkit was used to reproduce the results of \cite{MCNP}. The detector setup can be seen in figure \ref{fig:detector}. The detector's core consists of a lead cube (\SI{50}{cm} edge-length) with 4 holes that hold one EJ-301 scintillator, each. These are frustums of a cone and are made of pure liquid EJ-301 (\cf{C_8H_{10}}). The sides and the bottom of the lead cube are covered with a \SI{1}{cm} thick layer of EJ-200 a solid plastic scintillator (\cf{C_{10}H_{11}}). Above the lead cube is a gap of \SI{21}{cm} followed by an Al-7075 plate with a thickness of \SI{2}{cm}. This plate shall reduce signals of cosmic neutrinos in the real detector. The whole setup is enclosed by a \SI{1}{m^3} water cube.
+The Geant4 simulation toolkit was used to reproduce the results of \cite{MCNP}. The detector setup can be seen in figure \ref{fig:detector}. The detector's core consists of a lead cube (\SI{50}{cm} edge-length) with 4 holes that hold one EJ-301 scintillator, each. These are frustums of a cone and are made of pure liquid EJ-301 (\cf{C_8H_{10}}). The sides and the bottom of the lead cube are covered with a \SI{1}{cm} thick layer of EJ-200 a solid plastic scintillator (\cf{C_{10}H_{11}}). Above the lead cube is a gap of \SI{21}{cm} followed by an Al-7075 plate with a thickness of \SI{2}{cm}. This plate shall reduce signals of cosmic rays in the real detector. The whole setup is enclosed by a \SI{1}{m^3} water cube.
 
 \begin{figure}[htbp]
 	\centering
@@ -48,7 +48,7 @@ If a particle enters one of the scintillators and deposits energy, that amount w
 	\caption{Photon response of the EJ-301 scintillator.}
 	\label{fig:photonResponse}
 \end{figure}
-In addition to the four particles mentioned in figure \ref{fig:photonResponse} there is also a number of $\gamma$, $e^+$ and deuterons that enter the scintillator. Since $e^+$ have the same mass and charge as $e^-$ and $\gamma$ will decay into $e^- + e^+$, both ($\gamma$ and $e^+$) are treated as electrons. Deuterons will approximately emit a number of photons that lies in the middle between $p$ and $\alpha$. 
+In addition to the four particles mentioned in figure \ref{fig:photonResponse} there is also a number of $\gamma$, $e^+$ and deuterons that enter the scintillator. Since $e^+$ have the same mass and charge as $e^-$ and $\gamma$ will pair-produce into $e^- + e^+$, both ($\gamma$ and $e^+$) are treated as electrons. Deuterons will approximately emit a number of photons that lies in the middle between $p$ and $\alpha$. 
 
 Also, in approx. 0.5\% of the events the reaction 
 \begin{align}
@@ -88,19 +88,19 @@ An event will be marked as "valid" once the energy deposition in a single scinti
   	  		\centering
   	\begin{subfigure}[t]{0.4\textwidth}
   		\includegraphics[width=\textwidth]{./pics/primaryEnergy_orig.jpg}
-  		\caption{MCNP}
+  		\caption{Used for MCNP simulation}
   		\label{fig:primaryEnergyMCNP}
   	\end{subfigure}
   	\begin{subfigure}[t]{0.55\textwidth}
   		\includegraphics[width=\textwidth]{./pics/primaryEnergy.jpg}
-  		\caption{Geant4}
+  		\caption{Used for Geant4 simulation}
   		\label{fig:primaryEnergyGeant4}
   	\end{subfigure}
   	\caption{Energy distribution of the primary neutrons. A \SI{5}{MeV} cutoff was used in both programs. To emulate a distribution like  \ref{fig:primaryEnergyMCNP}, 10 data points were read by a digitizer. This results in the sharp edges in \ref{fig:primaryEnergyGeant4}.}
   	\label{fig_primaryEnergies}
   \end{figure}
   
- The efficiency of the Geant4 simulation is about 5\% higher. This might be a result of the superior tracking algorithms of Geant which will also track secondaries, whereas the MCNP simulation was run in neutron and photon mode only \cite[p.2]{MCNP}. 
+ The efficiency of the Geant4 simulation is about 5\% higher. This might be a result of the different tracking algorithms of Geant4 which will also track secondaries, whereas the MCNP simulation was run in neutron and photon mode only \cite[p.2]{MCNP}. 
  
  Also, the scintillators were simulated as frustums of a cone instead as frustums of a hexagonal pyramid. This increases the cross-sectional area of each scintillator slightly and might result in more valid events.   
  
@@ -109,7 +109,7 @@ An event will be marked as "valid" once the energy deposition in a single scinti
 Figure \ref{fig:timing30} shows a distribution of the arrival time of the signal. The neutron is being generated at $t=\SI{0}{ns}$ and a signal arrives once the energy deposition one scintillator exceeds a given threshold (\SI{30}{keVee}) for the first time.
  \begin{figure}[H]
  	     \includegraphics[trim = 0cm 0cm 0cm 1.1cm, clip, width=\textwidth]{pics/timing.pdf}
- 	\caption{Gray curve: MCNP; blue curve: Geant4. Threshold is \SI{30}{keVee}. Both histograms are not normalized.}
+ 	\caption{Blue curve: Geant4 simulation of $10^5$ neutrons; gray curve: MCNP simulation of unknown total number of primary neutrons.  Threshold is \SI{30}{keVee}.}
  	\label{fig:timing30}
  \end{figure}
 
@@ -144,9 +144,9 @@ The green curve uses the same settings as the red one but a cutoff was applied a
 The only difference between the red and the green curve is the \SI{5}{\SIUnitSymbolMicro s} cutoff but the effect of this is almost neglitable for energies $<600 \text{ keVee}$ and the green curve is only a little bit below the red one.
  
 \section{Conclusion}
-It was possible to reproduce the results of the MCNP simulation using the geant 4 framework to some point. The most significant difference is the higher efficiency of the detector that was simulated with Geant 4 as can be seen in figure \ref{fig:efficiency30} and \ref{fig:efficiency100}. Also, signals are detected earlier (figure \ref{fig:timing30}). Both differences might be a result of a slightly different detector geometry. The lead in this simulation weights $\sim \SI{550}{kg}$ whereas the MCNP data uses \SI{660}{kg} lead \cite[p.1]{MCNP}. Both lead boxes have the same size which means that the missing material lies in the 4 scintillator-holes and the scintillators. These are most likely bigger in this simulation because their size was estimated from the sketch in figure \ref{fig:detector} since it does not show their exact size.
+It was possible to roughly reproduce the results of the MCNP simulation using the Geant4 framework to some point. The most significant difference is the higher efficiency of the detector that was simulated with Geant4 as can be seen in figure \ref{fig:efficiency30} and \ref{fig:efficiency100}. Also, signals are detected earlier (figure \ref{fig:timing30}). Both differences might be a result of a slightly different detector geometry. The lead in this simulation weights $\sim \SI{550}{kg}$ whereas the MCNP data uses \SI{660}{kg} lead \cite[p.1]{MCNP}. Both lead boxes have the same size which means that the missing material lies in the 4 scintillator-holes and the scintillators. These are most likely bigger in this simulation because their size was estimated from the sketch in figure \ref{fig:detector} since it does not show their exact size.
 
-Nevertheless both curves in figure \ref{fig:efficiency30} and \ref{fig:efficiency100} have the same structure which means that the relevant physical processes are equivalent. Also, the curves in figure \ref{fig:timing30} and figure \ref{fig:edepSmall} (black and blue curve) match almost perfectly which indicates that a bigger scintillator does not have a high overall influence.
+Nevertheless both curves in figure \ref{fig:efficiency30} and \ref{fig:efficiency100} have the same structure which means that the relevant physical processes are equivalent. Also, the curves in figure \ref{fig:timing30} and figure \ref{fig:edepSmall} (black and blue curve) match reasonably which indicates that a bigger scintillator does not have a high overall influence.
 
 \section{Further investigation}
 Under real conditions the physical processes that occur equation (\ref{eq:reaction}) can also emit two neutrons at once instead of a single one. 

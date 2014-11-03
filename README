@@ -12,6 +12,7 @@ Program: Rise 2014
 
 The goal of this project is to compare the results of a Geant4 simulation to a  previous MCNP simulation
 
+
 0. General notes
 
 The folder "NeutronShielding_jpa" contains all code and data for this project. The main function is in the file "NeutronsShielding_jpa.cc." The source code is in the folder "src," and the header files are in the folder "include."  To run the program, be sure you are in the folder "NeutronShielding_jpa" and enter
@@ -30,14 +31,14 @@ The command that starts a run is "/run/beamOn numberOfEvents," so this must be a
 
 The detector is defined in NSDetectorConstruction.cc. The detector is constructed as a series of nested structures, namely:
     world           //contains everything
-    physShield      // the water shield box which covers the detector
+    - physShield      // the water shield box which covers the detector
 
-    the actual detector is split in 4 quarters since it is point-symmetric:
-    airQuarter                      // contains all further detector elements and is placed 4 times
-       - solidDetQuarter                 // a quarter of the lead box inclusive a hole for the scintillator
-       - solidMuonVetoQuarter            // a thin plastic scintillator that covers the lead on all 4 sides and on the bottom
-       - topShield                       // a plate placed on top of the detector to absorb cosmic neutrinos
-       - solidScin                       // the scintillator, which is the "sensitive detector"
+        the actual detector is split in 4 quarters since it is point-symmetric:
+        - airQuarter                      // contains all further detector elements and is placed 4 times
+            - solidDetQuarter                 // a quarter of the lead box inclusive a hole for the scintillator
+            - solidMuonVetoQuarter            // a thin plastic scintillator that covers the lead on all 4 sides and on the bottom
+            - topShield                       // a plate placed on top of the detector to absorb cosmic neutrinos
+            - solidScin                       // the scintillator, which is the "sensitive detector"
 
 A sensitive detector is assigned to the scintillator volume using the "ConstructSDandField" function. This facilitates counting particles and energy depositions.
 
@@ -48,11 +49,13 @@ To change the geometry or material parameters of the detector, the program needs
 
 All materials are defined in NSMaterialConstruction.cc 
 
-2. Physics processes
+
+1.2 Physics processes
 
 The physics processes are defined in the QGSP_BIC_HP list.
 
-3. Folders and files
+
+2. Folders and files
 
 this is a list of all folders and containing files and a short description. For further information open the files, all are well commented.
 
@@ -77,8 +80,15 @@ src         contains source code
     - NSMaterialConstruction    defines all materials, this was originally done in NSDetectorConstruction but was moved to this file because it was a lot of code.
     - NSPhysicsList             not used at all. Physicslist is set in main() function
     - NSPrimaryGeneratorAction  defines primary particle, its energy and calculates where it should be generated. Uses a lot of random functions and checks that the particle will be generated at a valid place.
-    -NSPrimaryGeneratorMessenger
-    - 
+    - NSPrimaryGeneratorMessenger   macro commands
+    - NSRun                         run class, almost empty
+    - NSRunAction                   setup of "*.root" file and data storage into this file
+    - NSRunMessenger                macro commands
+    - NSSD                          calculate energy deposition in sensitive detector
+    - NSSteppingAction              generell output of stepping information (see "5. Output")
+    - NSVerboseMessenger            macro files
+
+
 3. Primary Generator Action
 
 G4ParticleGun is instanciated in the constructor of NSPrimaryGeneratorAction class. Every event, the public method GeneratePrimaries(G4Event*) is invoked. 
@@ -88,12 +98,14 @@ The second neutron will be generated at the same position but with a different d
 Particles are generated only inside the lead of the detector and not inside the holes.
 This behavior can be changed in the source code so that neutrons will be generated only inside the water.
 
+
 4. main()
 
 NeutronShieldingi_jpa.cc and its main() method are called first. In the main() method, three
 mandatory user classes (detector construction, physics list, user action initialization) are constructed and set to the G4RunManager object. Then, the "Initialize()" method of G4RunManager is invoked.
 
 Some UI commands for setting verbosity are applied via hard-coded "ApplyCommand()" method of G4UImanager class. The default commands are called from vis.mac
+
 
 5. Output
 
@@ -128,9 +140,11 @@ Output is created in "NSSteppingAction.cc".
 
 Currently this option is commented out in the file "NSSteppingAction.cc" because this can be a very large file. Using this option is discouraged unless looking for specific secondary particles or processes because the file causes the program to run slower. A sample for 100 events is saved as "sample_step.out."
 
+
 6. Existing Data
 
 "vis.mac" is a macro that gives the default parameters used in a run if others are not specified.
 
 The folder "extraPics" holds pictures used in the final paper for this project and can be disregarded.
 
+-- End --
