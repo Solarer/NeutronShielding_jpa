@@ -38,7 +38,7 @@ class G4UIcmdWithABool;
 
 class NSPrimaryGeneratorMessenger: public G4UImessenger
 {
-public
+public:
   NSPrimaryGeneratorMessenger(NSPrimaryGeneratorAction*);
   virtual ~NSPrimaryGeneratorMessenger();
 

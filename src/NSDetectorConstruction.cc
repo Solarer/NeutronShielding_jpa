@@ -112,7 +112,8 @@ G4VPhysicalVolume* NSDetectorConstruction::ConstructDetector()
   G4SolidStore::GetInstance()->Clean();
 
   // Complete parameters defintion
-  ComputeParameters();
+  //ComputeParameters();
+  // if needed...
 
   // Option to switch on/off checking of volumes overlaps
   G4bool checkOverlaps = true;
